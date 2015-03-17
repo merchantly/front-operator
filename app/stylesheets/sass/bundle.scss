@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* === Google Fonts === */
+// @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+/* === Fonts === */
+@import "fonts/fira";
+
+/* === Vendors === */
+// Bower Components
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "font-awesome/scss/font-awesome";
+
+// Regular CSS
+@import "vendor/animate";
+@import "vendor/select2/select2";
+@import "vendor/select2/select2-bootstrap";
+
+/* === Inspinia === */
+// Variables, Mixins
+@import "inspinia/variables";
+@import "inspinia/mixins";
+
+/* === Kiosk === */
+// Variables, Mixins
+@import "kiosk/variables";
+
+/* === Inspinia === */
+// INSPINIA Theme Elements
+@import "inspinia/typography";
+@import "inspinia/navigation";
+@import "inspinia/top_navigation";
+@import "inspinia/buttons";
+@import "inspinia/badgets_labels";
+@import "inspinia/elements";
+@import "inspinia/sidebar";
+@import "inspinia/base";
+@import "inspinia/pages";
+
+// RTL Support
+@import "inspinia/rtl";
+
+// For demo only - config box style
+@import "inspinia/theme-config";
+
+// INSPINIA Skins
+@import "inspinia/skins";
+
+// Media query style
+@import "inspinia/media";
+
+// Custom style
+// Your custom style to override base style
+@import "inspinia/custom";
+
+/* === Kiosk === */
+@import "kiosk/grid";
+
+// Components
+@import "kiosk/components/alerts";
+@import "kiosk/components/form-controls";
+@import "kiosk/components/switcher";
+@import "kiosk/components/thumbnails";

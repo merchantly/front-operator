@@ -1,0 +1,104 @@
+.thumbnails
+
+.thumbnails-item
+  padding:
+    top: $grid-gutter-width / 2
+    bottom: $grid-gutter-width / 2
+  position: relative
+  display: inline-block
+  float: none
+  vertical-align: top
+  .alert
+    margin-bottom: 0
+    position: relative
+    border-radius: 0
+  &.ui-sortable-helper
+    background-color: #fff
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2)
+  &.__dropzone
+    margin-top: -3px
+    margin-bottom: -3px
+    border-width: 3px
+    border-color: $blue
+    border-style: dashed
+
+.thumbnails-item-in
+  position: relative
+  overflow: hidden
+  &:before
+    content: ""
+    position: absolute
+    display: block
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    border: 1px solid #ddd
+    transition: border .3s ease
+  &:hover
+    &:before
+      border-color: #999
+    .thumbnails-item-actions
+      opacity: 1
+
+.thumbnails-item-add
+  float: left
+  .thumbnails-item-in
+    padding-bottom: 100%
+  .thumbnails-item-actions
+      opacity: 1
+
+.thumbnails-item-loader
+  padding-bottom: 100%
+  .fa
+    position: absolute
+    margin:
+      top: -.5em
+      left: -.5em
+    top: 50%
+    left: 50%
+
+.thumbnails-item-actions
+  position: absolute
+  top: 50%
+  right: 0
+  left: 0
+  line-height: 0
+  text-align: center
+  opacity: 0
+  transform: translate(0, -50%)
+  transition: opacity .3s ease
+
+.thumbnails-item-action
+  width: 1.8em
+  height: 1.8em
+  margin: 4px
+  display: inline-block
+  background-color: #444
+  font-size: 18px
+  line-height: 1.9em
+  color: #fff
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  border-radius: 50%
+  overflow: hidden
+  .fa
+    vertical-align: middle
+  .fa-times
+    position: relative
+    top: -1px
+
+.thumbnails-item-input
+  margin: 0
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  cursor: pointer
+
+.thumbnails-item-img
+  width: 100%
+  height: auto
+  position: relative

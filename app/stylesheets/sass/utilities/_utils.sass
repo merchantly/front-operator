@@ -1,0 +1,77 @@
+.center-block-container
+  +center-block-container
+.center-block-content
+  +center-block-content
+
+
+.hoverable-container
+  .hoverable
+    visibility: hidden
+  &:hover
+    .hoverable
+      visibility: inherit
+  &.hoverable-show
+    .hoverable
+      visibility: visible
+    &:hover
+      .hoverable
+        visibility: visible
+  &.hoverable-hide
+    .hoverable
+      visibility: hidden
+    &:hover
+      .hoverable
+        visibility: hidden
+
+.hoverable-button-show
+  visibility: visible
+
+.hoverable-button-hide
+  visibility: hidden
+
+.clickable-block
+  cursor: pointer
+
+.no-margins
+  margin: 0
+
+hr.small
+  margin: 1em 0
+
+hr.mini
+  margin: 0.5em 0
+
+hr.light
+  border-color: lighten($line-color,3%)
+
+hr.no-shadow
+  border-bottom: 0
+
+.center-block
+  +center-block
+
+.user-select-none
+  +user-select(none)
+
+@each $margin in top, bottom, right, left
+  .no-margin-#{$margin}
+    margin-#{$margin}: 0
+
+
+@each $color in (green $green), (red $red), (blue $blue), (orange $orange), text-light $text-color-light, text-lighter $text-color-lighter, text-brand $brand-color
+  .color-#{nth($color,1)}
+    color: nth($color,2)
+
+.block-link
+  display: block
+  width: 100%
+  text-align: center
+
+.tooltip
+  font-weight: normal
+
+.nobr
+  white-space: nowrap
+
+.inline-block-middle
+  @include inline-valign-middle

@@ -1,0 +1,51 @@
+.switcher
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 20px;
+  user-select: none;
+  box-sizing: content-box;
+  background-clip: content-box;
+
+.switcher__input
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+
+.switcher__box
+  width: 50px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 20px;
+  user-select: none;
+  box-sizing: content-box;
+  background-clip: content-box;
+  box-shadow: inset 0px 0px 0px 0px #dfdfdf;
+  transition: border .4s, box-shadow .4s;
+  .switcher__input:checked + &
+    border-color: #1ab394;
+    background-color: #1ab394;
+    box-shadow: #1ab394 0px 0px 0px 16px inset;
+    transition: border .4s, box-shadow .4s, background-color 1.2s;
+    .switcher__knob
+      left: 20px
+
+.switcher__knob
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  transition: left .2s;

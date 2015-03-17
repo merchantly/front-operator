@@ -1,0 +1,1 @@
+sass app/stylesheets/overrides.css.sass > app/stylesheets/overrides.css
