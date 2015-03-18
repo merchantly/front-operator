@@ -21,7 +21,7 @@ ProductImages_Placeholder = React.createClass
                     <i className="fa fa-plus" />
                   </div>
                 </div>
-                <label for="image"
+                <label htmlFor="image"
                        title={ ADD_TOOLTIP }
                        className="thumbnails-item-input">
                   <input ref="fileInput"
