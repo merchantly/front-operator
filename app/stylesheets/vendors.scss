@@ -5,6 +5,11 @@
 /* === Vendors === */
 // Bower Components
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "toastr/toastr";
 
 // Regular CSS
 @import "vendors/animate";
+@import "vendors/turbolinks";
+
+// Остальные CSS добавляются через gulp-contact-css,
+// см ./config.coffee (vendor_assets)
