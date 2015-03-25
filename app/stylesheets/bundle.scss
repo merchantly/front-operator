@@ -1,16 +1,6 @@
 @charset "UTF-8";
 
-/* === Fonts === */
-@import "font-awesome/scss/font-awesome";
-
-/* === Vendors === */
-// Bower Components
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-
-// Regular CSS
-@import "plugins/animate";
-@import "plugins/select2/select2";
-@import "plugins/select2/select2-bootstrap";
+@import "vendors";
 
 /* === Inspinia === */
 // Variables, Mixins

@@ -9,7 +9,7 @@ gulp.task 'dist', ['clean'], ->
   gulp.start 'scripts', 'styles', 'minifyScripts', 'minifyStyles'
 
 gulp.task 'build', ['clean'], (cb) ->
-  runSequence ['vendorScripts', 'localScripts', 'html', 'haml', 'sass', 'fonts', 'images'], cb
+  runSequence ['vendorScripts', 'localScripts', 'html', 'haml', 'stylesheets', 'fonts', 'images'], cb
 
 gulp.task 'server', ['setWatch', 'build'], ->
   gulp.start 'watch'

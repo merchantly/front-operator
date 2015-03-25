@@ -51,7 +51,23 @@ module.exports = {
   sass: {
     src: src + '/stylesheets/local.scss'
     dest: build + '/stylesheets'
-    outputName: 'local.css'
+    outputName: 'local_sass.css'
+  }
+  vendor_css: {
+    src: [
+      src + '/bower_components/select2/select2.css'
+      src + '/bower_components/select2/select2-bootstrap.css'
+    ]
+    target: 'vendor_css.css'
+    dest: build + '/stylesheets'
+  }
+  stylesheets: {
+    src: [
+      build + '/stylesheets/vendor_css.css'
+      build + '/stylesheets/local_sass.css'
+    ]
+    target: 'local.css'
+    dest: build + '/stylesheets'
   }
   images: {
     src: src + '/assets/**/*'

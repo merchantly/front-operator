@@ -1,4 +1,7 @@
+@charset "UTF-8";
+
 $fonts-path: "../fonts";
 $images-path: "../assets";
+$fa-font-path: "../assets";
 
-@import "sass/bundle";
+@import "bundle";
