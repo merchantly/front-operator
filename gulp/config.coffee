@@ -58,7 +58,7 @@ module.exports = {
     dest: build + '/assets'
   }
   fonts: {
-    src: src + '/**/*.{eot,svg,ttf,woff}'
+    src: src + '/**/*.{eot,svg,ttf,woff,woff2}'
     dest: build + '/fonts'
   }
   minifyScripts: {

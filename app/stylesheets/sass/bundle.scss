@@ -1,25 +1,20 @@
 @charset "UTF-8";
 
-/* === Fonts === */
-@import "font-awesome/scss/font-awesome";
-
 /* === Vendors === */
 // Bower Components
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "font-awesome/scss/font-awesome";
 
 // Regular CSS
-@import "plugins/animate";
-@import "plugins/select2/select2";
-@import "plugins/select2/select2-bootstrap";
+@import "vendor/animate";
 
 /* === Inspinia === */
 // Variables, Mixins
 @import "inspinia/variables";
 @import "inspinia/mixins";
 
-/* === Kiosk === */
-// Variables, Mixins
-@import "kiosk/variables";
+// Extensions
+@import "extensions/inspinia/variables";
 
 /* === Inspinia === */
 // INSPINIA Theme Elements
@@ -49,8 +44,14 @@
 // Your custom style to override base style
 @import "inspinia/custom";
 
+// Extensions
+@import "extensions/inspinia/base";
+@import "extensions/inspinia/theme-config";
+@import "extensions/inspinia/skins";
+
 /* === Kiosk === */
-@import "kiosk/grid";
+// Variables, Mixins
+@import "kiosk/variables";
 
 // Components
 @import "kiosk/components/alerts";
