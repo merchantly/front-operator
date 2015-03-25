@@ -12,13 +12,13 @@
     "lodash": "~2.4.1",
     "jquery-autosize": "~1.18.13",
     "compass-mixins": "~1.0.1",
-    "font-awesome": "~4.1.0",
     "typeahead.js": "~0.10.5",
     "aviator": "~0.4.2",
     "metisMenu": "~1.1.3",
     "slimscroll": "~1.3.3",
     "pace": "~1.0.2",
-    "select2": "~3.5.2"
+    "select2": "~3.5.2",
+    "font-awesome": "~4.3.0"
   },
   "devDependencies": {
     "modernizr": "~2.8.2",

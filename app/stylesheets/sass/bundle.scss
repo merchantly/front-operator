@@ -1,20 +1,16 @@
 @charset "UTF-8";
 
-/* === Google Fonts === */
-// @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-
 /* === Fonts === */
-@import "fonts/fira";
+@import "font-awesome/scss/font-awesome";
 
 /* === Vendors === */
 // Bower Components
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "font-awesome/scss/font-awesome";
 
 // Regular CSS
-@import "vendor/animate";
-@import "vendor/select2/select2";
-@import "vendor/select2/select2-bootstrap";
+@import "plugins/animate";
+@import "plugins/select2/select2";
+@import "plugins/select2/select2-bootstrap";
 
 /* === Inspinia === */
 // Variables, Mixins
