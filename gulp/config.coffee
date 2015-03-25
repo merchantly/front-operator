@@ -77,8 +77,8 @@ module.exports = {
   }
   stylesheets: {
     src: [
-      #src + '/bower_components/select2/select2.css'
-      #src + '/bower_components/select2/select2-bootstrap.css'
+      src + '/bower_components/select2/select2.css'
+      src + '/bower_components/select2/select2-bootstrap.css'
       build + '/stylesheets/local_sass.css'
     ]
     target: 'local.css'
