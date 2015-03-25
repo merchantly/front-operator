@@ -2,8 +2,10 @@
 
 // Добавляем ../ так как эти асеты будет запрашиваться в CSS
 // который лежит в каталоге ./stylesheets
-// Font awesome
-$fa-font-path: "../bower_components/font-awesome/fonts/";
+
+
+// Все фонты копируются в эту папку, поэтому Font awesome тоже берется отсюда
+$fa-font-path: "../fonts";
 $images-path: "../assets";
 
 @import "bundle";
