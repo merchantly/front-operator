@@ -11,10 +11,19 @@ module.exports = {
       dest: dist + '/scripts/'
       outputName: 'app.js'
     }
-    styles: {
+    sass: {
       src: src + '/stylesheets/dist.scss'
       dest: dist + '/stylesheets'
-      outputName: 'app.css'
+      outputName: 'dist_sass.css'
+    }
+    styles: {
+      src: [
+        src + '/bower_components/select2/select2.css'
+        src + '/bower_components/select2/select2-bootstrap.css'
+        dist + '/stylesheets/dist_sass.css'
+      ]
+      target: 'dist.css'
+      dest: dist + '/stylesheets'
     }
   }
   vendor: {
@@ -53,17 +62,10 @@ module.exports = {
     dest: build + '/stylesheets'
     outputName: 'local_sass.css'
   }
-  vendor_css: {
+  stylesheets: {
     src: [
       src + '/bower_components/select2/select2.css'
       src + '/bower_components/select2/select2-bootstrap.css'
-    ]
-    target: 'vendor_css.css'
-    dest: build + '/stylesheets'
-  }
-  stylesheets: {
-    src: [
-      build + '/stylesheets/vendor_css.css'
       build + '/stylesheets/local_sass.css'
     ]
     target: 'local.css'

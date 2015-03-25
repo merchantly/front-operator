@@ -2,10 +2,9 @@ gulp         = require 'gulp'
 concatCss    = require 'gulp-concat-css'
 autoprefixer = require 'gulp-autoprefixer'
 handleErrors = require '../util/handleErrors'
-config       = require('../config').stylesheets
+config       = require('../config').dist.styles
 
-gulp.task 'stylesheets', ['sass'], ->
-
+gulp.task 'distStyles', ['distSass'], ->
   gulp.src config.src
     .on 'error', handleErrors
     .pipe concatCss(config.target)

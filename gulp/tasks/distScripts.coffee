@@ -6,7 +6,7 @@ handleErrors = require '../util/handleErrors'
 source       = require 'vinyl-source-stream'
 config       = require('../config').dist.scripts
 
-gulp.task 'scripts', ->
+gulp.task 'distScripts', ->
   bundler = browserify({
     cache: {}, packageCache: {}
     basedir: config.baseDir

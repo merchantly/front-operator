@@ -4,7 +4,7 @@ minifyCSS    = require 'gulp-minify-css'
 handleErrors = require '../util/handleErrors'
 config       = require('../config').minifyStyles
 
-gulp.task 'minifyStyles', ['styles'], ->
+gulp.task 'minifyStyles', ['distStyles'], ->
   gulp.src config.src
     .pipe minifyCSS()
     .on 'error', handleErrors
