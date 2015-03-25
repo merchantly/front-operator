@@ -2,6 +2,8 @@
 
 $fonts-path: "../fonts";
 $images-path: "../assets";
-$fa-font-path: "../assets";
+
+// Font awesome
+$fa-font-path: "../bower_components/font-awesome/fonts/";
 
 @import "bundle";
