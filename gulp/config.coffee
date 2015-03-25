@@ -16,6 +16,10 @@ module.exports = {
       dest: dist + '/stylesheets'
       outputName: 'dist_sass.css'
     }
+    fonts: {
+      src: src + '/**/*.{eot,svg,ttf,woff}'
+      dest: dist + '/fonts'
+    }
     styles: {
       src: [
         src + '/bower_components/select2/select2.css'
@@ -64,8 +68,8 @@ module.exports = {
   }
   stylesheets: {
     src: [
-      src + '/bower_components/select2/select2.css'
-      src + '/bower_components/select2/select2-bootstrap.css'
+      #src + '/bower_components/select2/select2.css'
+      #src + '/bower_components/select2/select2-bootstrap.css'
       build + '/stylesheets/local_sass.css'
     ]
     target: 'local.css'

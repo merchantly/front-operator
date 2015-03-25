@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
+// Добавляем ../ так как эти асеты будет запрашиваться в CSS
+// который лежит в каталоге ./stylesheets
 // Font awesome
-$fa-font-path: "../../bower_components/font-awesome/fonts/";
-$images-path: "../../assets";
+$fa-font-path: "../bower_components/font-awesome/fonts/";
+$images-path: "../assets";
 
 @import "bundle";

@@ -8,6 +8,6 @@ gulp.task 'stylesheets', ['sass'], ->
 
   gulp.src config.src
     .on 'error', handleErrors
-    .pipe concatCss(config.target)
+    .pipe concatCss(config.target, rebaseUrls: false)
     .pipe autoprefixer('last 2 versions')
     .pipe gulp.dest config.dest

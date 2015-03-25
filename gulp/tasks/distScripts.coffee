@@ -1,5 +1,6 @@
 browserify   = require 'browserify'
 watchify     = require 'watchify'
+uglify       = require 'gulp-uglify'
 gulp         = require 'gulp'
 bundleLogger = require '../util/bundleLogger'
 handleErrors = require '../util/handleErrors'
@@ -43,6 +44,7 @@ gulp.task 'distScripts', ->
       .bundle()
       .on 'error', handleErrors
       .pipe source(config.outputName)
+      #.pipe uglify()
       .pipe gulp.dest(config.dest)
       .on 'end', ->
         bundleLogger.end config.outputName
