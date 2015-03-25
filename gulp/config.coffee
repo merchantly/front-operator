@@ -11,6 +11,15 @@ module.exports = {
       dest: dist + '/scripts/'
       outputName: 'app.js'
     }
+    images: {
+      src: src + '/assets/**/*'
+      dest: dist + '/assets'
+    }
+    html: {
+      htmlSrc: src + '/*.html'
+      hamlSrc: 'app/**/*.haml'
+      dest: dist
+    }
     sass: {
       src: src + '/stylesheets/dist.scss'
       dest: dist + '/stylesheets'
