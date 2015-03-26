@@ -9004,7 +9004,7 @@ h3, h4, h5 {
 /* line 116, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/navigation */
 .nav-header {
   padding: 33px 25px;
-  background: url('../assets/inspinia/patterns/header-profile.png') no-repeat; }
+  background: url('/inspinia/patterns/header-profile.png') no-repeat; }
 
 /* line 120, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/navigation */
 .pace-done .nav-header {
@@ -11745,7 +11745,7 @@ body {
 
 /* line 8, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 body.boxed-layout {
-  background: url('../assets/inspinia/patterns/shattered.png'); }
+  background: url('/inspinia/patterns/shattered.png'); }
 
 /* line 11, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 body.boxed-layout #wrapper {
@@ -13899,7 +13899,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 /* line 73, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .blue-skin {
   font-weight: 600;
-  background: url("../assets/inspinia/patterns/header-profile-skin-1.png") repeat scroll 0 0; }
+  background: url("/inspinia/patterns/header-profile-skin-1.png") repeat scroll 0 0; }
 
 /* line 77, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .blue-skin:hover {
@@ -13908,7 +13908,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 /* line 80, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .yellow-skin {
   font-weight: 600;
-  background: url("../assets/inspinia/patterns/header-profile-skin-3.png") repeat scroll 0 100%; }
+  background: url("/inspinia/patterns/header-profile-skin-3.png") repeat scroll 0 100%; }
 
 /* line 84, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .yellow-skin:hover {
@@ -13917,7 +13917,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 /* line 87, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .ultra-skin {
   font-weight: 600;
-  background: url("../assets/inspinia/patterns/header-profile-skin-2.png") repeat scroll 0 0; }
+  background: url("/inspinia/patterns/header-profile-skin-2.png") repeat scroll 0 0; }
 
 /* line 91, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/theme-config */
 .ultra-skin:hover {
@@ -13947,7 +13947,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 /* line 24, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-1 .nav-header {
   background: #0e9aef;
-  background: url('../assets/inspinia/patterns/header-profile-skin-1.png'); }
+  background: url('/inspinia/patterns/header-profile-skin-1.png'); }
 
 /* line 28, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-1.mini-navbar .nav-second-level {
@@ -14076,7 +14076,7 @@ body.skin-2 {
 /* line 131, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-2 .nav-header {
   background: #23c6c8;
-  background: url('../assets/inspinia/patterns/header-profile-skin-2.png'); }
+  background: url('/inspinia/patterns/header-profile-skin-2.png'); }
 
 /* line 135, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-2.mini-navbar .nav-second-level {
@@ -14260,7 +14260,7 @@ body.boxed-layout.skin-3 #wrapper {
 /* line 281, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-3 .nav-header {
   background: #ecba52;
-  background: url('../assets/inspinia/patterns/header-profile-skin-3.png'); }
+  background: url('/inspinia/patterns/header-profile-skin-3.png'); }
 
 /* line 285, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/skins */
 .skin-3.mini-navbar .nav-second-level {
