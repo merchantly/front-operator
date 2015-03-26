@@ -30,8 +30,8 @@ gulp.task 'vendorScripts', ['clean'], ->
     .require './eventEmitter/EventEmitter',                            { expose: 'eventEmitter' }
     .require './typeahead.js/dist/typeahead.bundle',                   { expose: 'typeahead' }
     .require './aviator/src/main',                                     { expose: 'aviator' }
-    .require './metisMenu/dist/metisMenu',                             { expose: 'metisMenu' }
     .require './iCheck/icheck',                                        { expose: 'iCheck' }
+    .require './metisMenu/dist/metisMenu.min',                         { expose: 'metisMenu' }
     .require './slimscroll/jquery.slimscroll',                         { expose: 'jquery.slimscroll' }
     .require './pace/pace',                                            { expose: 'pace' }
     .require './select2/select2',                                      { expose: 'select2' }

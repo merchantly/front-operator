@@ -4,9 +4,9 @@ window.KioskOperatorApp =
     console.log "KioskOperatorApp start for vendor: #{vendor_key}, operator: #{operator.name}"
 
     $.ajaxSetup
+      crossDomain: true
       xhrFields:
         withCredentials: true
-        crossDomain:     true
       headers:
         'X-Vendor-Key':  vendor_key
         'X-Operator-Id': operator.id
