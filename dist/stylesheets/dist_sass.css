@@ -9240,7 +9240,7 @@ body.mini-navbar #page-wrapper {
 /* line 305, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/navigation */
 body.fixed-sidebar .navbar-static-side {
   position: fixed;
-  width: 220px;
+  width: 200px;
   z-index: 101;
   height: 100%; }
 
@@ -9254,11 +9254,11 @@ body.fixed-sidebar.mini-navbar #page-wrapper {
 
 /* line 317, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/navigation */
 body.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-  margin: 0 0 0 220px; }
+  margin: 0 0 0 200px; }
 
 /* line 320, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/navigation */
 body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-  width: 220px; }
+  width: 200px; }
 
 /* line 323, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/navigation */
 .fixed-sidebar.mini-navbar .nav li:focus > .nav-second-level {
@@ -10412,7 +10412,7 @@ table.dataTable thead .sorting:after {
   position: fixed;
   z-index: 2000;
   top: 0px;
-  left: 220px;
+  left: 200px;
   height: 2px;
   -webkit-transition: width 1s;
   -moz-transition: width 1s;
@@ -11693,7 +11693,7 @@ a.forum-item-title:hover {
 
 /* line 1, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/sidebar */
 .sidebard-panel {
-  width: 220px;
+  width: 200px;
   background: #ebebed;
   padding: 10px 20px;
   position: absolute;
@@ -11960,7 +11960,7 @@ ul.unstyled, ol.unstyled {
   padding: 10px 20px;
   background: white;
   border-top: 1px solid #e7eaec;
-  margin-left: 220px; }
+  margin-left: 200px; }
 
 /* line 193, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/base */
 body.mini-navbar .footer.fixed, body.body-small.mini-navbar .footer.fixed {
@@ -11968,7 +11968,7 @@ body.mini-navbar .footer.fixed, body.body-small.mini-navbar .footer.fixed {
 
 /* line 196, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/base */
 body.fixed-sidebar.body-small.mini-navbar .footer.fixed {
-  margin: 0 0 0 220px; }
+  margin: 0 0 0 200px; }
 
 /* line 199, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/base */
 body.body-small .footer.fixed {
@@ -13749,11 +13749,11 @@ body.rtls.mini-navbar.fixed-sidebar #page-wrapper {
 
 /* line 152, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/rtl */
 body.rtls.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-  margin: 0 220px 0 0; }
+  margin: 0 200px 0 0; }
 
 /* line 155, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/rtl */
 body.rtls.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-  width: 220px; }
+  width: 200px; }
 
 /* line 158, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/rtl */
 .body-small.rtls .navbar-fixed-top {
@@ -13798,7 +13798,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
     display: none;
     z-index: 101;
     position: fixed;
-    width: 220px; }
+    width: 200px; }
   /* line 198, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/rtl */
   .rtls.fixed-sidebar.body-small.mini-navbar .navbar-static-side {
     display: block; } }
@@ -14365,13 +14365,13 @@ body.skin-3 {
   /* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/media */
   #page-wrapper {
     position: inherit;
-    margin: 0 0 0 220px;
+    margin: 0 0 0 200px;
     min-height: 1200px; }
   /* line 7, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/media */
   .navbar-static-side {
     z-index: 101;
     position: absolute;
-    width: 220px; }
+    width: 200px; }
   /* line 14, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/media */
   .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
     margin-left: auto; } }
@@ -14416,7 +14416,7 @@ body.skin-3 {
     display: none;
     z-index: 101;
     position: fixed;
-    width: 220px; }
+    width: 200px; }
   /* line 59, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/inspinia/media */
   .fixed-sidebar.body-small.mini-navbar .navbar-static-side {
     display: block; } }
