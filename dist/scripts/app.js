@@ -9,133 +9,11 @@ require('./legacy');
 
 require('./app');
 
-require('./react/dispatchers/_base');
+require('./react_bundle');
 
-require('./react/dispatchers/operator_categories');
 
-require('./react/dispatchers/operator_products');
 
-require('./react/dispatchers/drag_state');
-
-require('./react/stores/_base');
-
-require('./react/stores/operator_categories');
-
-require('./react/stores/operator_products');
-
-require('./react/stores/drag_state');
-
-require('./react/resources/categories');
-
-require('./react/resources/products');
-
-require('./react/services/operator_categories');
-
-require('./react/services/operator_products');
-
-require('./react/services/thumbor');
-
-require('./react/services/uuid');
-
-require('./react/controllers/modal');
-
-require('./react/actions/view/operator_categories');
-
-require('./react/actions/view/operator_products');
-
-require('./react/actions/view/product_images');
-
-require('./react/actions/server/operator_categories');
-
-require('./react/actions/server/operator_products');
-
-require('./react/mixins/unmount');
-
-require('./react/mixins/activities');
-
-require('./react/mixins/product_draggable');
-
-require('./react/mixins/category_droppable');
-
-require('./react/mixins/component_manipulations');
-
-require('./react/components/operator_products/mixins/load_more_products');
-
-require('./react/components/common/money');
-
-require('./react/components/common/spinner');
-
-require('./react/components/common/super_select');
-
-require('./react/components/common/images_form_thumbs');
-
-require('./react/components/product/thumb');
-
-require('./react/components/product/state');
-
-require('./react/components/product/images/images');
-
-require('./react/components/product/status_toggle');
-
-require('./react/components/product/modification_list');
-
-require('./react/components/product/modification_list_item');
-
-require('./react/components/product/total_items_quantity');
-
-require('./react/components/operator_categories/operator_categories');
-
-require('./react/components/operator_categories/loaded');
-
-require('./react/components/operator_categories/loading');
-
-require('./react/components/operator_categories/loading_error');
-
-require('./react/components/operator_categories/one_category');
-
-require('./react/components/operator_categories/two_categories');
-
-require('./react/components/operator_categories/list/list');
-
-require('./react/components/operator_categories/list/items/item_manager');
-
-require('./react/components/operator_categories/list/items/item');
-
-require('./react/components/operator_categories/list/items/item_edit');
-
-require('./react/components/operator_categories/list/items/without_category');
-
-require('./react/components/operator_categories/list/items/with_subcategories');
-
-require('./react/components/operator_categories/list/create_form');
-
-require('./react/components/operator_products/operator_products');
-
-require('./react/components/operator_products/empty');
-
-require('./react/components/operator_products/loading');
-
-require('./react/components/operator_products/loading_error');
-
-require('./react/components/operator_products/list/list');
-
-require('./react/components/operator_products/list/item');
-
-require('./react/components/operator_products/list/item_drag');
-
-require('./react/components/operator_products/list/items_drag');
-
-require('./react/components/modal/modal');
-
-require('./react/helpers/app');
-
-require('./react/helpers/event');
-
-require('./react/helpers/money');
-
-
-
-},{"./app":6,"./legacy":7,"./libs":8,"./react/actions/server/operator_categories":10,"./react/actions/server/operator_products":11,"./react/actions/view/operator_categories":12,"./react/actions/view/operator_products":13,"./react/actions/view/product_images":14,"./react/components/common/images_form_thumbs":15,"./react/components/common/money":16,"./react/components/common/spinner":17,"./react/components/common/super_select":18,"./react/components/modal/modal":19,"./react/components/operator_categories/list/create_form":20,"./react/components/operator_categories/list/items/item":21,"./react/components/operator_categories/list/items/item_edit":22,"./react/components/operator_categories/list/items/item_manager":23,"./react/components/operator_categories/list/items/with_subcategories":24,"./react/components/operator_categories/list/items/without_category":25,"./react/components/operator_categories/list/list":26,"./react/components/operator_categories/loaded":27,"./react/components/operator_categories/loading":28,"./react/components/operator_categories/loading_error":29,"./react/components/operator_categories/one_category":30,"./react/components/operator_categories/operator_categories":31,"./react/components/operator_categories/two_categories":32,"./react/components/operator_products/empty":34,"./react/components/operator_products/list/item":35,"./react/components/operator_products/list/item_drag":36,"./react/components/operator_products/list/items_drag":37,"./react/components/operator_products/list/list":38,"./react/components/operator_products/loading":39,"./react/components/operator_products/loading_error":40,"./react/components/operator_products/mixins/load_more_products":41,"./react/components/operator_products/operator_products":42,"./react/components/product/images/images":44,"./react/components/product/modification_list":50,"./react/components/product/modification_list_item":51,"./react/components/product/state":52,"./react/components/product/status_toggle":53,"./react/components/product/thumb":54,"./react/components/product/total_items_quantity":55,"./react/controllers/modal":56,"./react/dispatchers/_base":57,"./react/dispatchers/drag_state":58,"./react/dispatchers/operator_categories":59,"./react/dispatchers/operator_products":60,"./react/helpers/app":61,"./react/helpers/event":62,"./react/helpers/money":63,"./react/mixins/activities":64,"./react/mixins/category_droppable":65,"./react/mixins/component_manipulations":66,"./react/mixins/product_draggable":67,"./react/mixins/unmount":68,"./react/resources/categories":69,"./react/resources/products":70,"./react/services/operator_categories":71,"./react/services/operator_products":72,"./react/services/thumbor":73,"./react/services/uuid":74,"./react/stores/_base":75,"./react/stores/drag_state":76,"./react/stores/operator_categories":77,"./react/stores/operator_products":78,"./routes/api":79,"./routes/routes":80}],2:[function(require,module,exports){
+},{"./app":6,"./legacy":7,"./libs":8,"./react_bundle":79,"./routes/api":80,"./routes/routes":81}],2:[function(require,module,exports){
 /**
 binds a function to a context
 
@@ -1174,8 +1052,6 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
-window.React = require('react');
-
 window.Dispatcher = require('flux').Dispatcher;
 
 window.EventEmitter = require('eventEmitter');
@@ -1230,7 +1106,7 @@ require('jquery-flot');
 
 
 
-},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":81,"icheck":"icheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react":"react","react-mixin-manager":"react-mixin-manager","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
+},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":82,"icheck":"icheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react-mixin-manager":"react-mixin-manager","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
 var Requester,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -5192,6 +5068,133 @@ OperatorProductsStore.dispatchToken = OperatorProductsDispatcher.register(functi
 
 
 },{"./_base":75}],79:[function(require,module,exports){
+require('./react/dispatchers/_base');
+
+require('./react/dispatchers/operator_categories');
+
+require('./react/dispatchers/operator_products');
+
+require('./react/dispatchers/drag_state');
+
+require('./react/stores/_base');
+
+require('./react/stores/operator_categories');
+
+require('./react/stores/operator_products');
+
+require('./react/stores/drag_state');
+
+require('./react/resources/categories');
+
+require('./react/resources/products');
+
+require('./react/services/operator_categories');
+
+require('./react/services/operator_products');
+
+require('./react/services/thumbor');
+
+require('./react/services/uuid');
+
+require('./react/controllers/modal');
+
+require('./react/actions/view/operator_categories');
+
+require('./react/actions/view/operator_products');
+
+require('./react/actions/view/product_images');
+
+require('./react/actions/server/operator_categories');
+
+require('./react/actions/server/operator_products');
+
+require('./react/mixins/unmount');
+
+require('./react/mixins/activities');
+
+require('./react/mixins/product_draggable');
+
+require('./react/mixins/category_droppable');
+
+require('./react/mixins/component_manipulations');
+
+require('./react/components/operator_products/mixins/load_more_products');
+
+require('./react/components/common/money');
+
+require('./react/components/common/spinner');
+
+require('./react/components/common/super_select');
+
+require('./react/components/common/images_form_thumbs');
+
+require('./react/components/product/thumb');
+
+require('./react/components/product/state');
+
+require('./react/components/product/images/images');
+
+require('./react/components/product/status_toggle');
+
+require('./react/components/product/modification_list');
+
+require('./react/components/product/modification_list_item');
+
+require('./react/components/product/total_items_quantity');
+
+require('./react/components/operator_categories/operator_categories');
+
+require('./react/components/operator_categories/loaded');
+
+require('./react/components/operator_categories/loading');
+
+require('./react/components/operator_categories/loading_error');
+
+require('./react/components/operator_categories/one_category');
+
+require('./react/components/operator_categories/two_categories');
+
+require('./react/components/operator_categories/list/list');
+
+require('./react/components/operator_categories/list/items/item_manager');
+
+require('./react/components/operator_categories/list/items/item');
+
+require('./react/components/operator_categories/list/items/item_edit');
+
+require('./react/components/operator_categories/list/items/without_category');
+
+require('./react/components/operator_categories/list/items/with_subcategories');
+
+require('./react/components/operator_categories/list/create_form');
+
+require('./react/components/operator_products/operator_products');
+
+require('./react/components/operator_products/empty');
+
+require('./react/components/operator_products/loading');
+
+require('./react/components/operator_products/loading_error');
+
+require('./react/components/operator_products/list/list');
+
+require('./react/components/operator_products/list/item');
+
+require('./react/components/operator_products/list/item_drag');
+
+require('./react/components/operator_products/list/items_drag');
+
+require('./react/components/modal/modal');
+
+require('./react/helpers/app');
+
+require('./react/helpers/event');
+
+require('./react/helpers/money');
+
+
+
+},{"./react/actions/server/operator_categories":10,"./react/actions/server/operator_products":11,"./react/actions/view/operator_categories":12,"./react/actions/view/operator_products":13,"./react/actions/view/product_images":14,"./react/components/common/images_form_thumbs":15,"./react/components/common/money":16,"./react/components/common/spinner":17,"./react/components/common/super_select":18,"./react/components/modal/modal":19,"./react/components/operator_categories/list/create_form":20,"./react/components/operator_categories/list/items/item":21,"./react/components/operator_categories/list/items/item_edit":22,"./react/components/operator_categories/list/items/item_manager":23,"./react/components/operator_categories/list/items/with_subcategories":24,"./react/components/operator_categories/list/items/without_category":25,"./react/components/operator_categories/list/list":26,"./react/components/operator_categories/loaded":27,"./react/components/operator_categories/loading":28,"./react/components/operator_categories/loading_error":29,"./react/components/operator_categories/one_category":30,"./react/components/operator_categories/operator_categories":31,"./react/components/operator_categories/two_categories":32,"./react/components/operator_products/empty":34,"./react/components/operator_products/list/item":35,"./react/components/operator_products/list/item_drag":36,"./react/components/operator_products/list/items_drag":37,"./react/components/operator_products/list/list":38,"./react/components/operator_products/loading":39,"./react/components/operator_products/loading_error":40,"./react/components/operator_products/mixins/load_more_products":41,"./react/components/operator_products/operator_products":42,"./react/components/product/images/images":44,"./react/components/product/modification_list":50,"./react/components/product/modification_list_item":51,"./react/components/product/state":52,"./react/components/product/status_toggle":53,"./react/components/product/thumb":54,"./react/components/product/total_items_quantity":55,"./react/controllers/modal":56,"./react/dispatchers/_base":57,"./react/dispatchers/drag_state":58,"./react/dispatchers/operator_categories":59,"./react/dispatchers/operator_products":60,"./react/helpers/app":61,"./react/helpers/event":62,"./react/helpers/money":63,"./react/mixins/activities":64,"./react/mixins/category_droppable":65,"./react/mixins/component_manipulations":66,"./react/mixins/product_draggable":67,"./react/mixins/unmount":68,"./react/resources/categories":69,"./react/resources/products":70,"./react/services/operator_categories":71,"./react/services/operator_products":72,"./react/services/thumbor":73,"./react/services/uuid":74,"./react/stores/_base":75,"./react/stores/drag_state":76,"./react/stores/operator_categories":77,"./react/stores/operator_products":78}],80:[function(require,module,exports){
 window.ApiRoutes = {
   operator_product_image_delete_url: function(id) {
     return gon.operator_api_url + '/v1/products/images/' + id;
@@ -5224,7 +5227,7 @@ window.ApiRoutes = {
 
 
 
-},{}],80:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 window.Routes = {
   products_image_delete_path: function(id) {
     return gon.root_url + '/products/images/' + id;
@@ -5251,7 +5254,7 @@ window.Routes = {
 
 
 
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -5263,7 +5266,7 @@ window.Routes = {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":82}],82:[function(require,module,exports){
+},{"./lib/Dispatcher":83}],83:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -5515,7 +5518,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":83}],83:[function(require,module,exports){
+},{"./invariant":84}],84:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

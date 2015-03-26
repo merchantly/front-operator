@@ -26,7 +26,7 @@ gulp.task 'vendorScripts', ['clean'], ->
     .require './bootstrap-sass-official/assets/javascripts/bootstrap', { expose: 'bootstrapSass' }
     .require './react/react-with-addons',                              { expose: 'react' }
     .require './react-mixin-manager/react-mixin-manager',              { expose: 'react-mixin-manager' }
-    #.require '../scripts/libs/react_ujs',                              { expose: 'reactUjs' }
+    .require '../scripts/libs/react_ujs',                              { expose: 'reactUjs' }
     .require './eventEmitter/EventEmitter',                            { expose: 'eventEmitter' }
     .require './typeahead.js/dist/typeahead.bundle',                   { expose: 'typeahead' }
     .require './aviator/src/main',                                     { expose: 'aviator' }
@@ -75,7 +75,7 @@ gulp.task 'localScripts', ['clean'], ->
     .external 'jquery.ui.sortable'
     .external 'lodash'
     .external 'bootstrapSass'
-    #.external 'react'
+    .external 'react'
     .external 'react-mixin-manager'
     .external 'reactUjs'
     .external 'eventEmitter'
