@@ -1180,8 +1180,6 @@ window.Dispatcher = require('flux').Dispatcher;
 
 window.EventEmitter = require('eventEmitter');
 
-window.ReactUjs = require('reactUjs');
-
 Requester = require('./libs/requester');
 
 window.EB = new EventEmitter();
@@ -1232,7 +1230,7 @@ require('jquery-flot');
 
 
 
-},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":81,"icheck":"icheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
+},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":81,"icheck":"icheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react":"react","react-mixin-manager":"react-mixin-manager","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
 var Requester,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -35511,62 +35509,6 @@ m.className="jstree-icon jstree-checkbox",m.setAttribute("role","presentation"),
     }
   });
 });
-
-},{}],"reactUjs":[function(require,module,exports){
-var CLASS_NAME_ATTR, PROPS_ATTR, findReactDOMNodes, initialize, mountReactComponents, unmountReactComponents;
-
-CLASS_NAME_ATTR = 'data-react-class';
-
-PROPS_ATTR = 'data-react-props';
-
-findReactDOMNodes = function() {
-  var SELECTOR;
-  SELECTOR = '[' + CLASS_NAME_ATTR + ']';
-  return $(SELECTOR);
-};
-
-mountReactComponents = function() {
-  var className, component, i, node, nodes, props, propsJson, results;
-  nodes = findReactDOMNodes();
-  i = 0;
-  results = [];
-  while (i < nodes.length) {
-    node = nodes[i];
-    className = node.getAttribute(CLASS_NAME_ATTR);
-    component = window[className] || eval.call(window, className);
-    if (component != null) {
-      propsJson = node.getAttribute(PROPS_ATTR);
-      props = propsJson && JSON.parse(propsJson);
-      React.renderComponent(component(props), node);
-    }
-    results.push(++i);
-  }
-  return results;
-};
-
-unmountReactComponents = function() {
-  var i, nodes, results;
-  nodes = findReactDOMNodes();
-  i = 0;
-  results = [];
-  while (i < nodes.length) {
-    React.unmountComponentAtNode(nodes[i]);
-    results.push(++i);
-  }
-  return results;
-};
-
-initialize = function() {
-  mountReactComponents();
-  $(document).on('page:change', mountReactComponents);
-  return $(window).unload(unmountReactComponents);
-};
-
-module.exports = {
-  initialize: initialize
-};
-
-
 
 },{}],"react":[function(require,module,exports){
 (function (global){

@@ -28,7 +28,7 @@ gulp.task 'distScripts', ->
     .require './bower_components/bootstrap-sass-official/assets/javascripts/bootstrap', { expose: 'bootstrapSass' }
     .require './bower_components/react/react-with-addons',                              { expose: 'react' }
     .require './bower_components/react-mixin-manager/react-mixin-manager',              { expose: 'react-mixin-manager' }
-    .require './scripts/libs/react_ujs',                                                { expose: 'reactUjs' }
+    #.require './scripts/libs/react_ujs',                                                { expose: 'reactUjs' }
     .require './bower_components/eventEmitter/EventEmitter',                            { expose: 'eventEmitter' }
     .require './bower_components/typeahead.js/dist/typeahead.bundle',                   { expose: 'typeahead' }
     .require './bower_components/aviator/src/main',                                     { expose: 'aviator' }

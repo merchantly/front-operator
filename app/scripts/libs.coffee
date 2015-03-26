@@ -3,7 +3,7 @@ window.$ = window.jQuery = require 'jquery'
 window.React             = require 'react'
 window.Dispatcher        = require('flux').Dispatcher
 window.EventEmitter      = require 'eventEmitter'
-window.ReactUjs          = require 'reactUjs'
+#window.ReactUjs          = require 'reactUjs'
 Requester                = require './libs/requester'
 window.EB                = new EventEmitter()
 window.Requester         = new Requester(eb: window.EB)
