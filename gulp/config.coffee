@@ -1,6 +1,7 @@
 src   = './app'
 build = './build'
-dist  = './dist'
+dist  = './dist/operator'
+assets_dist  = './dist/operator'
 
 vendor_styles = [
   src + '/bower_components/select2/select2.css'
@@ -23,12 +24,12 @@ module.exports = {
       baseDir: src
       extensions: ['.coffee', '.jsx.coffee', '.js.jsx.coffee']
       entries: './scripts/dist.coffee'
-      dest: dist + '/scripts/'
-      outputName: 'operator_app.js'
+      dest: dist
+      outputName: 'dist.js'
     }
     images: {
       src: vendor_images
-      dest: dist + '/assets'
+      dest: assets_dist
     }
     html: {
       htmlSrc: src + '/*.html'
@@ -37,17 +38,17 @@ module.exports = {
     }
     sass: {
       src: src + '/stylesheets/dist.scss'
-      dest: dist + '/stylesheets'
+      dest: dist
       outputName: 'dist_sass.css'
     }
     fonts: {
       src: src + '/**/*.{eot,svg,ttf,woff}'
-      dest: dist + '/fonts'
+      dest: assets_dist
     }
     styles: {
       src: vendor_styles.concat( dist + '/stylesheets/dist_sass.css')
-      target: 'operator_app.css'
-      dest: dist + '/stylesheets'
+      target: 'dist.css'
+      dest: dist
     }
   }
   vendor: {

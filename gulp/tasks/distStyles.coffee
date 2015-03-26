@@ -10,7 +10,7 @@ gulp.task 'distStyles', ['distFonts', 'distSass'], ->
   gulp.src config.src
     .on 'error', handleErrors
     .pipe concatCss(config.target, rebaseUrls: false)
-    .pipe urlAdjuster(prepend: '/assets/operator/dist/assets/')
+    .pipe urlAdjuster(prepend: '/assets/operator/')
     .pipe autoprefixer('last 2 versions')
     .pipe minifyCSS()
     .pipe gulp.dest config.dest
