@@ -12,8 +12,8 @@ vendor_styles = [
 ]
 vendor_images = [
   src + '/assets/**/*'
-  src + '/bower_components/iCheck/skins/square/green.png'
-  src + '/bower_components/iCheck/skins/flat/blue.png'
+  src + '/bower_components/iCheck/skins/square/green*.png'
+  src + '/bower_components/iCheck/skins/flat/blue*.png'
   src + '/bower_components/jstree/dist/themes/default/*.png'
 ]
 
