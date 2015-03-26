@@ -2,6 +2,9 @@
 
 // Тут прописываем всякие font-path и image-path
 $images-path: "../assets";
-$fa-font-path: "../fonts";
+
+// Awesome font мы не подключаем, потому что
+// в рельсах он подключается напрямую
+//@import "font-awesome/scss/font-awesome";
 
 @import "bundle";

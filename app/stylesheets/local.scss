@@ -7,4 +7,8 @@
 $fa-font-path: "../fonts";
 $images-path: "../assets";
 
+// Awesome font мы подключаем тут,
+// потому что, в дитрибутив он не идет (подключается в рельсах напрямую)
+@import "font-awesome/scss/font-awesome";
+
 @import "bundle";
