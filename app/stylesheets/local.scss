@@ -4,8 +4,8 @@
 // который лежит в каталоге ./stylesheets
 
 // Все фонты копируются в эту папку, поэтому Font awesome тоже берется отсюда
-$fa-font-path: "../fonts";
-$images-path: "../assets";
+$font-path: "../fonts";
+$image-path: "../assets";
 
 // Awesome font мы подключаем тут,
 // потому что, в дитрибутив он не идет (подключается в рельсах напрямую)
