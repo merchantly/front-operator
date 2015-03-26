@@ -8,7 +8,7 @@ vendor_assets = [
   src + '/bower_components/switchery/switchery'
   src + '/bower_components/iCheck/skins/square/green.css'
   src + '/bower_components/iCheck/skins/flat/blue.css'
-  src + '/bower_components/jstree/dist/themes/default/style.min'
+  src + '/bower_components/jstree/dist/themes/default/style.css'
 ]
 
 module.exports = {
