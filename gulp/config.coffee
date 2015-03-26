@@ -46,7 +46,7 @@ module.exports = {
       dest: assets_dist
     }
     styles: {
-      src: vendor_styles.concat( dist + '/stylesheets/dist_sass.css')
+      src: vendor_styles.concat( dist + '/dist_sass.css')
       target: 'dist.css'
       dest: dist
     }
