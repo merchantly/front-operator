@@ -24,7 +24,7 @@ module.exports = {
       extensions: ['.coffee', '.jsx.coffee', '.js.jsx.coffee']
       entries: './scripts/dist.coffee'
       dest: dist + '/scripts/'
-      outputName: 'app.js'
+      outputName: 'operator_app.js'
     }
     images: {
       src: vendor_images
@@ -46,7 +46,7 @@ module.exports = {
     }
     styles: {
       src: vendor_styles.concat( dist + '/stylesheets/dist_sass.css')
-      target: 'dist.css'
+      target: 'operator_app.css'
       dest: dist + '/stylesheets'
     }
   }
@@ -100,14 +100,14 @@ module.exports = {
     dest: build + '/fonts'
   }
   minifyScripts: {
-    src: dist + '/scripts/app.js'
+    src: dist + '/scripts/operator_app.js'
     dest: dist + '/scripts'
-    outputName: 'app.min.js'
+    outputName: 'operator_app.min.js'
   }
   minifyStyles: {
-    src: dist + '/stylesheets/app.css'
+    src: dist + '/stylesheets/operator_app.css'
     dest: dist + '/stylesheets'
-    outputName: 'app.min.css'
+    outputName: 'operator_app.min.css'
   }
   clean: {
     dest: [build, dist]
