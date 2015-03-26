@@ -38,7 +38,7 @@ require 'select2'
 require 'metisMenu'
 #require 'switchery'
 require 'icheck'
-require 'toastr'
+window.toastr = require 'toastr'
 require 'jstree'
 require 'jquery-flot'
 

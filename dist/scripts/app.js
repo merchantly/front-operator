@@ -1224,7 +1224,7 @@ require('metisMenu');
 
 require('icheck');
 
-require('toastr');
+window.toastr = require('toastr');
 
 require('jstree');
 
