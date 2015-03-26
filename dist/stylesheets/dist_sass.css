@@ -12520,290 +12520,294 @@ table.table-mail tr td {
   padding: 40px; }
 
 /* line 662, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+.p-l-none {
+  padding-left: 0; }
+
+/* line 665, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xxs {
   margin: 2px 4px; }
 
-/* line 665, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 668, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xs {
   margin: 5px; }
 
-/* line 668, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 671, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-sm {
   margin: 10px; }
 
-/* line 671, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 674, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m {
   margin: 15px; }
 
-/* line 674, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 677, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-md {
   margin: 20px; }
 
-/* line 677, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 680, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-lg {
   margin: 30px; }
 
-/* line 680, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 683, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xl {
   margin: 50px; }
 
-/* line 683, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 686, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-n {
   margin: 0 !important; }
 
-/* line 686, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 689, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-none {
   margin-left: 0; }
 
-/* line 689, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 692, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-xs {
   margin-left: 5px; }
 
-/* line 692, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 695, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-sm {
   margin-left: 10px; }
 
-/* line 695, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 698, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l {
   margin-left: 15px; }
 
-/* line 698, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 701, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-md {
   margin-left: 20px; }
 
-/* line 701, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 704, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-lg {
   margin-left: 30px; }
 
-/* line 704, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 707, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-xl {
   margin-left: 40px; }
 
-/* line 707, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 710, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xxs {
   margin-left: -1px; }
 
-/* line 710, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 713, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xs {
   margin-left: -5px; }
 
-/* line 713, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 716, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-sm {
   margin-left: -10px; }
 
-/* line 716, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 719, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n {
   margin-left: -15px; }
 
-/* line 719, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 722, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-md {
   margin-left: -20px; }
 
-/* line 722, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 725, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-lg {
   margin-left: -30px; }
 
-/* line 725, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 728, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xl {
   margin-left: -40px; }
 
-/* line 728, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 731, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-none {
   margin-top: 0; }
 
-/* line 731, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 734, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xxs {
   margin-top: 1px; }
 
-/* line 734, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 737, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xs {
   margin-top: 5px; }
 
-/* line 737, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 740, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-sm {
   margin-top: 10px; }
 
-/* line 740, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 743, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t {
   margin-top: 15px; }
 
-/* line 743, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 746, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-md {
   margin-top: 20px; }
 
-/* line 746, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 749, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-lg {
   margin-top: 30px; }
 
-/* line 749, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 752, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xl {
   margin-top: 40px; }
 
-/* line 752, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 755, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xxs {
   margin-top: -1px; }
 
-/* line 755, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 758, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xs {
   margin-top: -5px; }
 
-/* line 758, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 761, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-sm {
   margin-top: -10px; }
 
-/* line 761, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 764, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n {
   margin-top: -15px; }
 
-/* line 764, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 767, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-md {
   margin-top: -20px; }
 
-/* line 767, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 770, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-lg {
   margin-top: -30px; }
 
-/* line 770, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 773, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xl {
   margin-top: -40px; }
 
-/* line 773, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 776, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-none {
   margin-right: 0; }
 
-/* line 776, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 779, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xxs {
   margin-right: 1px; }
 
-/* line 779, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 782, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xs {
   margin-right: 5px; }
 
-/* line 782, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 785, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-sm {
   margin-right: 10px; }
 
-/* line 785, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 788, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r {
   margin-right: 15px; }
 
-/* line 788, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 791, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-md {
   margin-right: 20px; }
 
-/* line 791, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 794, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-lg {
   margin-right: 30px; }
 
-/* line 794, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 797, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xl {
   margin-right: 40px; }
 
-/* line 797, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 800, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xxs {
   margin-right: -1px; }
 
-/* line 800, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 803, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xs {
   margin-right: -5px; }
 
-/* line 803, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 806, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-sm {
   margin-right: -10px; }
 
-/* line 806, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 809, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n {
   margin-right: -15px; }
 
-/* line 809, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 812, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-md {
   margin-right: -20px; }
 
-/* line 812, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 815, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-lg {
   margin-right: -30px; }
 
-/* line 815, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 818, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xl {
   margin-right: -40px; }
 
-/* line 818, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 821, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-none {
   margin-bottom: 0; }
 
-/* line 821, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 824, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xxs {
   margin-bottom: 1px; }
 
-/* line 824, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 827, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xs {
   margin-bottom: 5px; }
 
-/* line 827, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 830, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-sm {
   margin-bottom: 10px; }
 
-/* line 830, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 833, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b {
   margin-bottom: 15px; }
 
-/* line 833, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 836, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-md {
   margin-bottom: 20px; }
 
-/* line 836, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 839, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-lg {
   margin-bottom: 30px; }
 
-/* line 839, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 842, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xl {
   margin-bottom: 40px; }
 
-/* line 842, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 845, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xxs {
   margin-bottom: -1px; }
 
-/* line 845, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 848, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xs {
   margin-bottom: -5px; }
 
-/* line 848, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 851, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-sm {
   margin-bottom: -10px; }
 
-/* line 851, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 854, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n {
   margin-bottom: -15px; }
 
-/* line 854, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 857, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-md {
   margin-bottom: -20px; }
 
-/* line 857, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 860, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-lg {
   margin-bottom: -30px; }
 
-/* line 860, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 863, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xl {
   margin-bottom: -40px; }
 
-/* line 863, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 866, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-15 {
   margin: 15px 0; }
 
-/* line 866, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 869, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-20 {
   margin: 20px 0; }
 
-/* line 869, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 872, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-25 {
   margin: 25px 0; }
 
-/* line 872, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 875, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-30 {
   margin: 30px 0; }
 
-/* line 876, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 879, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 body.modal-open {
   padding-right: inherit !important; }
 
@@ -14447,11 +14451,6 @@ body.skin-3 {
   /* line 86, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/inspinia/media */
   .nav.navbar-top-links li.dropdown {
     display: none; } }
-
-/* === Kiosk === */
-/* line 1, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/kiosk/grid */
-.p-l-none {
-  padding-left: 0; }
 
 /* line 2, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/kiosk/components/alerts */
 .alert .close {
