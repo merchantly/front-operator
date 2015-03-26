@@ -36,6 +36,11 @@ gulp.task 'distScripts', ->
     .require './bower_components/slimscroll/jquery.slimscroll',                         { expose: 'jquery.slimscroll' }
     .require './bower_components/pace/pace',                                            { expose: 'pace' }
     .require './bower_components/select2/select2',                                      { expose: 'select2' }
+    #.require './bower_components/switchery/dist/switchery.min',                         { expose: 'switchery' }
+    .require './bower_components/iCheck/icheck',                                        { expose: 'icheck' }
+    .require './bower_components/toastr/toastr',                                        { expose: 'toastr' }
+    .require './bower_components/jstree/dist/jstree.min',                               { expose: 'jstree' }
+    .require './bower_components/jquery-flot/jquery.flot',                              { expose: 'jquery-flot' }
 
   bundle = ->
     bundleLogger.start config.outputName

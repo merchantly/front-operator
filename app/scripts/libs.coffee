@@ -25,10 +25,20 @@ require 'jquery.role'
 require('react-mixin-manager')(window.React)
 require 'bootstrapSass'
 require 'typeahead'
-require 'aviator'
+#require 'aviator'
 
 # Inspinia
 require 'metisMenu'
-require 'jquery.slimscroll'
+# не используется в коиске, пока
+#require 'jquery.slimscroll'
 require 'pace'
 require 'select2'
+
+# require 'slimscroll/jquery.slimscroll.min.js'
+require 'metisMenu'
+#require 'switchery'
+require 'icheck'
+require 'toastr'
+require 'jstree'
+require 'jquery-flot'
+

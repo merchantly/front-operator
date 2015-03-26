@@ -34,6 +34,12 @@ gulp.task 'vendorScripts', ['clean'], ->
     .require './slimscroll/jquery.slimscroll',                         { expose: 'jquery.slimscroll' }
     .require './pace/pace',                                            { expose: 'pace' }
     .require './select2/select2',                                      { expose: 'select2' }
+    #.require './switchery/dist/switchery.min',                         { expose: 'switchery' }
+    .require './iCheck/icheck',                                        { expose: 'icheck' }
+    .require './toastr/toastr',                                        { expose: 'toastr' }
+    .require './jstree/dist/jstree.min',                               { expose: 'jstree' }
+    .require './jquery-flot/jquery.flot',                              { expose: 'jquery-flot' }
+
 
   bundle = ->
     bundleLogger.start vendorConfig.outputName
@@ -77,6 +83,11 @@ gulp.task 'localScripts', ['clean'], ->
     .external 'aviator'
     .external 'pace'
     .external 'select2'
+    #.external 'switchery'
+    .external 'icheck'
+    .external 'toastr'
+    .external 'jstree'
+    .external 'jquery-flot'
 
   bundle = ->
     bundleLogger.start localConfig.outputName

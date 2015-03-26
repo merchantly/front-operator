@@ -1,6 +1,6 @@
 window.KioskOperatorApp =
 
-  start: ({ vendor_key, operator }) ->
+  start: ({ vendor_key, operator, access_key }) ->
     console.log "KioskOperatorApp start for vendor: #{vendor_key}, operator: #{operator.name}"
 
     $.ajaxSetup
@@ -8,28 +8,12 @@ window.KioskOperatorApp =
         withCredentials: true
         crossDomain:     true
       headers:
-        'X-Vendor-Key': vendor_key
+        'X-Vendor-Key':  vendor_key
+        'X-Operator-Id': operator.id
+        'X-Access-Key':  access_key
 
-    # /*==========  Router  ==========*/
-
-    OperatorRouteTarget = {
-      categories: (req) ->
-        #TODO: Render OperatorCategories with specific params
-        # console.log req.queryParams
-    }
-
-    Aviator.setRoutes {
-      '/operator': {
-        target: OperatorRouteTarget
-        '/categories': 'categories'
-      }
-    }
-
-    Aviator.dispatch()
-
-    # /*-----  End of Router  ------*/
-
+    #Routing.start()
+    # Стратуем реквесты
     window.EB.emit 'start'
-    ReactUjs.initialize()
 
   error_alert: (message) -> alert message

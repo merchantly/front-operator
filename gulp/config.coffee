@@ -21,7 +21,10 @@ module.exports = {
       outputName: 'app.js'
     }
     images: {
-      src: src + '/assets/**/*'
+      src: [
+        src + '/assets/**/*'
+        src + '/bower_components/jstree/dist/themes/default/*.png'
+      ]
       dest: dist + '/assets'
     }
     html: {
