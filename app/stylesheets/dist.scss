@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 // Тут прописываем всякие font-path и image-path
-$images-path: "../assets";
+$font-path: "../fonts";
+$image-path: "../assets";
 
 // Awesome font мы не подключаем, потому что
 // в рельсах он подключается напрямую
