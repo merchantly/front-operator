@@ -41,7 +41,8 @@
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.1",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.0.0"
+    "watchify": "^2.0.0",
+    "gulp-css-url-adjuster": "~0.2.3"
   },
   "engines": {
     "node": ">=0.10.32"

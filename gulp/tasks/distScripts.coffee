@@ -33,6 +33,7 @@ gulp.task 'distScripts', ->
     .require './bower_components/typeahead.js/dist/typeahead.bundle',                   { expose: 'typeahead' }
     .require './bower_components/aviator/src/main',                                     { expose: 'aviator' }
     .require './bower_components/metisMenu/dist/metisMenu',                             { expose: 'metisMenu' }
+    .require './bower_components/iCheck/icheck',                                        { expose: 'iCheck' }
     .require './bower_components/slimscroll/jquery.slimscroll',                         { expose: 'jquery.slimscroll' }
     .require './bower_components/pace/pace',                                            { expose: 'pace' }
     .require './bower_components/select2/select2',                                      { expose: 'select2' }

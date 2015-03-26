@@ -2,13 +2,19 @@ src   = './app'
 build = './build'
 dist  = './dist'
 
-vendor_assets = [
+vendor_styles = [
   src + '/bower_components/select2/select2.css'
   src + '/bower_components/select2/select2-bootstrap.css'
   src + '/bower_components/switchery/switchery'
   src + '/bower_components/iCheck/skins/square/green.css'
   src + '/bower_components/iCheck/skins/flat/blue.css'
   src + '/bower_components/jstree/dist/themes/default/style.css'
+]
+vendor_images = [
+  src + '/assets/**/*'
+  src + '/bower_components/iCheck/skins/square/green.png'
+  src + '/bower_components/iCheck/skins/flat/blue.png'
+  src + '/bower_components/jstree/dist/themes/default/*.png'
 ]
 
 module.exports = {
@@ -21,10 +27,7 @@ module.exports = {
       outputName: 'app.js'
     }
     images: {
-      src: [
-        src + '/assets/**/*'
-        src + '/bower_components/jstree/dist/themes/default/*.png'
-      ]
+      src: vendor_images
       dest: dist + '/assets'
     }
     html: {
@@ -42,7 +45,7 @@ module.exports = {
       dest: dist + '/fonts'
     }
     styles: {
-      src: vendor_assets.concat( dist + '/stylesheets/dist_sass.css')
+      src: vendor_styles.concat( dist + '/stylesheets/dist_sass.css')
       target: 'dist.css'
       dest: dist + '/stylesheets'
     }
@@ -84,7 +87,7 @@ module.exports = {
     outputName: 'local_sass.css'
   }
   stylesheets: {
-    src: vendor_assets.concat( build + '/stylesheets/local_sass.css' )
+    src: vendor_styles.concat( build + '/stylesheets/local_sass.css' )
     target: 'local.css'
     dest: build + '/stylesheets'
   }

@@ -1096,7 +1096,7 @@ require('select2');
 
 require('metisMenu');
 
-require('icheck');
+require('iCheck');
 
 window.toastr = require('toastr');
 
@@ -1106,7 +1106,7 @@ require('jquery-flot');
 
 
 
-},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":82,"icheck":"icheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react-mixin-manager":"react-mixin-manager","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
+},{"./libs/requester":9,"bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","flux":82,"iCheck":"iCheck","jquery":"jquery","jquery-flot":"jquery-flot","jquery.autosize":"jquery.autosize","jquery.fileupload":"jquery.fileupload","jquery.role":"jquery.role","jquery.ui.core":"jquery.ui.core","jquery.ui.draggable":"jquery.ui.draggable","jquery.ui.droppable":"jquery.ui.droppable","jquery.ui.mouse":"jquery.ui.mouse","jquery.ui.sortable":"jquery.ui.sortable","jquery.ui.widget":"jquery.ui.widget","jstree":"jstree","lodash":"lodash","metisMenu":"metisMenu","pace":"pace","react-mixin-manager":"react-mixin-manager","select2":"select2","toastr":"toastr","typeahead":"typeahead"}],9:[function(require,module,exports){
 var Requester,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -8289,7 +8289,7 @@ window.Aviator = {
     }
 }.call(this));
 
-},{}],"icheck":[function(require,module,exports){
+},{}],"iCheck":[function(require,module,exports){
 /*!
  * iCheck v1.0.2, http://git.io/arlzeA
  * ===================================
