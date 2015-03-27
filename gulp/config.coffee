@@ -16,6 +16,7 @@ vendor_images = [
   src + '/bower_components/iCheck/skins/square/green*.png'
   src + '/bower_components/iCheck/skins/flat/blue*.png'
   src + '/bower_components/jstree/dist/themes/default/*.png'
+  src + '/bower_components/select2/*.{png,gif}'
 ]
 
 module.exports = {
