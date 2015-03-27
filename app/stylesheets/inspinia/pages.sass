@@ -330,7 +330,7 @@ ul.notes li div
   margin-top: 5px
   display: block
 
-.file
+.file-input
   border: 1px solid $border-color
   padding: 0
   background-color: #ffffff
@@ -341,11 +341,11 @@ ul.notes li div
 .file-manager .hr-line-dashed
   margin: 15px 0
 
-.file .icon, .file .image
+.file-input .icon, .file-input .image
   height: 100px
   overflow: hidden
 
-.file .icon
+.file-input .icon
   padding: 15px 10px
   text-align: center
 
@@ -357,11 +357,11 @@ ul.notes li div
 .file-control.active
   text-decoration: underline
 
-.file .icon i
+.file-input .icon i
   font-size: 70px
   color: #dadada
 
-.file .file-name
+.file-input .file-name
   padding: 10px
   background-color: #f8f8f8
   border-top: 1px solid $border-color
@@ -550,7 +550,9 @@ dd.project-people
   border-radius: 3px
   padding: 15px
 
+.entities-tag-list .tag-item,
 .faq-item .tag-item
+  display: inline-block
   background: $gray
   padding: 2px 6px
   font-size: 10px
