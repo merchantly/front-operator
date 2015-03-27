@@ -1,3 +1,18 @@
+/* === Bootstrap === */
+/* === System === */
+/* line 11, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
+.btn-primary, .btn-info, .btn-danger, .btn-warning, .btn-success {
+  -webkit-font-smoothing: antialiased; }
+
+/* line 28, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/fonts */
+body {
+  color: #4c5958; }
+
+/* line 32, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/fonts */
+small, .small {
+  font-size: 12px; }
+
+/* === Bootstrap === */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /* line 9, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/normalize */
 html {
@@ -1083,7 +1098,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #333333;
+  color: #0f0f0f;
   background-color: #fff; }
 
 /* line 39, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding */
@@ -1123,7 +1138,7 @@ img {
 
 /* line 86, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding */
 .img-rounded {
-  border-radius: 6px; }
+  border-radius: 2px; }
 
 /* line 93, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding */
 .img-thumbnail {
@@ -1149,7 +1164,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee; }
+  border-top: 1px solid #e8e8e8; }
 
 /* line 125, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding */
 .sr-only {
@@ -1175,8 +1190,8 @@ hr {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.1;
-  color: inherit; }
+  line-height: 1.3;
+  color: #0f0f0f; }
   /* line 17, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
   h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small {
     font-weight: normal;
@@ -1201,19 +1216,19 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 /* line 47, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h1, .h1 {
-  font-size: 36px; }
+  font-size: 21px; }
 
 /* line 48, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h2, .h2 {
-  font-size: 30px; }
+  font-size: 19px; }
 
 /* line 49, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h3, .h3 {
-  font-size: 24px; }
+  font-size: 17px; }
 
 /* line 50, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h4, .h4 {
-  font-size: 18px; }
+  font-size: 15px; }
 
 /* line 51, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h5, .h5 {
@@ -1221,7 +1236,7 @@ h5, .h5 {
 
 /* line 52, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 h6, .h6 {
-  font-size: 12px; }
+  font-size: 13px; }
 
 /* line 58, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 p {
@@ -1239,7 +1254,7 @@ p {
 
 /* line 79, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 small, .small {
-  font-size: 85%; }
+  font-size: 92%; }
 
 /* line 84, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type */
 cite {
@@ -1288,11 +1303,11 @@ mark, .mark {
 
 /* line 5, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/text-emphasis */
 .text-primary {
-  color: #428bca; }
+  color: #007099; }
 
 /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/text-emphasis */
 a.text-primary:hover {
-  color: #3073a9; }
+  color: #004b66; }
 
 /* line 5, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/text-emphasis */
 .text-success {
@@ -1332,11 +1347,11 @@ a.text-danger:hover {
 
 /* line 5, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/background-variant */
 .bg-primary {
-  background-color: #428bca; }
+  background-color: #007099; }
 
 /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/background-variant */
 a.bg-primary:hover {
-  background-color: #3073a9; }
+  background-color: #004b66; }
 
 /* line 5, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/background-variant */
 .bg-success {
@@ -1499,7 +1514,7 @@ code {
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
-  border-radius: 4px; }
+  border-radius: 2px; }
 
 /* line 24, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/code */
 kbd {
@@ -1527,7 +1542,7 @@ pre {
   color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
-  border-radius: 4px; }
+  border-radius: 2px; }
   /* line 54, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/code */
   pre code {
     padding: 0;
@@ -2492,7 +2507,7 @@ output {
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -2607,7 +2622,7 @@ input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] 
 .input-sm, .form-horizontal .form-group-sm .form-control, .input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   border-radius: 3px; }
 
@@ -2624,9 +2639,9 @@ textarea.input-sm, .form-horizontal .form-group-sm textarea.form-control, .input
 .input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.33;
-  border-radius: 6px; }
+  border-radius: 2px; }
 
 /* line 75, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/forms */
 select.input-lg, .form-horizontal .form-group-lg select.form-control, .input-group-lg > select.form-control, .input-group-lg > select.input-group-addon, .input-group-lg > .input-group-btn > select.btn, select.btn-add-fields, select.btn-remove-circle, select.adm-btn-remove-order, select.adm-btn-remove, select.adm-btn-submit, select.adm-btn-settings, select.adm-btn-categories-settings, select.adm-btn-auth, select.adm-btn-auth-reg, select.adm-btn-auth-login, select.login__form-submit-btn {
@@ -2743,7 +2758,7 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373; }
+  color: #4f4f4f; }
 
 @media (min-width: 768px) {
   /* line 400, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/forms */
@@ -2839,7 +2854,7 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
-  border-radius: 4px;
+  border-radius: 2px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2893,23 +2908,23 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
 /* line 60, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons */
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #3580bd; }
+  background-color: #ffd600;
+  border-color: #ffd600; }
   /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/buttons */
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #3073a9;
-    border-color: #28608e; }
+    background-color: #ccaa00;
+    border-color: #c2a200; }
   /* line 22, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/buttons */
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   /* line 32, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/buttons */
   .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-    background-color: #428bca;
-    border-color: #3580bd; }
+    background-color: #ffd600;
+    border-color: #ffd600; }
   /* line 38, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/buttons */
   .btn-primary .badge {
-    color: #428bca;
+    color: #ffd600;
     background-color: #fff; }
 
 /* line 64, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons */
@@ -3027,21 +3042,21 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
 /* line 124, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons */
 .btn-lg, .btn-group-lg > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .login__form-submit-btn {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.33;
-  border-radius: 6px; }
+  border-radius: 2px; }
 
 /* line 128, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons */
 .btn-sm, .btn-group-sm > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   border-radius: 3px; }
 
 /* line 132, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons */
 .btn-xs, .btn-group-xs > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   padding: 1px 5px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   border-radius: 3px; }
 
@@ -3128,7 +3143,7 @@ tbody.collapse.in {
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
@@ -3198,7 +3213,7 @@ tbody.collapse.in {
 .dropdown-header {
   display: block;
   padding: 3px 20px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.42857;
   color: #777777;
   white-space: nowrap; }
@@ -3372,12 +3387,12 @@ tbody.collapse.in {
   border-radius: 0; }
 /* line 178, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups */
 .btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .btn-add-fields:first-child:not(:last-child), .btn-group-vertical > .btn-remove-circle:first-child:not(:last-child), .btn-group-vertical > %adm-btn-remove:first-child:not(:last-child), .btn-group-vertical > .adm-btn-remove-order:first-child:not(:last-child), .btn-group-vertical > .adm-btn-remove:first-child:not(:last-child), .btn-group-vertical > .adm-btn-submit:first-child:not(:last-child), .btn-group-vertical > .adm-btn-settings:first-child:not(:last-child), .btn-group-vertical > .adm-btn-categories-settings:first-child:not(:last-child), .btn-group-vertical > %adm-btn-auth:first-child:not(:last-child), .btn-group-vertical > .adm-btn-auth:first-child:not(:last-child), .btn-group-vertical > .adm-btn-auth-reg:first-child:not(:last-child), .btn-group-vertical > .adm-btn-auth-login:first-child:not(:last-child), .btn-group-vertical > .login__form-submit-btn:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
+  border-top-right-radius: 2px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 /* line 182, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups */
 .btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .btn-add-fields:last-child:not(:first-child), .btn-group-vertical > .btn-remove-circle:last-child:not(:first-child), .btn-group-vertical > %adm-btn-remove:last-child:not(:first-child), .btn-group-vertical > .adm-btn-remove-order:last-child:not(:first-child), .btn-group-vertical > .adm-btn-remove:last-child:not(:first-child), .btn-group-vertical > .adm-btn-submit:last-child:not(:first-child), .btn-group-vertical > .adm-btn-settings:last-child:not(:first-child), .btn-group-vertical > .adm-btn-categories-settings:last-child:not(:first-child), .btn-group-vertical > %adm-btn-auth:last-child:not(:first-child), .btn-group-vertical > .adm-btn-auth:last-child:not(:first-child), .btn-group-vertical > .adm-btn-auth-reg:last-child:not(:first-child), .btn-group-vertical > .adm-btn-auth-login:last-child:not(:first-child), .btn-group-vertical > .login__form-submit-btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 2px;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3461,17 +3476,17 @@ tbody.collapse.in {
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #ccc;
-  border-radius: 4px; }
+  border-radius: 2px; }
   /* line 85, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/input-groups */
   .input-group-addon.input-sm, .form-horizontal .form-group-sm .input-group-addon.form-control, .input-group-sm > .input-group-addon.form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .input-group-addon.btn, .input-group-addon.btn-add-fields, .input-group-addon.btn-remove-circle, .input-group-addon.adm-btn-remove-order, .input-group-addon.adm-btn-remove, .input-group-addon.adm-btn-submit, .input-group-addon.adm-btn-settings, .input-group-addon.adm-btn-categories-settings, .input-group-addon.adm-btn-auth, .input-group-addon.adm-btn-auth-reg, .input-group-addon.adm-btn-auth-login, .input-group-addon.login__form-submit-btn {
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 13px;
     border-radius: 3px; }
   /* line 90, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/input-groups */
   .input-group-addon.input-lg, .form-horizontal .form-group-lg .input-group-addon.form-control, .input-group-lg > .input-group-addon.form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .input-group-addon.btn, .input-group-addon.btn-add-fields, .input-group-addon.btn-remove-circle, .input-group-addon.adm-btn-remove-order, .input-group-addon.adm-btn-remove, .input-group-addon.adm-btn-submit, .input-group-addon.adm-btn-settings, .input-group-addon.adm-btn-categories-settings, .input-group-addon.adm-btn-auth, .input-group-addon.adm-btn-auth-reg, .input-group-addon.adm-btn-auth-login, .input-group-addon.login__form-submit-btn {
     padding: 10px 16px;
-    font-size: 18px;
-    border-radius: 6px; }
+    font-size: 15px;
+    border-radius: 2px; }
   /* line 98, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/input-groups */
   .input-group-addon input[type="radio"], .input-group-addon input[type="checkbox"] {
     margin-top: 0; }
@@ -3575,7 +3590,7 @@ tbody.collapse.in {
       margin-right: 2px;
       line-height: 1.42857;
       border: 1px solid transparent;
-      border-radius: 4px 4px 0 0; }
+      border-radius: 2px 2px 0 0; }
       /* line 89, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs */
       .nav-tabs > li > a:hover {
         border-color: #eeeeee #eeeeee #ddd; }
@@ -3638,7 +3653,7 @@ tbody.collapse.in {
   /* line 193, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs */
   .nav-tabs-justified > li > a, .nav-tabs-justified > li > .nav-tabs.nav-justified, .nav-tabs-justified > li > .nav-tabs.nav-justified {
     margin-right: 0;
-    border-radius: 4px; }
+    border-radius: 2px; }
   /* line 201, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs */
   .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:hover, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:focus, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified {
     border: 1px solid #ddd; }
@@ -3646,7 +3661,7 @@ tbody.collapse.in {
     /* line 206, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs */
     .nav-tabs-justified > li > a, .nav-tabs-justified > li > .nav-tabs.nav-justified, .nav-tabs-justified > li > .nav-tabs.nav-justified {
       border-bottom: 1px solid #ddd;
-      border-radius: 4px 4px 0 0; }
+      border-radius: 2px 2px 0 0; }
     /* line 212, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs */
     .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:hover, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:focus, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified {
       border-bottom-color: #fff; } }
@@ -3667,7 +3682,7 @@ tbody.collapse.in {
 /* line 11, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar, .navbar-transparent {
   position: relative;
-  min-height: 50px;
+  min-height: 72px;
   margin-bottom: 20px;
   border: 1px solid transparent; }
   /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
@@ -3679,7 +3694,7 @@ tbody.collapse.in {
     clear: both; }
   @media (min-width: 768px) {
     .navbar {
-      border-radius: 4px; } }
+      border-radius: 0; } }
 
 /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
 .navbar-header:before, .navbar-header:after {
@@ -3779,10 +3794,10 @@ tbody.collapse.in {
 /* line 164, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
-  font-size: 18px;
+  padding: 26px 15px;
+  font-size: 15px;
   line-height: 20px;
-  height: 50px; }
+  height: 72px; }
   /* line 172, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
@@ -3797,12 +3812,12 @@ tbody.collapse.in {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 19px;
+  margin-bottom: 19px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px; }
+  border-radius: 2px; }
   /* line 203, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-toggle:focus {
     outline: 0; }
@@ -3821,7 +3836,7 @@ tbody.collapse.in {
 
 /* line 229, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar-nav {
-  margin: 7.5px -15px; }
+  margin: 13px -15px; }
   /* line 232, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-nav > li > a {
     padding-top: 10px;
@@ -3855,8 +3870,8 @@ tbody.collapse.in {
         float: left; }
         /* line 269, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
         .navbar-nav > li > a {
-          padding-top: 15px;
-          padding-bottom: 15px; }
+          padding-top: 26px;
+          padding-bottom: 26px; }
       /* line 275, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
       .navbar-nav.navbar-right:last-child {
         margin-right: -15px; } }
@@ -3878,8 +3893,8 @@ tbody.collapse.in {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px; }
+  margin-top: 19px;
+  margin-bottom: 19px; }
   @media (max-width: 767px) {
     .navbar-form .form-group {
       margin-bottom: 5px; } }
@@ -3910,21 +3925,21 @@ tbody.collapse.in {
 
 /* line 359, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px; }
+  margin-top: 19px;
+  margin-bottom: 19px; }
   /* line 362, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .navbar-btn.btn-add-fields, .navbar-btn.btn-remove-circle, .navbar-btn.adm-btn-remove-order, .navbar-btn.adm-btn-remove, .navbar-btn.adm-btn-submit, .navbar-btn.adm-btn-settings, .navbar-btn.adm-btn-categories-settings, .navbar-btn.adm-btn-auth, .navbar-btn.adm-btn-auth-reg, .navbar-btn.adm-btn-auth-login, .navbar-btn.login__form-submit-btn {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 21px;
+    margin-bottom: 21px; }
   /* line 365, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .navbar-btn.btn-add-fields, .navbar-btn.btn-remove-circle, .navbar-btn.adm-btn-remove-order, .navbar-btn.adm-btn-remove, .navbar-btn.adm-btn-submit, .navbar-btn.adm-btn-settings, .navbar-btn.adm-btn-categories-settings, .navbar-btn.adm-btn-auth, .navbar-btn.adm-btn-auth-reg, .navbar-btn.adm-btn-auth-login, .navbar-btn.login__form-submit-btn {
-    margin-top: 14px;
-    margin-bottom: 14px; }
+    margin-top: 25px;
+    margin-bottom: 25px; }
 
 /* line 375, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-top: 26px;
+  margin-bottom: 26px; }
   @media (min-width: 768px) {
     .navbar-text {
       float: left;
@@ -3936,8 +3951,8 @@ tbody.collapse.in {
 
 /* line 394, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7; }
+  background-color: #fff;
+  border-color: #eeeeee; }
   /* line 398, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-brand {
     color: #777; }
@@ -3947,18 +3962,18 @@ tbody.collapse.in {
       background-color: transparent; }
   /* line 407, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-text {
-    color: #777; }
+    color: #0f0f0f; }
   /* line 412, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-nav > li > a {
-    color: #777; }
+    color: #428bca; }
     /* line 416, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #333;
+      color: #00b9ff;
       background-color: transparent; }
   /* line 424, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #e7e7e7; }
+    color: #ffd600;
+    background-color: transparent; }
   /* line 432, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #ccc;
@@ -3974,39 +3989,39 @@ tbody.collapse.in {
       background-color: #888; }
   /* line 451, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7; }
+    border-color: #eeeeee; }
   /* line 461, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
-    color: #555; }
+    background-color: transparent;
+    color: #ffd600; }
   @media (max-width: 767px) {
     /* line 470, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-      color: #777; }
+      color: #428bca; }
       /* line 473, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #333;
+        color: #00b9ff;
         background-color: transparent; }
     /* line 481, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-      color: #555;
-      background-color: #e7e7e7; }
+      color: #ffd600;
+      background-color: transparent; }
     /* line 489, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
   /* line 503, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .navbar-link {
-    color: #777; }
+    color: #428bca; }
     /* line 505, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .navbar-link:hover {
-      color: #333; }
+      color: #00b9ff; }
   /* line 510, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
   .navbar-default .btn-link, .navbar-default .btn-link-light, .navbar-default .btn-link-lighter, .navbar-default .btn-link-brand, .navbar-default .adm-btn-add-category, .navbar-default .adm-btn-add-goods {
-    color: #777; }
+    color: #428bca; }
     /* line 513, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .btn-link:hover, .navbar-default .btn-link-light:hover, .navbar-default .btn-link-lighter:hover, .navbar-default .btn-link-brand:hover, .navbar-default .adm-btn-add-category:hover, .navbar-default .adm-btn-add-goods:hover, .navbar-default .btn-link:focus, .navbar-default .btn-link-light:focus, .navbar-default .btn-link-lighter:focus, .navbar-default .btn-link-brand:focus, .navbar-default .adm-btn-add-category:focus, .navbar-default .adm-btn-add-goods:focus {
-      color: #333; }
+      color: #00b9ff; }
     /* line 519, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar */
     .navbar-default .btn-link[disabled]:hover, .navbar-default [disabled].btn-link-light:hover, .navbar-default [disabled].btn-link-lighter:hover, .navbar-default [disabled].btn-link-brand:hover, .navbar-default [disabled].adm-btn-add-category:hover, .navbar-default [disabled].adm-btn-add-goods:hover, .navbar-default .btn-link[disabled]:focus, .navbar-default [disabled].btn-link-light:focus, .navbar-default [disabled].btn-link-lighter:focus, .navbar-default [disabled].btn-link-brand:focus, .navbar-default [disabled].adm-btn-add-category:focus, .navbar-default [disabled].adm-btn-add-goods:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link-light:hover, fieldset[disabled] .navbar-default .btn-link-lighter:hover, fieldset[disabled] .navbar-default .btn-link-brand:hover, fieldset[disabled] .navbar-default .adm-btn-add-category:hover, fieldset[disabled] .navbar-default .adm-btn-add-goods:hover, fieldset[disabled] .navbar-default .btn-link:focus, fieldset[disabled] .navbar-default .btn-link-light:focus, fieldset[disabled] .navbar-default .btn-link-lighter:focus, fieldset[disabled] .navbar-default .btn-link-brand:focus, fieldset[disabled] .navbar-default .adm-btn-add-category:focus, fieldset[disabled] .navbar-default .adm-btn-add-goods:focus {
       color: #ccc; }
@@ -4096,11 +4111,11 @@ tbody.collapse.in {
 
 /* line 6, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/breadcrumbs */
 .breadcrumb {
-  padding: 8px 15px;
+  padding: 0 0;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #f5f5f5;
-  border-radius: 4px; }
+  background-color: #fff;
+  border-radius: 2px; }
   /* line 13, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/breadcrumbs */
   .breadcrumb > li {
     display: inline-block; }
@@ -4108,17 +4123,17 @@ tbody.collapse.in {
     .breadcrumb > li + li:before {
       content: "/\00a0";
       padding: 0 5px;
-      color: #ccc; }
+      color: #2b2b2b; }
   /* line 23, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/breadcrumbs */
   .breadcrumb > .active {
-    color: #777777; }
+    color: #2b2b2b; }
 
 /* line 4, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination */
 .pagination {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
-  border-radius: 4px; }
+  border-radius: 2px; }
   /* line 10, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination */
   .pagination > li {
     display: inline; }
@@ -4136,12 +4151,12 @@ tbody.collapse.in {
     /* line 26, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination */
     .pagination > li:first-child > a, .pagination > li:first-child > span {
       margin-left: 0;
-      border-bottom-left-radius: 4px;
-      border-top-left-radius: 4px; }
+      border-bottom-left-radius: 2px;
+      border-top-left-radius: 2px; }
     /* line 33, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination */
     .pagination > li:last-child > a, .pagination > li:last-child > span {
-      border-bottom-right-radius: 4px;
-      border-top-right-radius: 4px; }
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px; }
   /* line 42, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination */
   .pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
     color: #2a6596;
@@ -4164,20 +4179,20 @@ tbody.collapse.in {
 /* line 6, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/pagination */
 .pagination-lg > li > a, .pagination-lg > li > span {
   padding: 10px 16px;
-  font-size: 18px; }
+  font-size: 15px; }
 /* line 12, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/pagination */
 .pagination-lg > li:first-child > a, .pagination-lg > li:first-child > span {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px; }
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px; }
 /* line 18, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/pagination */
 .pagination-lg > li:last-child > a, .pagination-lg > li:last-child > span {
-  border-bottom-right-radius: 6px;
-  border-top-right-radius: 6px; }
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px; }
 
 /* line 6, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/pagination */
 .pagination-sm > li > a, .pagination-sm > li > span {
   padding: 5px 10px;
-  font-size: 12px; }
+  font-size: 13px; }
 /* line 12, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/pagination */
 .pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {
   border-bottom-left-radius: 3px;
@@ -4254,24 +4269,24 @@ a.label:hover, a.label:focus {
 
 /* line 44, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-default {
-  background-color: #777777; }
+  background-color: #d8d8d8; }
   /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/labels */
   .label-default[href]:hover, .label-default[href]:focus {
-    background-color: #5e5e5e; }
+    background-color: #bfbfbf; }
 
 /* line 48, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-primary {
-  background-color: #428bca; }
+  background-color: #007099; }
   /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/labels */
   .label-primary[href]:hover, .label-primary[href]:focus {
-    background-color: #3073a9; }
+    background-color: #004b66; }
 
 /* line 52, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-success {
-  background-color: #5cb85c; }
+  background-color: #57cb6a; }
   /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/labels */
   .label-success[href]:hover, .label-success[href]:focus {
-    background-color: #469d44; }
+    background-color: #38b74b; }
 
 /* line 56, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-info {
@@ -4282,10 +4297,10 @@ a.label:hover, a.label:focus {
 
 /* line 60, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-warning {
-  background-color: #f0ad4e; }
+  background-color: #ff4500; }
   /* line 8, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/labels */
   .label-warning[href]:hover, .label-warning[href]:focus {
-    background-color: #ec971f; }
+    background-color: #cc3600; }
 
 /* line 64, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels */
 .label-danger {
@@ -4299,7 +4314,7 @@ a.label:hover, a.label:focus {
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   color: #fff;
   line-height: 1;
@@ -4332,41 +4347,6 @@ a.badge:hover, a.badge:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer; }
-
-/* line 6, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-.jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee; }
-  /* line 13, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-  .jumbotron h1, .jumbotron .h1 {
-    color: inherit; }
-  /* line 16, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-  .jumbotron p {
-    margin-bottom: 15px;
-    font-size: 21px;
-    font-weight: 200; }
-  /* line 22, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-  .jumbotron > hr {
-    border-top-color: #d5d5d5; }
-  /* line 26, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-  .container .jumbotron {
-    border-radius: 6px; }
-  /* line 30, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-  .jumbotron .container {
-    max-width: 100%; }
-  @media screen and (min-width: 768px) {
-    .jumbotron {
-      padding-top: 48px;
-      padding-bottom: 48px; }
-      /* line 38, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-      .container .jumbotron {
-        padding-left: 60px;
-        padding-right: 60px; }
-      /* line 44, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron */
-      .jumbotron h1, .jumbotron .h1 {
-        font-size: 63px; } }
 
 /* line 7, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/thumbnails */
 .thumbnail {
@@ -4499,7 +4479,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   height: 20px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
 
@@ -4508,7 +4488,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   float: left;
   width: 0%;
   height: 100%;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   color: #fff;
   text-align: center;
@@ -4537,7 +4517,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   min-width: 30px; }
 /* line 77, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/progress-bars */
 .progress-bar[aria-valuenow="0"] {
-  color: #777777;
+  color: #999999;
   min-width: 30px;
   background-color: transparent;
   background-image: none;
@@ -5060,7 +5040,7 @@ a.list-group-item-danger {
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  border-radius: 4px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
   /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/wells */
@@ -5071,7 +5051,7 @@ a.list-group-item-danger {
 /* line 22, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/wells */
 .well-lg {
   padding: 24px;
-  border-radius: 6px; }
+  border-radius: 2px; }
 
 /* line 26, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/wells */
 .well-sm {
@@ -5150,7 +5130,7 @@ button.close {
   background-color: #fff;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
@@ -5164,21 +5144,21 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000; }
+  background-color: #31383f; }
   /* line 73, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
   .modal-backdrop.fade {
     opacity: 0;
     filter: alpha(opacity=0); }
   /* line 74, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
   .modal-backdrop.in {
-    opacity: 0.5;
-    filter: alpha(opacity=50); }
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
 
 /* line 79, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-  min-height: 16.42857px; }
+  padding: 30px;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 31.42857px; }
 
 /* line 85, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
 .modal-header .close {
@@ -5192,11 +5172,11 @@ button.close {
 /* line 97, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
 .modal-body {
   position: relative;
-  padding: 15px; }
+  padding: 30px; }
 
 /* line 103, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
 .modal-footer {
-  padding: 15px;
+  padding: 30px;
   text-align: right;
   border-top: 1px solid #e5e5e5; }
   /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
@@ -5241,7 +5221,7 @@ button.close {
 @media (min-width: 992px) {
   /* line 149, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals */
   .modal-lg {
-    width: 900px; } }
+    width: 804px; } }
 
 /* line 7, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip {
@@ -5249,14 +5229,14 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.4;
   opacity: 0;
   filter: alpha(opacity=0); }
   /* line 16, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
   .tooltip.in {
-    opacity: 0.9;
-    filter: alpha(opacity=90); }
+    opacity: 1;
+    filter: alpha(opacity=100); }
   /* line 17, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
   .tooltip.top {
     margin-top: -3px;
@@ -5281,8 +5261,8 @@ button.close {
   color: #fff;
   text-align: center;
   text-decoration: none;
-  background-color: #000;
-  border-radius: 4px; }
+  background-color: rgba(43, 43, 43, 0.95);
+  border-radius: 2px; }
 
 /* line 35, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip-arrow {
@@ -5298,52 +5278,52 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000; }
+  border-top-color: rgba(43, 43, 43, 0.95); }
 /* line 50, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000; }
+  border-top-color: rgba(43, 43, 43, 0.95); }
 /* line 56, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000; }
+  border-top-color: rgba(43, 43, 43, 0.95); }
 /* line 62, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #000; }
+  border-right-color: rgba(43, 43, 43, 0.95); }
 /* line 69, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #000; }
+  border-left-color: rgba(43, 43, 43, 0.95); }
 /* line 76, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000; }
+  border-bottom-color: rgba(43, 43, 43, 0.95); }
 /* line 83, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000; }
+  border-bottom-color: rgba(43, 43, 43, 0.95); }
 /* line 89, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip */
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000; }
+  border-bottom-color: rgba(43, 43, 43, 0.95); }
 
 /* line 6, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/popovers */
 .popover {
@@ -5359,7 +5339,7 @@ button.close {
   background-clip: padding-box;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   white-space: normal; }
@@ -5385,7 +5365,7 @@ button.close {
   line-height: 18px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  border-radius: 5px 5px 0 0; }
+  border-radius: 1px 1px 0 0; }
 
 /* line 43, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/popovers */
 .popover-content {
@@ -5883,37 +5863,79 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/* line 11, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/mixins */
-.btn-primary, .btn-info, .btn-danger, .btn-warning, .btn-success {
-  -webkit-font-smoothing: antialiased; }
+/* === Vendor === */
+/* === System === */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-thin {
+  font-weight: 200; }
 
-/* line 28, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/fonts */
-body {
-  color: #4c5958; }
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-light, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
+  font-weight: 300; }
 
-/* line 32, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/fonts */
-small, .small {
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-regular {
+  font-weight: 400; }
+
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-medium, .login__form-header {
+  font-weight: 600; }
+
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-bold, .bare-btn {
+  font-weight: 700; }
+
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.font-black {
+  font-weight: 900; }
+
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.text-large {
+  font-size: 15px; }
+
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.text-larger {
+  font-size: 17px; }
+
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.text-small {
+  font-size: 13px; }
+
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.text-smaller {
   font-size: 12px; }
 
-/* line 9, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 14, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+body, p {
+  font-weight: 400; }
+
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+a:hover {
+  text-decoration: none; }
+
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
+.text-muted {
+  color: #999999; }
+
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-group, .login__form-group--icon-right, .login__form-select-block {
   color: #424242;
   position: relative; }
 
-/* line 13, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 13, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 20px;
   padding-right: 20px; }
 
-/* line 21, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input-icon, .login__form-input-icon--left, .login__form-input-icon--right, .login__form-input-btn--right {
   position: absolute;
   left: 20px;
   top: 20px; }
 
-/* line 26, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input--single, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .plain-input__input.input-group-addon {
   color: #000; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -5926,7 +5948,7 @@ small, .small {
   /* line 105, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
   .login__form-input--single::-webkit-input-placeholder, .plain-input__input.plain-input__input--error::-webkit-input-placeholder, .plain-input__input.login__form-input--error::-webkit-input-placeholder, .login__form .form-group.has-error .form-control::-webkit-input-placeholder, .plain-input__input--error::-webkit-input-placeholder, .login__form-input--error::-webkit-input-placeholder, .login__form-select::-webkit-input-placeholder, .login__form-select--no-icon::-webkit-input-placeholder, .login__form .form-group select.form-control::-webkit-input-placeholder, .login__form-input::-webkit-input-placeholder, .login__form .form-group .form-control::-webkit-input-placeholder, .login__form-input--single::-webkit-input-placeholder, .plain-input__input--full::-webkit-input-placeholder, .plain-input__input--bare::-webkit-input-placeholder, .login__form-input--single::-webkit-input-placeholder, .plain-input__input::-webkit-input-placeholder, .plain-input__input.input-group-addon::-webkit-input-placeholder {
     color: #cacaca; }
-  /* line 29, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 29, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-input--single, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .plain-input__input.input-group-addon, .login__form-input--single:focus, .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus, .plain-input__input.input-group-addon:focus, .login__form-input--single:hover, .plain-input__input.plain-input__input--error:hover, .plain-input__input.login__form-input--error:hover, .login__form .form-group.has-error .form-control:hover, .plain-input__input--error:hover, .login__form-input--error:hover, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-input:hover, .login__form .form-group .form-control:hover, .login__form-input--single:hover, .plain-input__input--full:hover, .plain-input__input--bare:hover, .login__form-input--single:hover, .plain-input__input:hover, .plain-input__input.input-group-addon:hover {
     border-top: none;
     border-left: none;
@@ -5938,32 +5960,32 @@ small, .small {
     background: none;
     outline: none; }
 
-/* line 43, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 43, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input--single, .login__form-input--single:hover, .login__form-input--single:focus {
   border-top: 1px solid #e8e8e8;
   border-left: 1px solid #e8e8e8;
   border-right: 1px solid #e8e8e8; }
 
-/* line 58, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 58, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
   height: 49px;
   font-size: 19px;
   line-height: 38px; }
 
-/* line 65, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 65, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input {
   background-color: rgba(255, 255, 255, 0.85);
   -webkit-transition: background 0.2s ease, border 0.2s ease;
   -o-transition: background 0.2s ease, border 0.2s ease;
   transition: background 0.2s ease, border 0.2s ease; }
-  /* line 70, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 70, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:hover, .plain-input__input.login__form-input--error:hover, .login__form .form-group.has-error .form-control:hover, .plain-input__input--error:hover, .login__form-input--error:hover, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-input:hover, .login__form .form-group .form-control:hover, .login__form-input--single:hover, .plain-input__input--full:hover, .plain-input__input--bare:hover, .login__form-input--single:hover, .plain-input__input:hover, .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus {
     background-color: #fff; }
-  /* line 72, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 72, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus {
     border-bottom-color: #ffd600; }
 
-/* line 76, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 76, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control {
   color: #f6584f; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -5976,31 +5998,31 @@ small, .small {
   /* line 105, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
   .plain-input__input.plain-input__input--error::-webkit-input-placeholder, .plain-input__input.login__form-input--error::-webkit-input-placeholder, .login__form .form-group.has-error .form-control::-webkit-input-placeholder {
     color: #f6584f; }
-  /* line 80, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 80, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus {
     color: #0f0f0f; }
 
-/* line 85, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 85, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single {
   width: 100%; }
 
-/* line 90, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 90, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input--bare {
   padding-left: 0; }
-  /* line 93, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 93, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input--bare, .plain-input__input--bare:focus, .plain-input__input--bare:hover {
     border-bottom: none; }
 
-/* line 110, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 110, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.input-group-addon {
   border-radius: 0;
   padding-top: 0;
   padding-bottom: 0; }
-  /* line 116, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 116, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.input-group-addon:first-child {
     padding-left: 20px; }
 
-/* line 119, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 input {
   color: #0f0f0f; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -6014,10 +6036,10 @@ input {
   input::-webkit-input-placeholder {
     color: #cacaca; }
 
-/* line 123, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 123, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .checkbox {
   font-weight: normal; }
-  /* line 126, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 126, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .checkbox input[type="checkbox"] + span {
     display: inline-block;
     width: 23px;
@@ -6026,7 +6048,7 @@ input {
     cursor: pointer;
     margin-right: 10px;
     border: 1px solid #e8e8e8; }
-  /* line 136, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 136, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .checkbox input[type="checkbox"]:checked + span {
     margin-right: 10px;
     color: #fff;
@@ -6035,17 +6057,17 @@ input {
     padding: 3px;
     font-size: 14px; }
 
-/* line 146, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 146, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .checkbox {
   padding-left: 0px; }
 
-/* line 149, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 149, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .radio {
   font-weight: normal;
   font-size: 17px;
   padding: 10px 0;
   margin: 0; }
-  /* line 156, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 156, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .radio input[type="radio"] + span {
     display: inline-block;
     width: 15px;
@@ -6060,20 +6082,20 @@ input {
     line-height: 13px;
     text-align: center;
     margin-right: 10px; }
-    /* line 170, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+    /* line 170, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
     .radio input[type="radio"] + span + .radio-content {
       color: #292929; }
-  /* line 174, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 174, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .radio input[type="radio"]:checked + span {
     color: #ffd600;
     border-color: #ffd600;
     vertical-align: baseline;
     padding: 2px; }
-    /* line 181, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+    /* line 181, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
     .radio input[type="radio"]:checked + span + .radio-content {
       color: #0f0f0f; }
 
-/* line 189, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 189, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -6081,7 +6103,7 @@ input {
   line-height: 1;
   padding: 0 20px;
   cursor: pointer; }
-  /* line 195, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 195, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus {
     border-bottom: 1px solid #e8e8e8;
     border-radius: 0;
@@ -6089,19 +6111,19 @@ input {
     background-repeat: no-repeat;
     background-image: url("../assets/select-down-icon.png");
     background-image: url("../assets/select-down-icon.svg"); }
-  /* line 203, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+  /* line 203, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus {
     outline: none; }
 
-/* line 206, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 206, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select--single {
   border: 1px solid #e8e8e8; }
 
-/* line 209, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 209, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 input[type="search"] {
   border-radius: 30px; }
 
-/* line 219, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 219, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .form-block-group {
   padding: 20px;
   border: 1px solid #e8e8e8;
@@ -6109,30 +6131,30 @@ input[type="search"] {
   border-radius: 2px;
   margin-bottom: 30px; }
 
-/* line 227, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/forms */
+/* line 227, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .form-control-text-large {
   font-size: 24px !important; }
 
-/* line 1, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   -webkit-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   -o-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   transition: color 0.2s ease, background 0.2s ease, border 0.2s ease; }
 
-/* line 5, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link:hover, .btn-link-light:hover, .btn-link-lighter:hover, .btn-link-brand:hover, .adm-btn-add-category:hover, .adm-btn-add-goods:hover {
   text-decoration: none; }
 
-/* line 12, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-primary {
   background-color: #00b9ff;
   border-color: #00b9ff; }
-  /* line 15, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-primary:hover {
     background-color: #007099;
     border-color: #007099; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-green, .adm-btn-submit {
   background-color: #57cb6a;
   border-color: #57cb6a;
@@ -6140,12 +6162,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-green:hover, .adm-btn-submit:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-green:hover, .adm-btn-submit:hover, .btn-green:focus, .adm-btn-submit:focus, .btn-green.active, .active.adm-btn-submit, .btn-green.active:hover, .active.adm-btn-submit:hover {
     background-color: #32a343;
     border-color: #32a343; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-red, .adm-btn-remove-order, .adm-btn-remove {
   background-color: #f6584f;
   border-color: #f6584f;
@@ -6153,12 +6175,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-red:hover, .adm-btn-remove-order:hover, .adm-btn-remove:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-red:hover, .adm-btn-remove-order:hover, .adm-btn-remove:hover, .btn-red:focus, .adm-btn-remove-order:focus, .adm-btn-remove:focus, .btn-red.active, .active.adm-btn-remove-order, .active.adm-btn-remove, .btn-red.active:hover, .active.adm-btn-remove-order:hover, .active.adm-btn-remove:hover {
     background-color: #ec170c;
     border-color: #ec170c; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-blue {
   background-color: #00b9ff;
   border-color: #00b9ff;
@@ -6166,12 +6188,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-blue:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-blue:hover, .btn-blue:focus, .btn-blue.active, .btn-blue.active:hover {
     background-color: #0083b3;
     border-color: #0083b3; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-yellow {
   background-color: #ffd600;
   border-color: #ffd600;
@@ -6179,12 +6201,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-yellow:hover {
     color: #0f0f0f; }
-  /* line 25, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 25, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-yellow:hover, .btn-yellow:focus, .btn-yellow.active, .btn-yellow.active:hover {
     background-color: #ffe14d;
     border-color: #ffe14d; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-orange {
   background-color: #ff4500;
   border-color: #ff4500;
@@ -6192,12 +6214,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-orange:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-orange:hover, .btn-orange:focus, .btn-orange.active, .btn-orange.active:hover {
     background-color: #b33000;
     border-color: #b33000; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray {
   background-color: #666666;
   border-color: #666666;
@@ -6205,12 +6227,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray:hover, .btn-gray:focus, .btn-gray.active, .btn-gray.active:hover {
     background-color: #404040;
     border-color: #404040; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-light {
   background-color: #999999;
   border-color: #999999;
@@ -6218,12 +6240,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-light:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-light:hover, .btn-gray-light:focus, .btn-gray-light.active, .btn-gray-light.active:hover {
     background-color: #737373;
     border-color: #737373; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-dark {
   background-color: #4d4d4d;
   border-color: #4d4d4d;
@@ -6231,12 +6253,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-dark:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-dark:hover, .btn-gray-dark:focus, .btn-gray-dark.active, .btn-gray-dark.active:hover {
     background-color: #262626;
     border-color: #262626; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-darker, .login__form-submit-btn {
   background-color: #2b2b2b;
   border-color: #2b2b2b;
@@ -6244,12 +6266,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-darker:hover, .login__form-submit-btn:hover {
     color: #fff; }
-  /* line 30, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-darker:hover, .login__form-submit-btn:hover, .btn-gray-darker:focus, .login__form-submit-btn:focus, .btn-gray-darker.active, .active.login__form-submit-btn, .btn-gray-darker.active:hover, .active.login__form-submit-btn:hover {
     background-color: #050505;
     border-color: #050505; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-blue {
   background-color: transparent;
   border-color: #00b9ff;
@@ -6258,17 +6280,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-blue:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-blue:hover, .btn-outline-blue:focus, .btn-outline-blue.active, .btn-outline-blue.active:hover {
     background-color: #0083b3;
     border-color: #0083b3; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-blue.active, .btn-outline-blue.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-yellow {
   background-color: transparent;
   border-color: #ffd600;
@@ -6277,17 +6299,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-yellow:hover {
     color: #0f0f0f; }
-  /* line 41, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 41, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-yellow:hover, .btn-outline-yellow:focus, .btn-outline-yellow.active, .btn-outline-yellow.active:hover {
     background-color: #ffe14d;
     border-color: #ffe14d; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-yellow.active, .btn-outline-yellow.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-red {
   background-color: transparent;
   border-color: #f6584f;
@@ -6296,17 +6318,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-red:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-red:hover, .btn-outline-red:focus, .btn-outline-red.active, .btn-outline-red.active:hover {
     background-color: #ec170c;
     border-color: #ec170c; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-red.active, .btn-outline-red.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-green {
   background-color: transparent;
   border-color: #57cb6a;
@@ -6315,17 +6337,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-green:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-green:hover, .btn-outline-green:focus, .btn-outline-green.active, .btn-outline-green.active:hover {
     background-color: #32a343;
     border-color: #32a343; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-green.active, .btn-outline-green.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray {
   background-color: transparent;
   border-color: #666666;
@@ -6334,17 +6356,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray:hover, .btn-outline-gray:focus, .btn-outline-gray.active, .btn-outline-gray.active:hover {
     background-color: #404040;
     border-color: #404040; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray.active, .btn-outline-gray.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-light {
   background-color: transparent;
   border-color: #999999;
@@ -6353,17 +6375,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-light:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-light:hover, .btn-outline-gray-light:focus, .btn-outline-gray-light.active, .btn-outline-gray-light.active:hover {
     background-color: #737373;
     border-color: #737373; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-light.active, .btn-outline-gray-light.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-dark {
   background-color: transparent;
   border-color: #4d4d4d;
@@ -6372,17 +6394,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-dark:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-dark:hover, .btn-outline-gray-dark:focus, .btn-outline-gray-dark.active, .btn-outline-gray-dark.active:hover {
     background-color: #262626;
     border-color: #262626; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-dark.active, .btn-outline-gray-dark.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-darker {
   background-color: transparent;
   border-color: #2b2b2b;
@@ -6391,36 +6413,36 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-darker:hover {
     color: #fff; }
-  /* line 46, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-darker:hover, .btn-outline-gray-darker:focus, .btn-outline-gray-darker.active, .btn-outline-gray-darker.active:hover {
     background-color: #050505;
     border-color: #050505; }
-  /* line 49, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-darker.active, .btn-outline-gray-darker.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 54, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 54, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-lg, .btn-group-lg > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .login__form-submit-btn {
   padding: 12px 16px; }
 
-/* line 57, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 57, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-light {
   color: #424242; }
 
-/* line 61, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 61, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-lighter {
   color: #424242; }
 
-/* line 65, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 65, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-brand {
   color: #ffd600; }
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-link-brand:hover {
     color: #ffdd33; }
 
-/* line 69, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 69, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn {
   cursor: pointer;
   display: inline-block;
@@ -6432,7 +6454,7 @@ input[type="search"] {
   -webkit-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   -o-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   transition: color 0.2s ease, background 0.2s ease, border 0.2s ease; }
-  /* line 73, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 73, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .bare-btn, .bare-btn:focus, .bare-btn:hover {
     text-decoration: none;
     border-top: none;
@@ -6444,7 +6466,7 @@ input[type="search"] {
   .bare-btn:hover {
     color: #292929; }
 
-/* line 88, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 88, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn--white {
   background: #fff;
   color: #0f0f0f; }
@@ -6452,11 +6474,11 @@ input[type="search"] {
   .bare-btn--white:hover {
     color: #ffd600; }
 
-/* line 92, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 92, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn--full {
   display: block; }
 
-/* line 95, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 95, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn__icon-outline {
   display: inline-block;
   width: 35px;
@@ -6469,11 +6491,11 @@ input[type="search"] {
   -webkit-transition: border-color 0.2s ease;
   -o-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease; }
-  /* line 106, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 106, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   a:hover .bare-btn__icon-outline, .bare-btn__icon-outline:hover {
     border-color: #292929; }
 
-/* line 109, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 109, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray {
   color: #fff;
   background-color: #999999;
@@ -6495,41 +6517,41 @@ input[type="search"] {
     color: #999999;
     background-color: #fff; }
 
-/* line 112, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 112, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-default-light, .btn-add-fields {
   display: inline-block; }
-  /* line 114, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 114, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light, .btn-add-fields, .btn-default-light:hover, .btn-add-fields:hover, .btn-default-light:focus, .btn-add-fields:focus, .btn-default-light.active, .active.btn-add-fields {
     background-color: #fff;
     border: none;
     outline: none;
     -webkit-box-shadow: inset 0 0 0 1px #e8e8e8;
     box-shadow: inset 0 0 0 1px #e8e8e8; }
-  /* line 119, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light:hover, .btn-add-fields:hover {
     -webkit-box-shadow: inset 0 0 0 1px #00b9ff;
     box-shadow: inset 0 0 0 1px #00b9ff; }
-  /* line 121, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 121, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light.active, .active.btn-add-fields {
     border-color: #00b9ff;
     -webkit-box-shadow: inset 0 0 0 3px #00b9ff;
     box-shadow: inset 0 0 0 3px #00b9ff; }
 
-/* line 125, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 125, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-default-light, .btn-add-fields {
   color: #999999;
   -webkit-font-smoothing: antialiased;
   opacity: 1;
   filter: alpha(opacity=100); }
 
-/* line 131, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 131, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-add-fields {
   border-radius: 33px;
   line-height: 1em;
   height: auto;
   padding: 8px 15px; }
 
-/* line 139, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 139, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-remove-circle {
   display: inline-block;
   width: 34px;
@@ -6545,23 +6567,23 @@ input[type="search"] {
   -webkit-transition: background 0.2s ease, opacity 0.2s ease;
   -o-transition: background 0.2s ease, opacity 0.2s ease;
   transition: background 0.2s ease, opacity 0.2s ease; }
-  /* line 153, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 153, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-remove-circle:hover {
     background-color: #00b9ff;
     opacity: 1;
     filter: alpha(opacity=100); }
 
-/* line 157, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 157, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-add-category, .adm-btn-add-goods {
   color: #00b9ff;
   padding: 0;
   border: none; }
-  /* line 163, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 163, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-add-category:active, .adm-btn-add-goods:active, .adm-btn-add-category:focus, .adm-btn-add-goods:focus {
     text-decoration: none;
     outline: 0; }
 
-/* line 167, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 167, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-add-category-icon, .adm-btn-add-goods-icon {
   display: inline-block;
   vertical-align: middle;
@@ -6571,7 +6593,7 @@ input[type="search"] {
   background-color: #00b9ff;
   text-align: center;
   border-radius: 50%; }
-  /* line 175, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 175, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-add-category-icon:before, .adm-btn-add-goods-icon:before {
     content: "";
     width: 15px;
@@ -6582,7 +6604,7 @@ input[type="search"] {
     background-position: center;
     background-image: url('../assets/product-thumb-plus-white.svg'); }
 
-/* line 192, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 192, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-edit-category, .adm-btn-edit-order-section, .adm-btn-edit-item {
   display: inline-block;
   vertical-align: middle;
@@ -6601,34 +6623,34 @@ input[type="search"] {
   transition: background-color 0.3s ease;
   -webkit-box-shadow: 0 0 0 1px #eee;
   box-shadow: 0 0 0 1px #eee; }
-  /* line 207, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 207, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-edit-category span, .adm-btn-edit-order-section span, .adm-btn-edit-item span {
     font: 0/0 a; }
-  /* line 209, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 209, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-edit-category:hover, .adm-btn-edit-order-section:hover, .adm-btn-edit-item:hover {
     background-color: #eee; }
 
-/* line 221, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 221, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-remove-order, .adm-btn-remove {
   height: auto;
   font-size: 17px; }
-  /* line 228, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 228, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-remove-order:hover, .adm-btn-remove:hover, .adm-btn-remove-order:focus, .adm-btn-remove:focus {
     background-color: #f76a62;
     border-color: #f76a62;
     color: #fff; }
 
-/* line 239, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 239, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-submit {
   height: auto;
   font-size: 17px; }
-  /* line 246, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 246, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-submit:hover, .adm-btn-submit:focus {
     background-color: #67d076;
     border-color: #67d076;
     color: #fff; }
 
-/* line 251, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 251, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-settings, .adm-btn-categories-settings {
   width: 30px;
   height: 30px;
@@ -6637,11 +6659,11 @@ input[type="search"] {
   border: 1px solid #636c75;
   background: none;
   outline: none !important; }
-  /* line 260, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 260, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-settings:hover, .adm-btn-categories-settings:hover {
     border-color: #868d94; }
 
-/* line 263, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 263, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-settings-icon, .adm-btn-categories-settings-icon {
   width: 22px;
   height: 22px;
@@ -6657,14 +6679,14 @@ input[type="search"] {
   background-image: url('../assets/adm-icon-cogwheel-gray.png');
   vertical-align: top; }
 
-/* line 280, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 280, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-categories-settings {
   border-color: #e8e8e8; }
-  /* line 283, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 283, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-categories-settings:hover {
     border-color: #d4d4d4; }
 
-/* line 289, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 289, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login {
   height: 50px;
   padding: 10px 24px 11px;
@@ -6675,38 +6697,38 @@ input[type="search"] {
   outline: none !important;
   border-radius: 58px;
   cursor: pointer; }
-  /* line 300, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 300, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth:hover, .adm-btn-auth-reg:hover, .adm-btn-auth-login:hover {
     background-color: #f0f0f0;
     color: #0f0f0f; }
 
-/* line 304, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 304, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth {
   height: 58px;
   padding: 12px 26px 13px;
   font-size: 18px; }
 
-/* line 313, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 313, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-reg {
   border-color: transparent;
   background-color: #fff;
   color: #0f0f0f; }
-  /* line 318, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 318, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth-reg:hover {
     background-color: #f0f0f0;
     color: #0f0f0f; }
 
-/* line 322, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 322, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-login {
   border-color: #fff;
   background-color: transparent;
   color: #fff; }
-  /* line 327, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+  /* line 327, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth-login:hover {
     background-color: #fff;
     color: #0f0f0f; }
 
-/* line 331, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 331, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-back {
   padding: 10px;
   position: absolute;
@@ -6718,7 +6740,7 @@ input[type="search"] {
   cursor: pointer;
   outline: none !important; }
 
-/* line 342, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/buttons */
+/* line 342, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-start {
   width: 76px;
   height: 40px;
@@ -6735,20 +6757,20 @@ input[type="search"] {
   cursor: pointer;
   outline: none !important; }
 
-/* line 1, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert, .form-alert {
   -webkit-font-smoothing: antialiased;
   border-radius: 0; }
-  /* line 4, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+  /* line 4, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
   .alert .close, .alert .form-alert {
     text-shadow: none;
     margin-top: -2px; }
 
-/* line 8, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 8, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .form-alert {
   display: inline-block; }
 
-/* line 12, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-success {
   background-color: #57cb6a;
   border-color: #57cb6a;
@@ -6760,7 +6782,7 @@ input[type="search"] {
   .alert-success .alert-link {
     color: #e6e6e6; }
 
-/* line 15, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-info {
   background-color: #00b9ff;
   border-color: #00b9ff;
@@ -6772,7 +6794,7 @@ input[type="search"] {
   .alert-info .alert-link {
     color: #e6e6e6; }
 
-/* line 18, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-warning {
   background-color: #ff4500;
   border-color: #ff4500;
@@ -6784,7 +6806,7 @@ input[type="search"] {
   .alert-warning .alert-link {
     color: #e6e6e6; }
 
-/* line 21, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-danger, .login__form .help-block.has-error {
   background-color: #f6584f;
   border-color: #f6584f;
@@ -6796,7 +6818,7 @@ input[type="search"] {
   .alert-danger .alert-link, .alert-danger .login__form .help-block.has-error, .login__form .alert-danger .help-block.has-error {
     color: #e6e6e6; }
 
-/* line 24, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/alerts */
+/* line 24, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .form-alert-danger {
   background-color: #CB1F35;
   border-color: #CB1F35;
@@ -6811,34 +6833,34 @@ input[type="search"] {
   .form-alert-danger .alert-link {
     color: #e6e6e6; }
 
-/* line 1, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .navbar-transparent {
   background: none; }
 
-/* line 6, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 6, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .app-header-navbar {
   background-color: #fff;
   border-bottom: 1px solid #c3c3c3; }
 
-/* line 10, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 10, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title {
   font-size: 21px;
   font-weight: bold;
   padding-top: 3px; }
 
-/* line 17, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 17, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title, .header-navbar__brand {
   margin-top: 2px; }
 
-/* line 20, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__brand {
   margin-left: 25px; }
 
-/* line 5, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__content {
   background: lightgray;
   text-align: center; }
-  /* line 87, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/mixins */
+  /* line 87, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
   .login__content:before {
     content: "";
     display: inline-block;
@@ -6846,7 +6868,7 @@ input[type="search"] {
     vertical-align: middle;
     margin-right: -0.25em; }
 
-/* line 9, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__content--fullscreen {
   position: fixed;
   top: 0;
@@ -6856,18 +6878,18 @@ input[type="search"] {
   overflow: auto;
   z-index: 10; }
 
-/* line 18, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__block {
   display: inline-block;
   display: inline-block;
   vertical-align: middle;
   margin-top: 37px; }
 
-/* line 24, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 24, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo-block {
   text-align: center; }
 
-/* line 27, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 27, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo {
   display: inline-block;
   width: 195px;
@@ -6882,7 +6904,7 @@ input[type="search"] {
       width: 97.5px;
       height: 97.5px; } }
 
-/* line 43, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 43, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form {
   width: 100%;
   margin-top: 15px;
@@ -6896,7 +6918,7 @@ input[type="search"] {
     .login__form {
       width: 420px; } }
 
-/* line 55, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 55, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-header {
   padding: 30px;
   margin: 0;
@@ -6905,16 +6927,16 @@ input[type="search"] {
   border-bottom: 1px solid #e8e8e8;
   background-color: rgba(255, 255, 255, 0.85); }
 
-/* line 70, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 70, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-group--icon-right input {
   padding-left: 20px; }
 
-/* line 77, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 77, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-icon--right {
   left: auto;
   right: 20px; }
 
-/* line 82, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 82, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-btn--right {
   top: 0;
   left: auto;
@@ -6923,59 +6945,59 @@ input[type="search"] {
   font-size: 16.33333px;
   -webkit-font-smoothing: antialiased; }
 
-/* line 95, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 95, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-icon--right {
   color: #424242; }
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   a.login__form-input-icon:hover, a.login__form-input-icon--left:hover, a.login__form-input-icon--right:hover {
     color: #292929; }
 
-/* line 99, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 99, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input, .login__form .form-group .form-control, .login__form-input--single {
   display: block;
   color: #0f0f0f; }
-  /* line 102, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+  /* line 102, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
   .login__form-group .login__form-input, .login__form-group .login__form-group--icon-right, .login__form-group .login__form .form-group .form-control, .login__form .form-group .login__form-group .form-control, .login__form-group .login__form-input--single, .login__form-group .login__form-group--icon-right {
     padding-left: 50px; }
 
-/* line 113, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 113, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-submit-btn {
   border-radius: 0;
   height: auto; }
 
-/* line 123, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 123, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   position: relative; }
 
-/* line 126, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 126, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control {
   display: block; }
 
-/* line 132, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 132, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--no-icon, .login__form-select--no-icon:hover, .login__form-select--no-icon:focus {
   background-image: none; }
 
-/* line 135, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 135, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--single {
   display: block; }
 
-/* line 140, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 140, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   margin-bottom: 1em; }
 
-/* line 2, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .alert, .login__form .form-alert {
   margin: 0; }
-/* line 4, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+/* line 4, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .form-group {
   margin: 0; }
-  /* line 8, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  /* line 8, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .form-group.has-error {
     position: relative; }
-    /* line 9, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+    /* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
     .login__form .form-group.has-error .form-control {
       display: block; }
-    /* line 119, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/mixins */
+    /* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error:after, .login__form .form-group.has-error:before {
       bottom: 100%;
       left: 50%;
@@ -6985,26 +7007,26 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       width: 0;
       position: absolute;
       pointer-events: none; }
-    /* line 129, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/mixins */
+    /* line 129, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error:after {
       border-color: rgba(246, 88, 79, 0);
       border-bottom-color: #f6584f;
       border-width: 7px;
       margin-left: -7px; }
-    /* line 140, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/mixins */
+    /* line 140, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error:before {
       border-color: transparent;
       border-bottom-color: transparent;
       border-width: 8px;
       margin-left: -8px; }
-    /* line 13, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+    /* line 13, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
     .login__form .form-group.has-error:after, .login__form .form-group.has-error:before {
       top: 35px; }
-/* line 18, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .help-block {
   margin: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
-  /* line 23, /home/danil/code/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  /* line 23, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .help-block.has-error {
     -webkit-font-smoothing: antialiased; }
