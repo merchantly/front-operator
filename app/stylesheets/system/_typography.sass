@@ -1,0 +1,22 @@
+@each $m in thin 200, light 300, regular 400, medium 600, bold 700, black 900
+  %font-#{nth($m,1)}
+    font-weight: nth($m,2)
+  .font-#{nth($m,1)}
+    @extend %font-#{nth($m,1)}
+
+
+@each $s in large $font-size-large, larger $font-size-larger, small $font-size-small, smaller $font-size-smaller
+  .text-#{nth($s,1)}
+    font-size: nth($s,2)
+
+
+
+body, p
+  font-weight: 400
+
+a
+  &:hover
+    text-decoration: none
+
+.text-muted
+  color: $gray-light
