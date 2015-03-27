@@ -1,0 +1,147 @@
+$login-form-max-width: 420px
+$login-logo-width: 195px
+$login-logo-height: 37px
+
+.login__content
+  background: lightgray
+  +center-block-container
+
+.login__content--fullscreen
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  z-index: $zindex-login-content-fullscreen
+
+.login__block
+  display: inline-block
+  +center-block-content
+  margin-top: $login-logo-height
+
+
+.login__navbar-logo-block
+  text-align: center
+
+.login__navbar-logo
+  display: inline-block
+  width: $login-logo-width
+  height: $login-logo-height
+  margin:
+    top: $login-logo-height
+    bottom: $block-padding*0.75
+  background:
+    repeat: no-repeat
+    size: 100% auto
+    image: url("#{$images-path}/logo.svg")
+  +breakpoint('phone-landscape')
+    width: $login-logo-width/2
+    height: $login-logo-width/2
+
+
+.login__form
+  //background: #fff
+  width: 100%
+  @media screen and (min-width: $screen-sm)
+    min-width: $screen-xs - $grid-gutter-width*2
+  @media screen and (min-width: $screen-md)
+    width: $login-form-max-width
+  margin:
+    top: $block-padding*0.75
+    bottom: $block-padding*2
+    left: auto
+    right: auto
+
+.login__form-header
+  padding: $block-padding*1.5
+  margin: 0
+  text-align: center
+  font-size: $font-size-h2
+  @extend %font-medium
+  border-bottom: 1px solid $line-color
+  background-color: $input-background-inactive
+
+//.login__form-actions
+  padding: $block-padding 0
+
+.login__form-group
+  @extend %plain-input__block
+
+.login__form-group--icon-right
+  @extend .login__form-group
+  input
+    padding-left: $block-padding
+
+.login__form-input-icon,
+.login__form-input-icon--left
+  @extend %plain-input__icon
+
+.login__form-input-icon--right
+  @extend %plain-input__icon
+  left: auto
+  right: $block-padding
+
+.login__form-input-btn--right
+  @extend %plain-input__icon
+  top: 0
+  left: auto
+  right: 0
+  padding: $plain-input-height/4
+  font-size: $plain-input-height/3
+  +antialiased
+
+
+a
+  &.login__form-input-icon,
+  &.login__form-input-icon--left,
+  &.login__form-input-icon--right
+    +link-colors($text-color-lighter, $text-color-light)
+
+.login__form-input,
+.login__form-input--single
+  @extend %plain-input__input--full
+  display: block
+  .login__form-group &
+    padding:
+      left: $block-padding*2 + 10px
+  color: $text-color
+
+.login__form-input--error
+  @extend .plain-input__input--error
+
+.login__form-input--single
+  @extend %plain-input__input--single
+
+.login__form-submit-btn
+  @extend .btn
+  @extend .btn-lg
+  @extend .btn-block
+  border-radius: 0
+  @extend %plain-input-base
+  @extend .btn-gray-darker
+  height: auto
+
+
+.login__form-select-block
+  position: relative
+
+.login__form-select
+  @extend %plain-select__select
+  display: block
+
+.login__form-select--no-icon
+  @extend .login__form-select
+  &, &:hover, &:focus
+    background-image: none
+
+.login__form-select--single
+  @extend %plain-select__select--single
+  display: block
+
+
+.login__form-select-block
+  @extend %plain-input__block
+  margin-bottom: 1em
+
+

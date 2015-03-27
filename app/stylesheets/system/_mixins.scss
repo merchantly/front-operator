@@ -1,0 +1,174 @@
+@mixin appearance($app) {
+  -moz-appearance: $app;
+  -webkit-appearance: $app;
+  appearance: $app;
+}
+
+@mixin antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+%antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin transformsFix {
+  -webkit-backface-visibility: hidden;
+}
+
+//=bgImage($image, $imgsPath: $imagesPath)
+// background-image: url("#{$imgsPath}/#{$image}")
+
+//=coverImageHeight($height: $coverImageHeight, $height-xs: $coverImageHeight-xs)
+// min-height: $height
+// @media screen and (max-width: $screen-xs)
+//   min-height: $height-xs
+
+// grayscale      ex: filter: grayscale(100%)
+// sepia          ex: filter: sepia(100%)
+// saturate       ex: filter: saturate(0%)
+// hue-rotate     ex: filter: hue-rotate(45deg)
+// invert         ex: filter: invert(100%)
+// brightness     ex: filter: brightness(15%)
+// contrast       ex: filter: contrast(200%)
+// blur           ex: filter: blur(2px)
+
+@mixin filter($var) {
+  -webkit-filter: $var;
+  -moz-filter: $var;
+  -ms-filter: $var;
+  -o-filter: $var;
+  filter: $var;
+}
+
+@mixin svg-bg($name, $extension: png, $color: transparent, $position: 0 0, $repeat: no-repeat, $imgsPath: $imagesPath) {
+  background: url("#{$imgsPath}/#{$name}.#{$extension}") $color $position $repeat;
+  background: none url("#{$imgsPath}/#{$name}.svg") $color $position $repeat;
+}
+
+@mixin svg-bg-image($name, $imgsPath: $imagesPath) {
+  background-image: url("#{$imgsPath}/#{$name}.png");
+  background-image: url("#{$imgsPath}/#{$name}.svg");
+}
+
+@mixin display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+// Shorthand for media queries
+
+@mixin breakpoint($point) {
+  @if $point == phone {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+  @if $point == phone-landscape {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+  @if $point == desktop {
+    @media (min-width: $screen-md-min) {
+      @content;
+    }
+  }
+}
+
+@mixin center-block-container {
+  text-align: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+}
+
+@mixin center-block-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// New name
+@mixin inline-valign-middle {
+  @include center-block-content
+}
+
+@function arrow-direction($direction) {
+  @if $direction == bottom {
+    @return top left;
+  }
+  @if $direction == top {
+    @return bottom left;
+  }
+}
+
+@mixin arrow($direction: bottom, $arrow-size: $grid-gutter-width, $arrow-color: white, $arrow-border-color: $gray-lighter) {
+  position: relative;
+  //background: $arrow-color
+  //border: 1px solid $arrow-color
+  &:after, &:before {
+    #{nth(arrow-direction($direction), 1)}: 100%;
+    #{nth(arrow-direction($direction), 2)}: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    @if $arrow-color == transparent {
+      border-color: transparent;
+    }
+    @else {
+      border-color: rgba($arrow-color, 0);
+    }
+    border-#{nth(arrow-direction($direction), 1)}-color: $arrow-color;
+    border-width: $arrow-size;
+    margin-#{nth(arrow-direction($direction), 2)}: -$arrow-size;
+  }
+  &:before {
+    @if $arrow-border-color == transparent {
+      border-color: transparent;
+    }
+    @else {
+      border-color: rgba($arrow-border-color, 0);
+    }
+    border-#{nth(arrow-direction($direction), 1)}-color: $arrow-border-color;
+    border-width: $arrow-size + 1px;
+    margin-#{nth(arrow-direction($direction), 2)}: -$arrow-size - 1px;
+  }
+}
+
+@mixin arrow-position-left($left: 50%) {
+  &:after, &:before {
+    left: $left;
+  }
+}
+
+@mixin arrow-position-top($top: 50%) {
+  &:after, &:before {
+    top: $top;
+  }
+}
+
+@mixin list-style-none {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin flexible-table {
+  width: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,27 @@
+.login__form
+  .alert
+    margin: 0
+  .form-group
+    margin: 0
+    .form-control
+      @extend .login__form-input
+    &.has-error
+      .form-control
+        @extend %plain-input__input--error
+        display: block
+      +arrow(top, 7px, $red, transparent)
+      &:after, &:before
+        top: $plain-input-height - 2*7px
+    select.form-control
+      @extend .login__form-select
+
+  .help-block
+    margin: 0
+    padding:
+      top: 0.5em
+      bottom: 0.5em
+    &.has-error
+      @extend .alert-danger
+      +antialiased
+
+

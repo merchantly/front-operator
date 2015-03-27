@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head_system.haml'
+  %body
+    .navbar-transparent
+      .container
+        .login__navbar-logo-block
+          %a.login__navbar-logo{href: 'index.html'}
+    .login__content.login__content--fullscreen
+      .login__block
+        .alert.alert-danger Обнаружены ошибки, пожалуйста, взгляните на них
+        %form#new_operator_login_form.simple_form.login__form{:action => "orders.html"}
+          .login__form-header Авторизация
+          .form-group.tel.required.operator_login_form_phone.has-error
+            %input#operator_login_form_phone.string.tel.required.form-control.form-control{:placeholder => "ргн", :type => "tel", :value => "sdsd"}
+            %span.help-block.has-error Неверный формат телефона
+          .form-group.string.required.operator_login_form_pin_code
+            %input#operator_login_form_pin_code.string.required.form-control{:placeholder => "ргн", :type => "text", :value => "sdsdsd"}
+          .login__form-actions
+            %input.btn.login__form-submit-btn{:type => "submit", :value => "Войти"}
+        .row
+          .col-sm-6
+            %p.color-text-light
+              Нет аккаунта?
+              %br
+              %a{href: 'signup.html'}
+                %strong Создать магазин
+          .col-sm-6
+            %p.color-text-light
+              Забыли пароль?
+              %a{href: 'reset_password.html'}
+                %strong Восстановить
+

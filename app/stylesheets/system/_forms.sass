@@ -1,0 +1,234 @@
+//$plain-input-height: $block-padding*3
+$plain-input-height: 49px
+$plain-input-padding: $block-padding
+$plain-input-font-size: 19px
+$plain-input-line-height: 38px
+$plain-input-placeholder-color: #cacaca
+$plain-input-text-color: #000
+
+%plain-input__block,
+.plain-input__block
+  color: $text-color-lighter
+  position: relative
+
+%plain-input-padding
+  padding:
+    top: 6px
+    bottom: 6px
+    left: $plain-input-padding
+    right: $plain-input-padding
+
+%plain-input__icon,
+.plain-input__icon
+  position: absolute
+  left: $plain-input-padding
+  top: $plain-input-padding
+
+%plain-input-style
+  +placeholder($plain-input-placeholder-color)
+  color: $plain-input-text-color
+  &, &:focus, &:hover
+    border:
+      top: none
+      left: none
+      right: none
+      bottom: 1px solid $line-color
+    +box-shadow(none)
+    border-radius: 0
+    background: none
+    outline: none
+
+
+%plain-input-style--single
+  @extend %plain-input-style
+  &, &:hover, &:focus
+    @each $s in top, left, right
+      border-#{$s}: 1px solid $line-color
+
+%plain-input-style--outline
+  @extend %plain-input-style
+  border: 1px solid $line-color
+  border-radius: $border-radius-base
+  padding:
+    left: $plain-input-padding/2
+    right: $plain-input-padding/2
+  &:hover, &:focus
+    border: 1px solid $brand-color
+
+
+%plain-input-base
+  height: $plain-input-height
+  font-size: $plain-input-font-size
+  line-height: $plain-input-line-height
+  @extend %plain-input-padding
+  @extend %font-light
+
+%plain-input__input
+  @extend %plain-input-style
+  @extend %plain-input-base
+  background-color: $input-background-inactive
+  +transition(background 0.2s ease, border 0.2s ease)
+  &:hover, &:focus
+    background-color: #fff
+  &:focus
+    border-bottom-color: $brand-color
+
+%plain-input__input--error,
+.plain-input__input--error
+  @extend %plain-input__input
+  +placeholder($red)
+  color: $red
+  &:focus
+    color: $text-color
+
+
+%plain-input__input--full,
+.plain-input__input--full
+  @extend %plain-input__input
+  width: 100%
+
+%plain-input__input--bare,
+.plain-input__input--bare
+  @extend %plain-input__input
+  padding-left: 0
+  &, &:focus, &:hover
+    border-bottom: none
+
+%plain-input__input--single
+  @extend %plain-input__input
+  @extend %plain-input-style--single
+
+%plain-input__input--outline
+  @extend %plain-input__input
+  @extend %plain-input-style--outline
+
+.plain-input__input
+  @extend %plain-input__input
+  &.plain-input__input--error
+    @extend %plain-input__input--error
+
+.plain-input__input
+  &.input-group-addon
+    border-radius: 0
+    @extend %plain-input-style
+    padding:
+      top: 0
+      bottom: 0
+    &:first-child
+      padding-left: $plain-input-padding
+
+input
+  //&[value=""]
+    // libsass doesn't understand pseudoselectors
+    //::-webkit-input-placeholder
+  color: $text-color
+  +placeholder($plain-input-placeholder-color)
+
+.checkbox
+  font-weight: normal
+  input[type="checkbox"]
+    & + span
+      display: inline-block
+      width: 23px
+      height: 23px
+      vertical-align: middle
+      cursor: pointer
+      margin-right: 10px
+      border: 1px solid $line-color
+
+    &:checked
+      & + span
+        margin-right: 10px
+        @extend .fa
+        @extend .fa-check
+        color: #fff
+        background-color: $brand-color
+        border-color: $brand-color
+        padding: 3px
+        font-size: 14px
+
+.checkbox
+  padding-left: 0px
+
+.radio
+  font:
+    weight: normal
+    size: $font-size-larger
+  padding: $plain-input-padding/2 0
+  margin: 0
+  input[type="radio"]
+    & + span
+      display: inline-block
+      width: 15px
+      height: 15px
+      vertical-align: middle
+      cursor: pointer
+      margin-right: 10px
+      border: 1px solid $line-color
+      background-color: #fff
+      border-radius: 100%
+      font-size: 10px
+      line-height: 13px
+      text-align: center
+      margin-right: 10px
+      & + .radio-content
+        color: $text-color-light
+
+    &:checked
+      & + span
+        @extend .fa
+        @extend .fa-circle
+        color: $brand-color
+        border-color: $brand-color
+        vertical-align: baseline
+        padding: 2px
+        & + .radio-content
+          color: $text-color
+
+
+
+%plain-select__block
+  @extend %plain-input__block
+
+%plain-select__select
+  @extend %plain-input__input--full
+  +appearance(none)
+  line-height: 1
+  //padding: 0.7em 3em 0.7em 1em
+  padding: 0 $plain-input-padding
+  cursor: pointer
+  &, &:hover, &:focus
+    border-bottom: 1px solid $line-color
+    //border-radius: $border-radius-base
+    border-radius: 0
+    background:
+      position: right center
+      repeat: no-repeat
+      image: url("#{$images-path}/select-down-icon.png")
+      image: url("#{$images-path}/select-down-icon.svg")
+  &:focus
+    outline: none
+
+%plain-select__select--single
+  border: 1px solid $line-color
+
+input[type="search"]
+  border-radius: 30px
+
+%plain-input__label
+  color: $blue
+  margin-bottom: 0.7em
+  font:
+    size: $font-size-small
+    weight: normal
+
+.form-block-group
+  padding: $block-padding
+  border: 1px solid $line-color
+  background-color: #fff
+  border-radius: $border-radius-base
+  margin:
+    bottom: $grid-gutter-width
+
+.form-control-text-large
+  font-size: 24px !important

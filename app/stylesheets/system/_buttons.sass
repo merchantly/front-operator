@@ -1,0 +1,367 @@
+.btn
+  +transition(color 0.2s ease, background 0.2s ease, border 0.2s ease)
+
+.btn-link
+  &:hover
+    text-decoration: none
+
+@each $b in primary, info, danger, warning, success
+  .btn-#{$b}
+    @extend %antialiased
+
+.btn-primary
+  background-color: $blue
+  border-color: $blue
+  &:hover
+    background-color: $blue-dark
+    border-color: $blue-dark
+
+@each $color in green $green, red $red, blue $blue, yellow $yellow, orange $orange, gray $gray, gray-light $gray-light, gray-dark $gray-dark, gray-darker $gray-darker
+  .btn-#{nth($color,1)}
+    background-color: nth($color,2)
+    border-color: nth($color,2)
+    @if nth($color,2) == $yellow
+      +link-colors($text-color, $text-color)
+      &:hover, &:focus, &.active, &.active:hover
+        background-color: lighten(nth($color,2), 15%)
+        border-color: lighten(nth($color,2), 15%)
+    @else
+      +link-colors(#fff, #fff)
+      &:hover, &:focus, &.active, &.active:hover
+        background-color: darken(nth($color,2), 15%)
+        border-color: darken(nth($color,2), 15%)
+
+@each $color in blue $blue, yellow $yellow, red $red, green $green, gray $gray, gray-light $gray-light, gray-dark $gray-dark, gray-darker $gray-darker
+  .btn-outline-#{nth($color,1)}
+    background-color: transparent
+    border-color: nth($color,2)
+    +antialiased
+    @if nth($color,2) == $yellow
+      +link-colors($text-color, $text-color)
+      &:hover, &:focus, &.active, &.active:hover
+        background-color: lighten(nth($color,2), 15%)
+        border-color: lighten(nth($color,2), 15%)
+    @else
+      +link-colors(darken(nth($color,2),15%), #fff)
+      &:hover, &:focus, &.active, &.active:hover
+        background-color: darken(nth($color,2), 15%)
+        border-color: darken(nth($color,2), 15%)
+    &.active, &.active:hover
+      +box-shadow(none)
+      color: #fff
+
+
+.btn-lg
+  padding: 12px 16px
+
+.btn-link-light
+  @extend .btn-link
+  +link-colors($text-color-lighter)
+
+.btn-link-lighter
+  @extend .btn-link
+  +link-colors($text-color-lighter)
+
+.btn-link-brand
+  @extend .btn-link
+  +link-colors($brand-color, $brand-color-light)
+
+.bare-btn
+  cursor: pointer
+  display: inline-block
+  height: $block-padding*3
+  &, &:focus, &:hover
+    text-decoration: none
+    border:
+      top: none
+      left: none
+      right: none
+    +box-shadow(none)
+  font-size: $font-size-large
+  line-height: $block-padding
+  @extend %font-bold
+  @extend %block-padding
+  +link-colors($text-color-lighter, $text-color-light)
+  text-align: center
+  +transition(color 0.2s ease, background 0.2s ease, border 0.2s ease)
+
+.bare-btn--white
+  background: #fff
+  // Error: No such extention!
+  // @extend %font-normal
+  +link-colors($text-color, $brand-color)
+
+.bare-btn--full
+  display: block
+
+.bare-btn__icon-outline
+  display: inline-block
+  width: 35px
+  height: 35px
+  line-height: 40px
+  border-radius: 35px/1.4
+  border: 1px solid darken($line-color, 10%)
+  //padding: (35px - $font-size-base)/2 0
+  text-align: center
+  margin: 5px
+  +transition(border-color 0.2s ease)
+  a:hover &,
+  &:hover
+    border-color: $text-color-light
+
+.btn-gray
+  +button-variant(#fff, $gray-light, $gray-light)
+
+%btn-default
+  display: inline-block
+  &, &:hover, &:focus, &.active
+    background-color: #fff
+    border: none
+    outline: none
+    +box-shadow(inset 0 0 0 1px $line-color)
+  &:hover
+    +box-shadow(inset 0 0 0 1px $blue)
+  &.active
+    border-color: $blue
+    +box-shadow(inset 0 0 0 3px $blue)
+
+.btn-default-light
+  @extend %btn-default
+  color: $gray-light
+  +antialiased
+  +opacity(1)
+
+.btn-add-fields
+  @extend .btn
+  @extend .btn-default-light
+  border-radius: 33px
+  line-height: 1em
+  height: auto
+  padding: 8px 15px
+
+.btn-remove-circle
+  @extend .btn
+  display: inline-block
+  width: 34px
+  height: 34px
+  border-radius: 100%
+  background-color: darken($gray-dark, 7%)
+  background:
+    repeat: no-repeat
+    position: center
+    image: url('#{$images-path}/product-thumb-cancel-white.svg')
+  cursor: pointer
+  +opacity(.4)
+  +transition(background 0.2s ease, opacity .2s ease)
+  &:hover
+    background-color: $blue
+    +opacity(1)
+
+// Button - Add Category
+.adm-btn-add-category
+  @extend .btn-link
+  +link-colors($blue)
+  padding: 0
+  border: none
+  &:active,
+  &:focus
+    text-decoration: none
+    outline: 0
+
+.adm-btn-add-category-icon
+  @include inline-valign-middle
+  width: 24px
+  height: 24px
+  margin-right: 5px
+  background-color: $blue
+  text-align: center
+  border-radius: 50%
+  &:before
+    content: ""
+    width: 15px
+    height: 15px
+    margin-top: 4px
+    display: inline-block
+    background:
+      repeat: no-repeat
+      position: center
+      image: url('#{$images-path}/product-thumb-plus-white.svg')
+
+// Button - Add Goods
+.adm-btn-add-goods
+  @extend .adm-btn-add-category
+
+.adm-btn-add-goods-icon
+  @extend .adm-btn-add-category-icon
+
+%adm-btn-edit-circle
+  @include inline-valign-middle
+  width: 32px
+  height: 32px
+  border: none
+  background-color: #fff
+  background:
+    repeat: no-repeat
+    position: center
+    image: url('#{$images-path}/pencil@3x.png')
+  background-size: 16px 16px
+  cursor: pointer
+  border-radius: 50%
+  +transition(background-color .3s ease)
+  +box-shadow(0 0 0 1px #eee)
+  span
+    font: 0/0 a
+  &:hover
+    background-color: #eee
+
+// Button - Edit Category
+.adm-btn-edit-category
+  @extend %adm-btn-edit-circle
+
+// Button - Edit Order Section
+.adm-btn-edit-order-section
+  @extend %adm-btn-edit-circle
+
+.adm-btn-edit-item
+  @extend %adm-btn-edit-circle
+
+// Button - Remove
+%adm-btn-remove
+  @extend .btn
+  @extend .btn-red
+  @extend .btn-lg
+  height: auto
+  font-size: 17px
+  &:hover,
+  &:focus
+    background-color: lighten($red, 4%)
+    border-color: lighten($red, 4%)
+    color: #fff
+
+// Button - Remove Order
+.adm-btn-remove-order
+  @extend %adm-btn-remove
+
+.adm-btn-remove
+  @extend %adm-btn-remove
+
+// Submit
+.adm-btn-submit
+  @extend .btn
+  @extend .btn-green
+  @extend .btn-lg
+  height: auto
+  font-size: 17px
+  &:hover,
+  &:focus
+    background-color: lighten($green, 4%)
+    border-color: lighten($green, 4%)
+    color: #fff
+
+.adm-btn-settings
+  @extend .btn
+  width: 30px
+  height: 30px
+  padding: 0
+  position: relative
+  border: 1px solid #636c75
+  background: none
+  outline: none !important
+  &:hover
+    border-color: #868d94
+
+.adm-btn-settings-icon
+  width: 22px
+  height: 22px
+  margin:
+    top: -11px
+    left: -11px
+  display: inline-block
+  position: absolute
+  top: 50%
+  left: 50%
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+    image: url('#{$images-path}/adm-icon-cogwheel-gray.png')
+  vertical-align: top
+
+.adm-btn-categories-settings
+  @extend .adm-btn-settings
+  border-color: $line-color
+  &:hover
+    border-color: darken($line-color, 8%)
+
+.adm-btn-categories-settings-icon
+  @extend .adm-btn-settings-icon
+
+%adm-btn-auth
+  @extend .btn
+  height: 50px
+  padding: 10px 24px 11px
+  border-color: transparent
+  background-color: #fff
+  font-size: 15px
+  color: $text-color
+  outline: none !important
+  border-radius: 58px
+  cursor: pointer
+  &:hover
+    background-color: darken(#fff, 6%)
+    color: $text-color
+
+%adm-btn-auth-lg
+  height: 58px
+  padding: 12px 26px 13px
+  font-size: 18px
+
+.adm-btn-auth
+  @extend %adm-btn-auth
+  @extend %adm-btn-auth-lg
+
+.adm-btn-auth-reg
+  @extend %adm-btn-auth
+  border-color: transparent
+  background-color: #fff
+  color: $text-color
+  &:hover
+    background-color: darken(#fff, 6%)
+    color: $text-color
+
+.adm-btn-auth-login
+  @extend %adm-btn-auth
+  border-color: #fff
+  background-color: transparent
+  color: #fff
+  &:hover
+    background-color: #fff
+    color: $text-color
+
+.adm-btn-auth-back
+  padding: 10px
+  position: absolute
+  left: 10px
+  bottom: 5px
+  border: none
+  background: none
+  color: #fff
+  cursor: pointer
+  outline: none !important
+
+.adm-btn-auth-start
+  width: 76px
+  height: 40px
+  margin-left: -38px
+  position: absolute
+  bottom: 20px
+  left: 50%
+  border: none
+  background:
+    color: transparent
+    repeat: no-repeat
+    position: center
+    size: contain
+    image: url('#{$images-path}/adm-icon-arrow-down-white.png')
+  cursor: pointer
+  outline: none !important
