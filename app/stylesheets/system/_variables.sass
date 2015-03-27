@@ -1,0 +1,177 @@
+$gray-darker:            lighten(#000, 17%) // #2b2b2b
+$gray-dark:              lighten(#000, 30%) // #4d4d4d
+$gray:                   lighten(#000, 40%) // #666
+$gray-light:             lighten(#000, 60%) // #999
+$gray-lighter:           #c3c3c3
+$gray-lightest:          lighten(#000, 91%) // #e8e8e8
+
+$blue: #00b9ff
+$blue-dark: darken($blue, 20%)
+$red: #f6584f
+$red-dark: #CB1F35
+$green: #57cb6a
+$green-dark: darken($green, 20%)
+$orange: #ff4500
+$yellow: #ffd600
+$purple: rgb(158, 0, 93)
+$white: #fff
+
+$brand-color: $yellow
+$brand-color-light: lighten($yellow, 10%)
+$brand-color-dark: darken($yellow, 10%)
+$line-color: $gray-lightest
+
+$brand-default: #d8d8d8
+$brand-primary: $blue-dark
+$brand-success: $green
+$brand-warning: $orange
+$brand-waiting: $yellow
+
+$text-color: #0f0f0f
+$text-color-dark: $gray-darker
+$text-color-light: lighten($text-color, 10%)
+$text-color-lighter: lighten($text-color, 20%)
+
+$headings-color: $text-color
+
+$link-color: #7f7f7f
+$link-color-hover: $blue
+$link-hover-color: $link-color-hover
+$link-color-hover-light: lighten($link-color-hover, 30%)
+
+$border-radius-base: 2px
+$input-border-radius: 2px
+$border-radius-large: $border-radius-base
+$border-radius-large: $border-radius-base
+
+$body-background: #fff
+$footer-background: $gray-darker
+$article-background: darken(#fff, 7%)
+$muted-block-background: lighten($line-color, 5%)
+
+$right-sidebar-background: $muted-block-background
+
+$btn-primary-bg: $brand-color
+$btn-primary-border: $brand-color
+
+$hr-color: $line-color
+
+
+$navbar-background-color: #fff
+
+$block-padding: 20px
+
+
+// Navbar
+$navbar-height:                    72px
+$navbar-margin-bottom:             $line-height-computed
+$navbar-border-radius:             $border-radius-base
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
+$navbar-collapse-max-height:       340px
+
+$navbar-default-color:             $text-color
+$navbar-default-bg:                #fff
+$navbar-default-border:            darken($navbar-default-bg, 6.5%)
+
+// Navbar links
+$navbar-default-link-color:                $link-color
+$navbar-default-link-hover-color:          $link-color-hover
+$navbar-default-link-hover-bg:             transparent
+$navbar-default-link-active-color:         $brand-color
+$navbar-default-link-active-bg:            transparent
+
+$header-navbar-background: #fff
+$header-navbar-height: 78px
+
+$hr-border: $gray-lightest
+
+$input-background-inactive: rgba(#fff, 0.85)
+
+// Order Status Bullet
+$order-status-bullet-size: 10px
+
+// Order Status Label
+$order-status-label-border-radius: $border-radius-base
+
+$order-status-label-font-size: $font-size-small
+
+$order-status-label-color: $white
+
+// Tooltip
+$tooltip-bg: rgba(red($gray-darker), green($gray-darker), blue($gray-darker), .95)
+
+$tooltip-arrow-color: $tooltip-bg
+
+$tooltip-opacity: 1
+
+// Breadcrumb
+$breadcrumb-padding-vertical: 0
+$breadcrumb-padding-horizontal: 0
+
+$breadcrumb-bg: #fff
+
+$breadcrumb-font-size: $font-size-small
+
+$breadcrumb-color: $gray-darker
+$breadcrumb-active-color: $gray-darker
+
+// Modal
+$modal-inner-padding: 30px
+
+$modal-title-padding: $modal-inner-padding
+
+$modal-backdrop-bg: #31383f
+
+$modal-backdrop-opacity: .8
+
+$modal-header-border-color: $gray-lightest
+
+$modal-lg: 804px
+
+// Label
+$label-default-bg: $brand-default
+$label-primary-bg: $brand-primary
+$label-success-bg: $brand-success
+$label-warning-bg: $brand-warning
+$label-waiting-bg: $brand-waiting
+
+// Layout
+$adm-layout-max-width: 1600px;
+
+// Dropdown
+$amd-dropdown-popup-width: 220px
+
+$adm-dropdown-popup-bg: #4a4f55 !default
+
+$amd-dropdown-popup-border-radius: 4px
+
+$amd-dropdown-popup-link-color: #fff !default
+
+$adm-dropdown-popup-link-hover-color: $amd-dropdown-popup-link-color !default
+$adm-dropdown-popup-link-hover-bg: #767a7f !default
+
+$adm-dropdown-popup-link-active-color: $adm-dropdown-popup-link-hover-color !default
+$adm-dropdown-popup-link-active-bg: $adm-dropdown-popup-link-hover-bg !default
+
+$adm-dropdown-popup-link-disabled-color: $gray-light !default
+
+$adm-dropdown-popup-arrow-size: 7px
+
+$adm-dropdown-popup-arrow-color: $adm-dropdown-popup-bg !default
+
+// Categories
+$adm-categories-item-vertical-padding: 14px
+$adm-categories-item-horizontal-padding: 15px
+
+$adm-categories-item-font-size: $font-size-base
+
+$adm-categories-item-active-bg: $blue
+
+// Categories
+$adm-subnav-item-vertical-padding: 14px
+$adm-subnav-item-horizontal-padding: 15px
+
+$adm-subnav-item-font-size: $font-size-base
+
+$adm-subnav-item-active-bg: $blue

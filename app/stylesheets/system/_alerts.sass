@@ -1,0 +1,28 @@
+.alert
+  +antialiased
+  border-radius: 0
+  .close
+    text-shadow: none
+    margin-top: -2px
+
+.form-alert
+  @extend .alert
+  display: inline-block
+
+.alert-success 
+  +alert-variant($green, $green, #fff)
+
+.alert-info 
+  +alert-variant($blue, $blue, #fff)
+
+.alert-warning 
+  +alert-variant($orange, $orange, #fff)
+
+.alert-danger 
+  +alert-variant($red, $red, #fff)
+
+.form-alert-danger
+  +alert-variant($red-dark, $red-dark, #fff)
+  padding: 6px 15px
+  border-radius: $border-radius-base
+  font-size: $font-size-small

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head_system.haml'
+  %body
+    .navbar-transparent
+      .container
+        .login__navbar-logo-block
+          %a.login__navbar-logo{href: 'index.html'}
+    .login__content.login__content--fullscreen
+      .login__block
+        %form#new_operator_login_form.simple_form.login__form{:action => "login_errors.html"}
+          %div{:style => "display:none"}
+          .login__form-header Авторизация
+          .form-group.tel.required.operator_login_form_phone
+            %input#operator_login_form_phone.string.tel.required.form-control.form-control{:placeholder => "ргн", :type => "tel"}
+          .form-group.string.required.operator_login_form_pin_code
+            %input#operator_login_form_pin_code.string.required.form-control{:placeholder => "ргн", :type => "text"}
+          .login__form-actions
+            %input.btn.login__form-submit-btn{:type => "submit", :value => "Войти"}
+        .row
+          .col-sm-6
+            %p.color-text-light
+              Нет аккаунта?
+              %br
+              %a{href: 'signup.html'}
+                %strong Создать магазин
+          .col-sm-6
+            %p.color-text-light
+              Забыли пароль?
+              %a{href: 'reset_password.html'}
+                %strong Восстановить
+
