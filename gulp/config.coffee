@@ -41,6 +41,11 @@ module.exports = {
       dest: dist
       outputName: 'dist_sass.css'
     }
+    systemStyles: {
+      src: src + '/stylesheets/system_dist.scss'
+      dest: dist
+      outputName: 'system.css'
+    }
     fonts: {
       src: src + '/**/*.{eot,svg,ttf,woff}'
       dest: assets_dist
@@ -86,6 +91,11 @@ module.exports = {
     src: src + '/stylesheets/local.scss'
     dest: build + '/stylesheets'
     outputName: 'local_sass.css'
+  }
+  systemStyles: {
+    src: src + '/stylesheets/system_local.scss'
+    dest: build + '/stylesheets'
+    outputName: 'system.css'
   }
   stylesheets: {
     src: vendor_styles.concat( build + '/stylesheets/local_sass.css' )
