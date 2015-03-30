@@ -285,11 +285,15 @@
                         %i.fa.fa-angle-right
               %li
                 %a{href: 'login.html'} != '<i class="fa fa-sign-out"></i> Log out'
-        .row.wrapper.border-bottom.white-bg.page-heading
-          .col-sm-4
-            %h2 Добавить товар
+        / .row.wrapper.border-bottom.white-bg.page-heading
+        /   .col-sm-4
+        /     %h2 Добавить товар
         .row
-          .col-lg-12
+          .col-lg-10.col-lg-offset-1
+            .wrapper-content.p-v-none
+              %h1.m-t-lg Добавить товар
+        .row
+          .col-lg-10.col-lg-offset-1
             .wrapper.wrapper-content.animated.fadeInRight
               .ibox-content.m-b-sm.border-bottom
                 %form{action: '?', method: 'post', accept-charset: 'UTF-8'}
@@ -395,19 +399,15 @@
                       %label.control-label Описание
                     %textarea.form-control{placeholder: 'Описание', required: 'required', autosize: 'true'}
                   .hr-line-dashed
-                  .form-group.form-horizontal
+                  .form-group
                     %h3
                       %label Характеристики
-                    .row.m-b
-                      .col-sm-2
-                        %label.control-label.m-b-sm Например, веc
-                      .col-sm-10
-                        %input.form-control{type: 'text', placeholder: '11 грамм'}
-                    .row.m-b
-                      .col-sm-2
-                        %label.control-label.m-b-sm Например, вес
-                      .col-sm-10
-                        %input.form-control{type: 'text', placeholder: '11 грамм'}
+                    .m-b
+                      %label.control-label.m-b-sm Например, веc
+                      %input.form-control{type: 'text', placeholder: '11 грамм'}
+                    .m-b
+                      %label.control-label.m-b-sm Например, вес
+                      %input.form-control{type: 'text', placeholder: '11 грамм'}
                   .hr-line-dashed
                   .form-group
                     %button.btn.btn-primary.m-r.m-t-sm Сохранить
