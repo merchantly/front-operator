@@ -48,7 +48,7 @@ module.exports = {
       outputName: 'system.css'
     }
     fonts: {
-      src: src + '/**/*.{eot,svg,ttf,woff}'
+      src: src + '/**/*.{eot,svg,ttf,woff,woff2}'
       dest: assets_dist
     }
     styles: {

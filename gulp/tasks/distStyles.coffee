@@ -6,7 +6,7 @@ minifyCSS    = require 'gulp-minify-css'
 handleErrors = require '../util/handleErrors'
 config       = require('../config').dist.styles
 
-gulp.task 'distStyles', ['distFonts', 'distSass'], ->
+gulp.task 'distStyles', ['distSass'], ->
   gulp.src config.src
     .on 'error', handleErrors
     .pipe concatCss(config.target, rebaseUrls: false)
