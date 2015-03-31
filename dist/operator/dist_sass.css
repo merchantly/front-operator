@@ -14712,3 +14712,9 @@ body.skin-3 {
   width: 100%;
   height: auto;
   position: relative; }
+
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/kiosk/overrides */
+.project-title a {
+  font-weight: 400;
+  font-size: 16px;
+  color: #676a6c; }
