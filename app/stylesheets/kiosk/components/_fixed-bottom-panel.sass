@@ -1,0 +1,18 @@
+$fixed-bottom-panel-zindex: 100
+
+.fixed-bottom-panel
+  margin: 0
+  position: fixed
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: $fixed-bottom-panel-zindex
+  .ibox-content
+    padding: 15px 25px
+    .btn
+      margin-top: 5px
+      margin-bottom: 5px
+
+@media (min-width: $screen-sm-min)
+  .fixed-bottom-panel
+    left: $sidebar-width

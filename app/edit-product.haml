@@ -213,201 +213,533 @@
 
       / Page Wrapper
       #page-wrapper.gray-bg
-        .row.border-bottom
-          .navbar.navbar-static-top{style: 'margin-bottom: 0', role: 'navigation'}
-            .navbar-header
-              %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{href: '#'}
-                %i.fa.fa-bars
-              %form.navbar-form-custom{method: 'post', action: 'search_results.html', role: 'search'}
-                .form-group
-                  %input#top-search.form-control{type: 'text', name: 'top-search', placeholder: 'Search for something...'}
-            %ul.nav.navbar-top-links.navbar-right
-              %li
-                %span.m-r-sm.text-muted.welcome-message Welcome to INSPINIA+ Admin Theme.
-              %li.dropdown
-                %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-envelope"></i> <span class="label label-warning">16</span>'
-                %ul.dropdown-menu.dropdown-messages
-                  %li
-                    .dropdown-messages-box
-                      %a.pull-left{href: 'profile.html'}
-                        %img.img-circle{src: 'assets/a7.jpg', alt: 'image'}
-                      .media-body
-                        %small.pull-right 46h ago
-                        != '<strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br />'
-                        %small.text-muted 3 days ago at 7:58 pm - 10.06.2014
-                  %li.divider
-                  %li
-                    .dropdown-messages-box
-                      %a.pull-left{href: 'profile.html'}
-                        %img.img-circle{src: 'assets/a4.jpg', alt: 'image'}
-                      .media-body
-                        %small.pull-right 5h ago
-                        != '<strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br />'
-                        %small.text-muted Yesterday 1:21 pm - 11.06.2014
-                  %li.divider
-                  %li
-                    .dropdown-messages-box
-                      %a.pull-left{href: 'profile.html'}
-                        %img.img-circle{src: 'assets/profile.jpg', alt: 'image'}
-                      .media-body
-                        %small.pull-right 23h ago
-                        != '<strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br />'
-                        %small.text-muted 2 days ago at 2:30 am - 11.06.2014
-                  %li.divider
-                  %li
-                    .text-center.link-block
-                      %a{href: 'mailbox.html'} != '<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>'
-              %li.dropdown
-                %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-bell"></i> <span class="label label-primary">8</span>'
-                %ul.dropdown-menu.dropdown-alerts
-                  %li
-                    %a{href: 'mailbox.html'}
-                      %div
-                        != '<i class="fa fa-envelope fa-fw"></i> You have 16 messages'
-                        %span.pull-right.text-muted.small 4 minutes ago
-                  %li.divider
-                  %li
-                    %a{href: 'profile.html'}
-                      %div
-                        != '<i class="fa fa-twitter fa-fw"></i> 3 New Followers'
-                        %span.pull-right.text-muted.small 12 minutes ago
-                  %li.divider
-                  %li
-                    %a{href: 'grid_options.html'}
-                      %div
-                        != '<i class="fa fa-upload fa-fw"></i> Server Rebooted'
-                        %span.pull-right.text-muted.small 4 minutes ago
-                  %li.divider
-                  %li
-                    .text-center.link-block
-                      %a{href: 'notifications.html'}
-                        %strong See All Alerts
-                        %i.fa.fa-angle-right
-              %li
-                %a{href: 'login.html'} != '<i class="fa fa-sign-out"></i> Log out'
+        / :plain
+        /   <div class="row border-bottom white-bg" style="height: 50px;">
+        /   <nav class="navbar navbar-static-top" role="navigation" style="border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; right: 0;">
+        /       <div class="navbar-header">
+        /           <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        /               <i class="fa fa-reorder"></i>
+        /           </button>
+        /           <a href="#" class="navbar-brand">Inspinia</a>
+        /       </div>
+        /       <div class="navbar-collapse collapse" id="navbar">
+        /           <ul class="nav navbar-nav">
+        /               <li class="active">
+        /                   <a aria-expanded="false" role="button" href="layouts.html"> Back to main Layout page</a>
+        /               </li>
+        /               <li class="dropdown">
+        /                   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        /                   <ul role="menu" class="dropdown-menu">
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                   </ul>
+        /               </li>
+        /               <li class="dropdown">
+        /                   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        /                   <ul role="menu" class="dropdown-menu">
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                   </ul>
+        /               </li>
+        /               <li class="dropdown">
+        /                   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        /                   <ul role="menu" class="dropdown-menu">
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                   </ul>
+        /               </li>
+        /               <li class="dropdown">
+        /                   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        /                   <ul role="menu" class="dropdown-menu">
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                       <li><a href="">Menu item</a></li>
+        /                   </ul>
+        /               </li>
+
+        /           </ul>
+        /           <ul class="nav navbar-top-links navbar-right">
+        /               <li>
+        /                   <a href="login.html">
+        /                       <i class="fa fa-sign-out"></i> Log out
+        /                   </a>
+        /               </li>
+        /           </ul>
+        /       </div>
+        /   </nav>
+        /   </div>
+        / .row.border-bottom
+        /   .navbar.navbar-static-top{style: 'margin-bottom: 0', role: 'navigation'}
+        /     .navbar-header
+        /       %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{href: '#'}
+        /         %i.fa.fa-bars
+        /       %form.navbar-form-custom{method: 'post', action: 'search_results.html', role: 'search'}
+        /         .form-group
+        /           %input#top-search.form-control{type: 'text', name: 'top-search', placeholder: 'Search for something...'}
+        /     %ul.nav.navbar-top-links.navbar-right
+        /       %li
+        /         %span.m-r-sm.text-muted.welcome-message Welcome to INSPINIA+ Admin Theme.
+        /       %li.dropdown
+        /         %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-envelope"></i> <span class="label label-warning">16</span>'
+        /         %ul.dropdown-menu.dropdown-messages
+        /           %li
+        /             .dropdown-messages-box
+        /               %a.pull-left{href: 'profile.html'}
+        /                 %img.img-circle{src: 'assets/a7.jpg', alt: 'image'}
+        /               .media-body
+        /                 %small.pull-right 46h ago
+        /                 != '<strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br />'
+        /                 %small.text-muted 3 days ago at 7:58 pm - 10.06.2014
+        /           %li.divider
+        /           %li
+        /             .dropdown-messages-box
+        /               %a.pull-left{href: 'profile.html'}
+        /                 %img.img-circle{src: 'assets/a4.jpg', alt: 'image'}
+        /               .media-body
+        /                 %small.pull-right 5h ago
+        /                 != '<strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br />'
+        /                 %small.text-muted Yesterday 1:21 pm - 11.06.2014
+        /           %li.divider
+        /           %li
+        /             .dropdown-messages-box
+        /               %a.pull-left{href: 'profile.html'}
+        /                 %img.img-circle{src: 'assets/profile.jpg', alt: 'image'}
+        /               .media-body
+        /                 %small.pull-right 23h ago
+        /                 != '<strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br />'
+        /                 %small.text-muted 2 days ago at 2:30 am - 11.06.2014
+        /           %li.divider
+        /           %li
+        /             .text-center.link-block
+        /               %a{href: 'mailbox.html'} != '<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>'
+        /       %li.dropdown
+        /         %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-bell"></i> <span class="label label-primary">8</span>'
+        /         %ul.dropdown-menu.dropdown-alerts
+        /           %li
+        /             %a{href: 'mailbox.html'}
+        /               %div
+        /                 != '<i class="fa fa-envelope fa-fw"></i> You have 16 messages'
+        /                 %span.pull-right.text-muted.small 4 minutes ago
+        /           %li.divider
+        /           %li
+        /             %a{href: 'profile.html'}
+        /               %div
+        /                 != '<i class="fa fa-twitter fa-fw"></i> 3 New Followers'
+        /                 %span.pull-right.text-muted.small 12 minutes ago
+        /           %li.divider
+        /           %li
+        /             %a{href: 'grid_options.html'}
+        /               %div
+        /                 != '<i class="fa fa-upload fa-fw"></i> Server Rebooted'
+        /                 %span.pull-right.text-muted.small 4 minutes ago
+        /           %li.divider
+        /           %li
+        /             .text-center.link-block
+        /               %a{href: 'notifications.html'}
+        /                 %strong See All Alerts
+        /                 %i.fa.fa-angle-right
+        /       %li
+        /         %a{href: 'login.html'} != '<i class="fa fa-sign-out"></i> Log out'
+        / .row.wrapper.page-heading
+        /   .col-sm-4
+        /     %h1 Добавить товар
+        / .row
+        /   .col-lg-12
+        /     .wrapper.wrapper-content.animated.fadeInRight
+        /       .ibox-content.m-b-sm.border-bottom
+        /         %form{action: '?', method: 'post', accept-charset: 'UTF-8'}
+        /           .alert.alert-danger
+        /             != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
+        /           .form-group
+        /             %label.font-normal.m-r-xs{for: 'product-visibility'} Товар на сайте
+        /             %label.switcher
+        /               %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
+        /               %span.switcher__box
+        /                 %span.switcher__knob
+        /           .hr-line-dashed
+        /           .form-group
+        /             %h3
+        /               %label.control-label Фотографии
+        /             %div{data: {react-class: 'ProductImages', react-props: '{"productId":4351,"productCardId":1642,"images":[{"url":"assets/product-1-square.png?1","id":5203}]}'}}
+        /           .hr-line-dashed
+        /           .form-group
+        /             %h3
+        /               %label.control-label Название товара
+        /             %textarea.form-control{placeholder: 'Например, велосипед городской'}
+        /           .hr-line-dashed
+        /           .form-group
+        /             .row
+        /               .col-sm-6
+        /                 .form-group
+        /                   %label.control-label.m-b-sm Бренд
+        /                   %input.form-control{type: 'text', placeholder: 'Бренд'}
+        /               .col-sm-6
+        /                 .form-group
+        /                   %label.control-label.m-b-sm Цена
+        /                   %input.form-control{type: 'text', placeholder: '20 000'}
+        /               .col-sm-6
+        /                 .form-group
+        /                   %label.control-label.m-b-sm Категория
+        /                   %select.form-control{multiple: true, ks-select2: true}
+        /                     %option{value: 'Молоко'} Молоко
+        /                     %option{value: 'Морепродукты'} Морепродукты
+        /                     %option{value: 'Мопеды'} Мопеды
+        /                     %option{value: 'Брилианты'} Брилианты
+        /               .col-sm-6
+        /                 .form-group
+        /                   %label.control-label.m-b-sm Подкатегория
+        /                   %select.form-control{multiple: true, ks-select2: true}
+        /                     %option{value: 'Молоко'} Молоко
+        /                     %option{value: 'Морепродукты'} Морепродукты
+        /                     %option{value: 'Мопеды'} Мопеды
+        /                     %option{value: 'Брилианты'} Брилианты
+        /           .hr-line-dashed
+        /           .form-group
+        /             %h3
+        /               %label.control-label Варианты товара
+        /             .m-b
+        /               %button.btn.btn-info.btn-outline.m-r-xs.active Размер
+        /               %button.btn.btn-info.btn-outline.m-r-xs Цвет
+        /               .row.m-t
+        /                 .col-md-11
+        /                   %select.form-control{placeholder: 'Другое', multiple: true, ks-select2: true}
+        /                     %option{value: 'Материал'} Материал
+        /                     %option{value: 'Артикул'} Артикул
+        /             .row
+        /               .col-md-11
+        /                 .row
+        /                   .col-sm-4.hidden-xs
+        /                     %label.control-label.m-b-sm Размер
+        /                   .col-sm-4.hidden-xs
+        /                     %label.control-label.m-b-sm Количество
+        /                   .col-sm-4.hidden-xs
+        /                     %label.control-label.m-b-sm Артикул
+        /             .row
+        /               .col-md-11.col-xs-10
+        /                 .row
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Размер
+        /                     %input.form-control{type: 'text', placeholder: 'Например, XL'}
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Количество
+        /                     %input.form-control{type: 'text', placeholder: 'Например, 5'}
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Артикул
+        /                     %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
+        /             .row
+        /               .col-md-11.col-xs-10
+        /                 .hr-line-dashed.m-t-none.m-b
+        /                 .row
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Размер
+        /                     %input.form-control{type: 'text', placeholder: 'Например, XL'}
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Количество
+        /                     %input.form-control{type: 'text', placeholder: 'Например, 5'}
+        /                   .col-sm-4.m-b
+        /                     %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Артикул
+        /                     %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
+        /               .col-md-1.col-xs-2.m-t-md.m-b.p-l-none
+        /                 %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+        /                   %i.fa.fa-times
+        /             .m-b
+        /               %button.btn.btn-default.btn-rounded.btn-outline.btn-sm Добавить ещё
+        /           .hr-line-dashed
+        /           .form-group
+        /             %h3
+        /               %label.control-label Описание
+        /             %textarea.form-control{placeholder: 'Описание', required: 'required', autosize: 'true'}
+        /           .hr-line-dashed
+        /           .form-group
+        /             %h3
+        /               %label Характеристики
+        /             .m-b
+        /               %label.control-label.m-b-sm Например, веc
+        /               %input.form-control{type: 'text', placeholder: '11 грамм'}
+        /             .m-b
+        /               %label.control-label.m-b-sm Например, вес
+        /               %input.form-control{type: 'text', placeholder: '11 грамм'}
+        /           .hr-line-dashed
+        /           .form-group
+        /             %button.btn.btn-primary.m-r.m-t-sm Сохранить
+        /             %button.btn.btn-outline.btn-danger.m-t-sm Удалить товар навсегда
         .row.wrapper.page-heading
-          .col-sm-4
-            %h1 Добавить товар
+          .col-sm-7
+            %h1.page-title
+              Редактирование товара
+              %a{href: '#'}
+                %span.label.label-primary ссылка на товар на сайте
+          .col-sm-5
+            .title-action
+              %label.switcher
+                %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
+                %span.switcher__box
+                  %span.switcher__knob
+              %label.m-b-none.m-l-xs.font-normal{for: 'product-visibility'} Товар на сайте
         .row
           .col-lg-12
-            .wrapper.wrapper-content.animated.fadeInRight
-              .ibox-content.m-b-sm.border-bottom
-                %form{action: '?', method: 'post', accept-charset: 'UTF-8'}
-                  .alert.alert-danger
-                    != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
-                  .form-group
-                    %label.font-normal.m-r-xs{for: 'product-visibility'} Товар на сайте
-                    %label.switcher
-                      %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
-                      %span.switcher__box
-                        %span.switcher__knob
-                  .hr-line-dashed
-                  .form-group
-                    %h3
-                      %label.control-label Фотографии
-                    %div{data: {react-class: 'ProductImages', react-props: '{"productId":4351,"productCardId":1642,"images":[{"url":"assets/product-1-square.png?1","id":5203}]}'}}
-                  .hr-line-dashed
-                  .form-group
-                    %h3
-                      %label.control-label Название товара
-                    %textarea.form-control{placeholder: 'Например, велосипед городской'}
-                  .hr-line-dashed
-                  .form-group
+            .wrapper.wrapper-content
+              .alert.alert-danger != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
+              .ibox
+                .ibox-title
+                  %h3 Фотографии
+                .ibox-content
+                  %div{data: {react-class: 'ProductImages', react-props: '{"productId":4351,"productCardId":1642,"images":[{"url":"assets/product-1-square.png?1","id":5203}]}'}}
+              .ibox
+                .ibox-title
+                  %h3 Товар
+                .ibox-content
+                  .form-group.has-error
+                    %label.control-label != 'Название <i class="fa fa-question-circle" data-toggle="tooltip" title="Название"></i>'
+                    %input.form-control{type: 'text', placeholder: 'Например, велосипед городской'}
+                  .form-group.m-b-none
                     .row
-                      .col-sm-6
+                      .col-md-6.col-lg-4
                         .form-group
-                          %label.control-label.m-b-sm Бренд
-                          %input.form-control{type: 'text', placeholder: 'Бренд'}
-                      .col-sm-6
+                          %label.control-label != 'Цена <i class="fa fa-question-circle" data-toggle="tooltip" title="Название"></i>'
+                          %input.form-control{type: 'text'}
+                      .col-md-6.col-lg-4
                         .form-group
-                          %label.control-label.m-b-sm Цена
-                          %input.form-control{type: 'text', placeholder: '20 000'}
-                      .col-sm-6
+                          %label.control-label Цена распродажи
+                          %input.form-control{type: 'text'}
+                      .col-md-12.col-lg-4
                         .form-group
-                          %label.control-label.m-b-sm Категория
-                          %select.form-control{multiple: true, ks-select2: true}
-                            %option{value: 'Молоко'} Молоко
-                            %option{value: 'Морепродукты'} Морепродукты
-                            %option{value: 'Мопеды'} Мопеды
-                            %option{value: 'Брилианты'} Брилианты
-                      .col-sm-6
-                        .form-group
-                          %label.control-label.m-b-sm Подкатегория
-                          %select.form-control{multiple: true, ks-select2: true}
-                            %option{value: 'Молоко'} Молоко
-                            %option{value: 'Морепродукты'} Морепродукты
-                            %option{value: 'Мопеды'} Мопеды
-                            %option{value: 'Брилианты'} Брилианты
-                  .hr-line-dashed
+                          %label.hidden-xs.hidden-sm.hidden-md &nbsp;
+                          %div
+                            %label.switcher
+                              %input#sale.switcher__input{type: 'checkbox'}
+                              %span.switcher__box
+                                %span.switcher__knob
+                            %label.m-b-none.m-l-xs.font-normal{for: 'sale'} Включить распродажу
                   .form-group
-                    %h3
-                      %label.control-label Варианты товара
-                    .m-b
-                      %button.btn.btn-info.btn-outline.m-r-xs.active Размер
-                      %button.btn.btn-info.btn-outline.m-r-xs Цвет
-                      .row.m-t
-                        .col-md-11
-                          %select.form-control{placeholder: 'Другое', multiple: true, ks-select2: true}
-                            %option{value: 'Материал'} Материал
-                            %option{value: 'Артикул'} Артикул
+                    %label.control-label Категория
+                    %select.form-control{ks-select2: true}
+                      %option{value: 'Молоко'} Молоко
+                      %option{value: 'Морепродукты'} Морепродукты
+                      %option{value: 'Мопеды'} Мопеды
+                      %option{value: 'Брилианты'} Брилианты
+                    %span.help-block.m-b-none != 'Категории создаются в <a href="#">специальном разделе</a>'
+                  .form-group
+                    %label.control-label Описание
+                    %textarea.form-control{required: 'required', autosize: 'true'}
+                  .form-group.m-b-none
+                    %label.control-label Артикул
+                    %input.form-control{type: 'text', value: '74A3317', disabled: true}
+              .ibox
+                .ibox-title
+                  %h3 Варианты товара (размеры, цвета и т.п.)
+                .ibox-content
+                  .form-group.m-b-none
                     .row
-                      .col-md-11
+                      .col-md-11.col-xs-10
                         .row
                           .col-sm-4.hidden-xs
-                            %label.control-label.m-b-sm Размер
+                            %label.control-label Размер
                           .col-sm-4.hidden-xs
-                            %label.control-label.m-b-sm Количество
+                            %label.control-label Количество
                           .col-sm-4.hidden-xs
-                            %label.control-label.m-b-sm Артикул
+                            %label.control-label Артикул
                     .row
                       .col-md-11.col-xs-10
                         .row
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Размер
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Размер
                             %input.form-control{type: 'text', placeholder: 'Например, XL'}
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Количество
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Количество
                             %input.form-control{type: 'text', placeholder: 'Например, 5'}
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Артикул
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Артикул
                             %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
                     .row
                       .col-md-11.col-xs-10
                         .hr-line-dashed.m-t-none.m-b
                         .row
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Размер
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Размер
                             %input.form-control{type: 'text', placeholder: 'Например, XL'}
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Количество
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Количество
                             %input.form-control{type: 'text', placeholder: 'Например, 5'}
                           .col-sm-4.m-b
-                            %label.control-label.hidden-lg.hidden-md.hidden-sm.m-b-sm Артикул
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Артикул
                             %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
                       .col-md-1.col-xs-2.m-t-md.m-b.p-l-none
                         %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
                           %i.fa.fa-times
-                    .m-b
-                      %button.btn.btn-default.btn-rounded.btn-outline.btn-sm Добавить ещё
-                  .hr-line-dashed
-                  .form-group
-                    %h3
-                      %label.control-label Описание
-                    %textarea.form-control{placeholder: 'Описание', required: 'required', autosize: 'true'}
-                  .hr-line-dashed
-                  .form-group
-                    %h3
-                      %label Характеристики
-                    .m-b
-                      %label.control-label.m-b-sm Например, веc
-                      %input.form-control{type: 'text', placeholder: '11 грамм'}
-                    .m-b
-                      %label.control-label.m-b-sm Например, вес
-                      %input.form-control{type: 'text', placeholder: '11 грамм'}
-                  .hr-line-dashed
-                  .form-group
-                    %button.btn.btn-primary.m-r.m-t-sm Сохранить
-                    %button.btn.btn-outline.btn-danger.m-t-sm Удалить товар навсегда
+                    %button.btn.btn-default.btn-rounded.btn-outline.btn-sm Добавить ещё
+              .ibox
+                .ibox-title
+                  %h3 Характеристики
+                .ibox-content
+                  .text-center.p-lg
+                    %p Вы не создали характеристики
+                    %button.btn.btn-primary.m-t-xs != '<i class="fa fa-plus"></i> Создать'
+              .ibox
+                .ibox-title
+                  %h3 Характеристики
+                .ibox-content
+                  .form-horizontal
+                    .form-group
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Наличие манометра
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .form-group
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Скорость
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .form-group.m-b
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Высота рамы
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .form-group.m-b-none
+                      .col-md-8.col-md-offset-4.col-lg-9.col-lg-offset-3
+                        %button.btn.btn-default.btn-rounded.btn-outline.btn-sm Показать все 45 характеристик
+              .ibox
+                .ibox-title
+                  %h3 Карточки в этом товаре
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page
+                      %thead
+                        %tr
+                          %th &nbsp;
+                          %th Название
+                          %th Цена
+                          %th Количество
+                          %th Распродажа
+                          %th Видимость
+                          %th &nbsp;
+                          %th &nbsp;
+                      %tbody
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %span.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %span.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %span.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
+                          %td
+                            %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+              .ibox
+                .ibox-title
+                  %h3 Похожие товары
+                .ibox-content
+                  .text-center.p-lg
+                    %p Сейчас в "похожих" выводятся товары из той же категории, но можно настроить вывод определенных товаров
+                    %button.btn.btn-primary.m-t-xs != '<i class="fa fa-plus"></i> Добавить товары'
+              .ibox
+                .ibox-title
+                  %h3 Похожие товары
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page
+                      %tbody
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %br
+                            %small.text-muted MR003-13/RU
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %button.btn.btn-primary Сохранить
+                    %button.btn.btn-outline.btn-danger.pull-right Удалить товар
         .footer
           .pull-right != '10GB of <strong>250GB</strong> Free.'
           %div != '<strong>Copyright</strong> Example Company &copy; 2014-2015'

@@ -1,4 +1,5 @@
 .switcher
+  margin-bottom: 0
   position: relative;
   display: inline-block;
   font-size: 0;
@@ -9,6 +10,8 @@
   user-select: none;
   box-sizing: content-box;
   background-clip: content-box;
+  & + label
+    vertical-align: middle
 
 .switcher__input
   position: absolute
