@@ -39,4 +39,5 @@ window.ProductImages = React.createClass
             onImageRotate={ this.updateImage }
             onImageDelete={ this.deleteImage } />
       </div>
+      <input type="hidden" name={ this.props.fieldName } value="" />
     </div>`
