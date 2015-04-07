@@ -22,3 +22,11 @@ ReactUjs.initialize()
 
 # Не используется
 # require './inspinia'
+
+$('.js-row-all-checkbox, .js-row-checkbox, [ks-icheck]').iCheck
+  checkboxClass: 'icheckbox_flat-blue'
+
+$('[ks-select2]').select2()
+
+$('[data-toggle="tooltip"]').tooltip()
+$('[data-toggle="popover"]').popover()
