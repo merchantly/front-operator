@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 %html
   %head
-    +include './app/shared/_head_system.haml'
+    +include './app/shared/system/_head.haml'
   %body
-    .navbar-transparent
-      .container
-        .login__navbar-logo-block
-          %a.login__navbar-logo{href: 'index.html'}
+    +include './app/shared/system/_login_navbar.haml'
     .login__content.login__content--fullscreen
       .login__block
         %form#new_operator_login_form.simple_form.login__form{:action => "login_errors.html"}
