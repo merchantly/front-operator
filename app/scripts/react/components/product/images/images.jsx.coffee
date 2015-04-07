@@ -24,6 +24,7 @@ window.ProductImages = React.createClass
   getInitialState: ->
     images: @convertRawImages()
 
+  # Здесь нужен пустой input, иначе невозможно удалить все картинки
   render: ->
    `<div className="thumbnails">
       <div className="row">
