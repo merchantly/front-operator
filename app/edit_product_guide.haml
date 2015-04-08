@@ -270,11 +270,11 @@
           .col-sm-7
             %h1.page-title
               Редактирование товара
-            .m-t-md
-              %a{href: '#'}
-                %span.label.label-primary ссылка на товар на сайте
-              %span.label.label-info != 'Объединено в группу &laquo;Кольца&raquo;'
-              %span.label.label-warning МС
+            .m-t-sm
+              %a.inline.m-t-xs.m-r-xs{href: '#'}>
+                %span.label.label-primary.inline ссылка на товар на сайте
+              %span.label.label-info.inline.m-t-xs.m-r-xs> != 'Объединено в группу &laquo;Кольца&raquo;'
+              %span.label.label-warning.inline.m-t-xs.m-r-xs МС
           .col-sm-5
             .title-action
               %label.switcher
@@ -300,14 +300,14 @@
                       Название
                       %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Придумайте название'}
                         %i.fa.fa-question-circle
-                    %input.form-control{type: 'text', placeholder: 'Например, велосипед городской'}
+                    %textarea.form-control{placeholder: 'Например, велосипед городской'}
                   .form-group.m-b-none
                     .row
                       .col-md-6.col-lg-4
                         .form-group
                           %label.control-label
                             Цена
-                            %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Цена указывается в рублях'}
+                            %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Цена указывается в рублях. Вы можете поменять валюту в настройках'}
                               %i.fa.fa-question-circle
                           %input.form-control{type: 'text'}
                       .col-md-6.col-lg-4
@@ -325,18 +325,22 @@
                             %label.m-b-none.m-l-xs.font-normal{for: 'sale'} Включить распродажу
                   .form-group
                     %label.control-label Категория
-                    %select.form-control{ks-select2: true}
-                      %option{value: 'Молоко'} Молоко
+                    %select.form-control{multiple: 'true', ks-select2: true}
+                      %option{value: 'Молоко', selected: true} Молоко
                       %option{value: 'Морепродукты'} Морепродукты
                       %option{value: 'Мопеды'} Мопеды
                       %option{value: 'Брилианты'} Брилианты
                     %span.help-block.m-b-none != 'Категории создаются в <a href="#">специальном разделе</a>'
-                  .form-group
-                    %label.control-label Описание
-                    %textarea.form-control{required: 'required', autosize: 'true'}
                   .form-group.m-b-none
-                    %label.control-label Артикул
-                    %input.form-control{type: 'text', value: '74A3317', disabled: true}
+                    .row
+                      .col-md-8.col-lg-9
+                        .form-group
+                          %label.control-label Описание
+                          %textarea.form-control{required: 'required', autosize: 'true'}
+                      .col-md-4.col-lg-3
+                        .form-group
+                          %label.control-label Артикул
+                          %input.form-control{type: 'text', value: '74A3317', disabled: true}
               .ibox
                 .ibox-title
                   %h3 Варианты товара (размеры, цвета и т.п.)
@@ -347,11 +351,17 @@
                     .m-b
                       .form-inline
                         %button.btn.btn-info.btn-outline.m-t-sm.m-r-sm.active> Размер
-                        %button.btn.btn-info.btn-outline.m-t-sm.m-r-sm Цвет
-                        %select.form-control.form-control-variants.m-t-sm{placeholder: 'Другое', ks-select2: true}
+                        %button.btn.btn-info.btn-outline.m-t-sm.m-r-sm> Цвет
+                        %select.form-control.form-control-variants.m-t-sm.m-r-lg{placeholder: 'Другое', ks-select2: true}>
                           %option{value: 'Другое'} Другое
                           %option{value: 'Материал'} Материал
                           %option{value: 'Артикул'} Артикул
+                        %label.inline.m-t-sm.m-r-sm{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}>
+                          %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          != '%'
+                        %label.inline.m-t-sm{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                          %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                          %i.fa.fa-eye
                   .form-group.m-b-none
                     .row
                       .col-md-11.col-xs-10
@@ -458,19 +468,23 @@
                     %button.btn.btn-default.btn-outline.btn-rounded.btn-sm.m-t-xs.active != '<i class="fa fa-plus"></i> Добавить характеристику'
                   .form-addition
                     .hr-line-dashed
-                    %h3.font-normal.m-b-md Добавить характеристику
+                    / %h3.font-normal.m-b-md Добавить характеристику
                     .row
-                      .col-sm-4.m-b
-                        %label.control-label Название
-                        %input.form-control{type: 'text', placeholder: 'Наличие манометра'}
-                      .col-sm-4.m-b
-                        %label.control-label Тип
-                        %select.form-control{ks-select2: true}
-                          %option{value: 'Тип'} Тип
-                          %option{value: 'Строковый'} Строковый
-                          %option{value: 'Числовой'} Числовой
-                    %button.btn.btn-primary.btn-outline.m-t-xs.m-r-sm Добавить
-                    %button.btn.btn-white.m-t-xs.m-r-sm Отменить
+                      .col-sm-11.col-xs-10
+                        .row
+                          .col-sm-6.m-b
+                            %label.control-label.sr-only Характеристика
+                            %select.form-control{ks-select2: true}
+                              %option{value: 'Выберите характеристику'} Выберите характеристику
+                              %option{value: 'Строковый'} Строковый
+                              %option{value: 'Числовой'} Числовой
+                          .col-sm-6.m-b
+                            %label.control-label.sr-only Значение
+                            %input.form-control{type: 'text', placeholder: 'Значение'}
+                      .col-sm-1.col-xs-2.p-l-none
+                        %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                          %i.fa.fa-times
+                    %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-r-sm Добавить
                   .form-group.m-b
                     .hr-line-dashed
                     .row
@@ -498,121 +512,226 @@
                   .ibox-tools
                     %a.collapse-link
                       %i.fa.fa-chevron-up
-                .ibox-content
-                  .form-group.m-b
-                    .row
-                      .col-sm-4.m-b
-                        %label.control-label Артикул
-                        %input.form-control{type: 'text', placeholder: 'Например, M001-11-00', value: 'M001-11-00', disabled: true}
-                      .col-sm-4.m-b
-                        %label.control-label Количество
-                        %input.form-control{type: 'text', placeholder: 'Например, 5', value: '6', disabled: true}
-                      .col-sm-4.m-b
-                        .m-t-lg.hidden-xs
-                        %label.m-t-xs.m-r-md{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}>
-                          %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true, disabled: true}
-                          != '%'
-                        %label.m-t-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
-                          %input.i-checks{type: 'checkbox', value: '', ks-icheck: true, disabled: true}
-                          %i.fa.fa-eye
-                    .row.m-b
-                      .col-sm-11.col-xs-10
-                        %label.control-label Размер
-                        %input.form-control{type: 'text', placeholder: 'Например, XL', value: 'XXL', disabled: true}
-                    .row.m-b
-                      .col-sm-11.col-xs-10
-                        %label.control-label Цвет
-                        %input.form-control{type: 'text', placeholder: 'Например, желтый', value: 'красный', disabled: true}
-                  .form-group.m-b
-                    .hr-line-dashed
-                    .row
-                      .col-sm-4.m-b
-                        %label.control-label Артикул
-                        %input.form-control{type: 'text', placeholder: 'Например, M001-11-00', value: 'M001-11-00', disabled: true}
-                      .col-sm-4.m-b
-                        %label.control-label Количество
-                        %input.form-control{type: 'text', placeholder: 'Например, 5', value: '6', disabled: true}
-                      .col-sm-4.m-b
-                        .m-t-lg.hidden-xs
-                        %label.m-t-xs.m-r-md{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}>
-                          %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true, disabled: true}
-                          != '%'
-                        %label.m-t-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
-                          %input.i-checks{type: 'checkbox', value: '', ks-icheck: true, disabled: true}
-                          %i.fa.fa-eye
-                    .row.m-b
-                      .col-sm-11.col-xs-10
-                        %label.control-label Размер
-                        %input.form-control{type: 'text', placeholder: 'Например, XL', value: 'XXL', disabled: true}
-                    .row.m-b
-                      .col-sm-11.col-xs-10
-                        %label.control-label Цвет
-                        %input.form-control{type: 'text', placeholder: 'Например, желтый', value: 'красный', disabled: true}
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page
+                      %thead
+                        %tr
+                          %th &nbsp;
+                          %th Характеристики
+                          %th Количество
+                          %th Распродажа
+                          %th Видимость
+                      %tbody
+                        %tr
+                          %td
+                            1
+                          %td.project-title
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: M001-11-00
+                              %li
+                                %small.text-muted Размер: XXL
+                              %li
+                                %small.text-muted Цвет: желтый
+                          %td
+                            6 шт.
+                          %td
+                            %i.fa.fa-check-square-o
+                          %td
+                            %i.fa.fa-check-square-o
+                        %tr
+                          %td
+                            2
+                          %td.project-title
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: M001-12-00
+                              %li
+                                %small.text-muted Размер: L
+                              %li
+                                %small.text-muted Цвет: красный
+                          %td
+                            2 шт.
+                          %td
+                            %i.fa.fa-square-o
+                          %td
+                            %i.fa.fa-check-square-o
+                        %tr
+                          %td
+                            3
+                          %td.project-title
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: M001-13-00
+                              %li
+                                %small.text-muted Размер: XL
+                              %li
+                                %small.text-muted Цвет: красный
+                          %td
+                            2 шт.
+                          %td
+                            %i.fa.fa-square-o
+                          %td
+                            %i.fa.fa-square-o
+                  / %ul
+                  /   %li
+                  /     %strong Артикул:
+                  /     M001-11-00
+                  /   %li
+                  /     %strong Количество:
+                  /     6
+                  /   %li
+                  /     %strong Размер:
+                  /     XXL
+                  /   %li
+                  /     %strong Цвет:
+                  /     красный
+                  / .hr-line-dashed
+                  / %ul
+                  /   %li
+                  /     %strong Артикул:
+                  /     M001-11-00
+                  /   %li
+                  /     %strong Количество:
+                  /     6
+                  /   %li
+                  /     %strong Размер:
+                  /     XXL
+                  /   %li
+                  /     %strong Цвет:
+                  /     красный
+                  / .form-group.m-b
+                  /   .row
+                  /     .col-sm-4.m-b
+                  /       %label.control-label Артикул
+                  /       %input.form-control{type: 'text', placeholder: 'Например, M001-11-00', value: 'M001-11-00', disabled: true}
+                  /     .col-sm-4.m-b
+                  /       %label.control-label Количество
+                  /       %input.form-control{type: 'text', placeholder: 'Например, 5', value: '6', disabled: true}
+                  /     .col-sm-4.m-b
+                  /       .m-t-lg.hidden-xs
+                  /       %label.m-t-xs.m-r-md{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}>
+                  /         %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true, disabled: true}
+                  /         != '%'
+                  /       %label.m-t-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                  /         %input.i-checks{type: 'checkbox', value: '', ks-icheck: true, disabled: true}
+                  /         %i.fa.fa-eye
+                  /   .row.m-b
+                  /     .col-sm-11.col-xs-10
+                  /       %label.control-label Размер
+                  /       %input.form-control{type: 'text', placeholder: 'Например, XL', value: 'XXL', disabled: true}
+                  /   .row.m-b
+                  /     .col-sm-11.col-xs-10
+                  /       %label.control-label Цвет
+                  /       %input.form-control{type: 'text', placeholder: 'Например, желтый', value: 'красный', disabled: true}
+                  / .form-group.m-b
+                  /   .hr-line-dashed
+                  /   .row
+                  /     .col-sm-4.m-b
+                  /       %label.control-label Артикул
+                  /       %input.form-control{type: 'text', placeholder: 'Например, M001-11-00', value: 'M001-11-00', disabled: true}
+                  /     .col-sm-4.m-b
+                  /       %label.control-label Количество
+                  /       %input.form-control{type: 'text', placeholder: 'Например, 5', value: '6', disabled: true}
+                  /     .col-sm-4.m-b
+                  /       .m-t-lg.hidden-xs
+                  /       %label.m-t-xs.m-r-md{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}>
+                  /         %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true, disabled: true}
+                  /         != '%'
+                  /       %label.m-t-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                  /         %input.i-checks{type: 'checkbox', value: '', ks-icheck: true, disabled: true}
+                  /         %i.fa.fa-eye
+                  /   .row.m-b
+                  /     .col-sm-11.col-xs-10
+                  /       %label.control-label Размер
+                  /       %input.form-control{type: 'text', placeholder: 'Например, XL', value: 'XXL', disabled: true}
+                  /   .row.m-b
+                  /     .col-sm-11.col-xs-10
+                  /       %label.control-label Цвет
+                  /       %input.form-control{type: 'text', placeholder: 'Например, желтый', value: 'красный', disabled: true}
               .ibox
                 .ibox-title
                   %h3 Характеристики
                 .ibox-content
                   .text-center.p-lg
                     %p Вы не создали характеристики
-                    %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs != '<i class="fa fa-plus"></i> Создать'
+                    %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs != '<i class="fa fa-plus"></i> Создать характеристику'
               .ibox
                 .ibox-title
                   %h3 Характеристики
                 .ibox-content
-                  .form-addition
+                  .p-t-xxs.p-b-xxs
                     .row
-                      .col-sm-4.m-b
-                        %label.control-label Название
-                        %input.form-control{type: 'text', placeholder: 'Наличие манометра'}
-                      .col-sm-4.m-b
-                        %label.control-label Тип
-                        %select.form-control{ks-select2: true}
-                          %option{value: 'Тип'} Тип
-                          %option{value: 'Строковый'} Строковый
-                          %option{value: 'Числовой'} Числовой
-                      .col-sm-4.m-b
-                        %label.control-label Значение
-                        %input.form-control{type: 'text'}
-                    %button.btn.btn-primary.btn-outline.m-t-xs.m-r-sm Создать
-                    %button.btn.btn-white.m-t-xs.m-r-sm Отменить
+                      .col-sm-11.col-xs-10
+                        .row
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Название
+                            %input.form-control{type: 'text', placeholder: 'Название'}
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Тип
+                            %select.form-control{ks-select2: true}
+                              %option{value: 'Тип'} Тип
+                              %option{value: 'Строковый'} Строковый
+                              %option{value: 'Числовой'} Числовой
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Значение
+                            %input.form-control{type: 'text', placeholder: 'Значение'}
+                      .col-sm-1.col-xs-2.p-l-none
+                        %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                          %i.fa.fa-times
+                    %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-r-sm Создать
               .ibox
                 .ibox-title
                   %h3 Характеристики
                 .ibox-content
                   .form-horizontal
                     .form-group
-                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Наличие манометра
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Наличие манометра
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
                       .col-sm-7.col-md-8.col-lg-9
                         %input.form-control{type: 'text'}
                     .form-group
-                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Скорость
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Скорость
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
                       .col-sm-7.col-md-8.col-lg-9
                         %input.form-control{type: 'text'}
                     .form-group.m-b
-                      %label.control-label.col-sm-5.col-md-4.col-lg-3 Высота рамы
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Высота рамы
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
                       .col-sm-7.col-md-8.col-lg-9
                         %input.form-control{type: 'text'}
                     .form-group.m-b-none
                       .col-md-8.col-md-offset-4.col-lg-9.col-lg-offset-3
                         %button.btn.btn-default.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Показать все 45 характеристик
                         %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs.active != '<i class="fa fa-plus"></i> Создать характеристику'
-                  .form-addition
+                  .p-t-xxs.p-b-xxs
                     .hr-line-dashed
                     .row
-                      .col-sm-4.m-b
-                        %label.control-label Название
-                        %input.form-control{type: 'text', placeholder: 'Наличие манометра'}
-                      .col-sm-4.m-b
-                        %label.control-label Тип
-                        %select.form-control{ks-select2: true}
-                          %option{value: 'Тип'} Тип
-                          %option{value: 'Строковый'} Строковый
-                          %option{value: 'Числовой'} Числовой
-                      .col-sm-4.m-b
-                        %label.control-label Значение
-                        %input.form-control{type: 'text'}
-                    %button.btn.btn-primary.btn-outline.m-t-xs.m-r-sm Создать
-                    %button.btn.btn-white.m-t-xs.m-r-sm Отменить
+                      .col-sm-11.col-xs-10
+                        .row
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Название
+                            %input.form-control{type: 'text', placeholder: 'Название'}
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Тип
+                            %select.form-control{ks-select2: true}
+                              %option{value: 'Тип'} Тип
+                              %option{value: 'Строковый'} Строковый
+                              %option{value: 'Числовой'} Числовой
+                          .col-sm-4.m-b
+                            %label.control-label.sr-only Значение
+                            %input.form-control{type: 'text', placeholder: 'Значение'}
+                      .col-sm-1.col-xs-2.p-l-none
+                        %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                          %i.fa.fa-times
+                    %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-r-sm Создать
               .ibox
                 .ibox-title
                   %h3 Карточки в этом товаре
@@ -632,10 +751,10 @@
                       %tbody
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul
+                            %ul.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-13/RU
                               %li
@@ -661,10 +780,10 @@
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul
+                            %ul.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-14/RU
                               %li
@@ -690,10 +809,10 @@
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul
+                            %ul.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
@@ -719,41 +838,38 @@
                               %i.fa.fa-times
                           %td
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+              / .ibox
+              /   .ibox-title
+              /     %h3 Похожие товары
+              /   .ibox-content
+              /     .text-center.p-lg
+              /       %p Сейчас в "похожих" выводятся товары из той же категории, но можно настроить вывод определенных товаров
+              /       %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs != '<i class="fa fa-plus"></i> Добавить товары'
               .ibox
                 .ibox-title
                   %h3 Похожие товары
-                .ibox-content
-                  .text-center.p-lg
-                    %p Сейчас в "похожих" выводятся товары из той же категории, но можно настроить вывод определенных товаров
-                    %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs != '<i class="fa fa-plus"></i> Добавить товары'
-              .ibox
-                .ibox-title
-                  %h3 Похожие товары
-                .ibox-content
-                  .form-addition
-                    %h3.font-normal.m-b-md Добавить похожий товар
+                .ibox-content.p-none
+                  .p-m.p-t-xxs.p-b-xxs
                     .row
-                      .col-md-6.m-b
-                        %select.form-control{ks-select2: true}
-                          %option{value: 'Выбрать товар'} Выбрать товар
-                          %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
-                          %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
-                    %button.btn.btn-primary.btn-outline.m-t-xs.m-r-sm Добавить
-                    %button.btn.btn-white.m-t-xs.m-r-sm Отменить
+                      .col-md-6.m-t.m-b
+                        %input.form-control{type: 'text', placeholder: 'Выберите товар', ks-select2-ajax: true}
+                      .col-md-6.m-t.m-b
+                        %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Добавить
               .ibox
                 .ibox-title
                   %h3 Похожие товары
                 .ibox-content.p-none
                   .project-list.table-responsive
-                    %table.table.table-hover.table-striped.table-page
+                    %table.table.table-hover.table-striped.table-page.m-b-none
                       %tbody
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %br
-                            %small.text-muted MR003-13/RU
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
                           %td
                             %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
                               %i.fa.fa-times
@@ -761,11 +877,12 @@
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %br
-                            %small.text-muted MR003-13/RU
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
                           %td
                             %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
                               %i.fa.fa-times
@@ -773,29 +890,27 @@
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
                         %tr
                           %td.project-image
-                            %img.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
                           %td.project-title
                             %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %br
-                            %small.text-muted MR003-13/RU
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
                           %td
                             %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
                               %i.fa.fa-times
                           %td
                             %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
-                  .p-m.p-l-top
-                    %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs.active != '<i class="fa fa-plus"></i> Добавить товары'
-                    .form-addition
-                      .hr-line-dashed
-                      %h3.font-normal.m-b-md Добавить похожий товар
-                      .row
-                        .col-md-6.m-b
-                          %select.form-control{ks-select2: true}
-                            %option{value: 'Выбрать товар'} Выбрать товар
-                            %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
-                      %button.btn.btn-primary.btn-outline.m-t-xs.m-r-sm Добавить
-                      %button.btn.btn-white.m-t-xs.m-r-sm Отменить
+                  .p-m.p-t-xxs.p-b-xxs
+                    .row
+                      .col-md-6.m-t.m-b
+                        %input.form-control{type: 'text', placeholder: 'Выберите товар', ks-select2-ajax: true}
+                        / %select.form-control{ks-select2-ajax: true}
+                        /   %option{value: 'Выберите товар'} Выберите товар
+                        /   %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
+                        /   %option{value: 'Миникольцо Дабл Икс с цирконами золоченое р'} Миникольцо Дабл Икс с цирконами золоченое р
+                      .col-md-6.m-t.m-b
+                        %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Добавить
               .ibox.fixed-bottom-panel
                 .ibox-content
                   .clearfix

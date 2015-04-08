@@ -646,6 +646,7 @@ table.dataTable thead .sorting:after
 /* INPUTS */
 .inline
   display: inline-block !important
+  vertical-align: middle
 
 .input-s-sm
   width: 120px
@@ -677,6 +678,11 @@ table.dataTable thead .sorting:after
 
 .form-control:focus, .single-line:focus
   border-color: $navy
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control
+  color: #444
 
 .input-sm,
 .form-horizontal .form-group-sm .form-control,
