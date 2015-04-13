@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      / Navbar
+      %nav.navbar-default.navbar-static-side{role: 'navigation'}
+        .sidebar-collapse
+          %ul#side-menu.nav
+            %li.nav-header
+              .dropdown.profile-element
+                %span
+                  %img.img-circle{src: 'assets/profile_small.jpg', alt: 'image'}
+                %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
+                  %span.clear
+                    %span.block.m-t-xs
+                      %strong.font-bold David Williams
+                    %span.text-muted.text-xs.block != 'Art Director <b class="caret"></b>'
+                %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                  %li
+                    %a{href: 'profile.html'} Profile
+                  %li
+                    %a{href: 'contacts.html'} Contacts
+                  %li
+                    %a{href: 'mailbox.html'} Mailbox
+                  %li.divider
+                  %li
+                    %a{href: 'login.html'} Logout
+              .logo-element IN+
+            %li
+              %a{href: 'index.html'} != '<i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'index.html'} Dashboard v.1
+                %li
+                  %a{href: 'dashboard_2.html'} Dashboard v.2
+                %li
+                  %a{href: 'dashboard_3.html'} Dashboard v.3
+                %li
+                  %a{href: 'dashboard_4.html'} Dashboard v.4
+
+            %li
+              %a{href: 'layouts.html'} != '<i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span>'
+            %li
+              %a{href: '#'} != '<i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'graph_flot.html'} Flot Charts
+                %li
+                  %a{href: 'graph_morris.html'} Morris.js Charts
+                %li
+                  %a{href: 'graph_rickshaw.html'} Rickshaw Charts
+                %li
+                  %a{href: 'graph_chartjs.html'} Chart.js
+                %li
+                  %a{href: 'graph_peity.html'} Peity Charts
+                %li
+                  %a{href: 'graph_sparkline.html'} Sparkline Charts
+            %li
+              %a{href: 'mailbox.html'} != '<i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'mailbox.html'} Inbox
+                %li
+                  %a{href: 'mail_detail.html'} Email view
+                %li
+                  %a{href: 'mail_compose.html'} Compose email
+                %li
+                  %a{href: 'email_template.html'} Email templates
+            %li
+              %a{href: 'widgets.html'} != '<i class="fa fa-flask"></i> <span class="nav-label">Widgets</span>'
+            %li
+              %a{href: '#'} != '<i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'form_basic.html'} Basic form
+                %li
+                  %a{href: 'form_advanced.html'} Advanced Plugins
+                %li
+                  %a{href: 'form_wizard.html'} Wizard
+                %li
+                  %a{href: 'form_file_upload.html'} File Upload
+                %li
+                  %a{href: 'form_editors.html'} Text Editor
+            %li.active
+              %a{href: '#'} != '<i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'contacts.html'} Contacts
+                %li
+                  %a{href: 'profile.html'} Profile
+                %li
+                  %a{href: 'projects.html'} Projects
+                %li
+                  %a{href: 'project_detail.html'} Project detail
+                %li
+                  %a{href: 'file_manager.html'} File manager
+                %li
+                  %a{href: 'calendar.html'} Calendar
+                %li.active
+                  %a{href: 'faq.html'} FAQ
+                %li
+                  %a{href: 'timeline.html'} Timeline
+                %li
+                  %a{href: 'pin_board.html'} Pin board
+            %li
+              %a{href: '#'} != '<i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'search_results.html'} Search results
+                %li
+                  %a{href: 'lockscreen.html'} Lockscreen
+                %li
+                  %a{href: 'invoice.html'} Invoice
+                %li
+                  %a{href: 'login.html'} Login
+                %li
+                  %a{href: 'login_two_columns.html'} Login v.2
+                %li
+                  %a{href: 'register.html'} Register
+                %li
+                  %a{href: '404.html'} 404 Page
+                %li
+                  %a{href: '500.html'} 500 Page
+                %li
+                  %a{href: 'empty_page.html'} Empty page
+            %li
+              %a{href: '#'} != '<i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'toastr_notifications.html'} Notification
+                %li
+                  %a{href: 'nestable_list.html'} Nestable list
+                %li
+                  %a{href: 'timeline_2.html'} Timeline v.2
+                %li
+                  %a{href: 'forum_main.html'} Forum view
+                %li
+                  %a{href: 'google_maps.html'} Google maps
+                %li
+                  %a{href: 'code_editor.html'} Code editor
+                %li
+                  %a{href: 'modal_window.html'} Modal window
+                %li
+                  %a{href: 'validation.html'} Validation
+                %li
+                  %a{href: 'tree_view.html'} Tree view
+                %li
+                  %a{href: 'chat_view.html'} Chat view
+            %li
+              %a{href: '#'} != '<i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'typography.html'} Typography
+                %li
+                  %a{href: 'icons.html'} Icons
+                %li
+                  %a{href: 'draggable_panels.html'} Draggable Panels
+                %li
+                  %a{href: 'buttons.html'} Buttons
+                %li
+                  %a{href: 'video.html'} Video
+                %li
+                  %a{href: 'tabs_panels.html'} Tabs & Panels
+                %li
+                  %a{href: 'notifications.html'} Notifications & Tooltips
+                %li
+                  %a{href: 'badges_labels.html'} Badges, Labels, Progress
+            %li
+              %a{href: 'grid_options.html'} != '<i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span>'
+            %li
+              %a{href: '#'} != '<i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'table_basic.html'} Static Tables
+                %li
+                  %a{href: 'table_data_tables.html'} Data Tables
+                %li
+                  %a{href: 'jq_grid.html'} jqGrid
+            %li
+              %a{href: '#'} != '<i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: 'basic_gallery.html'} Lightbox Gallery
+                %li
+                  %a{href: 'carousel.html'} Bootstrap Carusela
+            %li
+              %a{href: '#'} != '<i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span>'
+              %ul.nav.nav-second-level
+                %li
+                  %a{href: '#'} != 'Third Level <span class="fa arrow"></span>'
+                  %ul.nav.nav-third-level
+                    %li
+                      %a{href: '#'} Third Level Item
+                    %li
+                      %a{href: '#'} Third Level Item
+                    %li
+                      %a{href: '#'} Third Level Item
+                %li
+                  %a{href: '#'} Second Level Item
+                %li
+                  %a{href: '#'}Second Level Item
+                %li
+                  %a{href: '#'}Second Level Item
+            %li
+              %a{href: 'css_animation.html'} != '<i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span>'
+            %li.landing_link
+              %a{href: 'Landing_page/index.html', target: '_blank'} != '<i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span>'
+            %li.special_link
+              %a{href: 'package.html'} != '<i class="fa fa-database"></i> <span class="nav-label">Package</span>'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.border-bottom
+          .navbar.navbar-static-top{style: 'margin-bottom: 0', role: 'navigation'}
+            .navbar-header
+              %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{href: '#'}
+                %i.fa.fa-bars
+              %form.navbar-form-custom{method: 'post', action: 'search_results.html', role: 'search'}
+                .form-group
+                  %input#top-search.form-control{type: 'text', name: 'top-search', placeholder: 'Search for something...'}
+            %ul.nav.navbar-top-links.navbar-right
+              %li
+                %span.m-r-sm.text-muted.welcome-message Welcome to INSPINIA+ Admin Theme.
+              %li.dropdown
+                %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-envelope"></i> <span class="label label-warning">16</span>'
+                %ul.dropdown-menu.dropdown-messages
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{href: 'profile.html'}
+                        %img.img-circle{src: 'assets/a7.jpg', alt: 'image'}
+                      .media-body
+                        %small.pull-right 46h ago
+                        != '<strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br />'
+                        %small.text-muted 3 days ago at 7:58 pm - 10.06.2014
+                  %li.divider
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{href: 'profile.html'}
+                        %img.img-circle{src: 'assets/a4.jpg', alt: 'image'}
+                      .media-body
+                        %small.pull-right 5h ago
+                        != '<strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br />'
+                        %small.text-muted Yesterday 1:21 pm - 11.06.2014
+                  %li.divider
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{href: 'profile.html'}
+                        %img.img-circle{src: 'assets/profile.jpg', alt: 'image'}
+                      .media-body
+                        %small.pull-right 23h ago
+                        != '<strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br />'
+                        %small.text-muted 2 days ago at 2:30 am - 11.06.2014
+                  %li.divider
+                  %li
+                    .text-center.link-block
+                      %a{href: 'mailbox.html'} != '<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>'
+              %li.dropdown
+                %a.dropdown-toggle.count-info{href: '#', data: {toggle: 'dropdown'}} != '<i class="fa fa-bell"></i> <span class="label label-primary">8</span>'
+                %ul.dropdown-menu.dropdown-alerts
+                  %li
+                    %a{href: 'mailbox.html'}
+                      %div
+                        != '<i class="fa fa-envelope fa-fw"></i> You have 16 messages'
+                        %span.pull-right.text-muted.small 4 minutes ago
+                  %li.divider
+                  %li
+                    %a{href: 'profile.html'}
+                      %div
+                        != '<i class="fa fa-twitter fa-fw"></i> 3 New Followers'
+                        %span.pull-right.text-muted.small 12 minutes ago
+                  %li.divider
+                  %li
+                    %a{href: 'grid_options.html'}
+                      %div
+                        != '<i class="fa fa-upload fa-fw"></i> Server Rebooted'
+                        %span.pull-right.text-muted.small 4 minutes ago
+                  %li.divider
+                  %li
+                    .text-center.link-block
+                      %a{href: 'notifications.html'}
+                        %strong See All Alerts
+                        %i.fa.fa-angle-right
+              %li
+                %a{href: 'login.html'} != '<i class="fa fa-sign-out"></i> Log out'
+        .row.wrapper.page-heading
+          .col-sm-4
+            %h1 Товары
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content.animated.fadeInRight
+              .ibox-content.m-b-sm.border-bottom
+                :plain
+                  <div class='row wrapper white-bg page-heading border-bottom'>
+                  <div class='col-lg-2'>
+                  <div class='m-t'>
+                  <div class="btn-group btn-group-sm" role="group"><a class="btn btn-white " href="/operator/products?index_style=list"><i class="fa fa-list"></i></a><a class="btn btn-white  btn-default active" href="/operator/products?index_style=categories"><i class="fa fa-building"></i></a></div>
+                  </div>
+                  </div>
+                  <div class='col-lg-4'>
+                  <h2>
+                  Товары
+                  </h2>
+                  </div>
+                  <div class='col-lg-2'>
+                  <div class='m-t'>
+                  <a class="btn btn-success" href="http://wannabe.aydamarket.ru/operator/products/new">Добавить</a>
+                  </div>
+                  </div>
+                  <div class='col-lg-4'>
+                  <div class='m-t'>
+                  <form accept-charset="UTF-8" action="http://wannabe.aydamarket.ru/operator/products/search" class="simple_form new_f" id="new_f_" method="get" novalidate="novalidate"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div><div class='input-group'>
+                  <div class="form-group search required f_query"><input class="string search required input-sm form-control form-control" id="f_query" name="f[query]" type="search" /></div>
+                  <span class='input-group-btn'>
+                  <button class='btn btn-sm btn-primary' type='button'>Найти</button>
+                  </span>
+                  </div>
+                  </form>
+
+
+                  </div>
+                  </div>
+                  </div>
+
+
+                  <div class='row'>
+                  <div class='col-lg-8'>
+                  <div class='project-list table-responsive'>
+                  <table class='table table-hover table-striped table-page'>
+                  <thead>
+                  <tr>
+                  <td class='check-mail' colspan='7'>
+                  <form accept-charset="UTF-8" action="http://wannabe.aydamarket.ru/operator/products/batch" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="patch" /><input name="authenticity_token" type="hidden" value="4glESMmCsKzryi13H73hPVkNL+qLT0RT77dmmIucJ2E=" /></div>
+                  <input id="selected_items_ids" name="selected_items_ids" type="hidden" />
+                  <div class='row'>
+                  <div class='col-lg-1' title='Выбрать все 813 позиций' tooltip>
+                  <input class="i-checks js-row-all-checkbox" id="" name="" type="checkbox" value="" />
+                  </div>
+                  <div class='col-lg-6'>
+                  <div class='js-row-showable hidden'>
+                  <div class='btn-group btn-group-xs' role='group'>
+                  <div class='btn btn-white btn-xs disabled'>
+                  Выбрано
+                  <span class='text-muted js-row-selected-count'>?</span>
+                  из
+                  <span class='text-muted'>813</span>
+                  </div>
+                  <button class="btn btn-xs btn-white" name="batch_action" title="Опубликовать" tooltip="true" type="submit" value="publicate"><i class="fa fa-eye"></i></button>
+                  <button class="btn btn-xs btn-white" name="batch_action" title="Скрыть" tooltip="true" type="submit" value="unpublicate"><i class="fa fa-eye-slash"></i></button>
+                  <button class="btn btn-xs btn-white" name="batch_action" title="Объединить" tooltip="true" type="submit" value="merge"><i class="fa fa-database"></i></button>
+                  <button class="btn btn-xs btn-white text-danger" name="batch_action" title="Удалить" tooltip="true" type="submit" value="delete"><i class="fa fa-trash"></i></button>
+                  </div>
+                  </div>
+                  </div>
+                  <div class='col-lg-5'>
+                  <div class='pull-right'>
+                    <ul class="pagination">
+
+
+                          <li class="page active">
+                    <a href="javascript:void(0)">1</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=2" rel="next">2</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=3">3</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=4">4</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=5">5</a>
+                  </li>
+
+                          <li class="page gap disabled"><a href="javascript:void(0)">&hellip;</a></li>
+
+
+                    <li class="next">
+                      <a href="/operator/products?index_style=categories&amp;page=2" rel="next">&rsaquo;</a>
+                    </li>
+
+                        <li class="last">
+                      <a href="/operator/products?index_style=categories&amp;page=74">&raquo;</a>
+                    </li>
+
+                    </ul>
+
+                  </div>
+                  </div>
+                  </div>
+                  </form>
+
+
+                  </td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21769" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21769/edit">Миникольцо Дабл Икс с цирконами золоченое р
+                  <br>
+                  <small class='text-muted'>MR003-13/RU</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">5 900 руб.</div>
+                  <br>
+                  -
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21768" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21768/edit">Серьги англ. замок Лилии с цирконами золоченые р
+                  <br>
+                  <small class='text-muted'>E024-13/RU</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">3 500 руб.</div>
+                  <br>
+                  15 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21768-sergi-angl-zamok-lilii-s-tsirkonami-zolochenye-r/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21767" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21767/edit">Серьги с обвесом Дейзи с цирконами золоченые р
+                  <br>
+                  <small class='text-muted'>E026-13/RU</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">6 500 руб.</div>
+                  <br>
+                  <span class="text-muted">закончился</span>
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21767-sergi-s-obvesom-deyzi-s-tsirkonami-zolochenye-r/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21766" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21766/edit">Серьги с обвесом Дейзи с цирконами серебряные р
+                  <br>
+                  <small class='text-muted'>E026-11/RU</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">6 500 руб.</div>
+                  <br>
+                  <span class="text-muted">закончился</span>
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21766-sergi-s-obvesom-deyzi-s-tsirkonami-serebryanye-r/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21715" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21715/edit">Браслет нить Рыбы золочение черный
+                  <br>
+                  <small class='text-muted'>SB060-032</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  10 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21715-braslet-nit-ryby-zolochenie-chernyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21714" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21714/edit">Браслет нить Рыбы золочение красный
+                  <br>
+                  <small class='text-muted'>SB060-031</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  15 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21714-braslet-nit-ryby-zolochenie-krasnyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21713" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21713/edit">Браслет нить Рыбы родий черный
+                  <br>
+                  <small class='text-muted'>SB060-012</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  20 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21713-braslet-nit-ryby-rodiy-chernyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21712" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21712/edit">Браслет нить Рыбы родий красный
+                  <br>
+                  <small class='text-muted'>SB060-011</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  25 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21712-braslet-nit-ryby-rodiy-krasnyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21711" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21711/edit">Браслет нить Водолей золочение черный
+                  <br>
+                  <small class='text-muted'>SB059-032</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  10 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21711-braslet-nit-vodoley-zolochenie-chernyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21710" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21710/edit">Браслет нить Водолей золочение красный
+                  <br>
+                  <small class='text-muted'>SB059-031</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  15 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21710-braslet-nit-vodoley-zolochenie-krasnyy/sort"></i>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td class='check-mail'>
+                  <input class="i-checks js-row-checkbox" data-item-id="21709" id="" name="" type="checkbox" value="" />
+                  </td>
+                  <td class='product_row-images'>
+                  <img alt="Product none" class="img-circle" src="http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png" />
+                  </td>
+                  <td class='project-title'>
+                  <div class='pull-right'>
+
+                  </div>
+                  <a href="http://wannabe.aydamarket.ru/operator/products/21709/edit">Браслет нить Водолей родий черный
+                  <br>
+                  <small class='text-muted'>SB059-012</small>
+                  </a><br>
+
+                  </td>
+                  <td class='project-status'>
+                  <div class="b-item__price">1 500 руб.</div>
+                  <br>
+                  20 шт.
+                  </td>
+                  <td class='project-status'>
+                  <i class="handle fa fa-arrows-v" data-sort-success-action="nothing" data-sort-url="/operator/products/21709-braslet-nit-vodoley-rodiy-chernyy/sort"></i>
+                  </td>
+                  </tr>
+
+                  </tbody>
+                  </table>
+                  <div class='pull-right'>
+                    <ul class="pagination">
+
+
+                          <li class="page active">
+                    <a href="javascript:void(0)">1</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=2" rel="next">2</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=3">3</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=4">4</a>
+                  </li>
+
+                          <li class="page">
+                    <a href="/operator/products?index_style=categories&amp;page=5">5</a>
+                  </li>
+
+                          <li class="page gap disabled"><a href="javascript:void(0)">&hellip;</a></li>
+
+
+                    <li class="next">
+                      <a href="/operator/products?index_style=categories&amp;page=2" rel="next">&rsaquo;</a>
+                    </li>
+
+                        <li class="last">
+                      <a href="/operator/products?index_style=categories&amp;page=74">&raquo;</a>
+                    </li>
+
+                    </ul>
+
+                  </div>
+                  <div class='clearfix'></div>
+                  </div>
+
+                  </div>
+                  <div class='col-lg-4'>
+                  <div products-categories-tree="true"><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:true}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=612&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Корневая категория</span><span class="text-muted"> (69/864)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=636&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольца</span><span class="text-muted"> (0/220)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=619&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо</span><span class="text-muted"> (62)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=621&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на весь палец</span><span class="text-muted"> (26)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=622&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на ноготь</span><span class="text-muted"> (12)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=624&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на 2 пальца</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=628&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Миникольцо</span><span class="text-muted"> (117)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=635&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслеты</span><span class="text-muted"> (0/45)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=614&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет</span><span class="text-muted"> (25)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=615&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет на кисть</span><span class="text-muted"> (20)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=616&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет-нить</span><span class="text-muted"> (234)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=637&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (0/206)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=620&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо в нос</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=618&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кафф</span><span class="text-muted"> (38)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1697&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги-каффы</span><span class="text-muted"> (16)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=625&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Пусеты</span><span class="text-muted"> (56)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=627&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Моносерьга</span><span class="text-muted"> (12)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=631&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (22)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=632&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги с обвесом</span><span class="text-muted"> (29)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=633&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги Люстры</span><span class="text-muted"> (30)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=638&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На тело</span><span class="text-muted"> (0/27)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=613&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Анклет</span><span class="text-muted"> (14)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=630&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь на тело</span><span class="text-muted"> (13)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=639&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На шею</span><span class="text-muted"> (0/29)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=623&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кулон</span><span class="text-muted"> (23)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=634&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь</span><span class="text-muted"> (6)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1443&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Дисконт</span><span class="text-muted"> (34)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=617&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Sale</span><span class="text-muted"> (25)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=629&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Леска</span><span class="text-muted"> (2)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=626&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Торговое оборудование</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=692&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кастомные коллекции</span><span class="text-muted"> (1/51)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=691&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>СНЕГ is SWAG</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1410&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>ШИК for CHICKS</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1559&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Love is...</span><span class="text-muted"> (24)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1572&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Minimalism</span><span class="text-muted"> (19)</span></a><ul></ul></li></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=700&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Упаковка</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                  <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.aydamarket.ru/operator/products?f%5Bcategory_id%5D=1524&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Blimit%5D=11&amp;f%5Border%5D=smart&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Главная страница</span><span class="text-muted"> (12)</span></a><ul></ul></li></ul></li></ul></div>
+                  </div>
+                  </div>
+        .footer
+          .pull-right != '10GB of <strong>250GB</strong> Free.'
+          %div != '<strong>Copyright</strong> Example Company &copy; 2014-2015'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/local.js'}

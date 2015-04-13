@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title Редактирование (товар из МС)
+            %small.inline.text-muted.m-t-xs Товар создан 1 января 2015
+            .m-t-sm
+              %a.inline.m-t-xs.m-r-xs{href: '#'}>
+                %span.label.label-primary.inline ссылка на товар на сайте
+              %span.label.label-warning.inline.m-t-xs.m-r-xs МС
+          .col-sm-5
+            .title-action
+              %label.switcher
+                %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
+                %span.switcher__box
+                  %span.switcher__knob
+              %label.m-b-none.m-l-xs.font-normal{for: 'product-visibility'} Товар на сайте
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              .alert.alert-danger != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
+              .ibox
+                .ibox-title
+                  %h3 Фотографии
+                .ibox-content
+                  %div{data: {react-class: 'ProductImages', react-props: '{"productId":4351,"productCardId":1642,"images":[{"url":"assets/product-1-square.png?1","id":5203}]}'}}
+              .ibox
+                .ibox-title
+                  %h3 Товар
+                .ibox-content
+                  .form-group.has-error
+                    %label.control-label
+                      Название
+                      %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Придумайте название'}
+                        %i.fa.fa-question-circle
+                    %textarea.form-control{placeholder: 'Новое название'}
+                    %p.help-block &laquo;Велосипед&raquo;
+                  .row
+                    .col-md-6.col-lg-4
+                      .form-group
+                        %label.control-label
+                          Цена
+                          %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Цена указывается в рублях. Вы можете поменять валюту в настройках'}
+                            %i.fa.fa-question-circle
+                        %input.form-control{type: 'text', value: '4000', disabled: true}
+                    .col-md-6.col-lg-4
+                      .form-group
+                        %label.control-label Цена распродажи
+                        %input.form-control{type: 'text', value: '3000'}
+                    .col-md-12.col-lg-4
+                      .form-group
+                        %label.hidden-xs.hidden-sm.hidden-md &nbsp;
+                        %div
+                          %label.switcher
+                            %input#sale.switcher__input{type: 'checkbox', checked: true}
+                            %span.switcher__box
+                              %span.switcher__knob
+                          %label.m-b-none.m-l-xs.font-normal{for: 'sale'} Включить распродажу
+                  .form-group
+                    %label.control-label Категория
+                    %select.form-control{multiple: 'true', ks-select2: true}
+                      %option{value: 'Молоко', selected: true} Молоко
+                      %option{value: 'Морепродукты'} Морепродукты
+                      %option{value: 'Мопеды'} Мопеды
+                      %option{value: 'Брилианты'} Брилианты
+                    %p.help-block != 'Категории создаются в <a href="#">специальном разделе</a>'
+                  .row
+                    .col-md-8.col-lg-9
+                      .form-group
+                        %label.control-label Описание
+                        %textarea.form-control{placeholder: 'Новое описание', required: 'required', autosize: 'true'}
+                        %p.help-block &laquo;Велосипед выполнен во всех традициях старой школы&raquo;
+                    .col-md-4.col-lg-3
+                      .form-group
+                        %label.control-label Артикул
+                        %input.form-control{type: 'text', value: '74A3317', disabled: true}
+              .ibox
+                .ibox-title
+                  %h3 Характеристики
+                .ibox-content.p-none
+                  .project-list
+                    %table.table.table-page
+                      %tbody
+                        %tr
+                          %td Наличие манометра:
+                          %td
+                            %i.fa.fa-check
+                        %tr
+                          %td Скорость:
+                          %td 60 км/ч
+                        %tr
+                          %td Размер:
+                          %td XL
+              .ibox
+                .ibox-title
+                  %h3 Варианты товара (размеры, цвета и т.п.)
+                .ibox-content
+                  .type-list
+                    .project-list.table-responsive
+                      %table.table.table-page.m-b-none
+                        %tbody
+                          %tr
+                            %td.project-number
+                              %span.badge.badge-info.badge-number 1
+                            %td.project-title
+                              %ul
+                                %li
+                                  Артикул:
+                                  %span.text-muted M001-11-00
+                                %li
+                                  Размер:
+                                  %span.text-muted XXL
+                                %li
+                                  Цвет:
+                                  %span.text-muted желтый
+                            %td 6 шт.
+                          %tr
+                            %td.project-number
+                              %span.badge.badge-info.badge-number 2
+                            %td.project-title
+                              %ul
+                                %li
+                                  Артикул:
+                                  %span.text-muted M001-12-00
+                                %li
+                                  Размер:
+                                  %span.text-muted L
+                                %li
+                                  Цвет:
+                                  %span.text-muted красный
+                            %td 2 шт.
+                          %tr
+                            %td.project-number
+                              %span.badge.badge-info.badge-number 3
+                            %td.project-title
+                              %ul
+                                %li
+                                  Артикул:
+                                  %span.text-muted M001-13-00
+                                %li
+                                  Размер:
+                                  %span.text-muted XL
+                                %li
+                                  Цвет:
+                                  %span.text-muted красный
+                            %td 2 шт.
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %button.btn.btn-outline.btn-danger.pull-right Удалить товар
+                    %button.btn.btn-primary.m-r-md> Сохранить
+                    %span.text-muted.text-nowrap.m-r-md последее изменение 26 марта 2015
+        +include './app/shared/_footer.haml'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/local.js'}
