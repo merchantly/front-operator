@@ -1,27 +1,33 @@
 .login__form
   .alert
     margin: 0
-  .form-group
-    margin: 0
-    .form-control
-      @extend .login__form-input
-    &.has-error
-      .form-control
-        @extend %plain-input__input--error
-        display: block
-      +arrow(top, 7px, $red, transparent)
-      &:after, &:before
-        top: $plain-input-height - 2*7px
-    select.form-control
-      @extend .login__form-select
 
   .help-block
     margin: 0
     padding:
       top: 0.5em
       bottom: 0.5em
+
+  .form-group
+    margin: 0
+
+    .form-control
+      @extend .login__form-input
+
     &.has-error
-      @extend .alert-danger
-      +antialiased
+      .form-control
+        @extend %plain-input__input--error
+        display: block
 
+      .help-block
+        @extend .alert-danger
+        +antialiased
+        +arrow(top, 7px, $red, transparent)
+        position: relative
+        a
+          font-weight: bold
+          color: inherit
+          text-decoration: underline
 
+    select.form-control
+      @extend .login__form-select
