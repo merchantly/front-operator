@@ -1,5 +1,6 @@
 // Components
 @import "kiosk/components/alerts";
+@import "kiosk/components/badges";
 @import "kiosk/components/labels";
 @import "kiosk/components/buttons";
 @import "kiosk/components/form-controls";
@@ -12,6 +13,7 @@
 @import "kiosk/components/tip-trigger";
 @import "kiosk/components/_row_href";
 @import "kiosk/components/_sortable";
+@import "kiosk/components/_selectizer";
 
 // Overrides
 @import "kiosk/overrides";

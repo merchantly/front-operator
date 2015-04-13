@@ -1,11 +1,30 @@
-table.table-page
+table
   tr
-    th
-      padding: 15px 10px
-      font-weight: normal
-    td,
-    th
-      padding-left: 30px
+    td.project-number,
+    th.project-number
+      width: 20px
+  &.table-page
+    tr
+      th
+        padding: 15px 10px
+        font-weight: normal
+      td,
+      th
+        padding-left: 30px
+
+.type-list
+  border-top: 1px solid #e7eaec
+  table
+    tr
+      td
+        ul
+          margin: 0
+          padding: 0
+          list-style-type: none
+          li
+            margin: .4em 0
+  .ibox-content &
+    margin: -16px -20px -20px
 
 .table-responsive
   @media screen and (max-width: $screen-md-max)
