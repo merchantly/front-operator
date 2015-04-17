@@ -3,10 +3,14 @@
     margin: 0
 
   .help-block
+    +antialiased
     margin: 0
     padding:
       top: 0.5em
       bottom: 0.5em
+    a
+      font-weight: bold
+      color: inherit
 
   .form-group
     margin: 0
@@ -21,12 +25,7 @@
 
       .help-block
         @extend .alert-danger
-        +antialiased
         +arrow(top, 7px, $red, transparent)
-        position: relative
-        a
-          font-weight: bold
-          color: inherit
 
     select.form-control
       @extend .login__form-select

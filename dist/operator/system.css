@@ -6835,30 +6835,42 @@ input[type="search"] {
 
 /* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .navbar-transparent {
-  background: none; }
+  border-bottom: none;
+  background: -moz-linear-gradient(top, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(67%, #d3d3d3), color-stop(88%, rgba(211, 211, 211, 0.36)), color-stop(100%, rgba(211, 211, 211, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
+  /* W3C */ }
 
-/* line 6, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .app-header-navbar {
   background-color: #fff;
   border-bottom: 1px solid #c3c3c3; }
 
-/* line 10, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 16, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title {
   font-size: 21px;
   font-weight: bold;
   padding-top: 3px; }
 
-/* line 17, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 23, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title, .header-navbar__brand {
   margin-top: 2px; }
 
-/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__brand {
   margin-left: 25px; }
 
 /* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__content {
-  background: lightgray;
+  background: #d3d3d3;
   text-align: center; }
   /* line 87, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
   .login__content:before {
@@ -6883,19 +6895,20 @@ input[type="search"] {
   display: inline-block;
   display: inline-block;
   vertical-align: middle;
-  margin-top: 37px; }
+  padding-top: 97px;
+  padding-bottom: 30px; }
 
-/* line 24, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo-block {
   text-align: center; }
 
-/* line 27, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 29, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo {
   display: inline-block;
   width: 195px;
   height: 37px;
-  margin-top: 37px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-image: url("../assets/logo.svg"); }
@@ -6904,7 +6917,7 @@ input[type="search"] {
       width: 97.5px;
       height: 97.5px; } }
 
-/* line 43, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 45, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form {
   width: 100%;
   margin-top: 15px;
@@ -6918,7 +6931,7 @@ input[type="search"] {
     .login__form {
       width: 420px; } }
 
-/* line 55, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 57, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-header {
   padding: 30px;
   margin: 0;
@@ -6927,16 +6940,16 @@ input[type="search"] {
   border-bottom: 1px solid #e8e8e8;
   background-color: rgba(255, 255, 255, 0.85); }
 
-/* line 70, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 72, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-group--icon-right input {
   padding-left: 20px; }
 
-/* line 77, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 79, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-icon--right {
   left: auto;
   right: 20px; }
 
-/* line 82, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 84, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-btn--right {
   top: 0;
   left: auto;
@@ -6945,43 +6958,43 @@ input[type="search"] {
   font-size: 16.33333px;
   -webkit-font-smoothing: antialiased; }
 
-/* line 95, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 97, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-icon--right {
   color: #424242; }
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   a.login__form-input-icon:hover, a.login__form-input-icon--left:hover, a.login__form-input-icon--right:hover {
     color: #292929; }
 
-/* line 99, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 101, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input, .login__form .form-group .form-control, .login__form-input--single {
   display: block;
   color: #0f0f0f; }
-  /* line 102, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+  /* line 104, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
   .login__form-group .login__form-input, .login__form-group .login__form-group--icon-right, .login__form-group .login__form .form-group .form-control, .login__form .form-group .login__form-group .form-control, .login__form-group .login__form-input--single, .login__form-group .login__form-group--icon-right {
     padding-left: 50px; }
 
-/* line 113, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 115, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-submit-btn {
   border-radius: 0;
   height: auto; }
 
-/* line 123, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 125, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   position: relative; }
 
-/* line 126, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 128, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control {
   display: block; }
 
-/* line 132, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 134, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--no-icon, .login__form-select--no-icon:hover, .login__form-select--no-icon:focus {
   background-image: none; }
 
-/* line 135, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 137, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--single {
   display: block; }
 
-/* line 140, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
+/* line 142, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   margin-bottom: 1em; }
 
@@ -6990,19 +7003,22 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   margin: 0; }
 /* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .help-block {
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
-/* line 11, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  /* line 11, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  .login__form .help-block a {
+    font-weight: bold;
+    color: inherit; }
+/* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .form-group {
   margin: 0; }
-  /* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  /* line 22, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .form-group.has-error .form-control {
     display: block; }
-  /* line 22, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
+  /* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .form-group.has-error .help-block {
-    -webkit-font-smoothing: antialiased;
-    position: relative;
     position: relative; }
     /* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error .help-block:after, .login__form .form-group.has-error .help-block:before {
@@ -7026,7 +7042,3 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       border-bottom-color: transparent;
       border-width: 8px;
       margin-left: -8px; }
-    /* line 27, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
-    .login__form .form-group.has-error .help-block a {
-      font-weight: bold;
-      color: inherit; }
