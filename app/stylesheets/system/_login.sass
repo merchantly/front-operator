@@ -3,7 +3,7 @@ $login-logo-width: 195px
 $login-logo-height: 37px
 
 .login__content
-  background: lightgray
+  background: #d3d3d3
   +center-block-container
 
 .login__content--fullscreen
@@ -18,7 +18,9 @@ $login-logo-height: 37px
 .login__block
   display: inline-block
   +center-block-content
-  margin-top: $login-logo-height
+  padding:
+    top: 30*2 + $login-logo-height
+    bottom: 30px
 
 
 .login__navbar-logo-block
@@ -29,8 +31,8 @@ $login-logo-height: 37px
   width: $login-logo-width
   height: $login-logo-height
   margin:
-    top: $login-logo-height
-    bottom: $block-padding*0.75
+    top: 30px
+    bottom: 30px
   background:
     repeat: no-repeat
     size: 100% auto
@@ -143,5 +145,3 @@ a
 .login__form-select-block
   @extend %plain-input__block
   margin-bottom: 1em
-
-

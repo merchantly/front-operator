@@ -6,24 +6,26 @@
     +include './app/shared/system/_login_navbar.haml'
     .login__content.login__content--fullscreen
       .login__block
-        %form#new_operator_login_form.simple_form.login__form{:action => "login_errors.html"}
-          %div{:style => "display:none"}
+        %form#new_operator_login_form.simple_form.login__form{action: 'login_errors.html'}
+          %div{style: 'display:none'}
           .login__form-header Авторизация
           .form-group.tel.required.operator_login_form_phone
-            %input#operator_login_form_phone.string.tel.required.form-control.form-control{:placeholder => "ргн", :type => "tel"}
+            %label.control-label.sr-only ргн
+            %input#operator_login_form_phone.string.tel.required.form-control{type: 'tel', placeholder: 'ргн'}
           .form-group.string.required.operator_login_form_pin_code
-            %input#operator_login_form_pin_code.string.required.form-control{:placeholder => "ргн", :type => "text"}
+            %label.control-label.sr-only ргн
+            %input#operator_login_form_pin_code.string.required.form-control{type: 'text', placeholder: 'ргн'}
           .login__form-actions
-            %input.btn.login__form-submit-btn{:type => "submit", :value => "Войти"}
+            %input.btn.login__form-submit-btn{type: 'submit', value: 'Войти'}
         .row
           .col-sm-6
-            %p.color-text-light
+            %p
               Нет аккаунта?
               %br
               %a{href: 'signup.html'}
                 %strong Создать магазин
           .col-sm-6
-            %p.color-text-light
+            %p
               Забыли пароль?
               %a{href: 'reset_password.html'}
                 %strong Восстановить
