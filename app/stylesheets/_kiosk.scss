@@ -4,6 +4,7 @@
 @import "kiosk/components/labels";
 @import "kiosk/components/buttons";
 @import "kiosk/components/form-controls";
+@import "kiosk/components/_grids";
 @import "kiosk/components/select2";
 @import "kiosk/components/tables";
 @import "kiosk/components/switcher";
@@ -15,7 +16,7 @@
 @import "kiosk/components/_sortable";
 @import "kiosk/components/_selectizer";
 @import "kiosk/components/_dropdowns";
-@import "kiosk/components/_grids";
+@import "kiosk/components/_jstree";
 
 // Overrides
 @import "kiosk/overrides";

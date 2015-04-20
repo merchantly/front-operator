@@ -28,7 +28,13 @@ $('.js-row-all-checkbox, .js-row-checkbox, [ks-icheck]').iCheck
 
 $('[ks-select2]').select2()
 
-$('[data-toggle="tooltip"]').tooltip()
+$('.iCheck-helper').on 'mouseover', ->
+  $(this).closest('[data-toggle="tooltip"]').tooltip 'show'
+
+$('.iCheck-helper').on 'mouseout', ->
+  $(this).closest('[data-toggle="tooltip"]').tooltip 'hide'
+
+#$('[data-toggle="tooltip"]').tooltip()
 $('[data-toggle="popover"]').popover()
 
 $('[ks-select2-ajax]').select2
@@ -50,3 +56,5 @@ $('[ks-select2-ajax]').select2
           '</tr>' +
         '</tbody>' +
       '</table>'
+
+$('[products-categories-tree]').jstree()

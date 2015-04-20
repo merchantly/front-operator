@@ -2,7 +2,7 @@
 %html
   %head
     +include './app/shared/_head.haml'
-  %body
+  %body.mini-navbar
     / Wrapper
     #wrapper
       +include './app/shared/_navbar_side.haml'
@@ -14,14 +14,7 @@
             %h1.page-title
               Товары
             .m-t-sm
-              %a.btn.btn-success{href: '#'} Добавить новый товар
-          .col-sm-5
-            .title-action
-              %form{action: '?'}
-                .input-group.m-t-xs.m-b-xs
-                  %input.form-control{type: 'text', placeholder: 'Поиск'}
-                  %span.input-group-btn
-                    %button.btn.btn-primary Найти
+              %a.btn.btn-primary{href: '#'} != '<small><i class="fa fa-plus"></i></small> Добавить новый товар'
         .row
           .col-lg-12
             .wrapper.wrapper-content
@@ -33,52 +26,65 @@
                         %tr
                           %td
                             .m-r-md
-                              %p.m-b-xs Фильтр
-                              .btn-group.m-b-xs.m-t-xs{role: 'group'}
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'Все категории'} Все категории
-                                    %li
-                                      %a{href: '#', title: 'Кольца'} Кольца
-                                    %li
-                                      %a{href: '#', title: 'Браслеты'} Браслеты
-                                    %li
-                                      %a{href: '#', title: 'Серьги'} Серьги
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Наличие фото <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'С фото и без'} С фото и без
-                                    %li
-                                      %a{href: '#', title: 'С фото'} С фото
-                                    %li
-                                      %a{href: '#', title: 'Без фото'} Без фото
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Видимость <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'Опубликованные'} Опубликованные
-                                    %li
-                                      %a{href: '#', title: 'Неопубликованные'} Неопубликованные
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Количество <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'Нулевой остаток'} Нулевой остаток
-                                    %li
-                                      %a{href: '#', title: 'Больше 10'} Больше 10
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Варианты <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'Без вариантов'} Без вариантов
-                                .btn-group{role: 'group'}
-                                  %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Статус <span class="caret"></span>'
-                                  %ul.dropdown-menu.dropdown-menu-actions
-                                    %li
-                                      %a{href: '#', title: 'С ошибками'} С ошибками
+                              .row.row-xs
+                                .col-lg-8
+                                  %p.m-t.m-b-xs
+                                    Фильтр
+                                    %a.collapse-link
+                                      %small
+                                        %i.fa.fa-chevron-up.text-muted
+                                  %div
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li.active
+                                          %a{href: '#', title: 'Все категории'} Все категории
+                                        %li
+                                          %a{href: '#', title: 'Кольца'} Кольца
+                                        %li
+                                          %a{href: '#', title: 'Браслеты'} Браслеты
+                                        %li
+                                          %a{href: '#', title: 'Серьги'} Серьги
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Наличие фото <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li
+                                          %a{href: '#', title: 'С фото и без'} С фото и без
+                                        %li
+                                          %a{href: '#', title: 'С фото'} С фото
+                                        %li
+                                          %a{href: '#', title: 'Без фото'} Без фото
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Видимость <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li
+                                          %a{href: '#', title: 'Опубликованные'} Опубликованные
+                                        %li
+                                          %a{href: '#', title: 'Неопубликованные'} Неопубликованные
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Количество <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li
+                                          %a{href: '#', title: 'Нулевой остаток'} Нулевой остаток
+                                        %li
+                                          %a{href: '#', title: 'Больше 10'} Больше 10
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Варианты <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li
+                                          %a{href: '#', title: 'Без вариантов'} Без вариантов
+                                    .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
+                                      %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Статус <span class="caret"></span>'
+                                      %ul.dropdown-menu.dropdown-menu-base
+                                        %li
+                                          %a{href: '#', title: 'С ошибками'} С ошибками
+                                .col-lg-4
+                                  .m-t-lg.hidden-xs.hidden-sm.hidden-md.hidden
+                                  %form{action: '?'}
+                                    .input-group.m-t-xs.m-b-xs
+                                      %input.form-control{type: 'text', placeholder: 'Поиск'}
+                                      %span.input-group-btn
+                                        %button.btn.btn-primary Найти
                   .project-list.table-responsive
                     %table.table.table-hover.table-striped.table-page.m-b-none
                       %thead
@@ -89,12 +95,13 @@
                                 .col-lg-8
                                   .form-inline
                                     .form-group.m-r-xs.m-b-sm
-                                      %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
-                                      %span.text-muted.m-l-xs Выделено 345 товаров
+                                      %span.inline{data: {toggle: 'tooltip', container: 'body'}, title: 'Выделение всех товаров'}
+                                        %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
+                                      %span.inline.text-muted.m-l-xs Выделено 345 товаров
                                     .form-group.inline.m-b-none
                                       .dropdown.m-t-xs.m-b-xs
                                         %button.btn.btn-outline.btn-default.btn-block{data: {toggle: 'dropdown'}} != 'Выберите действие <span class="caret"></span>'
-                                        %ul.dropdown-menu.dropdown-menu-actions
+                                        %ul.dropdown-menu.dropdown-menu-base
                                           %li
                                             %a{href: '#', title: 'Редактировать'} != '<i class="fa fa-pencil m-r-xs"></i> Редактировать'
                                           %li
@@ -156,7 +163,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
@@ -165,11 +172,12 @@
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
                                 %small.text-muted Размер: XL
+                            %button.btn.btn-outline.btn-warning.btn-sm.btn-rounded.m-t-xs{href: '#'} Еще 30 характеристик
                           %td
-                            8 вариантов
+                            8 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
 
@@ -179,7 +187,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
@@ -189,10 +197,10 @@
                               %li
                                 %small.text-muted Размер: XL
                           %td
-                            2 варианта
+                            2 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
                           %td
@@ -201,7 +209,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %ul.m-b-none
@@ -210,10 +218,10 @@
                               %li
                                 %small.text-muted Размер: XL
                           %td
-                            6 вариантов
+                            6 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
                           %td
@@ -222,7 +230,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %ul.m-b-none
@@ -231,10 +239,10 @@
                               %li
                                 %small.text-muted Размер: XL
                           %td
-                            11 вариантов
+                            11 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
                           %td
@@ -243,7 +251,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
@@ -253,10 +261,10 @@
                               %li
                                 %small.text-muted Размер: XL
                           %td
-                            1 вариант
+                            1 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
                           %td
@@ -265,7 +273,7 @@
                           %td
                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
                           %td.project-image
-                            %img.img-circle.project-image{src: 'http://assets.aydamarket.ru/uploads/product_image/image/5172/image.png', alt: 'Product none'}
+                            %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %ul.m-b-none
@@ -274,10 +282,10 @@
                               %li
                                 %small.text-muted Размер: XL
                           %td
-                            8 вариантов
+                            8 вар.
                             %br
                             %br
-                            %small.text-muted 1 шт.
+                            1 шт.
                           %td
                             %b.text-nowrap 5 900 руб.
                           %td
