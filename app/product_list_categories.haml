@@ -25,70 +25,66 @@
                 .col-lg-9
                   .ibox
                     .ibox-content.p-none
-                      .project-list
-                        %table.table.table-page.m-b-none
-                          %tbody
-                            %tr
-                              %td
-                                .m-r-md
-                                  .row.row-xs
-                                    .col-lg-8
-                                      %button.btn.btn-outline.btn-default.btn-rounded.m-t-xs.m-b-xs.active
-                                        Скрыть фильтр
-                                        %small
-                                          %i.fa.fa-chevron-up
-                                      .m-t-xs
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li.active
-                                              %a{href: '#', title: 'Все категории'} Все категории
-                                            %li
-                                              %a{href: '#', title: 'Кольца'} Кольца
-                                            %li
-                                              %a{href: '#', title: 'Браслеты'} Браслеты
-                                            %li
-                                              %a{href: '#', title: 'Серьги'} Серьги
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Наличие фото <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li
-                                              %a{href: '#', title: 'С фото и без'} С фото и без
-                                            %li
-                                              %a{href: '#', title: 'С фото'} С фото
-                                            %li
-                                              %a{href: '#', title: 'Без фото'} Без фото
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Видимость <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li
-                                              %a{href: '#', title: 'Опубликованные'} Опубликованные
-                                            %li
-                                              %a{href: '#', title: 'Неопубликованные'} Неопубликованные
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Количество <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li
-                                              %a{href: '#', title: 'Нулевой остаток'} Нулевой остаток
-                                            %li
-                                              %a{href: '#', title: 'Больше 10'} Больше 10
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Варианты <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li
-                                              %a{href: '#', title: 'Без вариантов'} Без вариантов
-                                        .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
-                                          %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Статус <span class="caret"></span>'
-                                          %ul.dropdown-menu.dropdown-menu-base
-                                            %li
-                                              %a{href: '#', title: 'С ошибками'} С ошибками
-                                    .col-lg-4
-                                      .m-t-lg.hidden-xs.hidden-sm.hidden-md.hidden
-                                      %form{action: '?'}
-                                        .input-group.m-t-xs.m-b-xs
-                                          %input.form-control{type: 'text', placeholder: 'Поиск'}
-                                          %span.input-group-btn
-                                            %button.btn.btn-primary Найти
+                      .p-lg.p-t-sm.p-b-sm
+                        .row.row-xs
+                          .col-lg-8
+                            %button.btn.btn-outline.btn-default.btn-rounded.m-t-xs.m-b-xs.active
+                              Скрыть фильтр
+                              %small
+                                %i.fa.fa-chevron-up
+                          .col-lg-4
+                            .m-t-lg.hidden-xs.hidden-sm.hidden-md.hidden
+                            %form{action: '?'}
+                              .input-group.m-t-xs.m-b-xs
+                                %input.form-control{type: 'text', placeholder: 'Поиск'}
+                                %span.input-group-btn
+                                  %button.btn.btn-primary Найти
+                        .m-t-sm
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li.active
+                                %a{href: '#', title: 'Все категории'} Все категории
+                              %li
+                                %a{href: '#', title: 'Кольца'} Кольца
+                              %li
+                                %a{href: '#', title: 'Браслеты'} Браслеты
+                              %li
+                                %a{href: '#', title: 'Серьги'} Серьги
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Наличие фото <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'С фото и без'} С фото и без
+                              %li
+                                %a{href: '#', title: 'С фото'} С фото
+                              %li
+                                %a{href: '#', title: 'Без фото'} Без фото
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Видимость <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Опубликованные'} Опубликованные
+                              %li
+                                %a{href: '#', title: 'Неопубликованные'} Неопубликованные
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Количество <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Нулевой остаток'} Нулевой остаток
+                              %li
+                                %a{href: '#', title: 'Больше 10'} Больше 10
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Варианты <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Без вариантов'} Без вариантов
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Статус <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'С ошибками'} С ошибками
+                      .hr-line-solid.no-margins
                       .project-list.table-responsive
                         %table.table.table-hover.table-striped.table-page.m-b-none
                           %thead
