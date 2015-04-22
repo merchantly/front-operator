@@ -1,14 +1,14 @@
 /* === Bootstrap === */
 /* === System === */
-/* line 11, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/mixins */
+/* line 11, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
 .btn-primary, .btn-info, .btn-danger, .btn-warning, .btn-success {
   -webkit-font-smoothing: antialiased; }
 
-/* line 28, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/fonts */
+/* line 28, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/fonts */
 body {
   color: #4c5958; }
 
-/* line 32, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/fonts */
+/* line 32, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/fonts */
 small, .small {
   font-size: 12px; }
 
@@ -5865,77 +5865,77 @@ button.close {
 
 /* === Vendor === */
 /* === System === */
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-thin {
   font-weight: 200; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-light, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
   font-weight: 300; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-regular {
   font-weight: 400; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-medium, .login__form-header {
   font-weight: 600; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-bold, .bare-btn {
   font-weight: 700; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .font-black {
   font-weight: 900; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .text-large {
   font-size: 15px; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .text-larger {
   font-size: 17px; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .text-small {
   font-size: 13px; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .text-smaller {
   font-size: 12px; }
 
-/* line 14, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 14, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 body, p {
   font-weight: 400; }
 
-/* line 18, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 a:hover {
   text-decoration: none; }
 
-/* line 21, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/typography */
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/typography */
 .text-muted {
   color: #999999; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-group, .login__form-group--icon-right, .login__form-select-block {
   color: #424242;
   position: relative; }
 
-/* line 13, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 13, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 20px;
   padding-right: 20px; }
 
-/* line 21, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input-icon, .login__form-input-icon--left, .login__form-input-icon--right, .login__form-input-btn--right {
   position: absolute;
   left: 20px;
   top: 20px; }
 
-/* line 26, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input--single, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .plain-input__input.input-group-addon {
   color: #000; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -5948,7 +5948,7 @@ a:hover {
   /* line 105, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
   .login__form-input--single::-webkit-input-placeholder, .plain-input__input.plain-input__input--error::-webkit-input-placeholder, .plain-input__input.login__form-input--error::-webkit-input-placeholder, .login__form .form-group.has-error .form-control::-webkit-input-placeholder, .plain-input__input--error::-webkit-input-placeholder, .login__form-input--error::-webkit-input-placeholder, .login__form-select::-webkit-input-placeholder, .login__form-select--no-icon::-webkit-input-placeholder, .login__form .form-group select.form-control::-webkit-input-placeholder, .login__form-input::-webkit-input-placeholder, .login__form .form-group .form-control::-webkit-input-placeholder, .login__form-input--single::-webkit-input-placeholder, .plain-input__input--full::-webkit-input-placeholder, .plain-input__input--bare::-webkit-input-placeholder, .login__form-input--single::-webkit-input-placeholder, .plain-input__input::-webkit-input-placeholder, .plain-input__input.input-group-addon::-webkit-input-placeholder {
     color: #cacaca; }
-  /* line 29, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 29, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-input--single, .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .plain-input__input.input-group-addon, .login__form-input--single:focus, .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus, .plain-input__input.input-group-addon:focus, .login__form-input--single:hover, .plain-input__input.plain-input__input--error:hover, .plain-input__input.login__form-input--error:hover, .login__form .form-group.has-error .form-control:hover, .plain-input__input--error:hover, .login__form-input--error:hover, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-input:hover, .login__form .form-group .form-control:hover, .login__form-input--single:hover, .plain-input__input--full:hover, .plain-input__input--bare:hover, .login__form-input--single:hover, .plain-input__input:hover, .plain-input__input.input-group-addon:hover {
     border-top: none;
     border-left: none;
@@ -5960,32 +5960,32 @@ a:hover {
     background: none;
     outline: none; }
 
-/* line 43, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 43, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-input--single, .login__form-input--single:hover, .login__form-input--single:focus {
   border-top: 1px solid #e8e8e8;
   border-left: 1px solid #e8e8e8;
   border-right: 1px solid #e8e8e8; }
 
-/* line 58, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 58, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input, .login__form-submit-btn {
   height: 49px;
   font-size: 19px;
   line-height: 38px; }
 
-/* line 65, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 65, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control, .plain-input__input--error, .login__form-input--error, .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single, .plain-input__input--full, .plain-input__input--bare, .login__form-input--single, .plain-input__input {
   background-color: rgba(255, 255, 255, 0.85);
   -webkit-transition: background 0.2s ease, border 0.2s ease;
   -o-transition: background 0.2s ease, border 0.2s ease;
   transition: background 0.2s ease, border 0.2s ease; }
-  /* line 70, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 70, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:hover, .plain-input__input.login__form-input--error:hover, .login__form .form-group.has-error .form-control:hover, .plain-input__input--error:hover, .login__form-input--error:hover, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-input:hover, .login__form .form-group .form-control:hover, .login__form-input--single:hover, .plain-input__input--full:hover, .plain-input__input--bare:hover, .login__form-input--single:hover, .plain-input__input:hover, .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus {
     background-color: #fff; }
-  /* line 72, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 72, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus, .plain-input__input--error:focus, .login__form-input--error:focus, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus, .login__form-input:focus, .login__form .form-group .form-control:focus, .login__form-input--single:focus, .plain-input__input--full:focus, .plain-input__input--bare:focus, .login__form-input--single:focus, .plain-input__input:focus {
     border-bottom-color: #ffd600; }
 
-/* line 76, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 76, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.plain-input__input--error, .plain-input__input.login__form-input--error, .login__form .form-group.has-error .form-control {
   color: #f6584f; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -5998,31 +5998,31 @@ a:hover {
   /* line 105, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
   .plain-input__input.plain-input__input--error::-webkit-input-placeholder, .plain-input__input.login__form-input--error::-webkit-input-placeholder, .login__form .form-group.has-error .form-control::-webkit-input-placeholder {
     color: #f6584f; }
-  /* line 80, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 80, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.plain-input__input--error:focus, .plain-input__input.login__form-input--error:focus, .login__form .form-group.has-error .form-control:focus {
     color: #0f0f0f; }
 
-/* line 85, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 85, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-input, .login__form .form-group .form-control, .login__form-input--single {
   width: 100%; }
 
-/* line 90, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 90, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input--bare {
   padding-left: 0; }
-  /* line 93, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 93, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input--bare, .plain-input__input--bare:focus, .plain-input__input--bare:hover {
     border-bottom: none; }
 
-/* line 110, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 110, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .plain-input__input.input-group-addon {
   border-radius: 0;
   padding-top: 0;
   padding-bottom: 0; }
-  /* line 116, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 116, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .plain-input__input.input-group-addon:first-child {
     padding-left: 20px; }
 
-/* line 119, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 input {
   color: #0f0f0f; }
   /* line 102, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/vendor-prefixes */
@@ -6036,10 +6036,10 @@ input {
   input::-webkit-input-placeholder {
     color: #cacaca; }
 
-/* line 123, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 123, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .checkbox {
   font-weight: normal; }
-  /* line 126, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 126, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .checkbox input[type="checkbox"] + span {
     display: inline-block;
     width: 23px;
@@ -6048,7 +6048,7 @@ input {
     cursor: pointer;
     margin-right: 10px;
     border: 1px solid #e8e8e8; }
-  /* line 136, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 136, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .checkbox input[type="checkbox"]:checked + span {
     margin-right: 10px;
     color: #fff;
@@ -6057,17 +6057,17 @@ input {
     padding: 3px;
     font-size: 14px; }
 
-/* line 146, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 146, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .checkbox {
   padding-left: 0px; }
 
-/* line 149, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 149, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .radio {
   font-weight: normal;
   font-size: 17px;
   padding: 10px 0;
   margin: 0; }
-  /* line 156, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 156, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .radio input[type="radio"] + span {
     display: inline-block;
     width: 15px;
@@ -6082,20 +6082,20 @@ input {
     line-height: 13px;
     text-align: center;
     margin-right: 10px; }
-    /* line 170, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+    /* line 170, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
     .radio input[type="radio"] + span + .radio-content {
       color: #292929; }
-  /* line 174, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 174, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .radio input[type="radio"]:checked + span {
     color: #ffd600;
     border-color: #ffd600;
     vertical-align: baseline;
     padding: 2px; }
-    /* line 181, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+    /* line 181, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
     .radio input[type="radio"]:checked + span + .radio-content {
       color: #0f0f0f; }
 
-/* line 189, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 189, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -6103,7 +6103,7 @@ input {
   line-height: 1;
   padding: 0 20px;
   cursor: pointer; }
-  /* line 195, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 195, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control, .login__form-select:hover, .login__form-select--no-icon:hover, .login__form .form-group select.form-control:hover, .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus {
     border-bottom: 1px solid #e8e8e8;
     border-radius: 0;
@@ -6111,19 +6111,19 @@ input {
     background-repeat: no-repeat;
     background-image: url("../assets/select-down-icon.png");
     background-image: url("../assets/select-down-icon.svg"); }
-  /* line 203, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+  /* line 203, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
   .login__form-select:focus, .login__form-select--no-icon:focus, .login__form .form-group select.form-control:focus {
     outline: none; }
 
-/* line 206, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 206, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .login__form-select--single {
   border: 1px solid #e8e8e8; }
 
-/* line 209, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 209, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 input[type="search"] {
   border-radius: 30px; }
 
-/* line 219, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 219, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .form-block-group {
   padding: 20px;
   border: 1px solid #e8e8e8;
@@ -6131,30 +6131,30 @@ input[type="search"] {
   border-radius: 2px;
   margin-bottom: 30px; }
 
-/* line 227, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/forms */
+/* line 227, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/forms */
 .form-control-text-large {
   font-size: 24px !important; }
 
-/* line 1, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn {
   -webkit-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   -o-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   transition: color 0.2s ease, background 0.2s ease, border 0.2s ease; }
 
-/* line 5, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link:hover, .btn-link-light:hover, .btn-link-lighter:hover, .btn-link-brand:hover, .adm-btn-add-category:hover, .adm-btn-add-goods:hover {
   text-decoration: none; }
 
-/* line 12, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-primary {
   background-color: #00b9ff;
   border-color: #00b9ff; }
-  /* line 15, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-primary:hover {
     background-color: #007099;
     border-color: #007099; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-green, .adm-btn-submit {
   background-color: #57cb6a;
   border-color: #57cb6a;
@@ -6162,12 +6162,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-green:hover, .adm-btn-submit:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-green:hover, .adm-btn-submit:hover, .btn-green:focus, .adm-btn-submit:focus, .btn-green.active, .active.adm-btn-submit, .btn-green.active:hover, .active.adm-btn-submit:hover {
     background-color: #32a343;
     border-color: #32a343; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-red, .adm-btn-remove-order, .adm-btn-remove {
   background-color: #f6584f;
   border-color: #f6584f;
@@ -6175,12 +6175,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-red:hover, .adm-btn-remove-order:hover, .adm-btn-remove:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-red:hover, .adm-btn-remove-order:hover, .adm-btn-remove:hover, .btn-red:focus, .adm-btn-remove-order:focus, .adm-btn-remove:focus, .btn-red.active, .active.adm-btn-remove-order, .active.adm-btn-remove, .btn-red.active:hover, .active.adm-btn-remove-order:hover, .active.adm-btn-remove:hover {
     background-color: #ec170c;
     border-color: #ec170c; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-blue {
   background-color: #00b9ff;
   border-color: #00b9ff;
@@ -6188,12 +6188,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-blue:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-blue:hover, .btn-blue:focus, .btn-blue.active, .btn-blue.active:hover {
     background-color: #0083b3;
     border-color: #0083b3; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-yellow {
   background-color: #ffd600;
   border-color: #ffd600;
@@ -6201,12 +6201,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-yellow:hover {
     color: #0f0f0f; }
-  /* line 25, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 25, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-yellow:hover, .btn-yellow:focus, .btn-yellow.active, .btn-yellow.active:hover {
     background-color: #ffe14d;
     border-color: #ffe14d; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-orange {
   background-color: #ff4500;
   border-color: #ff4500;
@@ -6214,12 +6214,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-orange:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-orange:hover, .btn-orange:focus, .btn-orange.active, .btn-orange.active:hover {
     background-color: #b33000;
     border-color: #b33000; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray {
   background-color: #666666;
   border-color: #666666;
@@ -6227,12 +6227,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray:hover, .btn-gray:focus, .btn-gray.active, .btn-gray.active:hover {
     background-color: #404040;
     border-color: #404040; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-light {
   background-color: #999999;
   border-color: #999999;
@@ -6240,12 +6240,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-light:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-light:hover, .btn-gray-light:focus, .btn-gray-light.active, .btn-gray-light.active:hover {
     background-color: #737373;
     border-color: #737373; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-dark {
   background-color: #4d4d4d;
   border-color: #4d4d4d;
@@ -6253,12 +6253,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-dark:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-dark:hover, .btn-gray-dark:focus, .btn-gray-dark.active, .btn-gray-dark.active:hover {
     background-color: #262626;
     border-color: #262626; }
 
-/* line 20, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 20, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray-darker, .login__form-submit-btn {
   background-color: #2b2b2b;
   border-color: #2b2b2b;
@@ -6266,12 +6266,12 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-gray-darker:hover, .login__form-submit-btn:hover {
     color: #fff; }
-  /* line 30, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 30, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-gray-darker:hover, .login__form-submit-btn:hover, .btn-gray-darker:focus, .login__form-submit-btn:focus, .btn-gray-darker.active, .active.login__form-submit-btn, .btn-gray-darker.active:hover, .active.login__form-submit-btn:hover {
     background-color: #050505;
     border-color: #050505; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-blue {
   background-color: transparent;
   border-color: #00b9ff;
@@ -6280,17 +6280,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-blue:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-blue:hover, .btn-outline-blue:focus, .btn-outline-blue.active, .btn-outline-blue.active:hover {
     background-color: #0083b3;
     border-color: #0083b3; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-blue.active, .btn-outline-blue.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-yellow {
   background-color: transparent;
   border-color: #ffd600;
@@ -6299,17 +6299,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-yellow:hover {
     color: #0f0f0f; }
-  /* line 41, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 41, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-yellow:hover, .btn-outline-yellow:focus, .btn-outline-yellow.active, .btn-outline-yellow.active:hover {
     background-color: #ffe14d;
     border-color: #ffe14d; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-yellow.active, .btn-outline-yellow.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-red {
   background-color: transparent;
   border-color: #f6584f;
@@ -6318,17 +6318,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-red:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-red:hover, .btn-outline-red:focus, .btn-outline-red.active, .btn-outline-red.active:hover {
     background-color: #ec170c;
     border-color: #ec170c; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-red.active, .btn-outline-red.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-green {
   background-color: transparent;
   border-color: #57cb6a;
@@ -6337,17 +6337,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-green:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-green:hover, .btn-outline-green:focus, .btn-outline-green.active, .btn-outline-green.active:hover {
     background-color: #32a343;
     border-color: #32a343; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-green.active, .btn-outline-green.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray {
   background-color: transparent;
   border-color: #666666;
@@ -6356,17 +6356,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray:hover, .btn-outline-gray:focus, .btn-outline-gray.active, .btn-outline-gray.active:hover {
     background-color: #404040;
     border-color: #404040; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray.active, .btn-outline-gray.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-light {
   background-color: transparent;
   border-color: #999999;
@@ -6375,17 +6375,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-light:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-light:hover, .btn-outline-gray-light:focus, .btn-outline-gray-light.active, .btn-outline-gray-light.active:hover {
     background-color: #737373;
     border-color: #737373; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-light.active, .btn-outline-gray-light.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-dark {
   background-color: transparent;
   border-color: #4d4d4d;
@@ -6394,17 +6394,17 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-dark:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-dark:hover, .btn-outline-gray-dark:focus, .btn-outline-gray-dark.active, .btn-outline-gray-dark.active:hover {
     background-color: #262626;
     border-color: #262626; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-dark.active, .btn-outline-gray-dark.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 35, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 35, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-outline-gray-darker {
   background-color: transparent;
   border-color: #2b2b2b;
@@ -6413,36 +6413,36 @@ input[type="search"] {
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-outline-gray-darker:hover {
     color: #fff; }
-  /* line 46, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 46, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-darker:hover, .btn-outline-gray-darker:focus, .btn-outline-gray-darker.active, .btn-outline-gray-darker.active:hover {
     background-color: #050505;
     border-color: #050505; }
-  /* line 49, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 49, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-outline-gray-darker.active, .btn-outline-gray-darker.active:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
-/* line 54, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 54, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-lg, .btn-group-lg > .btn, .btn-add-fields, .btn-remove-circle, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .adm-btn-settings, .adm-btn-categories-settings, .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login, .login__form-submit-btn, .adm-btn-remove-order, .adm-btn-remove, .adm-btn-submit, .login__form-submit-btn {
   padding: 12px 16px; }
 
-/* line 57, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 57, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-light {
   color: #424242; }
 
-/* line 61, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 61, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-lighter {
   color: #424242; }
 
-/* line 65, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 65, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-link-brand {
   color: #ffd600; }
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   .btn-link-brand:hover {
     color: #ffdd33; }
 
-/* line 69, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 69, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn {
   cursor: pointer;
   display: inline-block;
@@ -6454,7 +6454,7 @@ input[type="search"] {
   -webkit-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   -o-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
   transition: color 0.2s ease, background 0.2s ease, border 0.2s ease; }
-  /* line 73, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 73, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .bare-btn, .bare-btn:focus, .bare-btn:hover {
     text-decoration: none;
     border-top: none;
@@ -6466,7 +6466,7 @@ input[type="search"] {
   .bare-btn:hover {
     color: #292929; }
 
-/* line 88, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 88, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn--white {
   background: #fff;
   color: #0f0f0f; }
@@ -6474,11 +6474,11 @@ input[type="search"] {
   .bare-btn--white:hover {
     color: #ffd600; }
 
-/* line 92, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 92, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn--full {
   display: block; }
 
-/* line 95, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 95, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .bare-btn__icon-outline {
   display: inline-block;
   width: 35px;
@@ -6491,11 +6491,11 @@ input[type="search"] {
   -webkit-transition: border-color 0.2s ease;
   -o-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease; }
-  /* line 106, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 106, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   a:hover .bare-btn__icon-outline, .bare-btn__icon-outline:hover {
     border-color: #292929; }
 
-/* line 109, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 109, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-gray {
   color: #fff;
   background-color: #999999;
@@ -6517,41 +6517,41 @@ input[type="search"] {
     color: #999999;
     background-color: #fff; }
 
-/* line 112, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 112, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-default-light, .btn-add-fields {
   display: inline-block; }
-  /* line 114, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 114, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light, .btn-add-fields, .btn-default-light:hover, .btn-add-fields:hover, .btn-default-light:focus, .btn-add-fields:focus, .btn-default-light.active, .active.btn-add-fields {
     background-color: #fff;
     border: none;
     outline: none;
     -webkit-box-shadow: inset 0 0 0 1px #e8e8e8;
     box-shadow: inset 0 0 0 1px #e8e8e8; }
-  /* line 119, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light:hover, .btn-add-fields:hover {
     -webkit-box-shadow: inset 0 0 0 1px #00b9ff;
     box-shadow: inset 0 0 0 1px #00b9ff; }
-  /* line 121, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 121, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-default-light.active, .active.btn-add-fields {
     border-color: #00b9ff;
     -webkit-box-shadow: inset 0 0 0 3px #00b9ff;
     box-shadow: inset 0 0 0 3px #00b9ff; }
 
-/* line 125, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 125, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-default-light, .btn-add-fields {
   color: #999999;
   -webkit-font-smoothing: antialiased;
   opacity: 1;
   filter: alpha(opacity=100); }
 
-/* line 131, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 131, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-add-fields {
   border-radius: 33px;
   line-height: 1em;
   height: auto;
   padding: 8px 15px; }
 
-/* line 139, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 139, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .btn-remove-circle {
   display: inline-block;
   width: 34px;
@@ -6567,23 +6567,23 @@ input[type="search"] {
   -webkit-transition: background 0.2s ease, opacity 0.2s ease;
   -o-transition: background 0.2s ease, opacity 0.2s ease;
   transition: background 0.2s ease, opacity 0.2s ease; }
-  /* line 153, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 153, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .btn-remove-circle:hover {
     background-color: #00b9ff;
     opacity: 1;
     filter: alpha(opacity=100); }
 
-/* line 157, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 157, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-add-category, .adm-btn-add-goods {
   color: #00b9ff;
   padding: 0;
   border: none; }
-  /* line 163, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 163, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-add-category:active, .adm-btn-add-goods:active, .adm-btn-add-category:focus, .adm-btn-add-goods:focus {
     text-decoration: none;
     outline: 0; }
 
-/* line 167, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 167, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-add-category-icon, .adm-btn-add-goods-icon {
   display: inline-block;
   vertical-align: middle;
@@ -6593,7 +6593,7 @@ input[type="search"] {
   background-color: #00b9ff;
   text-align: center;
   border-radius: 50%; }
-  /* line 175, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 175, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-add-category-icon:before, .adm-btn-add-goods-icon:before {
     content: "";
     width: 15px;
@@ -6604,7 +6604,7 @@ input[type="search"] {
     background-position: center;
     background-image: url('../assets/product-thumb-plus-white.svg'); }
 
-/* line 192, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 192, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-edit-category, .adm-btn-edit-order-section, .adm-btn-edit-item {
   display: inline-block;
   vertical-align: middle;
@@ -6623,34 +6623,34 @@ input[type="search"] {
   transition: background-color 0.3s ease;
   -webkit-box-shadow: 0 0 0 1px #eee;
   box-shadow: 0 0 0 1px #eee; }
-  /* line 207, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 207, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-edit-category span, .adm-btn-edit-order-section span, .adm-btn-edit-item span {
     font: 0/0 a; }
-  /* line 209, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 209, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-edit-category:hover, .adm-btn-edit-order-section:hover, .adm-btn-edit-item:hover {
     background-color: #eee; }
 
-/* line 221, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 221, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-remove-order, .adm-btn-remove {
   height: auto;
   font-size: 17px; }
-  /* line 228, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 228, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-remove-order:hover, .adm-btn-remove:hover, .adm-btn-remove-order:focus, .adm-btn-remove:focus {
     background-color: #f76a62;
     border-color: #f76a62;
     color: #fff; }
 
-/* line 239, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 239, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-submit {
   height: auto;
   font-size: 17px; }
-  /* line 246, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 246, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-submit:hover, .adm-btn-submit:focus {
     background-color: #67d076;
     border-color: #67d076;
     color: #fff; }
 
-/* line 251, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 251, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-settings, .adm-btn-categories-settings {
   width: 30px;
   height: 30px;
@@ -6659,11 +6659,11 @@ input[type="search"] {
   border: 1px solid #636c75;
   background: none;
   outline: none !important; }
-  /* line 260, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 260, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-settings:hover, .adm-btn-categories-settings:hover {
     border-color: #868d94; }
 
-/* line 263, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 263, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-settings-icon, .adm-btn-categories-settings-icon {
   width: 22px;
   height: 22px;
@@ -6679,14 +6679,14 @@ input[type="search"] {
   background-image: url('../assets/adm-icon-cogwheel-gray.png');
   vertical-align: top; }
 
-/* line 280, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 280, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-categories-settings {
   border-color: #e8e8e8; }
-  /* line 283, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 283, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-categories-settings:hover {
     border-color: #d4d4d4; }
 
-/* line 289, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 289, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth, .adm-btn-auth-reg, .adm-btn-auth-login {
   height: 50px;
   padding: 10px 24px 11px;
@@ -6697,38 +6697,38 @@ input[type="search"] {
   outline: none !important;
   border-radius: 58px;
   cursor: pointer; }
-  /* line 300, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 300, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth:hover, .adm-btn-auth-reg:hover, .adm-btn-auth-login:hover {
     background-color: #f0f0f0;
     color: #0f0f0f; }
 
-/* line 304, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 304, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth {
   height: 58px;
   padding: 12px 26px 13px;
   font-size: 18px; }
 
-/* line 313, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 313, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-reg {
   border-color: transparent;
   background-color: #fff;
   color: #0f0f0f; }
-  /* line 318, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 318, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth-reg:hover {
     background-color: #f0f0f0;
     color: #0f0f0f; }
 
-/* line 322, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 322, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-login {
   border-color: #fff;
   background-color: transparent;
   color: #fff; }
-  /* line 327, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+  /* line 327, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
   .adm-btn-auth-login:hover {
     background-color: #fff;
     color: #0f0f0f; }
 
-/* line 331, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 331, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-back {
   padding: 10px;
   position: absolute;
@@ -6740,7 +6740,7 @@ input[type="search"] {
   cursor: pointer;
   outline: none !important; }
 
-/* line 342, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/buttons */
+/* line 342, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/buttons */
 .adm-btn-auth-start {
   width: 76px;
   height: 40px;
@@ -6757,20 +6757,20 @@ input[type="search"] {
   cursor: pointer;
   outline: none !important; }
 
-/* line 1, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert, .form-alert {
   -webkit-font-smoothing: antialiased;
   border-radius: 0; }
-  /* line 4, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+  /* line 4, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
   .alert .close, .alert .form-alert {
     text-shadow: none;
     margin-top: -2px; }
 
-/* line 8, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 8, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .form-alert {
   display: inline-block; }
 
-/* line 12, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-success {
   background-color: #57cb6a;
   border-color: #57cb6a;
@@ -6782,7 +6782,7 @@ input[type="search"] {
   .alert-success .alert-link {
     color: #e6e6e6; }
 
-/* line 15, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-info {
   background-color: #00b9ff;
   border-color: #00b9ff;
@@ -6794,7 +6794,7 @@ input[type="search"] {
   .alert-info .alert-link {
     color: #e6e6e6; }
 
-/* line 18, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-warning {
   background-color: #ff4500;
   border-color: #ff4500;
@@ -6806,7 +6806,7 @@ input[type="search"] {
   .alert-warning .alert-link {
     color: #e6e6e6; }
 
-/* line 21, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 21, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .alert-danger, .login__form .form-group.has-error .help-block {
   background-color: #f6584f;
   border-color: #f6584f;
@@ -6818,7 +6818,7 @@ input[type="search"] {
   .alert-danger .alert-link, .alert-danger .login__form .form-group.has-error .help-block, .login__form .form-group.has-error .alert-danger .help-block {
     color: #e6e6e6; }
 
-/* line 24, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/alerts */
+/* line 24, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/alerts */
 .form-alert-danger {
   background-color: #CB1F35;
   border-color: #CB1F35;
@@ -6833,7 +6833,7 @@ input[type="search"] {
   .form-alert-danger .alert-link {
     color: #e6e6e6; }
 
-/* line 1, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/navbar */
+/* line 1, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .navbar-transparent {
   border-bottom: none;
   background: -moz-linear-gradient(top, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
@@ -6849,30 +6849,30 @@ input[type="search"] {
   background: linear-gradient(to bottom, #d3d3d3 67%, rgba(211, 211, 211, 0.36) 88%, rgba(211, 211, 211, 0) 100%);
   /* W3C */ }
 
-/* line 12, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/navbar */
+/* line 12, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .app-header-navbar {
   background-color: #fff;
   border-bottom: 1px solid #c3c3c3; }
 
-/* line 16, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/navbar */
+/* line 16, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title {
   font-size: 21px;
   font-weight: bold;
   padding-top: 3px; }
 
-/* line 23, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/navbar */
+/* line 23, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__title, .header-navbar__brand {
   margin-top: 2px; }
 
-/* line 26, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/navbar */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/navbar */
 .header-navbar__brand {
   margin-left: 25px; }
 
-/* line 5, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__content {
   background: #d3d3d3;
   text-align: center; }
-  /* line 87, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/mixins */
+  /* line 87, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
   .login__content:before {
     content: "";
     display: inline-block;
@@ -6880,7 +6880,7 @@ input[type="search"] {
     vertical-align: middle;
     margin-right: -0.25em; }
 
-/* line 9, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 9, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__content--fullscreen {
   position: fixed;
   top: 0;
@@ -6890,7 +6890,7 @@ input[type="search"] {
   overflow: auto;
   z-index: 10; }
 
-/* line 18, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 18, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__block {
   display: inline-block;
   display: inline-block;
@@ -6898,11 +6898,11 @@ input[type="search"] {
   padding-top: 97px;
   padding-bottom: 30px; }
 
-/* line 26, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo-block {
   text-align: center; }
 
-/* line 29, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 29, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__navbar-logo {
   display: inline-block;
   width: 195px;
@@ -6917,7 +6917,7 @@ input[type="search"] {
       width: 97.5px;
       height: 97.5px; } }
 
-/* line 45, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 45, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form {
   width: 100%;
   margin-top: 15px;
@@ -6931,7 +6931,7 @@ input[type="search"] {
     .login__form {
       width: 420px; } }
 
-/* line 57, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 57, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-header {
   padding: 30px;
   margin: 0;
@@ -6940,16 +6940,16 @@ input[type="search"] {
   border-bottom: 1px solid #e8e8e8;
   background-color: rgba(255, 255, 255, 0.85); }
 
-/* line 72, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 72, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-group--icon-right input {
   padding-left: 20px; }
 
-/* line 79, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 79, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-icon--right {
   left: auto;
   right: 20px; }
 
-/* line 84, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 84, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input-btn--right {
   top: 0;
   left: auto;
@@ -6958,69 +6958,69 @@ input[type="search"] {
   font-size: 16.33333px;
   -webkit-font-smoothing: antialiased; }
 
-/* line 97, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 97, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-icon--right {
   color: #424242; }
   /* line 24, ./app/bower_components/compass-mixins/lib/compass/typography/links/link-colors */
   a.login__form-input-icon:hover, a.login__form-input-icon--left:hover, a.login__form-input-icon--right:hover {
     color: #292929; }
 
-/* line 101, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 101, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-input, .login__form .form-group .form-control, .login__form-input--single {
   display: block;
   color: #0f0f0f; }
-  /* line 104, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+  /* line 104, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
   .login__form-group .login__form-input, .login__form-group .login__form-group--icon-right, .login__form-group .login__form .form-group .form-control, .login__form .form-group .login__form-group .form-control, .login__form-group .login__form-input--single, .login__form-group .login__form-group--icon-right {
     padding-left: 50px; }
 
-/* line 115, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 115, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-submit-btn {
   border-radius: 0;
   height: auto; }
 
-/* line 125, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 125, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   position: relative; }
 
-/* line 128, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 128, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select, .login__form-select--no-icon, .login__form .form-group select.form-control {
   display: block; }
 
-/* line 134, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 134, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--no-icon, .login__form-select--no-icon:hover, .login__form-select--no-icon:focus {
   background-image: none; }
 
-/* line 137, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 137, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select--single {
   display: block; }
 
-/* line 142, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login */
+/* line 142, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login */
 .login__form-select-block {
   margin-bottom: 1em; }
 
-/* line 2, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+/* line 2, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .alert, .login__form .form-alert {
   margin: 0; }
-/* line 5, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+/* line 5, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .help-block {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
-  /* line 11, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+  /* line 11, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .help-block a {
     font-weight: bold;
     color: inherit; }
-/* line 15, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+/* line 15, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
 .login__form .form-group {
   margin: 0; }
-  /* line 22, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+  /* line 22, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .form-group.has-error .form-control {
     display: block; }
-  /* line 26, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/login-simple-form */
+  /* line 26, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/login-simple-form */
   .login__form .form-group.has-error .help-block {
     position: relative; }
-    /* line 119, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/mixins */
+    /* line 119, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error .help-block:after, .login__form .form-group.has-error .help-block:before {
       bottom: 100%;
       left: 50%;
@@ -7030,13 +7030,13 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       width: 0;
       position: absolute;
       pointer-events: none; }
-    /* line 129, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/mixins */
+    /* line 129, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error .help-block:after {
       border-color: rgba(246, 88, 79, 0);
       border-bottom-color: #f6584f;
       border-width: 7px;
       margin-left: -7px; }
-    /* line 140, /home/heretge/code/merchantly/vendor/static/operator2/app/stylesheets/system/mixins */
+    /* line 140, d:/work/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/system/mixins */
     .login__form .form-group.has-error .help-block:before {
       border-color: transparent;
       border-bottom-color: transparent;
