@@ -13,8 +13,11 @@
           .col-sm-7
             %h1.page-title
               Товары
-            .m-t-sm
-              %a.btn.btn-primary{href: '#'} != '<small><i class="fa fa-plus"></i></small> Добавить новый товар'
+          .col-sm-5
+            .title-action
+              %a.btn.btn-outline.btn-default.btn-rounded{href: '#'}
+                %i.fa.fa-plus
+                Добавить
         .row
           .col-lg-12
             .wrapper.wrapper-content
@@ -28,12 +31,11 @@
                             .m-r-md
                               .row.row-xs
                                 .col-lg-8
-                                  %p.m-t.m-b-xs
-                                    Фильтр
-                                    %a.collapse-link
-                                      %small
-                                        %i.fa.fa-chevron-up.text-muted
-                                  %div
+                                  %button.btn.btn-outline.btn-default.btn-rounded.m-t-xs.m-b-xs
+                                    Показать фильтр
+                                    %small
+                                      %i.fa.fa-chevron-down
+                                  .m-t-xs.hidden
                                     .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
                                       %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
                                       %ul.dropdown-menu.dropdown-menu-base
@@ -95,69 +97,9 @@
                                 .col-lg-8
                                   .form-inline
                                     .form-group.m-r-xs.m-b-sm
-                                      %span.inline{data: {toggle: 'tooltip', container: 'body'}, title: 'Выделение всех товаров'}
-                                        %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
-                                      %span.inline.text-muted.m-l-xs Выделено 345 товаров
-                                    .form-group.inline.m-b-none
-                                      .dropdown.m-t-xs.m-b-xs
-                                        %button.btn.btn-outline.btn-default.btn-block{data: {toggle: 'dropdown'}} != 'Выберите действие <span class="caret"></span>'
-                                        %ul.dropdown-menu.dropdown-menu-base
-                                          %li
-                                            %a{href: '#', title: 'Редактировать'} != '<i class="fa fa-pencil m-r-xs"></i> Редактировать'
-                                          %li
-                                            %a{href: '#', title: 'Показать'} != '<i class="fa fa-eye m-r-xs"></i> Показать'
-                                          %li
-                                            %a{href: '#', title: 'Спрятать'} != '<i class="fa fa-eye-slash m-r-xs"></i> Спрятать'
-                                        / %select.form-control
-                                        /   %option{value: 'Выберите действие'} Выберите действие
-                                        /   %option{value: 'Спрятать/Показать'} Спрятать/Показать
-                                        /   %option{value: 'Редактировать'} Редактировать
-                                    / .form-group.m-r-xs
-                                    /   .m-t-xs.m-b-xs
-                                    /     %select.form-control{ks-select2: true}
-                                    /       %option{value: 'Все категории'} Все категории
-                                    /       %option{value: 'Кольца'} Кольца
-                                    /       %option{value: 'Браслеты'} Браслеты
-                                    /       %option{value: 'Серьги'} Серьги
-                                / .col-lg-2
-                                /   .dropdown.m-t-xs.m-b-xs
-                                /     %button.btn.btn-outline.btn-default.btn-block{data: {toggle: 'dropdown'}} != 'Фильтр <span class="caret"></span>'
-                                /     %div.dropdown-menu.dropdown-menu-filter
-                                /       .form-group
-                                /         %label.control-label.sr-only Категории
-                                /         %select.form-control
-                                /           %option{value: 'Все категории'} Все категории
-                                /           %option{value: 'Кольца'} Кольца
-                                /           %option{value: 'Браслеты'} Браслеты
-                                /           %option{value: 'Серьги'} Серьги
-                                /       .form-group
-                                /         %label.control-label.sr-only Фильтр 2
-                                /         %select.form-control
-                                /           %option{value: 'С фото и без'} С фото и без
-                                /       .form-group
-                                /         %label.control-label.sr-only Фильтр 3
-                                /         %select.form-control
-                                /           %option{value: 'Опубликованные'} Опубликованные
-                                /       .form-group
-                                /         %label.control-label.sr-only Фильтр 4
-                                /         %select.form-control
-                                /           %option{value: 'Нулевой остаток'} Нулевой остаток
-                                /       .form-group
-                                /         %label.control-label.sr-only Фильтр 5
-                                /         %select.form-control
-                                /           %option{value: 'Без вариантов'} Без вариантов
-                                /       .form-group
-                                /         %label.control-label.sr-only Фильтр 6
-                                /         %select.form-control
-                                /           %option{value: 'С ошибками'} С ошибками
-                                /       .form-group
-                                /         %button.btn.btn-success.btn-block Применить
-                                / .col-lg-4
-                                /   %form{action: '?'}
-                                /     .input-group.m-t-xs.m-b-xs
-                                /       %input.form-control{type: 'text'}
-                                /       %span.input-group-btn
-                                /         %button.btn.btn-primary Найти
+                                      %span.inline.m-b-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Выделение всех товаров'}
+                                        %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                                      %span.inline.text-muted.m-b-xs.m-l-xs Выделить все товары
                       %tbody
                         %tr
                           %td
@@ -167,12 +109,13 @@
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
                                 %small.text-muted Размер: XL
-                            %button.btn.btn-outline.btn-warning.btn-sm.btn-rounded.m-t-xs{href: '#'} Еще 30 характеристик
+                            .m-t-xs
+                              %a.link-more{href: '#'} Еще 30 характеристик
                           %td
                             8 вар.
                             %br
@@ -191,7 +134,7 @@
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
@@ -212,7 +155,7 @@
                             %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
@@ -233,7 +176,7 @@
                             %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
@@ -255,7 +198,7 @@
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
                             %i.fa.fa-eye-slash.text-danger.m-r-sm
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
@@ -276,7 +219,7 @@
                             %img.img-circle.project-image{src: 'http://thumbor.kiiiosk.ru/unsafe/64x64/http://assets.kiiiosk.ru/uploads/product_image/image/7717/b87fe2ab-22df-4144-bfa3-a358c8e6005a.jpg', alt: 'Product none'}
                           %td.project-title
                             %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
-                            %ul.m-b-none
+                            %ul.m-t-xs.m-b-none
                               %li
                                 %small.text-muted Артикул: MR003-15/RU
                               %li
