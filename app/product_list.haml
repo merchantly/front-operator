@@ -82,6 +82,21 @@
                         %ul.dropdown-menu.dropdown-menu-base
                           %li
                             %a{href: '#', title: 'С ошибками'} С ошибками
+                      .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
+                        %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Сортировка <span class="caret"></span>'
+                        %ul.dropdown-menu.dropdown-menu-base
+                          %li
+                            %a{href: '#', title: 'С ошибками'} По дате обновления
+                          %li
+                            %a{href: '#', title: 'С ошибками'} По дате добавления
+                          %li
+                            %a{href: '#', title: 'С ошибками'} По популярности
+                  / .hr-line-solid.no-margins
+                  / .p-lg.p-t-sm.p-b-sm
+                  /   %span.inline.m-t-xs.m-b-xs.m-r> Сортировать по
+                  /   %a.btn.btn-info.active.m-t-xs.m-b-xs.m-r{href: ''}> дате обновления
+                  /   %a.m-t-xs.m-b-xs.m-r.text-muted.text-nowrap{href: ''}> дате добавления
+                  /   %a.m-t-xs.m-b-xs.m-r.text-muted.text-nowrap{href: ''} популярности
                   .hr-line-solid.no-margins
                   .project-list.table-responsive
                     %table.table.table-hover.table-striped.table-page.m-b-none
