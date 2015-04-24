@@ -10,17 +10,19 @@
   background: none
 
 .jstree-default .jstree-ocl
+  @include fa-icon()
   position: relative
   background: none
   &,
   &:empty
-    font-size: 10px
+    font-size: 12px
     line-height: 24px
 
+// Коды для font-awesome можно подсмотреть в bower_components/font-awesome/sass/variables
 .jstree-default .jstree-closed > .jstree-ocl
-  @extend .fa
-  @extend .fa-circle
+  &:before
+    content: $fa-var-plus-square-o
 
 .jstree-default .jstree-open > .jstree-ocl
-  @extend .fa
-  @extend .fa-circle-o
+  &:before
+    content: $fa-var-minus-square-o
