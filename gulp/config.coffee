@@ -125,4 +125,10 @@ module.exports = {
   clean: {
     dest: [build, dist]
   }
+  ghPages: {
+    src: build + '/**/*'
+    options: {
+      message: 'gh-pages'
+    }
+  }
 }
