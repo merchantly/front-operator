@@ -11,5 +11,8 @@ gulp.task 'dist', ['clean'], ->
 gulp.task 'build', ['clean'], (cb) ->
   runSequence ['vendorScripts', 'localScripts', 'html', 'haml', 'stylesheets', 'systemStyles', 'fonts', 'images'], cb
 
+gulp.task 'deploy', ['build'], ->
+  gulp.start 'ghPages'
+
 gulp.task 'server', ['setWatch', 'build'], ->
   gulp.start 'watch'
