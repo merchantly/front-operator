@@ -4,8 +4,8 @@
 @import "kiosk/components/labels";
 @import "kiosk/components/buttons";
 @import "kiosk/components/form-controls";
-@import "kiosk/components/_grids";
-@import "kiosk/components/_type";
+@import "kiosk/components/grids";
+@import "kiosk/components/type";
 @import "kiosk/components/select2";
 @import "kiosk/components/tables";
 @import "kiosk/components/switcher";
@@ -13,12 +13,14 @@
 @import "kiosk/components/thumbnails";
 @import "kiosk/components/fixed-bottom-panel";
 @import "kiosk/components/tip-trigger";
-@import "kiosk/components/_row_href";
-@import "kiosk/components/_sortable";
-@import "kiosk/components/_selectizer";
-@import "kiosk/components/_dropdowns";
-@import "kiosk/components/_jstree";
-@import "kiosk/components/_link-more";
+@import "kiosk/components/row_href";
+@import "kiosk/components/sortable";
+@import "kiosk/components/selectizer";
+@import "kiosk/components/dropdowns";
+@import "kiosk/components/jstree";
+@import "kiosk/components/icheckbox";
+@import "kiosk/components/link-more";
+@import "kiosk/components/cards";
 
 // Overrides
 @import "kiosk/overrides";
