@@ -109,12 +109,12 @@
                                   .row.row-xs
                                     .col-lg-8
                                       .form-inline
-                                        .form-group.m-r-xs.m-b-sm
-                                          %span.inline.m-b-xs{data: {toggle: 'tooltip', container: 'body'}, title: 'Выделение всех товаров'}
+                                        .form-group.m-r-xs.m-b-xs
+                                          %span.icheckbox-wrap.inline.m-t-sm.m-b-sm{data: {toggle: 'tooltip', container: 'body'}, title: 'Выделение всех товаров'}
                                             %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
-                                          %span.inline.text-muted.m-b-xs.m-l-xs Выделено 345 товаров
-                                        .form-group.inline.m-b-none
-                                          .dropdown.m-t-xs.m-b-xs
+                                          %span.inline.text-muted.m-t-sm.m-b-sm.m-l-xs Выделено 345 товаров
+                                        .form-group.inline.m-b
+                                          .dropdown
                                             %button.btn.btn-outline.btn-default.btn-block{data: {toggle: 'dropdown'}} != 'Выберите действие <span class="caret"></span>'
                                             %ul.dropdown-menu.dropdown-menu-base
                                               %li
@@ -173,6 +173,12 @@
                                     /       %input.form-control{type: 'text'}
                                     /       %span.input-group-btn
                                     /         %button.btn.btn-primary Найти
+                                    .col-lg-4.text-lg-right
+                                      .btn-group{role: 'group'}
+                                        %button.btn.btn-outline.btn-default
+                                          %i.fa.fa-list
+                                        %button.btn.btn-outline.btn-default.active
+                                          %i.fa.fa-th
                           %tbody
                             %tr
                               %td
