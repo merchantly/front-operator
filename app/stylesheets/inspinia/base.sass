@@ -277,7 +277,16 @@ body.body-small .footer.fixed
 
 .nav-tabs > li > a:hover, .nav-tabs > li > a:focus
   background-color: #e6e6e6
+  border-color: transparent
+  border-bottom-color: #ddd
   color: $text-color
+
+.nav-tabs-white
+  border-bottom-color: $border-color
+
+.nav-tabs-white > li.active > a, .nav-tabs-white > li.active > a:hover, .nav-tabs-white > li.active > a:focus
+  border-color: $border-color
+  background: #fff
 
 .ui-tab .tab-content
   padding: 20px 0px
@@ -295,6 +304,9 @@ body.body-small .footer.fixed
 
 .no-top-border
   border-top: 0 !important
+
+.no-bottom-border
+  border-bottom: 0 !important
 
 .ibox-content.text-box
   padding-bottom: 0px

@@ -12059,69 +12059,84 @@ body.body-small .footer.fixed {
 /* line 278, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
   background-color: #e6e6e6;
+  border-color: transparent;
+  border-bottom-color: #ddd;
   color: #676a6c; }
 
-/* line 282, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 284, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+.nav-tabs-white {
+  border-bottom-color: #e7eaec; }
+
+/* line 287, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+.nav-tabs-white > li.active > a, .nav-tabs-white > li.active > a:hover, .nav-tabs-white > li.active > a:focus {
+  border-color: #e7eaec;
+  background: #fff; }
+
+/* line 291, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ui-tab .tab-content {
   padding: 20px 0px; }
 
 /* GLOBAL  */
-/* line 287, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 296, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .no-padding {
   padding: 0 !important; }
 
-/* line 290, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 299, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .no-borders {
   border: none !important; }
 
-/* line 293, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 302, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .no-margins {
   margin: 0 !important; }
 
-/* line 296, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 305, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .no-top-border {
   border-top: 0 !important; }
 
-/* line 299, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 308, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+.no-bottom-border {
+  border-bottom: 0 !important; }
+
+/* line 311, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-content.text-box {
   padding-bottom: 0px;
   padding-top: 15px; }
 
-/* line 303, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 315, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .border-left-right {
   border-left: 1px solid #e7eaec;
   border-right: 1px solid #e7eaec;
   border-top: none;
   border-bottom: none; }
 
-/* line 309, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 321, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .full-width {
   width: 100% !important; }
 
-/* line 312, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 324, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .link-block {
   font-size: 12px;
   padding: 10px; }
 
-/* line 316, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 328, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .nav.navbar-top-links .link-block a {
   font-size: 12px; }
 
-/* line 319, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 331, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .link-block a {
   font-size: 10px;
   color: inherit; }
 
-/* line 323, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 335, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 body.mini-navbar .branding {
   display: none; }
 
-/* line 326, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 338, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 img.circle-border {
   border: 6px solid #FFFFFF;
   border-radius: 50%; }
 
-/* line 330, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 342, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .branding {
   float: left;
   color: #FFFFFF;
@@ -12131,50 +12146,50 @@ img.circle-border {
   text-align: center;
   background-color: #1ab394; }
 
-/* line 339, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 351, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .login-panel {
   margin-top: 25%; }
 
-/* line 342, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 354, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .icons-box h3 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
-/* line 346, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 358, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .icons-box .infont a i {
   font-size: 25px;
   display: block;
   color: #676a6c; }
 
-/* line 351, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 363, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .icons-box .infont a {
   color: #a6a8a9; }
 
-/* line 354, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 366, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .icons-box .infont a {
   padding: 10px;
   margin: 1px;
   display: block; }
 
-/* line 360, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 372, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ui-draggable .ibox-title {
   cursor: move; }
 
-/* line 363, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 375, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .breadcrumb {
   background-color: #ffffff;
   padding: 0;
   margin-bottom: 0; }
 
-/* line 368, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 380, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .breadcrumb > li a {
   color: inherit; }
 
-/* line 371, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 383, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .breadcrumb > .active {
   color: inherit; }
 
-/* line 374, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 386, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 code {
   background-color: #F9F2F4;
   border-radius: 4px;
@@ -12183,18 +12198,18 @@ code {
   padding: 2px 4px;
   white-space: nowrap; }
 
-/* line 382, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 394, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox {
   clear: both;
   margin-bottom: 25px;
   margin-top: 0;
   padding: 0; }
 
-/* line 388, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 400, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox:after, .ibox:before {
   display: table; }
 
-/* line 391, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 403, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-title {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
@@ -12206,7 +12221,7 @@ code {
   padding: 14px 0 7px;
   min-height: 48px; }
 
-/* line 402, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 414, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
@@ -12216,51 +12231,51 @@ code {
   border-style: solid solid none;
   border-width: 1px 0px; }
 
-/* line 412, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 424, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 table.table-mail tr td {
   padding: 12px; }
 
-/* line 415, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 427, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .table-mail .check-mail {
   padding-left: 20px; }
 
-/* line 418, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 430, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .table-mail .mail-date {
   padding-right: 20px; }
 
-/* line 421, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 433, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .star-mail, .check-mail {
   width: 40px; }
 
-/* line 424, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 436, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .unread td a, .unread td {
   font-weight: 600;
   color: inherit; }
 
-/* line 428, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 440, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .read td a, .read td {
   font-weight: normal;
   color: inherit; }
 
-/* line 432, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 444, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .unread td {
   background-color: #f9f8f8; }
 
-/* line 435, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 447, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-content {
   clear: both; }
 
-/* line 438, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 450, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-heading {
   background-color: #f3f6fb;
   border-bottom: none; }
 
-/* line 442, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 454, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-heading h3 {
   font-weight: 200;
   font-size: 24px; }
 
-/* line 446, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 458, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-title h3 {
   margin-right: 7px;
   padding: 0;
@@ -12268,7 +12283,7 @@ table.table-mail tr td {
   float: left;
   text-overflow: ellipsis; }
 
-/* line 453, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 465, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-title h5 {
   display: inline-block;
   font-size: 14px;
@@ -12277,12 +12292,12 @@ table.table-mail tr td {
   text-overflow: ellipsis;
   float: left; }
 
-/* line 461, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 473, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-title .label {
   float: left;
   margin-left: 4px; }
 
-/* line 465, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 477, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-tools {
   display: inline-block;
   float: right;
@@ -12290,194 +12305,194 @@ table.table-mail tr td {
   position: relative;
   padding: 0; }
 
-/* line 472, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 484, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-tools a {
   cursor: pointer;
   margin-left: 5px;
   color: #c4c4c4; }
 
-/* line 477, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 489, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-tools a.btn-primary {
   color: #fff; }
 
-/* line 480, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 492, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox-tools .dropdown-menu > li > a {
   padding: 4px 10px;
   font-size: 12px; }
 
-/* line 484, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 496, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .ibox .open > .dropdown-menu {
   padding-left: 0;
   left: auto;
   right: 0; }
 
 /* BACKGROUNDS */
-/* line 491, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 503, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .gray-bg {
   background-color: #f3f3f4; }
 
-/* line 494, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 506, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .white-bg {
   background-color: #ffffff; }
 
-/* line 497, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 509, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .navy-bg {
   background-color: #1ab394;
   color: #ffffff; }
 
-/* line 501, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 513, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .blue-bg {
   background-color: #1c84c6;
   color: #ffffff; }
 
-/* line 505, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 517, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .lazur-bg {
   background-color: #23c6c8;
   color: #ffffff; }
 
-/* line 509, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 521, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .yellow-bg {
   background-color: #f8ac59;
   color: #ffffff; }
 
-/* line 513, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 525, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .red-bg {
   background-color: #ED5565;
   color: #ffffff; }
 
-/* line 517, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 529, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .black-bg {
   background-color: #262626; }
 
-/* line 520, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 532, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-primary {
   border-color: #1ab394; }
 
-/* line 523, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 535, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-primary > .panel-heading {
   background-color: #1ab394;
   border-color: #1ab394; }
 
-/* line 527, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 539, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-success {
   border-color: #1c84c6; }
 
-/* line 530, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 542, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-success > .panel-heading {
   background-color: #1c84c6;
   border-color: #1c84c6;
   color: #ffffff; }
 
-/* line 535, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 547, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-info {
   border-color: #23c6c8; }
 
-/* line 538, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 550, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-info > .panel-heading {
   background-color: #23c6c8;
   border-color: #23c6c8;
   color: #ffffff; }
 
-/* line 543, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 555, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-warning {
   border-color: #f8ac59; }
 
-/* line 546, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 558, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-warning > .panel-heading {
   background-color: #f8ac59;
   border-color: #f8ac59;
   color: #ffffff; }
 
-/* line 551, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 563, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-danger {
   border-color: #ED5565; }
 
-/* line 554, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 566, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-danger > .panel-heading {
   background-color: #ED5565;
   border-color: #ED5565;
   color: #ffffff; }
 
-/* line 559, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 571, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar {
   background-color: #1ab394; }
 
-/* line 562, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 574, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-small, .progress-small .progress-bar {
   height: 10px; }
 
-/* line 565, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 577, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-small, .progress-mini {
   margin-top: 5px; }
 
-/* line 568, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 580, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-mini, .progress-mini .progress-bar {
   height: 5px;
   margin-bottom: 0px; }
 
-/* line 572, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 584, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar-navy-light {
   background-color: #3dc7ab; }
 
-/* line 575, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 587, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar-success {
   background-color: #1c84c6; }
 
-/* line 578, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 590, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar-info {
   background-color: #23c6c8; }
 
-/* line 581, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 593, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar-warning {
   background-color: #f8ac59; }
 
-/* line 584, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 596, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .progress-bar-danger {
   background-color: #ED5565; }
 
-/* line 587, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 599, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .panel-title {
   font-size: inherit; }
 
-/* line 590, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 602, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .jumbotron {
   border-radius: 6px;
   padding: 40px; }
 
-/* line 594, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 606, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .jumbotron h1 {
   margin-top: 0; }
 
 /* COLORS */
-/* line 599, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 611, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-navy {
   color: #1ab394; }
 
-/* line 602, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 614, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-primary {
   color: inherit; }
 
-/* line 605, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 617, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-success {
   color: #1c84c6; }
 
-/* line 608, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 620, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-info {
   color: #23c6c8; }
 
-/* line 611, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 623, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-warning {
   color: #f8ac59; }
 
-/* line 614, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 626, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-danger {
   color: #ED5565; }
 
-/* line 617, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 629, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .text-muted {
   color: #888888; }
 
-/* line 620, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 632, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .simple_tag {
   background-color: #f3f3f4;
   border: 1px solid #e7eaec;
@@ -12489,389 +12504,389 @@ table.table-mail tr td {
   padding: 5px 12px;
   display: inline-block; }
 
-/* line 631, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 643, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .img-shadow {
   -webkit-box-shadow: 0px 0px 3px 0px #919191;
   -moz-box-shadow: 0px 0px 3px 0px #919191;
   box-shadow: 0px 0px 3px 0px #919191; }
 
 /* For handle diferent bg color in AngularJS version */
-/* line 643, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 655, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .dashboards\.dashboard_2 nav.navbar, .dashboards\.dashboard_3 nav.navbar, .mailbox\.inbox nav.navbar, .mailbox\.email_view nav.navbar, .mailbox\.email_compose nav.navbar, .dashboards\.dashboard_4_1 nav.navbar {
   background: #fff; }
 
 /* For handle diferent bg color in MVC version */
-/* line 653, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 665, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .Dashboard_2 .navbar.navbar-static-top, .Dashboard_3 .navbar.navbar-static-top, .Dashboard_4_1 .navbar.navbar-static-top, .ComposeEmail .navbar.navbar-static-top, .EmailView .navbar.navbar-static-top, .Inbox .navbar.navbar-static-top {
   background: #fff; }
 
 /* MARGINS & PADDINGS */
-/* line 658, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 670, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-xxs {
   padding: 5px; }
 
-/* line 661, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 673, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-xs {
   padding: 10px; }
 
-/* line 664, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 676, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-sm {
   padding: 15px; }
 
-/* line 667, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 679, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-m {
   padding: 20px; }
 
-/* line 670, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 682, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-md {
   padding: 25px; }
 
-/* line 673, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 685, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-lg {
   padding: 30px; }
 
-/* line 676, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 688, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-xl {
   padding: 40px; }
 
-/* line 679, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 691, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-r-lg {
   padding-right: 30px; }
 
-/* line 682, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 694, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-l-lg {
   padding-left: 30px; }
 
-/* line 685, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 697, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-l-sm {
   padding-left: 15px; }
 
-/* line 688, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 700, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-t-none {
   padding-top: 0; }
 
-/* line 691, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 703, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-t-xxs {
   padding-top: 5px; }
 
-/* line 694, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 706, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-t-sm {
   padding-top: 15px; }
 
-/* line 697, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 709, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-t-md {
   padding-top: 20px; }
 
-/* line 700, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 712, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-b-xxs {
   padding-bottom: 5px; }
 
-/* line 703, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 715, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-b-sm {
   padding-bottom: 15px; }
 
-/* line 706, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 718, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-b-md {
   padding-bottom: 20px; }
 
-/* line 709, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 721, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-l-none {
   padding-left: 0; }
 
-/* line 712, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 724, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-v-none {
   padding-top: 0;
   padding-bottom: 0; }
 
-/* line 716, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 728, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .p-none {
   padding: 0; }
 
-/* line 719, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 731, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xxs {
   margin: 2px 4px; }
 
-/* line 722, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 734, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xs {
   margin: 5px; }
 
-/* line 725, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 737, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-sm {
   margin: 10px; }
 
-/* line 728, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 740, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m {
   margin: 15px; }
 
-/* line 731, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 743, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-md {
   margin: 20px; }
 
-/* line 734, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 746, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-lg {
   margin: 30px; }
 
-/* line 737, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 749, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-xl {
   margin: 50px; }
 
-/* line 740, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 752, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-n {
   margin: 0 !important; }
 
-/* line 743, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 755, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-none {
   margin-left: 0; }
 
-/* line 746, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 758, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-xs {
   margin-left: 5px; }
 
-/* line 749, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 761, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-sm {
   margin-left: 10px; }
 
-/* line 752, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 764, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l {
   margin-left: 15px; }
 
-/* line 755, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 767, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-md {
   margin-left: 20px; }
 
-/* line 758, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 770, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-lg {
   margin-left: 30px; }
 
-/* line 761, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 773, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-xl {
   margin-left: 40px; }
 
-/* line 764, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 776, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xxs {
   margin-left: -1px; }
 
-/* line 767, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 779, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xs {
   margin-left: -5px; }
 
-/* line 770, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 782, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-sm {
   margin-left: -10px; }
 
-/* line 773, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 785, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n {
   margin-left: -15px; }
 
-/* line 776, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 788, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-md {
   margin-left: -20px; }
 
-/* line 779, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 791, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-lg {
   margin-left: -30px; }
 
-/* line 782, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 794, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-l-n-xl {
   margin-left: -40px; }
 
-/* line 785, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 797, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-none {
   margin-top: 0; }
 
-/* line 788, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 800, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xxs {
   margin-top: 1px; }
 
-/* line 791, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 803, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xs {
   margin-top: 5px; }
 
-/* line 794, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 806, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-sm {
   margin-top: 10px; }
 
-/* line 797, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 809, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t {
   margin-top: 15px; }
 
-/* line 800, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 812, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-md {
   margin-top: 20px; }
 
-/* line 803, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 815, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-lg {
   margin-top: 30px; }
 
-/* line 806, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 818, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-xl {
   margin-top: 40px; }
 
-/* line 809, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 821, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xxs {
   margin-top: -1px; }
 
-/* line 812, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 824, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xs {
   margin-top: -5px; }
 
-/* line 815, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 827, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-sm {
   margin-top: -10px; }
 
-/* line 818, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 830, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n {
   margin-top: -15px; }
 
-/* line 821, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 833, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-md {
   margin-top: -20px; }
 
-/* line 824, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 836, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-lg {
   margin-top: -30px; }
 
-/* line 827, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 839, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-t-n-xl {
   margin-top: -40px; }
 
-/* line 830, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 842, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-none {
   margin-right: 0; }
 
-/* line 833, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 845, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xxs {
   margin-right: 1px; }
 
-/* line 836, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 848, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xs {
   margin-right: 5px; }
 
-/* line 839, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 851, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-sm {
   margin-right: 10px; }
 
-/* line 842, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 854, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r {
   margin-right: 15px; }
 
-/* line 845, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 857, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-md {
   margin-right: 20px; }
 
-/* line 848, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 860, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-lg {
   margin-right: 30px; }
 
-/* line 851, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 863, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-xl {
   margin-right: 40px; }
 
-/* line 854, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 866, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xxs {
   margin-right: -1px; }
 
-/* line 857, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 869, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xs {
   margin-right: -5px; }
 
-/* line 860, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 872, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-sm {
   margin-right: -10px; }
 
-/* line 863, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 875, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n {
   margin-right: -15px; }
 
-/* line 866, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 878, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-md {
   margin-right: -20px; }
 
-/* line 869, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 881, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-lg {
   margin-right: -30px; }
 
-/* line 872, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 884, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-r-n-xl {
   margin-right: -40px; }
 
-/* line 875, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 887, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-none {
   margin-bottom: 0; }
 
-/* line 878, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 890, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xxs {
   margin-bottom: 1px; }
 
-/* line 881, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 893, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xs {
   margin-bottom: 5px; }
 
-/* line 884, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 896, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-sm {
   margin-bottom: 10px; }
 
-/* line 887, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 899, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b {
   margin-bottom: 15px; }
 
-/* line 890, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 902, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-md {
   margin-bottom: 20px; }
 
-/* line 893, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 905, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-lg {
   margin-bottom: 30px; }
 
-/* line 896, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 908, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-xl {
   margin-bottom: 40px; }
 
-/* line 899, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 911, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xxs {
   margin-bottom: -1px; }
 
-/* line 902, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 914, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xs {
   margin-bottom: -5px; }
 
-/* line 905, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 917, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-sm {
   margin-bottom: -10px; }
 
-/* line 908, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 920, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n {
   margin-bottom: -15px; }
 
-/* line 911, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 923, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-md {
   margin-bottom: -20px; }
 
-/* line 914, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 926, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-lg {
   margin-bottom: -30px; }
 
-/* line 917, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 929, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .m-b-n-xl {
   margin-bottom: -40px; }
 
-/* line 920, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 932, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-15 {
   margin: 15px 0; }
 
-/* line 923, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 935, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-20 {
   margin: 20px 0; }
 
-/* line 926, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 938, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-25 {
   margin: 25px 0; }
 
-/* line 929, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 941, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 .space-30 {
   margin: 30px 0; }
 
-/* line 933, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
+/* line 945, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/base */
 body.modal-open {
   padding-right: inherit !important; }
 
@@ -13451,44 +13466,62 @@ a.compose-mail {
 .mail-ontact {
   width: 23%; }
 
-/* PROJECTS */
+/* ORDERS */
 /* line 490, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+.order-box {
+  padding: 0px;
+  border: 1px solid #e7eaec;
+  border-top: 0;
+  background-color: #ffffff; }
+  /* line 495, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+  .order-box table tr td {
+    padding: 15px 10px;
+    vertical-align: middle; }
+    /* line 498, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+    .order-box table tr td ul {
+      padding-left: 18px; }
+  /* line 500, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+  .order-box table tr:first-child td {
+    border-top: none; }
+
+/* PROJECTS */
+/* line 504, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-people, .project-actions {
   text-align: right;
   vertical-align: middle; }
 
-/* line 494, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 508, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 dd.project-people {
   text-align: left;
   margin-top: 5px; }
 
-/* line 498, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 512, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-people img {
   width: 32px;
   height: 32px; }
 
-/* line 502, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 516, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-title a {
   font-size: 14px;
   color: #676a6c;
   font-weight: 600; }
 
-/* line 507, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 521, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-list table tr td {
   border-top: none;
   border-bottom: 1px solid #e7eaec;
   padding: 15px 10px;
   vertical-align: middle; }
-  /* line 512, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+  /* line 526, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
   .project-list table tr td ul {
     padding-left: 18px; }
 
-/* line 516, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 530, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-image, table tbody tr .project-image {
   width: 64px;
   height: 64px; }
 
-/* line 520, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 534, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-manager .tag-list li a {
   font-size: 10px;
   background-color: white;
@@ -13500,7 +13533,7 @@ dd.project-people {
   margin-top: 5px;
   display: block; }
 
-/* line 531, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 545, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .project-files li a {
   font-size: 11px;
   color: #676a6c;
@@ -13508,24 +13541,24 @@ dd.project-people {
   line-height: 22px; }
 
 /* FAQ */
-/* line 539, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 553, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .faq-item {
   padding: 20px;
   margin-bottom: 2px;
   background: #fff; }
 
-/* line 544, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 558, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .faq-question {
   font-size: 18px;
   font-weight: 600;
   color: #1ab394;
   display: block; }
 
-/* line 550, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 564, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .faq-question:hover {
   color: #179d80; }
 
-/* line 553, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 567, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .faq-answer {
   margin-top: 10px;
   background: #f3f3f4;
@@ -13533,7 +13566,7 @@ dd.project-people {
   border-radius: 3px;
   padding: 15px; }
 
-/* line 561, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 575, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .entities-tag-list .tag-item, .faq-item .tag-item {
   display: inline-block;
   background: #f3f3f4;
@@ -13542,47 +13575,47 @@ dd.project-people {
   text-transform: uppercase; }
 
 /* Chat view */
-/* line 569, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 583, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .message-input {
   height: 90px !important; }
 
-/* line 572, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 586, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-avatar {
   white: 36px;
   height: 36px;
   float: left;
   margin-right: 10px; }
 
-/* line 578, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 592, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-user-name {
   padding: 10px; }
 
-/* line 581, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 595, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-user {
   padding: 8px 10px;
   border-bottom: 1px solid #e7eaec; }
 
-/* line 585, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 599, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-user a {
   color: inherit; }
 
-/* line 588, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 602, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-view {
   z-index: 2012; }
 
-/* line 591, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 605, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-users, .chat-statistic {
   margin-left: -30px; }
 
-/* line 594, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 608, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-view .ibox-content {
   padding: 0; }
 
-/* line 597, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 611, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-message {
   padding: 10px 20px; }
 
-/* line 600, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 614, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .message-avatar {
   height: 48px;
   width: 48px;
@@ -13590,17 +13623,17 @@ dd.project-people {
   border-radius: 4px;
   margin-top: 1px; }
 
-/* line 607, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 621, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n+1) .message-avatar {
   float: left;
   margin-right: 10px; }
 
-/* line 611, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 625, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n) .message-avatar {
   float: right;
   margin-left: 10px; }
 
-/* line 615, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 629, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .message {
   background-color: #fff;
   border: 1px solid #e7eaec;
@@ -13610,59 +13643,59 @@ dd.project-people {
   position: relative;
   border-radius: 4px; }
 
-/* line 624, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 638, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n+1) .message-date {
   float: right; }
 
-/* line 627, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 641, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n) .message-date {
   float: left; }
 
-/* line 630, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 644, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n+1) .message {
   text-align: left;
   margin-left: 55px; }
 
-/* line 634, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 648, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion .chat-message:nth-child(2n) .message {
   text-align: right;
   margin-right: 55px; }
 
-/* line 638, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 652, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .message-date {
   font-size: 10px;
   color: #888888; }
 
-/* line 642, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 656, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .message-content {
   display: block; }
 
-/* line 645, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 659, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-discussion {
   background: #eee;
   padding: 15px;
   height: 400px;
   overflow-y: auto; }
 
-/* line 651, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 665, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-users {
   overflow-y: auto;
   height: 400px; }
 
-/* line 655, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 669, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .chat-message-form .form-group {
   margin-bottom: 0; }
 
 /* jsTree */
-/* line 659, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 673, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .jstree-open > .jstree-anchor > .fa-folder:before {
   content: "\f07c"; }
 
-/* line 662, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+/* line 676, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
 .jstree-default .jstree-icon.none {
   width: 0; }
   @media (max-width: 992px) {
-    /* line 666, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
+    /* line 680, /Users/volosojui/code/projects/kiosk/git/kiosk-operator-static-v2/app/stylesheets/inspinia/pages */
     .jstree-default .jstree-icon.none .chat-users, .jstree-default .jstree-icon.none .chat-statistic {
       margin-left: 0px; } }
 
