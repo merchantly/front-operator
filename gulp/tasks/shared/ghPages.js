@@ -3,6 +3,6 @@ var gulp = require('gulp'),
     config = require('../../config').ghPages;
 
 gulp.task('[Shared] GithubPages', function() {
-  gulp.src(config.src)
+  return gulp.src(config.src)
     .pipe(ghPages(config.options));
 });
