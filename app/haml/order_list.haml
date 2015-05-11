@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title
+              Заказы
+              %small.text-muted (38)
+          .col-sm-5
+            .title-action
+              %a.btn.btn-outline.btn-default.btn-rounded{href: '#'}
+                %i.fa.fa-plus
+                Создать новый
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              %ul.nav.nav-tabs.nav-tabs-white
+                %li.active
+                  %a{href: '#'} 
+                    Новый
+                    &nbsp;
+                    %span.label.label-success.pull-right 6
+                %li
+                  %a{href: '#'} 
+                    Действующий
+                    &nbsp;
+                    %span.label.label-warning.pull-right 7
+                %li
+                  %a{href: '#'} 
+                    Выполнен
+                    &nbsp;
+                    %span.label.label-primary.pull-right 8
+                %li
+                  %a{href: '#'} 
+                    Отменен
+                    &nbsp;
+                    %span.label.label-default.pull-right 17
+              .order-box
+                %table.table.no-margins
+                  %tbody
+                    %tr
+                      %td.project-status
+                        != '#1232'
+                        %br
+                        %small.text-muted
+                          %nobr 05 мая, 18:12
+                      %td.project-title
+                        %a{href: '#'} 
+                          4 600 руб.
+                          %i.fa.fa-credit-card
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Оплата банковской картой, через терминал или салон связи 2015-05-05 18:12:50 +0300', tooltip: true} Ожидаем оплаты
+                      %td.project-title
+                        %a{href: '#'}
+                          Кольцо NATALIA BRYANTSEVA (размер: 18)
+                      %td.project-people
+                        %img.img-circle{src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7871/e029f2bd-8b3d-46e0-a018-7f2cd6430771.jpg'}
+                      %td.project-title
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Самовывоз', tooltip: true} Не требуется
+                    %tr
+                      %td.project-status
+                        != '#1208'
+                        %br
+                        %small.text-muted
+                          %nobr 03 мая, 23:57
+                      %td.project-title
+                        %a{href: '#'} 
+                          2 230 руб.
+                          %i.fa.fa-money
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Наличные при получении 2015-05-03 23:57:38 +0300', tooltip: true} Ожидаем оплаты наличными
+                      %td.project-title
+                        %a{href: '#'}
+                          Браслет с серебряными шариками Himére (Вариант #26396)
+                      %td.project-people
+                        %img.img-circle{src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7006/ebde5214-ea1d-40b1-8367-9a64a2cc647b.jpg'}
+                      %td.project-title
+                        Москва
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Москва – доставка курьером (на следующий день)', tooltip: true} Ожидается старт
+                    %tr
+                      %td.project-status
+                        != '#1204'
+                        %br
+                        %small.text-muted
+                          %nobr 03 мая, 13:18
+                      %td.project-title
+                        %a{href: '#'} 
+                          4 000 руб.
+                          %i.fa.fa-money
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Наличные при получении 2015-05-03 13:18:38 +0300', tooltip: true} Ожидаем оплаты наличными
+                      %td.project-title
+                        %a{href: '#'}
+                          Браслет с танзанитом Himére (Вариант #26387)
+                      %td.project-people
+                        %img.img-circle{src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7050/ac07f98f-047c-4660-8d95-f6df881bd579.jpg'}
+                        %img.img-circle{src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7006/ebde5214-ea1d-40b1-8367-9a64a2cc647b.jpg'}
+                      %td.project-title
+                        Москва
+                        .m-t-xs.m-b-xs
+                          %span.label.label-default{title: 'Самовывоз', tooltip: true} Не требуется
+        .footer
+          .pull-right != '10GB of <strong>250GB</strong> Free.'
+          %div != '<strong>Copyright</strong> Example Company &copy; 2014-2015'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

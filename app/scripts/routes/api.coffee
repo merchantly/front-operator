@@ -1,4 +1,4 @@
-window.ApiRoutes =
+ApiRoutes =
   operator_product_image_delete_url:  (id) -> gon.operator_api_url + '/v1/products/images/' + id
   operator_product_images_rotate_url: (id) -> gon.operator_api_url + '/v1/product_images/' + id + '/rotate'
   operator_product_images_url:             -> gon.operator_api_url + '/v1/product_images'
@@ -10,3 +10,5 @@ window.ApiRoutes =
   operator_product_publicate_url:   (id) -> gon.operator_api_url + '/v1/products/' + id + '/publication'
   operator_products_by_category_url:     -> gon.operator_api_url + '/v1/products'
   operator_products_change_category_url: -> gon.operator_api_url + '/v1/products/:id/change_category'
+
+module.exports = ApiRoutes

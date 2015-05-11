@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title
+              Редактирование (группа товаров)
+            .m-t-sm
+              %a.inline.m-t-xs.m-r-xs{href: '#'}>
+                %span.label.label-primary.inline ссылка на товар на сайте
+              %span.label.label-info.inline.m-t-xs.m-r-xs> != 'Объединено в группу &laquo;Кольца&raquo;'
+          .col-sm-5
+            .title-action
+              %label.switcher
+                %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
+                %span.switcher__box
+                  %span.switcher__knob
+              %label.m-b-none.m-l-xs.font-normal{for: 'product-visibility'} Товар на сайте
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              .alert.alert-danger != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
+              .ibox
+                .ibox-title
+                  %h3 Фотографии
+                .ibox-content
+                  .thumbnails
+                    .row
+                      .thumbnails-list
+                        .col-xs-12.col-sm-6.col-md-3.col-lg-2.thumbnails-item
+                          .thumbnails-item-in
+                            %img.thumbnails-item-img{src: 'assets/product-1-square.png'}
+              .ibox
+                .ibox-title
+                  %h3 Товар
+                .ibox-content
+                  .form-group.has-error
+                    %label.control-label
+                      Название
+                      %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Придумайте название'}
+                        %i.fa.fa-question-circle
+                    %textarea.form-control{placeholder: 'Например, велосипед городской'}
+                  .form-group
+                    %label.control-label Категория
+                    %select.form-control{multiple: 'true', ks-select2: true}
+                      %option{value: 'Молоко', selected: true} Молоко
+                      %option{value: 'Морепродукты'} Морепродукты
+                      %option{value: 'Мопеды'} Мопеды
+                      %option{value: 'Брилианты'} Брилианты
+                    %p.help-block != 'Категории создаются в <a href="#">специальном разделе</a>'
+                  .form-group.m-b-none
+                    %label.control-label Описание
+                    %textarea.form-control{required: 'required', autosize: 'true'}
+              .ibox
+                .ibox-title
+                  %h3 Общие характеристики
+                .ibox-content.p-none
+                  %dl.dl-special.no-margins
+                    %dt Наличие манометра:
+                    %dd
+                      %i.fa.fa-check
+                    %dt Скорость:
+                    %dd 60 км/ч
+                    %dt Размер:
+                    %dd XL
+              .ibox
+                .ibox-title
+                  %h3 Карточки в этом товаре
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page.m-b-none
+                      %thead
+                        %tr
+                          %th &nbsp;
+                          %th Название
+                          %th Цена
+                          %th Количество
+                          %th Распродажа
+                          %th Видимость
+                          %th &nbsp;
+                          %th &nbsp;
+                      %tbody
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: MR003-13/RU
+                              %li
+                                %small.text-muted Цвет: Желтый
+                          %td
+                            %s.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}
+                              %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                              != '%'
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                              %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                              %i.fa.fa-eye
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: MR003-14/RU
+                              %li
+                                %small.text-muted Цвет: Красный
+                          %td
+                            %s.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}
+                              %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
+                              != '%'
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                              %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                              %i.fa.fa-eye
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted Артикул: MR003-15/RU
+                              %li
+                                %small.text-muted Размер: XL
+                              %li
+                                %small.text-muted Цвет: Зеленый
+                          %td
+                            %s.text-nowrap 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Распродажа'}
+                              %input.i-checks{type: 'checkbox', value: '', checked: true, ks-icheck: true}
+                              != '%'
+                          %td
+                            %label{data: {toggle: 'tooltip', container: 'body'}, title: 'Видимость'}
+                              %input.i-checks{type: 'checkbox', value: '', ks-icheck: true}
+                              %i.fa.fa-eye
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                  .selectizer
+                    .p-m
+                      %input.form-control{type: 'text', value: '', placeholder: 'Введите товар'}
+              .ibox
+                .ibox-title
+                  %h3 Похожие товары
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page.m-b-none
+                      %thead
+                        %tr
+                          %th &nbsp;
+                          %th Название
+                          %th Цена
+                          %th Количество
+                          %th &nbsp;
+                          %th &nbsp;
+                      %tbody
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %i.fa.fa-eye-slash.text-danger.m-r-sm
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %i.fa.fa-eye-slash.text-danger.m-r-sm
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                  .selectizer
+                    .p-m
+                      %input.form-control{type: 'text', value: 'Мини', placeholder: 'Введите товар'}
+                    .project-list.table-responsive
+                      %table.table.table-hover.table-striped.table-page.m-b-none
+                        %tbody
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 7 400 руб.
+                            %td
+                              1 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 6 900 руб.
+                            %td
+                              7 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %s.text-nowrap.text-muted 3 200 руб.
+                              %div.m-t-sm.m-b-sm
+                                %span.label.label-outline.label-danger.label-price 2 900 руб.
+                            %td
+                              4 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 7 400 руб.
+                            %td
+                              1 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 6 900 руб.
+                            %td
+                              7 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %s.text-nowrap.text-muted 3 200 руб.
+                              %div.m-t-sm.m-b-sm
+                                %span.label.label-outline.label-danger.label-price 2 900 руб.
+                            %td
+                              4 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %button.btn.btn-outline.btn-danger.pull-right Удалить товар
+                    %button.btn.btn-primary.m-r-md> Сохранить
+                    %span.text-muted.text-nowrap.m-r-md последее изменение 26 марта 2015
+        +include './app/shared/_footer.haml'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
