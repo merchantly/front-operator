@@ -1,4 +1,4 @@
-window.Routes =
+Routes =
   products_image_delete_path: (id) -> gon.root_url + '/products/images/'+id
 
   # Operator categories (на основе http://api.kormilica.info/#!/operator)
@@ -10,3 +10,5 @@ window.Routes =
   operator_categories_edit_url: (categoryId) -> gon.root_url + '/operator/categories/' + categoryId + '/edit'
 
   products_by_category_url:   (id) -> gon.root_url + '/operator/products?category_id=' + id
+
+module.exports = Routes

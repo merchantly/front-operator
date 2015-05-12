@@ -1,6 +1,0 @@
-require './libs'
-require './routes/api'
-require './routes/routes'
-require './legacy'
-require './app'
-require './react_bundle'

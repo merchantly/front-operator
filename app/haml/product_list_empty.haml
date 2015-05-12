@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body.mini-navbar
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title
+              Товары
+          .col-sm-5
+            .title-action
+              %a.btn.btn-outline.btn-default.btn-rounded{href: '#'}
+                %i.fa.fa-plus
+                Добавить
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              .row.row-xs
+                .col-lg-9
+                  .ibox
+                    .ibox-content.p-none
+                      .p-lg.p-t-sm.p-b-sm
+                        .row.row-xs
+                          .col-lg-8
+                            %button.btn.btn-outline.btn-default.btn-rounded.m-t-xs.m-b-xs.active
+                              Скрыть фильтр
+                              %small
+                                %i.fa.fa-chevron-up
+                          .col-lg-4
+                            .m-t-lg.hidden-xs.hidden-sm.hidden-md.hidden
+                            %form{action: '?'}
+                              .input-group.m-t-xs.m-b-xs
+                                %input.form-control{type: 'text', placeholder: 'Поиск'}
+                                %span.input-group-btn
+                                  %button.btn.btn-primary Найти
+                        .m-t-sm
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Категории <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li.active
+                                %a{href: '#', title: 'Все категории'} Все категории
+                              %li
+                                %a{href: '#', title: 'Кольца'} Кольца
+                              %li
+                                %a{href: '#', title: 'Браслеты'} Браслеты
+                              %li
+                                %a{href: '#', title: 'Серьги'} Серьги
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Наличие фото <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'С фото и без'} С фото и без
+                              %li
+                                %a{href: '#', title: 'С фото'} С фото
+                              %li
+                                %a{href: '#', title: 'Без фото'} Без фото
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Видимость <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Опубликованные'} Опубликованные
+                              %li
+                                %a{href: '#', title: 'Неопубликованные'} Неопубликованные
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Количество <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Нулевой остаток'} Нулевой остаток
+                              %li
+                                %a{href: '#', title: 'Больше 10'} Больше 10
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}>
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Варианты <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'Без вариантов'} Без вариантов
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Статус <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'С ошибками'} С ошибками
+                          .btn-group.m-t-xs.m-r-xs.m-b-xs{role: 'group'}
+                            %button.btn.btn-outline.btn-default.dropdown-toggle{data: {toggle: 'dropdown'}} != 'Сортировка <span class="caret"></span>'
+                            %ul.dropdown-menu.dropdown-menu-base
+                              %li
+                                %a{href: '#', title: 'С ошибками'} По дате обновления
+                              %li
+                                %a{href: '#', title: 'С ошибками'} По дате добавления
+                              %li
+                                %a{href: '#', title: 'С ошибками'} По популярности
+                      .hr-line-solid.no-margins
+                      .project-list.table-responsive
+                        .p-lg.text-center
+                          .m-t-lg.m-b-lg
+                            %h2 Список пуст
+                .col-lg-3
+                  .ibox
+                    .ibox-content.p-xs
+                      :plain
+                        <div products-categories-tree="true"><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:true}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=612&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Корневая категория</span><span class="text-muted"> (74/875)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=636&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольца</span><span class="text-muted"> (0/181)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=619&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо</span><span class="text-muted"> (45)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=621&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на весь палец</span><span class="text-muted"> (17)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=622&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на ноготь</span><span class="text-muted"> (12)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=624&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на 2 пальца</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=628&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Миникольцо</span><span class="text-muted"> (104)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=635&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслеты</span><span class="text-muted"> (0/41)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=614&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет</span><span class="text-muted"> (21)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=615&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет на кисть</span><span class="text-muted"> (20)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=616&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет-нить</span><span class="text-muted"> (210)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=637&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (0/201)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=620&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо в нос</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=618&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кафф</span><span class="text-muted"> (38)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1697&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги-каффы</span><span class="text-muted"> (16)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=625&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Пусеты</span><span class="text-muted"> (53)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=627&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Моносерьга</span><span class="text-muted"> (10)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=631&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (23)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=632&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги с обвесом</span><span class="text-muted"> (29)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=633&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги Люстры</span><span class="text-muted"> (29)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=638&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На тело</span><span class="text-muted"> (0/24)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=613&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Анклет</span><span class="text-muted"> (14)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=630&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь на тело</span><span class="text-muted"> (10)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=639&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На шею</span><span class="text-muted"> (0/26)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=623&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кулон</span><span class="text-muted"> (20)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=634&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь</span><span class="text-muted"> (6)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1443&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Дисконт</span><span class="text-muted"> (24)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=617&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Sale</span><span class="text-muted"> (25)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=629&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Леска</span><span class="text-muted"> (1)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=626&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Торговое оборудование</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=692&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кастомные коллекции</span><span class="text-muted"> (0/51)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=691&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>СНЕГ is SWAG</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1410&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>ШИК for CHICKS</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1559&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Love is...</span><span class="text-muted"> (24)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1572&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Minimalism</span><span class="text-muted"> (19)</span></a><ul></ul></li></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=700&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Упаковка</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                        <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1524&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Главная страница</span><span class="text-muted"> (7)</span></a><ul></ul></li></ul></li></ul></div>
+        .footer
+          .pull-right != '10GB of <strong>250GB</strong> Free.'
+          %div != '<strong>Copyright</strong> Example Company &copy; 2014-2015'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

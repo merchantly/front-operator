@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title
+              Редактирование (товар)
+            .m-t-sm
+              %a.inline.m-t-xs.m-r-xs{href: '#'}>
+                %span.label.label-primary.inline ссылка на товар на сайте
+              %span.label.label-warning.inline.m-t-xs.m-r-xs МС
+          .col-sm-5
+            .title-action
+              %label.switcher
+                %input#product-visibility.switcher__input{type: 'checkbox', checked: 'true'}
+                %span.switcher__box
+                  %span.switcher__knob
+              %label.m-b-none.m-l-xs.font-normal{for: 'product-visibility'} Товар на сайте
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              .alert.alert-danger != '<button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным'
+              .ibox
+                .ibox-title
+                  %h3 Фотографии
+                .ibox-content
+                  %div{data: {react-class: 'ProductImages', react-props: '{"productId":4351,"productCardId":1642,"images":[{"url":"assets/product-1-square.png?1","id":5203}]}'}}
+              .ibox
+                .ibox-title
+                  %h3 Товар
+                .ibox-content
+                  .form-group.has-error
+                    %label.control-label
+                      Название
+                      %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Придумайте название'}
+                        %i.fa.fa-question-circle
+                    %textarea.form-control{placeholder: 'Например, велосипед городской'}
+                  .row
+                    .col-md-6.col-lg-4
+                      .form-group
+                        %label.control-label
+                          Цена
+                          %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Цена указывается в рублях. Вы можете поменять валюту в настройках'}
+                            %i.fa.fa-question-circle
+                        %input.form-control{type: 'text'}
+                    .col-md-6.col-lg-4
+                      .form-group
+                        %label.control-label Цена распродажи
+                        %input.form-control{type: 'text'}
+                    .col-md-12.col-lg-4
+                      .form-group
+                        %label.hidden-xs.hidden-sm.hidden-md &nbsp;
+                        %div
+                          %label.switcher
+                            %input#sale.switcher__input{type: 'checkbox'}
+                            %span.switcher__box
+                              %span.switcher__knob
+                          %label.m-b-none.m-l-xs.font-normal{for: 'sale'} Включить распродажу
+                  .form-group
+                    %label.control-label Категория
+                    %select.form-control{multiple: 'true', ks-select2: true}
+                      %option{value: 'Молоко', selected: true} Молоко
+                      %option{value: 'Морепродукты'} Морепродукты
+                      %option{value: 'Мопеды'} Мопеды
+                      %option{value: 'Брилианты'} Брилианты
+                    %p.help-block != 'Категории создаются в <a href="#">специальном разделе</a>'
+                  .row
+                    .col-md-8.col-lg-9
+                      .form-group
+                        %label.control-label Описание
+                        %textarea.form-control{required: 'required', autosize: 'true'}
+                    .col-md-4.col-lg-3
+                      .form-group
+                        %label.control-label Артикул
+                        %input.form-control{type: 'text', value: '74A3317', disabled: true}
+              .ibox
+                .ibox-title
+                  %h3 Характеристики
+                .ibox-content
+                  .form-horizontal
+                    .form-group.m-b
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Наличие манометра
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .form-group.m-b
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Скорость
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .form-group.m-b
+                      %label.control-label.col-sm-5.col-md-4.col-lg-3
+                        Высота рамы
+                        %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
+                          %i.fa.fa-question-circle
+                      .col-sm-7.col-md-8.col-lg-9
+                        %input.form-control{type: 'text'}
+                    .row
+                      .col-md-8.col-md-offset-4.col-lg-9.col-lg-offset-3
+                        %button.btn.btn-default.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Показать все 45 характеристик
+                        %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs.active != '<i class="fa fa-plus"></i> Создать характеристику'
+                  .p-t-xxs.p-b-xxs
+                    .hr-line-dashed
+                    .row
+                      .col-sm-11.col-xs-10
+                        .row
+                          .col-sm-4
+                            .form-group.m-b
+                              %label.control-label.sr-only Название
+                              %input.form-control{type: 'text', placeholder: 'Название'}
+                          .col-sm-4
+                            .form-group.m-b
+                              %label.control-label.sr-only Тип
+                              %select.form-control{ks-select2: true}
+                                %option{value: 'Тип'} Тип
+                                %option{value: 'Строковый'} Строковый
+                                %option{value: 'Числовой'} Числовой
+                          .col-sm-4
+                            .form-group.m-b
+                              %label.control-label.sr-only Значение
+                              %input.form-control{type: 'text', placeholder: 'Значение'}
+                      .col-sm-1.col-xs-2.p-l-none
+                        %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                          %i.fa.fa-times
+                    %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-r-sm Создать
+              .ibox
+                .ibox-title
+                  %h3 Варианты товара (размеры, цвета и т.п.)
+                  %button.btn.btn-circle.btn-outline.btn-default.m-l-xs{data: {toggle: 'tooltip'}, title: 'Расширенный режим'}
+                    %i.fa.fa-ellipsis-h
+                .ibox-content
+                  .row.m-b
+                    .col-md-11.col-xs-10
+                      .row
+                        .col-sm-4
+                          .form-group.m-b
+                            %label.control-label.sr-only Другое
+                            %select.form-control.m-t-sm.m-r-lg{placeholder: 'Другое', ks-select2: true}>
+                              %option{value: 'Другое'} Другое
+                              %option{value: 'Материал'} Материал
+                              %option{value: 'Артикул'} Артикул
+                  .row
+                    .col-md-11.col-xs-10
+                      .row
+                        .col-sm-4.hidden-xs
+                          %label.control-label &nbsp;
+                        .col-sm-4.hidden-xs
+                          %label.control-label Количество
+                        .col-sm-4.hidden-xs
+                          %label.control-label Артикул
+                  .row
+                    .col-md-11.col-xs-10
+                      .row
+                        .col-sm-4
+                          .form-group.m-b
+                            %input.form-control{type: 'text', placeholder: 'Например, XL'}
+                        .col-sm-4
+                          .form-group.m-b
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Количество
+                            %input.form-control{type: 'text', placeholder: 'Например, 5'}
+                        .col-sm-4
+                          .form-group.m-b
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Артикул
+                            %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
+                  .row
+                    .col-md-11.col-xs-10
+                      .hr-line-dashed.m-t-none.m-b
+                      .row
+                        .col-sm-4
+                          .form-group.m-b
+                            %input.form-control{type: 'text', placeholder: 'Например, XL'}
+                        .col-sm-4
+                          .form-group.m-b
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Количество
+                            %input.form-control{type: 'text', placeholder: 'Например, 5'}
+                        .col-sm-4
+                          .form-group.m-b
+                            %label.control-label.hidden-lg.hidden-md.hidden-sm Артикул
+                            %input.form-control{type: 'text', placeholder: 'Например, M001-11-00'}
+                    .col-md-1.col-xs-2.m-t-md.m-b.p-l-none
+                      %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                        %i.fa.fa-times
+                  %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs.m-r-sm != '<i class="fa fa-plus"></i> Добавить ещё вариант'
+                  %button.btn.btn-default.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm.active Показать все архивные варианты
+                  %div.m-t-md.p-t-md
+                    .type-list
+                      .project-list.table-responsive
+                        %table.table.table-page.m-b-none
+                          %tbody
+                            %tr
+                              %td.project-number
+                                %span.badge.badge-info.badge-number 1
+                              %td.project-title
+                                %ul
+                                  %li
+                                    Артикул:
+                                    %span.text-muted M001-11-00
+                                  %li
+                                    Размер:
+                                    %span.text-muted XXL
+                                  %li
+                                    Цвет:
+                                    %span.text-muted желтый
+                              %td 6 шт.
+                            %tr
+                              %td.project-number
+                                %span.badge.badge-info.badge-number 2
+                              %td.project-title
+                                %ul
+                                  %li
+                                    Артикул:
+                                    %span.text-muted M001-12-00
+                                  %li
+                                    Размер:
+                                    %span.text-muted L
+                                  %li
+                                    Цвет:
+                                    %span.text-muted красный
+                              %td 2 шт.
+                            %tr
+                              %td.project-number
+                                %span.badge.badge-info.badge-number 3
+                              %td.project-title
+                                %ul
+                                  %li
+                                    Артикул:
+                                    %span.text-muted M001-13-00
+                                  %li
+                                    Размер:
+                                    %span.text-muted XL
+                                  %li
+                                    Цвет:
+                                    %span.text-muted красный
+                              %td 2 шт.
+              .ibox
+                .ibox-title
+                  %h3 Похожие товары
+                .ibox-content.p-none
+                  .project-list.table-responsive
+                    %table.table.table-hover.table-striped.table-page.m-b-none
+                      %thead
+                        %tr
+                          %th &nbsp;
+                          %th Название
+                          %th Цена
+                          %th Количество
+                          %th &nbsp;
+                          %th &nbsp;
+                      %tbody
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %i.fa.fa-eye-slash.text-danger.m-r-sm
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %i.fa.fa-eye-slash.text-danger.m-r-sm
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                        %tr
+                          %td.project-image
+                            %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                          %td.project-title
+                            %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                            %ul.m-b-none
+                              %li
+                                %small.text-muted MR003-13/RU
+                          %td
+                            %s.text-nowrap.text-muted 5 900 руб.
+                            %div.m-t-sm.m-b-sm
+                              %span.label.label-outline.label-danger.label-price 4 900 руб.
+                          %td
+                            15 шт.
+                          %td
+                            %button.btn.btn-default.btn-circle.btn-sm{type: 'button'}
+                              %i.fa.fa-times
+                          %td
+                            %i.fa.fa-arrows-v.handle.ui-sortable-handle{data: {sort-success-action: 'nothing', sort-url: '/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'}
+                  / .p-m.p-t-xxs.p-b-xxs
+                  /   .row
+                  /     .col-md-6.m-t.m-b
+                  /       %input.form-control{type: 'text', placeholder: 'Выберите товар', ks-select2-ajax: true}
+                  /     .col-md-6.m-t.m-b
+                  /       %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Добавить
+                  .selectizer
+                    .p-m
+                      %input.form-control{type: 'text', value: 'Мини', placeholder: 'Введите товар'}
+                    .project-list.table-responsive
+                      %table.table.table-hover.table-striped.table-page.m-b-none
+                        %tbody
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 7 400 руб.
+                            %td
+                              1 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 6 900 руб.
+                            %td
+                              7 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %s.text-nowrap.text-muted 3 200 руб.
+                              %div.m-t-sm.m-b-sm
+                                %span.label.label-outline.label-danger.label-price 2 900 руб.
+                            %td
+                              4 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 7 400 руб.
+                            %td
+                              1 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %b.text-nowrap 6 900 руб.
+                            %td
+                              7 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+                          %tr
+                            %td.project-image
+                              %img.project-image.img-circle{src: 'http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png', alt: 'Product none'}
+                            %td.project-title
+                              %a.m-r-sm{href: 'http://wannabe.aydamarket.ru/operator/products/21769/edit'} Миникольцо Дабл Икс с цирконами золоченое р
+                              %i.fa.fa-eye-slash.text-danger.m-r-sm
+                              %ul.m-b-none
+                                %li
+                                  %small.text-muted MR003-13/RU
+                            %td
+                              %s.text-nowrap.text-muted 3 200 руб.
+                              %div.m-t-sm.m-b-sm
+                                %span.label.label-outline.label-danger.label-price 2 900 руб.
+                            %td
+                              4 шт.
+                            %td
+                              %button.btn.btn-primary.btn-circle.btn-sm{type: 'button'}
+                                %i.fa.fa-plus
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %button.btn.btn-outline.btn-danger.pull-right Удалить товар
+                    %button.btn.btn-primary.m-r-md> Сохранить
+                    %span.text-muted.text-nowrap.m-r-md последее изменение 26 марта 2015
+        +include './app/shared/_footer.haml'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
