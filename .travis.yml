@@ -5,4 +5,4 @@ install:
   - npm install
   - ./node_modules/bower/bin/bower -v
   - ./node_modules/bower/bin/bower install
-script: ./utils/test.sh
+script: ./utils/test
