@@ -9,7 +9,7 @@ class Requester {
   }
 
   request(options) {
-    this.start ? $.ajax(options) : this.eb.on('start', () => $.ajax(options));
+    return this.start ? $.ajax(options) : this.eb.on('start', () => $.ajax(options));
   }
 }
 

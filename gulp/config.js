@@ -48,7 +48,7 @@ module.exports = {
         entries: src + '/scripts/static.js',
         dest: build + '/scripts',
         outputName: 'client.js',
-        extensions: ['.jsx', '.cjsx', '.coffee', '.jsx.coffee', '.js.jsx.coffee']
+        extensions: ['.jsx', '.cjsx', '.coffee']
       },
       vendor: {
         baseDir: src + '/bower_components',
@@ -61,13 +61,13 @@ module.exports = {
       entries: src + '/scripts/development.js',
       dest: dist,
       outputName: 'development.js',
-      extensions: ['.jsx', '.cjsx', '.coffee', '.jsx.coffee', '.js.jsx.coffee']
+      extensions: ['.jsx', '.cjsx', '.coffee']
     },
     production: {
       entries: src + '/scripts/production.js',
       dest: dist,
       outputName: 'dist.js',
-      extensions: ['.jsx', '.cjsx', '.coffee', '.jsx.coffee', '.js.jsx.coffee']
+      extensions: ['.jsx', '.cjsx', '.coffee']
     }
   },
   html: {
