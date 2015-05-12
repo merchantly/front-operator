@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    addSrc = require('gulp-add-src'),
+    concatCss = require('gulp-concat-css'),
     minifyCss = require('gulp-minify-css'),
     urlAdjuster = require('gulp-css-url-adjuster'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -18,6 +20,8 @@ gulp.task('[Production] Styles', function() {
         './app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap'
       ]
     }))
+    .pipe(addSrc(config.vendorSrc))
+    .pipe(concatCss(config.outputName, {rebaseUrls: false}))
     .pipe(urlAdjuster({prepend: '../assets/'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(minifyCss())

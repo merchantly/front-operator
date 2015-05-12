@@ -91,6 +91,7 @@ module.exports = {
     },
     production: {
       src: src + '/stylesheets/dist.scss',
+      vendorSrc: vendorStyles,
       dest: dist,
       outputName: 'dist.css'
     }
