@@ -63,11 +63,6 @@ _getNewPositions = (image, insertIndex) ->
   return newPositions
 
 ProductImageSortableMixin =
-
-  propTypes:
-    images:          React.PropTypes.array.isRequired
-    onImagesReorder: React.PropTypes.func.isRequired
-
   componentDidMount: ->
     $(@getDOMNode()).sortable {
       scope: 'productImagesReorder'

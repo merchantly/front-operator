@@ -57,9 +57,10 @@ require('./react/components/common/spinner');
 require('./react/components/common/super_select');
 require('./react/components/common/images_form_thumbs');
 
+global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer');
+
 require('./react/components/product/thumb');
 require('./react/components/product/state');
-require('./react/components/product/images/images');
 require('./react/components/product/status_toggle');
 require('./react/components/product/modification_list');
 require('./react/components/product/modification_list_item');

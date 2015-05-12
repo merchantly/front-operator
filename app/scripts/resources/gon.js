@@ -13,7 +13,7 @@ global.gon = {
   fallback_product_thumb_url: 'assets/product-none.png',
   root_url: localStorage.getItem('root_url') || '',
   operator_api_url: localStorage.getItem('operator_api_url') || '',
-  thumbor_url: 'http://thumball.brandydev.ru',
+  thumbor_url: 'http://thumbor.kiiiosk.ru',
   thumbor_secret: null
 };
 
