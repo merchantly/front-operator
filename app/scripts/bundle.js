@@ -3,6 +3,9 @@ require('./resources/legacy');
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
 
+/*==========  Locales  ==========*/
+require('./locales/numeral/ru');
+
 /*==========  Dispatchers  ==========*/
 
 require('./react/dispatchers/_base');
@@ -52,7 +55,7 @@ require('./react/components/operator_products/mixins/load_more_products');
 
 /*==========  Components  ==========*/
 
-require('./react/components/common/money');
+global.Money = require('./react/components/common/Money');
 require('./react/components/common/spinner');
 require('./react/components/common/super_select');
 require('./react/components/common/images_form_thumbs');
