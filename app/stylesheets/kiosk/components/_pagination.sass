@@ -1,10 +1,11 @@
-.pagination > li
+.pagination > span
   margin: 4px 8px 4px 0
   display: inline-block
   vertical-align: middle
 
-.pagination > li > a,
-.pagination > li > span
+.pagination > span > a,
+.pagination > .current,
+.pagination > .gap
   width: 38px
   height: 38px
   padding: 0
@@ -14,22 +15,17 @@
   text-align: center
   border-radius: 50% !important
 
-.pagination > .gap > a
+.pagination > .gap
   border: none
   cursor: default !important
 
-.pagination > li > a:hover,
-.pagination > li > a:focus,
-.pagination > li > span:hover,
-.pagination > li > span:focus
+.pagination > span > a:hover,
+.pagination > span > a:focus
   border-color: #e7eaec
   background: none
 
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus
+.pagination > .current,
+.pagination > .current:hover,
+.pagination > .current:focus
   border-color: #e7eaec
   background: none
