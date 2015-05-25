@@ -106,14 +106,16 @@
 
 /* PAGINATIN */
 
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus
+.pagination > .current,
+.pagination > .current:hover,
+.pagination > .current:focus
   background-color: #f4f4f4
-  border-color: #DDDDDD
+  border: 1px solid #DDDDDD
   color: inherit
   cursor: default
   z-index: 2
 
-.pagination > li > a, .pagination > li > span
+.pagination > span > a
   background-color: #FFFFFF
   border: 1px solid #DDDDDD
   color: inherit
