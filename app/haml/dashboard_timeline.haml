@@ -12,122 +12,124 @@
         .row
           .col-lg-12
             .wrapper.wrapper-content
-              #vertical-timeline.vertical-container.center-orientation.light-timeline
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-exclamation
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Как работать с этим списком?
-                      %p 
-                        Для всех, кто не знаком с платформой Киоск, мы сделали этот список. Посмотрите на заголовок этого пункта – это ссылка, которая ведет в раздел про который идет речь. После того, как вы перешли в раздел и сделали все по инструкции, нажмите на кружок слева и пункт пометится как выполненный. Попробуйте нажать на кружок рядом с заголовком в этом пункте и смело переходите к следующему пункту.
-                    -# %span.vertical-date
-                    -#   %small
-                    -#     %span.text-muted Сегодня
-                    -#   %br
-                    -#   %small 5 мая
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-cog
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', checked: true, ks-icheck: true}
-                    .m-l-lg.todo-completed
-                      %h2 
-                        %a{href: '#'} Основные настройки магазина
-                      %p 
-                        Итак, чтобы магазин выглядел нормально, вам надо заполнить всего несколько полей. «Краткое описание» – оно будет отображаться в шапке сайта и «Контактный телефон» это тоже будет в шапке. Остальное пока лучше не трогать.
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-connectdevelop
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Загрузите логотип
-                      %p 
-                        Логотип сразу освежит ваш будущий магазин. Он может быть любого размера, но лучше всего он выглядит шириной 120-150px.
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-cart-plus
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Добавьте первые товары
-                      %p 
-                        != 'Магазин без товаров – это не совсем магазин. Переходите в «Товары» в левом меню и начинайте добавлять. А еще у нас есть продвинутый способ работы с товарами – через сервис <a href="/operator/moysklad" target="_blank">"Мой склад"</a>, мы рекомендуем работу с этим сервисом, если у вас больше 100-200 наименований товаров.'
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-paint-brush
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Настройка дизайна
-                      %p 
-                        Мы готовим классный виджет настройки дизайна, а пока есть возможность воспользоваться базовыми настройками (выбрать одну из двух цветовых схем и выбрать размер фотографии – это пункт «товаров в ряд»). Редактирование css-кода позволяет сделать практически любой дизайн. Если у вас есть особенные пожелания, пишите нам в значок вопроса в правом нижнем углу.
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-credit-card
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Подключите прием платежей
-                      %p 
-                        != 'Если вы дошли до этого пункта, значит у вас уже есть товары, добавлены описания к ним, фотографии, возможно, категории. Можно начинать продавать. Но чего-то не хватает? Правильно –&nbsp;приема платежей. Чтобы начать принимать платежи, зарегистрируйтесь по ссылке <a href="http://www.walletone.com/ru/merchant/?promo=Rj7t6wr1ph">для физических лиц</a> (прием платежей с комиссией 6%) или <a href="http://www.walletone.com/ru/merchant/?promo=WLnAtQE">для юридических лиц</a> (прием платежей с комиссией 4%, ИП или ООО). А потом впишите номер кошелька и ключ в форму. Более подробная инструкция <a href="https://docs.google.com/document/d/1NBpvhRFNdfvOEzqC2hJFNaaAWmwIR3fX8jBDsURL2iQ/edit?usp=sharing" target="_blank">в этом документе</a>.'
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-truck
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Подключите и настройте доставку
-                      %p 
-                        Если у вас есть курьеры и вы понимаете как и куда вы будете доставлять ваш товар, то просто создайте способы доставки в этом разделе, укажите стоимость и опишите условия. Кстати, если ваш магазин в Москве или Санкт-Петербурге, то вы можете подключить партнерскую курьерскую доставку Red Express, которая работает по всей России. Для примера – курьерская доставка по Москве от 230 рублей. Red Express интегрирован с Киоском и помогает экономить время на создании заявок в курьескую службу, плюс не надо ждать получения денег от курьерской службы, они на следующий день будут на вашем счету
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-file-text
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Создайте текстовые страницы
-                      %p 
-                        Вы наверняка хотите рассказать о своем магазине, историю того как вы начинали или просто создать страницу с контактами.
-                .vertical-timeline-block
-                  .vertical-timeline-icon.navy-bg
-                    %i.fa.fa-question
-                  .vertical-timeline-content
-                    .pull-left
-                      %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
-                        %input.i-checks{type: 'checkbox', ks-icheck: true}
-                    .m-l-lg
-                      %h2 
-                        %a{href: '#'} Остались вопросы?
-                      %p 
-                        != 'Видите значок вопроса в правом нижнем углу? Пишите туда, или прямо на почту <a href="">support@kiiiosk.ru</a> или звоните 8 (800) 77-55-661'
-              .p-lg.p-t-none.text-center
-                %button.btn.btn-default.btn-outline.btn-rounded Показать еще 30 задач
+              .row
+                .col-lg-8.col-lg-offset-2
+                  #vertical-timeline.vertical-container.light-timeline
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-exclamation
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Как работать с этим списком?
+                          %p
+                            Для всех, кто не знаком с платформой Киоск, мы сделали этот список. Посмотрите на заголовок этого пункта – это ссылка, которая ведет в раздел про который идет речь. После того, как вы перешли в раздел и сделали все по инструкции, нажмите на кружок слева и пункт пометится как выполненный. Попробуйте нажать на кружок рядом с заголовком в этом пункте и смело переходите к следующему пункту.
+                        -# %span.vertical-date
+                        -#   %small
+                        -#     %span.text-muted Сегодня
+                        -#   %br
+                        -#   %small 5 мая
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-cog
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', checked: true, ks-icheck: true}
+                        .m-l-lg.todo-completed
+                          %h2
+                            %a{href: '#'} Основные настройки магазина
+                          %p
+                            Итак, чтобы магазин выглядел нормально, вам надо заполнить всего несколько полей. «Краткое описание» – оно будет отображаться в шапке сайта и «Контактный телефон» это тоже будет в шапке. Остальное пока лучше не трогать.
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-connectdevelop
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Загрузите логотип
+                          %p
+                            Логотип сразу освежит ваш будущий магазин. Он может быть любого размера, но лучше всего он выглядит шириной 120-150px.
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-cart-plus
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Добавьте первые товары
+                          %p
+                            != 'Магазин без товаров – это не совсем магазин. Переходите в «Товары» в левом меню и начинайте добавлять. А еще у нас есть продвинутый способ работы с товарами – через сервис <a href="/operator/moysklad" target="_blank">"Мой склад"</a>, мы рекомендуем работу с этим сервисом, если у вас больше 100-200 наименований товаров.'
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-paint-brush
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Настройка дизайна
+                          %p
+                            Мы готовим классный виджет настройки дизайна, а пока есть возможность воспользоваться базовыми настройками (выбрать одну из двух цветовых схем и выбрать размер фотографии – это пункт «товаров в ряд»). Редактирование css-кода позволяет сделать практически любой дизайн. Если у вас есть особенные пожелания, пишите нам в значок вопроса в правом нижнем углу.
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-credit-card
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Подключите прием платежей
+                          %p
+                            != 'Если вы дошли до этого пункта, значит у вас уже есть товары, добавлены описания к ним, фотографии, возможно, категории. Можно начинать продавать. Но чего-то не хватает? Правильно –&nbsp;приема платежей. Чтобы начать принимать платежи, зарегистрируйтесь по ссылке <a href="http://www.walletone.com/ru/merchant/?promo=Rj7t6wr1ph">для физических лиц</a> (прием платежей с комиссией 6%) или <a href="http://www.walletone.com/ru/merchant/?promo=WLnAtQE">для юридических лиц</a> (прием платежей с комиссией 4%, ИП или ООО). А потом впишите номер кошелька и ключ в форму. Более подробная инструкция <a href="https://docs.google.com/document/d/1NBpvhRFNdfvOEzqC2hJFNaaAWmwIR3fX8jBDsURL2iQ/edit?usp=sharing" target="_blank">в этом документе</a>.'
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-truck
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Подключите и настройте доставку
+                          %p
+                            Если у вас есть курьеры и вы понимаете как и куда вы будете доставлять ваш товар, то просто создайте способы доставки в этом разделе, укажите стоимость и опишите условия. Кстати, если ваш магазин в Москве или Санкт-Петербурге, то вы можете подключить партнерскую курьерскую доставку Red Express, которая работает по всей России. Для примера – курьерская доставка по Москве от 230 рублей. Red Express интегрирован с Киоском и помогает экономить время на создании заявок в курьескую службу, плюс не надо ждать получения денег от курьерской службы, они на следующий день будут на вашем счету
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-file-text
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Создайте текстовые страницы
+                          %p
+                            Вы наверняка хотите рассказать о своем магазине, историю того как вы начинали или просто создать страницу с контактами.
+                    .vertical-timeline-block
+                      .vertical-timeline-icon.navy-bg
+                        %i.fa.fa-question
+                      .vertical-timeline-content
+                        .pull-left
+                          %span.icheckbox-wrap.inline.m-t-xs.m-b-xs
+                            %input.i-checks{type: 'checkbox', ks-icheck: true}
+                        .m-l-lg
+                          %h2
+                            %a{href: '#'} Остались вопросы?
+                          %p
+                            != 'Видите значок вопроса в правом нижнем углу? Пишите туда, или прямо на почту <a href="">support@kiiiosk.ru</a> или звоните 8 (800) 77-55-661'
+                  .p-lg.p-t-none.text-center
+                    %button.btn.btn-default.btn-outline.btn-rounded Показать еще 30 задач
         .footer
           .pull-right != '10GB of <strong>250GB</strong> Free.'
           %div != '<strong>Copyright</strong> Example Company &copy; 2014-2015'
