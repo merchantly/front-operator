@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row.wrapper.page-heading
+          .col-sm-7
+            %h1.page-title
+              Заказ #1386
+            .m-t-sm
+              %small.text-muted != 'Внешний номер — <strong>kiosk-68-1386</strong>.'
+              %small.text-muted Заказ создан — 27 мая, 12:32
+            .m-t-sm
+              %span.label.label-success.inline.m-r-xs.m-t-xs> Новый
+              %span.label.label-default.inline.m-r-xs.m-t-xs> Ожидаем оплату
+              %a{href: '#'}>
+                %span.label.label-default.inline.m-r-xs.m-t-xs> Не зарезерв.
+          .col-sm-5
+            .title-action
+              %a.btn.btn-outline.btn-default.btn-rounded{href: '#'}
+                %i.fa.fa-pencil
+                Изменить
+              %a.btn.btn-outline.btn-default.btn-rounded.m-l-xs{href: '#'}
+                %i.fa.fa-files-o
+                Дублировать
+        .row
+          .col-lg-12
+            .wrapper.wrapper-content
+              .row
+                .col-lg-5
+                  .ibox
+                    .ibox-title
+                      %h3 Покупатель
+                      -# %h3 Информация о заказе
+                    -# .ibox-content.no-padding
+                    -#   .p-m
+                    -#     %h2.m-b-lg Покупатель
+                    .ibox-content
+                      .m-b-lg
+                        %h4 Имя
+                        %p hjhkjjkhjhkj
+                      .m-b-lg
+                        %h4 Телефон
+                        %p +79052645698
+                      .m-b-lg
+                        %h4 E-mail
+                        %p
+                          %a{href: 'mailto:fgfgfgf@mail.ru'} fgfgfgf@mail.ru
+                      %div
+                        %h4 Комментарий к заказу
+                        %p &mdash;
+                      -# .hr-line-solid.no-margins
+                  .ibox
+                    .ibox-title
+                      %h3 Оплата
+                    .ibox-content
+                      .m-b-lg
+                        %h4 Метод оплаты
+                        %p Оплата банковской картой, через терминал или салон связи
+                      .m-b-lg
+                        %h4 Состояние оплаты
+                        %p
+                          %span.label.label-default Ожидаем оплату
+                      %div
+                        %h4
+                          Ссылка на оплату
+                          %a{href: '#', target: '_blank'}
+                            %i.fa.fa-external-link
+                        %p
+                          %a.btn.btn-white.btn-rounded.btn-sm{href: '#'} Отправить на оплату
+                  .ibox
+                    .ibox-title
+                      %h3 Доставка
+                    .ibox-content
+                      .m-b-lg
+                        %h4 Способ доставки
+                        %p Москва – доставка курьером (на следующий день)
+                      .m-b-lg
+                        %h4 Состояние доставки
+                        %p
+                          %span.label.label-default Ожидается старт
+                      .m-b-lg
+                        %h4 Состояние заказа
+                        %p не известно
+                      .m-b-lg
+                        %h4 Номер заказа
+                        %p kiosk-68-1386
+                      .m-b-lg
+                        %h4 Внутренний номер заказа
+                        %p н105981838491:1386
+                      .m-b-lg
+                        %h4 Агент уведомлен
+                        %p Статус процесса уведомления
+                      .m-b-lg
+                        %h4 Город
+                        %p Москва
+                      %div
+                        %h4 Адрес
+                        %p dfdfdfdfdf
+                .col-lg-7
+                  .ibox
+                    .ibox-title
+                      %h3 Состав заказа
+                      .ibox-tools
+                        %a{href: ''}
+                          %small Ссылка на оплату для клиента
+                    .ibox-content.no-padding
+                      .project-list.table-responsive
+                        %table.table.table-hover.table-striped.table-page
+                          %tbody
+                            %tr
+                              %td
+                                %a{href: '/products/20753-koltso-vache', title: 'Кольцо Vache'}
+                                  %img{class: 'img-circle', src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7537/c6ced9d2-166d-45e4-893d-3bca40fc08eb.jpg', alt: ''}
+                              %td.project-title
+                                %a{href: '/products/20753-koltso-vache', title: 'Кольцо Vache'} Кольцо Vache
+                                %ul.m-b-none
+                                  %li
+                                    %small.text-muted размер: 12 - 15,5
+                              %td 1 шт.
+                              %td
+                                %strong 2 000 руб.
+                          %tfoot
+                            %tr
+                              %td &nbsp;
+                              %td{colspan: '2'} != 'Стоимость доставки &mdash; <strong>230 руб.</strong>'
+                              %td
+                                %p
+                                  Итого
+                                  %br
+                                  %strong 2 230 руб.
+                  .ibox
+                    .ibox-title
+                      %h3 Комментарии менеджеров
+                    .ibox-content
+                      %form{action: '?'}
+                        .feed-activity-list.m-b
+                          .feed-element
+                            %div Оплата отменена
+                            %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+                          .feed-element
+                            %div Доставка отменена
+                            %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+                          .feed-element
+                            %div != '<strong>Светлана Ефремова</strong> Заказ отменён'
+                            %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+                        .form-group.m-b-none
+                          .m-b
+                            %textarea.form-control{placeholder: 'Ваш комментарий'}
+                          %button.btn.btn-primary{type: 'submit'} Отправить
+              -# .ibox
+              -#   .ibox-title
+              -#     %h3 Состав заказа
+              -#   .ibox-content.no-padding
+              -#     .project-list.table-responsive
+              -#       %table.table.table-hover.table-striped.table-page
+              -#         %tbody
+              -#           %tr
+              -#             %td
+              -#               %a{href: '/products/20753-koltso-vache', title: 'Кольцо Vache'}
+              -#                 %img{class: 'img-circle', src: 'http://thumbor.kiiiosk.ru/unsafe/32x32/http://assets.kiiiosk.ru/uploads/product_image/image/7537/c6ced9d2-166d-45e4-893d-3bca40fc08eb.jpg', alt: ''}
+              -#             %td.project-title
+              -#               %a{href: '/products/20753-koltso-vache', title: 'Кольцо Vache'} Кольцо Vache
+              -#               %ul.m-b-none
+              -#                 %li
+              -#                   %small.text-muted размер: 12 - 15,5
+              -#             %td 1 шт.
+              -#             %td
+              -#               %strong 2 000 руб.
+              -#         %tfoot
+              -#           %tr
+              -#             %td &nbsp;
+              -#             %td{colspan: '2'} != 'Стоимость доставки &mdash; <strong>230 руб.</strong>'
+              -#             %td
+              -#               %p
+              -#                 Итого
+              -#                 %br
+              -#                 %strong 2 230 руб.
+              -# .ibox
+              -#   .ibox-title
+              -#     %h3 Комментарии менеджеров
+              -#   .ibox-content
+              -#     %form{action: '?'}
+              -#       .feed-activity-list.m-b
+              -#         .feed-element
+              -#           %div Оплата отменена
+              -#           %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+              -#         .feed-element
+              -#           %div Доставка отменена
+              -#           %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+              -#         .feed-element
+              -#           %div != '<strong>Светлана Ефремова</strong> Заказ отменён'
+              -#           %small.text-muted != '<i class="fa fa-clock-o"></i> 28 мая, 13:01'
+              -#       .form-group.m-b-none
+              -#         .m-b
+              -#           %textarea.form-control{placeholder: 'Ваш комментарий'}
+              -#         %button.btn.btn-primary{type: 'submit'} Отправить
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %button.btn.btn-outline.btn-danger.pull-right Отменить заказ
+                    %button.btn.btn-primary.m-r-md> Заказ выполнен
+        +include './app/shared/_footer.haml'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
