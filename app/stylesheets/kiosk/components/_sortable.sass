@@ -1,10 +1,15 @@
-[data-sort-url]
+.handle
   padding: 4px 8px
+  background-color: #eee
   cursor: ns-resize
+  border-radius: 4px
+
+.ui-sortable-helper
+  background-color: rgba(200, 200, 200, .5)
 
 .ui-state-highlight
-  //display: table-row
   background-color: #aaffff
-  transition: background-color 0.5s ease
-  &:hover
-    background-color: red
+  transition: background-color .5s ease
+
+.table-striped>tbody>tr.ui-state-highlight:nth-child(odd)>td
+  background-color: #aaffff
