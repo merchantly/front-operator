@@ -31,7 +31,7 @@
     font-size: 12px
     line-height: 28px
 
-.jstree-default .jstree-hovered, 
+.jstree-default .jstree-hovered,
 .jstree-default .jstree-clicked
   box-shadow: none
 
@@ -44,6 +44,11 @@
   &:before
     content: $fa-var-minus-square-o
 
+.jstree-default .jstree-leaf > .jstree-ocl
+  font-size: 10px
+  &:before
+    content: $fa-var-circle
+
 .jstree-default .jstree-node > .jstree-anchor > .jstree-themeicon
   &:before
     content: $fa-var-folder
@@ -53,9 +58,3 @@
     content: $fa-var-folder-open
 
 .jstree-default .jstree-leaf > .jstree-anchor > .jstree-themeicon
-  width: 18px
-  display: inline-block
-  font-size: 10px
-  &:before
-    content: $fa-var-file-text-o
-    content: $fa-var-circle
