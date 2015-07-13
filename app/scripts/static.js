@@ -26,7 +26,9 @@ $('.iCheck-helper').on('mouseout', () => {
   $(this).closest('[data-toggle="tooltip"]').tooltip('hide');
 });
 
-$('[data-toggle="popover"]').popover();
+$('[data-toggle="popover"]').popover({
+  trigger: 'hover'
+});
 
 $('[ks-select2-ajax]').select2({
   ajax: {
