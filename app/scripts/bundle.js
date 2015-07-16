@@ -1,3 +1,5 @@
+import './globals';
+
 require('./resources/libs');
 require('./resources/legacy');
 global.Routes = require('./routes/routes');
@@ -61,6 +63,7 @@ require('./react/components/common/super_select');
 require('./react/components/common/images_form_thumbs');
 
 global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer');
+global.PropertiesManager = require('./react/components/PropertiesManager');
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');

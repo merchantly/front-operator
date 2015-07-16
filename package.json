@@ -13,7 +13,9 @@
     "lodash": "^3.8.0",
     "numeral": "^1.5.3",
     "react": "^0.13.3",
-    "react-mixin-manager": "~0.7.0"
+    "react-bootstrap": "^0.23.7",
+    "react-mixin-manager": "~0.7.0",
+    "react-select": "^0.5.5"
   },
   "devDependencies": {
     "babelify": "^6.1.0",
