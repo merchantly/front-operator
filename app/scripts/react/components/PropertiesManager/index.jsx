@@ -4,9 +4,18 @@ import PropertyList from './PropertyList';
 
 export default class PropertiesManager extends Component {
   static propTypes = {
-    properties: PropTypes.array.isRequired
+    properties: PropTypes.array.isRequired,
+    selectedProperties: PropTypes.array
   }
   static defaultProps = {
+    selectedProperties: [{
+      id: 90,
+      value: 'Test'
+    }, {
+      id: 76,
+      value: 7
+    }],
+    // properties: []
     properties: [{
       "id": 586,
       "name": "Вес",
@@ -33,49 +42,91 @@ export default class PropertiesManager extends Component {
     }]
   }
   state = {
-    selectedProperties: []
-  }
-  componentDidMount() {
-    $(React.findDOMNode(this.refs.select)).select2();
+    properties: this.normalizeProperties(this.props.properties, this.props.selectedProperties)
   }
   render() {
     return (
       <div className="p-b-xxs p-t-xxs">
         <PropertyCreator
-          properties={this.props.properties}
-          onCreate={this.createProperty.bind(this)}
+          properties={this.getUnselectedProperties()}
+          onCreate={this.addProperty.bind(this)}
         />
         <PropertyList
-          properties={this.state.selectedProperties}
+          properties={this.getSelectedProperties()}
           onUpdate={this.updateProperty.bind(this)}
           onDelete={this.deleteProperty.bind(this)}
         />
       </div>
     );
   }
-  createProperty(property) {
-    this.setState({
-      selectedProperties: this.state.selectedProperties.concat(property)
-    });
+  addProperty(property) {
+    // Если свойство существует, то просто делаем его выделенным,
+    // иначе оно будет добавлено в конце списка
+    let properties = this.state.properties,
+        newProperty = {...property, select: true},
+        created = properties.filter((prop) => prop.id === property.id)[0];
+
+    if (created) {
+      properties = properties.filter((prop) => prop.id !== property.id);
+    }
+
+    this.setState({ properties: properties.concat(newProperty) });
   }
   updateProperty(property) {
     this.setState({
-      selectedProperties: this.state.selectedProperties.map((prop) =>
+      properties: this.state.properties.map((prop) =>
         prop.id === property.id ? property : prop
       )
     })
   }
   deleteProperty(property) {
-    this.setState({
-      selectedProperties: this.state.selectedProperties.filter((prop) =>
+    // Если свойство существует, то просто убираем его из выделенных,
+    // иначе оно было добавлено и не сохранено и мы его удаляем
+    let properties = this.state.properties,
+        created = this.props.properties.filter((prop) => prop.id + '' === property.id)[0];
+
+    if (created) {
+      properties = properties.map((prop) =>
+        prop.id === property.id ? {...prop, select: false} : prop
+      );
+    } else {
+      properties = properties.filter((prop) =>
         prop.id !== property.id
-      )
-    })
+      );
+    }
+
+    this.setState({ properties });
+  }
+  normalizeProperties(properties, selectedProperties) {
+    let normalizedProperties = [];
+    properties.forEach((property) => {
+      let normalizedProperty = {...property},
+          selected = selectedProperties.filter((prop) => property.id === prop.id)[0];
+
+      if (selected) {
+        normalizedProperty = {
+          ...property,
+          id: property.id + '',
+          value: selected.value + '',
+          select: true
+        }
+      } else {
+        normalizedProperty = {
+          ...property,
+          id: property.id + '',
+          value: null,
+          select: false
+        }
+      }
+
+      normalizedProperties.push(normalizedProperty);
+    });
+    return normalizedProperties;
+  }
+  getSelectedProperties() {
+    return this.state.properties.filter((property) => property.select);
+  }
+  getUnselectedProperties() {
+    return this.state.properties.filter((property) => !property.select);
   }
 }
-
-// <select ref="select" className="form-control">
-//                     <option value="Тип">Тип</option>
-//                     <option value="Строковый">Строковый</option>
-//                     <option value="Числовой">Числовой</option>
-//                   </select>

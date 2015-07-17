@@ -85,6 +85,7 @@ export default class PropertyCreator extends Component {
     this.setState({ property: {...this.state.property, value} });
   }
   createProperty() {
+    console.log(this.state.property);
     this.props.onCreate(this.state.property);
     this.setState({
       property: this.getDefaultProperty()

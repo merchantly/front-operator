@@ -19,7 +19,7 @@ export default class PropertyList {
   }
   renderPropertyList() {
     return this.props.properties.map((property) => (
-      <Row>
+      <Row key={property.id}>
         <Col sm={6}>
           <PropertyName current={property} disabled />
         </Col>
