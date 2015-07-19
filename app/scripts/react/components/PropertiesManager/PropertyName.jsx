@@ -15,7 +15,7 @@ export default class PropertyName extends Component {
       <FormGroup className="m-b">
         <Select
           name={this.getSelectName.call(this)}
-          value={this.props.current.id}
+          value={this.props.current.id != null ? this.props.current.id + '' : null}
           options={this.getSelectOptions.call(this)}
           disabled={this.props.disabled}
           allowCreate={true}

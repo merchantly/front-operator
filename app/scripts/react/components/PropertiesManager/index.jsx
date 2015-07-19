@@ -4,7 +4,7 @@ import PropertyList from './PropertyList';
 
 export default class PropertiesManager extends Component {
   static propTypes = {
-    properties: PropTypes.array.isRequired,
+    properties: PropTypes.array,
     selectedProperties: PropTypes.array
   }
   static defaultProps = {
@@ -15,28 +15,27 @@ export default class PropertiesManager extends Component {
       id: 76,
       value: 7
     }],
-    // properties: []
     properties: [{
-      "id": 586,
-      "name": "Вес",
-      "type": "PropertyString"
+      id: 586,
+      name: 'Вес',
+      type: 'PropertyString'
     }, {
-      "id" : 90,
-      "name" : "Покрытие",
-      "type" : "PropertyText"
+      id: 90,
+      name: 'Покрытие',
+      type: 'PropertyText'
     }, {
-      "id" : 76,
-      "name" : "Вставки",
-      "type" : "PropertyDictionary",
-      "dictionary": {
-        "id" : 2,
-        "title" : "Вставки",
-        "entities": [{
-          "id": 6,
-          "title": "Кубический циркон"
+      id: 76,
+      name: 'Вставки',
+      type: 'PropertyDictionary',
+      dictionary: {
+        id: 2,
+        title: 'Вставки',
+        entities: [{
+          id: 6,
+          title: 'Кубический циркон'
         }, {
-          "id": 7,
-          "title": "Культ. жемчуг, куб. циркон"
+          id: 7,
+          title: 'Культ. жемчуг, куб. циркон'
         }]
       }
     }]
@@ -83,7 +82,7 @@ export default class PropertiesManager extends Component {
     // Если свойство существует, то просто убираем его из выделенных,
     // иначе оно было добавлено и не сохранено и мы его удаляем
     let properties = this.state.properties,
-        created = this.props.properties.filter((prop) => prop.id + '' === property.id)[0];
+        created = this.props.properties.filter((prop) => prop.id === property.id)[0];
 
     if (created) {
       properties = properties.map((prop) =>
@@ -99,21 +98,20 @@ export default class PropertiesManager extends Component {
   }
   normalizeProperties(properties, selectedProperties) {
     let normalizedProperties = [];
+
     properties.forEach((property) => {
-      let normalizedProperty = {...property},
-          selected = selectedProperties.filter((prop) => property.id === prop.id)[0];
+      let selected = selectedProperties.filter((prop) => property.id === prop.id)[0],
+          normalizedProperty;
 
       if (selected) {
         normalizedProperty = {
           ...property,
-          id: property.id + '',
-          value: selected.value + '',
+          value: selected.value,
           select: true
         }
       } else {
         normalizedProperty = {
           ...property,
-          id: property.id + '',
           value: null,
           select: false
         }
@@ -121,6 +119,7 @@ export default class PropertiesManager extends Component {
 
       normalizedProperties.push(normalizedProperty);
     });
+
     return normalizedProperties;
   }
   getSelectedProperties() {

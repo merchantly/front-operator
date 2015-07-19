@@ -44,7 +44,7 @@ export default class PropertyValue extends Component {
         return (
           <Select
             name={this.getSelectName.call(this)}
-            value={this.props.current.value}
+            value={this.props.current.value != null ? this.props.current.value + '' : null}
             options={this.getSelectOptions.call(this)}
             onChange={this.handleSelectChange.bind(this)} />
         );
