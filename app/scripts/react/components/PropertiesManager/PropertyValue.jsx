@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import * as propertyTypes from '../../constants/propertyTypes';
 import Select from 'react-select';
-
-const PROPERTY_TEXT_TYPE = 'PropertyText',
-      PROPERTY_STRING_TYPE = 'PropertyString',
-      PROPERTY_DICTIONARY_TYPE = 'PropertyDictionary';
 
 export default class PropertyValue extends Component {
   static propTypes = {
@@ -11,15 +8,8 @@ export default class PropertyValue extends Component {
     onChange: PropTypes.func.isRequired
   }
   render() {
-    return (
-      <FormGroup sm={4} className="m-b">
-        {this.renderContent(this.props.current.type)}
-      </FormGroup>
-    );
-  }
-  renderContent(propertyType) {
-    switch(propertyType) {
-      case PROPERTY_TEXT_TYPE:
+    switch(this.props.current.type) {
+      case propertyTypes.PROPERTY_TEXT_TYPE:
         return (
           <textarea
             name={this.getSelectName.call(this)}
@@ -29,7 +19,7 @@ export default class PropertyValue extends Component {
             onChange={this.handleInputChange.bind(this)}
           />
         );
-      case PROPERTY_STRING_TYPE:
+      case propertyTypes.PROPERTY_STRING_TYPE:
         return (
           <input
             type="text"
@@ -40,7 +30,7 @@ export default class PropertyValue extends Component {
             onChange={this.handleInputChange.bind(this)}
           />
         );
-      case PROPERTY_DICTIONARY_TYPE:
+      case propertyTypes.PROPERTY_DICTIONARY_TYPE:
         return (
           <Select
             name={this.getSelectName.call(this)}

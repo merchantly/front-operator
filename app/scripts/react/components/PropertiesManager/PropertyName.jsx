@@ -1,21 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import Select from 'react-select';
 import generateUUID from '../../utils/generateUUID';
+import Select from 'react-select';
 
 export default class PropertyName extends Component {
   static propTypes = {
     current: PropTypes.object.isRequired,
     properties: PropTypes.array,
     disabled: PropTypes.bool,
-    onCreate: PropTypes.func,
-    onChange: PropTypes.func
+    onNameCreate: PropTypes.func.isRequired,
+    onNameChange: PropTypes.func.isRequired,
+    onNameReset: PropTypes.func.isRequired,
   }
   render() {
     return (
       <FormGroup className="m-b">
         <Select
           name={this.getSelectName.call(this)}
-          value={this.props.current.id != null ? this.props.current.id + '' : null}
+          value={this.props.current.id != null ? '' + this.props.current.id : null}
           options={this.getSelectOptions.call(this)}
           disabled={this.props.disabled}
           allowCreate={true}
@@ -42,12 +43,12 @@ export default class PropertyName extends Component {
     }));
   }
   handleSelectChange(value, values) {
-    let newProperty = values[0] || null,
-        cbName = 'onChange';
+    let newProperty = values[0] || null;
+    let cbName;
 
     if (newProperty) {
       if (newProperty.create) {
-        cbName = 'onCreate';
+        cbName = 'onNameCreate';
         newProperty = {
           id: generateUUID(),
           type: 'PropertyString',
@@ -55,12 +56,15 @@ export default class PropertyName extends Component {
           create: true
         }
       } else {
+        cbName = 'onNameChange';
         newProperty = {
           ...newProperty.property,
-          id: value,
+          id: parseInt(value),
           create: false
         };
       }
+    } else {
+      cbName = 'onNameReset';
     }
 
     if (!this.props.disabled) {
