@@ -1,77 +1,38 @@
 import React, { Component, PropTypes } from 'react';
-import * as propertyTypes from '../../constants/propertyTypes';
-import PropertyCreator from './PropertyCreator';
+import uuid from 'uuid';
 import PropertyList from './PropertyList';
 
 export default class PropertiesManager extends Component {
   static propTypes = {
-    properties: PropTypes.array.isRequired,
-    custom_attributes: PropTypes.array.isRequired
+    properties: PropTypes.array,
+    custom_attributes: PropTypes.array
   }
   static defaultProps = {
-    custom_attributes: [{
-      value: 'Test',
-      property_id: 90
-    }, {
-      value: 6,
-      property_id: 76
-    }],
-    properties: [{
-      id: 586,
-      name: 'Вес',
-      tooltip: 'Тултип1',
-      type: 'PropertyString'
-    }, {
-      id: 90,
-      name: 'Покрытие',
-      tooltip: 'Тултип2',
-      type: 'PropertyText'
-    }, {
-      id: 76,
-      name: 'Вставки',
-      tooltip: 'Тултип3',
-      type: 'PropertyDictionary',
-      dictionary: {
-        id: 2,
-        title: 'Вставки',
-        entities: [{
-          id: 6,
-          title: 'Кубический циркон'
-        }, {
-          id: 7,
-          title: 'Культ. жемчуг, куб. циркон'
-        }]
-      }
-    }]
+    properties: [],
+    custom_attributes: []
   }
   state = {
+    listItems: this.makeListItems(this.props.properties, this.props.custom_attributes),
     properties: this.normalizeProperties(this.props.properties, this.props.custom_attributes)
   }
   render() {
     const listActions = {
-      onPropertyAdd: this.addProperty.bind(this),
-      onPropertyReset: this.resetProperty.bind(this),
-
-      onPropertyUpdate: this.switchProperty.bind(this),
+      onPropertyCreate: this.createProperty.bind(this),
+      onPropertySwitch: this.switchProperty.bind(this),
+      onPropertyUpdate: this.updateProperty.bind(this),
       onPropertyDelete: this.deleteProperty.bind(this),
-      onPropertyValueChange: this.changePropertyValue.bind(this),
-      onUnfixedPropertyAdd: this.addUnfixedProperty.bind(this),
-      onUnfixedPropertyErase: this.eraseUnfixedProperty.bind(this)
+      onListItemAdd: this.addListItem.bind(this),
+      onListItemDelete: this.deleteListItem.bind(this)
     };
 
     return (
       <PropertyList
         {...listActions}
-        properties={this.getSelectedProperties.call(this)}
+        listItems={this.state.listItems}
+        properties={this.state.properties}
         availableProperties={this.getAvailableProperties.call(this)}
       />
     );
-  }
-  getSelectedProperties() {
-    return this.state.properties.filter((property) => property.selected);
-  }
-  getAvailableProperties() {
-    return this.state.properties.filter((property) => !property.selected);
   }
   normalizeProperties(properties, customAttributes) {
     const normalizedProperties = [];
@@ -80,190 +41,215 @@ export default class PropertiesManager extends Component {
       let selected = customAttributes.filter((attr) => property.id === attr.property_id)[0];
 
       if (selected) {
-        normalizedProperties.push({
-          ...property,
-          value: selected.value,
-          fixed: true,
-          selected: true
-        });
+        normalizedProperties.push({...property, value: selected.value});
       } else {
-        normalizedProperties.push({
-          ...property,
-          value: null,
-          fixed: true,
-          selected: false
-        });
+        normalizedProperties.push({...property, value: null});
       }
     });
 
     return normalizedProperties;
   }
-  changePropertyValue(propertyID, value) {
-    this.setState({
-      properties: this.state.properties.map((property) =>
-        property.id === propertyID ? {...property, value} : property
-      )
+  makeListItems(properties, customAttributes) {
+    const listItems = [];
+
+    properties.forEach((property) => {
+      let isSelected = customAttributes.some((attr) => property.id === attr.property_id);
+
+      if (isSelected) {
+        listItems.push({
+          id: uuid.v4(),
+          propertyID: property.id,
+          propertyFixed: true
+        });
+      }
+    });
+
+    return listItems;
+  }
+  getAvailableProperties() {
+    return this.state.properties.filter((property) => {
+      for (let i = 0; i < this.state.listItems.length; i++) {
+        if (this.state.listItems[i].propertyID === property.id) {
+          return false;
+        }
+      }
+      return true;
     });
   }
-  hasUnfixedProperty() {
-    return this.state.properties.some((property) => property.fixed === false);
+  getListItemByID(listItems, listItemID) {
+    return listItems.filter((listItem) => listItem.id === listItemID)[0] || null;
   }
-  addUnfixedProperty() {
-    if (!this.hasUnfixedProperty()) {
+  getPropertyByID(properties, propertyID) {
+    return properties.filter((property) => property.id === propertyID)[0] || null;
+  }
+  hasEmptyListItem() {
+    return this.state.listItems.some((listItem) => listItem.propertyID === null);
+  }
+  createProperty(listItemID, property) {
+    // Добавляем свойство и указываем его в элементе списка:
+    // Варианты:
+    // 1) listItem найден, но не содержит propertyID. Добавляем propertyID в
+    //    listItem, добавляем property в список свойств.
+    // 2) listItem найден и уже содержит propertyID. Удаляем property, id которого
+    //    указан в propertyID если свойство не существовало изначально. Устанавливаем
+    //    новый propertyID, добавляем property в список свойств.
+    let listItem = this.getListItemByID(this.state.listItems, listItemID),
+        newProperties = this.state.properties.concat(property);
+
+    if (listItem.propertyID) {
+      let isPropertyExistsOriginally = this.getPropertyByID(this.props.properties, listItem.propertyID);
+
+      if (!isPropertyExistsOriginally) {
+        newProperties = newProperties.filter((prop) =>
+          prop.id !== listItem.propertyID
+        );
+      }
+    }
+
+    let newListItems = this.state.listItems.map((item) =>
+      item.id === listItemID ? {...item, propertyID: property.id} : item
+    );
+
+    this.setState({
+      listItems: newListItems,
+      properties: newProperties
+    });
+  }
+  switchProperty(listItemID, property) {
+    // Переключаем свойство и указываем его в элементе списка:
+    // Варианты:
+    // 1) listItem найден, но не содержит propertyID. Добавляем propertyID в
+    //    listItem.
+    // 2) listItem найден и уже содержит propertyID. Удаляем property, id которого
+    //    указан в propertyID если свойство не существовало изначально. Устанавливаем
+    //    новый propertyID.
+    let newListItem = this.getListItemByID(this.state.listItems, listItemID),
+        newProperty = this.getPropertyByID(this.state.properties, property.id),
+        newProperties = this.state.properties;
+
+    if (newListItem.propertyID) {
+      let isPropertyExistsOriginally = this.getPropertyByID(this.props.properties, newListItem.propertyID);
+
+      if (!isPropertyExistsOriginally) {
+        newProperties = newProperties.filter((prop) =>
+          prop.id !== newListItem.propertyID
+        );
+      }
+    }
+
+    let newListItems = this.state.listItems.map((item) =>
+      item.id === listItemID ? {...item, propertyID: property.id} : item
+    );
+
+    this.setState({
+      listItems: newListItems,
+      properties: newProperties
+    });
+  }
+  updateProperty(listItemID, property) {
+    let newListItem = this.getListItemByID(this.state.listItems, listItemID),
+        newProperty = this.getPropertyByID(this.state.properties, property.id);
+
+    let newProperties;
+    if (newProperty) {
+      newProperties = this.state.properties.map((prop) =>
+        prop.id === property.id ? property : prop
+      );
+    } else {
+      newProperties = this.state.properties.concat(property);
+    }
+
+    let newListItems;
+    if (newListItem) {
+      newListItems = this.state.listItems.map((item) =>
+        item.id === listItemID ? {...newListItem, propertyID: property.id} : item
+      );
+    } else {
+      newListItems = this.state.listItems.concat({
+        id: uuid.v4(),
+        propertyID: property.id,
+        propertyFixed: false
+      });
+    }
+
+    this.setState({
+      listItems: newListItems,
+      properties: newProperties
+    });
+  }
+  deleteProperty(listItemID) {
+    let listItem = this.getListItemByID(this.state.listItems, listItemID),
+        property, isPropertyExistsOriginally;
+
+    if (listItem) {
+      property = this.getPropertyByID(this.state.properties, listItem.propertyID);
+    }
+    if (property) {
+      isPropertyExistsOriginally = this.getPropertyByID(this.props.properties, property.id)
+    }
+
+    if (isPropertyExistsOriginally) {
       this.setState({
-        properties: this.state.properties.concat(this.makeUnfixedProperty())
+        properties: this.state.properties.map((prop) =>
+          prop.id === property.id ? {...prop, value: null} : prop
+        ),
+        listItems: this.state.listItems.map((item) =>
+          item.id === listItemID ? {...item, propertyID: null} : item
+        )
+      });
+    } else {
+      this.setState({
+        properties: this.state.properties.filter((prop) => prop.id !== property.id),
+        listItems: this.state.listItems.map((item) =>
+          item.id === listItemID ? {...item, propertyID: null} : item
+        )
       });
     }
   }
-  addProperty(listItemID, property) {
-    // // Если свойство существует, то просто делаем его выделенным,
-    // // иначе оно будет добавлено в конце списка
-    // const newProperties = this.state.properties.concat(property);
-    // const newListItems = this.state.listItems.map((item) =>
-    //   item.id === listItemID ? {...item, propertyID: property.id} : item
-    // );
-
-    // this.setState({
-    //   listItems: newListItems,
-    //   properties: newProperties
-    // });
-  }
-  switchProperty(prevProperty, nextProperty) {
-    // let newProperties = this.state.properties.map((property) => {
-    //   if (property.id === prevProperty.id) {
-    //     return {...prevProperty, selected: false, fixed: true};
-    //   } else if (property.id === nextProperty.id) {
-    //     return {...nextProperty, selected: true, fixed: false};
-    //   } else {
-    //     return property;
-    //   }
-    // });
-
-    // let newProperties = this.state.properties.filter((property) =>
-    //   property.id != prevProperty.id && property.id != nextProperty.id
-    // );
-
-    // if (!prevProperty.fixed) {
-    //   newProperties.push({...nextProperty, selected: true, fixed: false});
-    // }
-
-    // this.state.properties.forEach((property) => {
-    //   if (property.id === prevProperty.id) {
-    //     newProperties.push({...prevProperty, selected: false, fixed: true});
-    //   } else if (property.id === nextProperty.id) {
-    //     newProperties.push({...nextProperty, selected: true, fixed: false});
-    //   } else {
-    //     newProperties.push(property);
-    //   }
-    // });
-
-
-
-
-
-
-    // let newProperties = this.state.properties.reduce((previous, property) => {
-    //   if (property.id === prevProperty.id) {
-    //     return {...prevProperty, selected: false, fixed: true};
-    //   } else if (property.id === nextProperty.id) {
-    //     return {...nextProperty, selected: true, fixed: false};
-    //   } else {
-    //     return property;
-    //   }
-    // }, []);
-
-
-
-
-    // if (!prevProperty.fixed) {
-    //   newProperties = newProperties.concat([
-    //     {...nextProperty, selected: true, fixed: false}
-    //   ]);
-    // } else {
-    //   newProperties = newProperties.concat([
-    //     {...prevProperty, selected: false, fixed: nextProperty.fixed},
-    //     {...nextProperty, selected: true, fixed: prevProperty.fixed}
-    //   ]);
-    // }
-
-    // let newProperties = this.state.properties.reduce((previous, property) => {
-    //   if (prevProperty)
-
-
-
-    //   if (prevPropertyID == null && !property.fixed) {
-    //     return previous;
-    //   } else if (property.id === prevPropertyID) {
-    //     previous.push({...property, selected: false});
-    //   } else if (property.id === data.id) {
-    //     previous.push({...property, selected: true});
-    //   } else {
-    //     previous.push(property);
-    //   }
-
-    //   return previous;
-    //   // if (prevPropertyID == null && !property.fixed) {
-    //   //   return previous;
-    //   // } else if (property.id === prevPropertyID) {
-    //   //   property.selected = false;
-    //   //   return previous;
-    //   // } else if (property.id === data.id) {
-    //   //   property.selected = true;
-    //   //   return previous;
-    //   // } else {
-    //   //   return previous;
-    //   // }
-    // }, []);
-    // console.log(newProperties);
-
-    // this.setState({ properties: newProperties });
-  }
-  resetProperty(listItemID) {
-    // const emptyProperty = this.makeEmptyProperty();
-
-    // this.setState({
-    //   listItems: this.state.listItems.map((item) =>
-    //     item.id === listItemID ? {...item, property: emptyProperty} : item
-    //   )
-    // });
-  }
-  eraseUnfixedProperty() {
-    this.setState({
-      properties: this.state.properties.map((property) =>
-        property.fixed ? property : this.makeUnfixedProperty()
-      )
-    });
-  }
-  deleteProperty(propertyID) {
-    // Если свойство существует, то просто убираем его из выделенных,
-    // иначе оно было добавлено и не сохранено и мы его удаляем
-    const isExists = this.props.properties.some((property) =>
-      property.id === propertyID
-    );
-
-    if (isExists) {
-      this.setState({
-        properties: this.state.properties.map((prop) =>
-          prop.id === propertyID ? {...prop, selected: false, value: null} : prop
+  addListItem() {
+    if (!this.hasEmptyListItem()) {
+      let newListItems = this.state.listItems
+        .map((item) =>
+          !item.propertyFixed ? {...item, propertyFixed: true} : item
         )
-      })
-    } else {
-      this.setState({
-        properties: this.state.properties.filter((prop) =>
-          prop.id !== propertyID
-        )
-      })
+        .concat({
+          id: uuid.v4(),
+          propertyID: null,
+          propertyFixed: false
+        });
+
+      this.setState({ listItems: newListItems });
     }
   }
-  makeUnfixedProperty() {
-    return {
-      id: null,
-      type: propertyTypes.PROPERTY_STRING_TYPE,
-      name: null,
-      value: null,
-      fixed: false,
-      selected: true,
-      create: false
+  deleteListItem(listItemID) {
+    // Берем свойство по идентификатору из элемента списка:
+    // Варианты:
+    // 1) listItem найден, property найден. Удаляем listItem, удаляем property
+    //    если он был создан временно, если property был создан изначально, то
+    //    сбрасываем его value.
+    // 2) listItem найден, property не найден. Удаляем listItem
+    let listItem = this.getListItemByID(this.state.listItems, listItemID),
+        property, isPropertyExistsOriginally;
+
+    if (listItem) {
+      property = this.getPropertyByID(this.state.properties, listItem.propertyID);
+    }
+    if (property) {
+      isPropertyExistsOriginally = this.getPropertyByID(this.props.properties, property.id)
+    }
+
+    if (isPropertyExistsOriginally) {
+      this.setState({
+        listItems: this.state.listItems.filter((item) => item.id !== listItemID),
+        properties: this.state.properties.map((prop) =>
+          prop.id === property.id ? {...prop, value: null} : prop
+        )
+      });
+    } else {
+      this.setState({
+        listItems: this.state.listItems.filter((item) => item.id !== listItemID),
+        properties: this.state.properties.filter((prop) => prop.id !== property.id)
+      });
     }
   }
 }

@@ -161,7 +161,10 @@ gulp.task('[Production] Scripts', function() {
   bundleLogger.start(configProduction.outputName);
 
   return appBundler
-    .transform('babelify', {ignore: /(node_modules|bower_components)/})
+    .transform('babelify', {
+      stage: 0,
+      ignore: /(node_modules|bower_components)/
+    })
     .transform('coffee-reactify')
     .bundle()
     .on('error', handleErrors)

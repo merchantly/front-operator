@@ -1,34 +1,36 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import * as propertyTypes from '../../constants/propertyTypes';
 import PropertyName from './PropertyName';
 import PropertyValue from './PropertyValue';
 
-export default class PropertyListItem extends Component {
+export default class PropertyListItem {
   static propTypes = {
-    property: PropTypes.object.isRequired,
+    property: PropTypes.object,
     availableProperties: PropTypes.array.isRequired,
+    fixed: PropTypes.bool.isRequired,
+    onPropertyCreate: PropTypes.func.isRequired,
+    onPropertySwitch: PropTypes.func.isRequired,
+    onPropertyUpdate: PropTypes.func.isRequired,
     onPropertyDelete: PropTypes.func.isRequired,
-    onPropertyValueChange: PropTypes.func.isRequired,
-    onUnfixedPropertyErase: PropTypes.func.isRequired
-  }
-  state = {
-    property: this.props.property
+    onListItemDelete: PropTypes.func.isRequired
   }
   render() {
     return (
-      <div className="form-group m-b" key={this.state.property.id}>
-        {this.renderName(this.state.property, this.props.availableProperties)}
+      <div className="form-group m-b">
+        {this.renderName.call(this)}
         <Col sm={6} md={7} lg={8}>
           <PropertyValue
-            current={this.state.property}
-            onChange={this.props.onPropertyValueChange}
-          />
+            current={this.getCurrentProperty.call(this)}
+            onChange={this.changeValue.bind(this)} />
         </Col>
-        {this.renderDeleteButton(this.state.property)}
+        {this.renderDeleteButton.call(this)}
       </div>
     );
   }
-  renderName(property, availableProperties) {
-    if (property.fixed) {
+  renderName() {
+    const { property, availableProperties, fixed } = this.props;
+
+    if (property && fixed) {
       return (
         <label className="control-label col-sm-5 col-md-4 col-lg-3">
           {property.name + ' '} {this.renderTooltip(property.tooltip)}
@@ -38,10 +40,11 @@ export default class PropertyListItem extends Component {
       return (
         <Col sm={5} md={4} lg={3}>
           <PropertyName
-            current={property}
+            current={this.getCurrentProperty.call(this)}
             properties={availableProperties}
-            onNameCreate={this.createName.bind(this)}
-            onNameChange={this.changeName.bind(this)}
+            onNameCreate={this.props.onPropertyCreate}
+            onNameChange={this.props.onPropertySwitch}
+            onNameReset={this.props.onPropertyDelete}
           />
         </Col>
       );
@@ -62,15 +65,15 @@ export default class PropertyListItem extends Component {
       );
     }
   }
-  renderDeleteButton(property) {
-    if (property.fixed || property.id || property.value) {
-      let cbName = property.fixed ? 'onPropertyDelete' : 'onUnfixedPropertyErase';
+  renderDeleteButton() {
+    const property = this.getCurrentProperty.call(this);
 
+    if (this.props.fixed || property.id || property.value) {
       return (
         <Col sm={1} xs={2} className="p-l-none">
           <Button
             className="btn-circle btn-sm"
-            onClick={this.props[cbName]}
+            onClick={this.handleDeleteButtonClick.bind(this)}
           >
             <i className="fa fa-times" />
           </Button>
@@ -78,35 +81,29 @@ export default class PropertyListItem extends Component {
       );
     }
   }
-  createName(data) {
-    const newProperty = {...data, fixed: false, value: null};
-    this.setState({ property: newProperty });
+  getCurrentProperty() {
+    return this.props.property || this.getEmptyProperty();
   }
-  changeName(data) {
-    const newProperty = {...data, fixed: false, value: null};
-    this.setState({ property: newProperty });
+  getEmptyProperty() {
+    return {
+      id: null,
+      type: propertyTypes.PROPERTY_STRING_TYPE,
+      name: null,
+      value: null,
+      create: false      
+    };
   }
-  // addProperty() {
-  //   const validationErrors = this.validate();
+  changeValue(value) {
+    const currentProperty = this.getCurrentProperty.call(this),
+          newProperty = {...currentProperty, value};
 
-  //   if (validationErrors.length) {
-  //     return alert(validationErrors.join('\r\n'))
-  //   }
-
-  //   this.props.onPropertyAdd(this.state.property);
-  // }
-  // validate() {
-  //   const errors = [];
-
-  //   if (!this.state.property.id) {
-  //     errors.push('Вы не указали название характеристики');
-  //   }
-
-  //   return errors;
-  // }
-
-
-  // resetName(listItemID) {
-  //   this.props.onPropertyReset(listItemID);
-  // }
+    this.props.onPropertyUpdate(newProperty);
+  }
+  handleDeleteButtonClick() {
+    if (this.props.fixed) {
+      this.props.onListItemDelete();
+    } else {
+      this.props.onPropertyUpdate(this.getEmptyProperty());
+    }
+  }
 }

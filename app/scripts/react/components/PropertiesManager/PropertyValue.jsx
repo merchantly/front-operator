@@ -38,6 +38,15 @@ export default class PropertyValue extends Component {
             options={this.getSelectOptions.call(this)}
             onChange={this.handleSelectChange.bind(this)} />
         );
+      case propertyTypes.PROPERTY_FILE_TYPE:
+        return (
+          <input
+            type="file"
+            name={this.getSelectName.call(this)}
+          />
+        );
+      default:
+        return <span />;
     }
   }
   getSelectName() {
