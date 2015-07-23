@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as propertyTypes from '../../constants/propertyTypes';
 import PropertyCreator from './PropertyCreator';
 import PropertyList from './PropertyList';
 
@@ -47,137 +48,222 @@ export default class PropertiesManager extends Component {
     properties: this.normalizeProperties(this.props.properties, this.props.custom_attributes)
   }
   render() {
+    const listActions = {
+      onPropertyAdd: this.addProperty.bind(this),
+      onPropertyReset: this.resetProperty.bind(this),
+
+      onPropertyUpdate: this.switchProperty.bind(this),
+      onPropertyDelete: this.deleteProperty.bind(this),
+      onPropertyValueChange: this.changePropertyValue.bind(this),
+      onUnfixedPropertyAdd: this.addUnfixedProperty.bind(this),
+      onUnfixedPropertyErase: this.eraseUnfixedProperty.bind(this)
+    };
+
     return (
-      <div>
-        <PropertyList
-          properties={this.getSelectedProperties()}
-          onPropertyUpdate={this.updateProperty.bind(this)}
-          onPropertyDelete={this.deleteProperty.bind(this)}
-        />
-        <div className="p-t-xxs p-b-xxs">
-          <div className="hr-line-dashed" />
-          <PropertyCreator
-            properties={this.getUnselectedProperties()}
-            onPropertyAdd={this.addProperty.bind(this)}
-          />
-        </div>
-      </div>
+      <PropertyList
+        {...listActions}
+        properties={this.getSelectedProperties.call(this)}
+        availableProperties={this.getAvailableProperties.call(this)}
+      />
     );
   }
-
-                  // .form-horizontal
-                  //   .form-group.m-b
-                  //     %label.control-label.col-sm-5.col-md-4.col-lg-3
-                  //       Наличие манометра
-                  //       %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
-                  //         %i.fa.fa-question-circle
-                  //     .col-sm-7.col-md-8.col-lg-9
-                  //       %textarea.form-control
-                  //   .form-group.m-b
-                  //     %label.control-label.col-sm-5.col-md-4.col-lg-3
-                  //       Скорость
-                  //       %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
-                  //         %i.fa.fa-question-circle
-                  //     .col-sm-7.col-md-8.col-lg-9
-                  //       %select.form-control{ks-select2: true}
-                  //         %option{value: '20'} 20 км/ч
-                  //         %option{value: '40'} 40 км/ч
-                  //   .form-group.m-b
-                  //     %label.control-label.col-sm-5.col-md-4.col-lg-3
-                  //       Высота рамы
-                  //       %span.tip-trigger{data: {container: 'body', toggle: 'popover', placement: 'right', content: 'Тип: строковый'}
-                  //         %i.fa.fa-question-circle
-                  //     .col-sm-7.col-md-8.col-lg-9
-                  //       %input.form-control{type: 'text'}
-                  //   .row
-                  //     .col-md-8.col-md-offset-4.col-lg-9.col-lg-offset-3
-                  //       %button.btn.btn-default.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Показать все 45 характеристик
-                  //       %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs.active != '<i class="fa fa-plus"></i> Создать характеристику'
-
-
-  // render() {
-  //   return (
-  //     <div className="p-b-xxs p-t-xxs">
-  //       <PropertyCreator
-  //         properties={this.getUnselectedProperties()}
-  //         onCreate={this.addProperty.bind(this)}
-  //       />
-  //       <PropertyList
-  //         properties={this.getSelectedProperties()}
-  //         onUpdate={this.updateProperty.bind(this)}
-  //         onDelete={this.deleteProperty.bind(this)}
-  //       />
-  //     </div>
-  //   );
-  // }
-  addProperty(property) {
-    // Если свойство существует, то просто делаем его выделенным,
-    // иначе оно будет добавлено в конце списка
-    let properties = this.state.properties;
-    const newProperty = {...property, select: true};
-    const created = properties.filter((prop) => prop.id === property.id)[0];
-
-    if (created) {
-      properties = properties.filter((prop) => prop.id !== property.id);
-    }
-
-    this.setState({ properties: properties.concat(newProperty) });
+  getSelectedProperties() {
+    return this.state.properties.filter((property) => property.selected);
   }
-  updateProperty(property) {
-    this.setState({
-      properties: this.state.properties.map((prop) =>
-        prop.id === property.id ? property : prop
-      )
-    })
-  }
-  deleteProperty(property) {
-    // Если свойство существует, то просто убираем его из выделенных,
-    // иначе оно было добавлено и не сохранено и мы его удаляем
-    let properties = this.state.properties;
-    const created = this.props.properties.filter((prop) => prop.id === property.id)[0];
-
-    if (created) {
-      properties = properties.map((prop) =>
-        prop.id === property.id ? {...prop, select: false} : prop
-      );
-    } else {
-      properties = properties.filter((prop) =>
-        prop.id !== property.id
-      );
-    }
-
-    this.setState({ properties });
+  getAvailableProperties() {
+    return this.state.properties.filter((property) => !property.selected);
   }
   normalizeProperties(properties, customAttributes) {
-    let normalizedProperties = [];
+    const normalizedProperties = [];
 
     properties.forEach((property) => {
-      let selected = customAttributes.filter((attr) => property.id === attr.property_id)[0],
-          normalizedProperty;
+      let selected = customAttributes.filter((attr) => property.id === attr.property_id)[0];
 
       if (selected) {
-        normalizedProperty = {
+        normalizedProperties.push({
           ...property,
           value: selected.value,
-          select: true
-        }
+          fixed: true,
+          selected: true
+        });
       } else {
-        normalizedProperty = {
+        normalizedProperties.push({
           ...property,
           value: null,
-          select: false
-        }
+          fixed: true,
+          selected: false
+        });
       }
-
-      normalizedProperties.push(normalizedProperty);
     });
 
     return normalizedProperties;
   }
-  getSelectedProperties() {
-    return this.state.properties.filter((property) => property.select);
+  changePropertyValue(propertyID, value) {
+    this.setState({
+      properties: this.state.properties.map((property) =>
+        property.id === propertyID ? {...property, value} : property
+      )
+    });
   }
-  getUnselectedProperties() {
-    return this.state.properties.filter((property) => !property.select);
+  hasUnfixedProperty() {
+    return this.state.properties.some((property) => property.fixed === false);
+  }
+  addUnfixedProperty() {
+    if (!this.hasUnfixedProperty()) {
+      this.setState({
+        properties: this.state.properties.concat(this.makeUnfixedProperty())
+      });
+    }
+  }
+  addProperty(listItemID, property) {
+    // // Если свойство существует, то просто делаем его выделенным,
+    // // иначе оно будет добавлено в конце списка
+    // const newProperties = this.state.properties.concat(property);
+    // const newListItems = this.state.listItems.map((item) =>
+    //   item.id === listItemID ? {...item, propertyID: property.id} : item
+    // );
+
+    // this.setState({
+    //   listItems: newListItems,
+    //   properties: newProperties
+    // });
+  }
+  switchProperty(prevProperty, nextProperty) {
+    // let newProperties = this.state.properties.map((property) => {
+    //   if (property.id === prevProperty.id) {
+    //     return {...prevProperty, selected: false, fixed: true};
+    //   } else if (property.id === nextProperty.id) {
+    //     return {...nextProperty, selected: true, fixed: false};
+    //   } else {
+    //     return property;
+    //   }
+    // });
+
+    // let newProperties = this.state.properties.filter((property) =>
+    //   property.id != prevProperty.id && property.id != nextProperty.id
+    // );
+
+    // if (!prevProperty.fixed) {
+    //   newProperties.push({...nextProperty, selected: true, fixed: false});
+    // }
+
+    // this.state.properties.forEach((property) => {
+    //   if (property.id === prevProperty.id) {
+    //     newProperties.push({...prevProperty, selected: false, fixed: true});
+    //   } else if (property.id === nextProperty.id) {
+    //     newProperties.push({...nextProperty, selected: true, fixed: false});
+    //   } else {
+    //     newProperties.push(property);
+    //   }
+    // });
+
+
+
+
+
+
+    // let newProperties = this.state.properties.reduce((previous, property) => {
+    //   if (property.id === prevProperty.id) {
+    //     return {...prevProperty, selected: false, fixed: true};
+    //   } else if (property.id === nextProperty.id) {
+    //     return {...nextProperty, selected: true, fixed: false};
+    //   } else {
+    //     return property;
+    //   }
+    // }, []);
+
+
+
+
+    // if (!prevProperty.fixed) {
+    //   newProperties = newProperties.concat([
+    //     {...nextProperty, selected: true, fixed: false}
+    //   ]);
+    // } else {
+    //   newProperties = newProperties.concat([
+    //     {...prevProperty, selected: false, fixed: nextProperty.fixed},
+    //     {...nextProperty, selected: true, fixed: prevProperty.fixed}
+    //   ]);
+    // }
+
+    // let newProperties = this.state.properties.reduce((previous, property) => {
+    //   if (prevProperty)
+
+
+
+    //   if (prevPropertyID == null && !property.fixed) {
+    //     return previous;
+    //   } else if (property.id === prevPropertyID) {
+    //     previous.push({...property, selected: false});
+    //   } else if (property.id === data.id) {
+    //     previous.push({...property, selected: true});
+    //   } else {
+    //     previous.push(property);
+    //   }
+
+    //   return previous;
+    //   // if (prevPropertyID == null && !property.fixed) {
+    //   //   return previous;
+    //   // } else if (property.id === prevPropertyID) {
+    //   //   property.selected = false;
+    //   //   return previous;
+    //   // } else if (property.id === data.id) {
+    //   //   property.selected = true;
+    //   //   return previous;
+    //   // } else {
+    //   //   return previous;
+    //   // }
+    // }, []);
+    // console.log(newProperties);
+
+    // this.setState({ properties: newProperties });
+  }
+  resetProperty(listItemID) {
+    // const emptyProperty = this.makeEmptyProperty();
+
+    // this.setState({
+    //   listItems: this.state.listItems.map((item) =>
+    //     item.id === listItemID ? {...item, property: emptyProperty} : item
+    //   )
+    // });
+  }
+  eraseUnfixedProperty() {
+    this.setState({
+      properties: this.state.properties.map((property) =>
+        property.fixed ? property : this.makeUnfixedProperty()
+      )
+    });
+  }
+  deleteProperty(propertyID) {
+    // Если свойство существует, то просто убираем его из выделенных,
+    // иначе оно было добавлено и не сохранено и мы его удаляем
+    const isExists = this.props.properties.some((property) =>
+      property.id === propertyID
+    );
+
+    if (isExists) {
+      this.setState({
+        properties: this.state.properties.map((prop) =>
+          prop.id === propertyID ? {...prop, selected: false, value: null} : prop
+        )
+      })
+    } else {
+      this.setState({
+        properties: this.state.properties.filter((prop) =>
+          prop.id !== propertyID
+        )
+      })
+    }
+  }
+  makeUnfixedProperty() {
+    return {
+      id: null,
+      type: propertyTypes.PROPERTY_STRING_TYPE,
+      name: null,
+      value: null,
+      fixed: false,
+      selected: true,
+      create: false
+    }
   }
 }

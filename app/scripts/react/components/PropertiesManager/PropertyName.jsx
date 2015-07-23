@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import generateUUID from '../../utils/generateUUID';
+import uuid from 'uuid';
 import Select from 'react-select';
 
 export default class PropertyName extends Component {
@@ -13,16 +13,14 @@ export default class PropertyName extends Component {
   }
   render() {
     return (
-      <FormGroup className="m-b">
-        <Select
-          name={this.getSelectName.call(this)}
-          value={this.props.current.id != null ? '' + this.props.current.id : null}
-          options={this.getSelectOptions.call(this)}
-          disabled={this.props.disabled}
-          allowCreate={true}
-          onChange={this.handleSelectChange.bind(this)}
-        />
-      </FormGroup>
+      <Select
+        name={this.getSelectName.call(this)}
+        value={this.props.current.id != null ? '' + this.props.current.id : null}
+        options={this.getSelectOptions.call(this)}
+        disabled={this.props.disabled}
+        allowCreate={true}
+        onChange={this.handleSelectChange.bind(this)}
+      />
     );
   }
   getSelectName() {
@@ -34,7 +32,15 @@ export default class PropertyName extends Component {
   }
   getSelectOptions() {
     const { current, properties } = this.props;
-    const arr = properties ? properties.concat(current) : [current];
+    let arr;
+
+    if (properties) {
+      if (current.id) {
+        arr = properties.concat(current);
+      } else {
+        arr = properties;
+      }
+    }
 
     return arr.map((property) => ({
       value: property.id + '',
@@ -50,7 +56,7 @@ export default class PropertyName extends Component {
       if (newProperty.create) {
         cbName = 'onNameCreate';
         newProperty = {
-          id: generateUUID(),
+          id: uuid.v4(),
           type: 'PropertyString',
           name: newProperty.label,
           create: true
