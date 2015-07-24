@@ -7,6 +7,7 @@ export default class PropertyList {
     listItems: PropTypes.array.isRequired,
     properties: PropTypes.array.isRequired,
     availableProperties: PropTypes.array.isRequired,
+    canCreateListItem: PropTypes.bool.isRequired,
     onPropertyCreate: PropTypes.func.isRequired,
     onPropertySwitch: PropTypes.func.isRequired,
     onPropertyUpdate: PropTypes.func.isRequired,
@@ -24,7 +25,9 @@ export default class PropertyList {
           {this.renderPropertyList.call(this)}
           <Row>
             <Col lg={9} md={8} lgOffset={3} mdOffset={4}>
-              <PropertyCreateButton onClick={this.props.onListItemAdd} />
+              <PropertyCreateButton
+                disabled={!this.props.canCreateListItem}
+                onClick={this.props.onListItemAdd} />
             </Col>
           </Row>
         </div>

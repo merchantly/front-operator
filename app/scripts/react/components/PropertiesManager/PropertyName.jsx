@@ -13,21 +13,34 @@ export default class PropertyName extends Component {
   }
   render() {
     return (
-      <Select
-        name={this.getSelectName.call(this)}
-        value={this.props.current.id != null ? '' + this.props.current.id : null}
-        options={this.getSelectOptions.call(this)}
-        disabled={this.props.disabled}
-        allowCreate={true}
-        onChange={this.handleSelectChange.bind(this)}
-      />
+      <span>
+        <Select
+          value={this.props.current.id != null ? '' + this.props.current.id : null}
+          options={this.getSelectOptions.call(this)}
+          disabled={this.props.disabled}
+          allowCreate={true}
+          onChange={this.handleSelectChange.bind(this)}
+        />
+        {this.renderHiddenInputs.call(this)}
+      </span>
     );
   }
-  getSelectName() {
+  renderHiddenInputs() {
     if (this.props.current.create) {
-      return `product[new_attributes][${this.props.current.id}][name]`;
-    } else {
-      return `product[custom_attributes][${this.props.current.id}][name]`;
+      return (
+        <span>
+          <input
+            type="hidden"
+            name={`product[new_attributes][${this.props.current.id}][type]`}
+            value={this.props.current.type}
+          />
+          <input
+            type="hidden"
+            name={`product[new_attributes][${this.props.current.id}][name]`}
+            value={this.props.current.name}
+          />
+        </span>
+      );
     }
   }
   getSelectOptions() {

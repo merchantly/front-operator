@@ -89,11 +89,12 @@
               /     .text-center.p-lg
               /       %p Вы не создали характеристики
               /       %button.btn.btn-primary.btn-rounded.btn-sm.m-t-xs != '<i class="fa fa-plus"></i> Создать характеристику'
-              .ibox
-                .ibox-title
-                  %h3 Характеристики
-                .ibox-content
-                  %div{data: {react-class: 'PropertiesManager', react-props: '{"custom_attributes":[],"properties":[{"id":581,"name":"Изображение","tooltip":"Картинка типа:)","type":"PropertyFile"},{"id":586,"name":"Вес","tooltip":"Тултип1","type":"PropertyString"},{"id":90,"name":"Покрытие","tooltip":"Тултип2","type":"PropertyText"},{"id":76,"name":"Вставки","tooltip":"Тултип3","type":"PropertyDictionary","dictionary":{"id":2,"title":"Вставки","entities":[{"id":6,"title":"Кубический циркон"},{"id":7,"title":"Культ. жемчуг, куб. циркон"}]}}]}'}}
+              %form{method: 'POST', enctype: 'multipart/form-data'}
+                .ibox
+                  .ibox-title
+                    %h3 Характеристики
+                  .ibox-content
+                    %div{data: {react-class: 'PropertiesManager', react-props: '{"custom_attributes":[],"properties":[{"id":581,"name":"Изображение","tooltip":"Картинка типа:)","type":"PropertyFile"},{"id":586,"name":"Вес","tooltip":"Тултип1","type":"PropertyString"},{"id":90,"name":"Покрытие","tooltip":"Тултип2","type":"PropertyText"},{"id":76,"name":"Вставки","tooltip":"Тултип3","type":"PropertyDictionary","dictionary":{"id":2,"title":"Вставки","entities":[{"id":6,"title":"Кубический циркон"},{"id":7,"title":"Культ. жемчуг, куб. циркон"}]}}]}'}}
               .ibox
                 .ibox-title
                   %h3 Характеристики

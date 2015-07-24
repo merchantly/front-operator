@@ -31,6 +31,7 @@ export default class PropertiesManager extends Component {
         listItems={this.state.listItems}
         properties={this.state.properties}
         availableProperties={this.getAvailableProperties.call(this)}
+        canCreateListItem={!this.hasEmptyListItem.call(this)}
       />
     );
   }

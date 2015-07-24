@@ -12,7 +12,7 @@ export default class PropertyValue extends Component {
       case propertyTypes.PROPERTY_TEXT_TYPE:
         return (
           <textarea
-            name={this.getSelectName.call(this)}
+            name={this.getInputName.call(this)}
             value={this.props.current.value}
             placeholder="Значение"
             className="form-control"
@@ -23,7 +23,7 @@ export default class PropertyValue extends Component {
         return (
           <input
             type="text"
-            name={this.getSelectName.call(this)}
+            name={this.getInputName.call(this)}
             value={this.props.current.value}
             placeholder="Значение"
             className="form-control"
@@ -33,27 +33,43 @@ export default class PropertyValue extends Component {
       case propertyTypes.PROPERTY_DICTIONARY_TYPE:
         return (
           <Select
-            name={this.getSelectName.call(this)}
+            name={this.getInputName.call(this)}
             value={this.props.current.value != null ? this.props.current.value + '' : null}
             options={this.getSelectOptions.call(this)}
             onChange={this.handleSelectChange.bind(this)} />
         );
       case propertyTypes.PROPERTY_FILE_TYPE:
         return (
-          <input
-            type="file"
-            name={this.getSelectName.call(this)}
-          />
+          <label title="Upload image file" htmlFor="inputImage" className="btn btn-primary">
+            <input
+              name={this.getInputName.call(this)}
+              type="file"
+              accept="image/*"
+              id="inputImage"
+              className="hide"
+            />
+            Загрузить изображение
+          </label>
         );
       default:
         return <span />;
     }
   }
-  getSelectName() {
-    if (this.props.current.create) {
-      return `product[new_attributes][${this.props.current.id}][value]`;
-    } else {
-      return `product[custom_attributes][${this.props.current.id}][value]`;
+  getInputName() {
+    if (this.props.current.id) {
+      if (this.props.current.create) {
+        if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
+          return `product[new_attributes][${this.props.current.id}][dictionary_entity_id]`
+        } else {
+          return `product[new_attributes][${this.props.current.id}][value]`;
+        }
+      } else {
+        if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
+          return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
+        } else {
+          return `product[custom_attributes][${this.props.current.id}][value]`;
+        }
+      }
     }
   }
   getSelectOptions() {

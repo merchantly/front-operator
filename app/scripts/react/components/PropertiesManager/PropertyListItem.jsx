@@ -103,7 +103,7 @@ export default class PropertyListItem {
     if (this.props.fixed) {
       this.props.onListItemDelete();
     } else {
-      this.props.onPropertyUpdate(this.getEmptyProperty());
+      this.props.onPropertyDelete();
     }
   }
 }
