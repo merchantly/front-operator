@@ -8,53 +8,103 @@ export default class PropertyValue extends Component {
     onChange: PropTypes.func.isRequired
   }
   render() {
-    switch(this.props.current.type) {
-      case propertyTypes.PROPERTY_TEXT_TYPE:
-        return (
-          <textarea
-            name={this.getInputName.call(this)}
-            value={this.props.current.value}
-            placeholder="Значение"
-            className="form-control"
-            onChange={this.handleInputChange.bind(this)}
-          />
-        );
-      case propertyTypes.PROPERTY_STRING_TYPE:
-        return (
-          <input
-            type="text"
-            name={this.getInputName.call(this)}
-            value={this.props.current.value}
-            placeholder="Значение"
-            className="form-control"
-            onChange={this.handleInputChange.bind(this)}
-          />
-        );
-      case propertyTypes.PROPERTY_DICTIONARY_TYPE:
-        return (
-          <Select
-            name={this.getInputName.call(this)}
-            value={this.props.current.value != null ? this.props.current.value + '' : null}
-            options={this.getSelectOptions.call(this)}
-            onChange={this.handleSelectChange.bind(this)} />
-        );
-      case propertyTypes.PROPERTY_FILE_TYPE:
-        return (
-          <label title="Upload image file" htmlFor="inputImage" className="btn btn-primary">
-            <input
-              name={this.getInputName.call(this)}
-              type="file"
-              accept="image/*"
-              id="inputImage"
-              className="hide"
-            />
-            Загрузить изображение
-          </label>
-        );
-      default:
-        return <span />;
+    const typeComponents = {
+      [propertyTypes.PROPERTY_TEXT_TYPE]: this.renderText,
+      [propertyTypes.PROPERTY_STRING_TYPE]: this.renderString,
+      [propertyTypes.PROPERTY_DICTIONARY_TYPE]: this.renderDictionary
+    };
+
+    if (typeof typeComponents[this.props.current.type] !== 'function') {
+      return this.renderUnknown();
+    } else {
+      return typeComponents[this.props.current.type].call(this);
     }
   }
+  renderText() {
+    return (
+      <textarea
+        name={this.getInputName.call(this)}
+        value={this.props.current.value}
+        placeholder="Значение"
+        className="form-control"
+        onChange={this.handleInputChange.bind(this)}
+      />
+    );
+  }
+  renderString() {
+    return (
+      <input
+        type="text"
+        name={this.getInputName.call(this)}
+        value={this.props.current.value}
+        placeholder="Значение"
+        className="form-control"
+        onChange={this.handleInputChange.bind(this)}
+      />
+    );
+  }
+  renderDictionary() {
+    return (
+      <Select
+        name={this.getInputName.call(this)}
+        value={this.props.current.value != null ? this.props.current.value + '' : null}
+        options={this.getSelectOptions.call(this)}
+        onChange={this.handleSelectChange.bind(this)}
+      />
+    );
+  }
+  renderUnknown() {
+    return <span>Неизвестный тип характеристики "{this.props.current.type}"</span>;
+  }
+
+
+  //   switch(this.props.current.type) {
+  //     case propertyTypes.PROPERTY_TEXT_TYPE:
+  //       return (
+  //         <textarea
+  //           name={this.getInputName.call(this)}
+  //           value={this.props.current.value}
+  //           placeholder="Значение"
+  //           className="form-control"
+  //           onChange={this.handleInputChange.bind(this)}
+  //         />
+  //       );
+  //     case propertyTypes.PROPERTY_STRING_TYPE:
+  //       return (
+  //         <input
+  //           type="text"
+  //           name={this.getInputName.call(this)}
+  //           value={this.props.current.value}
+  //           placeholder="Значение"
+  //           className="form-control"
+  //           onChange={this.handleInputChange.bind(this)}
+  //         />
+  //       );
+  //     case propertyTypes.PROPERTY_DICTIONARY_TYPE:
+  //       return (
+  //         <Select
+  //           name={this.getInputName.call(this)}
+  //           value={this.props.current.value != null ? this.props.current.value + '' : null}
+  //           options={this.getSelectOptions.call(this)}
+  //           onChange={this.handleSelectChange.bind(this)} />
+  //       );
+  //     case propertyTypes.PROPERTY_FILE_TYPE:
+  //       return (
+  //         <label title="Upload image file" htmlFor="inputImage" className="btn btn-primary">
+  //           <input
+  //             name={this.getInputName.call(this)}
+  //             type="file"
+  //             accept="image/*"
+  //             id="inputImage"
+  //             className="hide"
+  //           />
+  //           Загрузить изображение
+  //         </label>
+  //       );
+  //     default:
+  //       return <span />;
+  //   }
+  // }
   getInputName() {
     if (this.props.current.id) {
       if (this.props.current.create) {

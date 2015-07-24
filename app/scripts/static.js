@@ -1,4 +1,3 @@
-global.React = require('react');
 global.ReactUjs = require('reactUjs');
 global.gon = require('./resources/gon');
 require('./bundle');

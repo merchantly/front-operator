@@ -1,5 +1,6 @@
 global._ = require('lodash');
 global.$ = global.jQuery = require('jquery');
+global.React = require('react');
 global.Dispatcher = require('flux').Dispatcher;
 global.EventEmitter = require('eventEmitter');
 var Requester = require('./requester');
