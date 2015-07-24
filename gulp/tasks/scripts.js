@@ -73,13 +73,22 @@ gulp.task('[Static] Scripts', function(cb) {
       });
   };
 
-  clientBundler
-    .transform('coffee-reactify')
-    .transform('babelify');
-
   if (global.isWatching) {
-    clientBundler = watchify(clientBundler);
+    clientBundler = watchify(clientBundler
+      .transform('coffee-reactify')
+      .transform('babelify', {
+        stage: 0,
+        ignore: /(node_modules|bower_components)/
+      })
+    );
     clientBundler.on('update', rebundle);
+  } else {
+    clientBundler
+      .transform('coffee-reactify')
+      .transform('babelify', {
+        stage: 0,
+        ignore: /(node_modules|bower_components)/
+      });
   }
 
   rebundle();
@@ -152,7 +161,10 @@ gulp.task('[Production] Scripts', function() {
   bundleLogger.start(configProduction.outputName);
 
   return appBundler
-    .transform('babelify', {ignore: /(node_modules|bower_components)/})
+    .transform('babelify', {
+      stage: 0,
+      ignore: /(node_modules|bower_components)/
+    })
     .transform('coffee-reactify')
     .bundle()
     .on('error', handleErrors)
