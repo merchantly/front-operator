@@ -42,7 +42,7 @@ var dependencies = {
   'jstree': './app/bower_components/jstree/dist/jstree.min'
 };
 
-var nonProductionDependencies = ['react', 'reactUjs'];
+var nonProductionDependencies = ['reactUjs'];
 
 gulp.task('[Static] Scripts', function(cb) {
 
