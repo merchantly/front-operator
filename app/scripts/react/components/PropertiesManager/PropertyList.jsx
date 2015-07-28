@@ -26,6 +26,7 @@ export default class PropertyList {
           <Row>
             <Col lg={9} md={8} lgOffset={3} mdOffset={4}>
               <PropertyCreateButton
+                hasItems={!!this.props.listItems.length}
                 disabled={!this.props.canCreateListItem}
                 onClick={this.props.onListItemAdd} />
             </Col>
@@ -36,7 +37,11 @@ export default class PropertyList {
       return (
         <div className="p-lg text-center">
           <p>Вы не создали характеристики</p>
-          <PropertyCreateButton onClick={this.props.onListItemAdd} />
+          <PropertyCreateButton
+            hasItems={!!this.props.listItems.length}
+            disabled={!this.props.canCreateListItem}
+            onClick={this.props.onListItemAdd}
+          />
         </div>
       );
     }

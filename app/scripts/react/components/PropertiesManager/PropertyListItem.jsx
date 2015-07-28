@@ -30,10 +30,30 @@ export default class PropertyListItem {
   renderName() {
     const { property, availableProperties, fixed } = this.props;
 
+    function renderHiddenNameInputs(property) {
+      if (property.create) {
+        return (
+          <span>
+            <input
+              type="hidden"
+              name={`product[custom_attributes][${property.id}][type]`}
+              value={property.type}
+            />
+            <input
+              type="hidden"
+              name={`product[custom_attributes][${property.id}][name]`}
+              value={property.name}
+            />
+          </span>
+        );
+      }
+    }
+
     if (property && fixed) {
       return (
         <label className="control-label col-sm-5 col-md-4 col-lg-3">
           {property.name + ' '} {this.renderTooltip(property.tooltip)}
+          {renderHiddenNameInputs(property)}
         </label>
       );
     } else {
@@ -46,6 +66,7 @@ export default class PropertyListItem {
             onNameChange={this.props.onPropertySwitch}
             onNameReset={this.props.onPropertyDelete}
           />
+          {renderHiddenNameInputs(this.getCurrentProperty.call(this))}
         </Col>
       );
     }

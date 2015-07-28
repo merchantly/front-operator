@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import uuid from 'uuid';
+import MagicSequencer from '../../services/MagicSequencer';
 import Select from 'react-select';
 
 export default class PropertyName extends Component {
@@ -21,27 +21,8 @@ export default class PropertyName extends Component {
           allowCreate={true}
           onChange={this.handleSelectChange.bind(this)}
         />
-        {this.renderHiddenInputs.call(this)}
       </span>
     );
-  }
-  renderHiddenInputs() {
-    if (this.props.current.create) {
-      return (
-        <span>
-          <input
-            type="hidden"
-            name={`product[new_attributes][${this.props.current.id}][type]`}
-            value={this.props.current.type}
-          />
-          <input
-            type="hidden"
-            name={`product[new_attributes][${this.props.current.id}][name]`}
-            value={this.props.current.name}
-          />
-        </span>
-      );
-    }
   }
   getSelectOptions() {
     const { current, properties } = this.props;
@@ -69,7 +50,7 @@ export default class PropertyName extends Component {
       if (newProperty.create) {
         cbName = 'onNameCreate';
         newProperty = {
-          id: uuid.v4(),
+          id: MagicSequencer.next(),
           type: 'PropertyString',
           name: newProperty.label,
           create: true

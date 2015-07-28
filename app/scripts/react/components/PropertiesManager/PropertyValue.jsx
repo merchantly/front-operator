@@ -21,6 +21,7 @@ export default class PropertyValue extends Component {
       [propertyTypes.PROPERTY_LINK_TYPE]: PropertyValueLink,
       [propertyTypes.PROPERTY_TIME_TYPE]: PropertyValueTime,
       [propertyTypes.PROPERTY_LONG_TYPE]: PropertyValueNumber,
+      [propertyTypes.PROPERTY_COLOR_TYPE]: PropertyValueDictionary,
       [propertyTypes.PROPERTY_DOUBLE_TYPE]: PropertyValueNumber,
       [propertyTypes.PROPERTY_STRING_TYPE]: PropertyValueString,
       [propertyTypes.PROPERTY_BOOLEAN_TYPE]: PropertyValueBoolean,
@@ -46,18 +47,10 @@ export default class PropertyValue extends Component {
   }
   getInputName() {
     if (this.props.current.id) {
-      if (this.props.current.create) {
-        if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-          return `product[new_attributes][${this.props.current.id}][dictionary_entity_id]`
-        } else {
-          return `product[new_attributes][${this.props.current.id}][value]`;
-        }
+      if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
+        return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
       } else {
-        if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-          return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
-        } else {
-          return `product[custom_attributes][${this.props.current.id}][value]`;
-        }
+        return `product[custom_attributes][${this.props.current.id}][value]`;
       }
     }
   }
