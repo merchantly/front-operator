@@ -14,6 +14,8 @@ var gulp = require('gulp'),
 // but include in our dist bundle
 
 var dependencies = {
+  'react': './node_modules/react/addons',
+
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.autosize': './app/bower_components/jquery-autosize/jquery.autosize',
   'jquery.role': './app/bower_components/jquery.role/lib/jquery.role',
@@ -28,7 +30,6 @@ var dependencies = {
   'jquery.ui.droppable': './app/bower_components/jquery-ui/ui/droppable',
   'lodash': './node_modules/lodash',
   'bootstrapSass': './app/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
-  'react': './node_modules/react',
   'react-mixin-manager': './node_modules/react-mixin-manager/react-mixin-manager',
   'reactUjs': './app/scripts/resources/reactUjs',
   'eventEmitter': './app/bower_components/eventEmitter/EventEmitter',

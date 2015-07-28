@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import * as propertyTypes from '../../constants/propertyTypes';
-import Select from 'react-select';
+import PropertyValueFile from './PropertyValueFile';
+import PropertyValueText from './PropertyValueText';
+import PropertyValueString from './PropertyValueString';
+import PropertyValueDictionary from './PropertyValueDictionary';
 
 export default class PropertyValue extends Component {
   static propTypes = {
@@ -9,102 +12,29 @@ export default class PropertyValue extends Component {
   }
   render() {
     const typeComponents = {
-      [propertyTypes.PROPERTY_TEXT_TYPE]: this.renderText,
-      [propertyTypes.PROPERTY_STRING_TYPE]: this.renderString,
-      [propertyTypes.PROPERTY_DICTIONARY_TYPE]: this.renderDictionary
+      [propertyTypes.PROPERTY_TEXT_TYPE]: PropertyValueText,
+      [propertyTypes.PROPERTY_FILE_TYPE]: PropertyValueFile,
+      [propertyTypes.PROPERTY_STRING_TYPE]: PropertyValueString,
+      [propertyTypes.PROPERTY_DICTIONARY_TYPE]: PropertyValueDictionary
     };
 
-    if (typeof typeComponents[this.props.current.type] !== 'function') {
+    const Component = typeComponents[this.props.current.type];
+    if (typeof Component !== 'function') {
       return this.renderUnknown();
     } else {
-      return typeComponents[this.props.current.type].call(this);
+      return (
+        <Component
+          key={this.props.current.id}
+          name={this.getInputName.call(this)}
+          property={this.props.current}
+          onChange={this.props.onChange}
+        />
+      );
     }
-  }
-  renderText() {
-    return (
-      <textarea
-        name={this.getInputName.call(this)}
-        value={this.props.current.value}
-        placeholder="Значение"
-        className="form-control"
-        onChange={this.handleInputChange.bind(this)}
-      />
-    );
-  }
-  renderString() {
-    return (
-      <input
-        type="text"
-        name={this.getInputName.call(this)}
-        value={this.props.current.value}
-        placeholder="Значение"
-        className="form-control"
-        onChange={this.handleInputChange.bind(this)}
-      />
-    );
-  }
-  renderDictionary() {
-    return (
-      <Select
-        name={this.getInputName.call(this)}
-        value={this.props.current.value != null ? this.props.current.value + '' : null}
-        options={this.getSelectOptions.call(this)}
-        onChange={this.handleSelectChange.bind(this)}
-      />
-    );
   }
   renderUnknown() {
     return <span>Неизвестный тип характеристики "{this.props.current.type}"</span>;
   }
-
-
-  //   switch(this.props.current.type) {
-  //     case propertyTypes.PROPERTY_TEXT_TYPE:
-  //       return (
-  //         <textarea
-  //           name={this.getInputName.call(this)}
-  //           value={this.props.current.value}
-  //           placeholder="Значение"
-  //           className="form-control"
-  //           onChange={this.handleInputChange.bind(this)}
-  //         />
-  //       );
-  //     case propertyTypes.PROPERTY_STRING_TYPE:
-  //       return (
-  //         <input
-  //           type="text"
-  //           name={this.getInputName.call(this)}
-  //           value={this.props.current.value}
-  //           placeholder="Значение"
-  //           className="form-control"
-  //           onChange={this.handleInputChange.bind(this)}
-  //         />
-  //       );
-  //     case propertyTypes.PROPERTY_DICTIONARY_TYPE:
-  //       return (
-  //         <Select
-  //           name={this.getInputName.call(this)}
-  //           value={this.props.current.value != null ? this.props.current.value + '' : null}
-  //           options={this.getSelectOptions.call(this)}
-  //           onChange={this.handleSelectChange.bind(this)} />
-  //       );
-  //     case propertyTypes.PROPERTY_FILE_TYPE:
-  //       return (
-  //         <label title="Upload image file" htmlFor="inputImage" className="btn btn-primary">
-  //           <input
-  //             name={this.getInputName.call(this)}
-  //             type="file"
-  //             accept="image/*"
-  //             id="inputImage"
-  //             className="hide"
-  //           />
-  //           Загрузить изображение
-  //         </label>
-  //       );
-  //     default:
-  //       return <span />;
-  //   }
-  // }
   getInputName() {
     if (this.props.current.id) {
       if (this.props.current.create) {
@@ -121,18 +51,5 @@ export default class PropertyValue extends Component {
         }
       }
     }
-  }
-  getSelectOptions() {
-    return this.props.current.dictionary.entities.map((entity) => ({
-      value: entity.id + '',
-      label: entity.title,
-      entity: entity
-    }));
-  }
-  handleInputChange(e) {
-    this.props.onChange(e.target.value);
-  }
-  handleSelectChange(value) {
-    this.props.onChange(value);
   }
 }

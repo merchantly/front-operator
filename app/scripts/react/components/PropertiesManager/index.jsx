@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import uuid from 'uuid';
+import * as propertyTypes from '../../constants/propertyTypes';
 import PropertyList from './PropertyList';
 
 export default class PropertiesManager extends Component {
@@ -26,14 +27,41 @@ export default class PropertiesManager extends Component {
     };
 
     return (
-      <PropertyList
-        {...listActions}
-        listItems={this.state.listItems}
-        properties={this.state.properties}
-        availableProperties={this.getAvailableProperties.call(this)}
-        canCreateListItem={!this.hasEmptyListItem.call(this)}
-      />
+      <span>
+        <PropertyList
+          {...listActions}
+          listItems={this.state.listItems}
+          properties={this.state.properties}
+          availableProperties={this.getAvailableProperties.call(this)}
+          canCreateListItem={!this.hasEmptyListItem.call(this)}
+        />
+        {this.renderRemovedFiles.call(this)}
+      </span>
     );
+  }
+  renderRemovedFiles() {
+    const propertyFileIDs = this.props.properties.reduce((previous, property) => {
+      if (property.type === propertyTypes.PROPERTY_FILE_TYPE) {
+        previous.push(property.id);
+      }
+      return previous;
+    }, []);
+
+    const removedFiles = this.state.properties.reduce((previous, property) => {
+      if (propertyFileIDs.indexOf(property.id) != -1 && property.value === null) {
+        previous.push(
+          <input
+            key={property.id}
+            type="hidden"
+            name={`product[custom_attributes][${property.id}][remove_value}`}
+            value="1"
+          />
+        );
+      }
+      return previous;
+    }, []);
+
+    return removedFiles;
   }
   normalizeProperties(properties, customAttributes) {
     const normalizedProperties = [];
