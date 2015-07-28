@@ -1,9 +1,9 @@
+// These libs is required only in static
+require('eonasdan-bootstrap-datetimepicker');
 global.ReactUjs = require('reactUjs');
 global.gon = require('./resources/gon');
-require('./bundle');
 
-// React и ReactUjs есть только в статичной версии скриптов
-// на бекенде подключаются свои версии.
+require('./bundle');
 
 let { operator, vendor_key } = gon;
 KioskOperatorApp.start({operator, vendor_key});

@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import * as propertyTypes from '../../constants/propertyTypes';
-import PropertyValueFile from './PropertyValueFile';
 import PropertyValueText from './PropertyValueText';
+import PropertyValueFile from './PropertyValueFile';
+import PropertyValueTime from './PropertyValueTime';
 import PropertyValueString from './PropertyValueString';
 import PropertyValueBoolean from './PropertyValueBoolean';
 import PropertyValueDictionary from './PropertyValueDictionary';
@@ -15,6 +16,7 @@ export default class PropertyValue extends Component {
     const typeComponents = {
       [propertyTypes.PROPERTY_TEXT_TYPE]: PropertyValueText,
       [propertyTypes.PROPERTY_FILE_TYPE]: PropertyValueFile,
+      [propertyTypes.PROPERTY_TIME_TYPE]: PropertyValueTime,
       [propertyTypes.PROPERTY_STRING_TYPE]: PropertyValueString,
       [propertyTypes.PROPERTY_BOOLEAN_TYPE]: PropertyValueBoolean,
       [propertyTypes.PROPERTY_DICTIONARY_TYPE]: PropertyValueDictionary

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "classnames": "^2.1.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "flux": "^2.0.1",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
