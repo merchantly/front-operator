@@ -53,7 +53,7 @@ export default class PropertiesManager extends Component {
           <input
             key={property.id}
             type="hidden"
-            name={`product[custom_attributes][${property.id}][remove_value}`}
+            name={`product[custom_attributes][${property.id}][remove_value]`}
             value="1"
           />
         );
