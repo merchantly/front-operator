@@ -3,6 +3,7 @@ import * as propertyTypes from '../../constants/propertyTypes';
 import PropertyValueFile from './PropertyValueFile';
 import PropertyValueText from './PropertyValueText';
 import PropertyValueString from './PropertyValueString';
+import PropertyValueBoolean from './PropertyValueBoolean';
 import PropertyValueDictionary from './PropertyValueDictionary';
 
 export default class PropertyValue extends Component {
@@ -15,6 +16,7 @@ export default class PropertyValue extends Component {
       [propertyTypes.PROPERTY_TEXT_TYPE]: PropertyValueText,
       [propertyTypes.PROPERTY_FILE_TYPE]: PropertyValueFile,
       [propertyTypes.PROPERTY_STRING_TYPE]: PropertyValueString,
+      [propertyTypes.PROPERTY_BOOLEAN_TYPE]: PropertyValueBoolean,
       [propertyTypes.PROPERTY_DICTIONARY_TYPE]: PropertyValueDictionary
     };
 
