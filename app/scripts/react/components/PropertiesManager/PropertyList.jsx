@@ -16,7 +16,7 @@ export default class PropertyList {
     onListItemDelete: PropTypes.func.isRequired
   }
   componentDidUpdate() {
-    $('[data-toggle="popover"]').popover({ trigger: 'hover' });
+    $(document).trigger('page:update');
   }
   render() {
     if (this.props.listItems.length) {

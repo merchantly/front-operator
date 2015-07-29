@@ -77,6 +77,7 @@ export default class PropertyListItem {
         <span
           data-container="body"
           data-toggle="popover"
+          data-trigger="hover"
           data-placement="right"
           data-content={tooltip}
           className="tip-trigger"

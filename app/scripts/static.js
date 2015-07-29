@@ -5,6 +5,12 @@ global.gon = require('./resources/gon');
 
 require('./bundle');
 
+// Here we listen globally emitted update events and reinit some libs
+
+$(document).on('page:update', function() {
+  $('[data-toggle="popover"]').popover();
+});
+
 let { operator, vendor_key } = gon;
 KioskOperatorApp.start({operator, vendor_key});
 console.info('Залогинен оператор:', operator);
