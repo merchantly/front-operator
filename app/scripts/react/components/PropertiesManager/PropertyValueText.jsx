@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
 
+//TODO: i18n
+const PROPERTY_VALUE_TEXT_PLACEHOLDER = 'Значение свойства';
+
 export default class PropertyValueText {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -10,7 +13,7 @@ export default class PropertyValueText {
       <textarea
         name={this.props.name}
         value={this.props.property.value}
-        placeholder="Значение"
+        placeholder={PROPERTY_VALUE_TEXT_PLACEHOLDER}
         className="form-control"
         onChange={this.handleChange.bind(this)}
       />

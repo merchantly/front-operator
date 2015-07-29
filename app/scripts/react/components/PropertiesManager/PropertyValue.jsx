@@ -9,6 +9,9 @@ import PropertyValueNumber from './PropertyValueNumber';
 import PropertyValueBoolean from './PropertyValueBoolean';
 import PropertyValueDictionary from './PropertyValueDictionary';
 
+//TODO: i18n
+const UNKNOWN_TYPE_OF_PROPERTY = 'Неизвестный тип характеристики';
+
 export default class PropertyValue extends Component {
   static propTypes = {
     current: PropTypes.object.isRequired,
@@ -44,7 +47,7 @@ export default class PropertyValue extends Component {
     }
   }
   renderUnknown() {
-    return <span>Неизвестный тип характеристики "{this.props.current.type}"</span>;
+    return <span>{UNKNOWN_TYPE_OF_PROPERTY} "{this.props.current.type}"</span>;
   }
   getInputName() {
     if (this.props.current.id) {

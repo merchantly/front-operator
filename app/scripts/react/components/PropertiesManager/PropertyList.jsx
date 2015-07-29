@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import PropertyListItem from './PropertyListItem';
 import PropertyCreateButton from './PropertyCreateButton';
 
+//TODO: i18n
+const EMPTY_PROPERTY_LIST = 'Вы не создали характеристики';
+
 export default class PropertyList {
   static propTypes = {
     listItems: PropTypes.array.isRequired,
@@ -36,7 +39,7 @@ export default class PropertyList {
     } else {
       return (
         <div className="p-lg text-center">
-          <p>Вы не создали характеристики</p>
+          <p>{EMPTY_PROPERTY_LIST}</p>
           <PropertyCreateButton
             hasItems={!!this.props.listItems.length}
             disabled={!this.props.canCreateListItem}

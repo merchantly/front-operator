@@ -1,5 +1,8 @@
 import React, { PropTypes, findDOMNode } from 'react';
 
+//TODO: i18n
+const PROPERTY_VALUE_TIME_PLACEHOLDER = 'Укажите дату и время';
+
 export default class PropertyValueTime {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -20,8 +23,9 @@ export default class PropertyValueTime {
         <input
           type="text"
           name={this.props.name}
-          className="form-control"
           defaultValue={this.props.property.value}
+          placeholder={PROPERTY_VALUE_TIME_PLACEHOLDER}
+          className="form-control"
         />
         <span className="input-group-addon">
           <i className="fa fa-calendar" />

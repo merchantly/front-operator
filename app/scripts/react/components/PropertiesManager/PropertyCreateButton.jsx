@@ -1,5 +1,9 @@
 import React, { PropTypes } from 'react';
 
+//TODO: i18n
+const ADD_PROPERTY_BUTTON = 'Добавить характеристику',
+      CREATE_PROPERTY_BUTTON = 'Создать характеристику';
+
 export default class PropertyCreateButton {
   static propTypes = {
     hasItems: PropTypes.bool.isRequired,
@@ -20,6 +24,6 @@ export default class PropertyCreateButton {
     );
   }
   getTitle() {
-    return this.props.hasItems ? 'Добавить характеристику' : 'Создать характеристику';
+    return this.props.hasItems ? ADD_PROPERTY_BUTTON : CREATE_PROPERTY_BUTTON;
   }
 }

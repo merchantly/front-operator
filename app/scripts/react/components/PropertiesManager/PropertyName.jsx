@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import MagicSequencer from '../../services/MagicSequencer';
 import Select from 'react-select';
 
+//TODO: i18n
+const CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Выберите характеристику',
+      ADD_PROPERTY_NAME_PLACEHOLDER = 'Добавить {label} ?',
+      PROPERTY_NAME_NOT_FOUND = 'Результаты не найдены'
+
 export default class PropertyName extends Component {
   static propTypes = {
     current: PropTypes.object.isRequired,
@@ -17,6 +22,9 @@ export default class PropertyName extends Component {
         <Select
           value={this.props.current.id != null ? '' + this.props.current.id : null}
           options={this.getSelectOptions.call(this)}
+          placeholder={CHOOSE_PROPERTY_NAME_PLACEHOLDER}
+          addLabelText={ADD_PROPERTY_NAME_PLACEHOLDER}
+          noResultsText={PROPERTY_NAME_NOT_FOUND}
           disabled={this.props.disabled}
           allowCreate={true}
           onChange={this.handleSelectChange.bind(this)}

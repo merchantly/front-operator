@@ -12,6 +12,7 @@ export default class PropertyValueNumber {
         type="number"
         name={this.props.name}
         value={this.props.property.value}
+        className="form-control"
         onChange={this.handleChange.bind(this)}
       />
     );
