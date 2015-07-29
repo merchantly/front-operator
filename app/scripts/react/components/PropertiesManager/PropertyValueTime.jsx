@@ -8,18 +8,11 @@ export default class PropertyValueTime {
   }
   componentDidMount() {
     const node = findDOMNode(this);
-
     $(node).on('dp.change', this.handleDateChange.bind(this));
-    $(node).datetimepicker({
-      defaultDate: this.props.property.value,
-      format: 'YYYY-MM-DDTHH:mm:ssZ'
-    });
   }
   componentWillUnmount() {
     const node = findDOMNode(this);
-
     $(node).off('dp.change', this.handleDateChange.bind(this));
-    $(node).data("DateTimePicker").destroy();
   }
   render() {
     return (
@@ -28,6 +21,7 @@ export default class PropertyValueTime {
           type="text"
           name={this.props.name}
           className="form-control"
+          defaultValue={this.props.property.value}
         />
         <span className="input-group-addon">
           <i className="fa fa-calendar" />

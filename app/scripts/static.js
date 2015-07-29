@@ -4,12 +4,7 @@ global.ReactUjs = require('reactUjs');
 global.gon = require('./resources/gon');
 
 require('./bundle');
-
-// Here we listen globally emitted update events and reinit some libs
-
-$(document).on('page:update', function() {
-  $('[data-toggle="popover"]').popover();
-});
+require('./libsInit');
 
 let { operator, vendor_key } = gon;
 KioskOperatorApp.start({operator, vendor_key});
@@ -29,10 +24,6 @@ $('.iCheck-helper').on('mouseover', () => {
 
 $('.iCheck-helper').on('mouseout', () => {
   $(this).closest('[data-toggle="tooltip"]').tooltip('hide');
-});
-
-$('[data-toggle="popover"]').popover({
-  trigger: 'hover'
 });
 
 $('[ks-select2-ajax]').select2({
