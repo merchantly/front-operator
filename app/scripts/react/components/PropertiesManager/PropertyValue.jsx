@@ -36,6 +36,7 @@ export default class PropertyValue extends Component {
         <Component
           key={this.props.current.id}
           name={this.getInputName.call(this)}
+          cacheName={this.getInputCacheName.call(this)}
           property={this.props.current}
           onChange={this.props.onChange}
         />
@@ -54,4 +55,13 @@ export default class PropertyValue extends Component {
       }
     }
   }
+  getInputCacheName() {
+    if (this.props.current.id) {
+      if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
+        return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
+      } else {
+        return `product[custom_attributes][${this.props.current.id}][value_cache]`;
+      }
+    }
+  }          
 }

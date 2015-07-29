@@ -16,7 +16,7 @@ export default class PropertyList {
     onListItemDelete: PropTypes.func.isRequired
   }
   componentDidUpdate() {
-    $(document).trigger('page:update');
+    $(document).trigger('attributes:update');
   }
   render() {
     if (this.props.listItems.length) {

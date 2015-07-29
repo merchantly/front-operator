@@ -4,7 +4,7 @@ global.ReactUjs = require('reactUjs');
 global.gon = require('./resources/gon');
 
 require('./bundle');
-require('./libsInit');
+require('./bindPlugins');
 
 let { operator, vendor_key } = gon;
 KioskOperatorApp.start({operator, vendor_key});

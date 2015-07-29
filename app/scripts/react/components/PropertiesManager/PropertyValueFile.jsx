@@ -4,6 +4,7 @@ import numeral from 'numeral';
 export default class PropertyValueFile {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    cacheName: PropTypes.string.isRequired,
     property: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired
   }
@@ -19,6 +20,7 @@ export default class PropertyValueFile {
           />
         </Col>
         {this.renderExistingFile.call(this)}
+        {this.renderHiddenInputs.call(this)}
       </span>
     );
   }
@@ -34,12 +36,27 @@ export default class PropertyValueFile {
           <span className="text-muted text-nowrap">
             {} ({numeral(value.size).format('0 b')})
           </span>
-          <input
-            type="hidden"
-            name={this.props.name}
-            value={value.filename}
-          />
+          {value.filename &&
+            <input
+              type="hidden"
+              name={this.props.name}
+              value={value.filename}
+            />
+          }
         </Col>
+      );
+    }
+  }
+  renderHiddenInputs() {
+    const { value } = this.props.property;
+
+    if (value && value.value_cache) {
+      return (
+        <input
+          type="hidden"
+          name={this.props.cacheName}
+          value={value.value_cache}
+        />
       );
     }
   }

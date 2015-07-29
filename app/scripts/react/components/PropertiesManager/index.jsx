@@ -48,7 +48,7 @@ export default class PropertiesManager extends Component {
     }, []);
 
     const removedFiles = this.state.properties.reduce((previous, property) => {
-      if (propertyFileIDs.indexOf(property.id) != -1 && property.value === null) {
+      if (propertyFileIDs.indexOf(property.id) != -1 && property.value === null && property.originalValue !== null) {
         previous.push(
           <input
             key={property.id}
@@ -70,9 +70,9 @@ export default class PropertiesManager extends Component {
       let selected = customAttributes.filter((attr) => property.id === attr.property_id)[0];
 
       if (selected) {
-        normalizedProperties.push({...property, value: selected.value});
+        normalizedProperties.push({...property, ...selected, originalValue: selected.value});
       } else {
-        normalizedProperties.push({...property, value: null});
+        normalizedProperties.push({...property, value: null, originalValue: null});
       }
     });
 
