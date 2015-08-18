@@ -3,9 +3,9 @@ import MagicSequencer from '../../services/MagicSequencer';
 import Select from 'react-select';
 
 //TODO: i18n
-const CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Выберите характеристику',
-      ADD_PROPERTY_NAME_PLACEHOLDER = 'Добавить {label} ?',
-      PROPERTY_NAME_NOT_FOUND = 'Результаты не найдены'
+const CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Выберите характеристику';
+const ADD_PROPERTY_NAME_PLACEHOLDER = 'Добавить {label} ?';
+const PROPERTY_NAME_NOT_FOUND = 'Результаты не найдены';
 
 export default class PropertyName extends Component {
   static propTypes = {

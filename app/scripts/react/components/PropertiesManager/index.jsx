@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import uuid from 'uuid';
+import MagicSequencer from '../../services/MagicSequencer';
 import * as propertyTypes from '../../constants/propertyTypes';
 import PropertyList from './PropertyList';
 
@@ -16,6 +17,13 @@ export default class PropertiesManager extends Component {
     listItems: this.makeListItems(this.props.properties, this.props.custom_attributes),
     properties: this.normalizeProperties(this.props.properties, this.props.custom_attributes)
   }
+  componentDidMount() {
+    const biggestID = this.props.custom_attributes.reduce((biggestID, attr) => {
+      return attr.property_id > biggestID ? attr.property_id : biggestID;
+    }, 0);
+
+    MagicSequencer.setIfBigger(biggestID);
+  }
   render() {
     const listActions = {
       onPropertyCreate: this.createProperty.bind(this),
@@ -29,9 +37,8 @@ export default class PropertiesManager extends Component {
     return (
       <span>
         <PropertyList
+          {...this.state}
           {...listActions}
-          listItems={this.state.listItems}
-          properties={this.state.properties}
           availableProperties={this.getAvailableProperties.call(this)}
           canCreateListItem={!this.hasEmptyListItem.call(this)}
         />
