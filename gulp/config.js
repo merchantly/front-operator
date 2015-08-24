@@ -1,7 +1,8 @@
-var src = './app',
-    build = './build',
-    dist = './dist/operator',
-    distAssets = './dist/operator';
+const src = './app';
+const build = './build';
+const dist = './dist';
+const distAssets = './dist/operator';
+const test = './test';
 
 var vendorStyles = [
   src + '/bower_components/select2/select2.css',
@@ -56,7 +57,13 @@ module.exports = {
         dest: build + '/scripts',
         outputName: 'vendor.js',
         extensions: ['.coffee']
-      }
+      },
+      test: {
+        entries: test + '/index.js',
+        dest: build + '/scripts/',
+        outputName: 'test.js',
+        extensions: ['.jsx', '.cjsx', '.coffee']
+      },
     },
     development: {
       entries: src + '/scripts/development.js',
@@ -69,7 +76,7 @@ module.exports = {
       dest: dist,
       outputName: 'dist.js',
       extensions: ['.jsx', '.cjsx', '.coffee']
-    }
+    },
   },
   html: {
     static: {
