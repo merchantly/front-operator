@@ -64,6 +64,7 @@ require('./react/components/common/images_form_thumbs');
 
 global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer');
 global.PropertiesManager = require('./react/components/PropertiesManager');
+global.DropdownUpdateStatus = require('./react/components/DropdownUpdateStatus');
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');

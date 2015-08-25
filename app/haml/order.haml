@@ -21,6 +21,8 @@
               %span.label.label-default.inline.m-r-xs.m-t-xs> Ожидаем оплату
               %a{href: '#'}>
                 %span.label.label-default.inline.m-r-xs.m-t-xs> Не зарезерв.
+            .m-t-sm
+              %div{data: {react-class: 'DropdownUpdateStatus', react-props: '{ "options":[{"value": 1, "title": "Новый", "color_rgb": "#ececec"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
           .col-sm-5
             .title-action
               %a.btn.btn-outline.btn-default.btn-rounded{href: '#'}
@@ -206,6 +208,7 @@
                   .clearfix
                     %button.btn.btn-outline.btn-danger.pull-right Отменить заказ
                     %button.btn.btn-primary.m-r-md> Заказ выполнен
+
         +include './app/shared/_footer.haml'
 
     / Scripts
