@@ -1,6 +1,6 @@
 const src = './app';
 const build = './build';
-const dist = './dist';
+const dist = './dist/operator';
 const distAssets = './dist/operator';
 const test = './test';
 
