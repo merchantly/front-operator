@@ -1,11 +1,14 @@
-.dropdown-update-status
+.smart-select
   position: relative
 
-  .dropdown-update-status__select
+  .smart-select__select
     position: relative
     padding-right: 42px
 
-    .dropdown-update-status__select__option__rgb-box
+    .smart-select__select__value
+      margin-right: 4px
+
+    .smart-select__select__option__rgb-box
       display: inline-block
       vertical-align: middle;
       position: relative
@@ -14,11 +17,11 @@
       width: 17px
       height: 17px
 
-  .dropdown-update-status__status
+  .smart-select__status
     position: absolute
     width: 39px
-    height: 39px
     top: 0
+    bottom: 0
     right: 0
     text-align: center
     &:before
@@ -26,9 +29,9 @@
       display: inline-block
       height: 100%
       vertical-align: middle
-    .dropdown-update-status__status__icon-container
+    .smart-select__status__icon-container
       display: inline-block
       vertical-align: middle
 
-  .dropdown-update-status__error-container
+  .smart-select__error-container
     margin-top: 5px

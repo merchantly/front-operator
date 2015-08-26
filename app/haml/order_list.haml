@@ -66,6 +66,8 @@
                       %td.project-title
                         .m-t-xs.m-b-xs
                           %span.label.label-default{title: 'Самовывоз', tooltip: true} Не требуется
+                      %td.project-change-status
+                        %div.inline{data: {react-class: 'SmartSelect', react-props: '{ "options":[{"value": 1, "title": "Новый", "color_rgb": "#101010"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
                     %tr
                       %td.project-status
                         != '#1208'
@@ -87,6 +89,8 @@
                         Москва
                         .m-t-xs.m-b-xs
                           %span.label.label-default{title: 'Москва – доставка курьером (на следующий день)', tooltip: true} Ожидается старт
+                      %td.project-change-status
+                        %div.inline{data: {react-class: 'SmartSelect', react-props: '{ "options":[{"value": 1, "title": "Новый", "color_rgb": "#101010"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
                     %tr
                       %td.project-status
                         != '#1204'
@@ -109,6 +113,9 @@
                         Москва
                         .m-t-xs.m-b-xs
                           %span.label.label-default{title: 'Самовывоз', tooltip: true} Не требуется
+                      %td.project-change-status
+                        %div.inline{data: {react-class: 'SmartSelect', react-props: '{ "options":[{"value": 1, "title": "Новый", "color_rgb": "#101010"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
+
         +include './app/shared/_footer.haml'
 
     / Scripts

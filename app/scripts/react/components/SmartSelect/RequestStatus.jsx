@@ -28,8 +28,8 @@ export default function RequestStatus(props) {
 
     render() {
       return (
-        <span className="dropdown-update-status__status">
-          <div className="dropdown-update-status__status__icon-container">
+        <span className="smart-select__status">
+          <div className="smart-select__status__icon-container">
             {this.renderIcon(this.props.status)}
           </div>
         </span>
