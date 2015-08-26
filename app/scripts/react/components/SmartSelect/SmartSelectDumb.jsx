@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import RequestStatus from './RequestStatus';
+import RequestStatus from '../common/RequestStatus';
 import classNames from 'classnames';
 import { default as Parent } from './index.jsx';
 
@@ -62,7 +62,11 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
               {this.renderOptions(options, onChange)}
             </ul>
           </div>
-          <RequestStatus status={status} />
+          <span className="smart-select__status">
+            <div className="smart-select__status__icon-container">
+              <RequestStatus status={status} />
+            </div>
+          </span>
         </div>
       );
     },

@@ -1,6 +1,6 @@
 /*eslint camelcase: 0 */
 import React, { Component, PropTypes } from 'react';
-import * as constants from './constants';
+import { REQUEST_OK, REQUEST_LOADING, REQUEST_ERROR } from '../../constants/requestStatus';
 import SmartSelectDumb from './SmartSelectDumb';
 
 export default class SmartSelect extends Component {
@@ -17,8 +17,8 @@ export default class SmartSelect extends Component {
         color_rgb: PropTypes.string,
       })
     ).isRequired,
-    timeoutSuccess: PropTypes.number,
     timeoutFailure: PropTypes.number,
+    timeoutSuccess: PropTypes.number,
     updateUrl: PropTypes.string,
     value: PropTypes.oneOfType([
       PropTypes.string,
@@ -26,8 +26,8 @@ export default class SmartSelect extends Component {
     ]).isRequired,
   }
   static defaultProps = {
-    timeoutSuccess: 3,
     timeoutFailure: 3,
+    timeoutSuccess: 3,
   }
   state = {
     errorMsg: void 0,
@@ -57,7 +57,7 @@ export default class SmartSelect extends Component {
     this.setState({
       value,
       errorMsg: null,
-      requestStatus: constants.REQUEST_LOADING,
+      requestStatus: REQUEST_LOADING,
     });
 
     window.Requester.request({
@@ -69,7 +69,7 @@ export default class SmartSelect extends Component {
         this.setState({
           value,
           errorMsg: null,
-          requestStatus: constants.REQUEST_OK,
+          requestStatus: REQUEST_OK,
         });
         this.resetRequestState(timeoutSuccess);
       })
@@ -77,8 +77,9 @@ export default class SmartSelect extends Component {
         this.setState({
           value: oldValue,
           errorMsg: jq.responseText,
-          requestStatus: constants.REQUEST_ERROR,
+          requestStatus: REQUEST_ERROR,
         });
+        //TODO: create common error sink
         window.alert(jq.responseText);
         this.resetRequestState(timeoutFailure);
       });
@@ -89,7 +90,7 @@ export default class SmartSelect extends Component {
 
     return (
       <SmartSelectDumb
-        disabled={this.state.requestStatus === constants.REQUEST_LOADING}
+        disabled={this.state.requestStatus === REQUEST_LOADING}
         dropup={dropup}
         fieldName={fieldName}
         onChange={this.onChange.bind(this)}
