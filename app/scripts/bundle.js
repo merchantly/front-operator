@@ -65,6 +65,7 @@ require('./react/components/common/images_form_thumbs');
 global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer');
 global.PropertiesManager = require('./react/components/PropertiesManager');
 global.SmartSelect = require('./react/components/SmartSelect');
+global.SmartCheckbox = require('./react/components/SmartCheckbox');
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');
