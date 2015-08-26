@@ -30,6 +30,7 @@ export default class SmartSelect extends Component {
     timeoutSuccess: 3,
   }
   state = {
+    dropup: false,
     errorMsg: void 0,
     requestStatus: void 0,
     value: void 0,
@@ -84,19 +85,38 @@ export default class SmartSelect extends Component {
         this.resetRequestState(timeoutFailure);
       });
   }
+
+  onOpen() {
+    const dumb = this.refs.dumb;
+    const menu = dumb.refs.menu.getDOMNode();
+    if (!(menu instanceof HTMLElement)) {
+      return;
+    } 
+    
+    const menuRect = menu.getBoundingClientRect();
+    this.setState({ dropup: (menuRect.bottom > window.innerHeight) });
+  }
+
+  onClose() {
+    this.setState({ dropup: false });
+  }
   
   render() {
-    const { fieldName, options, dropup } = this.props;
+    const { fieldName, options } = this.props;
+    const { dropup, requestStatus: status, value } = this.state;
 
     return (
       <SmartSelectDumb
-        disabled={this.state.requestStatus === REQUEST_LOADING}
+        disabled={status === REQUEST_LOADING}
         dropup={dropup}
         fieldName={fieldName}
         onChange={this.onChange.bind(this)}
+        onClose={this.onClose.bind(this)}
+        onOpen={this.onOpen.bind(this)}
         options={options}
-        status={this.state.requestStatus}
-        value={this.state.value}
+        ref="dumb"
+        status={status}
+        value={value}
       />
     );
   }
