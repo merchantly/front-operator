@@ -1,3 +1,4 @@
+/*global $ */
 import React, { PropTypes } from 'react';
 import RequestStatus from '../common/RequestStatus';
 import classNames from 'classnames';
@@ -8,7 +9,9 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
     disabled: PropTypes.bool.isRequired,
     dropup: PropTypes.bool,
     fieldName: Parent.propTypes.fieldName,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onOpen: PropTypes.func.isRequired,
     options: Parent.propTypes.options,
     status: PropTypes.string,
     value: Parent.propTypes.value,
@@ -16,6 +19,15 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
 
   return ({
     props,
+
+    componentDidMount() {
+      const dropdown = this.refs.dropdown.getDOMNode();
+      if (!(dropdown instanceof HTMLElement)) {
+        return;
+      }
+      $(dropdown).on('shown.bs.dropdown', this.props.onOpen);
+      $(dropdown).on('hidden.bs.dropdown', this.props.onClose);
+    },
 
     renderOptions(options, onChange) {
       return options.map(({ color_rgb, title, value }) =>
@@ -52,13 +64,14 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
     render() {
       const { disabled, dropup, onChange, options, status, value } = this.props;
       const selected = options.filter((el) => el.value === value);
-      const cx = classNames('btn-group', 'smart-select__select', { dropup });
+      const mainCx = classNames('smart-select', { dropup });
+      const buttonCx = classNames('btn-group', 'smart-select__select');
 
       return (
-        <div className="smart-select">
-          <div className={cx}>
+        <div className={mainCx}>
+          <div className={buttonCx} ref="dropdown">
             {this.renderValue(selected[0], disabled)}
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu" ref="menu">
               {this.renderOptions(options, onChange)}
             </ul>
           </div>
