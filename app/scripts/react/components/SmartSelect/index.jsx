@@ -1,9 +1,9 @@
 /*eslint camelcase: 0 */
 import React, { Component, PropTypes } from 'react';
 import * as constants from './constants';
-import DropdownUpdateStatusDumb from './DropdownUpdateStatusDumb';
+import SmartSelectDumb from './SmartSelectDumb';
 
-export default class DropdownUpdateStatus extends Component {
+export default class SmartSelect extends Component {
   static propTypes = {
     fieldName: PropTypes.string.isRequired,
     method: PropTypes.string,
@@ -44,7 +44,7 @@ export default class DropdownUpdateStatus extends Component {
     this.setState({
       value,
       errorMsg: null,
-      requestStatus: constants.REQUEST_LOADING
+      requestStatus: constants.REQUEST_LOADING,
     });
 
     window.Requester.request({
@@ -52,34 +52,36 @@ export default class DropdownUpdateStatus extends Component {
       url: updateUrl,
       data: { [fieldName]: value },
     })
-      .done((data) =>
+      .done(() =>
         this.setState({
-          value: data[fieldName],
+          value,
           errorMsg: null,
-          requestStatus: constants.REQUEST_OK
+          requestStatus: constants.REQUEST_OK,
         })
       )
-      .fail((jq, statusText) =>
+      .fail((jq) => {
         this.setState({
           value: oldValue,
-          errorMsg: statusText,
-          requestStatus: constants.REQUEST_ERROR
-        })
-      )
+          errorMsg: jq.responseText,
+          requestStatus: constants.REQUEST_ERROR,
+        });
+        window.alert(jq.responseText);
+      })
       .always(() =>
         this.errTimeoutId = window.setTimeout(() => this.setState({
           errorMsg: null,
-          requestStatus: null
+          requestStatus: null,
         }), 10 * 1000)
       );
   }
   
   render() {
-    const { fieldName, method, options, updateUrl } = this.props;
+    const { fieldName, options, dropup } = this.props;
 
     return (
-      <DropdownUpdateStatusDumb
-        errorMsg={this.state.errorMsg}
+      <SmartSelectDumb
+        disabled={this.state.requestStatus === constants.REQUEST_LOADING}
+        dropup={dropup}
         fieldName={fieldName}
         onChange={this.onChange.bind(this)}
         options={options}
