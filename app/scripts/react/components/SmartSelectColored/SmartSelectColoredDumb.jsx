@@ -6,6 +6,7 @@ import { default as Parent } from './index.jsx';
 
 const SmartSelectDumb = function SmartSelectDumb(props) {
   SmartSelectDumb.propTypes = {
+    colored: Parent.propTypes.colored,
     disabled: PropTypes.bool.isRequired,
     dropup: PropTypes.bool,
     fieldName: Parent.propTypes.fieldName,
@@ -53,10 +54,12 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
           onClick={() => onChange(value)}
         >
           <a href="#">
+            { this.props.colored &&
             <span
               className="smart-select__select__option__rgb-box"
               style={{ backgroundColor: color_rgb }}
             />
+            }
             {title}
           </a>
         </li>
@@ -69,7 +72,7 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
         <button
           className={cx}
           data-toggle="dropdown"
-          style={{ backgroundColor: color_rgb }}
+          style={ this.props.colored ? { backgroundColor: color_rgb } : {}}
           type="button"
         >
           <span className="smart-select__select__value">{title}</span>
