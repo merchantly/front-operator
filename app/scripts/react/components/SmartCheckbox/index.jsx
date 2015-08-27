@@ -4,19 +4,17 @@ import SmartCheckboxDumb from './SmartCheckboxDumb';
 
 export default class SmartCheckbox extends Component {
   static propTypes = {
-    hint: PropTypes.string,
     fieldName: PropTypes.string.isRequired,
+    hint: PropTypes.string,
     method: PropTypes.string,
     title: PropTypes.string,
     timeoutFailure: PropTypes.number,
-    timeoutSuccess: PropTypes.number,
     updateUrl: PropTypes.string.isRequired,
     value: PropTypes.bool.isRequired,
   }
   static defaultProps = {
     method: 'PUT',
     timeoutFailure: 3,
-    timeoutSuccess: 3,
   }
   state = {
     requestStatus: void 0,
@@ -39,7 +37,7 @@ export default class SmartCheckbox extends Component {
       return;
     }
 
-    const { fieldName, method, timeoutFailure, timeoutSuccess, updateUrl } = this.props;
+    const { fieldName, method, timeoutFailure, updateUrl } = this.props;
     const oldValue = this.state.value;
     const value = !oldValue;
 
@@ -59,9 +57,8 @@ export default class SmartCheckbox extends Component {
       .done(() => {
         this.setState({
           value,
-          requestStatus: REQUEST_OK,
+          requestStatus: null,
         });
-        this.resetRequestState(timeoutSuccess);
       })
       .fail((jq) => {
         this.setState({
