@@ -21,12 +21,29 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
     props,
 
     componentDidMount() {
-      const dropdown = this.refs.dropdown.getDOMNode();
-      if (!(dropdown instanceof HTMLElement)) {
+      const dropdown = this.getDropdownEl();
+      if (!dropdown) {
         return;
       }
+
       $(dropdown).on('shown.bs.dropdown', this.props.onOpen);
       $(dropdown).on('hidden.bs.dropdown', this.props.onClose);
+    },
+
+    componentWillUnmount() {
+      const dropdown = this.getDropdownEl();
+      if (!dropdown) {
+        return;
+      }
+      
+      $(dropdown).off();
+    },
+
+    getDropdownEl() {
+      const dropdown = this.refs.dropdown.getDOMNode();
+      return (dropdown instanceof HTMLElement)
+        ? dropdown
+        : false;
     },
 
     renderOptions(options, onChange) {
@@ -64,12 +81,12 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
     render() {
       const { disabled, dropup, onChange, options, status, value } = this.props;
       const selected = options.filter((el) => el.value === value);
-      const mainCx = classNames('smart-select', { dropup });
-      const buttonCx = classNames('btn-group', 'smart-select__select');
+      const mainClasses = classNames('smart-select', { dropup });
+      const buttonClasses = classNames('btn-group', 'smart-select__select');
 
       return (
-        <div className={mainCx}>
-          <div className={buttonCx} ref="dropdown">
+        <div className={mainClasses}>
+          <div className={buttonClasses} ref="dropdown">
             {this.renderValue(selected[0], disabled)}
             <ul className="dropdown-menu" ref="menu">
               {this.renderOptions(options, onChange)}
