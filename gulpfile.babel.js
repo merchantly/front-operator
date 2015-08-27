@@ -9,6 +9,7 @@ gulp.task('dist', ['[Shared] Test with build'], (cb) => {
   runSequence(
     ['[Shared] Clean'],
     ['[Production] Scripts', '[Production] Styles', '[Production] SystemStyles', '[Production] Images'],
+    '[Production] Test',
   cb);
 });
 

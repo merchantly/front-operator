@@ -64,6 +64,12 @@ module.exports = {
         outputName: 'test.js',
         extensions: ['.jsx', '.cjsx', '.coffee']
       },
+      testDist: {
+        entries: test + '/dist.js',
+        dest: build + '/scripts/',
+        outputName: 'testDist.js',
+        extensions: ['.jsx', '.cjsx', '.coffee'],
+      },
     },
     development: {
       entries: src + '/scripts/development.js',

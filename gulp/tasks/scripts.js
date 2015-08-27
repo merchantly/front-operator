@@ -112,49 +112,55 @@ gulp.task('[Static] Vendor scripts', (cb) => {
     });
 });
 
-gulp.task('[Static] Test scripts', () => {
-  let testBundler = browserify({
-    cache: {}, packageCache: {},
-    entries: config.static.test.entries,
-    extensions: config.static.test.extensions
+function testFactory(taskName, config) {
+  return gulp.task(taskName, () => {
+    let testBundler = browserify({
+      cache: {}, packageCache: {},
+      entries: config.entries,
+      extensions: config.extensions,
+    });
+
+    Object.keys(dependencies).forEach((dep) => {
+      testBundler.external(dep);
+    });
+
+    function rebundle() {
+      bundleLogger.start(config.outputName);
+
+      return testBundler.bundle()
+        .on('error', handleErrors)
+        .pipe(source(config.outputName))
+        .pipe(gulp.dest(config.dest))
+        .on('end', () => {
+          bundleLogger.end(config.outputName);
+        });
+    };
+
+    if (global.isWatching) {
+      testBundler = watchify(
+        testBundler
+          .transform('coffee-reactify')
+          .transform('babelify', {
+            stage: 0,
+            ignore: /(node_modules|bower_components)/,
+          })
+      );
+      testBundler.on('update', rebundle);
+    } else {
+      testBundler
+        .transform('coffee-reactify')
+        .transform('babelify', {
+          stage: 0,
+          ignore: /(node_modules|bower_components)/,
+        });
+    }
+
+    return rebundle();
   });
+}
 
-  Object.keys(dependencies).forEach((dep) => {
-    testBundler.external(dep);
-  });
-
-  function rebundle() {
-    bundleLogger.start(config.static.test.outputName);
-
-    return testBundler.bundle()
-      .on('error', handleErrors)
-      .pipe(source(config.static.test.outputName))
-      .pipe(gulp.dest(config.static.test.dest))
-      .on('end', () => {
-        bundleLogger.end(config.static.test.outputName);
-      });
-  };
-
-  if (global.isWatching) {
-    testBundler = watchify(testBundler
-      .transform('coffee-reactify')
-      .transform('babelify', {
-        stage: 0,
-        ignore: /(node_modules|bower_components)/
-      })
-    );
-    testBundler.on('update', rebundle);
-  } else {
-    testBundler
-      .transform('coffee-reactify')
-      .transform('babelify', {
-        stage: 0,
-        ignore: /(node_modules|bower_components)/
-      });
-  }
-
-  return rebundle();
-});
+testFactory('[Static] Test scripts', config.static.test);
+testFactory('[Production] Test scripts', config.static.testDist);
 
 gulp.task('[Development] Scripts', () => {
   let bundler = browserify({

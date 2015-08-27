@@ -1,3 +1,3 @@
 export const REQUEST_LOADING = 'REQUEST_LOADING';
 export const REQUEST_OK = 'REQUEST_OK';
-export const REQUEST_ERROR = 'REOUEST_ERROR';
+export const REQUEST_ERROR = 'REQUEST_ERROR';
