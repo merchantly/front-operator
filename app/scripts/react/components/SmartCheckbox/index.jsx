@@ -5,6 +5,7 @@ import SmartCheckboxDumb from './SmartCheckboxDumb';
 export default class SmartCheckbox extends Component {
   static propTypes = {
     hint: PropTypes.string,
+    fieldName: PropTypes.string.isRequired,
     method: PropTypes.string,
     title: PropTypes.string,
     timeoutFailure: PropTypes.number,
@@ -38,7 +39,7 @@ export default class SmartCheckbox extends Component {
       return;
     }
 
-    const { method, timeoutFailure, timeoutSuccess, updateUrl } = this.props;
+    const { fieldName, method, timeoutFailure, timeoutSuccess, updateUrl } = this.props;
     const oldValue = this.state.value;
     const value = !oldValue;
 
@@ -53,6 +54,7 @@ export default class SmartCheckbox extends Component {
     window.Requester.request({
       method,
       url: updateUrl,
+      data: { [fieldName]: value ? 1 : 0 },
     })
       .done(() => {
         this.setState({
