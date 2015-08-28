@@ -37,7 +37,7 @@ const dependencies = {
   'pace': './app/bower_components/pace/pace',
   'select2': './app/bower_components/select2/select2',
   'toastr': './app/bower_components/toastr/toastr',
-  'jstree': './app/bower_components/jstree/dist/jstree.min',
+  'jstree': './app/bower_components/jstree/dist/jstree',
   'deep-diff': './node_modules/deep-diff',
 };
 const nonProductionDependencies = [

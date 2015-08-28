@@ -5,9 +5,11 @@ import expect from 'gulp-expect-file';
 gulp.task('[Production] Test', ['[Production] Test file presence', '[Production] Test js']);
 
 gulp.task('[Production] Test js', ['[Production] Test scripts'], () => (
-  gulp.src('test/dist.html').pipe(mochaPhantomjs({
-    reporter: 'spec',
-  }))
+  gulp.src('test/dist.html')
+    .pipe(mochaPhantomjs({
+      reporter: 'spec',
+    }))
+    .on('error', () => process.exit(1))
 ));
 
 gulp.task('[Production] Test file presence', () => (
