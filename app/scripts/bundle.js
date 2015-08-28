@@ -67,6 +67,7 @@ global.PropertiesManager = require('./react/components/PropertiesManager');
 global.SmartSelect = require('./react/components/SmartSelect');
 global.SmartSelectColored = require('./react/components/SmartSelectColored');
 global.SmartCheckbox = require('./react/components/SmartCheckbox');
+global.CategoryTreeSelector = require('./react/components/CategoryTreeSelector');
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');

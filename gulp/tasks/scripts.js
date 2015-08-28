@@ -38,6 +38,7 @@ const dependencies = {
   'select2': './app/bower_components/select2/select2',
   'toastr': './app/bower_components/toastr/toastr',
   'jstree': './app/bower_components/jstree/dist/jstree.min',
+  'deep-diff': './node_modules/deep-diff',
 };
 const nonProductionDependencies = [
   'reactUjs'
