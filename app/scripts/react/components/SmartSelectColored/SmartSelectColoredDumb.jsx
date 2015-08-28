@@ -4,8 +4,8 @@ import RequestStatus from '../common/RequestStatus';
 import classNames from 'classnames';
 import { default as Parent } from './index.jsx';
 
-const SmartSelectDumb = function SmartSelectDumb(props) {
-  SmartSelectDumb.propTypes = {
+const SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
+  SmartSelectColoredDumb.propTypes = {
     colored: Parent.propTypes.colored,
     disabled: PropTypes.bool.isRequired,
     dropup: PropTypes.bool,
@@ -52,11 +52,13 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
         <li
           key={value}
           onClick={() => onChange(value)}
+          ref={`option-${title}`}
         >
           <a href="#">
             { this.props.colored &&
             <span
               className="smart-select__select__option__rgb-box"
+              ref={`rgb-box-${title}`}
               style={{ backgroundColor: color_rgb }}
             />
             }
@@ -72,6 +74,7 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
         <button
           className={cx}
           data-toggle="dropdown"
+          ref="button"
           style={ this.props.colored ? { backgroundColor: color_rgb } : {}}
           type="button"
         >
@@ -106,4 +109,4 @@ const SmartSelectDumb = function SmartSelectDumb(props) {
   });
 };
 
-export default SmartSelectDumb;
+export default SmartSelectColoredDumb;

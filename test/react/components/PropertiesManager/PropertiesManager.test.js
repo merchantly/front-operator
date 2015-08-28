@@ -1,7 +1,8 @@
 import React, { addons, PropTypes } from 'react';
 import sinon from 'sinon';
-import { expect } from 'chai';
 import PropertiesManager from '../../../../app/scripts/react/components/PropertiesManager';
+import { expect } from 'chai';
+
 const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] PropertiesManager', () => {

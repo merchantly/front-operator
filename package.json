@@ -4,7 +4,11 @@
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
-    "url": "git@github.com:BrandyMint/kiosk-operator-static.git"
+    "url": "git@github.com:BrandyMint/kiosk-operator-static-v2.git"
+  },
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp '[Shared] Test with build'"
   },
   "dependencies": {
     "classnames": "^2.1.1",
@@ -33,6 +37,7 @@
     "gulp-autoprefixer": "^2.2.0",
     "gulp-concat-css": "^2.2.0",
     "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-expect-file": "0.0.7",
     "gulp-file-include": "^0.9.0",
     "gulp-flatten": "0.0.4",
     "gulp-gh-pages": "^0.5.1",
