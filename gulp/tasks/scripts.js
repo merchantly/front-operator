@@ -43,7 +43,7 @@ const nonProductionDependencies = [
   'reactUjs'
 ];
 
-gulp.task('[Static] Client scripts', () => {
+gulp.task('[Static] Client scripts', ['[Shared] Eslint'], () => {
   let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.static.client.entries,
@@ -162,7 +162,7 @@ function testFactory(taskName, config) {
 testFactory('[Static] Test scripts', config.static.test);
 testFactory('[Production] Test scripts', config.static.testDist);
 
-gulp.task('[Development] Scripts', () => {
+gulp.task('[Development] Scripts', ['[Shared] Eslint'], () => {
   let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.development.entries,
@@ -192,7 +192,7 @@ gulp.task('[Development] Scripts', () => {
     });
 });
 
-gulp.task('[Production] Scripts', () => {
+gulp.task('[Production] Scripts', ['[Shared] Eslint'], () => {
   let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.production.entries,

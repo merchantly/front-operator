@@ -3,6 +3,7 @@ const build = './build';
 const dist = './dist/operator';
 const distAssets = './dist/operator';
 const test = './test';
+const srcScripts = src + '/scripts';
 
 var vendorStyles = [
   src + '/bower_components/select2/select2.css',
@@ -45,9 +46,10 @@ module.exports = {
     }
   },
   scripts: {
+    srcScripts: srcScripts,
     static: {
       client: {
-        entries: src + '/scripts/static.js',
+        entries: srcScripts + '/static.js',
         dest: build + '/scripts',
         outputName: 'client.js',
         extensions: ['.jsx', '.cjsx', '.coffee']
@@ -72,13 +74,13 @@ module.exports = {
       },
     },
     development: {
-      entries: src + '/scripts/development.js',
+      entries: srcScripts + '/development.js',
       dest: dist,
       outputName: 'development.js',
       extensions: ['.jsx', '.cjsx', '.coffee']
     },
     production: {
-      entries: src + '/scripts/production.js',
+      entries: srcScripts + '/production.js',
       dest: dist,
       outputName: 'dist.js',
       extensions: ['.jsx', '.cjsx', '.coffee']
