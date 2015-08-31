@@ -66,12 +66,7 @@
                           %label.m-b-none.m-l-xs.font-normal{for: 'sale'} Включить распродажу
                   .form-group
                     %label.control-label Категория
-                    %select.form-control{multiple: 'true', ks-select2: true}
-                      %option{value: 'Молоко', selected: true} Молоко
-                      %option{value: 'Морепродукты'} Морепродукты
-                      %option{value: 'Мопеды'} Мопеды
-                      %option{value: 'Брилианты'} Брилианты
-                    %p.help-block != 'Категории создаются в <a href="#">специальном разделе</a>'
+                    %div{data: {react-class: "CategoryTreeSelector", react-props: '{"data": [{"id": 1, "text": "first category", "children": [{"id": 4, "text": "nested fourth category"}, {"id": 5, "text": "nested fifth category"}]}, {"id": 2, "text": "second category"}, {"id": 3, "text": "third category"}], "categories_ids": [1, 2, 5]}'}}
                   .row
                     .col-md-8.col-lg-9
                       .form-group
