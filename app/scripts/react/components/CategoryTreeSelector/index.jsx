@@ -9,10 +9,14 @@ export default class CategoryTreeSelector extends Component {
   static propTypes = {
     categories_ids: PropTypes.arrayOf(PropTypes.number),
     data: PropTypes.array,
+    fieldName: PropTypes.string,
+    modalTitle: PropTypes.string,
   }
   static defaultProps = {
     categories_id: [],
     data: [],
+    fieldName: 'categories_ids[]',
+    modalTitle: 'Выбор категорий',
   }
   state = {
     modalUuid: void 0,
@@ -34,14 +38,17 @@ export default class CategoryTreeSelector extends Component {
       if (el.children instanceof Array && el.children.length) {
         return (selected.indexOf(el.id) > -1)
           ? [ ...acc, el, ...this.getSelectedCategories(el.children, selected) ]
-          : this.getSelectedCategories(el.children, selected);
+          : [ ...acc, ...this.getSelectedCategories(el.children, selected) ];
       } else {
         return (selected.indexOf(el.id) > -1) ? [ ...acc, el ] : acc;
       }
     }, []);
   }
-  onChangeTree(selected) {
+  onChangeSelection(selected) {
     this.setState({ selectedUncommited: selected });
+  }
+  onChangeTree(tree) {
+    return tree;
   }
   onRemove(categoryId) {
     const filteredCategories = this.state.selectedCategories.filter((id) => id !== categoryId);
@@ -59,28 +66,46 @@ export default class CategoryTreeSelector extends Component {
 
     this.setState({ selectedCategories: selectedUncommited });
   }
+
   render() {
     const { categories, modalUuid, selectedCategories, selectedUncommited } = this.state;
+    const { fieldName, modalTitle } = this.props;
+
+    const jsTreeConfig = {
+      core: {
+        animation: 0,
+        data: categories,
+        multiple: true,
+      },
+      checkbox: {
+        cascade: 'up',
+        three_state: false,
+        visible: false,
+      },
+      plugins: ['checkbox'],
+    };
     
     return (
       <div>
         <SelectedCategories
           categories={this.getSelectedCategories(categories, selectedCategories)}
+          fieldName={fieldName}
           modalUuid={modalUuid}
           onRemove={this.onRemove.bind(this)}
         />
         <Modal
-          ref="modal"
+          okClosesModal={true}
           onClose={this.onModalClose.bind(this)}
           onOk={this.onModalOk.bind(this)}
-          okClosesModal={true}
+          ref="modal"
           textButtonCancel={null}
-          title="Выбор категорий"
+          title={modalTitle}
           uuid={modalUuid}
         >
           <JsTree
-            data={{ core: { multiple: true, data: categories } }}
-            onChange={this.onChangeTree.bind(this)}
+            data={jsTreeConfig}
+            onChangeSelection={this.onChangeSelection.bind(this)}
+            onChangeTree={this.onChangeTree.bind(this)}
             selected={selectedUncommited}
           />
         </Modal>

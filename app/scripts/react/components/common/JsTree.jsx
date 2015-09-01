@@ -10,7 +10,11 @@ export default function JsTree(props) {
         data: PropTypes.array.isRequired,
       }).isRequired,
     }).isRequired,
-    onChange: PropTypes.func.isRequired,
+    nodeCreate: PropTypes.bool,
+    nodeDelete: PropTypes.bool,
+    nodeRename: PropTypes.bool,
+    onChangeSelection: PropTypes.func.isRequired,
+    onChangeTree: PropTypes.func,
     selected: PropTypes.array,
   };
 
@@ -29,7 +33,15 @@ export default function JsTree(props) {
     },
 
     componentDidMount() {
-      const { data, selected } = this.props;
+      const { data: rawData, selected } = this.props;
+      //TODO install deepmerge when things get more complicated
+      const data = {
+        ...rawData,
+        core: {
+          ...rawData.core,
+          check_callback: this.checkCb.bind(this),
+        },
+      };
       const container = findDOMNode(this.refs.container);
 
       if (!(container instanceof HTMLElement)) {
@@ -42,27 +54,54 @@ export default function JsTree(props) {
       this.$container.on('changed.jstree', this.onChange.bind(this));
     },
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
       const { data, selected } = this.props;
+
+      if (diff(this.props.data, prevProps.data)) {
+        this.$container.jstree(true).settings.core = data.core;
+        this.$container.jstree(true).refresh();
+      }
       
-      this.$container.jstree(true).settings.core = data.core;
       if (selected) {
         this.$container.jstree(true).deselect_all(true);
         if (selected.length) {
           this.$container.jstree(true).select_node(selected, { suppress_event: true });
         }
       }
-      this.$container.jstree(true).refresh();
     },
 
     componentWillUnmount() {
       this.$container.off();
     },
 
+    checkCb(operation, node) {
+      const { nodeCreate, nodeDelete, nodeRename } = this.props;
+
+      return (
+        (nodeCreate && operation === 'create_node')
+          || (nodeDelete && operation === 'delete_node')
+          || (nodeRename && operation === 'rename_node')
+      );
+    },
+
     onChange(ev, data) {
       if (data.action === 'select_node' || data.action === 'deselect_node') {
-        this.props.onChange(data.selected.map((el) => parseInt(el, 10)));
+        this.props.onChangeSelection(data.selected.map((el) => parseInt(el, 10)));
+      } else if (['create_node', 'rename_node', 'delete_node'].indexOf(data.action) > -1) {
+        this.props.onChangeTree(data.node);
       }
+    },
+
+    onNodeCreate() {
+
+    },
+
+    onNodeDelete() {
+      
+    },
+
+    onNodeRename() {
+      
     },
 
     setSelectedState(categories, selected) {
@@ -97,8 +136,41 @@ export default function JsTree(props) {
     },
 
     render() {
+      const { nodeCreate, nodeDelete, nodeRename } = this.props;
+      
       return (
-        <div ref="container" />
+        <div>
+          <div className="react-jstree__buttons">
+            { nodeCreate
+             && <button
+                  className="btn btn-primary btn-sm"
+                  onClick={this.onNodeCreate.bind(this)}
+                  type="button"
+                >
+                  {'Создать'}
+                </button>
+            }
+            { nodeRename
+             && <button
+                  className="btn btn-warning btn-sm"
+                  onClick={this.onNodeRename.bind(this)}
+                  type="button"
+                >
+                  {'Переименовать'}
+                </button>
+            }
+            { nodeDelete
+             && <button
+                  className="btn btn-danger btn-sm"
+                  onClick={this.onNodeDelete.bind(this)}
+                  type="button"
+                >
+                  {'Удалить'}
+                </button>
+            }
+          </div>
+          <div ref="container" />
+        </div>
       );
     },
   });

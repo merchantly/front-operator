@@ -5,6 +5,7 @@ import SelectedCategoryItem from './SelectedCategoryItem';
 export default function SelectedCategories(props) {
   SelectedCategories.propTypes = {
     categories: PropTypes.array.isRequired,
+    fieldName: PropTypes.string.isRequired,
     modalUuid: PropTypes.string.isRequired,
     onRemove: PropTypes.func.isRequired,
   };
@@ -17,7 +18,7 @@ export default function SelectedCategories(props) {
     },
 
     render() {
-      const { categories, modalUuid } = this.props;
+      const { categories, fieldName, modalUuid } = this.props;
 
       return (
         <div>
@@ -38,13 +39,17 @@ export default function SelectedCategories(props) {
             </li>
           </ul>
           {
-            categories.map(({ id }, idx) => (
-              <HiddenInput
-                key={`category-input-${idx}`}
-                name={'categories_ids[]'}
-                value={id}
-              />
-            ))
+            categories.length
+              ? categories.map(({ id }, idx) => (
+                  <HiddenInput
+                    key={`category-input-${idx}`}
+                    name={fieldName}
+                    value={id}
+                  />))
+              : <HiddenInput
+                  name={fieldName}
+                  value={null}
+                />
           }
         </div>
       );

@@ -26,7 +26,7 @@ export default class Modal extends Component {
     const { children, okClosesModal, title, textButtonCancel, textButtonOk, uuid } = this.props;
 
     return (
-      <div className="modal fade" id={uuid}>
+      <div className="modal" id={uuid} role="dialog" tabIndex="-1">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
