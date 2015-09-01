@@ -4,6 +4,7 @@ import watchify from 'watchify';
 import source from 'vinyl-source-stream';
 import uglify from 'gulp-uglify';
 import streamify from 'gulp-streamify';
+import rename from 'gulp-rename';
 import bundleLogger from '../util/bundleLogger';
 import handleErrors from '../util/handleErrors';
 import { scripts as config } from '../config';
@@ -194,6 +195,7 @@ gulp.task('[Development] Scripts', ['[Shared] Eslint'], () => {
 });
 
 gulp.task('[Production] Scripts', ['[Shared] Eslint'], () => {
+  const unminifiedName = config.production.unminifiedName;
   let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.production.entries,
@@ -206,7 +208,7 @@ gulp.task('[Production] Scripts', ['[Shared] Eslint'], () => {
     }
   });
 
-  bundleLogger.start(config.production.outputName);
+  bundleLogger.start(unminifiedName);
 
   return bundler
     .transform('babelify', {
@@ -216,10 +218,19 @@ gulp.task('[Production] Scripts', ['[Shared] Eslint'], () => {
     .transform('coffee-reactify')
     .bundle()
     .on('error', handleErrors)
-    .pipe(source(config.production.outputName))
-    .pipe(streamify(uglify()))
+    .pipe(source(unminifiedName))
+    //.pipe(streamify(uglify()))
     .pipe(gulp.dest(config.production.dest))
     .on('end', () => {
-      bundleLogger.end(config.production.outputName);
+      bundleLogger.end(unminifiedName);
     });
+});
+
+gulp.task('[Production] Minified scripts', ['[Production] Scripts'], () => {
+  const { dest, outputName, unminifiedName } = config.production;
+
+  return gulp.src(`${dest}/${unminifiedName}`)
+    .pipe(streamify(uglify()))
+    .pipe(rename(outputName))
+    .pipe(gulp.dest(dest));
 });
