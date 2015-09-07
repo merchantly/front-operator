@@ -28,4 +28,5 @@ gulp.task('[Production] Test file presence', () => (
         'dist/operator/system.css',
       ]
     ))
+    .on('error', () => process.exit(1))
 ));

@@ -83,6 +83,7 @@ module.exports = {
       entries: srcScripts + '/production.js',
       dest: dist,
       outputName: 'dist.js',
+      unminifiedName: 'dist_develop.js',
       extensions: ['.jsx', '.cjsx', '.coffee']
     },
   },

@@ -6,7 +6,7 @@ export default function HiddenInput(props) {
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
-    ]).isRequired,
+    ]),
   };
 
   return ({
