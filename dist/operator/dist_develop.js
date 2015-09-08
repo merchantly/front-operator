@@ -1579,6 +1579,8 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -1654,6 +1656,13 @@ var CategoryTreeSelector = (function (_Component) {
       }, []);
     }
   }, {
+    key: 'unfoldRootCategories',
+    value: function unfoldRootCategories(categories) {
+      return categories.map(function (el) {
+        return el.children ? _extends({}, el, { state: _extends({}, el.state, { opened: true }) }) : el;
+      });
+    }
+  }, {
     key: 'onChangeSelection',
     value: function onChangeSelection(selected) {
       this.setState({ selectedUncommited: selected });
@@ -1702,7 +1711,7 @@ var CategoryTreeSelector = (function (_Component) {
       var jsTreeConfig = {
         core: {
           animation: 0,
-          data: categories,
+          data: this.unfoldRootCategories(categories),
           multiple: true
         },
         checkbox: {
@@ -4097,7 +4106,7 @@ var _react2 = _interopRequireDefault(_react);
 function HiddenInput(props) {
   HiddenInput.propTypes = {
     name: _react.PropTypes.string.isRequired,
-    value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]).isRequired
+    value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number])
   };
 
   return {
@@ -4323,16 +4332,16 @@ function JsTree(props) {
       return categories.map(function (el) {
         if (el.children instanceof Array && el.children.length) {
           return _extends({}, el, {
-            state: {
+            state: _extends({}, el.state, {
               selected: selected.indexOf(el.id) > -1
-            },
+            }),
             children: _this.setSelectedState(el.children, selected)
           });
         } else {
           return _extends({}, el, {
-            state: {
+            state: _extends({}, el.state, {
               selected: selected.indexOf(el.id) > -1
-            }
+            })
           });
         }
       });

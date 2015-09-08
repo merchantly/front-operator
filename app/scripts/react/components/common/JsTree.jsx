@@ -110,6 +110,7 @@ export default function JsTree(props) {
           return {
             ...el,
             state: {
+              ...el.state,
               selected: selected.indexOf(el.id) > -1,
             },
             children: this.setSelectedState(el.children, selected),
@@ -118,6 +119,7 @@ export default function JsTree(props) {
           return {
             ...el,  
             state: {
+              ...el.state,
               selected: selected.indexOf(el.id) > -1,
             },
           };
