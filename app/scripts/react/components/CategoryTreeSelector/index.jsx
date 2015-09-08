@@ -44,6 +44,13 @@ export default class CategoryTreeSelector extends Component {
       }
     }, []);
   }
+  unfoldRootCategories(categories) {
+    return categories.map((el) => (
+      el.children
+        ? { ...el, state: { ...el.state, opened: true } }
+        : el
+    ));
+  }
   onChangeSelection(selected) {
     this.setState({ selectedUncommited: selected });
   }
@@ -74,7 +81,7 @@ export default class CategoryTreeSelector extends Component {
     const jsTreeConfig = {
       core: {
         animation: 0,
-        data: categories,
+        data: this.unfoldRootCategories(categories),
         multiple: true,
       },
       checkbox: {
