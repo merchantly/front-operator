@@ -11,7 +11,7 @@ export default class PropertiesManager extends Component {
   }
   static defaultProps = {
     properties: [],
-    custom_attributes: []
+    custom_attributes: [],
   }
   state = {
     listItems: this.makeListItems(this.props.properties, this.props.custom_attributes),
@@ -42,9 +42,18 @@ export default class PropertiesManager extends Component {
           availableProperties={this.getAvailableProperties.call(this)}
           canCreateListItem={!this.hasEmptyListItem.call(this)}
         />
-        {this.renderRemovedFiles.call(this)}
+        {this.renderHiddenInputs.call(this)}
       </span>
     );
+  }
+  renderHiddenInputs() {
+    const { listItems } = this.state;
+
+    if (listItems.length === 0 || listItems[0].propertyID === null) {
+      return <input type="hidden" name="product[custom_attributes][]" value="" />
+    } else {
+      return this.renderRemovedFiles();
+    }
   }
   renderRemovedFiles() {
     const propertyFileIDs = this.props.properties.reduce((previous, property) => {
