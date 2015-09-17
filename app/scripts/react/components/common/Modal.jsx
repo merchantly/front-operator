@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, findDOMNode, PropTypes } from 'react';
 
 export default class Modal extends Component {
   static propTypes = {
     children: PropTypes.node,
+    fitWindow: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     onOk: PropTypes.func.isRequired,
     okClosesModal: PropTypes.bool,
@@ -27,42 +28,44 @@ export default class Modal extends Component {
 
     return (
       <div className="modal" id={uuid} role="dialog" tabIndex="-1">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                aria-label={textButtonCancel}
-                className="close"
-                data-dismiss="modal"
-                onClick={this.onClose.bind(this)}
-                type="button"
-              >
-                <span aria-hidden={true}>{'\u00d7'}</span>
-              </button>
-              <h4 className="modal-title">{title}</h4>
-            </div>
-            <div className="modal-body">
-              {children}
-            </div>
-            <div className="modal-footer">
-              { textButtonCancel &&
+        <div className={this.props.fitWindow && 'modal-wrapper'}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
                 <button
-                  className="btn btn-default"
+                  aria-label={textButtonCancel}
+                  className="close"
                   data-dismiss="modal"
                   onClick={this.onClose.bind(this)}
                   type="button"
                 >
-                  {textButtonCancel}
+                  <span aria-hidden={true}>{'\u00d7'}</span>
                 </button>
-              }
-              <button
-                className="btn btn-primary"
-                data-dismiss={okClosesModal ? "modal" : void 0}
-                onClick={this.onOk.bind(this)}
-                type="button"
-              >
-                {textButtonOk}
-              </button>
+                <h4 className="modal-title">{title}</h4>
+              </div>
+              <div className="modal-body">
+                {children}
+              </div>
+              <div className="modal-footer">
+                { textButtonCancel &&
+                  <button
+                    className="btn btn-default"
+                    data-dismiss="modal"
+                    onClick={this.onClose.bind(this)}
+                    type="button"
+                  >
+                    {textButtonCancel}
+                  </button>
+                }
+                <button
+                  className="btn btn-primary"
+                  data-dismiss={okClosesModal ? "modal" : void 0}
+                  onClick={this.onOk.bind(this)}
+                  type="button"
+                >
+                  {textButtonOk}
+                </button>
+              </div>
             </div>
           </div>
         </div>

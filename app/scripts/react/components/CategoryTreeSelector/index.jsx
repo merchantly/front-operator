@@ -215,6 +215,7 @@ export default class CategoryTreeSelector extends Component {
           onRemove={this.onRemove.bind(this)}
         />
         <Modal
+          fitWindow={true}
           okClosesModal={true}
           onClose={this.onModalClose.bind(this)}
           onOk={this.onModalOk.bind(this)}
