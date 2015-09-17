@@ -1854,6 +1854,7 @@ var CategoryTreeSelector = (function (_Component) {
         _react2['default'].createElement(
           _commonModal2['default'],
           {
+            fitWindow: true,
             okClosesModal: true,
             onClose: this.onModalClose.bind(this),
             onOk: this.onModalOk.bind(this),
@@ -4572,61 +4573,65 @@ var Modal = (function (_Component) {
         { className: 'modal', id: uuid, role: 'dialog', tabIndex: '-1' },
         _react2['default'].createElement(
           'div',
-          { className: 'modal-dialog' },
+          { className: this.props.fitWindow && 'modal-wrapper' },
           _react2['default'].createElement(
             'div',
-            { className: 'modal-content' },
+            { className: 'modal-dialog' },
             _react2['default'].createElement(
               'div',
-              { className: 'modal-header' },
+              { className: 'modal-content' },
               _react2['default'].createElement(
-                'button',
-                {
-                  'aria-label': textButtonCancel,
-                  className: 'close',
-                  'data-dismiss': 'modal',
-                  onClick: this.onClose.bind(this),
-                  type: 'button'
-                },
+                'div',
+                { className: 'modal-header' },
                 _react2['default'].createElement(
-                  'span',
-                  { 'aria-hidden': true },
-                  '×'
+                  'button',
+                  {
+                    'aria-label': textButtonCancel,
+                    className: 'close',
+                    'data-dismiss': 'modal',
+                    onClick: this.onClose.bind(this),
+                    type: 'button'
+                  },
+                  _react2['default'].createElement(
+                    'span',
+                    { 'aria-hidden': true },
+                    '×'
+                  )
+                ),
+                _react2['default'].createElement(
+                  'h4',
+                  { className: 'modal-title' },
+                  title
                 )
               ),
               _react2['default'].createElement(
-                'h4',
-                { className: 'modal-title' },
-                title
-              )
-            ),
-            _react2['default'].createElement(
-              'div',
-              { className: 'modal-body' },
-              children
-            ),
-            _react2['default'].createElement(
-              'div',
-              { className: 'modal-footer' },
-              textButtonCancel && _react2['default'].createElement(
-                'button',
-                {
-                  className: 'btn btn-default',
-                  'data-dismiss': 'modal',
-                  onClick: this.onClose.bind(this),
-                  type: 'button'
-                },
-                textButtonCancel
+                'div',
+                { className: 'modal-body' },
+                children
               ),
               _react2['default'].createElement(
-                'button',
-                {
-                  className: 'btn btn-primary',
-                  'data-dismiss': okClosesModal ? 'modal' : void 0,
-                  onClick: this.onOk.bind(this),
-                  type: 'button'
-                },
-                textButtonOk
+                'div',
+                { className: 'modal-footer' },
+                textButtonCancel && _react2['default'].createElement(
+                  'button',
+                  {
+                    className: 'btn btn-default',
+                    'data-dismiss': 'modal',
+                    onClick: this.onClose.bind(this),
+                    type: 'button'
+                  },
+                  textButtonCancel
+                ),
+                _react2['default'].createElement(
+                  'button',
+                  {
+                    className: 'btn btn-primary',
+                    'data-dismiss': okClosesModal ? 'modal' : void 0,
+                    onClick: this.onOk.bind(this),
+                    type: 'button'
+                  },
+                  textButtonOk
+                )
               )
             )
           )
@@ -4637,6 +4642,7 @@ var Modal = (function (_Component) {
     key: 'propTypes',
     value: {
       children: _react.PropTypes.node,
+      fitWindow: _react.PropTypes.bool,
       onClose: _react.PropTypes.func.isRequired,
       onOk: _react.PropTypes.func.isRequired,
       okClosesModal: _react.PropTypes.bool,
