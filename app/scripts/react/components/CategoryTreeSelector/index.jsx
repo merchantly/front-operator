@@ -1,8 +1,8 @@
 /*eslint camelcase: 0 */
 import React, { Component, PropTypes } from 'react';
+import uuid from 'uuid';
 import Modal from '../common/Modal';
 import JsTree from '../common/JsTree';
-import generateUuid from '../../utils/generateUUID';
 import SelectedCategories from './SelectedCategories';
 
 export default class CategoryTreeSelector extends Component {
@@ -13,7 +13,7 @@ export default class CategoryTreeSelector extends Component {
     modalTitle: PropTypes.string,
   }
   static defaultProps = {
-    categories_id: [],
+    categories_ids: [],
     data: [],
     fieldName: 'categories_ids[]',
     modalTitle: 'Выбор категорий',
@@ -28,10 +28,111 @@ export default class CategoryTreeSelector extends Component {
     
     this.setState({
       categories: data,
-      modalUuid: generateUuid(),
+      modalUuid: uuid.v4(),
       selectedCategories: categories_ids,
-      selectedUncommited: categories_ids,
+      selectedUncommitted: categories_ids,
     });
+  }
+  createCategory(categories, parentID, data) {
+    let newCategories = this.addCategory(categories, parentID, data);
+
+    window.Requester.request({
+      url: ApiRoutes.operatorCategories(),
+      method: 'POST',
+      data: {
+        name: data.text,
+        parent_id: parentID,
+      }
+    }).done((category) => {
+        newCategories = this.updateCategory(newCategories, data.id, {
+          id: category.id,
+          text: category.name,
+          children: data.children,
+        });
+
+        this.setState({ categories: newCategories });
+      })
+      .fail((jq) => {
+        newCategories = this.removeCategory(newCategories, data.id);
+
+        window.alert(jq.responseText);
+        this.setState({ categories: newCategories });
+      });
+
+    this.setState({ categories: newCategories });
+  }
+  renameCategory(categories, categoryID, data) {
+    let newCategories = this.updateCategory(categories, categoryID, {
+      text: data.newValue
+    });
+
+    window.Requester.request({
+      url: ApiRoutes.operatorCategoriesID(categoryID),
+      method: 'PUT',
+      data: { name: data.newValue }
+    }).done((category) => {
+        newCategories = this.updateCategory(newCategories, categoryID, {
+          id: category.id,
+          text: category.name,
+        });
+
+        this.setState({ categories: newCategories });
+      })
+      .fail((jq) => {
+        newCategories = this.updateCategory(newCategories, categoryID, {
+          text: data.oldValue,
+        });
+
+        window.alert(jq.responseText);
+        this.setState({ categories: newCategories });
+      });
+
+    this.setState({ categories: newCategories });
+  }
+  addCategory(categories, parentID, data) {
+    return categories.map((el) => {
+      if (el.id === parentID) {
+        return {
+          ...el,
+          children: [ ...el.children, data ]
+        };
+      } else if (el.children instanceof Array && el.children.length) {
+        return {
+          ...el,
+          children: this.addCategory(el.children, parentID, data)
+        };
+      } else {
+        return el;
+      }
+    });
+  }
+  updateCategory(categories, categoryID, data) {
+    return categories.map((el) => {
+      if (el.id === categoryID) {
+        return { ...el, ...data };
+      } else if (el.children instanceof Array && el.children.length) {
+        return {
+          ...el,
+          children: this.updateCategory(el.children, categoryID, data)
+        };
+      } else {
+        return el;
+      }
+    });
+  }
+  removeCategory(categories, categoryID) {
+    return categories.reduce((acc, el) => {
+      if (el.id === categoryID) {
+        return acc;
+      } else if (el.children instanceof Array && el.children.length) {
+        return [...acc, {
+          ...el,
+          children: this.removeCategory(el.children, categoryID)
+        }];
+      } else {
+        return [ ...acc, el ];
+      }
+    }, []);
   }
   getSelectedCategories(categories, selected) {
     return categories.reduce((acc, el) => {
@@ -52,30 +153,43 @@ export default class CategoryTreeSelector extends Component {
     ));
   }
   onChangeSelection(selected) {
-    this.setState({ selectedUncommited: selected });
+    this.setState({ selectedUncommitted: selected });
   }
-  onChangeTree(tree) {
-    return tree;
+  onChangeTree(evType, node) {
+    switch(evType) {
+      case 'create_node':
+        this.createCategory(this.state.categories, parseInt(node.parent, 10), {
+          id: uuid.v4(),
+          text: node.text,
+          children: node.children,
+        });
+        break;
+      case 'rename_node':
+        this.renameCategory(this.state.categories, parseInt(node.id, 10), {
+          oldValue: node.original.text,
+          newValue: node.text,
+        });
+        break;
+    }
   }
   onRemove(categoryId) {
     const filteredCategories = this.state.selectedCategories.filter((id) => id !== categoryId);
 
     this.setState({
       selectedCategories: filteredCategories,
-      selectedUncommited: filteredCategories,
+      selectedUncommitted: filteredCategories,
     });
   }
   onModalClose() {
-    this.setState({ selectedUncommited: this.state.selectedCategories });
+    this.setState({ selectedUncommitted: this.state.selectedCategories });
   }
   onModalOk() {
-    const { selectedUncommited } = this.state;
+    const { selectedUncommitted } = this.state;
 
-    this.setState({ selectedCategories: selectedUncommited });
+    this.setState({ selectedCategories: selectedUncommitted });
   }
-
   render() {
-    const { categories, modalUuid, selectedCategories, selectedUncommited } = this.state;
+    const { categories, modalUuid, selectedCategories, selectedUncommitted } = this.state;
     const { fieldName, modalTitle } = this.props;
 
     const jsTreeConfig = {
@@ -91,7 +205,7 @@ export default class CategoryTreeSelector extends Component {
       },
       plugins: ['checkbox'],
     };
-    
+
     return (
       <div>
         <SelectedCategories
@@ -111,12 +225,14 @@ export default class CategoryTreeSelector extends Component {
         >
           <JsTree
             data={jsTreeConfig}
+            nodeCreate={true}
+            nodeRename={true}
             onChangeSelection={this.onChangeSelection.bind(this)}
             onChangeTree={this.onChangeTree.bind(this)}
-            selected={selectedUncommited}
+            selected={selectedUncommitted}
           />
         </Modal>
       </div>
     );
-  }  
+  }
 }

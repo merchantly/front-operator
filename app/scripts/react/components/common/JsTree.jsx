@@ -52,6 +52,8 @@ export default function JsTree(props) {
 
       this.$container.jstree(selected ? this.extendWithSelected(data, selected) : data);
       this.$container.on('changed.jstree', this.onChange.bind(this));
+      this.$container.on('create_node.jstree', this.onChange.bind(this));
+      this.$container.on('rename_node.jstree', this.onChange.bind(this));
     },
 
     componentDidUpdate(prevProps) {
@@ -61,7 +63,7 @@ export default function JsTree(props) {
         this.$container.jstree(true).settings.core = data.core;
         this.$container.jstree(true).refresh();
       }
-      
+
       if (selected) {
         this.$container.jstree(true).deselect_all(true);
         if (selected.length) {
@@ -87,21 +89,32 @@ export default function JsTree(props) {
     onChange(ev, data) {
       if (data.action === 'select_node' || data.action === 'deselect_node') {
         this.props.onChangeSelection(data.selected.map((el) => parseInt(el, 10)));
-      } else if (['create_node', 'rename_node', 'delete_node'].indexOf(data.action) > -1) {
-        this.props.onChangeTree(data.node);
+      } else if (['create_node', 'rename_node', 'delete_node'].indexOf(ev.type) > -1) {
+        this.props.onChangeTree(ev.type, data.node);
       }
     },
 
     onNodeCreate() {
+      const { data } = this.props;
+      const selected = this.$container.jstree(true).get_selected();
 
-    },
-
-    onNodeDelete() {
-      
+      if (selected.length) {
+        const parentID = selected[0];
+        this.$container.jstree('create_node', parentID);
+      }
     },
 
     onNodeRename() {
-      
+      const selected = this.$container.jstree(true).get_selected();
+
+      if (selected.length) {
+        const node = selected[0];
+        this.$container.jstree(true).edit(node);
+      }
+    },
+
+    onNodeDelete() {
+
     },
 
     setSelectedState(categories, selected) {

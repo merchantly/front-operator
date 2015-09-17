@@ -11,4 +11,7 @@ ApiRoutes =
   operator_products_by_category_url:     -> gon.operator_api_url + '/v1/products'
   operator_products_change_category_url: -> gon.operator_api_url + '/v1/products/:id/change_category'
 
+  operatorCategories: -> gon.operator_api_url + '/v1/categories'
+  operatorCategoriesID: (categoryID) -> gon.operator_api_url + '/v1/categories/' + categoryID
+
 module.exports = ApiRoutes
