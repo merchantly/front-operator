@@ -1623,8 +1623,9 @@ var CategoryTreeSelector = (function (_Component) {
     }
 
     this.state = {
-      modalUuid: void 0,
       categories: [],
+      modalUuid: void 0,
+      editedCategory: void 0,
       selectedCategories: [] };
   }
 
@@ -1657,20 +1658,26 @@ var CategoryTreeSelector = (function (_Component) {
           name: data.text,
           parent_id: parentID }
       }).done(function (category) {
-        newCategories = _this.updateCategory(newCategories, data.id, {
+        newCategories = _this.updateCategory(newCategories, data.uuid, {
           id: category.id,
           text: category.name,
           children: data.children });
 
-        _this.setState({ categories: newCategories });
+        _this.setState({
+          categories: newCategories,
+          editedCategory: category.id });
       }).fail(function (jq) {
-        newCategories = _this.removeCategory(newCategories, data.id);
+        newCategories = _this.removeCategory(newCategories, data.uuid);
 
         window.alert(jq.responseText);
-        _this.setState({ categories: newCategories });
+        _this.setState({
+          categories: newCategories,
+          editedCategory: void 0 });
       });
 
-      this.setState({ categories: newCategories });
+      this.setState({
+        categories: newCategories,
+        editedCategory: data.uuid });
     }
   }, {
     key: 'renameCategory',
@@ -1699,7 +1706,9 @@ var CategoryTreeSelector = (function (_Component) {
         _this2.setState({ categories: newCategories });
       });
 
-      this.setState({ categories: newCategories });
+      this.setState({
+        categories: newCategories,
+        editedCategory: void 0 });
     }
   }, {
     key: 'addCategory',
@@ -1709,7 +1718,7 @@ var CategoryTreeSelector = (function (_Component) {
       return categories.map(function (el) {
         if (el.id === parentID) {
           return _extends({}, el, {
-            children: [].concat(_toConsumableArray(el.children), [data])
+            children: [data].concat(_toConsumableArray(el.children))
           });
         } else if (el.children instanceof Array && el.children.length) {
           return _extends({}, el, {
@@ -1726,7 +1735,7 @@ var CategoryTreeSelector = (function (_Component) {
       var _this4 = this;
 
       return categories.map(function (el) {
-        if (el.id === categoryID) {
+        if (el.id === categoryID || el.uuid === categoryID) {
           return _extends({}, el, data);
         } else if (el.children instanceof Array && el.children.length) {
           return _extends({}, el, {
@@ -1743,7 +1752,7 @@ var CategoryTreeSelector = (function (_Component) {
       var _this5 = this;
 
       return categories.reduce(function (acc, el) {
-        if (el.id === categoryID) {
+        if (el.id === categoryID || el.uuid === categoryID) {
           return acc;
         } else if (el.children instanceof Array && el.children.length) {
           return [].concat(_toConsumableArray(acc), [_extends({}, el, {
@@ -1784,15 +1793,23 @@ var CategoryTreeSelector = (function (_Component) {
     value: function onChangeTree(evType, node) {
       switch (evType) {
         case 'create_node':
+          var nodeUUID = _uuid2['default'].v4();
+
           this.createCategory(this.state.categories, parseInt(node.parent, 10), {
-            id: _uuid2['default'].v4(),
+            id: nodeUUID,
+            uuid: nodeUUID,
             text: node.text,
             children: node.children });
           break;
         case 'rename_node':
-          this.renameCategory(this.state.categories, parseInt(node.id, 10), {
-            oldValue: node.original.text,
-            newValue: node.text });
+          var newValue = node.text;
+          var oldValue = node.original.text;
+
+          if (newValue !== oldValue) {
+            this.renameCategory(this.state.categories, parseInt(node.id, 10), {
+              oldValue: oldValue, newValue: newValue
+            });
+          }
           break;
       }
     }
@@ -1827,6 +1844,7 @@ var CategoryTreeSelector = (function (_Component) {
       var modalUuid = _state.modalUuid;
       var selectedCategories = _state.selectedCategories;
       var selectedUncommitted = _state.selectedUncommitted;
+      var editedCategory = _state.editedCategory;
       var _props2 = this.props;
       var fieldName = _props2.fieldName;
       var modalTitle = _props2.modalTitle;
@@ -1837,7 +1855,7 @@ var CategoryTreeSelector = (function (_Component) {
           data: this.unfoldRootCategories(categories),
           multiple: true },
         checkbox: {
-          cascade: 'up',
+          cascade: '',
           three_state: false,
           visible: false },
         plugins: ['checkbox'] };
@@ -1865,6 +1883,8 @@ var CategoryTreeSelector = (function (_Component) {
           },
           _react2['default'].createElement(_commonJsTree2['default'], {
             data: jsTreeConfig,
+            edited: editedCategory,
+            newNodeText: 'Новая категория',
             nodeCreate: true,
             nodeRename: true,
             onChangeSelection: this.onChangeSelection.bind(this),
@@ -4344,6 +4364,8 @@ function JsTree(props) {
     data: _react.PropTypes.shape({
       core: _react.PropTypes.shape({
         data: _react.PropTypes.array.isRequired }).isRequired }).isRequired,
+    edited: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
+    newNodeText: _react.PropTypes.string,
     nodeCreate: _react.PropTypes.bool,
     nodeDelete: _react.PropTypes.bool,
     nodeRename: _react.PropTypes.bool,
@@ -4358,7 +4380,7 @@ function JsTree(props) {
     shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
       // we cannot compare directly this.props and nextProps because
       // onChange.bind() !== onChange.bind()
-      return _deepDiff.diff(this.props.data, nextProps.data) || _deepDiff.diff(this.props.selected, nextProps.selected) || false;
+      return _deepDiff.diff(this.props.data, nextProps.data) || this.props.edited !== nextProps.edited || _deepDiff.diff(this.props.selected, nextProps.selected) || false;
     },
 
     componentDidMount: function componentDidMount() {
@@ -4388,6 +4410,7 @@ function JsTree(props) {
       var _props2 = this.props;
       var data = _props2.data;
       var selected = _props2.selected;
+      var edited = _props2.edited;
 
       if (_deepDiff.diff(this.props.data, prevProps.data)) {
         this.$container.jstree(true).settings.core = data.core;
@@ -4399,6 +4422,10 @@ function JsTree(props) {
         if (selected.length) {
           this.$container.jstree(true).select_node(selected, { suppress_event: true });
         }
+      }
+
+      if (edited && edited !== prevProps.edited) {
+        this.$container.jstree(true).edit(edited);
       }
     },
 
@@ -4426,21 +4453,27 @@ function JsTree(props) {
     },
 
     onNodeCreate: function onNodeCreate() {
-      var data = this.props.data;
+      var _props4 = this.props;
+      var data = _props4.data;
+      var newNodeText = _props4.newNodeText;
 
-      var selected = this.$container.jstree(true).get_selected();
+      var selected = this.$container.jstree(true).get_top_selected();
 
-      if (selected.length) {
+      if (!selected.length) {
+        window.alert('Выберите родительскую категорию');
+      } else {
         var parentID = selected[0];
-        this.$container.jstree('create_node', parentID);
+        this.$container.jstree('create_node', parentID, { text: newNodeText }, 'first');
       }
     },
 
     onNodeRename: function onNodeRename() {
       var selected = this.$container.jstree(true).get_selected();
 
-      if (selected.length) {
-        var node = selected[0];
+      if (!selected.length) {
+        window.alert('Выберите категорию, которую хотите переименовать');
+      } else {
+        var node = selected[selected.length - 1];
         this.$container.jstree(true).edit(node);
       }
     },
@@ -4471,10 +4504,10 @@ function JsTree(props) {
     },
 
     render: function render() {
-      var _props4 = this.props;
-      var nodeCreate = _props4.nodeCreate;
-      var nodeDelete = _props4.nodeDelete;
-      var nodeRename = _props4.nodeRename;
+      var _props5 = this.props;
+      var nodeCreate = _props5.nodeCreate;
+      var nodeDelete = _props5.nodeDelete;
+      var nodeRename = _props5.nodeRename;
 
       return _react2['default'].createElement(
         'div',

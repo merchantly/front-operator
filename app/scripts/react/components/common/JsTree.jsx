@@ -10,6 +10,8 @@ export default function JsTree(props) {
         data: PropTypes.array.isRequired,
       }).isRequired,
     }).isRequired,
+    edited: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    newNodeText: PropTypes.string,
     nodeCreate: PropTypes.bool,
     nodeDelete: PropTypes.bool,
     nodeRename: PropTypes.bool,
@@ -27,9 +29,10 @@ export default function JsTree(props) {
       // onChange.bind() !== onChange.bind()
       return (
         diff(this.props.data, nextProps.data)
+          || this.props.edited !== nextProps.edited
           || diff(this.props.selected, nextProps.selected)
           || false
-      );      
+      );
     },
 
     componentDidMount() {
@@ -57,7 +60,7 @@ export default function JsTree(props) {
     },
 
     componentDidUpdate(prevProps) {
-      const { data, selected } = this.props;
+      const { data, selected, edited } = this.props;
 
       if (diff(this.props.data, prevProps.data)) {
         this.$container.jstree(true).settings.core = data.core;
@@ -69,6 +72,10 @@ export default function JsTree(props) {
         if (selected.length) {
           this.$container.jstree(true).select_node(selected, { suppress_event: true });
         }
+      }
+
+      if (edited && edited !== prevProps.edited) {
+        this.$container.jstree(true).edit(edited);
       }
     },
 
@@ -95,20 +102,24 @@ export default function JsTree(props) {
     },
 
     onNodeCreate() {
-      const { data } = this.props;
-      const selected = this.$container.jstree(true).get_selected();
+      const { data, newNodeText } = this.props;
+      const selected = this.$container.jstree(true).get_top_selected();
 
-      if (selected.length) {
+      if (!selected.length) {
+        window.alert('Выберите родительскую категорию')
+      } else {
         const parentID = selected[0];
-        this.$container.jstree('create_node', parentID);
+        this.$container.jstree('create_node', parentID, { text: newNodeText }, 'first');
       }
     },
 
     onNodeRename() {
       const selected = this.$container.jstree(true).get_selected();
 
-      if (selected.length) {
-        const node = selected[0];
+      if (!selected.length) {
+        window.alert('Выберите категорию, которую хотите переименовать');
+      } else {
+        const node = selected[selected.length - 1];
         this.$container.jstree(true).edit(node);
       }
     },

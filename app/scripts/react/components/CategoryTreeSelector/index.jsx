@@ -19,8 +19,9 @@ export default class CategoryTreeSelector extends Component {
     modalTitle: 'Выбор категорий',
   }
   state = {
-    modalUuid: void 0,
     categories: [],
+    modalUuid: void 0,
+    editedCategory: void 0,
     selectedCategories: [],
   }
   componentWillMount() {
@@ -44,22 +45,31 @@ export default class CategoryTreeSelector extends Component {
         parent_id: parentID,
       }
     }).done((category) => {
-        newCategories = this.updateCategory(newCategories, data.id, {
+        newCategories = this.updateCategory(newCategories, data.uuid, {
           id: category.id,
           text: category.name,
           children: data.children,
         });
 
-        this.setState({ categories: newCategories });
+        this.setState({
+          categories: newCategories,
+          editedCategory: category.id,
+        });
       })
       .fail((jq) => {
-        newCategories = this.removeCategory(newCategories, data.id);
+        newCategories = this.removeCategory(newCategories, data.uuid);
 
         window.alert(jq.responseText);
-        this.setState({ categories: newCategories });
+        this.setState({
+          categories: newCategories,
+          editedCategory: void 0,
+        });
       });
 
-    this.setState({ categories: newCategories });
+    this.setState({
+      categories: newCategories,
+      editedCategory: data.uuid,
+    });
   }
   renameCategory(categories, categoryID, data) {
     let newCategories = this.updateCategory(categories, categoryID, {
@@ -87,14 +97,17 @@ export default class CategoryTreeSelector extends Component {
         this.setState({ categories: newCategories });
       });
 
-    this.setState({ categories: newCategories });
+    this.setState({
+      categories: newCategories,
+      editedCategory: void 0,
+    });
   }
   addCategory(categories, parentID, data) {
     return categories.map((el) => {
       if (el.id === parentID) {
         return {
           ...el,
-          children: [ ...el.children, data ]
+          children: [ data, ...el.children ]
         };
       } else if (el.children instanceof Array && el.children.length) {
         return {
@@ -108,7 +121,7 @@ export default class CategoryTreeSelector extends Component {
   }
   updateCategory(categories, categoryID, data) {
     return categories.map((el) => {
-      if (el.id === categoryID) {
+      if (el.id === categoryID || el.uuid === categoryID) {
         return { ...el, ...data };
       } else if (el.children instanceof Array && el.children.length) {
         return {
@@ -122,7 +135,7 @@ export default class CategoryTreeSelector extends Component {
   }
   removeCategory(categories, categoryID) {
     return categories.reduce((acc, el) => {
-      if (el.id === categoryID) {
+      if (el.id === categoryID || el.uuid === categoryID) {
         return acc;
       } else if (el.children instanceof Array && el.children.length) {
         return [...acc, {
@@ -158,17 +171,24 @@ export default class CategoryTreeSelector extends Component {
   onChangeTree(evType, node) {
     switch(evType) {
       case 'create_node':
+        const nodeUUID = uuid.v4();
+
         this.createCategory(this.state.categories, parseInt(node.parent, 10), {
-          id: uuid.v4(),
+          id: nodeUUID,
+          uuid: nodeUUID,
           text: node.text,
           children: node.children,
         });
         break;
       case 'rename_node':
-        this.renameCategory(this.state.categories, parseInt(node.id, 10), {
-          oldValue: node.original.text,
-          newValue: node.text,
-        });
+        const newValue = node.text;
+        const oldValue = node.original.text;
+
+        if (newValue !== oldValue) {
+          this.renameCategory(this.state.categories, parseInt(node.id, 10), {
+            oldValue, newValue
+          });
+        }
         break;
     }
   }
@@ -189,7 +209,7 @@ export default class CategoryTreeSelector extends Component {
     this.setState({ selectedCategories: selectedUncommitted });
   }
   render() {
-    const { categories, modalUuid, selectedCategories, selectedUncommitted } = this.state;
+    const { categories, modalUuid, selectedCategories, selectedUncommitted, editedCategory } = this.state;
     const { fieldName, modalTitle } = this.props;
 
     const jsTreeConfig = {
@@ -199,7 +219,7 @@ export default class CategoryTreeSelector extends Component {
         multiple: true,
       },
       checkbox: {
-        cascade: 'up',
+        cascade: '',
         three_state: false,
         visible: false,
       },
@@ -226,6 +246,8 @@ export default class CategoryTreeSelector extends Component {
         >
           <JsTree
             data={jsTreeConfig}
+            edited={editedCategory}
+            newNodeText={'Новая категория'}
             nodeCreate={true}
             nodeRename={true}
             onChangeSelection={this.onChangeSelection.bind(this)}
