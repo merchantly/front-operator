@@ -1,5 +1,6 @@
 /*eslint camelcase: 0 */
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 import uuid from 'uuid';
 import Modal from '../common/Modal';
 import JsTree from '../common/JsTree';
@@ -234,6 +235,10 @@ export default class CategoryTreeSelector extends Component {
       plugins: ['checkbox'],
     };
 
+    const modalClasses = classNames({
+      'modal--categories-with-buttons': canCreate || canDelete || canRename
+    });
+
     return (
       <div>
         <SelectedCategories
@@ -243,7 +248,7 @@ export default class CategoryTreeSelector extends Component {
           onRemove={this.onRemove.bind(this)}
         />
         <Modal
-          className="modal--categories"
+          className={modalClasses}
           fitWindow={true}
           okClosesModal={true}
           onClose={this.onModalClose.bind(this)}

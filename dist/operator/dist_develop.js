@@ -1598,6 +1598,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
@@ -1871,6 +1875,10 @@ var CategoryTreeSelector = (function (_Component) {
           visible: false },
         plugins: ['checkbox'] };
 
+      var modalClasses = _classnames2['default']({
+        'modal--categories-with-buttons': canCreate || canDelete || canRename
+      });
+
       return _react2['default'].createElement(
         'div',
         null,
@@ -1883,7 +1891,7 @@ var CategoryTreeSelector = (function (_Component) {
         _react2['default'].createElement(
           _commonModal2['default'],
           {
-            className: 'modal--categories',
+            className: modalClasses,
             fitWindow: true,
             okClosesModal: true,
             onClose: this.onModalClose.bind(this),
@@ -1949,7 +1957,7 @@ var CategoryTreeSelector = (function (_Component) {
 exports['default'] = CategoryTreeSelector;
 module.exports = exports['default'];
 
-},{"../common/JsTree":41,"../common/Modal":42,"./SelectedCategories":16,"react":"react","uuid":379}],19:[function(require,module,exports){
+},{"../common/JsTree":41,"../common/Modal":42,"./SelectedCategories":16,"classnames":116,"react":"react","uuid":379}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
