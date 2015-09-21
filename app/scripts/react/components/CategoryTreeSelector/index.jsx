@@ -7,16 +7,28 @@ import SelectedCategories from './SelectedCategories';
 
 export default class CategoryTreeSelector extends Component {
   static propTypes = {
+    canCreate: PropTypes.bool,
+    canDelete: PropTypes.bool,
+    canRename: PropTypes.bool,
     categories_ids: PropTypes.arrayOf(PropTypes.number),
+    createButtonTitle: PropTypes.string,
     data: PropTypes.array,
+    deleteButtonTitle: PropTypes.string,
     fieldName: PropTypes.string,
     modalTitle: PropTypes.string,
+    renameButtonTitle: PropTypes.string,
   }
   static defaultProps = {
     categories_ids: [],
+    canCreate: false,
+    canDelete: false,
+    canRename: false,
+    createButtonTitle: 'Создать',
     data: [],
+    deleteButtonTitle: 'Удалить',
     fieldName: 'categories_ids[]',
     modalTitle: 'Выбор категорий',
+    renameButtonTitle: 'Переименовать',
   }
   state = {
     categories: [],
@@ -32,74 +44,6 @@ export default class CategoryTreeSelector extends Component {
       modalUuid: uuid.v4(),
       selectedCategories: categories_ids,
       selectedUncommitted: categories_ids,
-    });
-  }
-  createCategory(categories, parentID, data) {
-    let newCategories = this.addCategory(categories, parentID, data);
-
-    window.Requester.request({
-      url: ApiRoutes.operatorCategories(),
-      method: 'POST',
-      data: {
-        name: data.text,
-        parent_id: parentID,
-      }
-    }).done((category) => {
-        newCategories = this.updateCategory(newCategories, data.uuid, {
-          id: category.id,
-          text: category.name,
-          children: data.children,
-        });
-
-        this.setState({
-          categories: newCategories,
-          editedCategory: category.id,
-        });
-      })
-      .fail((jq) => {
-        newCategories = this.removeCategory(newCategories, data.uuid);
-
-        window.alert(jq.responseText);
-        this.setState({
-          categories: newCategories,
-          editedCategory: void 0,
-        });
-      });
-
-    this.setState({
-      categories: newCategories,
-      editedCategory: data.uuid,
-    });
-  }
-  renameCategory(categories, categoryID, data) {
-    let newCategories = this.updateCategory(categories, categoryID, {
-      text: data.newValue
-    });
-
-    window.Requester.request({
-      url: ApiRoutes.operatorCategoriesID(categoryID),
-      method: 'PUT',
-      data: { name: data.newValue }
-    }).done((category) => {
-        newCategories = this.updateCategory(newCategories, categoryID, {
-          id: category.id,
-          text: category.name,
-        });
-
-        this.setState({ categories: newCategories });
-      })
-      .fail((jq) => {
-        newCategories = this.updateCategory(newCategories, categoryID, {
-          text: data.oldValue,
-        });
-
-        window.alert(jq.responseText);
-        this.setState({ categories: newCategories });
-      });
-
-    this.setState({
-      categories: newCategories,
-      editedCategory: void 0,
     });
   }
   addCategory(categories, parentID, data) {
@@ -121,7 +65,7 @@ export default class CategoryTreeSelector extends Component {
   }
   updateCategory(categories, categoryID, data) {
     return categories.map((el) => {
-      if (el.id === categoryID || el.uuid === categoryID) {
+      if (el.id === categoryID) {
         return { ...el, ...data };
       } else if (el.children instanceof Array && el.children.length) {
         return {
@@ -135,7 +79,7 @@ export default class CategoryTreeSelector extends Component {
   }
   removeCategory(categories, categoryID) {
     return categories.reduce((acc, el) => {
-      if (el.id === categoryID || el.uuid === categoryID) {
+      if (el.id === categoryID) {
         return acc;
       } else if (el.children instanceof Array && el.children.length) {
         return [...acc, {
@@ -147,6 +91,7 @@ export default class CategoryTreeSelector extends Component {
       }
     }, []);
   }
+
   getSelectedCategories(categories, selected) {
     return categories.reduce((acc, el) => {
       if (el.children instanceof Array && el.children.length) {
@@ -168,28 +113,86 @@ export default class CategoryTreeSelector extends Component {
   onChangeSelection(selected) {
     this.setState({ selectedUncommitted: selected });
   }
-  onChangeTree(evType, node) {
-    switch(evType) {
-      case 'create_node':
-        const nodeUUID = uuid.v4();
+  onNodeCreate(node) {
+    let { categories: newCategories } = this.state;
+    const { children, parent, text } = node;
+    const parentID = parseInt(parent, 10);
+    const data = { children, text, id: uuid.v4() };
 
-        this.createCategory(this.state.categories, parseInt(node.parent, 10), {
-          id: nodeUUID,
-          uuid: nodeUUID,
-          text: node.text,
-          children: node.children,
-        });
-        break;
-      case 'rename_node':
-        const newValue = node.text;
-        const oldValue = node.original.text;
+    newCategories = this.addCategory(newCategories, parentID, data);
+    this.setState({
+      categories: newCategories,
+      editedCategory: data.id,
+    });
+  }
+  onNodeRename(node, isCancelled) {
+    const { id, parent, text: newValue, original: { text: oldValue } } = node;
+    const nodeID = /[a-z]/g.test(node.id) ? node.id : parseInt(node.id, 10);
+    const parentID = parseInt(parent, 10);
 
-        if (newValue !== oldValue) {
-          this.renameCategory(this.state.categories, parseInt(node.id, 10), {
-            oldValue, newValue
+    if (typeof nodeID === 'string') {
+      let { categories: newCategories } = this.state;
+
+      if (oldValue === newValue && isCancelled) {
+        newCategories = this.removeCategory(newCategories, nodeID);
+      } else {
+        newCategories = this.updateCategory(newCategories, nodeID, { text: newValue });
+
+        window.Requester.request({
+          url: ApiRoutes.operatorCategories(),
+          method: 'POST',
+          data: {
+            name: newValue,
+            parent_id: parentID
+          }
+        }).done((category) => {
+          newCategories = this.updateCategory(newCategories, nodeID, {
+            id: category.id,
+            text: category.name
           });
-        }
-        break;
+
+          this.setState({ categories: newCategories });
+        }).fail((jqXHR) => {
+          newCategories = this.removeCategory(newCategories, nodeID);
+
+          window.alert(jqXHR.responseText);
+          this.setState({ categories: newCategories });
+        });
+      }
+
+      this.setState({
+        categories: newCategories,
+        editedCategory: void 0,
+      });
+    } else {
+      let { categories: newCategories } = this.state;
+
+      if (oldValue !== newValue && !isCancelled) {
+        newCategories = this.updateCategory(newCategories, nodeID, { text: newValue });
+
+        window.Requester.request({
+          url: ApiRoutes.operatorCategoriesID(nodeID),
+          method: 'PUT',
+          data: { name: newValue }
+        }).done((category) => {
+          newCategories = this.updateCategory(newCategories, nodeID, {
+            id: category.id,
+            text: category.name
+          });
+
+          this.setState({ categories: newCategories });
+        }).fail((jqXHR) => {
+          newCategories = this.updateCategory(newCategories, nodeID, { text: oldValue });
+
+          window.alert(jqXHR.responseText);
+          this.setState({ categories: newCategories });
+        });
+      }
+
+      this.setState({
+        categories: newCategories,
+        editedCategory: void 0,
+      });
     }
   }
   onRemove(categoryId) {
@@ -209,8 +212,13 @@ export default class CategoryTreeSelector extends Component {
     this.setState({ selectedCategories: selectedUncommitted });
   }
   render() {
-    const { categories, modalUuid, selectedCategories, selectedUncommitted, editedCategory } = this.state;
-    const { fieldName, modalTitle } = this.props;
+    const {
+      categories, editedCategory, modalUuid, selectedCategories, selectedUncommitted
+    } = this.state;
+    const {
+      canCreate, canDelete, canRename, createButtonTitle, deleteButtonTitle,
+      fieldName, modalTitle, renameButtonTitle
+    } = this.props;
 
     const jsTreeConfig = {
       core: {
@@ -235,6 +243,7 @@ export default class CategoryTreeSelector extends Component {
           onRemove={this.onRemove.bind(this)}
         />
         <Modal
+          className="modal--categories"
           fitWindow={true}
           okClosesModal={true}
           onClose={this.onModalClose.bind(this)}
@@ -245,13 +254,20 @@ export default class CategoryTreeSelector extends Component {
           uuid={modalUuid}
         >
           <JsTree
+            canCreate={canCreate}
+            canDelete={canDelete}
+            canRename={canRename}
+            createButtonTitle={createButtonTitle}
             data={jsTreeConfig}
+            deleteButtonTitle={deleteButtonTitle}
             edited={editedCategory}
             newNodeText={'Новая категория'}
             nodeCreate={true}
             nodeRename={true}
             onChangeSelection={this.onChangeSelection.bind(this)}
-            onChangeTree={this.onChangeTree.bind(this)}
+            onNodeCreate={this.onNodeCreate.bind(this)}
+            onNodeRename={this.onNodeRename.bind(this)}
+            renameButtonTitle={renameButtonTitle}
             selected={selectedUncommitted}
           />
         </Modal>

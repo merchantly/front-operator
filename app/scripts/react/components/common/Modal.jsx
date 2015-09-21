@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 export default class Modal extends Component {
   static propTypes = {
+    className: PropTypes.string,
     children: PropTypes.node,
     fitWindow: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
@@ -27,7 +29,12 @@ export default class Modal extends Component {
     const { children, okClosesModal, title, textButtonCancel, textButtonOk, uuid } = this.props;
 
     return (
-      <div className="modal" id={uuid} role="dialog" tabIndex="-1">
+      <div
+        className={classNames('modal', this.props.className)}
+        id={uuid}
+        role="dialog"
+        tabIndex="-1"
+      >
         <div className={this.props.fitWindow && 'modal-wrapper'}>
           <div className="modal-dialog">
             <div className="modal-content">
