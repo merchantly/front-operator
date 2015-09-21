@@ -25,13 +25,13 @@ export default function SelectedCategories(props) {
           <ul className="category-tree-selector__selected__list list-inline">
             {
               categories.map((category, idx) => (
-                  <SelectedCategoryItem
-                    category={category}
-                    key={`list-item-${idx}`}
-                    onRemove={this.onRemove.bind(this)}
-                  />
+                <SelectedCategoryItem
+                  category={category}
+                  key={`list-item-${idx}`}
+                  onRemove={this.onRemove.bind(this)}
+                />
               ))
-             }
+            }
             <li className="category-tree-selector__selected__add">
               <a data-target={`#${modalUuid}`} data-toggle="modal" href="#">
                 <i className="fa fa-plus-circle fa-lg" />
@@ -45,7 +45,8 @@ export default function SelectedCategories(props) {
                     key={`category-input-${idx}`}
                     name={fieldName}
                     value={id}
-                  />))
+                  />
+                ))
               : <HiddenInput
                   name={fieldName}
                   value={null}
