@@ -26,7 +26,10 @@ export default class Modal extends Component {
     this.props.onOk();
   }
   render() {
-    const { children, okClosesModal, title, textButtonCancel, textButtonOk, uuid } = this.props;
+    const {
+      headerButtons, children, okClosesModal, title, textButtonCancel,
+      textButtonOk, uuid
+    } = this.props;
 
     return (
       <div className="modal" id={uuid} role="dialog" tabIndex="-1">
@@ -44,6 +47,9 @@ export default class Modal extends Component {
                   <span aria-hidden={true}>{'\u00d7'}</span>
                 </button>
                 <h4 className="modal-title">{title}</h4>
+                <span className="modal-extra-buttons">
+                  {headerButtons}
+                </span>
               </div>
               <div className="modal-body">
                 {children}

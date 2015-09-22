@@ -1,10 +1,12 @@
 import React, { PropTypes, Component } from 'react';
 import Modal from '../common/Modal';
-import JsTree from '../common/JsTree';
+import CategoryCreateForm from './CategoryCreateForm';
+import CategoriesList from './CategoriesList';
 
 export default class CategoryTreeManager extends Component {
   static propTypes = {
     canCreate: PropTypes.bool,
+    categories: PropTypes.array.isRequired,
     createButtonTitle: PropTypes.string,
     modalUuid: PropTypes.string.isRequired,
     onAcceptSelection: PropTypes.func.isRequired,
@@ -17,48 +19,42 @@ export default class CategoryTreeManager extends Component {
   }
   render() {
     const {
-      canCreate, categories, createButtonTitle, modalUuid, selectedCategories
+      canCreate, categories, createButtonTitle, modalUuid, onChangeSelection, selectedCategories
     } = this.props;
-
-    const jsTreeConfig = {
-      core: {
-        animation: 0,
-        data: this.unfoldRootCategories(categories),
-        multiple: true,
-      },
-      checkbox: {
-        cascade: '',
-        three_state: false,
-        visible: false,
-      },
-      plugins: ['checkbox'],
-    };
 
     return (
       <Modal
-        fitWindow={true}
+        headerButtons={this.getHeaderButtons.call(this)}
         okClosesModal={true}
         onClose={this.props.onDiscardSelection}
         onOk={this.props.onAcceptSelection}
-        ref="modal"
         textButtonCancel={null}
         title={this.state.create ? 'Создание категории' : 'Выбор категорий'}
         uuid={modalUuid}
       >
-        <JsTree
-          data={jsTreeConfig}
-          onChangeSelection={this.props.onChangeSelection}
-          selected={selectedCategories}
-        />
+        {this.state.create
+           ? <CategoryCreateForm />
+           : <CategoriesList
+               categories={categories}
+               onChangeSelection={onChangeSelection}
+               selectedCategories={selectedCategories}
+              />
+        }
       </Modal>
     );
   }
-  unfoldRootCategories(categories) {
-    return categories.map((el) => (
-      el.children
-        ? { ...el, state: { ...el.state, opened: true } }
-        : el
-    ));
+  getHeaderButtons() {
+    return (
+      <span>
+        <button
+          className="btn btn-primary btn-sm"
+          type="button"
+          onClick={() => { this.setState({ create: true })}}
+        >
+          Создать
+        </button>
+      </span>
+    );
   }
   // addCategory(categories, parentID, data) {
   //   return categories.map((el) => {
@@ -199,14 +195,7 @@ export default class CategoryTreeManager extends Component {
 
 
 
-// <Row>
-//           <Col md={12}>
-//             <div className="form-group string required category_name">
-//               <label className="string required control-label" htmlFor="category_name">Название</label>
-//               <input autofocus="autofocus" className="string required form-control" id="category_name" name="category[name]" type="text" />
-//             </div>
-//           </Col>
-//         </Row>
+
 
 
 
