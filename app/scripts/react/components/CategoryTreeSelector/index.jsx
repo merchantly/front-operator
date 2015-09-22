@@ -7,36 +7,31 @@ import CategoryTreeManager from '../CategoryTreeManager';
 export default class CategoryTreeSelector extends Component {
   static propTypes = {
     canCreate: PropTypes.bool,
-    canDelete: PropTypes.bool,
-    canRename: PropTypes.bool,
     categories_ids: PropTypes.arrayOf(PropTypes.number),
     createButtonTitle: PropTypes.string,
     data: PropTypes.array,
-    deleteButtonTitle: PropTypes.string,
     fieldName: PropTypes.string,
-    modalTitle: PropTypes.string,
-    renameButtonTitle: PropTypes.string,
+    modalCreateTitle: PropTypes.string,
+    modalShowTitle: PropTypes.string,
   }
   static defaultProps = {
     categories_ids: [],
     canCreate: false,
-    canDelete: false,
-    canRename: false,
     createButtonTitle: 'Создать',
     data: [],
-    deleteButtonTitle: 'Удалить',
     fieldName: 'categories_ids[]',
-    modalTitle: 'Выбор категорий',
-    renameButtonTitle: 'Переименовать',
+    modalCreateTitle: 'Создание категории',
+    modalShowTitle: 'Выбор категорий',
   }
   state = {
     categories: [],
     modalUuid: void 0,
     selectedCategories: [],
+    selectedUncommitted: [],
   }
   componentWillMount() {
     const { categories_ids, data } = this.props;
-    
+
     this.setState({
       categories: data,
       modalUuid: uuid.v4(),
@@ -74,7 +69,7 @@ export default class CategoryTreeSelector extends Component {
   }
   render() {
     const { categories, modalUuid, selectedCategories, selectedUncommitted } = this.state;
-    const { fieldName, canCreate } = this.props;
+    const { createButtonTitle, canCreate, fieldName, modalCreateTitle, modalShowTitle } = this.props;
 
     return (
       <div>
@@ -87,9 +82,13 @@ export default class CategoryTreeSelector extends Component {
         <CategoryTreeManager
           canCreate={canCreate}
           categories={categories}
+          createButtonTitle={createButtonTitle}
           modalUuid={modalUuid}
+          modalCreateTitle={modalCreateTitle}
+          modalShowTitle={modalShowTitle}
           onAcceptSelection={this.onAcceptSelection.bind(this)}
           onChangeSelection={this.onChangeSelection.bind(this)}
+          onDiscardSelection={this.onDiscardSelection.bind(this)}
           selectedCategories={selectedUncommitted}
         />
       </div>
