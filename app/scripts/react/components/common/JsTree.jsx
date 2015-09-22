@@ -7,20 +7,13 @@ export default function JsTree(props) {
     canCreate: PropTypes.bool,
     canDelete: PropTypes.bool,
     canRename: PropTypes.bool,
-    createButtonTitle: PropTypes.string,
     //TODO elaborate a bit on correct array type description
     data: PropTypes.shape({
       core: PropTypes.shape({
         data: PropTypes.array.isRequired,
       }).isRequired,
     }).isRequired,
-    deleteButtonTitle: PropTypes.string,
-    edited: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    newNodeText: PropTypes.string,
     onChangeSelection: PropTypes.func.isRequired,
-    onNodeRename: PropTypes.func,
-    onNodeCreate: PropTypes.func,
-    renameButtonTitle: PropTypes.string,
     selected: PropTypes.array,
   };
 
@@ -136,10 +129,6 @@ export default function JsTree(props) {
       }
     },
 
-    onNodeDelete() {
-
-    },
-
     setSelectedState(categories, selected) {
       return categories.map((el) => {
         if (el.children instanceof Array && el.children.length) {
@@ -174,45 +163,7 @@ export default function JsTree(props) {
     },
 
     render() {
-      const {
-        canCreate, canDelete, canRename, createButtonTitle, deleteButtonTitle,
-        renameButtonTitle
-      } = this.props;
-
-      return (
-        <div>
-          <div className="react-jstree__buttons">
-            { canCreate
-             && <button
-                  className="btn btn-primary btn-sm"
-                  onClick={this.onNodeCreate.bind(this)}
-                  type="button"
-                >
-                  {createButtonTitle}
-                </button>
-            }
-            { canRename
-             && <button
-                  className="btn btn-warning btn-sm"
-                  onClick={this.onNodeRename.bind(this)}
-                  type="button"
-                >
-                  {renameButtonTitle}
-                </button>
-            }
-            { canDelete
-             && <button
-                  className="btn btn-danger btn-sm"
-                  onClick={this.onNodeDelete.bind(this)}
-                  type="button"
-                >
-                  {deleteButtonTitle}
-                </button>
-            }
-          </div>
-          <div ref="container" />
-        </div>
-      );
+      return <div ref="container" />;
     },
   });
 }
