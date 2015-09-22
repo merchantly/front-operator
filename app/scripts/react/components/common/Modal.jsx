@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 export default class Modal extends Component {
   static propTypes = {
+    cancelClosesModal: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node,
     fitWindow: PropTypes.bool,
@@ -27,8 +28,8 @@ export default class Modal extends Component {
   }
   render() {
     const {
-      headerButtons, children, okClosesModal, title, textButtonCancel,
-      textButtonOk, uuid
+      cancelClosesModal, headerButtons, children, okClosesModal, title,
+      textButtonCancel, textButtonOk, uuid
     } = this.props;
 
     return (
@@ -40,7 +41,7 @@ export default class Modal extends Component {
                 <button
                   aria-label={textButtonCancel}
                   className="close"
-                  data-dismiss="modal"
+                  data-dismiss={cancelClosesModal ? "modal" : void 0}
                   onClick={this.onClose.bind(this)}
                   type="button"
                 >
@@ -58,7 +59,6 @@ export default class Modal extends Component {
                 { textButtonCancel &&
                   <button
                     className="btn btn-default"
-                    data-dismiss="modal"
                     onClick={this.onClose.bind(this)}
                     type="button"
                   >

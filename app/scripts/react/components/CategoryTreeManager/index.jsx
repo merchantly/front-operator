@@ -1,9 +1,12 @@
 import React, { PropTypes, Component } from 'react';
+import Api from '../../api';
+import NoticeService from '../../services/Notice';
 import CategoriesList from './CategoriesList';
 import CategoryCreateForm from './CategoryCreateForm';
 import Modal from '../common/Modal';
 
 const MANAGER_CREATE = 'MANAGER_CREATE';
+const MANAGER_CREATING = 'MANAGER_CREATING';
 const MANAGER_SHOW = 'MANAGER_SHOW';
 
 export default class CategoryTreeManager extends Component {
@@ -14,6 +17,7 @@ export default class CategoryTreeManager extends Component {
     modalCreateTitle: PropTypes.string.isRequired,
     modalShowTitle: PropTypes.string.isRequired,
     onAcceptSelection: PropTypes.func.isRequired,
+    onCategoriesChange: PropTypes.func.isRequired,
     onChangeSelection: PropTypes.func.isRequired,
     onDiscardSelection: PropTypes.func.isRequired,
     selectedCategories: PropTypes.array,
@@ -22,43 +26,51 @@ export default class CategoryTreeManager extends Component {
     currentState: MANAGER_SHOW,
   }
   render() {
-    const { modalUuid, onAcceptSelection, onDiscardSelection } = this.props;
+    const {
+      categories, modalCreateTitle, modalShowTitle, modalUuid,
+      onChangeSelection, selectedCategories
+    } = this.props;
     const { currentState } = this.state;
+    const parentCategory = this.getParent(categories, selectedCategories);
 
-    return (
-      <Modal
-        headerButtons={this.getHeaderButtons.call(this)}
-        okClosesModal={true}
-        onClose={this.onModalClose.bind(this)}
-        onOk={this.onModalOk.bind(this)}
-        textButtonCancel={null}
-        title={this.getModalTitle(currentState)}
-        uuid={modalUuid}
-      >
-        {this.renderContent.call(this)}
-      </Modal>
-    );
-  }
-  renderContent() {
-    const { categories, onChangeSelection, selectedCategories } = this.props;
-    const { currentState } = this.state;
-
-    switch(this.state.currentState) {
+    switch(currentState) {
       case MANAGER_CREATE:
+      case MANAGER_CREATING:
         return (
-          <CategoryCreateForm
-            parentCategory={this.getParent(categories, selectedCategories)}
-          />
+          <Modal
+            onClose={this.activateShow.bind(this)}
+            onOk={this.createCategory.bind(this)}
+            textButtonOk={currentState === MANAGER_CREATE ? 'Создать' : 'Создаём...'}
+            textButtonCancel="Отмена"
+            title={modalCreateTitle + '"' + parentCategory.text + '"'}
+            uuid={modalUuid}
+          >
+            <CategoryCreateForm
+              nameTitle="Название"
+              ref="createForm" />
+          </Modal>
         );
       case MANAGER_SHOW:
         return (
-          <CategoriesList
-            categories={categories}
-            onChangeSelection={onChangeSelection}
-            selectedCategories={selectedCategories}
-          />
+          <Modal
+            cancelClosesModal={true}
+            headerButtons={this.getHeaderButtons()}
+            okClosesModal={true}
+            onClose={this.discardSelection.bind(this)}
+            onOk={this.acceptSelection.bind(this)}
+            textButtonCancel={null}
+            title={modalShowTitle}
+            uuid={modalUuid}
+          >
+            <CategoriesList
+              categories={categories}
+              onChangeSelection={onChangeSelection}
+              selectedCategories={selectedCategories}
+            />
+          </Modal>
         );
-      default: return null;
+      default:
+        return null;
     }
   }
   getParent(categories, selectedCategories) {
@@ -71,35 +83,62 @@ export default class CategoryTreeManager extends Component {
       }
     }
 
-    return bfs(categories).filter((el) => selectedCategories.indexOf(el.id) > -1)[0];
+    return bfs(categories).filter((el) => (selectedCategories.indexOf(el.id) > -1))[0];
   }
-  switchOnCreateState() {
-    this.setState({ currentState: MANAGER_CREATE });
-  }
-  switchOnShowState() {
-    this.setState({ currentState: MANAGER_SHOW });
-  }
-  getModalTitle(currentState) {
-    const { modalCreateTitle, modalShowTitle } = this.props;
+  createCategory() {
+    const { categories, onCategoriesChange, selectedCategories } = this.props;
+    const category = this.refs.createForm.getCategory();
+    const parentCategory = this.getParent(categories, selectedCategories);
 
-    switch(currentState) {
-      case MANAGER_CREATE: return modalCreateTitle;
-      case MANAGER_SHOW: return modalShowTitle;
-      default: return '';
-    }
+    this.activateCreating();
+
+    Api.categories.create({
+      name: category.name,
+      parentID: parentCategory.id,
+    }).done((category) => {
+      let newCategories = this.addCategory(categories, parentCategory.id, {
+        id: category.id,
+        text: category.name,
+        children: [],
+      });
+
+      onCategoriesChange(newCategories);
+      this.activateShow();
+    }).fail((jqXHR) => {
+      this.activateCreate();
+      NoticeService.errorResponse(jqXHR);
+    });
+  }
+  addCategory(categories, parentID, data) {
+    return categories.map((el) => {
+      if (el.id === parentID) {
+        return {
+          ...el,
+          children: [ data, ...el.children ]
+        };
+      } else if (el.children instanceof Array && el.children.length) {
+        return {
+          ...el,
+          children: this.addCategory(el.children, parentID, data)
+        };
+      } else {
+        return el;
+      }
+    });
   }
   getHeaderButtons() {
-    const { createButtonTitle, canCreate } = this.props;
+    const { categories, createButtonTitle, canCreate, selectedCategories } = this.props;
     const { currentState } = this.state;
+    const parentCategory = this.getParent(categories, selectedCategories);
 
     return (
       <span>
         {canCreate
-         && currentState !== MANAGER_CREATE
          && <Button
               bsStyle="primary"
               className="btn-sm"
-              onClick={this.switchOnCreateState.bind(this)}
+              disabled={!parentCategory}
+              onClick={this.activateCreate.bind(this)}
             >
               {createButtonTitle}
             </Button>
@@ -107,12 +146,21 @@ export default class CategoryTreeManager extends Component {
       </span>
     );
   }
-  onModalOk() {
+  activateShow() {
     this.setState({ currentState: MANAGER_SHOW });
+  }
+  activateCreate() {
+    this.setState({ currentState: MANAGER_CREATE });
+  }
+  activateCreating() {
+    this.setState({ currentState: MANAGER_CREATING });
+  }
+  acceptSelection() {
+    this.activateShow();
     this.props.onAcceptSelection();
   }
-  onModalClose() {
-    this.setState({ currentState: MANAGER_SHOW });
+  discardSelection() {
+    this.activateShow();
     this.props.onDiscardSelection();
   }
 }

@@ -9,25 +9,9 @@ export default class CategoryTreeSelector extends Component {
     categories_ids: [],
     canCreate: false,
     createButtonTitle: 'Создать',
-    data: [{
-      "id": 560,
-      "text": "Hello!asdsadd22",
-      "children": [{
-        "id": 3399,
-        "text": "New noded",
-        "children": []
-      }, {
-        "id": 3149,
-        "text": "New node",
-        "children": [{
-          "id": 3153,
-          "text": "New node",
-          "children": []
-        }]
-      }]
-    }],
+    data: [],
     fieldName: 'categories_ids[]',
-    modalCreateTitle: 'Создание категории',
+    modalCreateTitle: 'Создание категории в ',
     modalShowTitle: 'Выбор категорий',
   }
   state = {
@@ -55,6 +39,9 @@ export default class CategoryTreeSelector extends Component {
       selectedCategories: newCategories,
       selectedUncommitted: newCategories,
     });
+  }
+  onCategoriesChange(categories) {
+    this.setState({ categories });
   }
   onAcceptSelection() {
     this.setState({ selectedCategories: this.state.selectedUncommitted });
@@ -85,6 +72,7 @@ export default class CategoryTreeSelector extends Component {
           modalCreateTitle={modalCreateTitle}
           modalShowTitle={modalShowTitle}
           onAcceptSelection={this.onAcceptSelection.bind(this)}
+          onCategoriesChange={this.onCategoriesChange.bind(this)}
           onChangeSelection={this.onChangeSelection.bind(this)}
           onDiscardSelection={this.onDiscardSelection.bind(this)}
           selectedCategories={selectedUncommitted}
