@@ -13,7 +13,6 @@ export default class CategoryTreeManager extends Component {
     modalUuid: PropTypes.string.isRequired,
     modalCreateTitle: PropTypes.string.isRequired,
     modalShowTitle: PropTypes.string.isRequired,
-    parentCategory: PropTypes.object,
     onAcceptSelection: PropTypes.func.isRequired,
     onChangeSelection: PropTypes.func.isRequired,
     onDiscardSelection: PropTypes.func.isRequired,
@@ -47,7 +46,9 @@ export default class CategoryTreeManager extends Component {
     switch(this.state.currentState) {
       case MANAGER_CREATE:
         return (
-          <CategoryCreateForm categories={categories} />
+          <CategoryCreateForm
+            parentCategory={this.getParent(categories, selectedCategories)}
+          />
         );
       case MANAGER_SHOW:
         return (
@@ -59,6 +60,18 @@ export default class CategoryTreeManager extends Component {
         );
       default: return null;
     }
+  }
+  getParent(categories, selectedCategories) {
+    function bfs(tree, ret = []) {
+      if (tree.length === 0) {
+        return ret;
+      } else {
+        const [f, ...rest] = tree;
+        return bfs(rest.concat(f.children || []), [...ret, f]);
+      }
+    }
+
+    return bfs(categories).filter((el) => selectedCategories.indexOf(el.id) > -1)[0];
   }
   switchOnCreateState() {
     this.setState({ currentState: MANAGER_CREATE });
