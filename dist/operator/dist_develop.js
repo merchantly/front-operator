@@ -1554,99 +1554,98 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var CategoryCreateForm = (function (_Component) {
+var CategoryCreateForm = (function () {
   function CategoryCreateForm() {
     _classCallCheck(this, CategoryCreateForm);
-
-    if (_Component != null) {
-      _Component.apply(this, arguments);
-    }
-
-    this.state = {
-      category: this.getDefaultCategory()
-    };
   }
-
-  _inherits(CategoryCreateForm, _Component);
 
   _createClass(CategoryCreateForm, [{
     key: "render",
     value: function render() {
-      var nameTitle = this.props.nameTitle;
+      var _props = this.props;
+      var category = _props.category;
+      var parentCategory = _props.parentCategory;
 
       return _react2["default"].createElement(
-        Row,
+        "span",
         null,
         _react2["default"].createElement(
-          Col,
-          { md: 12 },
+          Row,
+          null,
           _react2["default"].createElement(
-            "div",
-            { className: "form-group" },
+            Col,
+            { md: 12 },
             _react2["default"].createElement(
-              "label",
-              { className: "control-label", htmlFor: "category_name" },
-              nameTitle
-            ),
-            _react2["default"].createElement("input", {
-              autoFocus: true,
-              className: "form-control",
-              id: "category_name",
-              onChange: this.onNameChange.bind(this),
-              type: "text",
-              value: this.state.category.name
-            })
+              "div",
+              { className: "form-group" },
+              _react2["default"].createElement(
+                "label",
+                { className: "control-label", htmlFor: "category_name" },
+                "Название"
+              ),
+              _react2["default"].createElement("input", {
+                autoFocus: true,
+                className: "form-control",
+                id: "category_name",
+                onChange: this.handleTextFieldChange.bind(this, "name"),
+                type: "text",
+                value: category.name
+              })
+            )
+          )
+        ),
+        _react2["default"].createElement(
+          Row,
+          null,
+          _react2["default"].createElement(
+            Col,
+            { md: 12 },
+            _react2["default"].createElement(
+              "div",
+              { className: "form-group" },
+              _react2["default"].createElement(
+                "label",
+                { className: "control-label", htmlFor: "category_name" },
+                "Родительская категория"
+              ),
+              _react2["default"].createElement(
+                "h4",
+                null,
+                parentCategory.text
+              )
+            )
           )
         )
       );
     }
   }, {
-    key: "getDefaultCategory",
-    value: function getDefaultCategory() {
-      return { name: "" };
-    }
-  }, {
-    key: "getCategory",
-    value: function getCategory() {
-      return this.state.category;
-    }
-  }, {
-    key: "resetData",
-    value: function resetData() {
-      this.setState({ category: this.getDefaultCategory() });
-    }
-  }, {
-    key: "onNameChange",
-    value: function onNameChange(e) {
-      this.setState({
-        category: _extends({}, this.state.data, {
-          name: e.target.value
-        })
-      });
+    key: "handleTextFieldChange",
+    value: function handleTextFieldChange(fieldName, ev) {
+      var value = ev.target.value;
+      this.props.onFieldChange(fieldName, value);
     }
   }], [{
     key: "propTypes",
     value: {
-      nameTitle: _react.PropTypes.string.isRequired },
+      category: _react.PropTypes.object.isRequired,
+      nameTitle: _react.PropTypes.string.isRequired,
+      parentCategory: _react.PropTypes.object.isRequired,
+      onFieldChange: _react.PropTypes.func.isRequired },
     enumerable: true
   }]);
 
   return CategoryCreateForm;
-})(_react.Component);
+})();
 
 exports["default"] = CategoryCreateForm;
 module.exports = exports["default"];
@@ -1658,15 +1657,17 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
+function _defineProperty(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -1709,74 +1710,16 @@ var CategoryTreeManager = (function (_Component) {
     }
 
     this.state = {
-      currentState: MANAGER_SHOW };
+      currentState: MANAGER_SHOW,
+      category: this.getDefaultCategory() };
   }
 
   _inherits(CategoryTreeManager, _Component);
 
   _createClass(CategoryTreeManager, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var categories = _props.categories;
-      var createButtonTitle = _props.createButtonTitle;
-      var modalCreateTitle = _props.modalCreateTitle;
-      var modalShowTitle = _props.modalShowTitle;
-      var modalUuid = _props.modalUuid;
-      var onChangeSelection = _props.onChangeSelection;
-      var selectedCategories = _props.selectedCategories;
-      var currentState = this.state.currentState;
-
-      var parentCategory = this.getParent(categories, selectedCategories);
-
-      switch (currentState) {
-        case MANAGER_CREATE:
-          return _react2['default'].createElement(
-            _commonModal2['default'],
-            {
-              onClose: this.activateShow.bind(this),
-              onOk: this.createCategory.bind(this),
-              textButtonOk: createButtonTitle,
-              textButtonCancel: 'Отмена',
-              title: modalCreateTitle + '"' + parentCategory.text + '"',
-              uuid: modalUuid
-            },
-            _react2['default'].createElement(_CategoryCreateForm2['default'], { nameTitle: 'Название', ref: 'createForm' })
-          );
-        case MANAGER_CREATING:
-          return _react2['default'].createElement(
-            _commonModal2['default'],
-            {
-              onClose: this.activateShow.bind(this),
-              textButtonOk: null,
-              textButtonCancel: null,
-              title: modalCreateTitle + '"' + parentCategory.text + '"',
-              uuid: modalUuid
-            },
-            'Создаём...'
-          );
-        case MANAGER_SHOW:
-          return _react2['default'].createElement(
-            _commonModal2['default'],
-            {
-              cancelClosesModal: true,
-              headerButtons: this.getHeaderButtons(),
-              okClosesModal: true,
-              onClose: this.discardSelection.bind(this),
-              onOk: this.acceptSelection.bind(this),
-              textButtonCancel: null,
-              title: modalShowTitle,
-              uuid: modalUuid
-            },
-            _react2['default'].createElement(_CategoriesList2['default'], {
-              categories: categories,
-              onChangeSelection: onChangeSelection,
-              selectedCategories: selectedCategories
-            })
-          );
-        default:
-          return null;
-      }
+    key: 'getDefaultCategory',
+    value: function getDefaultCategory() {
+      return { name: '' };
     }
   }, {
     key: 'getParent',
@@ -1812,6 +1755,37 @@ var CategoryTreeManager = (function (_Component) {
       })[0];
     }
   }, {
+    key: 'getHeaderButtons',
+    value: function getHeaderButtons() {
+      var _props = this.props;
+      var categories = _props.categories;
+      var createButtonTitle = _props.createButtonTitle;
+      var canCreate = _props.canCreate;
+      var selectedCategories = _props.selectedCategories;
+
+      var parentCategory = this.getParent(categories, selectedCategories);
+
+      return _react2['default'].createElement(
+        'span',
+        null,
+        canCreate && _react2['default'].createElement(
+          Button,
+          {
+            bsStyle: 'primary',
+            className: 'btn-sm',
+            disabled: !parentCategory,
+            onClick: this.activateCreate.bind(this)
+          },
+          createButtonTitle
+        )
+      );
+    }
+  }, {
+    key: 'resetCategory',
+    value: function resetCategory() {
+      this.setState({ category: this.getDefaultCategory() });
+    }
+  }, {
     key: 'createCategory',
     value: function createCategory() {
       var _this2 = this;
@@ -1820,8 +1794,8 @@ var CategoryTreeManager = (function (_Component) {
       var categories = _props2.categories;
       var onCategoriesChange = _props2.onCategoriesChange;
       var selectedCategories = _props2.selectedCategories;
+      var category = this.state.category;
 
-      var category = this.refs.createForm.getCategory();
       var parentCategory = this.getParent(categories, selectedCategories);
 
       this.activateCreating();
@@ -1862,35 +1836,11 @@ var CategoryTreeManager = (function (_Component) {
       });
     }
   }, {
-    key: 'getHeaderButtons',
-    value: function getHeaderButtons() {
-      var _props3 = this.props;
-      var categories = _props3.categories;
-      var createButtonTitle = _props3.createButtonTitle;
-      var canCreate = _props3.canCreate;
-      var selectedCategories = _props3.selectedCategories;
-
-      var parentCategory = this.getParent(categories, selectedCategories);
-
-      return _react2['default'].createElement(
-        'span',
-        null,
-        canCreate && _react2['default'].createElement(
-          Button,
-          {
-            bsStyle: 'primary',
-            className: 'btn-sm',
-            disabled: !parentCategory,
-            onClick: this.activateCreate.bind(this)
-          },
-          createButtonTitle
-        )
-      );
-    }
-  }, {
     key: 'activateShow',
     value: function activateShow() {
-      this.setState({ currentState: MANAGER_SHOW });
+      this.setState({
+        category: this.getDefaultCategory(),
+        currentState: MANAGER_SHOW });
     }
   }, {
     key: 'activateCreate',
@@ -1913,6 +1863,81 @@ var CategoryTreeManager = (function (_Component) {
     value: function discardSelection() {
       this.activateShow();
       this.props.onDiscardSelection();
+    }
+  }, {
+    key: 'onFieldChange',
+    value: function onFieldChange(fieldName, value) {
+      this.setState({
+        category: _extends({}, this.state.data, _defineProperty({}, fieldName, value))
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props;
+      var categories = _props3.categories;
+      var createButtonTitle = _props3.createButtonTitle;
+      var modalCreateTitle = _props3.modalCreateTitle;
+      var modalShowTitle = _props3.modalShowTitle;
+      var modalUuid = _props3.modalUuid;
+      var onChangeSelection = _props3.onChangeSelection;
+      var selectedCategories = _props3.selectedCategories;
+      var _state = this.state;
+      var category = _state.category;
+      var currentState = _state.currentState;
+
+      var parentCategory = this.getParent(categories, selectedCategories);
+      var modalOptions = {
+        cancelClosesModal: true,
+        onClose: this.discardSelection.bind(this),
+        uuid: modalUuid };
+
+      switch (currentState) {
+        case MANAGER_CREATE:
+          return _react2['default'].createElement(
+            _commonModal2['default'],
+            _extends({}, modalOptions, {
+              onOk: this.createCategory.bind(this),
+              textButtonOk: createButtonTitle,
+              textButtonCancel: 'Отмена',
+              title: modalCreateTitle
+            }),
+            _react2['default'].createElement(_CategoryCreateForm2['default'], {
+              category: category,
+              parentCategory: parentCategory,
+              onFieldChange: this.onFieldChange.bind(this)
+            })
+          );
+        case MANAGER_CREATING:
+          return _react2['default'].createElement(
+            _commonModal2['default'],
+            _extends({}, modalOptions, {
+              textButtonOk: null,
+              textButtonCancel: null,
+              title: modalCreateTitle
+            }),
+            'Создаём...'
+          );
+        case MANAGER_SHOW:
+          return _react2['default'].createElement(
+            _commonModal2['default'],
+            _extends({}, modalOptions, {
+              headerButtons: this.getHeaderButtons(),
+              okClosesModal: true,
+              onClose: this.discardSelection.bind(this),
+              onOk: this.acceptSelection.bind(this),
+              textButtonCancel: null,
+              title: modalShowTitle
+            }),
+            _react2['default'].createElement(_CategoriesList2['default'], {
+              categories: categories,
+              onChangeSelection: onChangeSelection,
+              selectedCategories: selectedCategories
+            })
+          );
+        default:
+          return null;
+      }
     }
   }], [{
     key: 'propTypes',
@@ -2227,7 +2252,7 @@ var CategoryTreeSelector = (function (_Component) {
       createButtonTitle: 'Создать',
       data: [],
       fieldName: 'categories_ids[]',
-      modalCreateTitle: 'Создание категории в ',
+      modalCreateTitle: 'Создание категории',
       modalShowTitle: 'Выбор категорий' },
     enumerable: true
   }]);
@@ -4981,7 +5006,7 @@ var Modal = (function (_Component) {
       children: _react.PropTypes.node,
       fitWindow: _react.PropTypes.bool,
       onClose: _react.PropTypes.func.isRequired,
-      onOk: _react.PropTypes.func.isRequired,
+      onOk: _react.PropTypes.func,
       okClosesModal: _react.PropTypes.bool,
       textButtonCancel: _react.PropTypes.string,
       textButtonOk: _react.PropTypes.string,

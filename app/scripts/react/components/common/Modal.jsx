@@ -8,7 +8,7 @@ export default class Modal extends Component {
     children: PropTypes.node,
     fitWindow: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
-    onOk: PropTypes.func.isRequired,
+    onOk: PropTypes.func,
     okClosesModal: PropTypes.bool,
     textButtonCancel: PropTypes.string,
     textButtonOk: PropTypes.string,

@@ -20,7 +20,7 @@ export default class CategoryTreeSelector extends Component {
     createButtonTitle: 'Создать',
     data: [],
     fieldName: 'categories_ids[]',
-    modalCreateTitle: 'Создание категории в ',
+    modalCreateTitle: 'Создание категории',
     modalShowTitle: 'Выбор категорий',
   }
   state = {

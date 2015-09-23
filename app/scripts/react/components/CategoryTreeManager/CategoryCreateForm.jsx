@@ -1,50 +1,49 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class CategoryCreateForm extends Component {
+export default class CategoryCreateForm {
   static propTypes = {
+    category: PropTypes.object.isRequired,
     nameTitle: PropTypes.string.isRequired,
-  }
-  state = {
-    category: this.getDefaultCategory()
+    parentCategory: PropTypes.object.isRequired,
+    onFieldChange: PropTypes.func.isRequired,
   }
   render() {
-    const { nameTitle } = this.props;
+    const { category, parentCategory } = this.props;
 
     return (
-      <Row>
-        <Col md={12}>
-          <div className="form-group">
-            <label className="control-label" htmlFor="category_name">
-              {nameTitle}
-            </label>
-            <input
-              autoFocus={true}
-              className="form-control"
-              id="category_name"
-              onChange={this.onNameChange.bind(this)}
-              type="text"
-              value={this.state.category.name}
-            />
-          </div>
-        </Col>
-      </Row>
+      <span>
+        <Row>
+          <Col md={12}>
+            <div className="form-group">
+              <label className="control-label" htmlFor="category_name">
+                Название
+              </label>
+              <input
+                autoFocus={true}
+                className="form-control"
+                id="category_name"
+                onChange={this.handleTextFieldChange.bind(this, 'name')}
+                type="text"
+                value={category.name}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <div className="form-group">
+              <label className="control-label" htmlFor="category_name">
+                Родительская категория
+              </label>
+              <h4>{parentCategory.text}</h4>
+            </div>
+          </Col>
+        </Row>
+      </span>
     );
   }
-  getDefaultCategory() {
-    return { name: '' };
-  }
-  getCategory() {
-    return this.state.category;
-  }
-  resetData() {
-    this.setState({ category: this.getDefaultCategory() })
-  }
-  onNameChange(e) {
-    this.setState({
-      category: {
-        ...this.state.data,
-        name: e.target.value
-      }
-    });
+  handleTextFieldChange(fieldName, ev) {
+    const value = ev.target.value;
+    this.props.onFieldChange(fieldName, value);
   }
 }
