@@ -140,7 +140,6 @@ export default class CategoryTreeManager extends Component {
     const parentCategory = this.getParent(categories, selectedCategories);
     const modalOptions = {
       cancelClosesModal: true,
-      onClose: this.discardSelection.bind(this),
       uuid: modalUuid,
     }
 
@@ -149,6 +148,7 @@ export default class CategoryTreeManager extends Component {
         return (
           <Modal
             {...modalOptions}
+            onClose={this.activateShow.bind(this)}
             onOk={this.createCategory.bind(this)}
             textButtonOk={createButtonTitle}
             textButtonCancel="Отмена"
@@ -165,6 +165,7 @@ export default class CategoryTreeManager extends Component {
         return (
           <Modal
             {...modalOptions}
+            onClose={this.discardSelection.bind(this)}
             textButtonOk={null}
             textButtonCancel={null}
             title={modalCreateTitle}

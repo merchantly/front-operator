@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 export default class CategoryCreateForm {
   static propTypes = {
     category: PropTypes.object.isRequired,
-    nameTitle: PropTypes.string.isRequired,
     parentCategory: PropTypes.object.isRequired,
     onFieldChange: PropTypes.func.isRequired,
   }

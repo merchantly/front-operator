@@ -1638,7 +1638,6 @@ var CategoryCreateForm = (function () {
     key: "propTypes",
     value: {
       category: _react.PropTypes.object.isRequired,
-      nameTitle: _react.PropTypes.string.isRequired,
       parentCategory: _react.PropTypes.object.isRequired,
       onFieldChange: _react.PropTypes.func.isRequired },
     enumerable: true
@@ -1889,7 +1888,6 @@ var CategoryTreeManager = (function (_Component) {
       var parentCategory = this.getParent(categories, selectedCategories);
       var modalOptions = {
         cancelClosesModal: true,
-        onClose: this.discardSelection.bind(this),
         uuid: modalUuid };
 
       switch (currentState) {
@@ -1897,6 +1895,7 @@ var CategoryTreeManager = (function (_Component) {
           return _react2['default'].createElement(
             _commonModal2['default'],
             _extends({}, modalOptions, {
+              onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
               textButtonOk: createButtonTitle,
               textButtonCancel: 'Отмена',
@@ -1912,6 +1911,7 @@ var CategoryTreeManager = (function (_Component) {
           return _react2['default'].createElement(
             _commonModal2['default'],
             _extends({}, modalOptions, {
+              onClose: this.discardSelection.bind(this),
               textButtonOk: null,
               textButtonCancel: null,
               title: modalCreateTitle
