@@ -1591,16 +1591,13 @@ var CategoryCreateForm = (function () {
               _react2["default"].createElement(
                 "label",
                 { className: "control-label", htmlFor: "category_name" },
-                "Название"
+                "Родительская категория"
               ),
-              _react2["default"].createElement("input", {
-                autoFocus: true,
-                className: "form-control",
-                id: "category_name",
-                onChange: this.handleTextFieldChange.bind(this, "name"),
-                type: "text",
-                value: category.name
-              })
+              _react2["default"].createElement(
+                "h4",
+                null,
+                parentCategory.text
+              )
             )
           )
         ),
@@ -1616,13 +1613,16 @@ var CategoryCreateForm = (function () {
               _react2["default"].createElement(
                 "label",
                 { className: "control-label", htmlFor: "category_name" },
-                "Родительская категория"
+                "Название"
               ),
-              _react2["default"].createElement(
-                "h4",
-                null,
-                parentCategory.text
-              )
+              _react2["default"].createElement("input", {
+                autoFocus: true,
+                className: "form-control",
+                id: "category_name",
+                onChange: this.handleTextFieldChange.bind(this, "name"),
+                type: "text",
+                value: category.name
+              })
             )
           )
         )
@@ -1898,7 +1898,7 @@ var CategoryTreeManager = (function (_Component) {
               onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
               textButtonOk: createButtonTitle,
-              textButtonCancel: 'Отмена',
+              textButtonCancel: 'Назад',
               title: modalCreateTitle
             }),
             _react2['default'].createElement(_CategoryCreateForm2['default'], {

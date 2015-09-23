@@ -151,7 +151,7 @@ export default class CategoryTreeManager extends Component {
             onClose={this.activateShow.bind(this)}
             onOk={this.createCategory.bind(this)}
             textButtonOk={createButtonTitle}
-            textButtonCancel="Отмена"
+            textButtonCancel="Назад"
             title={modalCreateTitle}
           >
             <CategoryCreateForm

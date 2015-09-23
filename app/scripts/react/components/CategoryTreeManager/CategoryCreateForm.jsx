@@ -15,6 +15,16 @@ export default class CategoryCreateForm {
           <Col md={12}>
             <div className="form-group">
               <label className="control-label" htmlFor="category_name">
+                Родительская категория
+              </label>
+              <h4>{parentCategory.text}</h4>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <div className="form-group">
+              <label className="control-label" htmlFor="category_name">
                 Название
               </label>
               <input
@@ -25,16 +35,6 @@ export default class CategoryCreateForm {
                 type="text"
                 value={category.name}
               />
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <div className="form-group">
-              <label className="control-label" htmlFor="category_name">
-                Родительская категория
-              </label>
-              <h4>{parentCategory.text}</h4>
             </div>
           </Col>
         </Row>
