@@ -28,12 +28,11 @@ const NoticeService = {
     }
 
     let message = '';
-
     if (response.responseJSON != null) {
       let { responseJSON: json } = response;
       message = json.message || json.long_message || json.error;
     } else {
-      message = i18n.t('network_error', {text: response.statusText});
+      message = 'Ошибка сети: ' + response.statusText;
     }
 
     this.notifyError(message);

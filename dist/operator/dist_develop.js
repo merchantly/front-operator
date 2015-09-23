@@ -1719,6 +1719,7 @@ var CategoryTreeManager = (function (_Component) {
     value: function render() {
       var _props = this.props;
       var categories = _props.categories;
+      var createButtonTitle = _props.createButtonTitle;
       var modalCreateTitle = _props.modalCreateTitle;
       var modalShowTitle = _props.modalShowTitle;
       var modalUuid = _props.modalUuid;
@@ -1730,20 +1731,29 @@ var CategoryTreeManager = (function (_Component) {
 
       switch (currentState) {
         case MANAGER_CREATE:
-        case MANAGER_CREATING:
           return _react2['default'].createElement(
             _commonModal2['default'],
             {
               onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
-              textButtonOk: currentState === MANAGER_CREATE ? 'Создать' : 'Создаём...',
+              textButtonOk: createButtonTitle,
               textButtonCancel: 'Отмена',
               title: modalCreateTitle + '"' + parentCategory.text + '"',
               uuid: modalUuid
             },
-            _react2['default'].createElement(_CategoryCreateForm2['default'], {
-              nameTitle: 'Название',
-              ref: 'createForm' })
+            _react2['default'].createElement(_CategoryCreateForm2['default'], { nameTitle: 'Название', ref: 'createForm' })
+          );
+        case MANAGER_CREATING:
+          return _react2['default'].createElement(
+            _commonModal2['default'],
+            {
+              onClose: this.activateShow.bind(this),
+              textButtonOk: null,
+              textButtonCancel: null,
+              title: modalCreateTitle + '"' + parentCategory.text + '"',
+              uuid: modalUuid
+            },
+            'Создаём...'
           );
         case MANAGER_SHOW:
           return _react2['default'].createElement(
@@ -1826,6 +1836,7 @@ var CategoryTreeManager = (function (_Component) {
 
         onCategoriesChange(newCategories);
         _this2.activateShow();
+        _servicesNotice2['default'].notifySuccess('Категория ' + category.name + ' успешно создана!');
       }).fail(function (jqXHR) {
         _this2.activateCreate();
         _servicesNotice2['default'].errorResponse(jqXHR);
@@ -1858,7 +1869,6 @@ var CategoryTreeManager = (function (_Component) {
       var createButtonTitle = _props3.createButtonTitle;
       var canCreate = _props3.canCreate;
       var selectedCategories = _props3.selectedCategories;
-      var currentState = this.state.currentState;
 
       var parentCategory = this.getParent(categories, selectedCategories);
 
@@ -1909,6 +1919,7 @@ var CategoryTreeManager = (function (_Component) {
     value: {
       canCreate: _react.PropTypes.bool,
       categories: _react.PropTypes.array.isRequired,
+      createButtonTitle: _react.PropTypes.string.isRequired,
       modalUuid: _react.PropTypes.string.isRequired,
       modalCreateTitle: _react.PropTypes.string.isRequired,
       modalShowTitle: _react.PropTypes.string.isRequired,
@@ -2198,6 +2209,17 @@ var CategoryTreeSelector = (function (_Component) {
       );
     }
   }], [{
+    key: 'propTypes',
+    value: {
+      categories_ids: _react.PropTypes.array.isRequired,
+      canCreate: _react.PropTypes.bool,
+      createButtonTitle: _react.PropTypes.string,
+      data: _react.PropTypes.array.isRequired,
+      fieldName: _react.PropTypes.string.isRequired,
+      modalCreateTitle: _react.PropTypes.string,
+      modalShowTitle: _react.PropTypes.string },
+    enumerable: true
+  }, {
     key: 'defaultProps',
     value: {
       categories_ids: [],
@@ -4862,17 +4884,43 @@ var Modal = (function (_Component) {
       this.props.onOk();
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: 'renderFooter',
+    value: function renderFooter() {
       var _props = this.props;
-      var cancelClosesModal = _props.cancelClosesModal;
-      var headerButtons = _props.headerButtons;
-      var children = _props.children;
-      var okClosesModal = _props.okClosesModal;
-      var title = _props.title;
       var textButtonCancel = _props.textButtonCancel;
       var textButtonOk = _props.textButtonOk;
-      var uuid = _props.uuid;
+      var okClosesModal = _props.okClosesModal;
+
+      if (textButtonCancel || textButtonOk) {
+        return _react2['default'].createElement(
+          'div',
+          { className: 'modal-footer' },
+          textButtonCancel && _react2['default'].createElement(
+            Button,
+            { onClick: this.onClose.bind(this) },
+            textButtonCancel
+          ),
+          textButtonOk && _react2['default'].createElement(
+            Button,
+            {
+              bsStyle: 'primary',
+              'data-dismiss': okClosesModal ? 'modal' : void 0,
+              onClick: this.onOk.bind(this)
+            },
+            textButtonOk
+          )
+        );
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props2 = this.props;
+      var cancelClosesModal = _props2.cancelClosesModal;
+      var headerButtons = _props2.headerButtons;
+      var children = _props2.children;
+      var title = _props2.title;
+      var uuid = _props2.uuid;
 
       return _react2['default'].createElement(
         'div',
@@ -4892,7 +4940,6 @@ var Modal = (function (_Component) {
                 _react2['default'].createElement(
                   'button',
                   {
-                    'aria-label': textButtonCancel,
                     className: 'close',
                     'data-dismiss': cancelClosesModal ? 'modal' : void 0,
                     onClick: this.onClose.bind(this),
@@ -4905,14 +4952,14 @@ var Modal = (function (_Component) {
                   )
                 ),
                 _react2['default'].createElement(
-                  'h4',
-                  { className: 'modal-title' },
-                  title
-                ),
-                _react2['default'].createElement(
                   'span',
                   { className: 'modal-extra-buttons' },
                   headerButtons
+                ),
+                _react2['default'].createElement(
+                  'h4',
+                  { className: 'modal-title' },
+                  title
                 )
               ),
               _react2['default'].createElement(
@@ -4920,29 +4967,7 @@ var Modal = (function (_Component) {
                 { className: 'modal-body' },
                 children
               ),
-              _react2['default'].createElement(
-                'div',
-                { className: 'modal-footer' },
-                textButtonCancel && _react2['default'].createElement(
-                  'button',
-                  {
-                    className: 'btn btn-default',
-                    onClick: this.onClose.bind(this),
-                    type: 'button'
-                  },
-                  textButtonCancel
-                ),
-                _react2['default'].createElement(
-                  'button',
-                  {
-                    className: 'btn btn-primary',
-                    'data-dismiss': okClosesModal ? 'modal' : void 0,
-                    onClick: this.onOk.bind(this),
-                    type: 'button'
-                  },
-                  textButtonOk
-                )
-              )
+              this.renderFooter.call(this)
             )
           )
         )
@@ -8117,13 +8142,12 @@ var NoticeService = {
     }
 
     var message = '';
-
     if (response.responseJSON != null) {
       var json = response.responseJSON;
 
       message = json.message || json.long_message || json.error;
     } else {
-      message = i18n.t('network_error', { text: response.statusText });
+      message = 'Ошибка сети: ' + response.statusText;
     }
 
     this.notifyError(message);

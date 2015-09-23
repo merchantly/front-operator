@@ -13,6 +13,7 @@ export default class CategoryTreeManager extends Component {
   static propTypes = {
     canCreate: PropTypes.bool,
     categories: PropTypes.array.isRequired,
+    createButtonTitle: PropTypes.string.isRequired,
     modalUuid: PropTypes.string.isRequired,
     modalCreateTitle: PropTypes.string.isRequired,
     modalShowTitle: PropTypes.string.isRequired,
@@ -27,7 +28,7 @@ export default class CategoryTreeManager extends Component {
   }
   render() {
     const {
-      categories, modalCreateTitle, modalShowTitle, modalUuid,
+      categories, createButtonTitle, modalCreateTitle, modalShowTitle, modalUuid,
       onChangeSelection, selectedCategories
     } = this.props;
     const { currentState } = this.state;
@@ -35,19 +36,28 @@ export default class CategoryTreeManager extends Component {
 
     switch(currentState) {
       case MANAGER_CREATE:
-      case MANAGER_CREATING:
         return (
           <Modal
             onClose={this.activateShow.bind(this)}
             onOk={this.createCategory.bind(this)}
-            textButtonOk={currentState === MANAGER_CREATE ? 'Создать' : 'Создаём...'}
+            textButtonOk={createButtonTitle}
             textButtonCancel="Отмена"
             title={modalCreateTitle + '"' + parentCategory.text + '"'}
             uuid={modalUuid}
           >
-            <CategoryCreateForm
-              nameTitle="Название"
-              ref="createForm" />
+            <CategoryCreateForm nameTitle="Название" ref="createForm" />
+          </Modal>
+        );
+      case MANAGER_CREATING:
+        return (
+          <Modal
+            onClose={this.activateShow.bind(this)}
+            textButtonOk={null}
+            textButtonCancel={null}
+            title={modalCreateTitle + '"' + parentCategory.text + '"'}
+            uuid={modalUuid}
+          >
+            Создаём...
           </Modal>
         );
       case MANAGER_SHOW:
@@ -104,6 +114,7 @@ export default class CategoryTreeManager extends Component {
 
       onCategoriesChange(newCategories);
       this.activateShow();
+      NoticeService.notifySuccess('Категория ' + category.name + ' успешно создана!');
     }).fail((jqXHR) => {
       this.activateCreate();
       NoticeService.errorResponse(jqXHR);
@@ -128,7 +139,6 @@ export default class CategoryTreeManager extends Component {
   }
   getHeaderButtons() {
     const { categories, createButtonTitle, canCreate, selectedCategories } = this.props;
-    const { currentState } = this.state;
     const parentCategory = this.getParent(categories, selectedCategories);
 
     return (

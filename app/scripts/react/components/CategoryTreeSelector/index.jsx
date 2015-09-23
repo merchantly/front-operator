@@ -5,6 +5,15 @@ import SelectedCategories from './SelectedCategories';
 import CategoryTreeManager from '../CategoryTreeManager';
 
 export default class CategoryTreeSelector extends Component {
+  static propTypes = {
+    categories_ids: PropTypes.array.isRequired,
+    canCreate: PropTypes.bool,
+    createButtonTitle: PropTypes.string,
+    data: PropTypes.array.isRequired,
+    fieldName: PropTypes.string.isRequired,
+    modalCreateTitle: PropTypes.string,
+    modalShowTitle: PropTypes.string,
+  }
   static defaultProps = {
     categories_ids: [],
     canCreate: false,
