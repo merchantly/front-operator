@@ -7110,20 +7110,28 @@ exports["default"] = ProductImagesImageListItem;
 module.exports = exports["default"];
 
 },{}],81:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _commonDropZone = require("../common/DropZone");
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _commonDropZone = require('../common/DropZone');
 
 var _commonDropZone2 = _interopRequireDefault(_commonDropZone);
 
+var _servicesNotice = require('../../services/Notice');
+
+var _servicesNotice2 = _interopRequireDefault(_servicesNotice);
+
 var ProductImagesUpload = React.createClass({
-  displayName: "ProductImagesUpload",
+  displayName: 'ProductImagesUpload',
 
   propTypes: {
     onImagesUpload: React.PropTypes.func.isRequired
@@ -7131,36 +7139,36 @@ var ProductImagesUpload = React.createClass({
 
   render: function render() {
     return React.createElement(
-      _commonDropZone2["default"],
+      _commonDropZone2['default'],
       {
         global: true,
         onDrop: this.handleDrop },
       React.createElement(
-        "div",
-        { className: "col-xs-12 col-sm-6 col-md-3 col-lg-2 thumbnails-item thumbnails-item-add" },
+        'div',
+        { className: 'col-xs-12 col-sm-6 col-md-3 col-lg-2 thumbnails-item thumbnails-item-add' },
         React.createElement(
-          "div",
-          { className: "thumbnails-item-in" },
+          'div',
+          { className: 'thumbnails-item-in' },
           React.createElement(
-            "div",
-            { className: "thumbnails-item-actions" },
+            'div',
+            { className: 'thumbnails-item-actions' },
             React.createElement(
-              "div",
-              { className: "thumbnails-item-action" },
-              React.createElement("i", { className: "fa fa-plus" })
+              'div',
+              { className: 'thumbnails-item-action' },
+              React.createElement('i', { className: 'fa fa-plus' })
             )
           ),
           React.createElement(
-            "label",
-            { title: "Добавить изображение",
-              htmlFor: "image",
-              className: "thumbnails-item-input" },
-            React.createElement("input", { ref: "fileInput",
-              type: "file",
-              accept: "image/*",
+            'label',
+            { title: 'Добавить изображение',
+              htmlFor: 'image',
+              className: 'thumbnails-item-input' },
+            React.createElement('input', { ref: 'fileInput',
+              type: 'file',
+              accept: 'image/*',
               multiple: true,
-              id: "image",
-              className: "hide",
+              id: 'image',
+              className: 'hide',
               onChange: this.handleChange })
           )
         )
@@ -7169,7 +7177,28 @@ var ProductImagesUpload = React.createClass({
   },
 
   handleDrop: function handleDrop(files) {
-    if (files.length) this.props.onImagesUpload(files);
+    var imageFiles = [];
+    var notImageFiles = [];
+
+    _lodash2['default'].forEach(files, function (file) {
+      if (file.type.match(/(\.|\/)(gif|jpe?g|png|svg)$/i)) {
+        imageFiles.push(file);
+      } else {
+        notImageFiles.push(file);
+      }
+    });
+
+    if (notImageFiles.length) {
+      var fileNames = notImageFiles.map(function (file) {
+        return file.name;
+      });
+      var listItems = '<li>' + fileNames.join('</li><li>') + '</li>';
+      _servicesNotice2['default'].notifyError('Файлы, которые не являются изображениями: <ul>' + listItems + '</ul>');
+    }
+
+    if (imageFiles.length) {
+      this.props.onImagesUpload(imageFiles);
+    }
   },
 
   handleChange: function handleChange(e) {
@@ -7178,10 +7207,10 @@ var ProductImagesUpload = React.createClass({
   }
 });
 
-exports["default"] = ProductImagesUpload;
-module.exports = exports["default"];
+exports['default'] = ProductImagesUpload;
+module.exports = exports['default'];
 
-},{"../common/DropZone":43}],82:[function(require,module,exports){
+},{"../../services/Notice":107,"../common/DropZone":43,"lodash":"lodash"}],82:[function(require,module,exports){
 var DRAG_DELAY, DRAG_REVERT, ProductImageSortableMixin, _getNewPositions;
 
 DRAG_DELAY = 100;

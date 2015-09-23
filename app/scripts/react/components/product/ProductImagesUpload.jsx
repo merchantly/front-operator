@@ -1,4 +1,6 @@
+import _ from 'lodash';
 import DropZone from '../common/DropZone';
+import NoticeService from '../../services/Notice';
 
 let ProductImagesUpload = React.createClass({
   propTypes: {
@@ -35,7 +37,26 @@ let ProductImagesUpload = React.createClass({
   },
 
   handleDrop(files) {
-    if (files.length) this.props.onImagesUpload(files);
+    const imageFiles = [];
+    const notImageFiles = [];
+
+    _.forEach(files, (file) => {
+      if (file.type.match(/(\.|\/)(gif|jpe?g|png|svg)$/i)) {
+        imageFiles.push(file);
+      } else {
+        notImageFiles.push(file);
+      }
+    });
+
+    if (notImageFiles.length) {
+      const fileNames = notImageFiles.map((file) => file.name);
+      const listItems = '<li>' + fileNames.join('</li><li>') + '</li>';
+      NoticeService.notifyError('Файлы, которые не являются изображениями: <ul>' + listItems + '</ul>');
+    }
+
+    if (imageFiles.length) {
+      this.props.onImagesUpload(imageFiles);
+    }
   },
 
   handleChange(e) {
