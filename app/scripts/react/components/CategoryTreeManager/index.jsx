@@ -158,6 +158,7 @@ export default class CategoryTreeManager extends Component {
               category={category}
               parentCategory={parentCategory}
               onFieldChange={this.onFieldChange.bind(this)}
+              onSubmit={this.createCategory.bind(this)}
             />
           </Modal>
         );

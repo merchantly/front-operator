@@ -1,44 +1,53 @@
 import React, { PropTypes } from 'react';
+import HiddenSubmit from '../common/HiddenSubmit';
 
 export default class CategoryCreateForm {
   static propTypes = {
     category: PropTypes.object.isRequired,
     parentCategory: PropTypes.object.isRequired,
     onFieldChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  }
+  onSubmit(ev) {
+    ev.preventDefault();
+    this.props.onSubmit();
   }
   render() {
     const { category, parentCategory } = this.props;
 
     return (
-      <span>
-        <Row>
-          <Col md={12}>
-            <div className="form-group">
-              <label className="control-label" htmlFor="category_name">
-                Родительская категория
-              </label>
-              <h4>{parentCategory.text}</h4>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <div className="form-group">
-              <label className="control-label" htmlFor="category_name">
-                Название
-              </label>
-              <input
-                autoFocus={true}
-                className="form-control"
-                id="category_name"
-                onChange={this.handleTextFieldChange.bind(this, 'name')}
-                type="text"
-                value={category.name}
-              />
-            </div>
-          </Col>
-        </Row>
-      </span>
+      <form className="form-horizontal" onSubmit={this.onSubmit.bind(this)}>
+        <div className="form-group">
+          <label className="col-sm-5 control-label">
+            Родительская категория
+          </label>
+          <div className="col-lg-7">
+            <input
+              className="form-control"
+              disabled={true}
+              type="text"
+              value={parentCategory.text}
+            />
+          </div>
+        </div>
+        <div className="hr-line-dashed" />
+        <div className="form-group">
+          <label className="col-sm-5 control-label" htmlFor="category_name">
+            Название
+          </label>
+          <div className="col-lg-7">
+            <input
+              autoFocus={true}
+              className="form-control"
+              id="category_name"
+              onChange={this.handleTextFieldChange.bind(this, 'name')}
+              type="text"
+              value={category.name}
+            />
+          </div>
+        </div>
+        <HiddenSubmit />
+      </form>
     );
   }
   handleTextFieldChange(fieldName, ev) {
