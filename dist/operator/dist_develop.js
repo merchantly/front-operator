@@ -6767,6 +6767,10 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _servicesNotice = require('../../services/Notice');
+
+var _servicesNotice2 = _interopRequireDefault(_servicesNotice);
+
 var _ProductImages = require('./ProductImages');
 
 var _ProductImages2 = _interopRequireDefault(_ProductImages);
@@ -6920,7 +6924,7 @@ var ProductImagesContainer = React.createClass({
 
           _this2.setState({ images: newImages });
         },
-        error: function error() {
+        error: function error(jqXHR) {
           var newImages = _this2.state.images.slice();
           var blobIndex = _lodash2['default'].findIndex(newImages, function (image) {
             return image.uuid === uuid;
@@ -6930,6 +6934,7 @@ var ProductImagesContainer = React.createClass({
 
           if (blobIndex !== -1) newImages.splice(blobIndex, 1);
 
+          _servicesNotice2['default'].errorResponse(jqXHR);
           _this2.setState({ images: newImages });
         }
       });
@@ -6962,7 +6967,7 @@ var ProductImagesContainer = React.createClass({
 exports['default'] = ProductImagesContainer;
 module.exports = exports['default'];
 
-},{"./ProductImages":77,"lodash":"lodash"}],79:[function(require,module,exports){
+},{"../../services/Notice":107,"./ProductImages":77,"lodash":"lodash"}],79:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

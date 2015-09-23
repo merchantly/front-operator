@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import NoticeService from '../../services/Notice';
 import ProductImages from './ProductImages';
 
 const LOADING_IMAGES_MESSAGE = 'Идёт загрузка изображений..',
@@ -145,7 +146,7 @@ let ProductImagesContainer = React.createClass({
 
           this.setState({images: newImages});
         },
-        error: () => {
+        error: (jqXHR) => {
           let newImages = this.state.images.slice();
           let blobIndex = _.findIndex(newImages, (image) => image.uuid === uuid);
 
@@ -153,6 +154,7 @@ let ProductImagesContainer = React.createClass({
 
           if (blobIndex !== -1) newImages.splice(blobIndex, 1);
 
+          NoticeService.errorResponse(jqXHR);
           this.setState({images: newImages});
         }
       });
