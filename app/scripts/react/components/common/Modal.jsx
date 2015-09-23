@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 export default class Modal extends Component {
   static propTypes = {
+    cancelClosesModal: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node,
     fitWindow: PropTypes.bool,
@@ -26,15 +27,13 @@ export default class Modal extends Component {
     this.props.onOk();
   }
   render() {
-    const { children, okClosesModal, title, textButtonCancel, textButtonOk, uuid } = this.props;
+    const {
+      cancelClosesModal, headerButtons, children, okClosesModal, title,
+      textButtonCancel, textButtonOk, uuid
+    } = this.props;
 
     return (
-      <div
-        className={classNames('modal', this.props.className)}
-        id={uuid}
-        role="dialog"
-        tabIndex="-1"
-      >
+      <div className="modal" id={uuid} role="dialog" tabIndex="-1">
         <div className={this.props.fitWindow && 'modal-wrapper'}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -42,13 +41,16 @@ export default class Modal extends Component {
                 <button
                   aria-label={textButtonCancel}
                   className="close"
-                  data-dismiss="modal"
+                  data-dismiss={cancelClosesModal ? "modal" : void 0}
                   onClick={this.onClose.bind(this)}
                   type="button"
                 >
                   <span aria-hidden={true}>{'\u00d7'}</span>
                 </button>
                 <h4 className="modal-title">{title}</h4>
+                <span className="modal-extra-buttons">
+                  {headerButtons}
+                </span>
               </div>
               <div className="modal-body">
                 {children}
@@ -57,7 +59,6 @@ export default class Modal extends Component {
                 { textButtonCancel &&
                   <button
                     className="btn btn-default"
-                    data-dismiss="modal"
                     onClick={this.onClose.bind(this)}
                     type="button"
                   >
