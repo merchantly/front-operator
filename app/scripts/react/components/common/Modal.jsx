@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 export default class Modal extends Component {
   static propTypes = {
+    buttonOkDisabled: PropTypes.bool,
     cancelClosesModal: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node,
@@ -27,7 +28,7 @@ export default class Modal extends Component {
     this.props.onOk();
   }
   renderFooter() {
-    const { textButtonCancel, textButtonOk, okClosesModal } = this.props;
+    const { buttonOkDisabled, textButtonCancel, textButtonOk, okClosesModal } = this.props;
 
     if (textButtonCancel || textButtonOk) {
       return (
@@ -41,6 +42,7 @@ export default class Modal extends Component {
            && <Button
                 bsStyle="primary"
                 data-dismiss={okClosesModal ? "modal" : void 0}
+                disabled={buttonOkDisabled}
                 onClick={this.onOk.bind(this)}
               >
                 {textButtonOk}

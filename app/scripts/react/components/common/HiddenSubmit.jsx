@@ -5,7 +5,7 @@ export default class HiddenSubmit {
     return (
       <input
         style={{ position: 'absolute', left: -9999, width: 1, height: 1 }}
-        tabindex="-1"
+        tabIndex="-1"
         type="submit"
       />
     );

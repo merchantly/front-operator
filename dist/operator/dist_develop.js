@@ -1706,6 +1706,10 @@ var MANAGER_CREATE = 'MANAGER_CREATE';
 var MANAGER_CREATING = 'MANAGER_CREATING';
 var MANAGER_SHOW = 'MANAGER_SHOW';
 
+// FIXME: Стандартный компонент модалки нам не очень подходит.
+//        Нужна либо модалка "на стероидах", либо свой компонент с элементами
+//        модалки, но своим управляемым поведением.
+
 var CategoryTreeManager = (function (_Component) {
   function CategoryTreeManager() {
     _classCallCheck(this, CategoryTreeManager);
@@ -1725,6 +1729,14 @@ var CategoryTreeManager = (function (_Component) {
     key: 'getDefaultCategory',
     value: function getDefaultCategory() {
       return { name: '' };
+    }
+  }, {
+    key: 'isCategoryValid',
+    value: function isCategoryValid(category) {
+      if (!category.name) {
+        return false;
+      }
+      return true;
     }
   }, {
     key: 'getParent',
@@ -1877,6 +1889,15 @@ var CategoryTreeManager = (function (_Component) {
       });
     }
   }, {
+    key: 'onFormSubmit',
+    value: function onFormSubmit() {
+      var category = this.state.category;
+
+      if (this.isCategoryValid(category)) {
+        this.createCategory();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props3 = this.props;
@@ -1901,6 +1922,7 @@ var CategoryTreeManager = (function (_Component) {
           return _react2['default'].createElement(
             _commonModal2['default'],
             _extends({}, modalOptions, {
+              buttonOkDisabled: !this.isCategoryValid(category),
               onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
               textButtonOk: createButtonTitle,
@@ -1911,7 +1933,7 @@ var CategoryTreeManager = (function (_Component) {
               category: category,
               parentCategory: parentCategory,
               onFieldChange: this.onFieldChange.bind(this),
-              onSubmit: this.createCategory.bind(this)
+              onSubmit: this.onFormSubmit.bind(this)
             })
           );
         case MANAGER_CREATING:
@@ -4634,7 +4656,7 @@ var HiddenSubmit = (function () {
     value: function render() {
       return _react2['default'].createElement('input', {
         style: { position: 'absolute', left: -9999, width: 1, height: 1 },
-        tabindex: '-1',
+        tabIndex: '-1',
         type: 'submit'
       });
     }
@@ -4958,6 +4980,7 @@ var Modal = (function (_Component) {
     key: 'renderFooter',
     value: function renderFooter() {
       var _props = this.props;
+      var buttonOkDisabled = _props.buttonOkDisabled;
       var textButtonCancel = _props.textButtonCancel;
       var textButtonOk = _props.textButtonOk;
       var okClosesModal = _props.okClosesModal;
@@ -4976,6 +4999,7 @@ var Modal = (function (_Component) {
             {
               bsStyle: 'primary',
               'data-dismiss': okClosesModal ? 'modal' : void 0,
+              disabled: buttonOkDisabled,
               onClick: this.onOk.bind(this)
             },
             textButtonOk
@@ -5047,6 +5071,7 @@ var Modal = (function (_Component) {
   }], [{
     key: 'propTypes',
     value: {
+      buttonOkDisabled: _react.PropTypes.bool,
       cancelClosesModal: _react.PropTypes.bool,
       className: _react.PropTypes.string,
       children: _react.PropTypes.node,

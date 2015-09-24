@@ -9,6 +9,10 @@ const MANAGER_CREATE = 'MANAGER_CREATE';
 const MANAGER_CREATING = 'MANAGER_CREATING';
 const MANAGER_SHOW = 'MANAGER_SHOW';
 
+// FIXME: Стандартный компонент модалки нам не очень подходит.
+//        Нужна либо модалка "на стероидах", либо свой компонент с элементами
+//        модалки, но своим управляемым поведением.
+
 export default class CategoryTreeManager extends Component {
   static propTypes = {
     canCreate: PropTypes.bool,
@@ -29,6 +33,10 @@ export default class CategoryTreeManager extends Component {
   }
   getDefaultCategory() {
     return { name: '' };
+  }
+  isCategoryValid(category) {
+    if (!category.name) { return false; }
+    return true;
   }
   getParent(categories, selectedCategories) {
     function bfs(tree, ret = []) {
@@ -131,6 +139,13 @@ export default class CategoryTreeManager extends Component {
       category: { ...this.state.data, [fieldName]: value }
     });
   }
+  onFormSubmit() {
+    const { category } = this.state;
+
+    if (this.isCategoryValid(category)) {
+      this.createCategory();
+    }
+  }
   render() {
     const {
       categories, createButtonTitle, modalCreateTitle, modalShowTitle,
@@ -148,6 +163,7 @@ export default class CategoryTreeManager extends Component {
         return (
           <Modal
             {...modalOptions}
+            buttonOkDisabled={!this.isCategoryValid(category)}
             onClose={this.activateShow.bind(this)}
             onOk={this.createCategory.bind(this)}
             textButtonOk={createButtonTitle}
@@ -158,7 +174,7 @@ export default class CategoryTreeManager extends Component {
               category={category}
               parentCategory={parentCategory}
               onFieldChange={this.onFieldChange.bind(this)}
-              onSubmit={this.createCategory.bind(this)}
+              onSubmit={this.onFormSubmit.bind(this)}
             />
           </Modal>
         );
