@@ -9,6 +9,7 @@ export default class CategoriesList {
   }
   render() {
     const { categories, onChangeSelection, selectedCategories } = this.props;
+
     const jsTreeConfig = {
       core: {
         animation: 0,

@@ -73,7 +73,9 @@ export default class CategoryTreeManager extends Component {
     this.setState({ category: this.getDefaultCategory() });
   }
   createCategory() {
-    const { categories, onCategoriesChange, selectedCategories } = this.props;
+    const {
+      categories, onCategoriesChange, onChangeSelection, selectedCategories
+    } = this.props;
     const { category } = this.state;
     const parentCategory = this.getParent(categories, selectedCategories);
 
@@ -83,13 +85,15 @@ export default class CategoryTreeManager extends Component {
       name: category.name,
       parentID: parentCategory.id,
     }).done((category) => {
-      let newCategories = this.addCategory(categories, parentCategory.id, {
+      const newSelection = selectedCategories.concat([category.id]);
+      const newCategories = this.addCategory(categories, parentCategory.id, {
         id: category.id,
         text: category.name,
         children: [],
       });
 
       onCategoriesChange(newCategories);
+      onChangeSelection(newSelection);
       this.activateShow();
       NoticeService.notifySuccess('Категория ' + category.name + ' успешно создана!');
     }).fail((jqXHR) => {

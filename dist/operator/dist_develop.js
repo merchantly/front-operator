@@ -1810,6 +1810,7 @@ var CategoryTreeManager = (function (_Component) {
       var _props2 = this.props;
       var categories = _props2.categories;
       var onCategoriesChange = _props2.onCategoriesChange;
+      var onChangeSelection = _props2.onChangeSelection;
       var selectedCategories = _props2.selectedCategories;
       var category = this.state.category;
 
@@ -1820,12 +1821,14 @@ var CategoryTreeManager = (function (_Component) {
       _api2['default'].categories.create({
         name: category.name,
         parentID: parentCategory.id }).done(function (category) {
+        var newSelection = selectedCategories.concat([category.id]);
         var newCategories = _this2.addCategory(categories, parentCategory.id, {
           id: category.id,
           text: category.name,
           children: [] });
 
         onCategoriesChange(newCategories);
+        onChangeSelection(newSelection);
         _this2.activateShow();
         _servicesNotice2['default'].notifySuccess('Категория ' + category.name + ' успешно создана!');
       }).fail(function (jqXHR) {
