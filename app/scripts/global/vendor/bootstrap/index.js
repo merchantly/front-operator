@@ -1,13 +1,10 @@
 import ReactBootstrap from 'react-bootstrap';
 
-export default {
-  Button: require('react-bootstrap/lib/Button'),
-  Col: require('react-bootstrap/lib/Col'),
-  FormGroup: require('react-bootstrap/lib/FormGroup'),
-  Input: require('react-bootstrap/lib/Input'),
-  Row: require('react-bootstrap/lib/Row')
-}
-
+export const Button = require('react-bootstrap/lib/Button');
+export const Col = require('react-bootstrap/lib/Col');
+export const FormGroup = require('react-bootstrap/lib/FormGroup');
+export const Input = require('react-bootstrap/lib/Input');
+export const Row = require('react-bootstrap/lib/Row');
 
 // module.exports = window.ReactBootstrap = {
 //   Dispatcher: new EventEmitter2({
