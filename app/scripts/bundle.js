@@ -1,6 +1,7 @@
 import './globals';
 
 require('./resources/libs');
+require('./libs/sortable');
 require('./resources/legacy');
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
