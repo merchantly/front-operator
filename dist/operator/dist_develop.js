@@ -850,6 +850,7 @@ module.exports = Route;
 require('./globals');
 
 require('./resources/libs');
+require('./libs/sortable');
 require('./resources/legacy');
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
@@ -958,7 +959,7 @@ require('./react/helpers/money');
 require('./react/application');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./globals":8,"./locales/numeral/ru":9,"./react/actions/server/operator_categories":11,"./react/actions/server/operator_products":12,"./react/actions/view/operator_categories":13,"./react/actions/view/operator_products":14,"./react/actions/view/product_images":15,"./react/application":18,"./react/components/CategoryTreeSelector":24,"./react/components/PropertiesManager":38,"./react/components/SmartCheckbox":40,"./react/components/SmartSelect":41,"./react/components/SmartSelectColored":43,"./react/components/common/Money":50,"./react/components/common/images_form_thumbs":52,"./react/components/common/spinner":53,"./react/components/common/super_select":54,"./react/components/modal/modal":55,"./react/components/operator_categories/list/create_form":56,"./react/components/operator_categories/list/items/item":57,"./react/components/operator_categories/list/items/item_edit":58,"./react/components/operator_categories/list/items/item_manager":59,"./react/components/operator_categories/list/items/with_subcategories":60,"./react/components/operator_categories/list/items/without_category":61,"./react/components/operator_categories/list/list":62,"./react/components/operator_categories/loaded":63,"./react/components/operator_categories/loading":64,"./react/components/operator_categories/loading_error":65,"./react/components/operator_categories/one_category":66,"./react/components/operator_categories/operator_categories":67,"./react/components/operator_categories/two_categories":68,"./react/components/operator_products/empty":70,"./react/components/operator_products/list/item":71,"./react/components/operator_products/list/item_drag":72,"./react/components/operator_products/list/items_drag":73,"./react/components/operator_products/list/list":74,"./react/components/operator_products/loading":75,"./react/components/operator_products/loading_error":76,"./react/components/operator_products/mixins/load_more_products":77,"./react/components/operator_products/operator_products":78,"./react/components/product/ProductImagesContainer":80,"./react/components/product/modification_list":85,"./react/components/product/modification_list_item":86,"./react/components/product/state":87,"./react/components/product/status_toggle":88,"./react/components/product/thumb":89,"./react/components/product/total_items_quantity":90,"./react/controllers/modal":93,"./react/dispatchers/_base":94,"./react/dispatchers/drag_state":95,"./react/dispatchers/operator_categories":96,"./react/dispatchers/operator_products":97,"./react/helpers/app":98,"./react/helpers/event":99,"./react/helpers/money":100,"./react/mixins/activities":101,"./react/mixins/category_droppable":102,"./react/mixins/component_manipulations":103,"./react/mixins/product_draggable":104,"./react/mixins/unmount":105,"./react/resources/categories":106,"./react/resources/products":107,"./react/services/operator_categories":110,"./react/services/operator_products":111,"./react/services/thumbor":112,"./react/services/uuid":113,"./react/stores/_base":114,"./react/stores/drag_state":115,"./react/stores/operator_categories":116,"./react/stores/operator_products":117,"./resources/legacy":118,"./resources/libs":119,"./routes/api":121,"./routes/routes":122}],6:[function(require,module,exports){
+},{"./globals":7,"./libs/sortable":8,"./locales/numeral/ru":9,"./react/actions/server/operator_categories":11,"./react/actions/server/operator_products":12,"./react/actions/view/operator_categories":13,"./react/actions/view/operator_products":14,"./react/actions/view/product_images":15,"./react/application":18,"./react/components/CategoryTreeSelector":24,"./react/components/PropertiesManager":38,"./react/components/SmartCheckbox":40,"./react/components/SmartSelect":41,"./react/components/SmartSelectColored":43,"./react/components/common/Money":50,"./react/components/common/images_form_thumbs":52,"./react/components/common/spinner":53,"./react/components/common/super_select":54,"./react/components/modal/modal":55,"./react/components/operator_categories/list/create_form":56,"./react/components/operator_categories/list/items/item":57,"./react/components/operator_categories/list/items/item_edit":58,"./react/components/operator_categories/list/items/item_manager":59,"./react/components/operator_categories/list/items/with_subcategories":60,"./react/components/operator_categories/list/items/without_category":61,"./react/components/operator_categories/list/list":62,"./react/components/operator_categories/loaded":63,"./react/components/operator_categories/loading":64,"./react/components/operator_categories/loading_error":65,"./react/components/operator_categories/one_category":66,"./react/components/operator_categories/operator_categories":67,"./react/components/operator_categories/two_categories":68,"./react/components/operator_products/empty":70,"./react/components/operator_products/list/item":71,"./react/components/operator_products/list/item_drag":72,"./react/components/operator_products/list/items_drag":73,"./react/components/operator_products/list/list":74,"./react/components/operator_products/loading":75,"./react/components/operator_products/loading_error":76,"./react/components/operator_products/mixins/load_more_products":77,"./react/components/operator_products/operator_products":78,"./react/components/product/ProductImagesContainer":80,"./react/components/product/modification_list":85,"./react/components/product/modification_list_item":86,"./react/components/product/state":87,"./react/components/product/status_toggle":88,"./react/components/product/thumb":89,"./react/components/product/total_items_quantity":90,"./react/controllers/modal":93,"./react/dispatchers/_base":94,"./react/dispatchers/drag_state":95,"./react/dispatchers/operator_categories":96,"./react/dispatchers/operator_products":97,"./react/helpers/app":98,"./react/helpers/event":99,"./react/helpers/money":100,"./react/mixins/activities":101,"./react/mixins/category_droppable":102,"./react/mixins/component_manipulations":103,"./react/mixins/product_draggable":104,"./react/mixins/unmount":105,"./react/resources/categories":106,"./react/resources/products":107,"./react/services/operator_categories":110,"./react/services/operator_products":111,"./react/services/thumbor":112,"./react/services/uuid":113,"./react/stores/_base":114,"./react/stores/drag_state":115,"./react/stores/operator_categories":116,"./react/stores/operator_products":117,"./resources/legacy":118,"./resources/libs":119,"./routes/api":121,"./routes/routes":122}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1102,16 +1103,28 @@ exports.Row = Row;
 // };
 
 },{"react-bootstrap":195,"react-bootstrap/lib/Button":136,"react-bootstrap/lib/Col":142,"react-bootstrap/lib/FormGroup":151,"react-bootstrap/lib/Input":154,"react-bootstrap/lib/Row":186}],7:[function(require,module,exports){
+(function (global){
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _reactLibObjectAssign = require('react/lib/Object.assign');
+
+var _reactLibObjectAssign2 = _interopRequireDefault(_reactLibObjectAssign);
+
+var _globalVendorBootstrap = require('./global/vendor/bootstrap');
+
+var ReactBootstrap = _interopRequireWildcard(_globalVendorBootstrap);
+
+(0, _reactLibObjectAssign2['default'])(global, ReactBootstrap);
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./global/vendor/bootstrap":6,"react/lib/Object.assign":241}],8:[function(require,module,exports){
+'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports.operatorSortable = operatorSortable;
-exports.operatorTableSortable = operatorTableSortable;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -1131,7 +1144,7 @@ function onUpdate(_ref2) {
   var item = _ref2.item;
   var newIndex = _ref2.newIndex;
 
-  var $item = $(item);
+  var $item = $(item).find('[data-sort-url]');
   var url = $item.data('sort-url');
 
   if (url) {
@@ -1160,18 +1173,48 @@ function onUpdate(_ref2) {
   }
 }
 
-function operatorSortable(node) {
-  _sortablejs2['default'].create(node, {
+$.fn.sortableJS = function (options) {
+  var retVal;
+  var args = arguments;
+
+  this.each(function () {
+    var $el = $(this);
+    var sortable = $el.data('sortable');
+
+    if (!sortable && (options instanceof Object || !options)) {
+      sortable = new _sortablejs2['default'](this, options);
+      $el.data('sortable', sortable);
+    }
+
+    if (sortable) {
+      if (options === 'widget') {
+        return sortable;
+      } else if (options === 'destroy') {
+        sortable.destroy();
+        $el.removeData('sortable');
+      } else if (typeof sortable[options] === 'function') {
+        retVal = sortable[options].apply(sortable, [].slice.call(args, 1));
+      } else if (options in sortable.options) {
+        retVal = sortable.option.apply(sortable, args);
+      }
+    }
+  });
+
+  return retVal === void 0 ? this : retVal;
+};
+
+$.fn.operatorSortable = function () {
+  this.sortableJS({
     onStart: onStart,
     onUpdate: onUpdate,
     ghostClass: 'ui-state-highlight',
     animation: 150,
     forceFallback: true
   });
-}
+};
 
-function operatorTableSortable(node) {
-  _sortablejs2['default'].create(node, {
+$.fn.operatorTableSortable = function () {
+  this.sortableJS({
     onStart: onStart,
     onUpdate: onUpdate,
     handle: '.handle',
@@ -1179,33 +1222,9 @@ function operatorTableSortable(node) {
     animation: 150,
     forceFallback: true
   });
-}
+};
 
-},{"sortablejs":385}],8:[function(require,module,exports){
-(function (global){
-'use strict';
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _reactLibObjectAssign = require('react/lib/Object.assign');
-
-var _reactLibObjectAssign2 = _interopRequireDefault(_reactLibObjectAssign);
-
-var _globalVendorBootstrap = require('./global/vendor/bootstrap');
-
-var ReactBootstrap = _interopRequireWildcard(_globalVendorBootstrap);
-
-var _globalVendorSortable = require('./global/vendor/sortable');
-
-var Sortable = _interopRequireWildcard(_globalVendorSortable);
-
-(0, _reactLibObjectAssign2['default'])(global, ReactBootstrap);
-(0, _reactLibObjectAssign2['default'])(global, Sortable);
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./global/vendor/bootstrap":6,"./global/vendor/sortable":7,"react/lib/Object.assign":241}],9:[function(require,module,exports){
+},{"sortablejs":385}],9:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
