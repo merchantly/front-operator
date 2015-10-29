@@ -1203,25 +1203,25 @@ $.fn.sortableJS = function (options) {
   return retVal === void 0 ? this : retVal;
 };
 
-$.fn.operatorSortable = function () {
-  this.sortableJS({
+$.fn.operatorSortable = function (options) {
+  this.sortableJS(_extends({
     onStart: onStart,
     onUpdate: onUpdate,
     ghostClass: 'ui-state-highlight',
     animation: 150,
     forceFallback: true
-  });
+  }, options));
 };
 
-$.fn.operatorTableSortable = function () {
-  this.sortableJS({
+$.fn.operatorTableSortable = function (options) {
+  this.sortableJS(_extends({
     onStart: onStart,
     onUpdate: onUpdate,
     handle: '.handle',
     ghostClass: 'ui-state-highlight',
     animation: 150,
     forceFallback: true
-  });
+  }, options));
 };
 
 },{"sortablejs":385}],9:[function(require,module,exports){

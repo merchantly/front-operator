@@ -66,17 +66,18 @@ $.fn.sortableJS = function (options) {
   return (retVal === void 0) ? this : retVal;
 };
 
-$.fn.operatorSortable = function() {
+$.fn.operatorSortable = function(options) {
   this.sortableJS({
     onStart,
     onUpdate,
     ghostClass: 'ui-state-highlight',
     animation: 150,
     forceFallback: true,
+    ...options,
   });
 };
 
-$.fn.operatorTableSortable = function() {
+$.fn.operatorTableSortable = function(options) {
   this.sortableJS({
     onStart,
     onUpdate,
@@ -84,5 +85,6 @@ $.fn.operatorTableSortable = function() {
     ghostClass: 'ui-state-highlight',
     animation: 150,
     forceFallback: true,
+    ...options
   });
 };
