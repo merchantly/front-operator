@@ -8,11 +8,11 @@ function onStart({ item }) {
     });
 }
 
-function onUpdate({ item, newIndex }) {
+function onUpdate({ item, newIndex, oldIndex }) {
   const $item = $(item).find('[data-sort-url]');
   const url = $item.data('sort-url');
 
-  if (url) {
+  if (oldIndex !== newIndex && url) {
     const method = $item.data('data-sort-post') || 'POST';
     const position = $item.data('data-sort-position') || newIndex + 1;
     const onSuccess = $item.data('sort-success-action');

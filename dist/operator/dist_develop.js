@@ -1143,11 +1143,12 @@ function onStart(_ref) {
 function onUpdate(_ref2) {
   var item = _ref2.item;
   var newIndex = _ref2.newIndex;
+  var oldIndex = _ref2.oldIndex;
 
   var $item = $(item).find('[data-sort-url]');
   var url = $item.data('sort-url');
 
-  if (url) {
+  if (oldIndex !== newIndex && url) {
     (function () {
       var method = $item.data('data-sort-post') || 'POST';
       var position = $item.data('data-sort-position') || newIndex + 1;
