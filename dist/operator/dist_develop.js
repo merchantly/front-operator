@@ -43537,7 +43537,7 @@ module.exports = warning;
 
 
 	// Export
-	Sortable.version = '1.4.2';
+	Sortable.version = '1.4.3';
 	return Sortable;
 });
 

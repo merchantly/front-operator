@@ -22,7 +22,7 @@
     "react-bootstrap": "^0.23.7",
     "react-mixin-manager": "~0.7.0",
     "react-select": "^0.6.3",
-    "sortablejs": "^1.4.2",
+    "sortablejs": "BrandyMint/Sortable",
     "uuid": "^2.0.1"
   },
   "devDependencies": {
