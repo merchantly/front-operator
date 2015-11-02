@@ -230,7 +230,7 @@ gulp.task('[Production] Minified scripts', ['[Production] Scripts'], () => {
   const { dest, outputName, unminifiedName } = config.production;
 
   return gulp.src(`${dest}/${unminifiedName}`)
-    .pipe(streamify(uglify()))
+    .pipe(streamify(uglify({ mangle: false })))
     .pipe(rename(outputName))
     .pipe(gulp.dest(dest));
 });
