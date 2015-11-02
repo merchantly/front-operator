@@ -36,7 +36,7 @@ function onUpdate({ item, newIndex, oldIndex }) {
   }
 }
 
-$.fn.sortableJS = function (options) {
+$.fn.sortableJS = function(options) {
   var retVal;
   var args = arguments;
 
@@ -70,7 +70,7 @@ $.fn.operatorSortable = function(options) {
   this.sortableJS({
     onStart,
     onUpdate,
-    ghostClass: 'ui-state-highlight',
+    ghostClass: 'sortable-ghost',
     animation: 150,
     forceFallback: true,
     ...options,
@@ -82,7 +82,7 @@ $.fn.operatorTableSortable = function(options) {
     onStart,
     onUpdate,
     handle: '.handle',
-    ghostClass: 'ui-state-highlight',
+    ghostClass: 'sortable-ghost',
     animation: 150,
     forceFallback: true,
     ...options

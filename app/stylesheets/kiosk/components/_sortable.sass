@@ -1,15 +1,23 @@
+$highlight-color: #aaffff
+
 .handle
-  padding: 4px 8px
-  background-color: #eee
   cursor: ns-resize
-  border-radius: 4px
+  background-color: #eee
 
-.ui-sortable-helper
-  background-color: rgba(200, 200, 200, .5)
+.card
+  &.card--highlight
+    .card-inner
+      background-color: $highlight-color
 
-.ui-state-highlight
-  background-color: #aaffff
-  transition: background-color .5s ease
+  .card-inner
+    background-color: #fff
+    transition: background-color 0.5s ease
 
-.table-striped>tbody>tr.ui-state-highlight:nth-child(odd)>td
-  background-color: #aaffff
+.table
+  tr.row--highlight
+    td, th
+      background-color: $highlight-color!important
+
+.sortable-fallback
+  .unhighlight > *
+    opacity: 0

@@ -8,30 +8,10 @@ $(document).on('ready attributes:update', function() {
 $(document).on('ready', function() {
   $('.handle').closest('tbody').operatorTableSortable({
     forceFallback: true,
-    onUpdate: null
+    ghostClass: 'row--highlight',
   });
   $('.handle').closest('.products-blocks').operatorTableSortable({
-    ghostClass: 'card--highlight',
     forceFallback: false,
+    ghostClass: 'card--highlight',
   });
 });
-
-// # operatorTableSortable decalerd in static
-
-// $ ->
-//   # $('.handle').closest('ul').operatorTableSortable()
-//   # $('.handle').closest('.list-group').operatorTableSortable()
-//   $('.handle').closest('tbody').operatorTableSortable({
-//     forceFallback: true,
-//     # onUpdate: (evt) ->
-//     #   console.log evt
-//     #   console.log evt.dragged
-//     #   console.log evt.draggedRect
-//     #   console.log evt.related
-//     #   console.log evt.relatedRect
-//     #   true
-//   })
-//   $('.handle').closest('.products-blocks').operatorTableSortable({
-//     ghostClass: 'card--highlight',
-//     forceFallback: false,
-//   })

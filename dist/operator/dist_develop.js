@@ -1208,7 +1208,7 @@ $.fn.operatorSortable = function (options) {
   this.sortableJS(_extends({
     onStart: onStart,
     onUpdate: onUpdate,
-    ghostClass: 'ui-state-highlight',
+    ghostClass: 'sortable-ghost',
     animation: 150,
     forceFallback: true
   }, options));
@@ -1219,7 +1219,7 @@ $.fn.operatorTableSortable = function (options) {
     onStart: onStart,
     onUpdate: onUpdate,
     handle: '.handle',
-    ghostClass: 'ui-state-highlight',
+    ghostClass: 'sortable-ghost',
     animation: 150,
     forceFallback: true
   }, options));
