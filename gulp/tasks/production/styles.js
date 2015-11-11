@@ -22,7 +22,7 @@ gulp.task('[Production] Styles', function() {
     }))
     .pipe(addSrc(config.vendorSrc))
     .pipe(concatCss(config.outputName, {rebaseUrls: false}))
-    .pipe(urlAdjuster({prepend: '/assets/operator/'}))
+    .pipe(urlAdjuster({prepend: '/operator/'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(minifyCss())
     .pipe(gulp.dest(config.dest));
