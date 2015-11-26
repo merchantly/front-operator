@@ -7248,7 +7248,7 @@ var ProductImagesImageListItem = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      size: '150x150'
+      size: '350x350'
     };
   },
 

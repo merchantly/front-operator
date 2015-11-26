@@ -8,7 +8,7 @@ let ProductImagesImageListItem = React.createClass({
 
   getDefaultProps() {
     return {
-      size: '150x150'
+      size: '350x350'
     };
   },
 
