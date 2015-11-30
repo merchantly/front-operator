@@ -7345,7 +7345,37 @@ var ProductImagesUpload = React.createClass({
   propTypes: {
     onImagesUpload: React.PropTypes.func.isRequired
   },
+  handleClick: function handleClick(ev) {
+    ev.target.value = null;
+  },
+  handleChange: function handleChange(ev) {
+    var files = ev.target.files;
+    if (files.length) this.props.onImagesUpload(files);
+  },
+  handleDrop: function handleDrop(files) {
+    var imageFiles = [];
+    var notImageFiles = [];
 
+    _lodash2['default'].forEach(files, function (file) {
+      if (file.type.match(/(\.|\/)(gif|jpe?g|png|svg)$/i)) {
+        imageFiles.push(file);
+      } else {
+        notImageFiles.push(file);
+      }
+    });
+
+    if (notImageFiles.length) {
+      var fileNames = notImageFiles.map(function (file) {
+        return file.name;
+      });
+      var listItems = '<li>' + fileNames.join('</li><li>') + '</li>';
+      _servicesNotice2['default'].notifyError('Файлы, которые не являются изображениями: <ul>' + listItems + '</ul>');
+    }
+
+    if (imageFiles.length) {
+      this.props.onImagesUpload(imageFiles);
+    }
+  },
   render: function render() {
     return React.createElement(
       _commonDropZone2['default'],
@@ -7372,47 +7402,20 @@ var ProductImagesUpload = React.createClass({
             { title: 'Добавить изображение',
               htmlFor: 'image',
               className: 'thumbnails-item-input' },
-            React.createElement('input', { ref: 'fileInput',
-              type: 'file',
+            React.createElement('input', {
               accept: 'image/*',
-              multiple: true,
-              id: 'image',
               className: 'hide',
-              onChange: this.handleChange })
+              id: 'image',
+              multiple: true,
+              onChange: this.handleChange,
+              onClick: this.handleClick,
+              ref: 'fileInput',
+              type: 'file'
+            })
           )
         )
       )
     );
-  },
-
-  handleDrop: function handleDrop(files) {
-    var imageFiles = [];
-    var notImageFiles = [];
-
-    _lodash2['default'].forEach(files, function (file) {
-      if (file.type.match(/(\.|\/)(gif|jpe?g|png|svg)$/i)) {
-        imageFiles.push(file);
-      } else {
-        notImageFiles.push(file);
-      }
-    });
-
-    if (notImageFiles.length) {
-      var fileNames = notImageFiles.map(function (file) {
-        return file.name;
-      });
-      var listItems = '<li>' + fileNames.join('</li><li>') + '</li>';
-      _servicesNotice2['default'].notifyError('Файлы, которые не являются изображениями: <ul>' + listItems + '</ul>');
-    }
-
-    if (imageFiles.length) {
-      this.props.onImagesUpload(imageFiles);
-    }
-  },
-
-  handleChange: function handleChange(e) {
-    var files = e.target.files;
-    if (files.length) this.props.onImagesUpload(files);
   }
 });
 
