@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import * as propertyTypes from '../../constants/propertyTypes';
+import {
+  PROPERTY_BOOLEAN_TYPE, PROPERTY_COLOR_TYPE, PROPERTY_DICTIONARY_TYPE, PROPERTY_DOUBLE_TYPE,
+  PROPERTY_FILE_TYPE, PROPERTY_LONG_TYPE, PROPERTY_STRING_TYPE, PROPERTY_TEXT_TYPE,
+  PROPERTY_TIME_TYPE, PROPERTY_LINK_TYPE,
+} from '../../constants/propertyTypes';
 import PropertyValueText from './PropertyValueText';
 import PropertyValueFile from './PropertyValueFile';
 import PropertyValueLink from './PropertyValueLink';
@@ -12,59 +16,64 @@ import PropertyValueDictionary from './PropertyValueDictionary';
 //TODO: i18n
 const UNKNOWN_TYPE_OF_PROPERTY = 'Неизвестный тип характеристики';
 
-export default class PropertyValue extends Component {
-  static propTypes = {
-    current: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+class PropertyValue extends Component {
+  getInputName({ id, type }) {
+    if (id) {
+      if (type === PROPERTY_DICTIONARY_TYPE) {
+        return `product[custom_attributes][${id}][dictionary_entity_id]`;
+      }
+
+      return `product[custom_attributes][${id}][value]`;
+    }
+  }
+  getInputCacheName({ id, type }) {
+    if (id) {
+      if (type === PROPERTY_DICTIONARY_TYPE) {
+        return `product[custom_attributes][${id}][dictionary_entity_id]`;
+      }
+
+      return `product[custom_attributes][${id}][value_cache]`;
+    }
+  }  
+  getComponentByType(type) {
+    return ({
+      [PROPERTY_TEXT_TYPE]: PropertyValueText,
+      [PROPERTY_FILE_TYPE]: PropertyValueFile,
+      [PROPERTY_LINK_TYPE]: PropertyValueLink,
+      [PROPERTY_TIME_TYPE]: PropertyValueTime,
+      [PROPERTY_LONG_TYPE]: PropertyValueNumber,
+      [PROPERTY_COLOR_TYPE]: PropertyValueDictionary,
+      [PROPERTY_DOUBLE_TYPE]: PropertyValueNumber,
+      [PROPERTY_STRING_TYPE]: PropertyValueString,
+      [PROPERTY_BOOLEAN_TYPE]: PropertyValueBoolean,
+      [PROPERTY_DICTIONARY_TYPE]: PropertyValueDictionary,
+    })[type];
   }
   render() {
-    const typeComponents = {
-      [propertyTypes.PROPERTY_TEXT_TYPE]: PropertyValueText,
-      [propertyTypes.PROPERTY_FILE_TYPE]: PropertyValueFile,
-      [propertyTypes.PROPERTY_LINK_TYPE]: PropertyValueLink,
-      [propertyTypes.PROPERTY_TIME_TYPE]: PropertyValueTime,
-      [propertyTypes.PROPERTY_LONG_TYPE]: PropertyValueNumber,
-      [propertyTypes.PROPERTY_COLOR_TYPE]: PropertyValueDictionary,
-      [propertyTypes.PROPERTY_DOUBLE_TYPE]: PropertyValueNumber,
-      [propertyTypes.PROPERTY_STRING_TYPE]: PropertyValueString,
-      [propertyTypes.PROPERTY_BOOLEAN_TYPE]: PropertyValueBoolean,
-      [propertyTypes.PROPERTY_DICTIONARY_TYPE]: PropertyValueDictionary
-    };
+    const { current, onChange } = this.props;
+    const Component = this.getComponentByType(current.type);
 
-    const Component = typeComponents[this.props.current.type];
     if (typeof Component !== 'function') {
-      return this.renderUnknown();
+      return (
+        <span>{UNKNOWN_TYPE_OF_PROPERTY} "{current.type}"</span>
+      );
     } else {
       return (
         <Component
-          key={this.props.current.id}
-          name={this.getInputName.call(this)}
-          cacheName={this.getInputCacheName.call(this)}
-          property={this.props.current}
-          onChange={this.props.onChange}
+          cacheName={this.getInputCacheName(current)}
+          key={current.id}
+          name={this.getInputName(current)}
+          onChange={onChange}
+          property={current}
         />
       );
     }
   }
-  renderUnknown() {
-    return <span>{UNKNOWN_TYPE_OF_PROPERTY} "{this.props.current.type}"</span>;
-  }
-  getInputName() {
-    if (this.props.current.id) {
-      if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-        return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
-      } else {
-        return `product[custom_attributes][${this.props.current.id}][value]`;
-      }
-    }
-  }
-  getInputCacheName() {
-    if (this.props.current.id) {
-      if (this.props.current.type === propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-        return `product[custom_attributes][${this.props.current.id}][dictionary_entity_id]`;
-      } else {
-        return `product[custom_attributes][${this.props.current.id}][value_cache]`;
-      }
-    }
-  }          
 }
+
+PropertyValue.propTypes = {
+  current: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+export default PropertyValue;

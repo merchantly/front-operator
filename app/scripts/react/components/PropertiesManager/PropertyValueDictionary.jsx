@@ -1,36 +1,36 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 
 //TODO: i18n
-const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Выберите вариант характеристики',
-      PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего варианта характеристики';
+const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Выберите вариант характеристики';
+const PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего варианта характеристики';
 
-export default class PropertyValueDictionary {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+class PropertyValueDictionary extends Component {
+  getSelectOptions(property) {
+    return property.dictionary.entities.map(
+      ({ id, title }) => ({ value: id, label: title })
+    );
   }
   render() {
+    const { name, onChange, property } = this.props;
+
     return (
       <Select
-        name={this.props.name}
-        value={this.props.property.value != null ? this.props.property.value + '' : null}
-        options={this.getSelectOptions.call(this)}
-        placeholder={CHOOSE_PROPERTY_VALUE_PLACEHOLDER}
+        name={name}
         noResultsText={PROPERTY_VALUE_NOT_FOUND}
-        onChange={this.handleSelectChange.bind(this)}
+        onChange={onChange}
+        options={this.getSelectOptions(property)}
+        placeholder={CHOOSE_PROPERTY_VALUE_PLACEHOLDER}
+        value={property.value != null ? property.value : null}
       />
     );
   }
-  getSelectOptions() {
-    return this.props.property.dictionary.entities.map((entity) => ({
-      value: entity.id + '',
-      label: entity.title,
-      entity: entity
-    }));
-  }
-  handleSelectChange(value) {
-    this.props.onChange(value);
-  }
 }
+
+PropertyValueDictionary.propTypes = {
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  property: PropTypes.object.isRequired,
+};
+
+export default PropertyValueDictionary;
