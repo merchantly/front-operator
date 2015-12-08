@@ -40,14 +40,27 @@ PropertiesManager.propTypes = {
   availableProperties: PropTypes.array.isRequired,
   canCreateListItem: PropTypes.bool.isRequired,
   listItems: PropTypes.array.isRequired,
-  onPropertyCreate: PropTypes.func.isRequired,
-  onPropertySwitch: PropTypes.func.isRequired,
-  onPropertyUpdate: PropTypes.func.isRequired,
-  onPropertyDelete: PropTypes.func.isRequired,
-  onListItemAdd: PropTypes.func.isRequired,
-  onListItemDelete: PropTypes.func.isRequired,
+  onPropertyCreate: PropTypes.func,
+  onPropertySwitch: PropTypes.func,
+  onPropertyUpdate: PropTypes.func,
+  onPropertyDelete: PropTypes.func,
+  onListItemAdd: PropTypes.func,
+  onListItemDelete: PropTypes.func,
   properties: PropTypes.array.isRequired,
   removedProperties: PropTypes.array.isRequired,
+};
+PropertiesManager.defaultProps = {
+  availableProperties: [],
+  canCreateListItem: true,
+  listItems: [],
+  onPropertyCreate: () => {},
+  onPropertySwitch: () => {},
+  onPropertyUpdate: () => {},
+  onPropertyDelete: () => {},
+  onListItemAdd: () => {},
+  onListItemDelete: () => {},
+  properties: [],
+  removedProperties: [],
 };
 
 export default PropertiesManager;
