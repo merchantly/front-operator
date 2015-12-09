@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import React, { Component, PropTypes } from 'react';
 import MagicSequencer from '../../services/MagicSequencer';
-import * as propertyTypes from '../../constants/propertyTypes';
+import { PROPERTY_DICTIONARY_TYPE, PROPERTY_FILE_TYPE } from '../../constants/propertyTypes';
 import PropertiesManager from './PropertiesManager';
 
 class PropertiesManagerContainer extends Component {
@@ -16,6 +16,7 @@ class PropertiesManagerContainer extends Component {
     this.addListItem = this.addListItem.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
     this.createProperty = this.createProperty.bind(this);
+    this.createPropertyValue = this.createPropertyValue.bind(this);
     this.deleteProperty = this.deleteProperty.bind(this);
     this.switchProperty = this.switchProperty.bind(this);
     this.updateProperty = this.updateProperty.bind(this);
@@ -31,7 +32,7 @@ class PropertiesManagerContainer extends Component {
     return !listItems.some((item) => property.id === item.propertyID);
   }
   isPropertyFile(property) {
-    return property.type === propertyTypes.PROPERTY_FILE_TYPE;
+    return property.type === PROPERTY_FILE_TYPE;
   }
   hasEmptyListItem(listItems) {
     return listItems.some((item) => item.propertyID === null);
@@ -166,6 +167,36 @@ class PropertiesManagerContainer extends Component {
       listItems: newListItems,
       properties: newProperties
     });
+  }
+  createPropertyValue(listItemID, value) {
+    // Если было добавлено новое значение в словарь, то:
+    // 1) Удаляем (если есть) предыдущие несохранённые значения в словаре,
+    // 2) Добавляем value в конец списка entities
+    // 3) Ставим value свойства значение value.id
+    // Создание значений для других типов свойств игнорируем
+    const { listItems, properties } = this.state;
+    const listItem = this.getListItemByID(listItems, listItemID);
+
+    if (listItem.propertyID) {
+      const property = this.getPropertyByID(properties, listItem.propertyID);
+      let newProperty, newProperties;
+
+      if (property.type === PROPERTY_DICTIONARY_TYPE) {
+        newProperty = {
+          ...property,
+          value: value.id,
+          dictionary: {
+            ...property.dictionary,
+            entities: [
+              ...property.dictionary.entities.filter((entity) => !entity.create),
+              value,
+            ],
+          },
+        };
+
+        this.updateProperty(listItemID, newProperty);
+      }
+    }
   }
   switchProperty(listItemID, property) {
     // Переключаем свойство и указываем его в элементе списка:
@@ -334,6 +365,7 @@ class PropertiesManagerContainer extends Component {
       onPropertyCreate: this.createProperty,
       onPropertyDelete: this.deleteProperty,
       onPropertySwitch: this.switchProperty,
+      onPropertyValueCreate: this.createPropertyValue,
       onPropertyUpdate: this.updateProperty,
     };
 
@@ -353,61 +385,9 @@ PropertiesManagerContainer.propTypes = {
   custom_attributes: PropTypes.array,
   properties: PropTypes.array,
 };
-// PropertiesManagerContainer.defaultProps = {
-//   custom_attributes: [],
-//   properties: [],
-// };
 PropertiesManagerContainer.defaultProps = {
-  "custom_attributes": [
-    {
-      "value": 923,
-      "property_id": 757,
-      "is_editable": true
-    },
-    {
-      "value": "test",
-      "property_id": 66,
-      "is_editable": true
-    }
-  ],
-  "properties": [
-    {
-      "id": 757,
-      "name": "Бренд",
-      "type": "PropertyDictionary",
-      "tooltip": "Словарь",
-      "dictionary": {
-        "id": 137,
-        "title": "Бренды",
-        "entities": [
-          {
-            "id": 923,
-            "title": "D&Gi"
-          },
-          {
-            "id": 924,
-            "title": "GJ"
-          },
-          {
-            "id": 922,
-            "title": "Gucci"
-          }
-        ]
-      }
-    },
-    {
-      "id": 66,
-      "name": "Размер",
-      "type": "PropertyString",
-      "tooltip": "Строка"
-    },
-    {
-      "id": 65,
-      "name": "Цвет",
-      "type": "PropertyString",
-      "tooltip": "Строка"
-    }
-  ]
-}
+  custom_attributes: [],
+  properties: [],
+};
 
 export default PropertiesManagerContainer;

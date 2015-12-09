@@ -50,7 +50,7 @@ class PropertyValue extends Component {
     })[type];
   }
   render() {
-    const { current, onChange } = this.props;
+    const { current, onChange, onCreate } = this.props;
     const Component = this.getComponentByType(current.type);
 
     if (typeof Component !== 'function') {
@@ -64,6 +64,7 @@ class PropertyValue extends Component {
           key={current.id}
           name={this.getInputName(current)}
           onChange={onChange}
+          onCreate={onCreate}
           property={current}
         />
       );
@@ -74,6 +75,7 @@ class PropertyValue extends Component {
 PropertyValue.propTypes = {
   current: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
 };
 
 export default PropertyValue;

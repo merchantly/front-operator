@@ -1,14 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 //TODO: i18n
 const PROPERTY_VALUE_STRING_PLACEHOLDER = 'Значение свойства';
 
-export default class PropertyValueString {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
-  }
+class PropertyValueString extends Component {
   render() {
     return (
       <input
@@ -25,3 +20,11 @@ export default class PropertyValueString {
     this.props.onChange(e.target.value);
   }
 }
+
+PropertyValueString.propTypes = {
+  name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  property: PropTypes.object.isRequired,
+};
+
+export default PropertyValueString;

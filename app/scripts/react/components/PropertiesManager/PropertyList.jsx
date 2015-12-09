@@ -16,7 +16,7 @@ class PropertyList extends Component {
     const {
       availableProperties, canCreateListItem, listItems, properties,
       onPropertyCreate, onPropertyDelete, onPropertySwitch, onPropertyUpdate,
-      onListItemAdd, onListItemDelete,
+      onPropertyValueCreate, onListItemAdd, onListItemDelete,
     } = this.props;
     const createButton = (
       <PropertyCreateButton
@@ -36,9 +36,10 @@ class PropertyList extends Component {
                 fixed={item.propertyFixed}
                 key={item.id}
                 onPropertyCreate={onPropertyCreate.bind(this, item.id)}
-                onPropertySwitch={onPropertySwitch.bind(this, item.id)}
-                onPropertyUpdate={onPropertyUpdate.bind(this, item.id)}
                 onPropertyDelete={onPropertyDelete.bind(this, item.id)}
+                onPropertySwitch={onPropertySwitch.bind(this, item.id)}
+                onPropertyValueCreate={onPropertyValueCreate.bind(this, item.id)}
+                onPropertyUpdate={onPropertyUpdate.bind(this, item.id)}
                 onListItemDelete={onListItemDelete.bind(this, item.id)}
                 property={this.getPropertyByID(properties, item.propertyID)}
               />
@@ -68,6 +69,7 @@ PropertyList.propTypes = {
   onPropertyCreate: PropTypes.func.isRequired,
   onPropertySwitch: PropTypes.func.isRequired,
   onPropertyUpdate: PropTypes.func.isRequired,
+  onPropertyValueCreate: PropTypes.func.isRequired,
   onPropertyDelete: PropTypes.func.isRequired,
   onListItemAdd: PropTypes.func.isRequired,
   onListItemDelete: PropTypes.func.isRequired,

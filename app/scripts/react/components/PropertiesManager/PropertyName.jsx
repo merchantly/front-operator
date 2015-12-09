@@ -36,7 +36,6 @@ class PropertyName extends Component {
   handleSelectChange(value, values) {
     const { onNameChange, onNameCreate, onNameReset } = this.props;
     const newProperty = values[0] || null;
-    let cbName, property;
 
     if (newProperty) {
       if (newProperty.create) {

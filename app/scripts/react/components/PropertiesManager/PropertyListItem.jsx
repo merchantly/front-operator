@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { PROPERTY_STRING_TYPE } from '../../constants/propertyTypes';
+import { PROPERTY_DICTIONARY_TYPE, PROPERTY_STRING_TYPE } from '../../constants/propertyTypes';
 import HiddenInput from '../common/HiddenInput';
 import PropertyName from './PropertyName';
 import PropertyValue from './PropertyValue';
@@ -9,6 +9,7 @@ class PropertyListItem extends Component {
     super(props);
 
     this.changeValue = this.changeValue.bind(this);
+    this.createValue = this.createValue.bind(this);
     this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
   }
   getCurrentProperty() {
@@ -26,6 +27,9 @@ class PropertyListItem extends Component {
   changeValue(value) {
     const currentProperty = this.getCurrentProperty();
     this.props.onPropertyUpdate({...currentProperty, value});
+  }
+  createValue(value) {
+    this.props.onPropertyValueCreate(value);
   }
   handleDeleteButtonClick() {
     const { fixed, onListItemDelete, onPropertyDelete } = this.props;
@@ -45,6 +49,22 @@ class PropertyListItem extends Component {
           />
         </span>
       );
+    }
+  }
+  renderHiddenValueInputs(property) {
+    if (property.type === PROPERTY_DICTIONARY_TYPE) {
+      const value = property.dictionary.entities.filter(
+        (entity) => entity.id === property.value
+      )[0];
+
+      if (value && value.create) {
+        return (
+          <HiddenInput
+            name={`product[custom_attributes][${property.id}][dictionary_entity_title]`}
+            value={value.title}
+          />
+        );
+      }
     }
   }
   renderTooltip(tooltip) {
@@ -89,6 +109,18 @@ class PropertyListItem extends Component {
       </Col>
     );
   }
+  renderValue() {
+    return (
+      <Col sm={6} md={7} lg={8}>
+        <PropertyValue
+          current={this.getCurrentProperty()}
+          onChange={this.changeValue}
+          onCreate={this.createValue}
+        />
+        {this.renderHiddenValueInputs(this.getCurrentProperty())}
+      </Col>
+    );
+  }
   renderDeleteButton(fixed) {
     const property = this.getCurrentProperty();
 
@@ -111,12 +143,7 @@ class PropertyListItem extends Component {
     return (
       <div className="form-group m-b">
         {this.renderName(property, availableProperties, fixed)}
-        <Col sm={6} md={7} lg={8}>
-          <PropertyValue
-            current={this.getCurrentProperty()}
-            onChange={this.changeValue}
-          />
-        </Col>
+        {this.renderValue()}
         {this.renderDeleteButton(fixed)}
       </div>
     );
@@ -130,6 +157,7 @@ PropertyListItem.propTypes = {
   onPropertySwitch: PropTypes.func.isRequired,
   onPropertyUpdate: PropTypes.func.isRequired,
   onPropertyDelete: PropTypes.func.isRequired,
+  onPropertyValueCreate: PropTypes.func.isRequired,
   onListItemDelete: PropTypes.func.isRequired,
   property: PropTypes.object,
 };
