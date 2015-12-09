@@ -1,36 +1,62 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
+import MagicSequencer from '../../services/MagicSequencer';
 
 //TODO: i18n
-const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Выберите вариант характеристики',
-      PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего варианта характеристики';
+const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Введите значение';
+const PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего значения характеристики';
+const ADD_PROPERTY_VALUE_PLACEHOLDER = 'Добавить {label} ?';
 
-export default class PropertyValueDictionary {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+class PropertyValueDictionary extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+  }
+  getSelectOptions(property) {
+    return property.dictionary.entities.map(
+      ({ id, title }) => ({ value: id, label: title })
+    );
+  }
+  handleSelectChange(value, values) {
+    const { onChange, onCreate, property } = this.props;
+    const newValue = values[0] || null;
+
+    if (newValue) {
+      if (newValue.create) {
+        return onCreate({
+          id: MagicSequencer.next(),
+          title: value,
+          create: true,
+        });
+      }
+
+      return onChange(value);
+    }
   }
   render() {
+    const { name, property } = this.props;
+
     return (
       <Select
-        name={this.props.name}
-        value={this.props.property.value != null ? this.props.property.value + '' : null}
-        options={this.getSelectOptions.call(this)}
-        placeholder={CHOOSE_PROPERTY_VALUE_PLACEHOLDER}
+        addLabelText={ADD_PROPERTY_VALUE_PLACEHOLDER}
+        allowCreate={true}
+        name={name}
         noResultsText={PROPERTY_VALUE_NOT_FOUND}
-        onChange={this.handleSelectChange.bind(this)}
+        onChange={this.handleSelectChange}
+        options={this.getSelectOptions(property)}
+        placeholder={CHOOSE_PROPERTY_VALUE_PLACEHOLDER}
+        value={property.value != null ? property.value : null}
       />
     );
   }
-  getSelectOptions() {
-    return this.props.property.dictionary.entities.map((entity) => ({
-      value: entity.id + '',
-      label: entity.title,
-      entity: entity
-    }));
-  }
-  handleSelectChange(value) {
-    this.props.onChange(value);
-  }
 }
+
+PropertyValueDictionary.propTypes = {
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
+  property: PropTypes.object.isRequired,
+};
+
+export default PropertyValueDictionary;

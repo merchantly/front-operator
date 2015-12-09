@@ -1,79 +1,85 @@
 import React, { addons, findDOMNode } from 'react';
-import sinon from 'sinon';
-import PropertiesManager from '../../../../app/scripts/react/components/PropertiesManager';
 import { expect } from 'chai';
+import { spy } from 'sinon';
+import HiddenInput from '../../../../app/scripts/react/components/common/HiddenInput';
+import { PropertiesManager } from '../../../../app/scripts/react/components/PropertiesManager';
 
-const { renderIntoDocument, scryRenderedDOMComponentsWithTag } = addons.TestUtils;
-const propertyFileID = 2050;
-const testOptions = {
-  custom_attributes: [{
-    value: 1,
-    property_id: 2045,
-    is_editable: true,
-  }, {
-    value: {
-      url: 'http://3001.vkontraste.ru/uploads/shop/579/uploads/af/2050/4eec520e-2ffc-450c-9499-ed8bf4bc0488.jpeg',
-      size: 17231,
-      filename: '4eec520e-2ffc-450c-9499-ed8bf4bc0488.jpeg',
-      value_cache: null,
-      extension: '.jpeg'
-    },
-    property_id: propertyFileID,
-    is_editable: true,
-  }],
-  properties: [{
-    id: 2045,
-    name: 'Developer Support',
-    type: 'PropertyLong',
-    tooltip: 'Целое число',
-  }, {
-    id: propertyFileID,
-    name: 'Файл',
-    type: 'PropertyFile',
-    tooltip: 'Файл',
-  }]
-};
+const { TestUtils } = addons;
 
 describe('[Component] PropertiesManager', () => {
   it('should render with default props without errors', () => {
-    const renderedComponent = renderIntoDocument(
+    const propertiesManager = TestUtils.renderIntoDocument(
       <PropertiesManager />
     );
-    expect(renderedComponent).to.be.an('object');
+    expect(propertiesManager).to.be.an('object');
   });
 
   it('should render hidden input when there are no list items', () => {
-    const renderedComponent = renderIntoDocument(
+    const propertiesManager = TestUtils.renderIntoDocument(
       <PropertiesManager />
     );
-    const inputList = scryRenderedDOMComponentsWithTag(
-      renderedComponent,
-      'input'
+    const input = TestUtils.findRenderedComponentWithType(
+      propertiesManager,
+      HiddenInput,
     );
-    expect(inputList.some((input) => (
-      input.props.name === 'product[custom_attributes][]' &&
-      input.props.value === ''
-    ))).to.be.true;
+
+    expect(input.props).to.deep.equal({
+      name: 'product[custom_attributes][]',
+      value: '',
+    });
   });
 
   it('should render hidden input for every existed and then removed PropertyFile', () => {
-    const renderedComponent = renderIntoDocument(
-      <PropertiesManager {...testOptions} />
+    const propertyFileIDs = [2050, 2051];
+    const props = {
+      listItems: [
+        {
+          id: '8f29c846-ec8e-467b-9faa-6b8188e73a9d',
+          propertyID: 66,
+          propertyFixed: true
+        },
+      ],
+      properties: [
+        {
+          id: 66,
+          name: 'Размер',
+          type: 'PropertyString',
+          tooltip: 'Строка'
+        },
+      ],
+      removedProperties: [
+        {
+          id: propertyFileIDs[0],
+          name: 'Файл',
+          type: 'PropertyFile',
+          tooltip: 'Файл',
+        },
+        {
+          id: propertyFileIDs[1],
+          name: 'Файл2',
+          type: 'PropertyFile',
+          tooltip: 'Файл2',
+        },
+      ],
+      onPropertyCreate: spy(),
+      onPropertySwitch: spy(),
+      onPropertyUpdate: spy(),
+      onPropertyDelete: spy(),
+      onListItemDelete: spy(),
+    };
+    const propertiesManager = TestUtils.renderIntoDocument(
+      <PropertiesManager {...props} />
     );
-    const listItemID = renderedComponent.state.listItems.filter((item) => (
-      item.propertyID === propertyFileID
-    ))[0].id;
-
-    renderedComponent.deleteListItem(listItemID);
-
-    const inputList = scryRenderedDOMComponentsWithTag(
-      renderedComponent,
-      'input'
+    const inputList = TestUtils.scryRenderedComponentsWithType(
+      propertiesManager,
+      HiddenInput,
     );
 
-    expect(inputList.some((input) => (
-      input.props.name === `product[custom_attributes][${propertyFileID}][remove_value]` &&
-      input.props.value === '1'
-    ))).to.be.true;
+    inputList.forEach((input, i) => {
+      expect(input.props).to.deep.equal({
+        name: `product[custom_attributes][${propertyFileIDs[i]}][remove_value]`,
+        value: '1',
+      });
+    });
   });
 });

@@ -1,27 +1,25 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default function HiddenInput(props) {
-  HiddenInput.propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-  };
+class HiddenInput extends Component {
+  render() {
+    const { name, value } = this.props;
 
-  return ({
-    props,
-
-    render() {
-      const { name, value } = this.props;
-
-      return (
-        <input
-          name={name}
-          type="hidden"
-          value={value}
-        />
-      );
-    },
-  });
+    return (
+      <input
+        name={name}
+        type="hidden"
+        value={value}
+      />
+    );
+  }
 }
+
+HiddenInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+};
+
+export default HiddenInput;
