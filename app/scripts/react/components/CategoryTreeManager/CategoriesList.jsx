@@ -4,11 +4,11 @@ import JsTree from '../common/JsTree';
 export default class CategoriesList {
   static propTypes = {
     categories: PropTypes.array.isRequired,
-    onChangeSelection: PropTypes.func.isRequired,
+    onSelectionChange: PropTypes.func.isRequired,
     selectedCategories: PropTypes.array,
   }
   render() {
-    const { categories, onChangeSelection, selectedCategories } = this.props;
+    const { categories, onSelectionChange, selectedCategories } = this.props;
 
     const jsTreeConfig = {
       core: {
@@ -27,7 +27,7 @@ export default class CategoriesList {
     return (
       <JsTree
         data={jsTreeConfig}
-        onChangeSelection={this.props.onChangeSelection}
+        onSelectionChange={this.props.onSelectionChange}
         selected={selectedCategories}
       />
     );

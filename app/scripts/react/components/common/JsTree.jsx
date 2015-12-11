@@ -13,7 +13,7 @@ export default function JsTree(props) {
         data: PropTypes.array.isRequired,
       }).isRequired,
     }).isRequired,
-    onChangeSelection: PropTypes.func.isRequired,
+    onSelectionChange: PropTypes.func.isRequired,
     selected: PropTypes.array,
   };
 
@@ -90,7 +90,7 @@ export default function JsTree(props) {
 
     onChange(ev, data) {
       if (data.action === 'select_node' || data.action === 'deselect_node') {
-        this.props.onChangeSelection(data.selected.map((el) => parseInt(el, 10)));
+        this.props.onSelectionChange(data.selected.map((el) => parseInt(el, 10)));
       }
     },
 

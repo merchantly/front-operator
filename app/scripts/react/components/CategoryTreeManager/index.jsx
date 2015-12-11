@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Api from '../../api';
 import NoticeService from '../../services/Notice';
 import CategoriesList from './CategoriesList';
@@ -13,20 +13,7 @@ const MANAGER_SHOW = 'MANAGER_SHOW';
 //        Нужна либо модалка "на стероидах", либо свой компонент с элементами
 //        модалки, но своим управляемым поведением.
 
-export default class CategoryTreeManager extends Component {
-  static propTypes = {
-    canCreate: PropTypes.bool,
-    categories: PropTypes.array.isRequired,
-    createButtonTitle: PropTypes.string.isRequired,
-    modalUuid: PropTypes.string.isRequired,
-    modalCreateTitle: PropTypes.string.isRequired,
-    modalShowTitle: PropTypes.string.isRequired,
-    onAcceptSelection: PropTypes.func.isRequired,
-    onCategoriesChange: PropTypes.func.isRequired,
-    onChangeSelection: PropTypes.func.isRequired,
-    onDiscardSelection: PropTypes.func.isRequired,
-    selectedCategories: PropTypes.array,
-  }
+class CategoryTreeManager extends Component {
   state = {
     currentState: MANAGER_SHOW,
     category: this.getDefaultCategory(),
@@ -74,7 +61,7 @@ export default class CategoryTreeManager extends Component {
   }
   createCategory() {
     const {
-      categories, onCategoriesChange, onChangeSelection, selectedCategories
+      categories, onCategoriesChange, onSelectionChange, selectedCategories
     } = this.props;
     const { category } = this.state;
     const parentCategory = this.getParent(categories, selectedCategories);
@@ -85,7 +72,9 @@ export default class CategoryTreeManager extends Component {
       name: category.name,
       parentID: parentCategory.id,
     }).done((category) => {
-      const newSelection = selectedCategories.concat([category.id]);
+      const newSelection = selectedCategories
+        .filter((selected) => selected !== parentCategory.id)
+        .concat([category.id]);
       const newCategories = this.addCategory(categories, parentCategory.id, {
         id: category.id,
         text: category.name,
@@ -93,7 +82,7 @@ export default class CategoryTreeManager extends Component {
       });
 
       onCategoriesChange(newCategories);
-      onChangeSelection(newSelection);
+      onSelectionChange(newSelection);
       this.activateShow();
       NoticeService.notifySuccess('Категория ' + category.name + ' успешно создана!');
     }).fail((jqXHR) => {
@@ -132,11 +121,11 @@ export default class CategoryTreeManager extends Component {
   }
   acceptSelection() {
     this.activateShow();
-    this.props.onAcceptSelection();
+    this.props.onSelectionAccept();
   }
   discardSelection() {
     this.activateShow();
-    this.props.onDiscardSelection();
+    this.props.onSelectionDiscard();
   }
   onFieldChange(fieldName, value) {
     this.setState({
@@ -153,7 +142,7 @@ export default class CategoryTreeManager extends Component {
   render() {
     const {
       categories, createButtonTitle, modalCreateTitle, modalShowTitle,
-      modalUuid, onChangeSelection, selectedCategories
+      modalUuid, onSelectionChange, selectedCategories
     } = this.props;
     const { category, currentState } = this.state;
     const parentCategory = this.getParent(categories, selectedCategories);
@@ -207,7 +196,7 @@ export default class CategoryTreeManager extends Component {
           >
             <CategoriesList
               categories={categories}
-              onChangeSelection={onChangeSelection}
+              onSelectionChange={onSelectionChange}
               selectedCategories={selectedCategories}
             />
           </Modal>
@@ -217,3 +206,19 @@ export default class CategoryTreeManager extends Component {
     }
   }
 }
+
+CategoryTreeManager.propTypes = {
+  canCreate: PropTypes.bool.isRequired,
+  categories: PropTypes.array.isRequired,
+  createButtonTitle: PropTypes.string.isRequired,
+  modalCreateTitle: PropTypes.string.isRequired,
+  modalShowTitle: PropTypes.string.isRequired,
+  modalUuid: PropTypes.string.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
+  onCategoriesChange: PropTypes.func.isRequired,
+  onSelectionAccept: PropTypes.func.isRequired,
+  onSelectionChange: PropTypes.func.isRequired,
+  onSelectionDiscard: PropTypes.func.isRequired,
+};
+
+export default CategoryTreeManager;
