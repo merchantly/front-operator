@@ -1150,8 +1150,9 @@ function onUpdate(_ref2) {
 
   if (oldIndex !== newIndex && url) {
     (function () {
-      var method = $item.data('data-sort-post') || 'POST';
-      var position = $item.data('data-sort-position') || newIndex + 1;
+      var start = $item.data('sort-start') || 0;
+      var method = $item.data('sort-post') || 'POST';
+      var position = $item.data('sort-position') || newIndex + 1;
       var onSuccess = $item.data('sort-success-action');
       var customParams = $item.data('sort-custom-params') || {};
 
@@ -1162,7 +1163,7 @@ function onUpdate(_ref2) {
       $.ajax({
         url: url,
         method: method,
-        data: _extends({}, customParams, { position: position })
+        data: _extends({}, customParams, { position: position, start: start })
       }).then(function () {
         if (onSuccess !== 'nothing') {
           window.location.reload();
