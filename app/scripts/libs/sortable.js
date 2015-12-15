@@ -13,8 +13,9 @@ function onUpdate({ item, newIndex, oldIndex }) {
   const url = $item.data('sort-url');
 
   if (oldIndex !== newIndex && url) {
-    const method = $item.data('data-sort-post') || 'POST';
-    const position = $item.data('data-sort-position') || newIndex + 1;
+    const start = $item.data('sort-start') || 0;
+    const method = $item.data('sort-post') || 'POST';
+    const position = $item.data('sort-position') || newIndex + 1;
     const onSuccess = $item.data('sort-success-action');
     let customParams = $item.data('sort-custom-params') || {};
 
@@ -25,7 +26,7 @@ function onUpdate({ item, newIndex, oldIndex }) {
     $.ajax({
       url,
       method,
-      data: {...customParams, position},
+      data: {...customParams, position, start},
     }).then(() => {
       if (onSuccess !== 'nothing') {
         window.location.reload();
