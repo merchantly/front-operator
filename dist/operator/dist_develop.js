@@ -4593,8 +4593,6 @@ var _constantsPropertyTypes = require('../../constants/propertyTypes');
 
 var _servicesMagicSequencer = require('../../services/MagicSequencer');
 
-var _servicesMagicSequencer2 = _interopRequireDefault(_servicesMagicSequencer);
-
 //TODO: i18n
 var CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Введите название';
 var ADD_PROPERTY_NAME_PLACEHOLDER = 'Добавить {label} ?';
@@ -4645,7 +4643,7 @@ var PropertyName = (function (_Component) {
       if (newProperty) {
         if (newProperty.create) {
           return onNameCreate({
-            id: _servicesMagicSequencer2['default'].next(),
+            id: (0, _servicesMagicSequencer.next)(),
             type: _constantsPropertyTypes.PROPERTY_STRING_TYPE,
             name: newProperty.label,
             create: true
@@ -4932,8 +4930,6 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 var _servicesMagicSequencer = require('../../services/MagicSequencer');
 
-var _servicesMagicSequencer2 = _interopRequireDefault(_servicesMagicSequencer);
-
 //TODO: i18n
 var CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Введите значение';
 var PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего значения характеристики';
@@ -4972,7 +4968,7 @@ var PropertyValueDictionary = (function (_Component) {
       if (newValue) {
         if (newValue.create) {
           return onCreate({
-            id: _servicesMagicSequencer2['default'].next(),
+            id: (0, _servicesMagicSequencer.next)(),
             title: value,
             create: true
           });

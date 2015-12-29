@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 import { PROPERTY_STRING_TYPE } from '../../constants/propertyTypes';
-import MagicSequencer from '../../services/MagicSequencer';
+import { next } from '../../services/MagicSequencer';
 
 //TODO: i18n
 const CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Введите название';
@@ -40,7 +40,7 @@ class PropertyName extends Component {
     if (newProperty) {
       if (newProperty.create) {
         return onNameCreate({
-          id: MagicSequencer.next(),
+          id: next(),
           type: PROPERTY_STRING_TYPE,
           name: newProperty.label,
           create: true,

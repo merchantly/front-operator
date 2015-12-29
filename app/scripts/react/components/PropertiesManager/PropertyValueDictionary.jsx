@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
-import MagicSequencer from '../../services/MagicSequencer';
+import { next } from '../../services/MagicSequencer';
 
 //TODO: i18n
 const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Введите значение';
@@ -25,7 +25,7 @@ class PropertyValueDictionary extends Component {
     if (newValue) {
       if (newValue.create) {
         return onCreate({
-          id: MagicSequencer.next(),
+          id: next(),
           title: value,
           create: true,
         });
