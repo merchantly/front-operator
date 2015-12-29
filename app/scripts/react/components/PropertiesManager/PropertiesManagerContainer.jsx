@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 import React, { Component, PropTypes } from 'react';
-import MagicSequencer from '../../services/MagicSequencer';
+import { isMagical, setIfBigger } from '../../services/MagicSequencer';
 import { PROPERTY_DICTIONARY_TYPE, PROPERTY_FILE_TYPE } from '../../constants/propertyTypes';
 import PropertiesManager from './PropertiesManager';
 
@@ -23,7 +23,7 @@ class PropertiesManagerContainer extends Component {
   }
   componentDidMount() {
     const biggestID = this.getBiggestID(this.props.custom_attributes);
-    MagicSequencer.setIfBigger(biggestID);
+    setIfBigger(biggestID);
   }
   isPropertySelected(property, customAttributes) {
     return customAttributes.some((attr) => property.id === attr.property_id);
@@ -69,10 +69,10 @@ class PropertiesManagerContainer extends Component {
     return removedFileProperties;
   }
   getBiggestID(customAttributes) {
-    return customAttributes.reduce(
-      (biggestID, attr) => (attr.property_id > biggestID ? attr.property_id : biggestID),
-      0
-    );
+    return customAttributes.reduce((biggestID, attr) => {
+      const id = typeof attr.value === 'number' ? attr.value : attr.property_id;
+      return id > biggestID ? id : biggestID;
+    }, 0);
   }
   getPropertyAttributes(property, customAttributes) {
     for (let i = 0; i < customAttributes.length; i++) {
@@ -89,51 +89,59 @@ class PropertiesManagerContainer extends Component {
     return properties.filter((property) => property.id === propertyID)[0] || null;
   }
   makeListItems(properties, customAttributes) {
-    return properties.reduce(
-      (listItems, property) => {
-        if (this.isPropertySelected(property, customAttributes)) {
-          return [
-            ...listItems,
-            {
-              id: uuid.v4(),
-              propertyID: property.id,
-              propertyFixed: true,
-            }
-          ];
-        }
+    return properties.reduce((listItems, property) => {
+      if (this.isPropertySelected(property, customAttributes)) {
+        return [
+          ...listItems,
+          {
+            id: uuid.v4(),
+            propertyID: property.id,
+            propertyFixed: true,
+          }
+        ];
+      }
 
-        return listItems;
-      },
-      []
-    );
+      return listItems;
+    }, []);
   }
   normalizeProperties(properties, customAttributes) {
-    return properties.reduce(
-      (listItems, property) => {
-        const propertyAttrs = this.getPropertyAttributes(property, customAttributes);
+    return properties.reduce((listItems, property) => {
+      const propertyAttrs = this.getPropertyAttributes(property, customAttributes);
 
-        if (propertyAttrs) {
-          return [
-            ...listItems,
-            {
-              ...property,
-              ...propertyAttrs,
-              originalValue: propertyAttrs.value,
+      if (propertyAttrs) {
+        if (property.type === PROPERTY_DICTIONARY_TYPE && isMagical(propertyAttrs.value)) {
+          property = {
+            ...property,
+            dictionary: {
+              ...property.dictionary,
+              entities: [
+                ...property.dictionary.entities.map((entity) => (
+                  entity.id === propertyAttrs.value ? {...entity, create: true} : entity
+                )),
+              ]
             }
-          ];
-        } else {
-          return [
-            ...listItems,
-            {
-              ...property,
-              originalValue: null,
-              value: null,
-            }
-          ];
+          };
         }
-      },
-      []
-    );
+
+        return [
+          ...listItems,
+          {
+            ...property,
+            ...propertyAttrs,
+            originalValue: propertyAttrs.value,
+          }
+        ];
+      } else {
+        return [
+          ...listItems,
+          {
+            ...property,
+            originalValue: null,
+            value: null,
+          }
+        ];
+      }
+    }, []);
   }
   createProperty(listItemID, property) {
     // Добавляем свойство и указываем его в элементе списка:
@@ -158,9 +166,8 @@ class PropertiesManagerContainer extends Component {
       }
     }
 
-    const newListItems = listItems.map(
-      (item) =>
-        item.id === listItemID ? {...item, propertyID: property.id} : item
+    const newListItems = listItems.map((item) =>
+      item.id === listItemID ? {...item, propertyID: property.id} : item
     );
 
     this.setState({
@@ -215,14 +222,14 @@ class PropertiesManagerContainer extends Component {
       let isPropertyExistsInitially = this.getPropertyByID(properties, newListItem.propertyID);
 
       if (!isPropertyExistsInitially) {
-        newProperties = newProperties.filter(
-          (prop) => prop.id !== newListItem.propertyID
+        newProperties = newProperties.filter((prop) =>
+          prop.id !== newListItem.propertyID
         );
       }
     }
 
-    const newListItems = listItems.map(
-      (item) => item.id === listItemID ? {...item, propertyID: property.id} : item
+    const newListItems = listItems.map((item) =>
+      item.id === listItemID ? {...item, propertyID: property.id} : item
     );
 
     this.setState({
@@ -237,16 +244,16 @@ class PropertiesManagerContainer extends Component {
     let newProperties, newListItems;
 
     if (newProperty) {
-      newProperties = properties.map(
-        (prop) => prop.id === property.id ? property : prop
+      newProperties = properties.map((prop) =>
+        prop.id === property.id ? property : prop
       );
     } else {
       newProperties = [...properties, property];
     }
 
     if (newListItem) {
-      newListItems = listItems.map(
-        (item) => item.id === listItemID ? {...newListItem, propertyID: property.id} : item
+      newListItems = listItems.map((item) =>
+        item.id === listItemID ? {...newListItem, propertyID: property.id} : item
       );
     } else {
       newListItems = [
@@ -279,20 +286,18 @@ class PropertiesManagerContainer extends Component {
 
     if (isPropertyExistsInitially) {
       this.setState({
-        properties: properties.map(
-          (prop) => prop.id === property.id ? {...prop, value: null} : prop
+        properties: properties.map((prop) =>
+          prop.id === property.id ? {...prop, value: null} : prop
         ),
-        listItems: listItems.map(
-          (item) => item.id === listItemID ? {...item, propertyID: null} : item
+        listItems: listItems.map((item) =>
+          item.id === listItemID ? {...item, propertyID: null} : item
         ),
       });
     } else {
       this.setState({
-        properties: properties.filter(
-          (prop) => prop.id !== property.id
-        ),
-        listItems: listItems.map(
-          (item) => item.id === listItemID ? {...item, propertyID: null} : item
+        properties: properties.filter((prop) => prop.id !== property.id),
+        listItems: listItems.map((item) =>
+          item.id === listItemID ? {...item, propertyID: null} : item
         ),
       });
     }
@@ -302,9 +307,8 @@ class PropertiesManagerContainer extends Component {
 
     if (!this.hasEmptyListItem(listItems)) {
       const newListItems = [
-        ...listItems.map(
-          (item) =>
-            !item.propertyFixed ? {...item, propertyFixed: true} : item
+        ...listItems.map((item) =>
+          !item.propertyFixed ? {...item, propertyFixed: true} : item
         ),
         {
           id: uuid.v4(),
@@ -337,22 +341,15 @@ class PropertiesManagerContainer extends Component {
 
     if (isPropertyExistsInitially) {
       this.setState({
-        listItems: listItems.filter(
-          (item) => item.id !== listItemID
-        ),
-        properties: properties.map(
-          (prop) =>
-            prop.id === property.id ? {...prop, value: null} : prop
+        listItems: listItems.filter((item) => item.id !== listItemID),
+        properties: properties.map((prop) =>
+          prop.id === property.id ? {...prop, value: null} : prop
         ),
       });
     } else {
       this.setState({
-        listItems: listItems.filter(
-          (item) => item.id !== listItemID
-        ),
-        properties: properties.filter(
-          (prop) => prop.id !== property.id
-        ),
+        listItems: listItems.filter((item) => item.id !== listItemID),
+        properties: properties.filter((prop) => prop.id !== property.id),
       });
     }
   }

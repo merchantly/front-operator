@@ -13,15 +13,13 @@ class PropertiesManager extends Component {
       );
     }
     if (removedProperties.length) {
-      return removedProperties.map(
-        (property) => (
-          <HiddenInput
-            key={property.id}
-            name={`product[custom_attributes][${property.id}][remove_value]`}
-            value="1"
-          />
-        )
-      );
+      return removedProperties.map((property) => (
+        <HiddenInput
+          key={property.id}
+          name={`product[custom_attributes][${property.id}][remove_value]`}
+          value="1"
+        />
+      ));
     }
   }
   render() {
