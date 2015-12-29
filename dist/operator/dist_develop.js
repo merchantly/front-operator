@@ -3660,8 +3660,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _servicesMagicSequencer = require('../../services/MagicSequencer');
 
-var _servicesMagicSequencer2 = _interopRequireDefault(_servicesMagicSequencer);
-
 var _constantsPropertyTypes = require('../../constants/propertyTypes');
 
 var _PropertiesManager = require('./PropertiesManager');
@@ -3695,7 +3693,7 @@ var PropertiesManagerContainer = (function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var biggestID = this.getBiggestID(this.props.custom_attributes);
-      _servicesMagicSequencer2['default'].setIfBigger(biggestID);
+      (0, _servicesMagicSequencer.setIfBigger)(biggestID);
     }
   }, {
     key: 'isPropertySelected',
@@ -3758,7 +3756,8 @@ var PropertiesManagerContainer = (function (_Component) {
     key: 'getBiggestID',
     value: function getBiggestID(customAttributes) {
       return customAttributes.reduce(function (biggestID, attr) {
-        return attr.property_id > biggestID ? attr.property_id : biggestID;
+        var id = typeof attr.value === 'number' ? attr.value : attr.property_id;
+        return id > biggestID ? id : biggestID;
       }, 0);
     }
   }, {
@@ -3811,6 +3810,16 @@ var PropertiesManagerContainer = (function (_Component) {
         var propertyAttrs = _this4.getPropertyAttributes(property, customAttributes);
 
         if (propertyAttrs) {
+          if (property.type === _constantsPropertyTypes.PROPERTY_DICTIONARY_TYPE && (0, _servicesMagicSequencer.isMagical)(propertyAttrs.value)) {
+            property = _extends({}, property, {
+              dictionary: _extends({}, property.dictionary, {
+                entities: [].concat(_toConsumableArray(property.dictionary.entities.map(function (entity) {
+                  return entity.id === propertyAttrs.value ? _extends({}, entity, { create: true }) : entity;
+                })))
+              })
+            });
+          }
+
           return [].concat(_toConsumableArray(listItems), [_extends({}, property, propertyAttrs, {
             originalValue: propertyAttrs.value
           })]);
@@ -9777,15 +9786,20 @@ Object.defineProperty(exports, "__esModule", {
 var INITIAL_NUMBER = 1438093963439;
 var magicNumber = INITIAL_NUMBER;
 
-exports["default"] = {
-  setIfBigger: function setIfBigger(number) {
-    return number > magicNumber ? magicNumber = number : magicNumber;
-  },
-  next: function next() {
-    return magicNumber++;
-  }
+var isMagical = function isMagical(number) {
+  return number >= INITIAL_NUMBER;
 };
-module.exports = exports["default"];
+
+exports.isMagical = isMagical;
+var setIfBigger = function setIfBigger(number) {
+  return number > magicNumber ? magicNumber = number : magicNumber;
+};
+
+exports.setIfBigger = setIfBigger;
+var next = function next() {
+  return ++magicNumber;
+};
+exports.next = next;
 
 },{}],113:[function(require,module,exports){
 'use strict';
