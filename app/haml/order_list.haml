@@ -67,7 +67,7 @@
                         .m-t-xs.m-b-xs
                           %span.label.label-default{title: 'Самовывоз', tooltip: true} Не требуется
                       %td.project-change-status
-                        %div.inline{data: {react-class: 'SmartSelectColored', react-props: '{ "options":[{"value": 1, "title": "Новый", "color_rgb": "#101010"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
+                        %div.inline{data: {react-class: 'SmartSelectColored', react-props: '{"options":[{"value":14,"title":"Действующий","color_rgb":"#23c6c8"},{"value":16,"title":"Отменен","color_rgb":"#D1DADE"},{"value":15,"title":"Выполнен","color_rgb":"#1c84c6"},{"value":13,"title":"Новый","color_rgb":"#f8ac59"}],"updateUrl":"/operator/orders/4514","method":"PUT","value":13,"fieldName":"operator_order[workflow_state_id]"}'}}
                     %tr
                       %td.project-status
                         != '#1208'
