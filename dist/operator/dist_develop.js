@@ -5901,7 +5901,7 @@ var SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
             this.renderOptions(options, onChange)
           )
         ),
-        _react2['default'].createElement(
+        false && _react2['default'].createElement(
           'span',
           { className: 'smart-select__status' },
           _react2['default'].createElement(

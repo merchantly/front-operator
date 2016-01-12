@@ -36,7 +36,7 @@ const SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
       if (!dropdown) {
         return;
       }
-      
+
       $(dropdown).off();
     },
 
@@ -98,11 +98,13 @@ const SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
               {this.renderOptions(options, onChange)}
             </ul>
           </div>
-          <span className="smart-select__status">
-            <div className="smart-select__status__icon-container">
-              <RequestStatus status={status} />
-            </div>
-          </span>
+          {false &&
+            <span className="smart-select__status">
+              <div className="smart-select__status__icon-container">
+                <RequestStatus status={status} />
+              </div>
+            </span>
+          }
         </div>
       );
     },
