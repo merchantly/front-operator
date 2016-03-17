@@ -72,7 +72,6 @@ gulp.task('[Static] Client scripts', ['[Shared] Eslint'], () => {
     bundler = watchify(bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       })
     );
@@ -81,7 +80,6 @@ gulp.task('[Static] Client scripts', ['[Shared] Eslint'], () => {
     bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       });
   }
@@ -143,7 +141,6 @@ function testFactory(taskName, config) {
         testBundler
           .transform('coffee-reactify')
           .transform('babelify', {
-            stage: 0,
             ignore: /(node_modules|bower_components)/,
           })
       );
@@ -152,7 +149,6 @@ function testFactory(taskName, config) {
       testBundler
         .transform('coffee-reactify')
         .transform('babelify', {
-          stage: 0,
           ignore: /(node_modules|bower_components)/,
         });
     }
@@ -181,7 +177,6 @@ gulp.task('[Development] Scripts', ['[Shared] Eslint'], () => {
 
   return bundler
     .transform('babelify', {
-      stage: 0,
       ignore: /(node_modules|bower_components)/
     })
     .transform('coffee-reactify')
@@ -212,7 +207,6 @@ gulp.task('[Production] Scripts', ['[Shared] Eslint'], () => {
 
   return bundler
     .transform('babelify', {
-      stage: 0,
       ignore: /(node_modules|bower_components)/
     })
     .transform('coffee-reactify')

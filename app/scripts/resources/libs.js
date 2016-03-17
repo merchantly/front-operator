@@ -3,7 +3,9 @@ global.$ = global.jQuery = require('jquery');
 global.React = require('react');
 global.Dispatcher = require('flux').Dispatcher;
 global.EventEmitter = require('eventEmitter');
-var Requester = require('./requester');
+
+import Requester from './requester';
+// var Requester = require('./requester');
 global.EB = new EventEmitter();
 global.Requester = new Requester({eb: global.EB});
 global.toastr = require('toastr');
