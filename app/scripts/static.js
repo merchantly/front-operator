@@ -1,12 +1,12 @@
 // These libs is required only in static
 require('eonasdan-bootstrap-datetimepicker');
 global.ReactUjs = require('reactUjs');
-global.gon = require('./resources/gon');
+import { gon } from './resources/gon';
 
 require('./bundle');
 require('./bindPlugins');
 
-let { operator, vendor_key } = gon;
+let { operator, vendor_key } = global.gon;
 KioskOperatorApp.start({operator, vendor_key});
 console.info('Залогинен оператор:', operator);
 

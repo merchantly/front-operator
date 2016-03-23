@@ -912,10 +912,10 @@ require('./react/components/common/spinner');
 require('./react/components/common/super_select');
 require('./react/components/common/images_form_thumbs');
 
-global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer');
+global.ProductImagesContainer = require('./react/components/product/ProductImagesContainer').default;
 global.PropertiesManager = require('./react/components/PropertiesManager').PropertiesManagerContainer;
-global.SmartSelect = require('./react/components/SmartSelect');
-global.SmartSelectColored = require('./react/components/SmartSelectColored');
+global.SmartSelect = require('./react/components/SmartSelect').default;
+global.SmartSelectColored = require('./react/components/SmartSelectColored').default;
 global.SmartCheckbox = require('./react/components/SmartCheckbox');
 global.CategoryTreeSelector = require('./react/components/CategoryTreeSelector').CategoryTreeSelectorContainer;
 
@@ -4685,7 +4685,7 @@ PropertyName.propTypes = {
 
 exports.default = PropertyName;
 
-},{"../../constants/propertyTypes":95,"../../services/MagicSequencer":112,"react":"react","react-select":215}],33:[function(require,module,exports){
+},{"../../constants/propertyTypes":95,"../../services/MagicSequencer":112,"react":"react","react-select":214}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5002,7 +5002,7 @@ PropertyValueDictionary.propTypes = {
 
 exports.default = PropertyValueDictionary;
 
-},{"../../services/MagicSequencer":112,"react":"react","react-select":215}],36:[function(require,module,exports){
+},{"../../services/MagicSequencer":112,"react":"react","react-select":214}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20685,113 +20685,6 @@ module.exports = exports['default'];
 },{"./domUtils":210}],213:[function(require,module,exports){
 'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var React = require('react');
-
-var sizerStyle = { position: 'absolute', visibility: 'hidden', height: 0, width: 0, overflow: 'scroll', whiteSpace: 'nowrap' };
-
-var AutosizeInput = React.createClass({
-	displayName: 'AutosizeInput',
-
-	propTypes: {
-		value: React.PropTypes.any, // field value
-		defaultValue: React.PropTypes.any, // default field value
-		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
-		style: React.PropTypes.object, // css styles for the outer element
-		className: React.PropTypes.string, // className for the outer element
-		minWidth: React.PropTypes.oneOfType([// minimum width for input element
-		React.PropTypes.number, React.PropTypes.string]),
-		inputStyle: React.PropTypes.object, // css styles for the input element
-		inputClassName: React.PropTypes.string // className for the input element
-	},
-	getDefaultProps: function getDefaultProps() {
-		return {
-			minWidth: 1
-		};
-	},
-	getInitialState: function getInitialState() {
-		return {
-			inputWidth: this.props.minWidth
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		this.copyInputStyles();
-		this.updateInputWidth();
-	},
-	componentDidUpdate: function componentDidUpdate() {
-		this.updateInputWidth();
-	},
-	copyInputStyles: function copyInputStyles() {
-		if (!this.isMounted() || !window.getComputedStyle) {
-			return;
-		}
-		var inputStyle = window.getComputedStyle(React.findDOMNode(this.refs.input));
-		var widthNode = React.findDOMNode(this.refs.sizer);
-		widthNode.style.fontSize = inputStyle.fontSize;
-		widthNode.style.fontFamily = inputStyle.fontFamily;
-		widthNode.style.letterSpacing = inputStyle.letterSpacing;
-		if (this.props.placeholder) {
-			var placeholderNode = React.findDOMNode(this.refs.placeholderSizer);
-			placeholderNode.style.fontSize = inputStyle.fontSize;
-			placeholderNode.style.fontFamily = inputStyle.fontFamily;
-			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
-		}
-	},
-	updateInputWidth: function updateInputWidth() {
-		if (!this.isMounted() || typeof React.findDOMNode(this.refs.sizer).scrollWidth === 'undefined') {
-			return;
-		}
-		var newInputWidth;
-		if (this.props.placeholder) {
-			newInputWidth = Math.max(React.findDOMNode(this.refs.sizer).scrollWidth, React.findDOMNode(this.refs.placeholderSizer).scrollWidth) + 2;
-		} else {
-			newInputWidth = React.findDOMNode(this.refs.sizer).scrollWidth + 2;
-		}
-		if (newInputWidth < this.props.minWidth) {
-			newInputWidth = this.props.minWidth;
-		}
-		if (newInputWidth !== this.state.inputWidth) {
-			this.setState({
-				inputWidth: newInputWidth
-			});
-		}
-	},
-	getInput: function getInput() {
-		return this.refs.input;
-	},
-	focus: function focus() {
-		React.findDOMNode(this.refs.input).focus();
-	},
-	select: function select() {
-		React.findDOMNode(this.refs.input).select();
-	},
-	render: function render() {
-		var escapedValue = (this.props.value || '').replace(/\&/g, '&amp;').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-		var wrapperStyle = this.props.style || {};
-		wrapperStyle.display = 'inline-block';
-		var inputStyle = _extends({}, this.props.inputStyle);
-		inputStyle.width = this.state.inputWidth;
-		inputStyle.boxSizing = 'content-box';
-		var placeholder = this.props.placeholder ? React.createElement(
-			'div',
-			{ ref: 'placeholderSizer', style: sizerStyle },
-			this.props.placeholder
-		) : null;
-		return React.createElement(
-			'div',
-			{ className: this.props.className, style: wrapperStyle },
-			React.createElement('input', _extends({}, this.props, { ref: 'input', className: this.props.inputClassName, style: inputStyle })),
-			React.createElement('div', { ref: 'sizer', style: sizerStyle, dangerouslySetInnerHTML: { __html: escapedValue } }),
-			placeholder
-		);
-	}
-});
-
-module.exports = AutosizeInput;
-},{"react":"react"}],214:[function(require,module,exports){
-'use strict';
-
 var React = require('react');
 var classes = require('classnames');
 
@@ -20847,7 +20740,7 @@ var Option = React.createClass({
 });
 
 module.exports = Option;
-},{"classnames":127,"react":"react"}],215:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],214:[function(require,module,exports){
 /* disable some rules until we refactor more completely; fixing them now would
    cause conflicts with some open PRs unnecessarily. */
 /* eslint react/jsx-sort-prop-types: 0, react/sort-comp: 0, react/prop-types: 0 */
@@ -21764,7 +21657,7 @@ var Select = React.createClass({
 });
 
 module.exports = Select;
-},{"./Option":214,"./SingleValue":216,"./Value":217,"classnames":127,"react":"react","react-input-autosize":213}],216:[function(require,module,exports){
+},{"./Option":213,"./SingleValue":215,"./Value":216,"classnames":127,"react":"react","react-input-autosize":217}],215:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -21792,7 +21685,7 @@ var SingleValue = React.createClass({
 });
 
 module.exports = SingleValue;
-},{"classnames":127,"react":"react"}],217:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -21876,7 +21769,114 @@ var Value = React.createClass({
 });
 
 module.exports = Value;
-},{"classnames":127,"react":"react"}],218:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],217:[function(require,module,exports){
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var React = require('react');
+
+var sizerStyle = { position: 'absolute', visibility: 'hidden', height: 0, width: 0, overflow: 'scroll', whiteSpace: 'nowrap' };
+
+var AutosizeInput = React.createClass({
+	displayName: 'AutosizeInput',
+
+	propTypes: {
+		value: React.PropTypes.any, // field value
+		defaultValue: React.PropTypes.any, // default field value
+		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
+		style: React.PropTypes.object, // css styles for the outer element
+		className: React.PropTypes.string, // className for the outer element
+		minWidth: React.PropTypes.oneOfType([// minimum width for input element
+		React.PropTypes.number, React.PropTypes.string]),
+		inputStyle: React.PropTypes.object, // css styles for the input element
+		inputClassName: React.PropTypes.string // className for the input element
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			minWidth: 1
+		};
+	},
+	getInitialState: function getInitialState() {
+		return {
+			inputWidth: this.props.minWidth
+		};
+	},
+	componentDidMount: function componentDidMount() {
+		this.copyInputStyles();
+		this.updateInputWidth();
+	},
+	componentDidUpdate: function componentDidUpdate() {
+		this.updateInputWidth();
+	},
+	copyInputStyles: function copyInputStyles() {
+		if (!this.isMounted() || !window.getComputedStyle) {
+			return;
+		}
+		var inputStyle = window.getComputedStyle(React.findDOMNode(this.refs.input));
+		var widthNode = React.findDOMNode(this.refs.sizer);
+		widthNode.style.fontSize = inputStyle.fontSize;
+		widthNode.style.fontFamily = inputStyle.fontFamily;
+		widthNode.style.letterSpacing = inputStyle.letterSpacing;
+		if (this.props.placeholder) {
+			var placeholderNode = React.findDOMNode(this.refs.placeholderSizer);
+			placeholderNode.style.fontSize = inputStyle.fontSize;
+			placeholderNode.style.fontFamily = inputStyle.fontFamily;
+			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
+		}
+	},
+	updateInputWidth: function updateInputWidth() {
+		if (!this.isMounted() || typeof React.findDOMNode(this.refs.sizer).scrollWidth === 'undefined') {
+			return;
+		}
+		var newInputWidth;
+		if (this.props.placeholder) {
+			newInputWidth = Math.max(React.findDOMNode(this.refs.sizer).scrollWidth, React.findDOMNode(this.refs.placeholderSizer).scrollWidth) + 2;
+		} else {
+			newInputWidth = React.findDOMNode(this.refs.sizer).scrollWidth + 2;
+		}
+		if (newInputWidth < this.props.minWidth) {
+			newInputWidth = this.props.minWidth;
+		}
+		if (newInputWidth !== this.state.inputWidth) {
+			this.setState({
+				inputWidth: newInputWidth
+			});
+		}
+	},
+	getInput: function getInput() {
+		return this.refs.input;
+	},
+	focus: function focus() {
+		React.findDOMNode(this.refs.input).focus();
+	},
+	select: function select() {
+		React.findDOMNode(this.refs.input).select();
+	},
+	render: function render() {
+		var escapedValue = (this.props.value || '').replace(/\&/g, '&amp;').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+		var wrapperStyle = this.props.style || {};
+		wrapperStyle.display = 'inline-block';
+		var inputStyle = _extends({}, this.props.inputStyle);
+		inputStyle.width = this.state.inputWidth;
+		inputStyle.boxSizing = 'content-box';
+		var placeholder = this.props.placeholder ? React.createElement(
+			'div',
+			{ ref: 'placeholderSizer', style: sizerStyle },
+			this.props.placeholder
+		) : null;
+		return React.createElement(
+			'div',
+			{ className: this.props.className, style: wrapperStyle },
+			React.createElement('input', _extends({}, this.props, { ref: 'input', className: this.props.inputClassName, style: inputStyle })),
+			React.createElement('div', { ref: 'sizer', style: sizerStyle, dangerouslySetInnerHTML: { __html: escapedValue } }),
+			placeholder
+		);
+	}
+});
+
+module.exports = AutosizeInput;
+},{"react":"react"}],218:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -53736,7 +53736,7 @@ Licensed under the MIT license.
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * Version: 1.3.6
+ * Version: 1.3.7
  *
  */
 (function($) {
@@ -53834,8 +53834,8 @@ Licensed under the MIT license.
             var offset = me.scrollTop();
 
             // find bar and rail
-            bar = me.closest('.' + o.barClass);
-            rail = me.closest('.' + o.railClass);
+            bar = me.siblings('.' + o.barClass);
+            rail = me.siblings('.' + o.railClass);
 
             getBarHeight();
 
@@ -53849,6 +53849,10 @@ Licensed under the MIT license.
                 var height = me.parent().parent().height();
                 me.parent().css('height', height);
                 me.css('height', height);
+              } else if ('height' in options) {
+                var h = options.height;
+                me.parent().css('height', h);
+                me.css('height', h);
               }
 
               if ('scrollTo' in options)
@@ -58138,7 +58142,7 @@ return $.widget;
 
 },{}],"jquery":[function(require,module,exports){
 /*!
- * jQuery JavaScript Library v2.2.1
+ * jQuery JavaScript Library v2.2.2
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -58148,7 +58152,7 @@ return $.widget;
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-02-22T19:11Z
+ * Date: 2016-03-17T17:51Z
  */
 
 (function( global, factory ) {
@@ -58204,7 +58208,7 @@ var support = {};
 
 
 var
-	version = "2.2.1",
+	version = "2.2.2",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -58415,6 +58419,7 @@ jQuery.extend( {
 	},
 
 	isPlainObject: function( obj ) {
+		var key;
 
 		// Not plain objects:
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
@@ -58424,14 +58429,18 @@ jQuery.extend( {
 			return false;
 		}
 
+		// Not own constructor property must be Object
 		if ( obj.constructor &&
-				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+				!hasOwn.call( obj, "constructor" ) &&
+				!hasOwn.call( obj.constructor.prototype || {}, "isPrototypeOf" ) ) {
 			return false;
 		}
 
-		// If the function hasn't returned already, we're confident that
-		// |obj| is a plain object, created by {} or constructed with new Object
-		return true;
+		// Own properties are enumerated firstly, so to speed up,
+		// if last one is own, then all properties are own
+		for ( key in obj ) {}
+
+		return key === undefined || hasOwn.call( obj, key );
 	},
 
 	isEmptyObject: function( obj ) {
@@ -65464,6 +65473,12 @@ jQuery.extend( {
 	}
 } );
 
+// Support: IE <=11 only
+// Accessing the selectedIndex property
+// forces the browser to respect setting selected
+// on the option
+// The getter ensures a default option is selected
+// when in an optgroup
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
@@ -65472,6 +65487,16 @@ if ( !support.optSelected ) {
 				parent.parentNode.selectedIndex;
 			}
 			return null;
+		},
+		set: function( elem ) {
+			var parent = elem.parentNode;
+			if ( parent ) {
+				parent.selectedIndex;
+
+				if ( parent.parentNode ) {
+					parent.parentNode.selectedIndex;
+				}
+			}
 		}
 	};
 }
@@ -65666,7 +65691,8 @@ jQuery.fn.extend( {
 
 
 
-var rreturn = /\r/g;
+var rreturn = /\r/g,
+	rspaces = /[\x20\t\r\n\f]+/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -65742,9 +65768,15 @@ jQuery.extend( {
 		option: {
 			get: function( elem ) {
 
-				// Support: IE<11
-				// option.value not trimmed (#14858)
-				return jQuery.trim( elem.value );
+				var val = jQuery.find.attr( elem, "value" );
+				return val != null ?
+					val :
+
+					// Support: IE10-11+
+					// option.text throws exceptions (#14686, #14858)
+					// Strip and collapse whitespace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
 			}
 		},
 		select: {
@@ -65797,7 +65829,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 					if ( option.selected =
-							jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
+						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
 					) {
 						optionSet = true;
 					}
@@ -67492,18 +67524,6 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// Support: Safari 8+
-// In Safari 8 documents created via document.implementation.createHTMLDocument
-// collapse sibling forms: the second one becomes a child of the first one.
-// Because of that, this security measure has to be disabled in Safari 8.
-// https://bugs.webkit.org/show_bug.cgi?id=137337
-support.createHTMLDocument = ( function() {
-	var body = document.implementation.createHTMLDocument( "" ).body;
-	body.innerHTML = "<form></form><form></form>";
-	return body.childNodes.length === 2;
-} )();
-
-
 // Argument "data" should be string of html
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
@@ -67516,12 +67536,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		keepScripts = context;
 		context = false;
 	}
-
-	// Stop scripts or inline event handlers from being executed immediately
-	// by using document.implementation
-	context = context || ( support.createHTMLDocument ?
-		document.implementation.createHTMLDocument( "" ) :
-		document );
+	context = context || document;
 
 	var parsed = rsingleTag.exec( data ),
 		scripts = !keepScripts && [];
