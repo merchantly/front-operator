@@ -4685,7 +4685,7 @@ PropertyName.propTypes = {
 
 exports.default = PropertyName;
 
-},{"../../constants/propertyTypes":95,"../../services/MagicSequencer":112,"react":"react","react-select":214}],33:[function(require,module,exports){
+},{"../../constants/propertyTypes":95,"../../services/MagicSequencer":112,"react":"react","react-select":215}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5002,7 +5002,7 @@ PropertyValueDictionary.propTypes = {
 
 exports.default = PropertyValueDictionary;
 
-},{"../../services/MagicSequencer":112,"react":"react","react-select":214}],36:[function(require,module,exports){
+},{"../../services/MagicSequencer":112,"react":"react","react-select":215}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20685,6 +20685,113 @@ module.exports = exports['default'];
 },{"./domUtils":210}],213:[function(require,module,exports){
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var React = require('react');
+
+var sizerStyle = { position: 'absolute', visibility: 'hidden', height: 0, width: 0, overflow: 'scroll', whiteSpace: 'nowrap' };
+
+var AutosizeInput = React.createClass({
+	displayName: 'AutosizeInput',
+
+	propTypes: {
+		value: React.PropTypes.any, // field value
+		defaultValue: React.PropTypes.any, // default field value
+		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
+		style: React.PropTypes.object, // css styles for the outer element
+		className: React.PropTypes.string, // className for the outer element
+		minWidth: React.PropTypes.oneOfType([// minimum width for input element
+		React.PropTypes.number, React.PropTypes.string]),
+		inputStyle: React.PropTypes.object, // css styles for the input element
+		inputClassName: React.PropTypes.string // className for the input element
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			minWidth: 1
+		};
+	},
+	getInitialState: function getInitialState() {
+		return {
+			inputWidth: this.props.minWidth
+		};
+	},
+	componentDidMount: function componentDidMount() {
+		this.copyInputStyles();
+		this.updateInputWidth();
+	},
+	componentDidUpdate: function componentDidUpdate() {
+		this.updateInputWidth();
+	},
+	copyInputStyles: function copyInputStyles() {
+		if (!this.isMounted() || !window.getComputedStyle) {
+			return;
+		}
+		var inputStyle = window.getComputedStyle(React.findDOMNode(this.refs.input));
+		var widthNode = React.findDOMNode(this.refs.sizer);
+		widthNode.style.fontSize = inputStyle.fontSize;
+		widthNode.style.fontFamily = inputStyle.fontFamily;
+		widthNode.style.letterSpacing = inputStyle.letterSpacing;
+		if (this.props.placeholder) {
+			var placeholderNode = React.findDOMNode(this.refs.placeholderSizer);
+			placeholderNode.style.fontSize = inputStyle.fontSize;
+			placeholderNode.style.fontFamily = inputStyle.fontFamily;
+			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
+		}
+	},
+	updateInputWidth: function updateInputWidth() {
+		if (!this.isMounted() || typeof React.findDOMNode(this.refs.sizer).scrollWidth === 'undefined') {
+			return;
+		}
+		var newInputWidth;
+		if (this.props.placeholder) {
+			newInputWidth = Math.max(React.findDOMNode(this.refs.sizer).scrollWidth, React.findDOMNode(this.refs.placeholderSizer).scrollWidth) + 2;
+		} else {
+			newInputWidth = React.findDOMNode(this.refs.sizer).scrollWidth + 2;
+		}
+		if (newInputWidth < this.props.minWidth) {
+			newInputWidth = this.props.minWidth;
+		}
+		if (newInputWidth !== this.state.inputWidth) {
+			this.setState({
+				inputWidth: newInputWidth
+			});
+		}
+	},
+	getInput: function getInput() {
+		return this.refs.input;
+	},
+	focus: function focus() {
+		React.findDOMNode(this.refs.input).focus();
+	},
+	select: function select() {
+		React.findDOMNode(this.refs.input).select();
+	},
+	render: function render() {
+		var escapedValue = (this.props.value || '').replace(/\&/g, '&amp;').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+		var wrapperStyle = this.props.style || {};
+		wrapperStyle.display = 'inline-block';
+		var inputStyle = _extends({}, this.props.inputStyle);
+		inputStyle.width = this.state.inputWidth;
+		inputStyle.boxSizing = 'content-box';
+		var placeholder = this.props.placeholder ? React.createElement(
+			'div',
+			{ ref: 'placeholderSizer', style: sizerStyle },
+			this.props.placeholder
+		) : null;
+		return React.createElement(
+			'div',
+			{ className: this.props.className, style: wrapperStyle },
+			React.createElement('input', _extends({}, this.props, { ref: 'input', className: this.props.inputClassName, style: inputStyle })),
+			React.createElement('div', { ref: 'sizer', style: sizerStyle, dangerouslySetInnerHTML: { __html: escapedValue } }),
+			placeholder
+		);
+	}
+});
+
+module.exports = AutosizeInput;
+},{"react":"react"}],214:[function(require,module,exports){
+'use strict';
+
 var React = require('react');
 var classes = require('classnames');
 
@@ -20740,7 +20847,7 @@ var Option = React.createClass({
 });
 
 module.exports = Option;
-},{"classnames":127,"react":"react"}],214:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],215:[function(require,module,exports){
 /* disable some rules until we refactor more completely; fixing them now would
    cause conflicts with some open PRs unnecessarily. */
 /* eslint react/jsx-sort-prop-types: 0, react/sort-comp: 0, react/prop-types: 0 */
@@ -21657,7 +21764,7 @@ var Select = React.createClass({
 });
 
 module.exports = Select;
-},{"./Option":213,"./SingleValue":215,"./Value":216,"classnames":127,"react":"react","react-input-autosize":217}],215:[function(require,module,exports){
+},{"./Option":214,"./SingleValue":216,"./Value":217,"classnames":127,"react":"react","react-input-autosize":213}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -21685,7 +21792,7 @@ var SingleValue = React.createClass({
 });
 
 module.exports = SingleValue;
-},{"classnames":127,"react":"react"}],216:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],217:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -21769,114 +21876,7 @@ var Value = React.createClass({
 });
 
 module.exports = Value;
-},{"classnames":127,"react":"react"}],217:[function(require,module,exports){
-'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var React = require('react');
-
-var sizerStyle = { position: 'absolute', visibility: 'hidden', height: 0, width: 0, overflow: 'scroll', whiteSpace: 'nowrap' };
-
-var AutosizeInput = React.createClass({
-	displayName: 'AutosizeInput',
-
-	propTypes: {
-		value: React.PropTypes.any, // field value
-		defaultValue: React.PropTypes.any, // default field value
-		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
-		style: React.PropTypes.object, // css styles for the outer element
-		className: React.PropTypes.string, // className for the outer element
-		minWidth: React.PropTypes.oneOfType([// minimum width for input element
-		React.PropTypes.number, React.PropTypes.string]),
-		inputStyle: React.PropTypes.object, // css styles for the input element
-		inputClassName: React.PropTypes.string // className for the input element
-	},
-	getDefaultProps: function getDefaultProps() {
-		return {
-			minWidth: 1
-		};
-	},
-	getInitialState: function getInitialState() {
-		return {
-			inputWidth: this.props.minWidth
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		this.copyInputStyles();
-		this.updateInputWidth();
-	},
-	componentDidUpdate: function componentDidUpdate() {
-		this.updateInputWidth();
-	},
-	copyInputStyles: function copyInputStyles() {
-		if (!this.isMounted() || !window.getComputedStyle) {
-			return;
-		}
-		var inputStyle = window.getComputedStyle(React.findDOMNode(this.refs.input));
-		var widthNode = React.findDOMNode(this.refs.sizer);
-		widthNode.style.fontSize = inputStyle.fontSize;
-		widthNode.style.fontFamily = inputStyle.fontFamily;
-		widthNode.style.letterSpacing = inputStyle.letterSpacing;
-		if (this.props.placeholder) {
-			var placeholderNode = React.findDOMNode(this.refs.placeholderSizer);
-			placeholderNode.style.fontSize = inputStyle.fontSize;
-			placeholderNode.style.fontFamily = inputStyle.fontFamily;
-			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
-		}
-	},
-	updateInputWidth: function updateInputWidth() {
-		if (!this.isMounted() || typeof React.findDOMNode(this.refs.sizer).scrollWidth === 'undefined') {
-			return;
-		}
-		var newInputWidth;
-		if (this.props.placeholder) {
-			newInputWidth = Math.max(React.findDOMNode(this.refs.sizer).scrollWidth, React.findDOMNode(this.refs.placeholderSizer).scrollWidth) + 2;
-		} else {
-			newInputWidth = React.findDOMNode(this.refs.sizer).scrollWidth + 2;
-		}
-		if (newInputWidth < this.props.minWidth) {
-			newInputWidth = this.props.minWidth;
-		}
-		if (newInputWidth !== this.state.inputWidth) {
-			this.setState({
-				inputWidth: newInputWidth
-			});
-		}
-	},
-	getInput: function getInput() {
-		return this.refs.input;
-	},
-	focus: function focus() {
-		React.findDOMNode(this.refs.input).focus();
-	},
-	select: function select() {
-		React.findDOMNode(this.refs.input).select();
-	},
-	render: function render() {
-		var escapedValue = (this.props.value || '').replace(/\&/g, '&amp;').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-		var wrapperStyle = this.props.style || {};
-		wrapperStyle.display = 'inline-block';
-		var inputStyle = _extends({}, this.props.inputStyle);
-		inputStyle.width = this.state.inputWidth;
-		inputStyle.boxSizing = 'content-box';
-		var placeholder = this.props.placeholder ? React.createElement(
-			'div',
-			{ ref: 'placeholderSizer', style: sizerStyle },
-			this.props.placeholder
-		) : null;
-		return React.createElement(
-			'div',
-			{ className: this.props.className, style: wrapperStyle },
-			React.createElement('input', _extends({}, this.props, { ref: 'input', className: this.props.inputClassName, style: inputStyle })),
-			React.createElement('div', { ref: 'sizer', style: sizerStyle, dangerouslySetInnerHTML: { __html: escapedValue } }),
-			placeholder
-		);
-	}
-});
-
-module.exports = AutosizeInput;
-},{"react":"react"}],218:[function(require,module,exports){
+},{"classnames":127,"react":"react"}],218:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58142,7 +58142,7 @@ return $.widget;
 
 },{}],"jquery":[function(require,module,exports){
 /*!
- * jQuery JavaScript Library v2.2.2
+ * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -58152,7 +58152,7 @@ return $.widget;
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-03-17T17:51Z
+ * Date: 2016-04-05T19:26Z
  */
 
 (function( global, factory ) {
@@ -58208,7 +58208,7 @@ var support = {};
 
 
 var
-	version = "2.2.2",
+	version = "2.2.3",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -67618,7 +67618,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}
@@ -88123,15 +88123,17 @@ return jQuery;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"metisMenu":[function(require,module,exports){
 /*
- * metismenu - v1.1.3
- * Easy menu jQuery plugin for Twitter Bootstrap 3
- * https://github.com/onokumus/metisMenu
+ * metismenu - v2.5.0
+ * A jQuery menu plugin
+ * https://github.com/onokumus/metisMenu#readme
  *
- * Made by Osman Nuri Okumus
+ * Made by Osman Nuri Okumuş <onokumus@gmail.com> (https://github.com/onokumus)
  * Under MIT License
  */
-!function(a,b,c){function d(b,c){this.element=a(b),this.settings=a.extend({},f,c),this._defaults=f,this._name=e,this.init()}var e="metisMenu",f={toggle:!0,doubleTapToGo:!1};d.prototype={init:function(){var b=this.element,d=this.settings.toggle,f=this;this.isIE()<=9?(b.find("li.active").has("ul").children("ul").collapse("show"),b.find("li").not(".active").has("ul").children("ul").collapse("hide")):(b.find("li.active").has("ul").children("ul").addClass("collapse in"),b.find("li").not(".active").has("ul").children("ul").addClass("collapse")),f.settings.doubleTapToGo&&b.find("li.active").has("ul").children("a").addClass("doubleTapToGo"),b.find("li").has("ul").children("a").on("click."+e,function(b){return b.preventDefault(),f.settings.doubleTapToGo&&f.doubleTapToGo(a(this))&&"#"!==a(this).attr("href")&&""!==a(this).attr("href")?(b.stopPropagation(),void(c.location=a(this).attr("href"))):(a(this).parent("li").toggleClass("active").children("ul").collapse("toggle"),void(d&&a(this).parent("li").siblings().removeClass("active").children("ul.in").collapse("hide")))})},isIE:function(){for(var a,b=3,d=c.createElement("div"),e=d.getElementsByTagName("i");d.innerHTML="<!--[if gt IE "+ ++b+"]><i></i><![endif]-->",e[0];)return b>4?b:a},doubleTapToGo:function(a){var b=this.element;return a.hasClass("doubleTapToGo")?(a.removeClass("doubleTapToGo"),!0):a.parent().children("ul").length?(b.find(".doubleTapToGo").removeClass("doubleTapToGo"),a.addClass("doubleTapToGo"),!1):void 0},remove:function(){this.element.off("."+e),this.element.removeData(e)}},a.fn[e]=function(b){return this.each(function(){var c=a(this);c.data(e)&&c.data(e).remove(),c.data(e,new d(this,b))}),this}}(jQuery,window,document);
-},{}],"pace":[function(require,module,exports){
+
+!function(a,b){if("function"==typeof define&&define.amd)define(["jquery"],b);else if("undefined"!=typeof exports)b(require("jquery"));else{var c={exports:{}};b(a.jquery),a.metisMenu=c.exports}}(this,function(a){"use strict";function b(a){return a&&a.__esModule?a:{"default":a}}function c(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}var d=(b(a),"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol?"symbol":typeof a}),e=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();(function(a){function b(){return{bindType:q.end,delegateType:q.end,handle:function(b){return a(b.target).is(this)?b.handleObj.handler.apply(this,arguments):void 0}}}function f(){if(window.QUnit)return!1;var a=document.createElement("mm");for(var b in r)if(void 0!==a.style[b])return{end:r[b]};return!1}function g(b){var c=this,d=!1;a(this).one(s.TRANSITION_END,function(){d=!0}),setTimeout(function(){d||s.triggerTransitionEnd(c)},b)}function h(){q=f(),a.fn.emulateTransitionEnd=g,s.supportsTransitionEnd()&&(a.event.special[s.TRANSITION_END]=b())}var i="metisMenu",j="metisMenu",k="."+j,l=".data-api",m=a.fn[i],n=350,o={toggle:!0,doubleTapToGo:!1,preventDefault:!0,activeClass:"active",collapseClass:"collapse",collapseInClass:"in",collapsingClass:"collapsing"},p={SHOW:"show"+k,SHOWN:"shown"+k,HIDE:"hide"+k,HIDDEN:"hidden"+k,CLICK_DATA_API:"click"+k+l},q=!1,r={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"},s={TRANSITION_END:"mmTransitionEnd",triggerTransitionEnd:function(b){a(b).trigger(q.end)},supportsTransitionEnd:function(){return Boolean(q)}};h();var t=function(){function b(a,d){c(this,b),this._element=a,this._config=this._getConfig(d),this._transitioning=null,this.init()}return e(b,[{key:"init",value:function(){var b=this;a(this._element).find("li."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!0).addClass(this._config.collapseClass+" "+this._config.collapseInClass),a(this._element).find("li").not("."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!1).addClass(this._config.collapseClass),this._config.doubleTapToGo&&a(this._element).find("li."+this._config.activeClass).has("ul").children("a").addClass("doubleTapToGo"),a(this._element).find("li").has("ul").children("a").on(p.CLICK_DATA_API,function(c){var d=a(this),e=d.parent("li"),f=e.children("ul");return b._config.preventDefault&&c.preventDefault(),"true"!==d.attr("aria-disabled")?(e.hasClass(b._config.activeClass)&&!b._config.doubleTapToGo?(d.attr("aria-expanded",!1),b._hide(f)):(b._show(f),d.attr("aria-expanded",!0)),b._config.onTransitionStart&&b._config.onTransitionStart(c),b._config.doubleTapToGo&&b._doubleTapToGo(d)&&"#"!==d.attr("href")&&""!==d.attr("href")?(c.stopPropagation(),void(document.location=d.attr("href"))):void 0):void 0})}},{key:"_show",value:function(b){if(!this._transitioning&&!a(b).hasClass(this._config.collapsingClass)){var c=this,d=a(b),e=a.Event(p.SHOW);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").addClass(this._config.activeClass),this._config.toggle&&this._hide(d.parent("li").siblings().children("ul."+this._config.collapseInClass).attr("aria-expanded",!1)),d.removeClass(this._config.collapseClass).addClass(this._config.collapsingClass).height(0),this.setTransitioning(!0);var f=function(){d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass+" "+c._config.collapseInClass).height("").attr("aria-expanded",!0),c.setTransitioning(!1),d.trigger(p.SHOWN)};if(!s.supportsTransitionEnd())return void f();d.height(d[0].scrollHeight).one(s.TRANSITION_END,f),g(n)}}}},{key:"_hide",value:function(b){if(!this._transitioning&&a(b).hasClass(this._config.collapseInClass)){var c=this,d=a(b),e=a.Event(p.HIDE);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").removeClass(this._config.activeClass),d.height(d.height())[0].offsetHeight,d.addClass(this._config.collapsingClass).removeClass(this._config.collapseClass).removeClass(this._config.collapseInClass),this.setTransitioning(!0);var f=function(){c._transitioning&&c._config.onTransitionEnd&&c._config.onTransitionEnd(),c.setTransitioning(!1),d.trigger(p.HIDDEN),d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass).attr("aria-expanded",!1)};if(!s.supportsTransitionEnd())return void f();d.height(0).one(s.TRANSITION_END,f),g(n)}}}},{key:"_doubleTapToGo",value:function(b){return b.hasClass("doubleTapToGo")?(b.removeClass("doubleTapToGo"),!0):b.parent().children("ul").length?(a(this._element).find(".doubleTapToGo").removeClass("doubleTapToGo"),b.addClass("doubleTapToGo"),!1):void 0}},{key:"setTransitioning",value:function(a){this._transitioning=a}},{key:"_getConfig",value:function(b){return b=a.extend({},o,b)}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this),f=e.data(j),g=a.extend({},o,e.data(),"object"===("undefined"==typeof c?"undefined":d(c))&&c);if(f||(f=new b(this,g),e.data(j,f)),"string"==typeof c){if(void 0===f[c])throw new Error('No method named "'+c+'"');f[c]()}})}}]),b}();return a.fn[i]=t._jQueryInterface,a.fn[i].Constructor=t,a.fn[i].noConflict=function(){return a.fn[i]=m,t._jQueryInterface},t})(jQuery)});
+
+},{"jquery":"jquery"}],"pace":[function(require,module,exports){
 (function() {
   var AjaxMonitor, Bar, DocumentMonitor, ElementMonitor, ElementTracker, EventLagMonitor, Evented, Events, NoTargetError, Pace, RequestIntercept, SOURCE_KEYS, Scaler, SocketRequestTracker, XHRRequestTracker, animation, avgAmplitude, bar, cancelAnimation, cancelAnimationFrame, defaultOptions, extend, extendNative, getFromDOM, getIntercept, handlePushState, ignoreStack, init, now, options, requestAnimationFrame, result, runAnimation, scalers, shouldIgnoreURL, shouldTrack, source, sources, uniScaler, _WebSocket, _XDomainRequest, _XMLHttpRequest, _i, _intercept, _len, _pushState, _ref, _ref1, _replaceState,
     __slice = [].slice,
