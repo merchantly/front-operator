@@ -17,7 +17,7 @@
     "flux": "^2.0.1",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
-    "node-sass": "^3.5.3",
+    "node-sass": "^3.4.2",
     "numeral": "^1.5.3",
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.7",
