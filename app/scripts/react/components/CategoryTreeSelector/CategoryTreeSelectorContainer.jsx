@@ -14,8 +14,8 @@ class CategoryTreeSelectorContainer extends Component {
   state = {
     categories: this.props.data,
     modalUuid: uuid.v4(),
-    selectedCategories: this.props.categories_ids,
-    selectedUncommitted: this.props.categories_ids,
+    selectedCategories: this.props.category_ids,
+    selectedUncommitted: this.props.category_ids,
   }
   acceptSelection() {
     this.setState({ selectedCategories: this.state.selectedUncommitted });
@@ -55,7 +55,7 @@ class CategoryTreeSelectorContainer extends Component {
 }
 
 CategoryTreeSelectorContainer.propTypes = {
-  categories_ids: PropTypes.array.isRequired,
+  category_ids: PropTypes.array.isRequired,
   canCreate: PropTypes.bool,
   createButtonTitle: PropTypes.string,
   data: PropTypes.array.isRequired,
@@ -64,7 +64,7 @@ CategoryTreeSelectorContainer.propTypes = {
   modalShowTitle: PropTypes.string,
 };
 CategoryTreeSelectorContainer.defaultProps = {
-  "fieldName": "product[categories_ids][]",
+  "fieldName": "product[category_ids][]",
   "data": [
     {
       "id": 560,
@@ -1395,7 +1395,7 @@ CategoryTreeSelectorContainer.defaultProps = {
   "canCreate": true,
   "canRename": true,
   "canDelete": true,
-  "categories_ids": [
+  "category_ids": [
     3466
   ],
   "createButtonTitle": "Создать",

@@ -2236,8 +2236,8 @@ var CategoryTreeSelectorContainer = function (_Component) {
     _this.state = {
       categories: _this.props.data,
       modalUuid: _uuid2.default.v4(),
-      selectedCategories: _this.props.categories_ids,
-      selectedUncommitted: _this.props.categories_ids
+      selectedCategories: _this.props.category_ids,
+      selectedUncommitted: _this.props.category_ids
     };
 
     _this.acceptSelection = _this.acceptSelection.bind(_this);
@@ -2297,7 +2297,7 @@ var CategoryTreeSelectorContainer = function (_Component) {
 }(_react.Component);
 
 CategoryTreeSelectorContainer.propTypes = {
-  categories_ids: _react.PropTypes.array.isRequired,
+  category_ids: _react.PropTypes.array.isRequired,
   canCreate: _react.PropTypes.bool,
   createButtonTitle: _react.PropTypes.string,
   data: _react.PropTypes.array.isRequired,
@@ -2306,7 +2306,7 @@ CategoryTreeSelectorContainer.propTypes = {
   modalShowTitle: _react.PropTypes.string
 };
 CategoryTreeSelectorContainer.defaultProps = {
-  "fieldName": "product[categories_ids][]",
+  "fieldName": "product[category_ids][]",
   "data": [{
     "id": 560,
     "text": "Hello!asdsadd22",
@@ -3343,7 +3343,7 @@ CategoryTreeSelectorContainer.defaultProps = {
   "canCreate": true,
   "canRename": true,
   "canDelete": true,
-  "categories_ids": [3466],
+  "category_ids": [3466],
   "createButtonTitle": "Создать",
   "modalCreateTitle": "Создание категории",
   "modalShowTitle": "Выбор категорий"
