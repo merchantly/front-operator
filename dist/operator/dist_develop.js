@@ -11794,12 +11794,40 @@ module.exports = Dispatcher;
 // shim for using process in browser
 
 var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+(function () {
+  try {
+    cachedSetTimeout = setTimeout;
+  } catch (e) {
+    cachedSetTimeout = function () {
+      throw new Error('setTimeout is not defined');
+    }
+  }
+  try {
+    cachedClearTimeout = clearTimeout;
+  } catch (e) {
+    cachedClearTimeout = function () {
+      throw new Error('clearTimeout is not defined');
+    }
+  }
+} ())
 var queue = [];
 var draining = false;
 var currentQueue;
 var queueIndex = -1;
 
 function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
     draining = false;
     if (currentQueue.length) {
         queue = currentQueue.concat(queue);
@@ -11815,7 +11843,7 @@ function drainQueue() {
     if (draining) {
         return;
     }
-    var timeout = setTimeout(cleanUpNextTick);
+    var timeout = cachedSetTimeout(cleanUpNextTick);
     draining = true;
 
     var len = queue.length;
@@ -11832,7 +11860,7 @@ function drainQueue() {
     }
     currentQueue = null;
     draining = false;
-    clearTimeout(timeout);
+    cachedClearTimeout(timeout);
 }
 
 process.nextTick = function (fun) {
@@ -11844,7 +11872,7 @@ process.nextTick = function (fun) {
     }
     queue.push(new Item(fun, args));
     if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
+        cachedSetTimeout(drainQueue, 0);
     }
 };
 
@@ -47373,7 +47401,9 @@ window.Aviator = {
   'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], factory);
+    define([], function() {
+      return factory();
+    });
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
@@ -47494,9 +47524,9 @@ window.Aviator = {
       return 'null';
     } else if (Array.isArray(subject)) {
       return 'array';
-    } else if (subject instanceof Date) {
+    } else if (Object.prototype.toString.call(subject) === '[object Date]') {
       return 'date';
-    } else if (/^\/.*\//.test(subject.toString())) {
+    } else if (typeof subject.toString !== 'undefined' && /^\/.*\//.test(subject.toString())) {
       return 'regexp';
     }
     return 'object';
@@ -47506,11 +47536,28 @@ window.Aviator = {
     path = path || [];
     var currentPath = path.slice(0);
     if (typeof key !== 'undefined') {
-      if (prefilter && prefilter(currentPath, key, { lhs: lhs, rhs: rhs })) {
-        return;
+      if (prefilter) {
+        if (typeof(prefilter) === 'function' && prefilter(currentPath, key)) { return; }
+        else if (typeof(prefilter) === 'object') {
+          if (prefilter.prefilter && prefilter.prefilter(currentPath, key)) { return; }
+          if (prefilter.normalize) {
+            var alt = prefilter.normalize(currentPath, key, lhs, rhs);
+            if (alt) {
+              lhs = alt[0];
+              rhs = alt[1];
+            }
+          }
+        }
       }
       currentPath.push(key);
     }
+
+    // Use string comparison for regexes
+    if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
+      lhs = lhs.toString();
+      rhs = rhs.toString();
+    }
+
     var ltype = typeof lhs;
     var rtype = typeof rhs;
     if (ltype === 'undefined') {
@@ -47521,7 +47568,7 @@ window.Aviator = {
       changes(new DiffDeleted(currentPath, lhs));
     } else if (realTypeOf(lhs) !== realTypeOf(rhs)) {
       changes(new DiffEdit(currentPath, lhs, rhs));
-    } else if (lhs instanceof Date && rhs instanceof Date && ((lhs - rhs) !== 0)) {
+    } else if (Object.prototype.toString.call(lhs) === '[object Date]' && Object.prototype.toString.call(rhs) === '[object Date]' && ((lhs - rhs) !== 0)) {
       changes(new DiffEdit(currentPath, lhs, rhs));
     } else if (ltype === 'object' && lhs !== null && rhs !== null) {
       stack = stack || [];
@@ -47579,7 +47626,7 @@ window.Aviator = {
   function applyArrayChange(arr, index, change) {
     if (change.path && change.path.length) {
       var it = arr[index],
-        i, u = change.path.length - 1;
+          i, u = change.path.length - 1;
       for (i = 0; i < u; i++) {
         it = it[change.path[i]];
       }
@@ -47615,8 +47662,8 @@ window.Aviator = {
   function applyChange(target, source, change) {
     if (target && source && change && change.kind) {
       var it = target,
-        i = -1,
-        last = change.path ? change.path.length - 1 : 0;
+          i = -1,
+          last = change.path ? change.path.length - 1 : 0;
       while (++i < last) {
         if (typeof it[change.path[i]] === 'undefined') {
           it[change.path[i]] = (typeof change.path[i] === 'number') ? [] : {};
@@ -47642,7 +47689,7 @@ window.Aviator = {
     if (change.path && change.path.length) {
       // the structure of the object at the index has changed...
       var it = arr[index],
-        i, u = change.path.length - 1;
+          i, u = change.path.length - 1;
       for (i = 0; i < u; i++) {
         it = it[change.path[i]];
       }
@@ -47683,7 +47730,7 @@ window.Aviator = {
   function revertChange(target, source, change) {
     if (target && source && change && change.kind) {
       var it = target,
-        i, u;
+          i, u;
       u = change.path.length - 1;
       for (i = 0; i < u; i++) {
         if (typeof it[change.path[i]] === 'undefined') {
@@ -53736,7 +53783,7 @@ Licensed under the MIT license.
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * Version: 1.3.7
+ * Version: 1.3.8
  *
  */
 (function($) {
@@ -58142,7 +58189,7 @@ return $.widget;
 
 },{}],"jquery":[function(require,module,exports){
 /*!
- * jQuery JavaScript Library v2.2.3
+ * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -58152,7 +58199,7 @@ return $.widget;
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-04-05T19:26Z
+ * Date: 2016-05-20T17:23Z
  */
 
 (function( global, factory ) {
@@ -58208,7 +58255,7 @@ var support = {};
 
 
 var
-	version = "2.2.3",
+	version = "2.2.4",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -63149,13 +63196,14 @@ jQuery.Event.prototype = {
 	isDefaultPrevented: returnFalse,
 	isPropagationStopped: returnFalse,
 	isImmediatePropagationStopped: returnFalse,
+	isSimulated: false,
 
 	preventDefault: function() {
 		var e = this.originalEvent;
 
 		this.isDefaultPrevented = returnTrue;
 
-		if ( e ) {
+		if ( e && !this.isSimulated ) {
 			e.preventDefault();
 		}
 	},
@@ -63164,7 +63212,7 @@ jQuery.Event.prototype = {
 
 		this.isPropagationStopped = returnTrue;
 
-		if ( e ) {
+		if ( e && !this.isSimulated ) {
 			e.stopPropagation();
 		}
 	},
@@ -63173,7 +63221,7 @@ jQuery.Event.prototype = {
 
 		this.isImmediatePropagationStopped = returnTrue;
 
-		if ( e ) {
+		if ( e && !this.isSimulated ) {
 			e.stopImmediatePropagation();
 		}
 
@@ -64103,19 +64151,6 @@ function getWidthOrHeight( elem, name, extra ) {
 		val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 		styles = getStyles( elem ),
 		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-
-	// Support: IE11 only
-	// In IE 11 fullscreen elements inside of an iframe have
-	// 100x too small dimensions (gh-1764).
-	if ( document.msFullscreenElement && window.top !== window ) {
-
-		// Support: IE11 only
-		// Running getBoundingClientRect on a disconnected node
-		// in IE throws an error.
-		if ( elem.getClientRects().length ) {
-			val = Math.round( elem.getBoundingClientRect()[ name ] * 100 );
-		}
-	}
 
 	// Some non-html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
@@ -66007,6 +66042,7 @@ jQuery.extend( jQuery.event, {
 	},
 
 	// Piggyback on a donor event to simulate a different one
+	// Used only for `focus(in | out)` events
 	simulate: function( type, elem, event ) {
 		var e = jQuery.extend(
 			new jQuery.Event(),
@@ -66014,27 +66050,10 @@ jQuery.extend( jQuery.event, {
 			{
 				type: type,
 				isSimulated: true
-
-				// Previously, `originalEvent: {}` was set here, so stopPropagation call
-				// would not be triggered on donor event, since in our own
-				// jQuery.event.stopPropagation function we had a check for existence of
-				// originalEvent.stopPropagation method, so, consequently it would be a noop.
-				//
-				// But now, this "simulate" function is used only for events
-				// for which stopPropagation() is noop, so there is no need for that anymore.
-				//
-				// For the 1.x branch though, guard for "click" and "submit"
-				// events is still used, but was moved to jQuery.event.stopPropagation function
-				// because `originalEvent` should point to the original event for the constancy
-				// with other events and for more focused logic
 			}
 		);
 
 		jQuery.event.trigger( e, null, elem );
-
-		if ( e.isDefaultPrevented() ) {
-			event.preventDefault();
-		}
 	}
 
 } );
@@ -88123,7 +88142,7 @@ return jQuery;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"metisMenu":[function(require,module,exports){
 /*
- * metismenu - v2.5.0
+ * metismenu - v2.5.2
  * A jQuery menu plugin
  * https://github.com/onokumus/metisMenu#readme
  *
@@ -88131,7 +88150,7 @@ return jQuery;
  * Under MIT License
  */
 
-!function(a,b){if("function"==typeof define&&define.amd)define(["jquery"],b);else if("undefined"!=typeof exports)b(require("jquery"));else{var c={exports:{}};b(a.jquery),a.metisMenu=c.exports}}(this,function(a){"use strict";function b(a){return a&&a.__esModule?a:{"default":a}}function c(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}var d=(b(a),"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol?"symbol":typeof a}),e=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();(function(a){function b(){return{bindType:q.end,delegateType:q.end,handle:function(b){return a(b.target).is(this)?b.handleObj.handler.apply(this,arguments):void 0}}}function f(){if(window.QUnit)return!1;var a=document.createElement("mm");for(var b in r)if(void 0!==a.style[b])return{end:r[b]};return!1}function g(b){var c=this,d=!1;a(this).one(s.TRANSITION_END,function(){d=!0}),setTimeout(function(){d||s.triggerTransitionEnd(c)},b)}function h(){q=f(),a.fn.emulateTransitionEnd=g,s.supportsTransitionEnd()&&(a.event.special[s.TRANSITION_END]=b())}var i="metisMenu",j="metisMenu",k="."+j,l=".data-api",m=a.fn[i],n=350,o={toggle:!0,doubleTapToGo:!1,preventDefault:!0,activeClass:"active",collapseClass:"collapse",collapseInClass:"in",collapsingClass:"collapsing"},p={SHOW:"show"+k,SHOWN:"shown"+k,HIDE:"hide"+k,HIDDEN:"hidden"+k,CLICK_DATA_API:"click"+k+l},q=!1,r={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"},s={TRANSITION_END:"mmTransitionEnd",triggerTransitionEnd:function(b){a(b).trigger(q.end)},supportsTransitionEnd:function(){return Boolean(q)}};h();var t=function(){function b(a,d){c(this,b),this._element=a,this._config=this._getConfig(d),this._transitioning=null,this.init()}return e(b,[{key:"init",value:function(){var b=this;a(this._element).find("li."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!0).addClass(this._config.collapseClass+" "+this._config.collapseInClass),a(this._element).find("li").not("."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!1).addClass(this._config.collapseClass),this._config.doubleTapToGo&&a(this._element).find("li."+this._config.activeClass).has("ul").children("a").addClass("doubleTapToGo"),a(this._element).find("li").has("ul").children("a").on(p.CLICK_DATA_API,function(c){var d=a(this),e=d.parent("li"),f=e.children("ul");return b._config.preventDefault&&c.preventDefault(),"true"!==d.attr("aria-disabled")?(e.hasClass(b._config.activeClass)&&!b._config.doubleTapToGo?(d.attr("aria-expanded",!1),b._hide(f)):(b._show(f),d.attr("aria-expanded",!0)),b._config.onTransitionStart&&b._config.onTransitionStart(c),b._config.doubleTapToGo&&b._doubleTapToGo(d)&&"#"!==d.attr("href")&&""!==d.attr("href")?(c.stopPropagation(),void(document.location=d.attr("href"))):void 0):void 0})}},{key:"_show",value:function(b){if(!this._transitioning&&!a(b).hasClass(this._config.collapsingClass)){var c=this,d=a(b),e=a.Event(p.SHOW);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").addClass(this._config.activeClass),this._config.toggle&&this._hide(d.parent("li").siblings().children("ul."+this._config.collapseInClass).attr("aria-expanded",!1)),d.removeClass(this._config.collapseClass).addClass(this._config.collapsingClass).height(0),this.setTransitioning(!0);var f=function(){d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass+" "+c._config.collapseInClass).height("").attr("aria-expanded",!0),c.setTransitioning(!1),d.trigger(p.SHOWN)};if(!s.supportsTransitionEnd())return void f();d.height(d[0].scrollHeight).one(s.TRANSITION_END,f),g(n)}}}},{key:"_hide",value:function(b){if(!this._transitioning&&a(b).hasClass(this._config.collapseInClass)){var c=this,d=a(b),e=a.Event(p.HIDE);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").removeClass(this._config.activeClass),d.height(d.height())[0].offsetHeight,d.addClass(this._config.collapsingClass).removeClass(this._config.collapseClass).removeClass(this._config.collapseInClass),this.setTransitioning(!0);var f=function(){c._transitioning&&c._config.onTransitionEnd&&c._config.onTransitionEnd(),c.setTransitioning(!1),d.trigger(p.HIDDEN),d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass).attr("aria-expanded",!1)};if(!s.supportsTransitionEnd())return void f();d.height(0).one(s.TRANSITION_END,f),g(n)}}}},{key:"_doubleTapToGo",value:function(b){return b.hasClass("doubleTapToGo")?(b.removeClass("doubleTapToGo"),!0):b.parent().children("ul").length?(a(this._element).find(".doubleTapToGo").removeClass("doubleTapToGo"),b.addClass("doubleTapToGo"),!1):void 0}},{key:"setTransitioning",value:function(a){this._transitioning=a}},{key:"_getConfig",value:function(b){return b=a.extend({},o,b)}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this),f=e.data(j),g=a.extend({},o,e.data(),"object"===("undefined"==typeof c?"undefined":d(c))&&c);if(f||(f=new b(this,g),e.data(j,f)),"string"==typeof c){if(void 0===f[c])throw new Error('No method named "'+c+'"');f[c]()}})}}]),b}();return a.fn[i]=t._jQueryInterface,a.fn[i].Constructor=t,a.fn[i].noConflict=function(){return a.fn[i]=m,t._jQueryInterface},t})(jQuery)});
+!function(a,b){if("function"==typeof define&&define.amd)define(["jquery"],b);else if("undefined"!=typeof exports)b(require("jquery"));else{var c={exports:{}};b(a.jquery),a.metisMenu=c.exports}}(this,function(a){"use strict";function b(a){return a&&a.__esModule?a:{"default":a}}function c(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}var d=(b(a),"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol?"symbol":typeof a}),e=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();(function(a){function b(){return{bindType:q.end,delegateType:q.end,handle:function(b){return a(b.target).is(this)?b.handleObj.handler.apply(this,arguments):void 0}}}function f(){if(window.QUnit)return!1;var a=document.createElement("mm");for(var b in r)if(void 0!==a.style[b])return{end:r[b]};return!1}function g(b){var c=this,d=!1;a(this).one(s.TRANSITION_END,function(){d=!0}),setTimeout(function(){d||s.triggerTransitionEnd(c)},b)}function h(){q=f(),s.supportsTransitionEnd()&&(a.event.special[s.TRANSITION_END]=b())}var i="metisMenu",j="metisMenu",k="."+j,l=".data-api",m=a.fn[i],n=350,o={toggle:!0,doubleTapToGo:!1,preventDefault:!0,activeClass:"active",collapseClass:"collapse",collapseInClass:"in",collapsingClass:"collapsing"},p={SHOW:"show"+k,SHOWN:"shown"+k,HIDE:"hide"+k,HIDDEN:"hidden"+k,CLICK_DATA_API:"click"+k+l},q=!1,r={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"},s={TRANSITION_END:"mmTransitionEnd",triggerTransitionEnd:function(b){a(b).trigger(q.end)},supportsTransitionEnd:function(){return Boolean(q)}};h();var t=function(){function b(a,d){c(this,b),this._element=a,this._config=this._getConfig(d),this._transitioning=null,this.init()}return e(b,[{key:"init",value:function(){var b=this;a(this._element).find("li."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!0).addClass(this._config.collapseClass+" "+this._config.collapseInClass),a(this._element).find("li").not("."+this._config.activeClass).has("ul").children("ul").attr("aria-expanded",!1).addClass(this._config.collapseClass),this._config.doubleTapToGo&&a(this._element).find("li."+this._config.activeClass).has("ul").children("a").addClass("doubleTapToGo"),a(this._element).find("li").has("ul").children("a").on(p.CLICK_DATA_API,function(c){var d=a(this),e=d.parent("li"),f=e.children("ul");return b._config.preventDefault&&c.preventDefault(),"true"!==d.attr("aria-disabled")?(e.hasClass(b._config.activeClass)&&!b._config.doubleTapToGo?(d.attr("aria-expanded",!1),b._hide(f)):(b._show(f),d.attr("aria-expanded",!0)),b._config.onTransitionStart&&b._config.onTransitionStart(c),b._config.doubleTapToGo&&b._doubleTapToGo(d)&&"#"!==d.attr("href")&&""!==d.attr("href")?(c.stopPropagation(),void(document.location=d.attr("href"))):void 0):void 0})}},{key:"_show",value:function(b){if(!this._transitioning&&!a(b).hasClass(this._config.collapsingClass)){var c=this,d=a(b),e=a.Event(p.SHOW);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").addClass(this._config.activeClass),this._config.toggle&&this._hide(d.parent("li").siblings().children("ul."+this._config.collapseInClass).attr("aria-expanded",!1)),d.removeClass(this._config.collapseClass).addClass(this._config.collapsingClass).height(0),this.setTransitioning(!0);var f=function(){d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass+" "+c._config.collapseInClass).height("").attr("aria-expanded",!0),c.setTransitioning(!1),d.trigger(p.SHOWN)};if(!s.supportsTransitionEnd())return void f();d.height(d[0].scrollHeight).one(s.TRANSITION_END,f),g(n)}}}},{key:"_hide",value:function(b){if(!this._transitioning&&a(b).hasClass(this._config.collapseInClass)){var c=this,d=a(b),e=a.Event(p.HIDE);if(d.trigger(e),!e.isDefaultPrevented()){d.parent("li").removeClass(this._config.activeClass),d.height(d.height())[0].offsetHeight,d.addClass(this._config.collapsingClass).removeClass(this._config.collapseClass).removeClass(this._config.collapseInClass),this.setTransitioning(!0);var f=function(){c._transitioning&&c._config.onTransitionEnd&&c._config.onTransitionEnd(),c.setTransitioning(!1),d.trigger(p.HIDDEN),d.removeClass(c._config.collapsingClass).addClass(c._config.collapseClass).attr("aria-expanded",!1)};if(!s.supportsTransitionEnd())return void f();0==d.height()||"none"==d.css("display")?f():d.height(0).one(s.TRANSITION_END,f),g(n)}}}},{key:"_doubleTapToGo",value:function(b){return b.hasClass("doubleTapToGo")?(b.removeClass("doubleTapToGo"),!0):b.parent().children("ul").length?(a(this._element).find(".doubleTapToGo").removeClass("doubleTapToGo"),b.addClass("doubleTapToGo"),!1):void 0}},{key:"setTransitioning",value:function(a){this._transitioning=a}},{key:"_getConfig",value:function(b){return b=a.extend({},o,b)}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this),f=e.data(j),g=a.extend({},o,e.data(),"object"===("undefined"==typeof c?"undefined":d(c))&&c);if(f||(f=new b(this,g),e.data(j,f)),"string"==typeof c){if(void 0===f[c])throw new Error('No method named "'+c+'"');f[c]()}})}}]),b}();return a.fn[i]=t._jQueryInterface,a.fn[i].Constructor=t,a.fn[i].noConflict=function(){return a.fn[i]=m,t._jQueryInterface},t})(jQuery)});
 
 },{"jquery":"jquery"}],"pace":[function(require,module,exports){
 (function() {
