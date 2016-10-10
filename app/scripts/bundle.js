@@ -69,6 +69,7 @@ global.SmartSelect = require('./react/components/SmartSelect').default;
 global.SmartSelectColored = require('./react/components/SmartSelectColored').default;
 global.SmartCheckbox = require('./react/components/SmartCheckbox');
 global.CategoryTreeSelector = require('./react/components/CategoryTreeSelector').CategoryTreeSelectorContainer;
+global.CartAutocomplete = require('./react/components/CartAutocomplete').default;
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');
