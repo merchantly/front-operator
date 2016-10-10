@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include './app/shared/_head.haml'
+  %body
+    / Wrapper
+    #wrapper
+      +include './app/shared/_navbar_side.haml'
+
+      / Page Wrapper
+      #page-wrapper.gray-bg
+        .row
+          .col-lg-12
+            .p-v-none
+              .col-sm-12
+                %h1.m-t-lg
+                  %a{href: '/operator/orders'}
+                    %i.fa.fa-chevron-left
+                  Дублируем заказ 13557
+
+        .wrapper.wrapper-content
+          .ibox
+            .ibox-content
+              %form.simple_form.new_operator_order{action: "/operator/orders"}
+                %h2 Корзина
+                  %div{data: {react-class: 'CartAutocompleteSample'}}
+
+              .ibox.fixed-bottom-panel
+                .ibox-content
+                  .clearfix
+                    %div.inline{data: {react-class: 'SmartSelectColored', react-props: '{ "dropup": true, "options":[{"value": 1, "title": "Новый", "color_rgb": "#101010"}, {"value": 2, "title": "Другой", "color_rgb": "#808080"}, {"value": 3, "title": "Последний", "color_rgb": "#6f00ff"}], "updateUrl": "api/operators/order/123", "method": "PUT", "value": 1, "fieldName": "workflow_state_id"}'}}
+
+        +include './app/shared/_footer.haml'
+
+    / Scripts
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

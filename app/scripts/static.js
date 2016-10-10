@@ -5,6 +5,7 @@ import { gon } from './resources/gon';
 
 require('./bundle');
 require('./bindPlugins');
+require('./static.bundle');
 
 let { operator, vendor_key } = global.gon;
 KioskOperatorApp.start({operator, vendor_key});
