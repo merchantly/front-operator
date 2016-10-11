@@ -1,3 +1,5 @@
+import categories from './categories';
+
 export default {
-  categories: require('./categories')
+  categories,
 }
