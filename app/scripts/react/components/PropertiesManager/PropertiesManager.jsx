@@ -7,7 +7,7 @@ class PropertiesManager extends Component {
     if (listItems.length === 0 || listItems[0].propertyID === null) {
       return (
         <HiddenInput
-          name="product[custom_attributes][]"
+          name="product[product_properties_attributes][]"
           value=""
         />
       );
@@ -16,7 +16,7 @@ class PropertiesManager extends Component {
       return removedProperties.map((property) => (
         <HiddenInput
           key={property.id}
-          name={`product[custom_attributes][${property.id}][remove_value]`}
+          name={`product[product_properties_attributes][${property.id}][remove_value]`}
           value="1"
         />
       ));

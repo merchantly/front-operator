@@ -20,21 +20,24 @@ class PropertyValue extends Component {
   getInputName({ id, type }) {
     if (id) {
       if (type === PROPERTY_DICTIONARY_TYPE) {
-        return `product[custom_attributes][${id}][dictionary_entity_id]`;
+        return `product[product_properties_attributes][${id}][dictionary_entity_id]`;
       }
 
-      return `product[custom_attributes][${id}][value]`;
+      return `product[product_properties_attributes][${id}][value]`;
     }
+  }
+  getPropertyIdFieldName({ id, type }) {
+    return `product[product_properties_attributes][${id}][property_id]`;
   }
   getInputCacheName({ id, type }) {
     if (id) {
       if (type === PROPERTY_DICTIONARY_TYPE) {
-        return `product[custom_attributes][${id}][dictionary_entity_id]`;
+        return `product[product_properties_attributes][${id}][dictionary_entity_id]`;
       }
 
-      return `product[custom_attributes][${id}][value_cache]`;
+      return `product[product_properties_attributes][${id}][value_cache]`;
     }
-  }  
+  }
   getComponentByType(type) {
     return ({
       [PROPERTY_TEXT_TYPE]: PropertyValueText,
@@ -59,14 +62,17 @@ class PropertyValue extends Component {
       );
     } else {
       return (
-        <Component
-          cacheName={this.getInputCacheName(current)}
-          key={current.id}
-          name={this.getInputName(current)}
-          onChange={onChange}
-          onCreate={onCreate}
-          property={current}
-        />
+        <div>
+            <input type="hidden" name={this.getPropertyIdFieldName(current)} value={current.id} />
+            <Component
+              cacheName={this.getInputCacheName(current)}
+              key={current.id}
+              name={this.getInputName(current)}
+              onChange={onChange}
+              onCreate={onCreate}
+              property={current}
+            />
+        </div>
       );
     }
   }

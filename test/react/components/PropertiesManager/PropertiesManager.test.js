@@ -24,7 +24,7 @@ describe('[Component] PropertiesManager', () => {
     );
 
     expect(input.props).to.deep.equal({
-      name: 'product[custom_attributes][]',
+      name: 'product[product_properties_attributes][]',
       value: '',
     });
   });
@@ -77,7 +77,7 @@ describe('[Component] PropertiesManager', () => {
 
     inputList.forEach((input, i) => {
       expect(input.props).to.deep.equal({
-        name: `product[custom_attributes][${propertyFileIDs[i]}][remove_value]`,
+        name: `product[product_properties_attributes][${propertyFileIDs[i]}][remove_value]`,
         value: '1',
       });
     });

@@ -40,11 +40,11 @@ class PropertyListItem extends Component {
       return (
         <span>
           <HiddenInput
-            name={`product[custom_attributes][${property.id}][type]`}
+            name={`product[product_properties_attributes][${property.id}][type]`}
             value={property.type}
           />
           <HiddenInput
-            name={`product[custom_attributes][${property.id}][name]`}
+            name={`product[product_properties_attributes][${property.id}][name]`}
             value={property.name}
           />
         </span>
@@ -60,7 +60,7 @@ class PropertyListItem extends Component {
       if (value && value.create) {
         return (
           <HiddenInput
-            name={`product[custom_attributes][${property.id}][dictionary_entity_title]`}
+            name={`product[product_properties_attributes][${property.id}][dictionary_entity_title]`}
             value={value.title}
           />
         );

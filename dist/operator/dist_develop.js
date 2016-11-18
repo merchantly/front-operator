@@ -1609,7 +1609,7 @@ var CartAutocompleteRow = function (_Component) {
   function CartAutocompleteRow(props) {
     _classCallCheck(this, CartAutocompleteRow);
 
-    var _this = _possibleConstructorReturn(this, (CartAutocompleteRow.__proto__ || Object.getPrototypeOf(CartAutocompleteRow)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CartAutocompleteRow).call(this, props));
 
     _this.state = {
       cartAmount: _this.props.item.cartAmount || 1
@@ -1644,7 +1644,7 @@ var CartAutocompleteRow = function (_Component) {
         { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: '\u0441ol-md-2 col-xs-2 col-sm-2 col-lg-2' },
+          { className: 'сol-md-2 col-xs-2 col-sm-2 col-lg-2' },
           _react2.default.createElement('img', {
             className: 'img-responsive',
             src: ThumborService.image_url(image.url, IMAGE_WIDTH + 'x' + IMAGE_HEIGHT)
@@ -1652,15 +1652,15 @@ var CartAutocompleteRow = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: '\u0441ol-md-9 col-xs-9 col-sm-9 col-lg-9' },
+          { className: 'сol-md-9 col-xs-9 col-sm-9 col-lg-9' },
           _react2.default.createElement(
             'div',
-            { className: '\u0441ol-md-6 col-xs-6 col-sm-6 col-lg-6' },
+            { className: 'сol-md-6 col-xs-6 col-sm-6 col-lg-6' },
             title
           ),
           _react2.default.createElement(
             'div',
-            { className: '\u0441ol-md-2 col-xs-2 col-sm-2 col-lg-2' },
+            { className: 'сol-md-2 col-xs-2 col-sm-2 col-lg-2' },
             _react2.default.createElement(
               'em',
               null,
@@ -1669,7 +1669,7 @@ var CartAutocompleteRow = function (_Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: '\u0441ol-md-2 col-xs-2 col-sm-2 col-lg-2' },
+            { className: 'сol-md-2 col-xs-2 col-sm-2 col-lg-2' },
             _react2.default.createElement('input', {
               className: 'form-control',
               name: 'operator_order[goods][' + index + '][' + (isWeight ? 'weight' : 'count') + ']',
@@ -1691,7 +1691,7 @@ var CartAutocompleteRow = function (_Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: '\u0441ol-md-1 col-xs-1 col-sm-1 col-lg-1' },
+            { className: 'сol-md-1 col-xs-1 col-sm-1 col-lg-1' },
             _react2.default.createElement('i', { className: 'fa fa-close', onClick: onDelete })
           )
         )
@@ -1775,7 +1775,7 @@ var CartAutocompleteRows = function (_Component) {
   function CartAutocompleteRows() {
     _classCallCheck(this, CartAutocompleteRows);
 
-    return _possibleConstructorReturn(this, (CartAutocompleteRows.__proto__ || Object.getPrototypeOf(CartAutocompleteRows)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(CartAutocompleteRows).apply(this, arguments));
   }
 
   _createClass(CartAutocompleteRows, [{
@@ -1850,7 +1850,7 @@ var CartAutocomplete = function (_Component) {
   function CartAutocomplete(props) {
     _classCallCheck(this, CartAutocomplete);
 
-    var _this = _possibleConstructorReturn(this, (CartAutocomplete.__proto__ || Object.getPrototypeOf(CartAutocomplete)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CartAutocomplete).call(this, props));
 
     var items = (props.cart || []).map(function (item) {
       return (0, _lodash.merge)(item.good, {
@@ -1913,7 +1913,7 @@ var CartAutocomplete = function (_Component) {
   }, {
     key: 'goodAutocompleteFormatResult',
     value: function goodAutocompleteFormatResult(good) {
-      return '\n      <div class="row">\n        <div class="\u0441ol-md-2 col-xs-2 col-sm-2 col-lg-2">\n          <img class="img-responsive" src="' + good.image.url + '" />\n        </div>\n        <div class="\u0441ol-md-10 col-xs-10 col-sm-10 col-lg-10">\n          <div class="row">\n            <div class="\u0441ol-md-12 col-xs-12 col-sm-12 col-lg-12">\n              ' + good.title + '\n            </div>\n          </div>\n        </div>\n      </div>\n    ';
+      return '\n      <div class="row">\n        <div class="сol-md-2 col-xs-2 col-sm-2 col-lg-2">\n          <img class="img-responsive" src="' + good.image.url + '" />\n        </div>\n        <div class="сol-md-10 col-xs-10 col-sm-10 col-lg-10">\n          <div class="row">\n            <div class="сol-md-12 col-xs-12 col-sm-12 col-lg-12">\n              ' + good.title + '\n            </div>\n          </div>\n        </div>\n      </div>\n    ';
     }
   }, {
     key: 'render',
@@ -2082,7 +2082,7 @@ var CategoryCreateForm = function () {
           _react2.default.createElement(
             'label',
             { className: 'col-sm-5 control-label' },
-            '\u0420\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u0441\u043A\u0430\u044F \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F'
+            'Родительская категория'
           ),
           _react2.default.createElement(
             'div',
@@ -2102,7 +2102,7 @@ var CategoryCreateForm = function () {
           _react2.default.createElement(
             'label',
             { className: 'col-sm-5 control-label', htmlFor: 'category_name' },
-            '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435'
+            'Название'
           ),
           _react2.default.createElement(
             'div',
@@ -2200,7 +2200,7 @@ var CategoryTreeManager = function (_Component) {
   _inherits(CategoryTreeManager, _Component);
 
   function CategoryTreeManager() {
-    var _ref;
+    var _Object$getPrototypeO;
 
     var _temp, _this, _ret;
 
@@ -2210,7 +2210,7 @@ var CategoryTreeManager = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CategoryTreeManager.__proto__ || Object.getPrototypeOf(CategoryTreeManager)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(CategoryTreeManager)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
       currentState: MANAGER_SHOW,
       category: _this.getDefaultCategory()
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -2233,7 +2233,7 @@ var CategoryTreeManager = function (_Component) {
     key: 'getParent',
     value: function getParent(categories, selectedCategories) {
       function bfs(tree) {
-        var ret = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+        var ret = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
 
         if (tree.length === 0) {
           return ret;
@@ -2417,7 +2417,7 @@ var CategoryTreeManager = function (_Component) {
               onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
               textButtonOk: createButtonTitle,
-              textButtonCancel: '\u041D\u0430\u0437\u0430\u0434',
+              textButtonCancel: 'Назад',
               title: modalCreateTitle
             }),
             _react2.default.createElement(_CategoryCreateForm2.default, {
@@ -2436,7 +2436,7 @@ var CategoryTreeManager = function (_Component) {
               textButtonCancel: null,
               title: modalCreateTitle
             }),
-            '\u0421\u043E\u0437\u0434\u0430\u0451\u043C...'
+            'Создаём...'
           );
         case MANAGER_SHOW:
           return _react2.default.createElement(
@@ -2519,7 +2519,7 @@ var CategoryTreeSelector = function (_Component) {
   function CategoryTreeSelector() {
     _classCallCheck(this, CategoryTreeSelector);
 
-    return _possibleConstructorReturn(this, (CategoryTreeSelector.__proto__ || Object.getPrototypeOf(CategoryTreeSelector)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(CategoryTreeSelector).apply(this, arguments));
   }
 
   _createClass(CategoryTreeSelector, [{
@@ -2618,7 +2618,7 @@ var CategoryTreeSelectorContainer = function (_Component) {
   function CategoryTreeSelectorContainer(props) {
     _classCallCheck(this, CategoryTreeSelectorContainer);
 
-    var _this = _possibleConstructorReturn(this, (CategoryTreeSelectorContainer.__proto__ || Object.getPrototypeOf(CategoryTreeSelectorContainer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CategoryTreeSelectorContainer).call(this, props));
 
     _this.state = {
       categories: _this.props.data,
@@ -3933,7 +3933,7 @@ var PropertiesManager = function (_Component) {
   function PropertiesManager() {
     _classCallCheck(this, PropertiesManager);
 
-    return _possibleConstructorReturn(this, (PropertiesManager.__proto__ || Object.getPrototypeOf(PropertiesManager)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(PropertiesManager).apply(this, arguments));
   }
 
   _createClass(PropertiesManager, [{
@@ -3941,7 +3941,7 @@ var PropertiesManager = function (_Component) {
     value: function renderHiddenInputs(listItems, removedProperties) {
       if (listItems.length === 0 || listItems[0].propertyID === null) {
         return _react2.default.createElement(_HiddenInput2.default, {
-          name: 'product[custom_attributes][]',
+          name: 'product[product_properties_attributes][]',
           value: ''
         });
       }
@@ -3949,7 +3949,7 @@ var PropertiesManager = function (_Component) {
         return removedProperties.map(function (property) {
           return _react2.default.createElement(_HiddenInput2.default, {
             key: property.id,
-            name: 'product[custom_attributes][' + property.id + '][remove_value]',
+            name: 'product[product_properties_attributes][' + property.id + '][remove_value]',
             value: '1'
           });
         });
@@ -4049,7 +4049,7 @@ var PropertiesManagerContainer = function (_Component) {
   function PropertiesManagerContainer(props) {
     _classCallCheck(this, PropertiesManagerContainer);
 
-    var _this = _possibleConstructorReturn(this, (PropertiesManagerContainer.__proto__ || Object.getPrototypeOf(PropertiesManagerContainer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PropertiesManagerContainer).call(this, props));
 
     var custom_attributes = props.custom_attributes;
     var properties = props.properties;
@@ -4595,7 +4595,7 @@ var PropertyList = function (_Component) {
   function PropertyList() {
     _classCallCheck(this, PropertyList);
 
-    return _possibleConstructorReturn(this, (PropertyList.__proto__ || Object.getPrototypeOf(PropertyList)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyList).apply(this, arguments));
   }
 
   _createClass(PropertyList, [{
@@ -4739,7 +4739,7 @@ var PropertyListItem = function (_Component) {
   function PropertyListItem(props) {
     _classCallCheck(this, PropertyListItem);
 
-    var _this = _possibleConstructorReturn(this, (PropertyListItem.__proto__ || Object.getPrototypeOf(PropertyListItem)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyListItem).call(this, props));
 
     _this.changeValue = _this.changeValue.bind(_this);
     _this.createValue = _this.createValue.bind(_this);
@@ -4792,11 +4792,11 @@ var PropertyListItem = function (_Component) {
           'span',
           null,
           _react2.default.createElement(_HiddenInput2.default, {
-            name: 'product[custom_attributes][' + property.id + '][type]',
+            name: 'product[product_properties_attributes][' + property.id + '][type]',
             value: property.type
           }),
           _react2.default.createElement(_HiddenInput2.default, {
-            name: 'product[custom_attributes][' + property.id + '][name]',
+            name: 'product[product_properties_attributes][' + property.id + '][name]',
             value: property.name
           })
         );
@@ -4812,7 +4812,7 @@ var PropertyListItem = function (_Component) {
 
         if (value && value.create) {
           return _react2.default.createElement(_HiddenInput2.default, {
-            name: 'product[custom_attributes][' + property.id + '][dictionary_entity_title]',
+            name: 'product[product_properties_attributes][' + property.id + '][dictionary_entity_title]',
             value: value.title
           });
         }
@@ -4982,7 +4982,7 @@ var PropertyName = function (_Component) {
   function PropertyName(props) {
     _classCallCheck(this, PropertyName);
 
-    var _this = _possibleConstructorReturn(this, (PropertyName.__proto__ || Object.getPrototypeOf(PropertyName)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyName).call(this, props));
 
     _this.handleSelectChange = _this.handleSelectChange.bind(_this);
     return _this;
@@ -5138,7 +5138,7 @@ var PropertyValue = function (_Component) {
   function PropertyValue() {
     _classCallCheck(this, PropertyValue);
 
-    return _possibleConstructorReturn(this, (PropertyValue.__proto__ || Object.getPrototypeOf(PropertyValue)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyValue).apply(this, arguments));
   }
 
   _createClass(PropertyValue, [{
@@ -5149,24 +5149,32 @@ var PropertyValue = function (_Component) {
 
       if (id) {
         if (type === _propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-          return 'product[custom_attributes][' + id + '][dictionary_entity_id]';
+          return 'product[product_properties_attributes][' + id + '][dictionary_entity_id]';
         }
 
-        return 'product[custom_attributes][' + id + '][value]';
+        return 'product[product_properties_attributes][' + id + '][value]';
       }
     }
   }, {
-    key: 'getInputCacheName',
-    value: function getInputCacheName(_ref2) {
+    key: 'getPropertyIdFieldName',
+    value: function getPropertyIdFieldName(_ref2) {
       var id = _ref2.id;
       var type = _ref2.type;
 
+      return 'product[product_properties_attributes][' + id + '][property_id]';
+    }
+  }, {
+    key: 'getInputCacheName',
+    value: function getInputCacheName(_ref3) {
+      var id = _ref3.id;
+      var type = _ref3.type;
+
       if (id) {
         if (type === _propertyTypes.PROPERTY_DICTIONARY_TYPE) {
-          return 'product[custom_attributes][' + id + '][dictionary_entity_id]';
+          return 'product[product_properties_attributes][' + id + '][dictionary_entity_id]';
         }
 
-        return 'product[custom_attributes][' + id + '][value_cache]';
+        return 'product[product_properties_attributes][' + id + '][value_cache]';
       }
     }
   }, {
@@ -5196,14 +5204,19 @@ var PropertyValue = function (_Component) {
           '"'
         );
       } else {
-        return _react2.default.createElement(Component, {
-          cacheName: this.getInputCacheName(current),
-          key: current.id,
-          name: this.getInputName(current),
-          onChange: onChange,
-          onCreate: onCreate,
-          property: current
-        });
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', { type: 'hidden', name: this.getPropertyIdFieldName(current), value: current.id }),
+          _react2.default.createElement(Component, {
+            cacheName: this.getInputCacheName(current),
+            key: current.id,
+            name: this.getInputName(current),
+            onChange: onChange,
+            onCreate: onCreate,
+            property: current
+          })
+        );
       }
     }
   }]);
@@ -5250,7 +5263,7 @@ var PropertyValueBoolean = function (_Component) {
   function PropertyValueBoolean() {
     _classCallCheck(this, PropertyValueBoolean);
 
-    return _possibleConstructorReturn(this, (PropertyValueBoolean.__proto__ || Object.getPrototypeOf(PropertyValueBoolean)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyValueBoolean).apply(this, arguments));
   }
 
   _createClass(PropertyValueBoolean, [{
@@ -5319,7 +5332,7 @@ var PropertyValueDictionary = function (_Component) {
   function PropertyValueDictionary(props) {
     _classCallCheck(this, PropertyValueDictionary);
 
-    var _this = _possibleConstructorReturn(this, (PropertyValueDictionary.__proto__ || Object.getPrototypeOf(PropertyValueDictionary)).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyValueDictionary).call(this, props));
 
     _this.handleSelectChange = _this.handleSelectChange.bind(_this);
     return _this;
@@ -5396,7 +5409,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -5647,7 +5660,7 @@ var PropertyValueString = function (_Component) {
   function PropertyValueString() {
     _classCallCheck(this, PropertyValueString);
 
-    return _possibleConstructorReturn(this, (PropertyValueString.__proto__ || Object.getPrototypeOf(PropertyValueString)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(PropertyValueString).apply(this, arguments));
   }
 
   _createClass(PropertyValueString, [{
@@ -5968,7 +5981,7 @@ var SmartCheckbox = function (_Component) {
   _inherits(SmartCheckbox, _Component);
 
   function SmartCheckbox() {
-    var _ref;
+    var _Object$getPrototypeO;
 
     var _temp, _this, _ret;
 
@@ -5978,7 +5991,7 @@ var SmartCheckbox = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SmartCheckbox.__proto__ || Object.getPrototypeOf(SmartCheckbox)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(SmartCheckbox)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
       requestStatus: void 0,
       value: void 0
     }, _this.statusTimeoutId = void 0, _temp), _possibleConstructorReturn(_this, _ret);
@@ -6145,6 +6158,8 @@ var _index2 = _interopRequireDefault(_index);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*global $ */
+
+
 var SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
   SmartSelectColoredDumb.propTypes = {
     colored: _index2.default.propTypes.colored,
@@ -6312,7 +6327,7 @@ var SmartSelectColored = function (_Component) {
   _inherits(SmartSelectColored, _Component);
 
   function SmartSelectColored() {
-    var _ref;
+    var _Object$getPrototypeO;
 
     var _temp, _this, _ret;
 
@@ -6322,7 +6337,7 @@ var SmartSelectColored = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SmartSelectColored.__proto__ || Object.getPrototypeOf(SmartSelectColored)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(SmartSelectColored)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
       dropup: false,
       errorMsg: void 0,
       requestStatus: void 0,
@@ -6546,7 +6561,7 @@ var HiddenInput = function (_Component) {
   function HiddenInput() {
     _classCallCheck(this, HiddenInput);
 
-    return _possibleConstructorReturn(this, (HiddenInput.__proto__ || Object.getPrototypeOf(HiddenInput)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(HiddenInput).apply(this, arguments));
   }
 
   _createClass(HiddenInput, [{
@@ -6905,7 +6920,7 @@ var Modal = function (_Component) {
   function Modal() {
     _classCallCheck(this, Modal);
 
-    return _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Modal).apply(this, arguments));
   }
 
   _createClass(Modal, [{
@@ -6987,7 +7002,7 @@ var Modal = function (_Component) {
                   _react2.default.createElement(
                     'span',
                     { 'aria-hidden': true },
-                    '\xD7'
+                    '×'
                   )
                 ),
                 _react2.default.createElement(
@@ -9025,14 +9040,14 @@ var ProductImagesImageListItem = React.createClass({
           { className: "thumbnails-item-actions" },
           React.createElement(
             "div",
-            { title: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435",
+            { title: "Удалить изображение",
               className: "thumbnails-item-action",
               onClick: this.props.onImageDelete },
             React.createElement("i", { className: "fa fa-times" })
           ),
           React.createElement(
             "div",
-            { title: "\u041F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435",
+            { title: "Повернуть изображение",
               className: "thumbnails-item-action",
               onClick: this.props.onImageRotate },
             React.createElement("i", { className: "fa fa-rotate-right" })
@@ -9152,7 +9167,7 @@ var ProductImagesUpload = React.createClass({
           ),
           React.createElement(
             'label',
-            { title: '\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435',
+            { title: 'Добавить изображение',
               htmlFor: 'image',
               className: 'thumbnails-item-input' },
             React.createElement('input', {
@@ -12177,6 +12192,7 @@ module.exports = Dispatcher;
 
 },{}],136:[function(require,module,exports){
 // shim for using process in browser
+
 var process = module.exports = {};
 
 // cached from whatever global is present so that test runners that stub it
@@ -12187,84 +12203,22 @@ var process = module.exports = {};
 var cachedSetTimeout;
 var cachedClearTimeout;
 
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
 (function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
+  try {
+    cachedSetTimeout = setTimeout;
+  } catch (e) {
+    cachedSetTimeout = function () {
+      throw new Error('setTimeout is not defined');
     }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
+  }
+  try {
+    cachedClearTimeout = clearTimeout;
+  } catch (e) {
+    cachedClearTimeout = function () {
+      throw new Error('clearTimeout is not defined');
     }
+  }
 } ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
 var queue = [];
 var draining = false;
 var currentQueue;
@@ -12289,7 +12243,7 @@ function drainQueue() {
     if (draining) {
         return;
     }
-    var timeout = runTimeout(cleanUpNextTick);
+    var timeout = cachedSetTimeout(cleanUpNextTick);
     draining = true;
 
     var len = queue.length;
@@ -12306,7 +12260,7 @@ function drainQueue() {
     }
     currentQueue = null;
     draining = false;
-    runClearTimeout(timeout);
+    cachedClearTimeout(timeout);
 }
 
 process.nextTick = function (fun) {
@@ -12318,7 +12272,7 @@ process.nextTick = function (fun) {
     }
     queue.push(new Item(fun, args));
     if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
+        cachedSetTimeout(drainQueue, 0);
     }
 };
 
@@ -45380,8 +45334,7 @@ module.exports = warning;
 
 var rng;
 
-var crypto = global.crypto || global.msCrypto; // for IE 11
-if (crypto && crypto.getRandomValues) {
+if (global.crypto && crypto.getRandomValues) {
   // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
   // Moderately fast, high quality
   var _rnds8 = new Uint8Array(16);
@@ -93556,7 +93509,7 @@ the specific language governing permissions and limitations under the Apache Lic
  * Project: https://github.com/CodeSeven/toastr
  */
 /* global define */
-(function (define) {
+; (function (define) {
     define(['jquery'], function ($) {
         return (function () {
             var $container;
@@ -93578,7 +93531,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 options: {},
                 subscribe: subscribe,
                 success: success,
-                version: '2.1.3',
+                version: '2.1.2',
                 warning: warning
             };
 
@@ -93689,7 +93642,9 @@ the specific language governing permissions and limitations under the Apache Lic
             function createContainer(options) {
                 $container = $('<div/>')
                     .attr('id', options.containerId)
-                    .addClass(options.positionClass);
+                    .addClass(options.positionClass)
+                    .attr('aria-live', 'polite')
+                    .attr('role', 'alert');
 
                 $container.appendTo($(options.target));
                 return $container;
@@ -93713,7 +93668,6 @@ the specific language governing permissions and limitations under the Apache Lic
                     closeMethod: false,
                     closeDuration: false,
                     closeEasing: false,
-                    closeOnHover: true,
 
                     extendedTimeOut: 1000,
                     iconClasses: {
@@ -93730,12 +93684,9 @@ the specific language governing permissions and limitations under the Apache Lic
                     escapeHtml: false,
                     target: 'body',
                     closeHtml: '<button type="button">&times;</button>',
-                    closeClass: 'toast-close-button',
                     newestOnTop: true,
                     preventDuplicates: false,
-                    progressBar: false,
-                    progressClass: 'toast-progress',
-                    rtl: false
+                    progressBar: false
                 };
             }
 
@@ -93793,11 +93744,10 @@ the specific language governing permissions and limitations under the Apache Lic
                 return $toastElement;
 
                 function escapeHtml(source) {
-                    if (source == null) {
-                        source = '';
-                    }
+                    if (source == null)
+                        source = "";
 
-                    return source
+                    return new String(source)
                         .replace(/&/g, '&amp;')
                         .replace(/"/g, '&quot;')
                         .replace(/'/g, '&#39;')
@@ -93811,29 +93761,11 @@ the specific language governing permissions and limitations under the Apache Lic
                     setMessage();
                     setCloseButton();
                     setProgressBar();
-                    setRTL();
                     setSequence();
-                    setAria();
-                }
-
-                function setAria() {
-                    var ariaValue = '';
-                    switch (map.iconClass) {
-                        case 'toast-success':
-                        case 'toast-info':
-                            ariaValue =  'polite';
-                            break;
-                        default:
-                            ariaValue = 'assertive';
-                    }
-                    $toastElement.attr('aria-live', ariaValue);
                 }
 
                 function handleEvents() {
-                    if (options.closeOnHover) {
-                        $toastElement.hover(stickAround, delayedHideToast);
-                    }
-
+                    $toastElement.hover(stickAround, delayedHideToast);
                     if (!options.onclick && options.tapToDismiss) {
                         $toastElement.click(hideToast);
                     }
@@ -93845,11 +93777,6 @@ the specific language governing permissions and limitations under the Apache Lic
                             } else if (event.cancelBubble !== undefined && event.cancelBubble !== true) {
                                 event.cancelBubble = true;
                             }
-
-                            if (options.onCloseClick) {
-                                options.onCloseClick(event);
-                            }
-
                             hideToast(true);
                         });
                     }
@@ -93895,43 +93822,29 @@ the specific language governing permissions and limitations under the Apache Lic
 
                 function setTitle() {
                     if (map.title) {
-                        var suffix = map.title;
-                        if (options.escapeHtml) {
-                            suffix = escapeHtml(map.title);
-                        }
-                        $titleElement.append(suffix).addClass(options.titleClass);
+                        $titleElement.append(!options.escapeHtml ? map.title : escapeHtml(map.title)).addClass(options.titleClass);
                         $toastElement.append($titleElement);
                     }
                 }
 
                 function setMessage() {
                     if (map.message) {
-                        var suffix = map.message;
-                        if (options.escapeHtml) {
-                            suffix = escapeHtml(map.message);
-                        }
-                        $messageElement.append(suffix).addClass(options.messageClass);
+                        $messageElement.append(!options.escapeHtml ? map.message : escapeHtml(map.message)).addClass(options.messageClass);
                         $toastElement.append($messageElement);
                     }
                 }
 
                 function setCloseButton() {
                     if (options.closeButton) {
-                        $closeElement.addClass(options.closeClass).attr('role', 'button');
+                        $closeElement.addClass('toast-close-button').attr('role', 'button');
                         $toastElement.prepend($closeElement);
                     }
                 }
 
                 function setProgressBar() {
                     if (options.progressBar) {
-                        $progressElement.addClass(options.progressClass);
+                        $progressElement.addClass('toast-progress');
                         $toastElement.prepend($progressElement);
-                    }
-                }
-
-                function setRTL() {
-                    if (options.rtl) {
-                        $toastElement.addClass('rtl');
                     }
                 }
 
@@ -93960,7 +93873,6 @@ the specific language governing permissions and limitations under the Apache Lic
                         easing: easing,
                         complete: function () {
                             removeToast($toastElement);
-                            clearTimeout(intervalId);
                             if (options.onHidden && response.state !== 'hidden') {
                                 options.onHidden();
                             }
