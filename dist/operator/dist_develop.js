@@ -1138,9 +1138,9 @@ function onStart(_ref) {
 }
 
 function onUpdate(_ref2) {
-  var item = _ref2.item;
-  var newIndex = _ref2.newIndex;
-  var oldIndex = _ref2.oldIndex;
+  var item = _ref2.item,
+      newIndex = _ref2.newIndex,
+      oldIndex = _ref2.oldIndex;
 
   var $item = $(item).find('[data-sort-url]');
   var url = $item.data('sort-url');
@@ -1515,8 +1515,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   create: function create(_ref) {
-    var name = _ref.name;
-    var parentID = _ref.parentID;
+    var name = _ref.name,
+        parentID = _ref.parentID;
 
     return window.Requester.request({
       url: ApiRoutes.operatorCategories(),
@@ -1552,9 +1552,9 @@ exports.default = {
 
 global.KioskOperatorApp = {
   start: function start(_ref) {
-    var vendor_key = _ref.vendor_key;
-    var operator = _ref.operator;
-    var access_key = _ref.access_key;
+    var vendor_key = _ref.vendor_key,
+        operator = _ref.operator,
+        access_key = _ref.access_key;
 
     console.log('KioskOperatorApp start for vendor: ' + vendor_key + ', operator: ' + operator.name);
 
@@ -1626,16 +1626,16 @@ var CartAutocompleteRow = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var _props$item = _props.item;
-      var image = _props$item.image;
-      var title = _props$item.title;
-      var ident = _props$item.ident;
-      var global_id = _props$item.global_id;
-      var id = _props$item.id;
-      var isWeight = _props$item.selling_by_weight;
-      var index = _props.index;
-      var onDelete = _props.onDelete;
+      var _props = this.props,
+          _props$item = _props.item,
+          image = _props$item.image,
+          title = _props$item.title,
+          ident = _props$item.ident,
+          global_id = _props$item.global_id,
+          id = _props$item.id,
+          isWeight = _props$item.selling_by_weight,
+          index = _props.index,
+          onDelete = _props.onDelete;
       var cartAmount = this.state.cartAmount;
 
 
@@ -1781,9 +1781,9 @@ var CartAutocompleteRows = function (_Component) {
   _createClass(CartAutocompleteRows, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var items = _props.items;
-      var onRowDelete = _props.onRowDelete;
+      var _props = this.props,
+          items = _props.items,
+          onRowDelete = _props.onRowDelete;
 
 
       return items.length > 0 ? _react2.default.createElement(
@@ -1868,9 +1868,9 @@ var CartAutocomplete = function (_Component) {
   _createClass(CartAutocomplete, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var addRow = this.addRow;
-      var goodAutocompleteFormatResult = this.goodAutocompleteFormatResult;
-      var queryOptions = this.props.queryOptions;
+      var addRow = this.addRow,
+          goodAutocompleteFormatResult = this.goodAutocompleteFormatResult,
+          queryOptions = this.props.queryOptions;
 
 
       $(this.refs.input.getDOMNode()).select2({
@@ -1988,10 +1988,10 @@ var CategoriesList = function () {
   _createClass(CategoriesList, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var categories = _props.categories;
-      var onSelectionChange = _props.onSelectionChange;
-      var selectedCategories = _props.selectedCategories;
+      var _props = this.props,
+          categories = _props.categories,
+          onSelectionChange = _props.onSelectionChange,
+          selectedCategories = _props.selectedCategories;
 
 
       var jsTreeConfig = {
@@ -2068,9 +2068,9 @@ var CategoryCreateForm = function () {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var category = _props.category;
-      var parentCategory = _props.parentCategory;
+      var _props = this.props,
+          category = _props.category,
+          parentCategory = _props.parentCategory;
 
 
       return _react2.default.createElement(
@@ -2238,11 +2238,9 @@ var CategoryTreeManager = function (_Component) {
         if (tree.length === 0) {
           return ret;
         } else {
-          var _tree = _toArray(tree);
-
-          var f = _tree[0];
-
-          var rest = _tree.slice(1);
+          var _tree = _toArray(tree),
+              f = _tree[0],
+              rest = _tree.slice(1);
 
           return bfs(rest.concat(f.children || []), [].concat(_toConsumableArray(ret), [f]));
         }
@@ -2255,11 +2253,11 @@ var CategoryTreeManager = function (_Component) {
   }, {
     key: 'getHeaderButtons',
     value: function getHeaderButtons() {
-      var _props = this.props;
-      var categories = _props.categories;
-      var createButtonTitle = _props.createButtonTitle;
-      var canCreate = _props.canCreate;
-      var selectedCategories = _props.selectedCategories;
+      var _props = this.props,
+          categories = _props.categories,
+          createButtonTitle = _props.createButtonTitle,
+          canCreate = _props.canCreate,
+          selectedCategories = _props.selectedCategories;
 
       var parentCategory = this.getParent(categories, selectedCategories);
 
@@ -2288,11 +2286,11 @@ var CategoryTreeManager = function (_Component) {
     value: function createCategory() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var categories = _props2.categories;
-      var onCategoriesChange = _props2.onCategoriesChange;
-      var onSelectionChange = _props2.onSelectionChange;
-      var selectedCategories = _props2.selectedCategories;
+      var _props2 = this.props,
+          categories = _props2.categories,
+          onCategoriesChange = _props2.onCategoriesChange,
+          onSelectionChange = _props2.onSelectionChange,
+          selectedCategories = _props2.selectedCategories;
       var category = this.state.category;
 
       var parentCategory = this.getParent(categories, selectedCategories);
@@ -2390,17 +2388,17 @@ var CategoryTreeManager = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props3 = this.props;
-      var categories = _props3.categories;
-      var createButtonTitle = _props3.createButtonTitle;
-      var modalCreateTitle = _props3.modalCreateTitle;
-      var modalShowTitle = _props3.modalShowTitle;
-      var modalUuid = _props3.modalUuid;
-      var onSelectionChange = _props3.onSelectionChange;
-      var selectedCategories = _props3.selectedCategories;
-      var _state = this.state;
-      var category = _state.category;
-      var currentState = _state.currentState;
+      var _props3 = this.props,
+          categories = _props3.categories,
+          createButtonTitle = _props3.createButtonTitle,
+          modalCreateTitle = _props3.modalCreateTitle,
+          modalShowTitle = _props3.modalShowTitle,
+          modalUuid = _props3.modalUuid,
+          onSelectionChange = _props3.onSelectionChange,
+          selectedCategories = _props3.selectedCategories;
+      var _state = this.state,
+          category = _state.category,
+          currentState = _state.currentState;
 
       var parentCategory = this.getParent(categories, selectedCategories);
       var modalOptions = {
@@ -2538,11 +2536,11 @@ var CategoryTreeSelector = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var categories = _props.categories;
-      var onCategoryRemove = _props.onCategoryRemove;
-      var selectedCategories = _props.selectedCategories;
-      var selectedUncommitted = _props.selectedUncommitted;
+      var _props = this.props,
+          categories = _props.categories,
+          onCategoryRemove = _props.onCategoryRemove,
+          selectedCategories = _props.selectedCategories,
+          selectedUncommitted = _props.selectedUncommitted;
 
 
       return _react2.default.createElement(
@@ -3777,10 +3775,10 @@ function SelectedCategories(props) {
     render: function render() {
       var _this = this;
 
-      var _props = this.props;
-      var categories = _props.categories;
-      var fieldName = _props.fieldName;
-      var modalUuid = _props.modalUuid;
+      var _props = this.props,
+          categories = _props.categories,
+          fieldName = _props.fieldName,
+          modalUuid = _props.modalUuid;
 
 
       return _react2.default.createElement(
@@ -3846,9 +3844,9 @@ function SelectedCategoryItem(props) {
     props: props,
 
     onRemove: function onRemove(ev) {
-      var _props = this.props;
-      var id = _props.category.id;
-      var onRemove = _props.onRemove;
+      var _props = this.props,
+          id = _props.category.id,
+          onRemove = _props.onRemove;
 
       onRemove(id);
     },
@@ -3958,9 +3956,9 @@ var PropertiesManager = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var listItems = _props.listItems;
-      var removedProperties = _props.removedProperties;
+      var _props = this.props,
+          listItems = _props.listItems,
+          removedProperties = _props.removedProperties;
 
 
       return _react2.default.createElement(
@@ -4051,8 +4049,8 @@ var PropertiesManagerContainer = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (PropertiesManagerContainer.__proto__ || Object.getPrototypeOf(PropertiesManagerContainer)).call(this, props));
 
-    var custom_attributes = props.custom_attributes;
-    var properties = props.properties;
+    var custom_attributes = props.custom_attributes,
+        properties = props.properties;
 
 
     _this.state = {
@@ -4222,9 +4220,9 @@ var PropertiesManagerContainer = function (_Component) {
       //    указан в propertyID если свойство не существовало изначально. Устанавливаем
       //    новый propertyID, добавляем property в список свойств.
       var initialProperties = this.props.properties;
-      var _state = this.state;
-      var listItems = _state.listItems;
-      var properties = _state.properties;
+      var _state = this.state,
+          listItems = _state.listItems,
+          properties = _state.properties;
 
       var listItem = this.getListItemByID(listItems, listItemID);
       var newProperties = [].concat(_toConsumableArray(properties), [property]);
@@ -4256,9 +4254,9 @@ var PropertiesManagerContainer = function (_Component) {
       // 2) Добавляем value в конец списка entities
       // 3) Ставим value свойства значение value.id
       // Создание значений для других типов свойств игнорируем
-      var _state2 = this.state;
-      var listItems = _state2.listItems;
-      var properties = _state2.properties;
+      var _state2 = this.state,
+          listItems = _state2.listItems,
+          properties = _state2.properties;
 
       var listItem = this.getListItemByID(listItems, listItemID);
 
@@ -4291,9 +4289,9 @@ var PropertiesManagerContainer = function (_Component) {
       // 2) listItem найден и уже содержит propertyID. Удаляем property, id которого
       //    указан в propertyID если свойство не существовало изначально. Устанавливаем
       //    новый propertyID.
-      var _state3 = this.state;
-      var listItems = _state3.listItems;
-      var properties = _state3.properties;
+      var _state3 = this.state,
+          listItems = _state3.listItems,
+          properties = _state3.properties;
 
       var newListItem = this.getListItemByID(listItems, listItemID);
       var newProperty = this.getPropertyByID(properties, property.id);
@@ -4321,9 +4319,9 @@ var PropertiesManagerContainer = function (_Component) {
   }, {
     key: 'updateProperty',
     value: function updateProperty(listItemID, property) {
-      var _state4 = this.state;
-      var listItems = _state4.listItems;
-      var properties = _state4.properties;
+      var _state4 = this.state,
+          listItems = _state4.listItems,
+          properties = _state4.properties;
 
       var newListItem = this.getListItemByID(listItems, listItemID);
       var newProperty = this.getPropertyByID(properties, property.id);
@@ -4359,9 +4357,9 @@ var PropertiesManagerContainer = function (_Component) {
     key: 'deleteProperty',
     value: function deleteProperty(listItemID) {
       var initialProperties = this.props.properties;
-      var _state5 = this.state;
-      var listItems = _state5.listItems;
-      var properties = _state5.properties;
+      var _state5 = this.state,
+          listItems = _state5.listItems,
+          properties = _state5.properties;
 
       var listItem = this.getListItemByID(listItems, listItemID);
       var property = void 0,
@@ -4422,9 +4420,9 @@ var PropertiesManagerContainer = function (_Component) {
       //    сбрасываем его value.
       // 2) listItem найден, property не найден. Удаляем listItem
       var initialProperties = this.props.properties;
-      var _state6 = this.state;
-      var listItems = _state6.listItems;
-      var properties = _state6.properties;
+      var _state6 = this.state,
+          listItems = _state6.listItems,
+          properties = _state6.properties;
 
       var listItem = this.getListItemByID(listItems, listItemID);
       var property = void 0,
@@ -4461,9 +4459,9 @@ var PropertiesManagerContainer = function (_Component) {
     key: 'render',
     value: function render() {
       var initialProperties = this.props.properties;
-      var _state7 = this.state;
-      var listItems = _state7.listItems;
-      var properties = _state7.properties;
+      var _state7 = this.state,
+          listItems = _state7.listItems,
+          properties = _state7.properties;
 
       var actionList = {
         onListItemAdd: this.addListItem,
@@ -4615,18 +4613,18 @@ var PropertyList = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var availableProperties = _props.availableProperties;
-      var canCreateListItem = _props.canCreateListItem;
-      var listItems = _props.listItems;
-      var properties = _props.properties;
-      var onPropertyCreate = _props.onPropertyCreate;
-      var onPropertyDelete = _props.onPropertyDelete;
-      var onPropertySwitch = _props.onPropertySwitch;
-      var onPropertyUpdate = _props.onPropertyUpdate;
-      var onPropertyValueCreate = _props.onPropertyValueCreate;
-      var onListItemAdd = _props.onListItemAdd;
-      var onListItemDelete = _props.onListItemDelete;
+      var _props = this.props,
+          availableProperties = _props.availableProperties,
+          canCreateListItem = _props.canCreateListItem,
+          listItems = _props.listItems,
+          properties = _props.properties,
+          onPropertyCreate = _props.onPropertyCreate,
+          onPropertyDelete = _props.onPropertyDelete,
+          onPropertySwitch = _props.onPropertySwitch,
+          onPropertyUpdate = _props.onPropertyUpdate,
+          onPropertyValueCreate = _props.onPropertyValueCreate,
+          onListItemAdd = _props.onListItemAdd,
+          onListItemDelete = _props.onListItemDelete;
 
       var createButton = _react2.default.createElement(_PropertyCreateButton2.default, {
         hasItems: !!listItems.length,
@@ -4777,10 +4775,10 @@ var PropertyListItem = function (_Component) {
   }, {
     key: 'handleDeleteButtonClick',
     value: function handleDeleteButtonClick() {
-      var _props = this.props;
-      var fixed = _props.fixed;
-      var onListItemDelete = _props.onListItemDelete;
-      var onPropertyDelete = _props.onPropertyDelete;
+      var _props = this.props,
+          fixed = _props.fixed,
+          onListItemDelete = _props.onListItemDelete,
+          onPropertyDelete = _props.onPropertyDelete;
 
       fixed ? onListItemDelete() : onPropertyDelete();
     }
@@ -4837,15 +4835,15 @@ var PropertyListItem = function (_Component) {
   }, {
     key: 'renderName',
     value: function renderName(property, availableProperties, fixed) {
-      var _props2 = this.props;
-      var onPropertyCreate = _props2.onPropertyCreate;
-      var onPropertySwitch = _props2.onPropertySwitch;
-      var onPropertyDelete = _props2.onPropertyDelete;
+      var _props2 = this.props,
+          onPropertyCreate = _props2.onPropertyCreate,
+          onPropertySwitch = _props2.onPropertySwitch,
+          onPropertyDelete = _props2.onPropertyDelete;
 
 
       if (property && fixed) {
-        var name = property.name;
-        var tooltip = property.tooltip;
+        var name = property.name,
+            tooltip = property.tooltip;
 
 
         return _react2.default.createElement(
@@ -4907,10 +4905,10 @@ var PropertyListItem = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props3 = this.props;
-      var availableProperties = _props3.availableProperties;
-      var fixed = _props3.fixed;
-      var property = _props3.property;
+      var _props3 = this.props,
+          availableProperties = _props3.availableProperties,
+          fixed = _props3.fixed,
+          property = _props3.property;
 
 
       return _react2.default.createElement(
@@ -5012,10 +5010,10 @@ var PropertyName = function (_Component) {
   }, {
     key: 'handleSelectChange',
     value: function handleSelectChange(value, values) {
-      var _props = this.props;
-      var onNameChange = _props.onNameChange;
-      var onNameCreate = _props.onNameCreate;
-      var onNameReset = _props.onNameReset;
+      var _props = this.props,
+          onNameChange = _props.onNameChange,
+          onNameCreate = _props.onNameCreate,
+          onNameReset = _props.onNameReset;
 
       var newProperty = values[0] || null;
 
@@ -5040,10 +5038,10 @@ var PropertyName = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var current = _props2.current;
-      var disabled = _props2.disabled;
-      var properties = _props2.properties;
+      var _props2 = this.props,
+          current = _props2.current,
+          disabled = _props2.disabled,
+          properties = _props2.properties;
 
 
       return _react2.default.createElement(_reactSelect2.default, {
@@ -5144,8 +5142,8 @@ var PropertyValue = function (_Component) {
   _createClass(PropertyValue, [{
     key: 'getInputName',
     value: function getInputName(_ref) {
-      var id = _ref.id;
-      var type = _ref.type;
+      var id = _ref.id,
+          type = _ref.type;
 
       if (id) {
         if (type === _propertyTypes.PROPERTY_DICTIONARY_TYPE) {
@@ -5158,8 +5156,8 @@ var PropertyValue = function (_Component) {
   }, {
     key: 'getInputCacheName',
     value: function getInputCacheName(_ref2) {
-      var id = _ref2.id;
-      var type = _ref2.type;
+      var id = _ref2.id,
+          type = _ref2.type;
 
       if (id) {
         if (type === _propertyTypes.PROPERTY_DICTIONARY_TYPE) {
@@ -5179,10 +5177,10 @@ var PropertyValue = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var current = _props.current;
-      var onChange = _props.onChange;
-      var onCreate = _props.onCreate;
+      var _props = this.props,
+          current = _props.current,
+          onChange = _props.onChange,
+          onCreate = _props.onCreate;
 
       var Component = this.getComponentByType(current.type);
 
@@ -5256,10 +5254,10 @@ var PropertyValueBoolean = function (_Component) {
   _createClass(PropertyValueBoolean, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var name = _props.name;
-      var onChange = _props.onChange;
-      var property = _props.property;
+      var _props = this.props,
+          name = _props.name,
+          onChange = _props.onChange,
+          property = _props.property;
 
 
       return _react2.default.createElement(_ICheck2.default, {
@@ -5329,18 +5327,18 @@ var PropertyValueDictionary = function (_Component) {
     key: 'getSelectOptions',
     value: function getSelectOptions(property) {
       return property.dictionary.entities.map(function (_ref) {
-        var id = _ref.id;
-        var title = _ref.title;
+        var id = _ref.id,
+            title = _ref.title;
         return { value: id, label: title };
       });
     }
   }, {
     key: 'handleSelectChange',
     value: function handleSelectChange(value, values) {
-      var _props = this.props;
-      var onChange = _props.onChange;
-      var onCreate = _props.onCreate;
-      var property = _props.property;
+      var _props = this.props,
+          onChange = _props.onChange,
+          onCreate = _props.onCreate,
+          property = _props.property;
 
       var newValue = values[0] || null;
 
@@ -5359,9 +5357,9 @@ var PropertyValueDictionary = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var name = _props2.name;
-      var property = _props2.property;
+      var _props2 = this.props,
+          name = _props2.name,
+          property = _props2.property;
 
 
       return _react2.default.createElement(_reactSelect2.default, {
@@ -5878,13 +5876,13 @@ function SmartCheckboxDumb(props) {
     props: props,
 
     render: function render() {
-      var _props = this.props;
-      var disabled = _props.disabled;
-      var hint = _props.hint;
-      var onClick = _props.onClick;
-      var status = _props.status;
-      var title = _props.title;
-      var value = _props.value;
+      var _props = this.props,
+          disabled = _props.disabled,
+          hint = _props.hint,
+          onClick = _props.onClick,
+          status = _props.status,
+          title = _props.title,
+          value = _props.value;
 
       var cx = (0, _classnames2.default)({
         'switcher__box': true,
@@ -6009,11 +6007,11 @@ var SmartCheckbox = function (_Component) {
         return;
       }
 
-      var _props = this.props;
-      var fieldName = _props.fieldName;
-      var method = _props.method;
-      var timeoutFailure = _props.timeoutFailure;
-      var updateUrl = _props.updateUrl;
+      var _props = this.props,
+          fieldName = _props.fieldName,
+          method = _props.method,
+          timeoutFailure = _props.timeoutFailure,
+          updateUrl = _props.updateUrl;
 
       var oldValue = this.state.value;
       var value = !oldValue;
@@ -6047,12 +6045,12 @@ var SmartCheckbox = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var hint = _props2.hint;
-      var title = _props2.title;
-      var _state = this.state;
-      var status = _state.requestStatus;
-      var value = _state.value;
+      var _props2 = this.props,
+          hint = _props2.hint,
+          title = _props2.title;
+      var _state = this.state,
+          status = _state.requestStatus,
+          value = _state.value;
 
       var disabled = status === _requestStatus.REQUEST_LOADING;
 
@@ -6187,9 +6185,9 @@ var SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
       var _this = this;
 
       return options.map(function (_ref) {
-        var color_rgb = _ref.color_rgb;
-        var title = _ref.title;
-        var value = _ref.value;
+        var color_rgb = _ref.color_rgb,
+            title = _ref.title,
+            value = _ref.value;
         return _react2.default.createElement(
           'li',
           {
@@ -6213,8 +6211,8 @@ var SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
       });
     },
     renderValue: function renderValue(_ref2, disabled) {
-      var color_rgb = _ref2.color_rgb;
-      var title = _ref2.title;
+      var color_rgb = _ref2.color_rgb,
+          title = _ref2.title;
 
       var cx = (0, _classnames2.default)('btn', 'btn-default', 'dropdown-toggle', { disabled: disabled });
       return _react2.default.createElement(
@@ -6235,13 +6233,13 @@ var SmartSelectColoredDumb = function SmartSelectColoredDumb(props) {
       );
     },
     render: function render() {
-      var _props = this.props;
-      var disabled = _props.disabled;
-      var dropup = _props.dropup;
-      var onChange = _props.onChange;
-      var options = _props.options;
-      var status = _props.status;
-      var value = _props.value;
+      var _props = this.props,
+          disabled = _props.disabled,
+          dropup = _props.dropup,
+          onChange = _props.onChange,
+          options = _props.options,
+          status = _props.status,
+          value = _props.value;
 
       var selected = options.filter(function (el) {
         return el.value === value;
@@ -6352,12 +6350,12 @@ var SmartSelectColored = function (_Component) {
     value: function onChange(value) {
       var _this3 = this;
 
-      var _props = this.props;
-      var fieldName = _props.fieldName;
-      var method = _props.method;
-      var timeoutSuccess = _props.timeoutSuccess;
-      var timeoutFailure = _props.timeoutFailure;
-      var updateUrl = _props.updateUrl;
+      var _props = this.props,
+          fieldName = _props.fieldName,
+          method = _props.method,
+          timeoutSuccess = _props.timeoutSuccess,
+          timeoutFailure = _props.timeoutFailure,
+          updateUrl = _props.updateUrl;
 
       var oldValue = this.state.value;
 
@@ -6412,14 +6410,14 @@ var SmartSelectColored = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var colored = _props2.colored;
-      var fieldName = _props2.fieldName;
-      var options = _props2.options;
-      var _state = this.state;
-      var dropup = _state.dropup;
-      var status = _state.requestStatus;
-      var value = _state.value;
+      var _props2 = this.props,
+          colored = _props2.colored,
+          fieldName = _props2.fieldName,
+          options = _props2.options;
+      var _state = this.state,
+          dropup = _state.dropup,
+          status = _state.requestStatus,
+          value = _state.value;
 
 
       return _react2.default.createElement(_SmartSelectColoredDumb2.default, {
@@ -6552,9 +6550,9 @@ var HiddenInput = function (_Component) {
   _createClass(HiddenInput, [{
     key: "render",
     value: function render() {
-      var _props = this.props;
-      var name = _props.name;
-      var value = _props.value;
+      var _props = this.props,
+          name = _props.name,
+          value = _props.value;
 
 
       return _react2.default.createElement("input", {
@@ -6736,9 +6734,9 @@ function JsTree(props) {
       return (0, _deepDiff.diff)(this.props.data, nextProps.data) || this.props.edited !== nextProps.edited || (0, _deepDiff.diff)(this.props.selected, nextProps.selected) || false;
     },
     componentDidMount: function componentDidMount() {
-      var _props = this.props;
-      var rawData = _props.data;
-      var selected = _props.selected;
+      var _props = this.props,
+          rawData = _props.data,
+          selected = _props.selected;
       //TODO install deepmerge when things get more complicated
 
       var data = _extends({}, rawData, {
@@ -6758,11 +6756,11 @@ function JsTree(props) {
       this.$container.on('changed.jstree', this.onChange.bind(this));
     },
     componentDidUpdate: function componentDidUpdate(prevProps) {
-      var _props2 = this.props;
-      var data = _props2.data;
-      var selected = _props2.selected;
-      var edited = _props2.edited;
-      var onNodeRename = _props2.onNodeRename;
+      var _props2 = this.props,
+          data = _props2.data,
+          selected = _props2.selected,
+          edited = _props2.edited,
+          onNodeRename = _props2.onNodeRename;
 
 
       if ((0, _deepDiff.diff)(this.props.data, prevProps.data)) {
@@ -6785,10 +6783,10 @@ function JsTree(props) {
       this.$container.off();
     },
     checkCb: function checkCb(operation, node) {
-      var _props3 = this.props;
-      var canCreate = _props3.canCreate;
-      var canDelete = _props3.canDelete;
-      var canRename = _props3.canRename;
+      var _props3 = this.props,
+          canCreate = _props3.canCreate,
+          canDelete = _props3.canDelete,
+          canRename = _props3.canRename;
 
 
       return canCreate && operation === 'create_node' || canDelete && operation === 'delete_node' || canRename && operation === 'rename_node';
@@ -6803,9 +6801,9 @@ function JsTree(props) {
     onNodeCreate: function onNodeCreate() {
       var _this = this;
 
-      var _props4 = this.props;
-      var data = _props4.data;
-      var newNodeText = _props4.newNodeText;
+      var _props4 = this.props,
+          data = _props4.data,
+          newNodeText = _props4.newNodeText;
 
       var selected = this.$container.jstree(true).get_top_selected();
 
@@ -6921,11 +6919,11 @@ var Modal = function (_Component) {
   }, {
     key: 'renderFooter',
     value: function renderFooter() {
-      var _props = this.props;
-      var buttonOkDisabled = _props.buttonOkDisabled;
-      var textButtonCancel = _props.textButtonCancel;
-      var textButtonOk = _props.textButtonOk;
-      var okClosesModal = _props.okClosesModal;
+      var _props = this.props,
+          buttonOkDisabled = _props.buttonOkDisabled,
+          textButtonCancel = _props.textButtonCancel,
+          textButtonOk = _props.textButtonOk,
+          okClosesModal = _props.okClosesModal;
 
 
       if (textButtonCancel || textButtonOk) {
@@ -6953,12 +6951,12 @@ var Modal = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var cancelClosesModal = _props2.cancelClosesModal;
-      var headerButtons = _props2.headerButtons;
-      var children = _props2.children;
-      var title = _props2.title;
-      var uuid = _props2.uuid;
+      var _props2 = this.props,
+          cancelClosesModal = _props2.cancelClosesModal,
+          headerButtons = _props2.headerButtons,
+          children = _props2.children,
+          title = _props2.title,
+          uuid = _props2.uuid;
 
 
       return _react2.default.createElement(
@@ -11456,7 +11454,7 @@ var Dispatcher = (function () {
 module.exports = Dispatcher;
 }).call(this,require('_process'))
 },{"_process":136,"fbjs/lib/invariant":131}],134:[function(require,module,exports){
-/*! 
+/*! @preserve
  * numeral.js language configuration
  * language : russian (ru)
  * author : Anatoli Papirovski : https://github.com/apapirovski
@@ -11469,15 +11467,15 @@ module.exports = Dispatcher;
         },
         abbreviations: {
             thousand: 'тыс.',
-            million: 'млн',
-            billion: 'b',
-            trillion: 't'
+            million: 'млн.',
+            billion: 'млрд.',
+            trillion: 'трлн.'
         },
         ordinal: function () {
-            // not ideal, but since in Russian it can taken on 
+            // not ideal, but since in Russian it can taken on
             // different forms (masculine, feminine, neuter)
             // this is all we can do
-            return '.'; 
+            return '.';
         },
         currency: {
             symbol: 'руб.'
@@ -11495,29 +11493,40 @@ module.exports = Dispatcher;
 }());
 
 },{}],135:[function(require,module,exports){
-/*!
+/*! @preserve
  * numeral.js
- * version : 1.5.3
+ * version : 1.5.6
  * author : Adam Draper
  * license : MIT
  * http://adamwdraper.github.com/Numeral-js/
  */
 
-(function () {
+(function() {
 
     /************************************
-        Constants
+        Variables
     ************************************/
 
     var numeral,
-        VERSION = '1.5.3',
+        VERSION = '1.5.6',
         // internal storage for language config files
         languages = {},
-        currentLanguage = 'en',
-        zeroFormat = null,
-        defaultFormat = '0,0',
-        // check for nodeJS
-        hasModule = (typeof module !== 'undefined' && module.exports);
+        defaults = {
+            currentLanguage: 'en',
+            zeroFormat: null,
+            nullFormat: null,
+            defaultFormat: '0,0'
+        },
+        options = {
+            currentLanguage: defaults.currentLanguage,
+            zeroFormat: defaults.zeroFormat,
+            nullFormat: defaults.nullFormat,
+            defaultFormat: defaults.defaultFormat
+        },
+        byteSuffixes = {
+            bytes: ['B','KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+            iec: ['B','KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
+        };
 
 
     /************************************
@@ -11526,7 +11535,7 @@ module.exports = Dispatcher;
 
 
     // Numeral prototype object
-    function Numeral (number) {
+    function Numeral(number) {
         this._value = number;
     }
 
@@ -11536,17 +11545,29 @@ module.exports = Dispatcher;
      * Fixes binary rounding issues (eg. (0.615).toFixed(2) === '0.61') that present
      * problems for accounting- and finance-related software.
      */
-    function toFixed (value, precision, roundingFunction, optionals) {
-        var power = Math.pow(10, precision),
+    function toFixed (value, maxDecimals, roundingFunction, optionals) {
+        var splitValue = value.toString().split('.'),
+            minDecimals = maxDecimals - (optionals || 0),
+            boundedPrecision,
             optionalsRegExp,
+            power,
             output;
-            
+
+        // Use the smallest precision value possible to avoid errors from floating point representation
+        if (splitValue.length === 2) {
+          boundedPrecision = Math.min(Math.max(splitValue[1].length, minDecimals), maxDecimals);
+        } else {
+          boundedPrecision = minDecimals;
+        }
+
+        power = Math.pow(10, boundedPrecision);
+
         //roundingFunction = (roundingFunction !== undefined ? roundingFunction : Math.round);
         // Multiply up by precision, round accurately, then divide and use native toFixed():
-        output = (roundingFunction(value * power) / power).toFixed(precision);
+        output = (roundingFunction(value * power) / power).toFixed(boundedPrecision);
 
-        if (optionals) {
-            optionalsRegExp = new RegExp('0{1,' + optionals + '}$');
+        if (optionals > maxDecimals - boundedPrecision) {
+            optionalsRegExp = new RegExp('\\.?0{1,' + (optionals - (maxDecimals - boundedPrecision)) + '}$');
             output = output.replace(optionalsRegExp, '');
         }
 
@@ -11558,71 +11579,34 @@ module.exports = Dispatcher;
     ************************************/
 
     // determine what type of formatting we need to do
-    function formatNumeral (n, format, roundingFunction) {
+    function formatNumeral(n, format, roundingFunction) {
         var output;
 
-        // figure out what kind of format we are dealing with
-        if (format.indexOf('$') > -1) { // currency!!!!!
-            output = formatCurrency(n, format, roundingFunction);
-        } else if (format.indexOf('%') > -1) { // percentage
-            output = formatPercentage(n, format, roundingFunction);
-        } else if (format.indexOf(':') > -1) { // time
-            output = formatTime(n, format);
-        } else { // plain ol' numbers or bytes
-            output = formatNumber(n._value, format, roundingFunction);
+        if (n._value === 0 && options.zeroFormat !== null) {
+            output = options.zeroFormat;
+        } else if (n._value === null && options.nullFormat !== null) {
+            output = options.nullFormat;
+        } else {
+            // figure out what kind of format we are dealing with
+            if (format.indexOf('$') > -1) {
+                output = formatCurrency(n, format, roundingFunction);
+            } else if (format.indexOf('%') > -1) {
+                output = formatPercentage(n, format, roundingFunction);
+            } else if (format.indexOf(':') > -1) {
+                output = formatTime(n, format);
+            } else if (format.indexOf('b') > -1 || format.indexOf('ib') > -1) {
+                output = formatBytes(n, format, roundingFunction);
+            } else if (format.indexOf('o') > -1) {
+                output = formatOrdinal(n, format, roundingFunction);
+            } else {
+                output = formatNumber(n._value, format, roundingFunction);
+            }
         }
 
-        // return string
         return output;
     }
 
-    // revert to number
-    function unformatNumeral (n, string) {
-        var stringOriginal = string,
-            thousandRegExp,
-            millionRegExp,
-            billionRegExp,
-            trillionRegExp,
-            suffixes = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-            bytesMultiplier = false,
-            power;
-
-        if (string.indexOf(':') > -1) {
-            n._value = unformatTime(string);
-        } else {
-            if (string === zeroFormat) {
-                n._value = 0;
-            } else {
-                if (languages[currentLanguage].delimiters.decimal !== '.') {
-                    string = string.replace(/\./g,'').replace(languages[currentLanguage].delimiters.decimal, '.');
-                }
-
-                // see if abbreviations are there so that we can multiply to the correct number
-                thousandRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.thousand + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
-                millionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.million + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
-                billionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.billion + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
-                trillionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.trillion + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
-
-                // see if bytes are there so that we can multiply to the correct number
-                for (power = 0; power <= suffixes.length; power++) {
-                    bytesMultiplier = (string.indexOf(suffixes[power]) > -1) ? Math.pow(1024, power + 1) : false;
-
-                    if (bytesMultiplier) {
-                        break;
-                    }
-                }
-
-                // do some math to create our number
-                n._value = ((bytesMultiplier) ? bytesMultiplier : 1) * ((stringOriginal.match(thousandRegExp)) ? Math.pow(10, 3) : 1) * ((stringOriginal.match(millionRegExp)) ? Math.pow(10, 6) : 1) * ((stringOriginal.match(billionRegExp)) ? Math.pow(10, 9) : 1) * ((stringOriginal.match(trillionRegExp)) ? Math.pow(10, 12) : 1) * ((string.indexOf('%') > -1) ? 0.01 : 1) * (((string.split('-').length + Math.min(string.split('(').length-1, string.split(')').length-1)) % 2)? 1: -1) * Number(string.replace(/[^0-9\.]+/g, ''));
-
-                // round if we are talking about bytes
-                n._value = (bytesMultiplier) ? Math.ceil(n._value) : n._value;
-            }
-        }
-        return n._value;
-    }
-
-    function formatCurrency (n, format, roundingFunction) {
+    function formatCurrency(n, format, roundingFunction) {
         var symbolIndex = format.indexOf('$'),
             openParenIndex = format.indexOf('('),
             minusSignIndex = format.indexOf('-'),
@@ -11642,36 +11626,36 @@ module.exports = Dispatcher;
         }
 
         // format the number
-        output = formatNumber(n._value, format, roundingFunction);
+        output = formatNumber(n._value, format, roundingFunction, false);
 
         // position the symbol
         if (symbolIndex <= 1) {
             if (output.indexOf('(') > -1 || output.indexOf('-') > -1) {
                 output = output.split('');
                 spliceIndex = 1;
-                if (symbolIndex < openParenIndex || symbolIndex < minusSignIndex){
+                if (symbolIndex < openParenIndex || symbolIndex < minusSignIndex) {
                     // the symbol appears before the "(" or "-"
                     spliceIndex = 0;
                 }
-                output.splice(spliceIndex, 0, languages[currentLanguage].currency.symbol + space);
+                output.splice(spliceIndex, 0, languages[options.currentLanguage].currency.symbol + space);
                 output = output.join('');
             } else {
-                output = languages[currentLanguage].currency.symbol + space + output;
+                output = languages[options.currentLanguage].currency.symbol + space + output;
             }
         } else {
             if (output.indexOf(')') > -1) {
                 output = output.split('');
-                output.splice(-1, 0, space + languages[currentLanguage].currency.symbol);
+                output.splice(-1, 0, space + languages[options.currentLanguage].currency.symbol);
                 output = output.join('');
             } else {
-                output = output + space + languages[currentLanguage].currency.symbol;
+                output = output + space + languages[options.currentLanguage].currency.symbol;
             }
         }
 
         return output;
     }
 
-    function formatPercentage (n, format, roundingFunction) {
+    function formatPercentage(n, format, roundingFunction) {
         var space = '',
             output,
             value = n._value * 100;
@@ -11685,8 +11669,8 @@ module.exports = Dispatcher;
         }
 
         output = formatNumber(value, format, roundingFunction);
-        
-        if (output.indexOf(')') > -1 ) {
+
+        if (output.indexOf(')') > -1) {
             output = output.split('');
             output.splice(-1, 0, space + '%');
             output = output.join('');
@@ -11697,14 +11681,255 @@ module.exports = Dispatcher;
         return output;
     }
 
-    function formatTime (n) {
-        var hours = Math.floor(n._value/60/60),
-            minutes = Math.floor((n._value - (hours * 60 * 60))/60),
+    function formatBytes(n, format, roundingFunction) {
+        var output,
+            suffixes = format.indexOf('ib') > -1 ? byteSuffixes.iec : byteSuffixes.bytes,
+            value = n._value,
+            suffix = '',
+            power,
+            min,
+            max;
+
+        // check for space before
+        if (format.indexOf(' b') > -1 || format.indexOf(' ib') > -1) {
+            suffix = ' ';
+            format = format.replace(' ib', '').replace(' b', '');
+        } else {
+            format = format.replace('ib', '').replace('b', '');
+        }
+
+        for (power = 0; power <= suffixes.length; power++) {
+            min = Math.pow(1024, power);
+            max = Math.pow(1024, power + 1);
+
+            if (value === null || value === 0 || value >= min && value < max) {
+                suffix += suffixes[power];
+
+                if (min > 0) {
+                    value = value / min;
+                }
+
+                break;
+            }
+        }
+
+        output = formatNumber(value, format, roundingFunction);
+
+        return output + suffix;
+    }
+
+    function formatOrdinal(n, format, roundingFunction) {
+        var output,
+            ordinal = '';
+
+        // check for space before
+        if (format.indexOf(' o') > -1) {
+            ordinal = ' ';
+            format = format.replace(' o', '');
+        } else {
+            format = format.replace('o', '');
+        }
+
+        ordinal += languages[options.currentLanguage].ordinal(n._value);
+
+        output = formatNumber(n._value, format, roundingFunction);
+
+        return output + ordinal;
+    }
+
+    function formatTime(n) {
+        var hours = Math.floor(n._value / 60 / 60),
+            minutes = Math.floor((n._value - (hours * 60 * 60)) / 60),
             seconds = Math.round(n._value - (hours * 60 * 60) - (minutes * 60));
+
         return hours + ':' + ((minutes < 10) ? '0' + minutes : minutes) + ':' + ((seconds < 10) ? '0' + seconds : seconds);
     }
 
-    function unformatTime (string) {
+    function formatNumber(value, format, roundingFunction) {
+        var negP = false,
+            signed = false,
+            optDec = false,
+            abbr = '',
+            abbrK = false, // force abbreviation to thousands
+            abbrM = false, // force abbreviation to millions
+            abbrB = false, // force abbreviation to billions
+            abbrT = false, // force abbreviation to trillions
+            abbrForce = false, // force abbreviation
+            abs,
+            min,
+            max,
+            power,
+            w,
+            precision,
+            thousands,
+            d = '',
+            neg = false;
+
+        if (value === null) {
+            value = 0;
+        }
+
+        abs = Math.abs(value);
+
+        // see if we should use parentheses for negative number or if we should prefix with a sign
+        // if both are present we default to parentheses
+        if (format.indexOf('(') > -1) {
+            negP = true;
+            format = format.slice(1, -1);
+        } else if (format.indexOf('+') > -1) {
+            signed = true;
+            format = format.replace(/\+/g, '');
+        }
+
+        // see if abbreviation is wanted
+        if (format.indexOf('a') > -1) {
+            // check if abbreviation is specified
+            abbrK = format.indexOf('aK') >= 0;
+            abbrM = format.indexOf('aM') >= 0;
+            abbrB = format.indexOf('aB') >= 0;
+            abbrT = format.indexOf('aT') >= 0;
+            abbrForce = abbrK || abbrM || abbrB || abbrT;
+
+            // check for space before abbreviation
+            if (format.indexOf(' a') > -1) {
+                abbr = ' ';
+            }
+
+            format = format.replace(new RegExp(abbr + 'a[KMBT]?'), '');
+
+            if (abs >= Math.pow(10, 12) && !abbrForce || abbrT) {
+                // trillion
+                abbr = abbr + languages[options.currentLanguage].abbreviations.trillion;
+                value = value / Math.pow(10, 12);
+            } else if (abs < Math.pow(10, 12) && abs >= Math.pow(10, 9) && !abbrForce || abbrB) {
+                // billion
+                abbr = abbr + languages[options.currentLanguage].abbreviations.billion;
+                value = value / Math.pow(10, 9);
+            } else if (abs < Math.pow(10, 9) && abs >= Math.pow(10, 6) && !abbrForce || abbrM) {
+                // million
+                abbr = abbr + languages[options.currentLanguage].abbreviations.million;
+                value = value / Math.pow(10, 6);
+            } else if (abs < Math.pow(10, 6) && abs >= Math.pow(10, 3) && !abbrForce || abbrK) {
+                // thousand
+                abbr = abbr + languages[options.currentLanguage].abbreviations.thousand;
+                value = value / Math.pow(10, 3);
+            }
+        }
+
+
+        if (format.indexOf('[.]') > -1) {
+            optDec = true;
+            format = format.replace('[.]', '.');
+        }
+
+        w = value.toString().split('.')[0];
+        precision = format.split('.')[1];
+        thousands = format.indexOf(',');
+
+        if (precision) {
+            if (precision.indexOf('[') > -1) {
+                precision = precision.replace(']', '');
+                precision = precision.split('[');
+                d = toFixed(value, (precision[0].length + precision[1].length), roundingFunction, precision[1].length);
+            } else {
+                d = toFixed(value, precision.length, roundingFunction);
+            }
+
+            w = d.split('.')[0];
+
+            if (d.indexOf('.') > -1) {
+                d = languages[options.currentLanguage].delimiters.decimal + d.split('.')[1];
+            } else {
+                d = '';
+            }
+
+            if (optDec && Number(d.slice(1)) === 0) {
+                d = '';
+            }
+        } else {
+            w = toFixed(value, null, roundingFunction);
+        }
+
+        // format number
+        if (w.indexOf('-') > -1) {
+            w = w.slice(1);
+            neg = true;
+        }
+
+        if (thousands > -1) {
+            w = w.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + languages[options.currentLanguage].delimiters.thousands);
+        }
+
+        if (format.indexOf('.') === 0) {
+            w = '';
+        }
+
+        return ((negP && neg) ? '(' : '') + ((!negP && neg) ? '-' : '') + ((!neg && signed) ? '+' : '') + w + d + ((abbr) ? abbr : '') + ((negP && neg) ? ')' : '');
+    }
+
+
+    /************************************
+        Unformatting
+    ************************************/
+
+    // revert to number
+    function unformatNumeral(n, string) {
+        var stringOriginal = string,
+            thousandRegExp,
+            millionRegExp,
+            billionRegExp,
+            trillionRegExp,
+            bytesMultiplier = false,
+            power,
+            value;
+
+        if (string.indexOf(':') > -1) {
+            value = unformatTime(string);
+        } else {
+            if (string === options.zeroFormat || string === options.nullFormat) {
+                value = 0;
+            } else {
+                if (languages[options.currentLanguage].delimiters.decimal !== '.') {
+                    string = string.replace(/\./g, '').replace(languages[options.currentLanguage].delimiters.decimal, '.');
+                }
+
+                // see if abbreviations are there so that we can multiply to the correct number
+                thousandRegExp = new RegExp('[^a-zA-Z]' + languages[options.currentLanguage].abbreviations.thousand + '(?:\\)|(\\' + languages[options.currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+                millionRegExp = new RegExp('[^a-zA-Z]' + languages[options.currentLanguage].abbreviations.million + '(?:\\)|(\\' + languages[options.currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+                billionRegExp = new RegExp('[^a-zA-Z]' + languages[options.currentLanguage].abbreviations.billion + '(?:\\)|(\\' + languages[options.currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+                trillionRegExp = new RegExp('[^a-zA-Z]' + languages[options.currentLanguage].abbreviations.trillion + '(?:\\)|(\\' + languages[options.currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+
+                // see if bytes are there so that we can multiply to the correct number
+                for (power = 1; power <= byteSuffixes.bytes.length; power++) {
+                    bytesMultiplier = ((string.indexOf(byteSuffixes.bytes[power]) > -1) || (string.indexOf(byteSuffixes.iec[power]) > -1))? Math.pow(1024, power) : false;
+
+                    if (bytesMultiplier) {
+                        break;
+                    }
+                }
+
+                // do some math to create our number
+                value = bytesMultiplier ? bytesMultiplier : 1;
+                value *= stringOriginal.match(thousandRegExp) ? Math.pow(10, 3) : 1;
+                value *= stringOriginal.match(millionRegExp) ? Math.pow(10, 6) : 1;
+                value *= stringOriginal.match(billionRegExp) ? Math.pow(10, 9) : 1;
+                value *= stringOriginal.match(trillionRegExp) ? Math.pow(10, 12) : 1;
+                // check for percentage
+                value *= string.indexOf('%') > -1 ? 0.01 : 1;
+                // check for negative number
+                value *= (string.split('-').length + Math.min(string.split('(').length - 1, string.split(')').length - 1)) % 2 ? 1 : -1;
+                // remove non numbers
+                value *= Number(string.replace(/[^0-9\.]+/g, ''));
+                // round if we are talking about bytes
+                value = bytesMultiplier ? Math.ceil(value) : value;
+            }
+        }
+
+        n._value = value;
+
+        return n._value;
+    }
+    function unformatTime(string) {
         var timeArray = string.split(':'),
             seconds = 0;
         // turn hours and minutes into seconds and add them all up
@@ -11724,204 +11949,52 @@ module.exports = Dispatcher;
         return Number(seconds);
     }
 
-    function formatNumber (value, format, roundingFunction) {
-        var negP = false,
-            signed = false,
-            optDec = false,
-            abbr = '',
-            abbrK = false, // force abbreviation to thousands
-            abbrM = false, // force abbreviation to millions
-            abbrB = false, // force abbreviation to billions
-            abbrT = false, // force abbreviation to trillions
-            abbrForce = false, // force abbreviation
-            bytes = '',
-            ord = '',
-            abs = Math.abs(value),
-            suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-            min,
-            max,
-            power,
-            w,
-            precision,
-            thousands,
-            d = '',
-            neg = false;
-
-        // check if number is zero and a custom zero format has been set
-        if (value === 0 && zeroFormat !== null) {
-            return zeroFormat;
-        } else {
-            // see if we should use parentheses for negative number or if we should prefix with a sign
-            // if both are present we default to parentheses
-            if (format.indexOf('(') > -1) {
-                negP = true;
-                format = format.slice(1, -1);
-            } else if (format.indexOf('+') > -1) {
-                signed = true;
-                format = format.replace(/\+/g, '');
-            }
-
-            // see if abbreviation is wanted
-            if (format.indexOf('a') > -1) {
-                // check if abbreviation is specified
-                abbrK = format.indexOf('aK') >= 0;
-                abbrM = format.indexOf('aM') >= 0;
-                abbrB = format.indexOf('aB') >= 0;
-                abbrT = format.indexOf('aT') >= 0;
-                abbrForce = abbrK || abbrM || abbrB || abbrT;
-
-                // check for space before abbreviation
-                if (format.indexOf(' a') > -1) {
-                    abbr = ' ';
-                    format = format.replace(' a', '');
-                } else {
-                    format = format.replace('a', '');
-                }
-
-                if (abs >= Math.pow(10, 12) && !abbrForce || abbrT) {
-                    // trillion
-                    abbr = abbr + languages[currentLanguage].abbreviations.trillion;
-                    value = value / Math.pow(10, 12);
-                } else if (abs < Math.pow(10, 12) && abs >= Math.pow(10, 9) && !abbrForce || abbrB) {
-                    // billion
-                    abbr = abbr + languages[currentLanguage].abbreviations.billion;
-                    value = value / Math.pow(10, 9);
-                } else if (abs < Math.pow(10, 9) && abs >= Math.pow(10, 6) && !abbrForce || abbrM) {
-                    // million
-                    abbr = abbr + languages[currentLanguage].abbreviations.million;
-                    value = value / Math.pow(10, 6);
-                } else if (abs < Math.pow(10, 6) && abs >= Math.pow(10, 3) && !abbrForce || abbrK) {
-                    // thousand
-                    abbr = abbr + languages[currentLanguage].abbreviations.thousand;
-                    value = value / Math.pow(10, 3);
-                }
-            }
-
-            // see if we are formatting bytes
-            if (format.indexOf('b') > -1) {
-                // check for space before
-                if (format.indexOf(' b') > -1) {
-                    bytes = ' ';
-                    format = format.replace(' b', '');
-                } else {
-                    format = format.replace('b', '');
-                }
-
-                for (power = 0; power <= suffixes.length; power++) {
-                    min = Math.pow(1024, power);
-                    max = Math.pow(1024, power+1);
-
-                    if (value >= min && value < max) {
-                        bytes = bytes + suffixes[power];
-                        if (min > 0) {
-                            value = value / min;
-                        }
-                        break;
-                    }
-                }
-            }
-
-            // see if ordinal is wanted
-            if (format.indexOf('o') > -1) {
-                // check for space before
-                if (format.indexOf(' o') > -1) {
-                    ord = ' ';
-                    format = format.replace(' o', '');
-                } else {
-                    format = format.replace('o', '');
-                }
-
-                ord = ord + languages[currentLanguage].ordinal(value);
-            }
-
-            if (format.indexOf('[.]') > -1) {
-                optDec = true;
-                format = format.replace('[.]', '.');
-            }
-
-            w = value.toString().split('.')[0];
-            precision = format.split('.')[1];
-            thousands = format.indexOf(',');
-
-            if (precision) {
-                if (precision.indexOf('[') > -1) {
-                    precision = precision.replace(']', '');
-                    precision = precision.split('[');
-                    d = toFixed(value, (precision[0].length + precision[1].length), roundingFunction, precision[1].length);
-                } else {
-                    d = toFixed(value, precision.length, roundingFunction);
-                }
-
-                w = d.split('.')[0];
-
-                if (d.split('.')[1].length) {
-                    d = languages[currentLanguage].delimiters.decimal + d.split('.')[1];
-                } else {
-                    d = '';
-                }
-
-                if (optDec && Number(d.slice(1)) === 0) {
-                    d = '';
-                }
-            } else {
-                w = toFixed(value, null, roundingFunction);
-            }
-
-            // format number
-            if (w.indexOf('-') > -1) {
-                w = w.slice(1);
-                neg = true;
-            }
-
-            if (thousands > -1) {
-                w = w.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + languages[currentLanguage].delimiters.thousands);
-            }
-
-            if (format.indexOf('.') === 0) {
-                w = '';
-            }
-
-            return ((negP && neg) ? '(' : '') + ((!negP && neg) ? '-' : '') + ((!neg && signed) ? '+' : '') + w + d + ((ord) ? ord : '') + ((abbr) ? abbr : '') + ((bytes) ? bytes : '') + ((negP && neg) ? ')' : '');
-        }
-    }
 
     /************************************
         Top Level Functions
     ************************************/
 
-    numeral = function (input) {
+    numeral = function(input) {
         if (numeral.isNumeral(input)) {
             input = input.value();
         } else if (input === 0 || typeof input === 'undefined') {
             input = 0;
+        } else if (input === null) {
+            input = null;
         } else if (!Number(input)) {
             input = numeral.fn.unformat(input);
+        } else {
+            input = Number(input);
         }
 
-        return new Numeral(Number(input));
+        return new Numeral(input);
     };
 
     // version number
     numeral.version = VERSION;
 
     // compare numeral object
-    numeral.isNumeral = function (obj) {
+    numeral.isNumeral = function(obj) {
         return obj instanceof Numeral;
     };
+
 
     // This function will load languages and then set the global language.  If
     // no arguments are passed in, it will simply return the current global
     // language key.
-    numeral.language = function (key, values) {
+    numeral.language = function(key, values) {
         if (!key) {
-            return currentLanguage;
+            return options.currentLanguage;
         }
 
+        key = key.toLowerCase();
+
         if (key && !values) {
-            if(!languages[key]) {
+            if (!languages[key]) {
                 throw new Error('Unknown language : ' + key);
             }
-            currentLanguage = key;
+
+            options.currentLanguage = key;
         }
 
         if (values || !languages[key]) {
@@ -11930,19 +12003,25 @@ module.exports = Dispatcher;
 
         return numeral;
     };
-    
+
+    numeral.reset = function() {
+        for (var property in defaults) {
+            options[property] = defaults[property];
+        }
+    };
+
     // This function provides access to the loaded language data.  If
     // no arguments are passed in, it will simply return the current
     // global language object.
-    numeral.languageData = function (key) {
+    numeral.languageData = function(key) {
         if (!key) {
-            return languages[currentLanguage];
+            return languages[options.currentLanguage];
         }
-        
+
         if (!languages[key]) {
             throw new Error('Unknown language : ' + key);
         }
-        
+
         return languages[key];
     };
 
@@ -11957,9 +12036,9 @@ module.exports = Dispatcher;
             billion: 'b',
             trillion: 't'
         },
-        ordinal: function (number) {
+        ordinal: function(number) {
             var b = number % 10;
-            return (~~ (number % 100 / 10) === 1) ? 'th' :
+            return (~~(number % 100 / 10) === 1) ? 'th' :
                 (b === 1) ? 'st' :
                 (b === 2) ? 'nd' :
                 (b === 3) ? 'rd' : 'th';
@@ -11969,12 +12048,105 @@ module.exports = Dispatcher;
         }
     });
 
-    numeral.zeroFormat = function (format) {
-        zeroFormat = typeof(format) === 'string' ? format : null;
+    numeral.zeroFormat = function(format) {
+        options.zeroFormat = typeof(format) === 'string' ? format : null;
     };
 
-    numeral.defaultFormat = function (format) {
-        defaultFormat = typeof(format) === 'string' ? format : '0.0';
+    numeral.nullFormat = function (format) {
+        options.nullFormat = typeof(format) === 'string' ? format : null;
+    };
+
+    numeral.defaultFormat = function(format) {
+        options.defaultFormat = typeof(format) === 'string' ? format : '0.0';
+    };
+
+    numeral.validate = function(val, culture) {
+        var _decimalSep,
+            _thousandSep,
+            _currSymbol,
+            _valArray,
+            _abbrObj,
+            _thousandRegEx,
+            languageData,
+            temp;
+
+        //coerce val to string
+        if (typeof val !== 'string') {
+            val += '';
+            if (console.warn) {
+                console.warn('Numeral.js: Value is not string. It has been co-erced to: ', val);
+            }
+        }
+
+        //trim whitespaces from either sides
+        val = val.trim();
+
+        //if val is just digits return true
+        if ( !! val.match(/^\d+$/)) {
+            return true;
+        }
+
+        //if val is empty return false
+        if (val === '') {
+            return false;
+        }
+
+        //get the decimal and thousands separator from numeral.languageData
+        try {
+            //check if the culture is understood by numeral. if not, default it to current language
+            languageData = numeral.languageData(culture);
+        } catch (e) {
+            languageData = numeral.languageData(numeral.language());
+        }
+
+        //setup the delimiters and currency symbol based on culture/language
+        _currSymbol = languageData.currency.symbol;
+        _abbrObj = languageData.abbreviations;
+        _decimalSep = languageData.delimiters.decimal;
+        if (languageData.delimiters.thousands === '.') {
+            _thousandSep = '\\.';
+        } else {
+            _thousandSep = languageData.delimiters.thousands;
+        }
+
+        // validating currency symbol
+        temp = val.match(/^[^\d]+/);
+        if (temp !== null) {
+            val = val.substr(1);
+            if (temp[0] !== _currSymbol) {
+                return false;
+            }
+        }
+
+        //validating abbreviation symbol
+        temp = val.match(/[^\d]+$/);
+        if (temp !== null) {
+            val = val.slice(0, -1);
+            if (temp[0] !== _abbrObj.thousand && temp[0] !== _abbrObj.million && temp[0] !== _abbrObj.billion && temp[0] !== _abbrObj.trillion) {
+                return false;
+            }
+        }
+
+        _thousandRegEx = new RegExp(_thousandSep + '{2}');
+
+        if (!val.match(/[^\d.,]/g)) {
+            _valArray = val.split(_decimalSep);
+            if (_valArray.length > 2) {
+                return false;
+            } else {
+                if (_valArray.length < 2) {
+                    return ( !! _valArray[0].match(/^\d+.*\d$/) && !_valArray[0].match(_thousandRegEx));
+                } else {
+                    if (_valArray[0].length === 1) {
+                        return ( !! _valArray[0].match(/^\d+$/) && !_valArray[0].match(_thousandRegEx) && !! _valArray[1].match(/^\d+$/));
+                    } else {
+                        return ( !! _valArray[0].match(/^\d+.*\d$/) && !_valArray[0].match(_thousandRegEx) && !! _valArray[1].match(/^\d+$/));
+                    }
+                }
+            }
+        }
+
+        return false;
     };
 
     /************************************
@@ -11992,55 +12164,43 @@ module.exports = Dispatcher;
     // The floating-point helper functions and implementation
     // borrows heavily from sinful.js: http://guipn.github.io/sinful.js/
 
-    /**
-     * Array.prototype.reduce for browsers that don't support it
-     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce#Compatibility
-     */
-    if ('function' !== typeof Array.prototype.reduce) {
-        Array.prototype.reduce = function (callback, opt_initialValue) {
+    // Production steps of ECMA-262, Edition 5, 15.4.4.21
+    // Reference: http://es5.github.io/#x15.4.4.21
+    if (!Array.prototype.reduce) {
+        Array.prototype.reduce = function(callback /*, initialValue*/) {
             'use strict';
-            
-            if (null === this || 'undefined' === typeof this) {
-                // At the moment all modern browsers, that support strict mode, have
-                // native implementation of Array.prototype.reduce. For instance, IE8
-                // does not support strict mode, so this check is actually useless.
+            if (this === null) {
                 throw new TypeError('Array.prototype.reduce called on null or undefined');
             }
-            
-            if ('function' !== typeof callback) {
+
+            if (typeof callback !== 'function') {
                 throw new TypeError(callback + ' is not a function');
             }
 
-            var index,
-                value,
-                length = this.length >>> 0,
-                isValueSet = false;
+            var t = Object(this), len = t.length >>> 0, k = 0, value;
 
-            if (1 < arguments.length) {
-                value = opt_initialValue;
-                isValueSet = true;
+            if (arguments.length === 2) {
+                value = arguments[1];
+            } else {
+                while (k < len && !(k in t)) {
+                    k++;
+                }
+
+                if (k >= len) {
+                    throw new TypeError('Reduce of empty array with no initial value');
+                }
+
+                value = t[k++];
             }
-
-            for (index = 0; length > index; ++index) {
-                if (this.hasOwnProperty(index)) {
-                    if (isValueSet) {
-                        value = callback(value, this[index], index, this);
-                    } else {
-                        value = this[index];
-                        isValueSet = true;
-                    }
+            for (; k < len; k++) {
+                if (k in t) {
+                    value = callback(value, t[k], k, t);
                 }
             }
-
-            if (!isValueSet) {
-                throw new TypeError('Reduce of empty array with no initial value');
-            }
-
             return value;
         };
     }
 
-    
     /**
      * Computes the multiplier necessary to make x >= 1,
      * effectively eliminating miscalculations caused by
@@ -12061,12 +12221,12 @@ module.exports = Dispatcher;
      */
     function correctionFactor() {
         var args = Array.prototype.slice.call(arguments);
-        return args.reduce(function (prev, next) {
+        return args.reduce(function(prev, next) {
             var mp = multiplier(prev),
                 mn = multiplier(next);
-        return mp > mn ? mp : mn;
+            return mp > mn ? mp : mn;
         }, -Infinity);
-    }        
+    }
 
 
     /************************************
@@ -12076,39 +12236,41 @@ module.exports = Dispatcher;
 
     numeral.fn = Numeral.prototype = {
 
-        clone : function () {
+        clone: function() {
             return numeral(this);
         },
 
-        format : function (inputString, roundingFunction) {
-            return formatNumeral(this, 
-                  inputString ? inputString : defaultFormat, 
-                  (roundingFunction !== undefined) ? roundingFunction : Math.round
-              );
+        format: function (inputString, roundingFunction) {
+            return formatNumeral(this,
+                inputString ? inputString : options.defaultFormat,
+                roundingFunction !== undefined ? roundingFunction : Math.round
+            );
         },
 
-        unformat : function (inputString) {
-            if (Object.prototype.toString.call(inputString) === '[object Number]') { 
-                return inputString; 
+        unformat: function (inputString) {
+            if (Object.prototype.toString.call(inputString) === '[object Number]') {
+                return inputString;
             }
-            return unformatNumeral(this, inputString ? inputString : defaultFormat);
+
+            return unformatNumeral(this, inputString ? inputString : options.defaultFormat);
         },
 
-        value : function () {
+        value: function() {
             return this._value;
         },
 
-        valueOf : function () {
+        valueOf: function() {
             return this._value;
         },
 
-        set : function (value) {
+        set: function(value) {
             this._value = Number(value);
             return this;
         },
 
-        add : function (value) {
+        add: function(value) {
             var corrFactor = correctionFactor.call(null, this._value, value);
+
             function cback(accum, curr, currI, O) {
                 return accum + corrFactor * curr;
             }
@@ -12116,16 +12278,17 @@ module.exports = Dispatcher;
             return this;
         },
 
-        subtract : function (value) {
+        subtract: function(value) {
             var corrFactor = correctionFactor.call(null, this._value, value);
+
             function cback(accum, curr, currI, O) {
                 return accum - corrFactor * curr;
             }
-            this._value = [value].reduce(cback, this._value * corrFactor) / corrFactor;            
+            this._value = [value].reduce(cback, this._value * corrFactor) / corrFactor;
             return this;
         },
 
-        multiply : function (value) {
+        multiply: function(value) {
             function cback(accum, curr, currI, O) {
                 var corrFactor = correctionFactor(accum, curr);
                 return (accum * corrFactor) * (curr * corrFactor) /
@@ -12135,16 +12298,16 @@ module.exports = Dispatcher;
             return this;
         },
 
-        divide : function (value) {
+        divide: function(value) {
             function cback(accum, curr, currI, O) {
                 var corrFactor = correctionFactor(accum, curr);
                 return (accum * corrFactor) / (curr * corrFactor);
             }
-            this._value = [this._value, value].reduce(cback);            
+            this._value = [this._value, value].reduce(cback);
             return this;
         },
 
-        difference : function (value) {
+        difference: function(value) {
             return Math.abs(numeral(this._value).subtract(value).value());
         }
 
@@ -12155,7 +12318,7 @@ module.exports = Dispatcher;
     ************************************/
 
     // CommonJS module is defined
-    if (hasModule) {
+    if (typeof module !== 'undefined' && module.exports) {
         module.exports = numeral;
     }
 
@@ -12169,7 +12332,7 @@ module.exports = Dispatcher;
 
     /*global define:false */
     if (typeof define === 'function' && define.amd) {
-        define([], function () {
+        define([], function() {
             return numeral;
         });
     }
@@ -93556,7 +93719,7 @@ the specific language governing permissions and limitations under the Apache Lic
  * Project: https://github.com/CodeSeven/toastr
  */
 /* global define */
-(function (define) {
+; (function (define) {
     define(['jquery'], function ($) {
         return (function () {
             var $container;
@@ -93578,7 +93741,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 options: {},
                 subscribe: subscribe,
                 success: success,
-                version: '2.1.3',
+                version: '2.1.2',
                 warning: warning
             };
 
@@ -93689,7 +93852,9 @@ the specific language governing permissions and limitations under the Apache Lic
             function createContainer(options) {
                 $container = $('<div/>')
                     .attr('id', options.containerId)
-                    .addClass(options.positionClass);
+                    .addClass(options.positionClass)
+                    .attr('aria-live', 'polite')
+                    .attr('role', 'alert');
 
                 $container.appendTo($(options.target));
                 return $container;
@@ -93713,7 +93878,6 @@ the specific language governing permissions and limitations under the Apache Lic
                     closeMethod: false,
                     closeDuration: false,
                     closeEasing: false,
-                    closeOnHover: true,
 
                     extendedTimeOut: 1000,
                     iconClasses: {
@@ -93730,12 +93894,9 @@ the specific language governing permissions and limitations under the Apache Lic
                     escapeHtml: false,
                     target: 'body',
                     closeHtml: '<button type="button">&times;</button>',
-                    closeClass: 'toast-close-button',
                     newestOnTop: true,
                     preventDuplicates: false,
-                    progressBar: false,
-                    progressClass: 'toast-progress',
-                    rtl: false
+                    progressBar: false
                 };
             }
 
@@ -93793,11 +93954,10 @@ the specific language governing permissions and limitations under the Apache Lic
                 return $toastElement;
 
                 function escapeHtml(source) {
-                    if (source == null) {
-                        source = '';
-                    }
+                    if (source == null)
+                        source = "";
 
-                    return source
+                    return new String(source)
                         .replace(/&/g, '&amp;')
                         .replace(/"/g, '&quot;')
                         .replace(/'/g, '&#39;')
@@ -93811,29 +93971,11 @@ the specific language governing permissions and limitations under the Apache Lic
                     setMessage();
                     setCloseButton();
                     setProgressBar();
-                    setRTL();
                     setSequence();
-                    setAria();
-                }
-
-                function setAria() {
-                    var ariaValue = '';
-                    switch (map.iconClass) {
-                        case 'toast-success':
-                        case 'toast-info':
-                            ariaValue =  'polite';
-                            break;
-                        default:
-                            ariaValue = 'assertive';
-                    }
-                    $toastElement.attr('aria-live', ariaValue);
                 }
 
                 function handleEvents() {
-                    if (options.closeOnHover) {
-                        $toastElement.hover(stickAround, delayedHideToast);
-                    }
-
+                    $toastElement.hover(stickAround, delayedHideToast);
                     if (!options.onclick && options.tapToDismiss) {
                         $toastElement.click(hideToast);
                     }
@@ -93845,11 +93987,6 @@ the specific language governing permissions and limitations under the Apache Lic
                             } else if (event.cancelBubble !== undefined && event.cancelBubble !== true) {
                                 event.cancelBubble = true;
                             }
-
-                            if (options.onCloseClick) {
-                                options.onCloseClick(event);
-                            }
-
                             hideToast(true);
                         });
                     }
@@ -93895,43 +94032,29 @@ the specific language governing permissions and limitations under the Apache Lic
 
                 function setTitle() {
                     if (map.title) {
-                        var suffix = map.title;
-                        if (options.escapeHtml) {
-                            suffix = escapeHtml(map.title);
-                        }
-                        $titleElement.append(suffix).addClass(options.titleClass);
+                        $titleElement.append(!options.escapeHtml ? map.title : escapeHtml(map.title)).addClass(options.titleClass);
                         $toastElement.append($titleElement);
                     }
                 }
 
                 function setMessage() {
                     if (map.message) {
-                        var suffix = map.message;
-                        if (options.escapeHtml) {
-                            suffix = escapeHtml(map.message);
-                        }
-                        $messageElement.append(suffix).addClass(options.messageClass);
+                        $messageElement.append(!options.escapeHtml ? map.message : escapeHtml(map.message)).addClass(options.messageClass);
                         $toastElement.append($messageElement);
                     }
                 }
 
                 function setCloseButton() {
                     if (options.closeButton) {
-                        $closeElement.addClass(options.closeClass).attr('role', 'button');
+                        $closeElement.addClass('toast-close-button').attr('role', 'button');
                         $toastElement.prepend($closeElement);
                     }
                 }
 
                 function setProgressBar() {
                     if (options.progressBar) {
-                        $progressElement.addClass(options.progressClass);
+                        $progressElement.addClass('toast-progress');
                         $toastElement.prepend($progressElement);
-                    }
-                }
-
-                function setRTL() {
-                    if (options.rtl) {
-                        $toastElement.addClass('rtl');
                     }
                 }
 
@@ -93960,7 +94083,6 @@ the specific language governing permissions and limitations under the Apache Lic
                         easing: easing,
                         complete: function () {
                             removeToast($toastElement);
-                            clearTimeout(intervalId);
                             if (options.onHidden && response.state !== 'hidden') {
                                 options.onHidden();
                             }
