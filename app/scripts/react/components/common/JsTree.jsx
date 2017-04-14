@@ -1,5 +1,6 @@
 /*global $ */
-import React, { findDOMNode, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import { diff } from 'deep-diff';
 
 export default function JsTree(props) {
@@ -142,7 +143,7 @@ export default function JsTree(props) {
           };
         } else {
           return {
-            ...el,  
+            ...el,
             state: {
               ...el.state,
               selected: selected.indexOf(el.id) > -1,

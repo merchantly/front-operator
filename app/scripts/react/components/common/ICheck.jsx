@@ -1,4 +1,5 @@
-import React, { PropTypes, findDOMNode } from 'react';
+import React, { PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 
 export default class ICheck {
   static propTypes = {

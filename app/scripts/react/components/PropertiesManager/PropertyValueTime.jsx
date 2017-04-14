@@ -1,4 +1,5 @@
-import React, { PropTypes, findDOMNode } from 'react';
+import React, { PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 
 //TODO: i18n
 const PROPERTY_VALUE_TIME_PLACEHOLDER = 'Укажите дату и время';

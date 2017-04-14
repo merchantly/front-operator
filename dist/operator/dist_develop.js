@@ -5741,6 +5741,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5756,13 +5758,13 @@ var PropertyValueTime = function () {
   _createClass(PropertyValueTime, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var node = (0, _react.findDOMNode)(this);
+      var node = (0, _reactDom.findDOMNode)(this);
       $(node).on('dp.change', this.handleDateChange.bind(this));
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var node = (0, _react.findDOMNode)(this);
+      var node = (0, _reactDom.findDOMNode)(this);
       $(node).off('dp.change', this.handleDateChange.bind(this));
     }
   }, {
@@ -5807,7 +5809,7 @@ PropertyValueTime.propTypes = {
 };
 exports.default = PropertyValueTime;
 
-},{"react":"react"}],45:[function(require,module,exports){
+},{"react":"react","react-dom":351}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6622,6 +6624,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6634,7 +6638,7 @@ var ICheck = function () {
   _createClass(ICheck, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var node = (0, _react.findDOMNode)(this.refs.checkbox);
+      var node = (0, _reactDom.findDOMNode)(this.refs.checkbox);
       $(node).iCheck({
         radioClass: 'iradio_flat-blue',
         checkboxClass: 'icheckbox_flat-blue',
@@ -6645,7 +6649,7 @@ var ICheck = function () {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var node = (0, _react.findDOMNode)(this.refs.checkbox);
+      var node = (0, _reactDom.findDOMNode)(this.refs.checkbox);
       $(node).off('ifToggled', this.handleToggle.bind(this));
       $(node).iCheck('destroy');
     }
@@ -6687,7 +6691,7 @@ ICheck.propTypes = {
 };
 exports.default = ICheck;
 
-},{"react":"react"}],55:[function(require,module,exports){
+},{"react":"react","react-dom":351}],55:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6702,6 +6706,8 @@ exports.default = JsTree;
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
 
 var _deepDiff = require('deep-diff');
 
@@ -6742,7 +6748,7 @@ function JsTree(props) {
           check_callback: this.checkCb.bind(this)
         })
       });
-      var container = (0, _react.findDOMNode)(this.refs.container);
+      var container = (0, _reactDom.findDOMNode)(this.refs.container);
 
       if (!(container instanceof HTMLElement)) {
         return;
@@ -6870,7 +6876,7 @@ function JsTree(props) {
   };
 }
 
-},{"deep-diff":"deep-diff","react":"react"}],56:[function(require,module,exports){
+},{"deep-diff":"deep-diff","react":"react","react-dom":351}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
