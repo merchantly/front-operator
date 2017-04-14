@@ -1,5 +1,7 @@
 // These libs is required only in static
 require('eonasdan-bootstrap-datetimepicker');
+
+// Копируется из bundle react-rails
 global.ReactUjs = require('reactUjs');
 import { gon } from './resources/gon';
 

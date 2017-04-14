@@ -3,6 +3,7 @@ global.$ = global.jQuery = require('jquery');
 global.React = require('react');
 global.Dispatcher = require('flux').Dispatcher;
 global.EventEmitter = require('eventEmitter');
+global.LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 import Requester from './requester';
 // var Requester = require('./requester');
