@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import JsTree from '../common/JsTree';
 
-export default class CategoriesList {
+class CategoriesList extends Component {
   static propTypes = {
     categories: PropTypes.array.isRequired,
     onSelectionChange: PropTypes.func.isRequired,
