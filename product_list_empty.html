@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+<title>Kiosk</title>
+<meta content='' name='description'>
+<meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
+<link href='stylesheets/local.css' rel='stylesheet'>
+<link href='assets/favicon/favicon.ico' rel='shortcut icon'>
+<link href='assets/touch-icon-57.png' rel='apple-touch-icon' sizes='57x57'>
+<link href='assets/touch-icon-72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='assets/touch-icon-76.png' rel='apple-touch-icon' sizes='76x76'>
+<link href='assets/touch-icon-114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='assets/touch-icon-120.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='assets/touch-icon-144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='assets/touch-icon-152.png' rel='apple-touch-icon' sizes='152x152'>
+<!-- Windows 8 Tiles -->
+<meta content='assets/touch-icon-144.png' name='msapplication-TileImage'>
+<meta content='#38b0aa' name='msapplication-TileColor'>
+<meta content='The MatriXFiles' name='application-name'>
+<!-- Internet Explorer 11 Tiles -->
+<meta content='assets/tile-70.png' name='msapplication-square70x70logo'>
+<meta content='assets/tile-150.png' name='msapplication-square150x150logo'>
+<meta content='assets/tile-310.png' name='msapplication-wide310x150logo'>
+<meta content='assets/tile-310.png' name='msapplication-square310x310logo'>
+<!-- For iPad landscape splash screen -->
+<link href='assets/apple-splash-screen-1024x748.png' rel='apple-touch-startup-image' sizes='1024x748'>
+<!-- For iPad portriat splash screen -->
+<link href='assets/apple-splash-screen-768x1004.png' rel='apple-touch-startup-image' sizes='768x1004'>
+<!-- For iPhone, iPod high resolution portriat splash screen -->
+<link href='assets/apple-splash-screen-640x960.png' rel='apple-touch-startup-image' sizes='640x960'>
+<!-- For iPhone, iPod standard resolution portriat splash screen -->
+<link href='assets/apple-splash-screen-320x480.png' rel='apple-touch-startup-image' sizes='320x480'>
+  </head>
+  <body class='mini-navbar'>
+    <!-- Wrapper -->
+    <div id='wrapper'>
+      <!-- Navbar -->
+<nav class='navbar-default navbar-static-side' role='navigation'>
+  <div class='sidebar-collapse'>
+    <ul class='nav' id='side-menu'>
+      <li class='nav-header'>
+        <div class='dropdown profile-element'>
+          <span>
+            <img class='img-circle' src='assets/profile_small.jpg' alt='image'>
+          </span>
+          <a class='dropdown-toggle' href='#' data-toggle='dropdown'>
+            <span class='clear'>
+              <span class='block m-t-xs'>
+                <strong class='font-bold'>David Williams</strong>
+              </span>
+              <span class='block text-muted text-xs'>Art Director <b class="caret"></b></span>
+            </span>
+          </a>
+          <ul class='animated dropdown-menu fadeInRight m-t-xs'>
+            <li>
+              <a href='profile.html'>Profile</a>
+            </li>
+            <li>
+              <a href='contacts.html'>Contacts</a>
+            </li>
+            <li>
+              <a href='mailbox.html'>Mailbox</a>
+            </li>
+            <li class='divider'></li>
+            <li>
+              <a href='login.html'>Logout</a>
+            </li>
+          </ul>
+        </div>
+        <div class='logo-element'>IN+</div>
+      </li>
+      <li>
+        <a href='index.html'><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='index.html'>Dashboard v.1</a>
+          </li>
+          <li>
+            <a href='dashboard_2.html'>Dashboard v.2</a>
+          </li>
+          <li>
+            <a href='dashboard_3.html'>Dashboard v.3</a>
+          </li>
+          <li>
+            <a href='dashboard_4.html'>Dashboard v.4</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='layouts.html'><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='graph_flot.html'>Flot Charts</a>
+          </li>
+          <li>
+            <a href='graph_morris.html'>Morris.js Charts</a>
+          </li>
+          <li>
+            <a href='graph_rickshaw.html'>Rickshaw Charts</a>
+          </li>
+          <li>
+            <a href='graph_chartjs.html'>Chart.js</a>
+          </li>
+          <li>
+            <a href='graph_peity.html'>Peity Charts</a>
+          </li>
+          <li>
+            <a href='graph_sparkline.html'>Sparkline Charts</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='mailbox.html'><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='mailbox.html'>Inbox</a>
+          </li>
+          <li>
+            <a href='mail_detail.html'>Email view</a>
+          </li>
+          <li>
+            <a href='mail_compose.html'>Compose email</a>
+          </li>
+          <li>
+            <a href='email_template.html'>Email templates</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='widgets.html'><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='form_basic.html'>Basic form</a>
+          </li>
+          <li>
+            <a href='form_advanced.html'>Advanced Plugins</a>
+          </li>
+          <li>
+            <a href='form_wizard.html'>Wizard</a>
+          </li>
+          <li>
+            <a href='form_file_upload.html'>File Upload</a>
+          </li>
+          <li>
+            <a href='form_editors.html'>Text Editor</a>
+          </li>
+        </ul>
+      </li>
+      <li class='active'>
+        <a href='#'><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='contacts.html'>Contacts</a>
+          </li>
+          <li>
+            <a href='profile.html'>Profile</a>
+          </li>
+          <li>
+            <a href='projects.html'>Projects</a>
+          </li>
+          <li>
+            <a href='project_detail.html'>Project detail</a>
+          </li>
+          <li>
+            <a href='file_manager.html'>File manager</a>
+          </li>
+          <li>
+            <a href='calendar.html'>Calendar</a>
+          </li>
+          <li class='active'>
+            <a href='faq.html'>FAQ</a>
+          </li>
+          <li>
+            <a href='timeline.html'>Timeline</a>
+          </li>
+          <li>
+            <a href='pin_board.html'>Pin board</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='search_results.html'>Search results</a>
+          </li>
+          <li>
+            <a href='lockscreen.html'>Lockscreen</a>
+          </li>
+          <li>
+            <a href='invoice.html'>Invoice</a>
+          </li>
+          <li>
+            <a href='login.html'>Login</a>
+          </li>
+          <li>
+            <a href='login_two_columns.html'>Login v.2</a>
+          </li>
+          <li>
+            <a href='register.html'>Register</a>
+          </li>
+          <li>
+            <a href='404.html'>404 Page</a>
+          </li>
+          <li>
+            <a href='500.html'>500 Page</a>
+          </li>
+          <li>
+            <a href='empty_page.html'>Empty page</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='toastr_notifications.html'>Notification</a>
+          </li>
+          <li>
+            <a href='nestable_list.html'>Nestable list</a>
+          </li>
+          <li>
+            <a href='timeline_2.html'>Timeline v.2</a>
+          </li>
+          <li>
+            <a href='forum_main.html'>Forum view</a>
+          </li>
+          <li>
+            <a href='google_maps.html'>Google maps</a>
+          </li>
+          <li>
+            <a href='code_editor.html'>Code editor</a>
+          </li>
+          <li>
+            <a href='modal_window.html'>Modal window</a>
+          </li>
+          <li>
+            <a href='validation.html'>Validation</a>
+          </li>
+          <li>
+            <a href='tree_view.html'>Tree view</a>
+          </li>
+          <li>
+            <a href='chat_view.html'>Chat view</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='typography.html'>Typography</a>
+          </li>
+          <li>
+            <a href='icons.html'>Icons</a>
+          </li>
+          <li>
+            <a href='draggable_panels.html'>Draggable Panels</a>
+          </li>
+          <li>
+            <a href='buttons.html'>Buttons</a>
+          </li>
+          <li>
+            <a href='video.html'>Video</a>
+          </li>
+          <li>
+            <a href='tabs_panels.html'>Tabs & Panels</a>
+          </li>
+          <li>
+            <a href='notifications.html'>Notifications & Tooltips</a>
+          </li>
+          <li>
+            <a href='badges_labels.html'>Badges, Labels, Progress</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='grid_options.html'><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='table_basic.html'>Static Tables</a>
+          </li>
+          <li>
+            <a href='table_data_tables.html'>Data Tables</a>
+          </li>
+          <li>
+            <a href='jq_grid.html'>jqGrid</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='basic_gallery.html'>Lightbox Gallery</a>
+          </li>
+          <li>
+            <a href='carousel.html'>Bootstrap Carusela</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='#'>Third Level <span class="fa arrow"></span></a>
+            <ul class='nav nav-third-level'>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='css_animation.html'><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+      </li>
+      <li class='landing_link'>
+        <a href='Landing_page/index.html' target='_blank'><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+      </li>
+      <li class='special_link'>
+        <a href='package.html'><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+      <!-- Page Wrapper -->
+      <div class='gray-bg' id='page-wrapper'>
+        <div class='page-heading row wrapper'>
+          <div class='col-sm-7'>
+            <h1 class='page-title'>
+              Товары
+            </h1>
+          </div>
+          <div class='col-sm-5'>
+            <div class='title-action'>
+              <a class='btn btn-default btn-outline btn-rounded' href='#'>
+                <i class='fa fa-plus'></i>
+                Добавить
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-lg-12'>
+            <div class='wrapper wrapper-content'>
+              <div class='row row-xs'>
+                <div class='col-lg-9'>
+                  <div class='ibox'>
+                    <div class='ibox-content p-none'>
+                      <div class='p-b-sm p-lg p-t-sm'>
+                        <div class='row row-xs'>
+                          <div class='col-lg-8'>
+                            <button class='active btn btn-default btn-outline btn-rounded m-b-xs m-t-xs'>
+                              Скрыть фильтр
+                              <small>
+                                <i class='fa fa-chevron-up'></i>
+                              </small>
+                            </button>
+                          </div>
+                          <div class='col-lg-4'>
+                            <div class='hidden hidden-md hidden-sm hidden-xs m-t-lg'></div>
+                            <form action='?'>
+                              <div class='input-group m-b-xs m-t-xs'>
+                                <input class='form-control' type='text' placeholder='Поиск'>
+                                <span class='input-group-btn'>
+                                  <button class='btn btn-primary'>Найти</button>
+                                </span>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class='m-t-sm'><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Категории <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li class='active'>
+                                <a href='#' title='Все категории'>Все категории</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Кольца'>Кольца</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Браслеты'>Браслеты</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Серьги'>Серьги</a>
+                              </li>
+                            </ul>
+                          </div><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Наличие фото <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='С фото и без'>С фото и без</a>
+                              </li>
+                              <li>
+                                <a href='#' title='С фото'>С фото</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Без фото'>Без фото</a>
+                              </li>
+                            </ul>
+                          </div><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Видимость <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='Опубликованные'>Опубликованные</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Неопубликованные'>Неопубликованные</a>
+                              </li>
+                            </ul>
+                          </div><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Количество <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='Нулевой остаток'>Нулевой остаток</a>
+                              </li>
+                              <li>
+                                <a href='#' title='Больше 10'>Больше 10</a>
+                              </li>
+                            </ul>
+                          </div><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Варианты <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='Без вариантов'>Без вариантов</a>
+                              </li>
+                            </ul>
+                          </div><div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Статус <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='С ошибками'>С ошибками</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class='btn-group m-b-xs m-r-xs m-t-xs' role='group'>
+                            <button class='btn btn-default btn-outline dropdown-toggle' data-toggle='dropdown'>Сортировка <span class="caret"></span></button>
+                            <ul class='dropdown-menu dropdown-menu-base'>
+                              <li>
+                                <a href='#' title='С ошибками'>По дате обновления</a>
+                              </li>
+                              <li>
+                                <a href='#' title='С ошибками'>По дате добавления</a>
+                              </li>
+                              <li>
+                                <a href='#' title='С ошибками'>По популярности</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='hr-line-solid no-margins'></div>
+                      <div class='project-list table-responsive'>
+                        <div class='p-lg text-center'>
+                          <div class='m-b-lg m-t-lg'>
+                            <h2>Список пуст</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-lg-3'>
+                  <div class='ibox'>
+                    <div class='ibox-content p-xs'>
+                      <div products-categories-tree="true"><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:true}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=612&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Корневая категория</span><span class="text-muted"> (74/875)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=636&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольца</span><span class="text-muted"> (0/181)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=619&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо</span><span class="text-muted"> (45)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=621&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на весь палец</span><span class="text-muted"> (17)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=622&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на ноготь</span><span class="text-muted"> (12)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=624&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо на 2 пальца</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=628&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Миникольцо</span><span class="text-muted"> (104)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=635&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслеты</span><span class="text-muted"> (0/41)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=614&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет</span><span class="text-muted"> (21)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=615&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет на кисть</span><span class="text-muted"> (20)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=616&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Браслет-нить</span><span class="text-muted"> (210)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=637&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (0/201)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=620&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кольцо в нос</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=618&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кафф</span><span class="text-muted"> (38)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1697&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги-каффы</span><span class="text-muted"> (16)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=625&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Пусеты</span><span class="text-muted"> (53)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=627&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Моносерьга</span><span class="text-muted"> (10)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=631&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги</span><span class="text-muted"> (23)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=632&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги с обвесом</span><span class="text-muted"> (29)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=633&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Серьги Люстры</span><span class="text-muted"> (29)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=638&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На тело</span><span class="text-muted"> (0/24)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=613&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Анклет</span><span class="text-muted"> (14)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=630&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь на тело</span><span class="text-muted"> (10)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=639&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>На шею</span><span class="text-muted"> (0/26)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=623&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кулон</span><span class="text-muted"> (20)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=634&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Цепь</span><span class="text-muted"> (6)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1443&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Дисконт</span><span class="text-muted"> (24)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=617&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Sale</span><span class="text-muted"> (25)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=629&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Леска</span><span class="text-muted"> (1)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=626&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Торговое оборудование</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=692&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Кастомные коллекции</span><span class="text-muted"> (0/51)</span></a><ul><li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=691&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>СНЕГ is SWAG</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1410&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>ШИК for CHICKS</span><span class="text-muted"> (3)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1559&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Love is...</span><span class="text-muted"> (24)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1572&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Minimalism</span><span class="text-muted"> (19)</span></a><ul></ul></li></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=700&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Упаковка</span><span class="text-muted"> (5)</span></a><ul></ul></li>
+                      <li data-jstree="{&quot;selected&quot;:false,&quot;opened&quot;:false}"><a href="http://wannabe.kiiiosk.ru/operator/products?f%5Bcategory_id%5D=1524&amp;f%5Bhas_quantity%5D=&amp;f%5Binclude_subcategories%5D=false&amp;f%5Bis_published%5D=&amp;f%5Bis_union%5D=&amp;f%5Blimit%5D=50&amp;f%5Border%5D=position&amp;f%5Border_direction%5D=desc&amp;f%5Bpage%5D=&amp;f%5Bprice_range%5D=&amp;f%5Bquery%5D=&amp;f%5Brun_out%5D=&amp;f%5Bsale%5D=&amp;f%5Bstate%5D=&amp;index_style=categories"><span>Главная страница</span><span class="text-muted"> (7)</span></a><ul></ul></li></ul></li></ul></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='footer'>
+          <div class='pull-right'>10GB of <strong>250GB</strong> Free.</div>
+          <div><strong>Copyright</strong> Example Company &copy; 2014-2015</div>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src='scripts/vendor.js'></script>
+    <script src='scripts/client.js'></script>
+  </body>
+</html>

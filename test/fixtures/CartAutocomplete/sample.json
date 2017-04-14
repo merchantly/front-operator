@@ -1,0 +1,2107 @@
+{
+  "queryOptions": {
+    "is_ordering": true
+  },
+  "cart": [
+    {
+      "id": 29094,
+      "good": {
+        "id": 48728,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzI4",
+        "updated_at": "2016-10-09T08:21:24.518+03:00",
+        "created_at": "2016-04-12T18:30:39.612+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Говяжья мякоть (1 кг, \"Честная ферма\", Рязань)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/57122/c2726218-c431-44ad-9007-0febf924de89.jpg",
+          "product_id": 48728,
+          "vendor_id": 1233,
+          "id": 57122
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48728-govyazhya-myakot-1-kg-chestnaya-ferma-ryazan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzI4",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6077,
+          "name": "Говядина",
+          "full_name": "МЯСО/Говядина",
+          "parent_id": 5708,
+          "updated_at": "2016-10-09T12:07:07.022+03:00",
+          "position": 112,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 15
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48728",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 75000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 75000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29094",
+      "errors": {}
+    },
+    {
+      "id": 29095,
+      "good": {
+        "id": 48025,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4MDI1",
+        "updated_at": "2016-10-07T14:32:38.999+03:00",
+        "created_at": "2016-03-31T19:37:53.590+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Цыплята (1 шт., \"Честная ферма\", Рязань)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/53155/22ffdfb3-ca5a-4f08-92d4-a251ba8557cb.jpg",
+          "product_id": 48025,
+          "vendor_id": 1233,
+          "id": 53155
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48025-tsyplyata-1-sht-chestnaya-ferma-ryazan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4MDI1",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6086,
+          "name": "Курица",
+          "full_name": "ПТИЦА/Курица",
+          "parent_id": 5709,
+          "updated_at": "2016-10-09T08:14:06.106+03:00",
+          "position": 66,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 8
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Подрощенные цыплята (не корнишоны!) с очень нежным мясом. Прекрасно подходят для запекания, варки, жарки или в качестве ингредиента сложных блюд.</p><p>Цыплята выращены на вольном выпасе в нашем собственном хозяйстве «Честная ферма» в экологически чистом Спасском районе Рязанской области в деревне Выжелес.</p><p>Для прокорма птицы мы используем только натуральные корма – собственная трава, собственное сено, зерно и никакой химии! Наши птицы получают хороший уход, они здоровы, поэтому нам не нужно использовать антибиотики, как это делают на крупных промышленных птицефабриках. </p><p>В течение суток после забоя цыплята попадают на склад в Москву в охлажденном виде, откуда в тот же день развозятся по нашим клиентам. Упаковка – компактный пластиковый контейнер, который очень удобен для хранения и домашней заморозки.</p>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48025",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": true,
+        "actual_price": {
+          "cents": 25500,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 30000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29095",
+      "errors": {}
+    },
+    {
+      "id": 29096,
+      "good": {
+        "id": 70225,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjI1",
+        "updated_at": "2016-10-07T17:43:32.651+03:00",
+        "created_at": "2016-10-05T19:07:51.059+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Молоко коровье цельное, 3,6-4% (1 л, \"Аннушкина ферма\", Мос. обл.)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/82212/f537a108-aa06-42c8-b5e9-74860ca6675c.png",
+          "product_id": 70225,
+          "vendor_id": 1233,
+          "id": 82212
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/70225-moloko-korovie-tselnoe-3-6-4-1-l-annushkina-ferma-mos-obl",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjI1",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 8665,
+          "name": "Аннушкина ферма",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ/Аннушкина ферма",
+          "parent_id": 5986,
+          "updated_at": "2016-10-07T18:10:34.508+03:00",
+          "position": 99,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 50
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Срок годности: 72 часа</p>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-70225",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 11000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 11000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29096",
+      "errors": {}
+    },
+    {
+      "id": 29097,
+      "good": {
+        "id": 48767,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzY3",
+        "updated_at": "2016-10-03T13:32:04.109+03:00",
+        "created_at": "2016-04-12T19:15:52.687+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Капуста цветная (1 кг, Македония)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54757/be0bac94-b442-40a7-85e5-a336da1b995d.jpg",
+          "product_id": 48767,
+          "vendor_id": 1233,
+          "id": 54757
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48767-kapusta-tsvetnaya-1-kg-makedoniya",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzY3",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5814,
+          "name": "ОВОЩИ / ФРУКТЫ",
+          "full_name": "ОВОЩИ / ФРУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-09T15:35:39.409+03:00",
+          "position": 8,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 142
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48767",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 25000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 25000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29097",
+      "errors": {}
+    },
+    {
+      "id": 29098,
+      "good": {
+        "id": 48776,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4Nzc2",
+        "updated_at": "2016-09-28T19:17:49.587+03:00",
+        "created_at": "2016-04-12T19:19:21.995+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Картофель белый (1 кг, Ростов)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/57664/4ac74c93-2f0a-4db7-9bed-3ac99022cfc0.jpg",
+          "product_id": 48776,
+          "vendor_id": 1233,
+          "id": 57664
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48776-kartofel-belyy-1-kg-rostov",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4Nzc2",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5814,
+          "name": "ОВОЩИ / ФРУКТЫ",
+          "full_name": "ОВОЩИ / ФРУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-09T15:35:39.409+03:00",
+          "position": 8,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 142
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48776",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 6000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 6000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29098",
+      "errors": {}
+    },
+    {
+      "id": 29099,
+      "good": {
+        "id": 48765,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzY1",
+        "updated_at": "2016-09-28T19:17:51.582+03:00",
+        "created_at": "2016-04-12T19:15:08.463+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Кабачки цуккини (0,5 кг, Краснодар)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54760/b7c74504-9c8c-440d-acd3-d1564fc2aad1.jpg",
+          "product_id": 48765,
+          "vendor_id": 1233,
+          "id": 54760
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48765-kabachki-tsukkini-0-5-kg-krasnodar",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NzY1",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5814,
+          "name": "ОВОЩИ / ФРУКТЫ",
+          "full_name": "ОВОЩИ / ФРУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-09T15:35:39.409+03:00",
+          "position": 8,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 142
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48765",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 10000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 10000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "0.5"
+      },
+      "quantity": 1,
+      "weight": "0.5",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29099",
+      "errors": {}
+    },
+    {
+      "id": 29100,
+      "good": {
+        "id": 48927,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4OTI3",
+        "updated_at": "2016-09-30T10:56:21.077+03:00",
+        "created_at": "2016-04-13T19:46:28.752+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Авокадо (1 шт., Израиль)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54870/d38884f9-30ef-45d9-95d7-94872315fa80.jpg",
+          "product_id": 48927,
+          "vendor_id": 1233,
+          "id": 54870
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48927-avokado-1-sht-izrail",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4OTI3",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5814,
+          "name": "ОВОЩИ / ФРУКТЫ",
+          "full_name": "ОВОЩИ / ФРУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-09T15:35:39.409+03:00",
+          "position": 8,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 142
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48927",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 20000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 20000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29100",
+      "errors": {}
+    },
+    {
+      "id": 29101,
+      "good": {
+        "id": 48670,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4Njcw",
+        "updated_at": "2016-09-24T15:31:52.921+03:00",
+        "created_at": "2016-04-12T18:06:45.703+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Базилик зеленый (100 г, Израиль)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54955/97111873-85c7-4da1-9981-de739acfe392.jpg",
+          "product_id": 48670,
+          "vendor_id": 1233,
+          "id": 54955
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48670-bazilik-zelenyy-100-g-izrail",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4Njcw",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5814,
+          "name": "ОВОЩИ / ФРУКТЫ",
+          "full_name": "ОВОЩИ / ФРУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-09T15:35:39.409+03:00",
+          "position": 8,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 142
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48670",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 18000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 18000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.1",
+        "cartCount": 1,
+        "cartWeight": "0.1"
+      },
+      "quantity": 1,
+      "weight": "0.1",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29101",
+      "errors": {}
+    },
+    {
+      "id": 29102,
+      "good": {
+        "id": 58359,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzU4MzU5",
+        "updated_at": "2016-08-28T22:52:51.300+03:00",
+        "created_at": "2016-08-18T13:42:42.950+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Томаты сушеные в масле \"Delphi\" (370 мл, Греция)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/72051/c5a90649-327e-4f45-9dc7-91ceb23cbfe4.jpg",
+          "product_id": 58359,
+          "vendor_id": 1233,
+          "id": 72051
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/58359-tomaty-sushenye-v-masle-delphi-370-ml-gretsiya",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzU4MzU5",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6065,
+          "name": "БАКАЛЕЯ",
+          "full_name": "БАКАЛЕЯ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-05T17:02:20.482+03:00",
+          "position": 131,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 144
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-58359",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 35000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 35000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29102",
+      "errors": {}
+    },
+    {
+      "id": 29103,
+      "good": {
+        "id": 49070,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ5MDcw",
+        "updated_at": "2016-09-13T13:54:48.414+03:00",
+        "created_at": "2016-04-14T16:37:34.638+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Рис \"Девзира\", коричневая (0,5 кг, Узбекистан)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54947/f61cd560-fb36-488f-8653-0ccfebfa41c3.jpg",
+          "product_id": 49070,
+          "vendor_id": 1233,
+          "id": 54947
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/49070-ris-devzira-korichnevaya-0-5-kg-uzbekistan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ5MDcw",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6065,
+          "name": "БАКАЛЕЯ",
+          "full_name": "БАКАЛЕЯ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-05T17:02:20.482+03:00",
+          "position": 131,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 144
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-49070",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 22000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 22000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "0.5"
+      },
+      "quantity": 1,
+      "weight": "0.5",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29103",
+      "errors": {}
+    },
+    {
+      "id": 29104,
+      "good": {
+        "id": 49275,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ5Mjc1",
+        "updated_at": "2016-09-29T15:15:45.175+03:00",
+        "created_at": "2016-04-16T23:08:27.796+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Филе трески св/мор (0,5 кг, Мурманск)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/55337/8cc4255b-8c26-4cab-b435-969580addc03.jpg",
+          "product_id": 49275,
+          "vendor_id": 1233,
+          "id": 55337
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/49275-file-treski-sv-mor-0-5-kg-murmansk",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ5Mjc1",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5816,
+          "name": "РЫБА",
+          "full_name": "РЫБА",
+          "parent_id": 5707,
+          "updated_at": "2016-10-05T10:44:55.499+03:00",
+          "position": 7,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 57
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-49275",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 35000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 35000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "0.5"
+      },
+      "quantity": 1,
+      "weight": "0.5",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29104",
+      "errors": {}
+    },
+    {
+      "id": 29105,
+      "good": {
+        "id": 48657,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjU3",
+        "updated_at": "2016-10-05T18:57:56.362+03:00",
+        "created_at": "2016-04-12T17:36:47.992+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Сметана домашняя (0,5 кг, Россия)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54579/5850bb13-99c4-4ab9-a48b-30216e13acf7.jpg",
+          "product_id": 48657,
+          "vendor_id": 1233,
+          "id": 54579
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48657-smetana-domashnyaya-0-5-kg-rossiya",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjU3",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5986,
+          "name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-07T18:10:34.766+03:00",
+          "position": 6,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 87
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48657",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 40000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 40000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "0.5"
+      },
+      "quantity": 1,
+      "weight": "0.5",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29105",
+      "errors": {}
+    },
+    {
+      "id": 29106,
+      "good": {
+        "id": 70248,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjQ4",
+        "updated_at": "2016-10-07T17:46:19.548+03:00",
+        "created_at": "2016-10-05T20:17:00.005+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Биойогурт с малиной, 3,8%, пэт/бутылка (275 мл, \"Аннушкина ферма\", Мос. обл.)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/82256/affbd253-2d6d-412c-a8a4-b6a794f67c6d.png",
+          "product_id": 70248,
+          "vendor_id": 1233,
+          "id": 82256
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/70248-bioyogurt-s-malinoy-3-8-pet-butylka-275-ml-annushkina-ferma-mos-obl",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjQ4",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 8665,
+          "name": "Аннушкина ферма",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ/Аннушкина ферма",
+          "parent_id": 5986,
+          "updated_at": "2016-10-07T18:10:34.508+03:00",
+          "position": 99,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 50
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<div>Натуральный йогурт, приготовлен из цельного молока с добавлением ягод. </div><div>\"Аннушкина ферма\" расположена под Можайском, в экологически чистом районе Московской области. Ферма является семейным делом и, в отличие от крупного коммерческого хозяйства, о каждом животном здесь действительно хорошо заботятся, не используя при этом минеральные удобрения, антибиотики, гормоны и другие химические вещества в качестве добавок к корму. Скот питается исключительно органическими продуктами. Просторные помещения, обилие свежего воздуха и натуральные корма способствуют здоровому росту. Летом животные вволю пасутся на лугах, расположенных недалеко от Можайского водохранилища, а на зиму их переводят в хлев, где кормят душистым сеном из разнотравья, зерном и сочными корнеплодами.<br></div>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-70248",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 8500,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 8500,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29106",
+      "errors": {}
+    },
+    {
+      "id": 29107,
+      "good": {
+        "id": 70239,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjM5",
+        "updated_at": "2016-10-07T17:37:08.050+03:00",
+        "created_at": "2016-10-05T19:49:34.273+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Ряженка, 3,6%, ст. банка (520 г, \"Аннушкина ферма\", Мос. обл.)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/82245/d0ffdda6-cd53-49ea-a9ba-017d7f55eb71.png",
+          "product_id": 70239,
+          "vendor_id": 1233,
+          "id": 82245
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/70239-ryazhenka-3-6-st-banka-520-g-annushkina-ferma-mos-obl",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjM5",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 8665,
+          "name": "Аннушкина ферма",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ/Аннушкина ферма",
+          "parent_id": 5986,
+          "updated_at": "2016-10-07T18:10:34.508+03:00",
+          "position": 99,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 50
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Ряженка приготовлена из цельного молока. Молоко томят 12 часов, затем добавляют сметану в качестве закваски, все перемешивают и отправляют в термостат на 5-6 часов. В результате продукт получается с карамельной сладостью топленого молока.</p><div>\"Аннушкина ферма\" расположена под Можайском, в экологически чистом районе Московской области. Ферма является семейным делом и, в отличие от крупного коммерческого хозяйства, о каждом животном здесь действительно хорошо заботятся, не используя при этом минеральные удобрения, антибиотики, гормоны и другие химические вещества в качестве добавок к корму. Скот питается исключительно органическими продуктами. Просторные помещения, обилие свежего воздуха и натуральные корма способствуют здоровому росту. Летом животные вволю пасутся на лугах, расположенных недалеко от Можайского водохранилища, а на зиму их переводят в хлев, где кормят душистым сеном из разнотравья, зерном и сочными корнеплодами.<br></div><p><br></p>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-70239",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 11000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 11000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29107",
+      "errors": {}
+    },
+    {
+      "id": 29108,
+      "good": {
+        "id": 48664,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjY0",
+        "updated_at": "2016-10-05T18:56:11.654+03:00",
+        "created_at": "2016-04-12T17:54:01.500+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Творог домашний, 9% (0,5 кг, Россия)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54584/da0b5bda-7641-4063-bdd9-77a97278d315.jpg",
+          "product_id": 48664,
+          "vendor_id": 1233,
+          "id": 54584
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48664-tvorog-domashniy-9-0-5-kg-rossiya",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjY0",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5986,
+          "name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-07T18:10:34.766+03:00",
+          "position": 6,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 87
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48664",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 19900,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 19900,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29108",
+      "errors": {}
+    },
+    {
+      "id": 29109,
+      "good": {
+        "id": 70264,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjY0",
+        "updated_at": "2016-10-07T17:46:46.196+03:00",
+        "created_at": "2016-10-05T20:33:07.559+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Детский творожок (250 г, \"Аннушкина ферма\", Мос. обл.)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/82273/8b00f5a6-a21c-4ecd-9a2d-1d9409c675ca.png",
+          "product_id": 70264,
+          "vendor_id": 1233,
+          "id": 82273
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/70264-detskiy-tvorozhok-250-g-annushkina-ferma-mos-obl",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzcwMjY0",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 8665,
+          "name": "Аннушкина ферма",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ/Аннушкина ферма",
+          "parent_id": 5986,
+          "updated_at": "2016-10-07T18:10:34.508+03:00",
+          "position": 99,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 50
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Натуральный творог.</p><div>\"Аннушкина ферма\" расположена под Можайском, в экологически чистом районе Московской области. Ферма является семейным делом и, в отличие от крупного коммерческого хозяйства, о каждом животном здесь действительно хорошо заботятся, не используя при этом минеральные удобрения, антибиотики, гормоны и другие химические вещества в качестве добавок к корму. Скот питается исключительно органическими продуктами. Просторные помещения, обилие свежего воздуха и натуральные корма способствуют здоровому росту. Летом животные вволю пасутся на лугах, расположенных недалеко от Можайского водохранилища, а на зиму их переводят в хлев, где кормят душистым сеном из разнотравья, зерном и сочными корнеплодами.</div>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-70264",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 13500,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 13500,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29109",
+      "errors": {}
+    },
+    {
+      "id": 29110,
+      "good": {
+        "id": 48648,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjQ4",
+        "updated_at": "2016-10-05T18:58:28.668+03:00",
+        "created_at": "2016-04-12T17:17:00.048+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Масло сливочное домашнее (0,5 кг, Россия)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/54574/868a2fb2-3c40-4503-8e5e-55bdf0b08fb3.jpg",
+          "product_id": 48648,
+          "vendor_id": 1233,
+          "id": 54574
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48648-maslo-slivochnoe-domashnee-0-5-kg-rossiya",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4NjQ4",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 5986,
+          "name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "full_name": "МОЛОЧНЫЕ ПРОДУКТЫ",
+          "parent_id": 5707,
+          "updated_at": "2016-10-07T18:10:34.766+03:00",
+          "position": 6,
+          "has_children": true,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 87
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48648",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 40000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 40000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "0.5",
+        "cartCount": 1,
+        "cartWeight": "0.5"
+      },
+      "quantity": 1,
+      "weight": "0.5",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29110",
+      "errors": {}
+    },
+    {
+      "id": 29111,
+      "good": {
+        "id": 48896,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4ODk2",
+        "updated_at": "2016-10-09T08:05:38.261+03:00",
+        "created_at": "2016-04-13T18:19:28.329+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Бедро индейки, филе (1 кг, \"Честная ферма\", Рязань)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/55240/f2b0e0e0-e7ba-4f42-9c91-1710837af2fe.jpg",
+          "product_id": 48896,
+          "vendor_id": 1233,
+          "id": 55240
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48896-bedro-indeyki-file-1-kg-chestnaya-ferma-ryazan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4ODk2",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6087,
+          "name": "Индейка",
+          "full_name": "ПТИЦА/Индейка",
+          "parent_id": 5709,
+          "updated_at": "2016-10-09T08:14:06.991+03:00",
+          "position": 68,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 6
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Филе бедра нашей фермерской индейки – диетический продукт. Идеально подходят для жарки, запекания и как ингредиент для салатов и других сложных блюд.</p><p>Индейка выращена на вольном выпасе в нашем собственном хозяйстве «Честная ферма» в экологически чистом Спасском районе Рязанской области в деревне Выжелес.</p><p>Для прокорма птицы использовались только натуральные корма – собственная травка, собственное сено, зерно и никакой химии! Наши птицы получают хороший уход, они здоровы, поэтому нам не нужно использовать антибиотики, как это делают на крупных промышленных птицефабриках.</p><p>В течение суток после забоя индейка попадает на склад в Москву в охлажденном виде, где в тот же день происходит разделка тушек и отправка продукта по нашим клиентам. Упаковка - компактный пластиковый контейнер, который очень удобен для хранения и домашней заморозки.</p>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48896",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 69000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 69000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29111",
+      "errors": {}
+    },
+    {
+      "id": 29112,
+      "good": {
+        "id": 47646,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ3NjQ2",
+        "updated_at": "2016-10-09T08:11:46.784+03:00",
+        "created_at": "2016-03-25T16:08:30.789+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Яйцо куриное (10 шт., \"Честная ферма\", Рязань)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/51808/996ffe2f-52e3-45d3-89a8-4d95b78254c5.jpg",
+          "product_id": 47646,
+          "vendor_id": 1233,
+          "id": 51808
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/47646-yaytso-kurinoe-10-sht-chestnaya-ferma-ryazan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ3NjQ2",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6166,
+          "name": "Яйца",
+          "full_name": "ПТИЦА/Яйца",
+          "parent_id": 5709,
+          "updated_at": "2016-10-09T08:14:13.705+03:00",
+          "position": 81,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 5
+        },
+        "quantity": null,
+        "count": 0,
+        "description": null,
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-47646",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 13000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 13000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": null,
+        "cartCount": 1,
+        "cartWeight": null
+      },
+      "quantity": 1,
+      "weight": null,
+      "count": 1,
+      "selling_by_weight": false,
+      "destroy_path": "/cart/items/29112",
+      "errors": {}
+    },
+    {
+      "id": 29113,
+      "good": {
+        "id": 48023,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4MDIz",
+        "updated_at": "2016-10-09T08:09:01.758+03:00",
+        "created_at": "2016-03-31T19:37:05.091+03:00",
+        "article": null,
+        "type": "Product",
+        "title": "Куры суповые (1 кг, \"Честная ферма\", Рязань)",
+        "image": {
+          "url": "http://assets.kiiiosk.ru/uploads/shop/1233/uploads/product_image/image/53153/00086669-dab6-44ba-8788-ad4704ab7575.jpg",
+          "product_id": 48023,
+          "vendor_id": 1233,
+          "id": 53153
+        },
+        "custom_attributes": {},
+        "default_url": "http://chestnayaferma.ru/products/48023-kury-supovye-1-kg-chestnaya-ferma-ryazan",
+        "add_to_cart_url": "http://chestnayaferma.ru/cart/items?cart_item%5Bgood_id%5D=Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQ4MDIz",
+        "quantity_unit": {
+          "id": "pcs",
+          "short": "шт."
+        },
+        "category": {
+          "id": 6086,
+          "name": "Курица",
+          "full_name": "ПТИЦА/Курица",
+          "parent_id": 5709,
+          "updated_at": "2016-10-09T08:14:06.106+03:00",
+          "position": 66,
+          "has_children": false,
+          "is_root": {
+            "id": 5707,
+            "vendor_id": 1233,
+            "created_at": "2016-03-25T15:40:27.725+03:00",
+            "updated_at": "2016-10-09T19:30:41.968+03:00",
+            "position": 2796378,
+            "ancestry": null,
+            "products_count": 0,
+            "published_products_count": 0,
+            "ms_uuid": null,
+            "stock_synced_at": null,
+            "stock_dump": null,
+            "externalcode": null,
+            "deleted_at": null,
+            "vk_album_id": null,
+            "active_products_count": 0,
+            "deep_products_count": 1379,
+            "deep_published_products_count": 1211,
+            "deep_active_products_count": 1266,
+            "stock_description": null,
+            "meta_title": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "h1": null,
+            "image": {
+              "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png"
+            },
+            "cached_default_slug": "kornevaya-kategoriya",
+            "vk_synced_at": null,
+            "stock_title": null,
+            "show_children_products": true,
+            "custom_title_translations": {
+              "ru": "Корневая категория"
+            },
+            "description_translations": {
+              "ru": null
+            },
+            "bottom_text_translations": null,
+            "cached_title_translations": {
+              "ru": "Корневая категория"
+            }
+          },
+          "products_count": 8
+        },
+        "quantity": null,
+        "count": 0,
+        "description": "<p>Курица, идеально подходящая для варки супов и бульонов. С крепкими костями и мускулатурой и желтым подкожным жирком, который обеспечивает тот самый золотистый цвет бульону. Варить рекомендуется 1,5 часа с луковицей и морковью.</p><div>Курица выращена на вольном выпасе в нашем собственном хозяйстве «Честная ферма» в экологически чистом Спасском районе Рязанской области в деревне Выжелес.</div><span class=\"im\"><p>Для прокорма птицы мы используем только натуральные корма – собственная трава, собственное сено, зерно и никакой химии! Наши птицы получают хороший уход, они здоровы, поэтому нам не нужно использовать антибиотики, как это делают на крупных промышленных птицефабриках.</p><p>В течение суток после забоя куры попадают на склад в Москву в охлажденном виде, откуда в тот же день развозятся по нашим клиентам. Упаковка – компактный пластиковый контейнер, который очень удобен для хранения и домашней заморозки.</p></span>",
+        "stock_synced_at": null,
+        "max_orderable_quantity": 100,
+        "has_ordering_goods": true,
+        "sku": "product-48023",
+        "ms_consignment_uuid": null,
+        "ms_uuid": null,
+        "is_archived": false,
+        "is_sale": false,
+        "actual_price": {
+          "cents": 45000,
+          "currency_iso_code": "RUB"
+        },
+        "price": {
+          "cents": 45000,
+          "currency_iso_code": "RUB"
+        },
+        "weight_of_price": "1.0",
+        "cartCount": 1,
+        "cartWeight": "1.0"
+      },
+      "quantity": 1,
+      "weight": "1.0",
+      "count": 1,
+      "selling_by_weight": true,
+      "destroy_path": "/cart/items/29113",
+      "errors": {}
+    }
+  ],
+}

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+<title>Kiosk</title>
+<meta content='' name='description'>
+<meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
+<link href='stylesheets/local.css' rel='stylesheet'>
+<link href='assets/favicon/favicon.ico' rel='shortcut icon'>
+<link href='assets/touch-icon-57.png' rel='apple-touch-icon' sizes='57x57'>
+<link href='assets/touch-icon-72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='assets/touch-icon-76.png' rel='apple-touch-icon' sizes='76x76'>
+<link href='assets/touch-icon-114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='assets/touch-icon-120.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='assets/touch-icon-144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='assets/touch-icon-152.png' rel='apple-touch-icon' sizes='152x152'>
+<!-- Windows 8 Tiles -->
+<meta content='assets/touch-icon-144.png' name='msapplication-TileImage'>
+<meta content='#38b0aa' name='msapplication-TileColor'>
+<meta content='The MatriXFiles' name='application-name'>
+<!-- Internet Explorer 11 Tiles -->
+<meta content='assets/tile-70.png' name='msapplication-square70x70logo'>
+<meta content='assets/tile-150.png' name='msapplication-square150x150logo'>
+<meta content='assets/tile-310.png' name='msapplication-wide310x150logo'>
+<meta content='assets/tile-310.png' name='msapplication-square310x310logo'>
+<!-- For iPad landscape splash screen -->
+<link href='assets/apple-splash-screen-1024x748.png' rel='apple-touch-startup-image' sizes='1024x748'>
+<!-- For iPad portriat splash screen -->
+<link href='assets/apple-splash-screen-768x1004.png' rel='apple-touch-startup-image' sizes='768x1004'>
+<!-- For iPhone, iPod high resolution portriat splash screen -->
+<link href='assets/apple-splash-screen-640x960.png' rel='apple-touch-startup-image' sizes='640x960'>
+<!-- For iPhone, iPod standard resolution portriat splash screen -->
+<link href='assets/apple-splash-screen-320x480.png' rel='apple-touch-startup-image' sizes='320x480'>
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div id='wrapper'>
+      <!-- Navbar -->
+<nav class='navbar-default navbar-static-side' role='navigation'>
+  <div class='sidebar-collapse'>
+    <ul class='nav' id='side-menu'>
+      <li class='nav-header'>
+        <div class='dropdown profile-element'>
+          <span>
+            <img class='img-circle' src='assets/profile_small.jpg' alt='image'>
+          </span>
+          <a class='dropdown-toggle' href='#' data-toggle='dropdown'>
+            <span class='clear'>
+              <span class='block m-t-xs'>
+                <strong class='font-bold'>David Williams</strong>
+              </span>
+              <span class='block text-muted text-xs'>Art Director <b class="caret"></b></span>
+            </span>
+          </a>
+          <ul class='animated dropdown-menu fadeInRight m-t-xs'>
+            <li>
+              <a href='profile.html'>Profile</a>
+            </li>
+            <li>
+              <a href='contacts.html'>Contacts</a>
+            </li>
+            <li>
+              <a href='mailbox.html'>Mailbox</a>
+            </li>
+            <li class='divider'></li>
+            <li>
+              <a href='login.html'>Logout</a>
+            </li>
+          </ul>
+        </div>
+        <div class='logo-element'>IN+</div>
+      </li>
+      <li>
+        <a href='index.html'><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='index.html'>Dashboard v.1</a>
+          </li>
+          <li>
+            <a href='dashboard_2.html'>Dashboard v.2</a>
+          </li>
+          <li>
+            <a href='dashboard_3.html'>Dashboard v.3</a>
+          </li>
+          <li>
+            <a href='dashboard_4.html'>Dashboard v.4</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='layouts.html'><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='graph_flot.html'>Flot Charts</a>
+          </li>
+          <li>
+            <a href='graph_morris.html'>Morris.js Charts</a>
+          </li>
+          <li>
+            <a href='graph_rickshaw.html'>Rickshaw Charts</a>
+          </li>
+          <li>
+            <a href='graph_chartjs.html'>Chart.js</a>
+          </li>
+          <li>
+            <a href='graph_peity.html'>Peity Charts</a>
+          </li>
+          <li>
+            <a href='graph_sparkline.html'>Sparkline Charts</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='mailbox.html'><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='mailbox.html'>Inbox</a>
+          </li>
+          <li>
+            <a href='mail_detail.html'>Email view</a>
+          </li>
+          <li>
+            <a href='mail_compose.html'>Compose email</a>
+          </li>
+          <li>
+            <a href='email_template.html'>Email templates</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='widgets.html'><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='form_basic.html'>Basic form</a>
+          </li>
+          <li>
+            <a href='form_advanced.html'>Advanced Plugins</a>
+          </li>
+          <li>
+            <a href='form_wizard.html'>Wizard</a>
+          </li>
+          <li>
+            <a href='form_file_upload.html'>File Upload</a>
+          </li>
+          <li>
+            <a href='form_editors.html'>Text Editor</a>
+          </li>
+        </ul>
+      </li>
+      <li class='active'>
+        <a href='#'><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='contacts.html'>Contacts</a>
+          </li>
+          <li>
+            <a href='profile.html'>Profile</a>
+          </li>
+          <li>
+            <a href='projects.html'>Projects</a>
+          </li>
+          <li>
+            <a href='project_detail.html'>Project detail</a>
+          </li>
+          <li>
+            <a href='file_manager.html'>File manager</a>
+          </li>
+          <li>
+            <a href='calendar.html'>Calendar</a>
+          </li>
+          <li class='active'>
+            <a href='faq.html'>FAQ</a>
+          </li>
+          <li>
+            <a href='timeline.html'>Timeline</a>
+          </li>
+          <li>
+            <a href='pin_board.html'>Pin board</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='search_results.html'>Search results</a>
+          </li>
+          <li>
+            <a href='lockscreen.html'>Lockscreen</a>
+          </li>
+          <li>
+            <a href='invoice.html'>Invoice</a>
+          </li>
+          <li>
+            <a href='login.html'>Login</a>
+          </li>
+          <li>
+            <a href='login_two_columns.html'>Login v.2</a>
+          </li>
+          <li>
+            <a href='register.html'>Register</a>
+          </li>
+          <li>
+            <a href='404.html'>404 Page</a>
+          </li>
+          <li>
+            <a href='500.html'>500 Page</a>
+          </li>
+          <li>
+            <a href='empty_page.html'>Empty page</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='toastr_notifications.html'>Notification</a>
+          </li>
+          <li>
+            <a href='nestable_list.html'>Nestable list</a>
+          </li>
+          <li>
+            <a href='timeline_2.html'>Timeline v.2</a>
+          </li>
+          <li>
+            <a href='forum_main.html'>Forum view</a>
+          </li>
+          <li>
+            <a href='google_maps.html'>Google maps</a>
+          </li>
+          <li>
+            <a href='code_editor.html'>Code editor</a>
+          </li>
+          <li>
+            <a href='modal_window.html'>Modal window</a>
+          </li>
+          <li>
+            <a href='validation.html'>Validation</a>
+          </li>
+          <li>
+            <a href='tree_view.html'>Tree view</a>
+          </li>
+          <li>
+            <a href='chat_view.html'>Chat view</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='typography.html'>Typography</a>
+          </li>
+          <li>
+            <a href='icons.html'>Icons</a>
+          </li>
+          <li>
+            <a href='draggable_panels.html'>Draggable Panels</a>
+          </li>
+          <li>
+            <a href='buttons.html'>Buttons</a>
+          </li>
+          <li>
+            <a href='video.html'>Video</a>
+          </li>
+          <li>
+            <a href='tabs_panels.html'>Tabs & Panels</a>
+          </li>
+          <li>
+            <a href='notifications.html'>Notifications & Tooltips</a>
+          </li>
+          <li>
+            <a href='badges_labels.html'>Badges, Labels, Progress</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='grid_options.html'><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='table_basic.html'>Static Tables</a>
+          </li>
+          <li>
+            <a href='table_data_tables.html'>Data Tables</a>
+          </li>
+          <li>
+            <a href='jq_grid.html'>jqGrid</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='basic_gallery.html'>Lightbox Gallery</a>
+          </li>
+          <li>
+            <a href='carousel.html'>Bootstrap Carusela</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#'><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
+        <ul class='nav nav-second-level'>
+          <li>
+            <a href='#'>Third Level <span class="fa arrow"></span></a>
+            <ul class='nav nav-third-level'>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+              <li>
+                <a href='#'>Third Level Item</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+          <li>
+            <a href='#'>Second Level Item</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='css_animation.html'><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+      </li>
+      <li class='landing_link'>
+        <a href='Landing_page/index.html' target='_blank'><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+      </li>
+      <li class='special_link'>
+        <a href='package.html'><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+      <!-- Page Wrapper -->
+      <div class='gray-bg' id='page-wrapper'>
+        <div class='page-heading row wrapper'>
+          <div class='col-sm-7'>
+            <h1 class='page-title'>
+              Редактирование (товар)
+            </h1>
+            <div class='m-t-sm'><a class='inline m-r-xs m-t-xs' href='#'>
+                <span class='inline label label-primary'>ссылка на товар на сайте</span>
+              </a><span class='inline label label-warning m-r-xs m-t-xs'>МС</span>
+            </div>
+          </div>
+          <div class='col-sm-5'>
+            <div class='title-action'>
+              <label class='switcher'>
+                <input class='switcher__input' id='product-visibility' type='checkbox' checked='true'>
+                <span class='switcher__box'>
+                  <span class='switcher__knob'></span>
+                </span>
+              </label>
+              <label class='font-normal m-b-none m-l-xs' for='product-visibility'>Товар на сайте</label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-lg-12'>
+            <div class='wrapper wrapper-content'>
+              <div class='alert alert-danger'><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Невозможно опубликовать товар. Проверьте поля, выделенные красным</div>
+              <div class='ibox'>
+                <div class='ibox-title'>
+                  <h3>Фотографии</h3>
+                </div>
+                <div class='ibox-content'>
+                  <div data-react-class='ProductImagesContainer' data-react-props='{"productId":20448,"images":[{"url":"http://assets.kiiiosk.ru/uploads/product_image/image/6485/702f00c4-6c77-4bdb-b450-8f9176fc8de4.png","id":6485},{"url":"http://assets.kiiiosk.ru/uploads/product_image/image/8649/148bc1fd-1782-43b3-8650-8e805b529193.jpg","id":8649}]}'></div>
+                </div>
+              </div>
+              <div class='ibox'>
+                <div class='ibox-title'>
+                  <h3>Товар</h3>
+                </div>
+                <div class='ibox-content'>
+                  <div class='form-group has-error'>
+                    <label class='control-label'>
+                      Название
+                      <span class='tip-trigger' data-container='body' data-toggle='popover' data-placement='right' data-content='Придумайте название'>
+                        <i class='fa fa-question-circle'></i>
+                      </span>
+                    </label>
+                    <textarea class='form-control' placeholder='Например, велосипед городской'></textarea>
+                  </div>
+                  <div class='row'>
+                    <div class='col-lg-4 col-md-6'>
+                      <div class='form-group'>
+                        <label class='control-label'>
+                          Цена
+                          <span class='tip-trigger' data-container='body' data-toggle='popover' data-placement='right' data-content='Цена указывается в рублях. Вы можете поменять валюту в настройках'>
+                            <i class='fa fa-question-circle'></i>
+                          </span>
+                        </label>
+                        <input class='form-control' type='text'>
+                      </div>
+                    </div>
+                    <div class='col-lg-4 col-md-6'>
+                      <div class='form-group'>
+                        <label class='control-label'>Цена распродажи</label>
+                        <input class='form-control' type='text'>
+                      </div>
+                    </div>
+                    <div class='col-lg-4 col-md-12'>
+                      <div class='form-group'>
+                        <label class='hidden-md hidden-sm hidden-xs'>&nbsp;</label>
+                        <div>
+                          <label class='switcher'>
+                            <input class='switcher__input' id='sale' type='checkbox'>
+                            <span class='switcher__box'>
+                              <span class='switcher__knob'></span>
+                            </span>
+                          </label>
+                          <label class='font-normal m-b-none m-l-xs' for='sale'>Включить распродажу</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <label class='control-label'>Категория</label>
+                    <div data-react-class='CategoryTreeSelector'></div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-lg-9 col-md-8'>
+                      <div class='form-group'>
+                        <label class='control-label'>Описание</label>
+                        <textarea class='form-control' required='required' autosize='true'></textarea>
+                      </div>
+                    </div>
+                    <div class='col-lg-3 col-md-4'>
+                      <div class='form-group'>
+                        <label class='control-label'>Артикул</label>
+                        <input class='form-control' type='text' value='74A3317' disabled>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='ibox'>
+                <div class='ibox-title'>
+                  <h3>Характеристики</h3>
+                </div>
+                <div class='ibox-content'>
+                  <div class='form-horizontal'>
+                    <div class='form-group m-b'>
+                      <label class='col-lg-3 col-md-4 col-sm-5 control-label'>
+                        Наличие манометра
+                        <span class='tip-trigger' data-container='body' data-toggle='popover' data-placement='right' data-content='Тип: строковый'>
+                          <i class='fa fa-question-circle'></i>
+                        </span>
+                      </label>
+                      <div class='col-lg-9 col-md-8 col-sm-7'>
+                        <input class='form-control' type='text'>
+                      </div>
+                    </div>
+                    <div class='form-group m-b'>
+                      <label class='col-lg-3 col-md-4 col-sm-5 control-label'>
+                        Скорость
+                        <span class='tip-trigger' data-container='body' data-toggle='popover' data-placement='right' data-content='Тип: строковый'>
+                          <i class='fa fa-question-circle'></i>
+                        </span>
+                      </label>
+                      <div class='col-lg-9 col-md-8 col-sm-7'>
+                        <input class='form-control' type='text'>
+                      </div>
+                    </div>
+                    <div class='form-group m-b'>
+                      <label class='col-lg-3 col-md-4 col-sm-5 control-label'>
+                        Высота рамы
+                        <span class='tip-trigger' data-container='body' data-toggle='popover' data-placement='right' data-content='Тип: строковый'>
+                          <i class='fa fa-question-circle'></i>
+                        </span>
+                      </label>
+                      <div class='col-lg-9 col-md-8 col-sm-7'>
+                        <input class='form-control' type='text'>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='col-lg-9 col-lg-offset-3 col-md-8 col-md-offset-4'>
+                        <button class='btn btn-default btn-outline btn-rounded btn-sm m-r-sm m-t-xs'>Показать все 45 характеристик</button>
+                        <button class='active btn btn-primary btn-rounded btn-sm m-t-xs'><i class="fa fa-plus"></i> Создать характеристику</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='p-b-xxs p-t-xxs'>
+                    <div class='hr-line-dashed'></div>
+                    <div class='row'>
+                      <div class='col-sm-11 col-xs-10'>
+                        <div class='row'>
+                          <div class='col-sm-4'>
+                            <div class='form-group m-b'>
+                              <label class='control-label sr-only'>Название</label>
+                              <input class='form-control' type='text' placeholder='Название'>
+                            </div>
+                          </div>
+                          <div class='col-sm-4'>
+                            <div class='form-group m-b'>
+                              <label class='control-label sr-only'>Тип</label>
+                              <select class='form-control' ks-select2>
+                                <option value='Тип'>Тип</option>
+                                <option value='Строковый'>Строковый</option>
+                                <option value='Числовой'>Числовой</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class='col-sm-4'>
+                            <div class='form-group m-b'>
+                              <label class='control-label sr-only'>Значение</label>
+                              <input class='form-control' type='text' placeholder='Значение'>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-sm-1 col-xs-2 p-l-none'>
+                        <button class='btn btn-circle btn-default btn-sm' type='button'>
+                          <i class='fa fa-times'></i>
+                        </button>
+                      </div>
+                    </div>
+                    <button class='btn btn-outline btn-primary btn-rounded btn-sm m-r-sm'>Создать</button>
+                  </div>
+                </div>
+              </div>
+              <div class='ibox'>
+                <div class='ibox-title'>
+                  <h3>Варианты товара (размеры, цвета и т.п.)</h3>
+                  <button class='btn btn-circle btn-default btn-outline m-l-xs' data-toggle='tooltip' title='Расширенный режим'>
+                    <i class='fa fa-ellipsis-h'></i>
+                  </button>
+                </div>
+                <div class='ibox-content'>
+                  <div class='m-b row'>
+                    <div class='col-md-11 col-xs-10'>
+                      <div class='row'>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <label class='control-label sr-only'>Другое</label><select class='form-control m-r-lg m-t-sm' placeholder='Другое' ks-select2>
+                              <option value='Другое'>Другое</option>
+                              <option value='Материал'>Материал</option>
+                              <option value='Артикул'>Артикул</option>
+                            </select></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-11 col-xs-10'>
+                      <div class='row'>
+                        <div class='col-sm-4 hidden-xs'>
+                          <label class='control-label'>&nbsp;</label>
+                        </div>
+                        <div class='col-sm-4 hidden-xs'>
+                          <label class='control-label'>Количество</label>
+                        </div>
+                        <div class='col-sm-4 hidden-xs'>
+                          <label class='control-label'>Артикул</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-11 col-xs-10'>
+                      <div class='row'>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <input class='form-control' type='text' placeholder='Например, XL'>
+                          </div>
+                        </div>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <label class='control-label hidden-lg hidden-md hidden-sm'>Количество</label>
+                            <input class='form-control' type='text' placeholder='Например, 5'>
+                          </div>
+                        </div>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <label class='control-label hidden-lg hidden-md hidden-sm'>Артикул</label>
+                            <input class='form-control' type='text' placeholder='Например, M001-11-00'>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-11 col-xs-10'>
+                      <div class='hr-line-dashed m-b m-t-none'></div>
+                      <div class='row'>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <input class='form-control' type='text' placeholder='Например, XL'>
+                          </div>
+                        </div>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <label class='control-label hidden-lg hidden-md hidden-sm'>Количество</label>
+                            <input class='form-control' type='text' placeholder='Например, 5'>
+                          </div>
+                        </div>
+                        <div class='col-sm-4'>
+                          <div class='form-group m-b'>
+                            <label class='control-label hidden-lg hidden-md hidden-sm'>Артикул</label>
+                            <input class='form-control' type='text' placeholder='Например, M001-11-00'>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='col-md-1 col-xs-2 m-b m-t-md p-l-none'>
+                      <button class='btn btn-circle btn-default btn-sm' type='button'>
+                        <i class='fa fa-times'></i>
+                      </button>
+                    </div>
+                  </div>
+                  <button class='btn btn-primary btn-rounded btn-sm m-r-sm m-t-xs'><i class="fa fa-plus"></i> Добавить ещё вариант</button>
+                  <button class='active btn btn-default btn-outline btn-rounded btn-sm m-r-sm m-t-xs'>Показать все архивные варианты</button>
+                  <div class='m-t-md p-t-md'>
+                    <div class='type-list'>
+                      <div class='project-list table-responsive'>
+                        <table class='m-b-none table table-page'>
+                          <tbody>
+                            <tr>
+                              <td class='project-number'>
+                                <span class='badge badge-info badge-number'>1</span>
+                              </td>
+                              <td class='project-title'>
+                                <ul>
+                                  <li>
+                                    Артикул:
+                                    <span class='text-muted'>M001-11-00</span>
+                                  </li>
+                                  <li>
+                                    Размер:
+                                    <span class='text-muted'>XXL</span>
+                                  </li>
+                                  <li>
+                                    Цвет:
+                                    <span class='text-muted'>желтый</span>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>6 шт.</td>
+                            </tr>
+                            <tr>
+                              <td class='project-number'>
+                                <span class='badge badge-info badge-number'>2</span>
+                              </td>
+                              <td class='project-title'>
+                                <ul>
+                                  <li>
+                                    Артикул:
+                                    <span class='text-muted'>M001-12-00</span>
+                                  </li>
+                                  <li>
+                                    Размер:
+                                    <span class='text-muted'>L</span>
+                                  </li>
+                                  <li>
+                                    Цвет:
+                                    <span class='text-muted'>красный</span>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>2 шт.</td>
+                            </tr>
+                            <tr>
+                              <td class='project-number'>
+                                <span class='badge badge-info badge-number'>3</span>
+                              </td>
+                              <td class='project-title'>
+                                <ul>
+                                  <li>
+                                    Артикул:
+                                    <span class='text-muted'>M001-13-00</span>
+                                  </li>
+                                  <li>
+                                    Размер:
+                                    <span class='text-muted'>XL</span>
+                                  </li>
+                                  <li>
+                                    Цвет:
+                                    <span class='text-muted'>красный</span>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>2 шт.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='ibox'>
+                <div class='ibox-title'>
+                  <h3>Похожие товары</h3>
+                </div>
+                <div class='ibox-content p-none'>
+                  <div class='project-list table-responsive'>
+                    <table class='m-b-none table table-hover table-page table-striped'>
+                      <thead>
+                        <tr>
+                          <th>&nbsp;</th>
+                          <th>Название</th>
+                          <th>Цена</th>
+                          <th>Количество</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class='project-image'>
+                            <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                          </td>
+                          <td class='project-title'>
+                            <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                            <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                            <ul class='m-b-none'>
+                              <li>
+                                <small class='text-muted'>MR003-13/RU</small>
+                              </li>
+                            </ul>
+                          </td>
+                          <td>
+                            <s class='text-muted text-nowrap'>5 900 руб.</s>
+                            <div class='m-b-sm m-t-sm'>
+                              <span class='label label-danger label-outline label-price'>4 900 руб.</span>
+                            </div>
+                          </td>
+                          <td>
+                            15 шт.
+                          </td>
+                          <td>
+                            <button class='btn btn-circle btn-default btn-sm' type='button'>
+                              <i class='fa fa-times'></i>
+                            </button>
+                          </td>
+                          <td>
+                            <i class='fa fa-arrows-v handle ui-sortable-handle' data-sort-success-action='nothing' data-sort-url='/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class='project-image'>
+                            <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                          </td>
+                          <td class='project-title'>
+                            <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                            <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                            <ul class='m-b-none'>
+                              <li>
+                                <small class='text-muted'>MR003-13/RU</small>
+                              </li>
+                            </ul>
+                          </td>
+                          <td>
+                            <s class='text-muted text-nowrap'>5 900 руб.</s>
+                            <div class='m-b-sm m-t-sm'>
+                              <span class='label label-danger label-outline label-price'>4 900 руб.</span>
+                            </div>
+                          </td>
+                          <td>
+                            15 шт.
+                          </td>
+                          <td>
+                            <button class='btn btn-circle btn-default btn-sm' type='button'>
+                              <i class='fa fa-times'></i>
+                            </button>
+                          </td>
+                          <td>
+                            <i class='fa fa-arrows-v handle ui-sortable-handle' data-sort-success-action='nothing' data-sort-url='/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class='project-image'>
+                            <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                          </td>
+                          <td class='project-title'>
+                            <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                            <ul class='m-b-none'>
+                              <li>
+                                <small class='text-muted'>MR003-13/RU</small>
+                              </li>
+                            </ul>
+                          </td>
+                          <td>
+                            <s class='text-muted text-nowrap'>5 900 руб.</s>
+                            <div class='m-b-sm m-t-sm'>
+                              <span class='label label-danger label-outline label-price'>4 900 руб.</span>
+                            </div>
+                          </td>
+                          <td>
+                            15 шт.
+                          </td>
+                          <td>
+                            <button class='btn btn-circle btn-default btn-sm' type='button'>
+                              <i class='fa fa-times'></i>
+                            </button>
+                          </td>
+                          <td>
+                            <i class='fa fa-arrows-v handle ui-sortable-handle' data-sort-success-action='nothing' data-sort-url='/operator/products/21769-minikoltso-dabl-iks-s-tsirkonami-zolochenoe-r/sort'></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- .p-m.p-t-xxs.p-b-xxs -->
+                  <!--   .row -->
+                  <!--     .col-md-6.m-t.m-b -->
+                  <!--       %input.form-control{type: 'text', placeholder: 'Выберите товар', ks-select2-ajax: true} -->
+                  <!--     .col-md-6.m-t.m-b -->
+                  <!--       %button.btn.btn-primary.btn-outline.btn-rounded.btn-sm.m-t-xs.m-r-sm Добавить -->
+                  <div class='selectizer'>
+                    <div class='p-m'>
+                      <input class='form-control' type='text' value='Мини' placeholder='Введите товар'>
+                    </div>
+                    <div class='project-list table-responsive'>
+                      <table class='m-b-none table table-hover table-page table-striped'>
+                        <tbody>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <b class='text-nowrap'>7 400 руб.</b>
+                            </td>
+                            <td>
+                              1 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <b class='text-nowrap'>6 900 руб.</b>
+                            </td>
+                            <td>
+                              7 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <s class='text-muted text-nowrap'>3 200 руб.</s>
+                              <div class='m-b-sm m-t-sm'>
+                                <span class='label label-danger label-outline label-price'>2 900 руб.</span>
+                              </div>
+                            </td>
+                            <td>
+                              4 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <b class='text-nowrap'>7 400 руб.</b>
+                            </td>
+                            <td>
+                              1 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <b class='text-nowrap'>6 900 руб.</b>
+                            </td>
+                            <td>
+                              7 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='project-image'>
+                              <img class='img-circle project-image' src='http://thumball.brandydev.ru/unsafe/64x64/http://aydamarket.ru/assets/fallback/product-none-a251416ee0834afc229a1fa6a5932e3b.png' alt='Product none'>
+                            </td>
+                            <td class='project-title'>
+                              <a class='m-r-sm' href='http://wannabe.aydamarket.ru/operator/products/21769/edit'>Миникольцо Дабл Икс с цирконами золоченое р</a>
+                              <i class='fa fa-eye-slash m-r-sm text-danger'></i>
+                              <ul class='m-b-none'>
+                                <li>
+                                  <small class='text-muted'>MR003-13/RU</small>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <s class='text-muted text-nowrap'>3 200 руб.</s>
+                              <div class='m-b-sm m-t-sm'>
+                                <span class='label label-danger label-outline label-price'>2 900 руб.</span>
+                              </div>
+                            </td>
+                            <td>
+                              4 шт.
+                            </td>
+                            <td>
+                              <button class='btn btn-circle btn-primary btn-sm' type='button'>
+                                <i class='fa fa-plus'></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='fixed-bottom-panel ibox'>
+                <div class='ibox-content'>
+                  <div class='clearfix'>
+                    <button class='btn btn-danger btn-outline pull-right'>Удалить товар</button><button class='btn btn-primary m-r-md'>Сохранить</button><span class='m-r-md text-muted text-nowrap'>последее изменение 26 марта 2015</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='footer'>
+  <div class='pull-right'><small class="text-muted">v0.3.32</small></div>
+  <div><strong>Copyright</strong> kiiiosk.com &copy; 2014-2015</div>
+</div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src='scripts/vendor.js'></script>
+    <script src='scripts/client.js'></script>
+  </body>
+</html>

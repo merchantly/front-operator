@@ -1,0 +1,32 @@
+{
+  "name": "KioskOperatorStatic",
+  "version": "1.0.0",
+  "dependencies": {
+    "aviator": "~0.4.2",
+    "blueimp-file-upload": "~9.8.0",
+    "bootstrap-sass-official": "~3.2.0",
+    "compass-mixins": "~1.0.1",
+    "eventEmitter": "~4.2.9",
+    "font-awesome": "~4.3.0",
+    "iCheck": "~1.0.2",
+    "jquery-autosize": "~1.18.13",
+    "jquery-flot": "~0.8.3",
+    "jquery-ui": "~1.11.1",
+    "jstree": "~3.2.1",
+    "metisMenu": "~2.5.0",
+    "pace": "~1.0.2",
+    "select2": "~3.5.2",
+    "slimscroll": "~1.3.3",
+    "switchery": "~0.7.0",
+    "toastr": "~2.1.1",
+    "typeahead.js": "~0.10.5"
+  },
+  "devDependencies": {
+    "modernizr": "~2.8.2",
+    "momentjs": "~2.7.0",
+    "jquery.role": "git://github.com/kossnocorp/role#~1.3.1"
+  },
+  "resolutions": {
+    "jstree": "~3.2.1"
+  }
+}
