@@ -12,7 +12,7 @@ import { scripts as config } from '../config';
 // External dependencies we do not want to rebundle while developing,
 // but include in our dist bundle
 const dependencies = {
-  'react': './node_modules/react/addons',
+  'react': './node_modules/react',
 
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.autosize': './app/bower_components/jquery-autosize/jquery.autosize',

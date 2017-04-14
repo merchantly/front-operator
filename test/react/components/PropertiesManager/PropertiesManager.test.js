@@ -1,10 +1,9 @@
-import React, { addons, findDOMNode } from 'react';
+import React, { findDOMNode } from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import HiddenInput from '../../../../app/scripts/react/components/common/HiddenInput';
 import { PropertiesManager } from '../../../../app/scripts/react/components/PropertiesManager';
-
-const { TestUtils } = addons;
+import TestUtils from 'react-addons-test-utils';
 
 describe('[Component] PropertiesManager', () => {
   it('should render with default props without errors', () => {

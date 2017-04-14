@@ -26,7 +26,6 @@ export default function RequestStatus(props) {
       return assocMap[this.props.status]
         ? <i
             className={classNames('fa', 'fa-lg' || this.props.sizeClass, assocMap[this.props.status])}
-            ref="icon"
           />
         : <div />;
     },

@@ -1,11 +1,12 @@
 /*global describe, it */
-import React, { addons } from 'react';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import CartAutocomplete from '../../../../app/scripts/react/components/CartAutocomplete';
 
 const {
   renderIntoDocument,
-} = addons.TestUtils;
+} = TestUtils;
 
 describe('[Component] CartAutocomplete', () => {
   it('should render without errors', () => {

@@ -1,8 +1,10 @@
 /*global describe, it */
-import React, { addons, findDOMNode } from 'react';
+import React, { findDOMNode } from 'react';
 import SmartSelectColoredDumb from '../../../../app/scripts/react/components/SmartSelectColored/SmartSelectColoredDumb';
 import { expect } from 'chai';
-const { renderIntoDocument } = addons.TestUtils;
+import TestUtils from 'react-addons-test-utils';
+
+const { renderIntoDocument } = TestUtils;
 const testOptions = {
   colored: true,
   disabled: false,

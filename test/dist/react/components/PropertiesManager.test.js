@@ -1,8 +1,10 @@
 /*global describe, it, global */
 import { expect } from 'chai';
-import React, { addons } from 'react';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+
 const component = global.PropertiesManager;
-const { isElement } = addons.TestUtils;
+const { isElement } = TestUtils;
 
 describe('[Component] PropertiesManager', () => {
   it('should exist in global scope', () => {
