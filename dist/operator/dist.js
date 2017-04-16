@@ -852,7 +852,7 @@ require('./globals');
 require('./resources/libs');
 require('./libs/sortable');
 require('./resources/legacy');
-global.AppVersion = '1.0.0';
+global.AppVersion = '1.0.1';
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
 
@@ -1959,6 +1959,10 @@ exports.default = CartAutocomplete;
 },{"./CartAutocompleteRows":20,"lodash":"lodash","react":"react"}],22:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2034,6 +2038,7 @@ CategoriesList.propTypes = {
   onSelectionChange: _react.PropTypes.func.isRequired,
   selectedCategories: _react.PropTypes.array
 };
+exports.default = CategoriesList;
 
 },{"../common/JsTree":55,"react":"react"}],23:[function(require,module,exports){
 'use strict';
@@ -6699,13 +6704,12 @@ exports.default = ICheck;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /*global $ */
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-
-exports.default = JsTree;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -6717,168 +6721,206 @@ var _deepDiff = require('deep-diff');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function JsTree(props) {
-  JsTree.propTypes = {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*global $ */
+
+
+var JsTree = function (_Component) {
+    _inherits(JsTree, _Component);
+
+    function JsTree() {
+        _classCallCheck(this, JsTree);
+
+        return _possibleConstructorReturn(this, (JsTree.__proto__ || Object.getPrototypeOf(JsTree)).apply(this, arguments));
+    }
+
+    _createClass(JsTree, [{
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate(nextProps) {
+            // we cannot compare directly this.props and nextProps because
+            // onChange.bind() !== onChange.bind()
+            return (0, _deepDiff.diff)(this.props.data, nextProps.data) || this.props.edited !== nextProps.edited || (0, _deepDiff.diff)(this.props.selected, nextProps.selected) || false;
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _props = this.props,
+                rawData = _props.data,
+                selected = _props.selected;
+            //TODO install deepmerge when things get more complicated
+
+            var data = _extends({}, rawData, {
+                core: _extends({}, rawData.core, {
+                    check_callback: this.checkCb.bind(this)
+                })
+            });
+            var container = (0, _reactDom.findDOMNode)(this.refs.container);
+
+            if (!(container instanceof HTMLElement)) {
+                return;
+            } else {
+                this.$container = $(container);
+            }
+
+            this.$container.jstree(selected ? this.extendWithSelected(data, selected) : data);
+            this.$container.on('changed.jstree', this.onChange.bind(this));
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps) {
+            var _props2 = this.props,
+                data = _props2.data,
+                selected = _props2.selected,
+                edited = _props2.edited,
+                onNodeRename = _props2.onNodeRename;
+
+
+            if ((0, _deepDiff.diff)(this.props.data, prevProps.data)) {
+                this.$container.jstree(true).settings.core = data.core;
+                this.$container.jstree(true).refresh();
+            }
+
+            if (selected) {
+                this.$container.jstree(true).deselect_all(true);
+                if (selected.length) {
+                    this.$container.jstree(true).select_node(selected, { suppress_event: true });
+                }
+            }
+
+            if (edited && edited !== prevProps.edited) {
+                this.$container.jstree(true).edit(edited, null, this.onNodeEdit.bind(this));
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.$container.off();
+        }
+    }, {
+        key: 'checkCb',
+        value: function checkCb(operation, node) {
+            var _props3 = this.props,
+                canCreate = _props3.canCreate,
+                canDelete = _props3.canDelete,
+                canRename = _props3.canRename;
+
+
+            return canCreate && operation === 'create_node' || canDelete && operation === 'delete_node' || canRename && operation === 'rename_node';
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(ev, data) {
+            if (data.action === 'select_node' || data.action === 'deselect_node') {
+                this.props.onSelectionChange(data.selected.map(function (el) {
+                    return parseInt(el, 10);
+                }));
+            }
+        }
+    }, {
+        key: 'onNodeCreate',
+        value: function onNodeCreate() {
+            var _this2 = this;
+
+            var _props4 = this.props,
+                data = _props4.data,
+                newNodeText = _props4.newNodeText;
+
+            var selected = this.$container.jstree(true).get_top_selected();
+
+            if (!selected.length) {
+                window.alert('Выберите родительскую категорию');
+            } else {
+                var parentID = selected[0];
+                this.$container.jstree(true).create_node(parentID, { text: newNodeText }, 'first', function (node) {
+                    var onNodeCreate = _this2.props.onNodeCreate;
+
+                    if (onNodeCreate) {
+                        onNodeCreate(node);
+                    }
+                });
+            }
+        }
+    }, {
+        key: 'onNodeRename',
+        value: function onNodeRename() {
+            var selected = this.$container.jstree(true).get_top_selected();
+
+            if (!selected.length) {
+                window.alert('Выберите категорию, которую хотите переименовать');
+            } else {
+                var node = selected[selected.length - 1];
+
+                this.$container.jstree(true).edit(node, null, this.onNodeEdit.bind(this));
+            }
+        }
+    }, {
+        key: 'onNodeEdit',
+        value: function onNodeEdit(node, nv, isCancelled) {
+            var onNodeRename = this.props.onNodeRename;
+
+
+            if (onNodeRename) {
+                onNodeRename(node, isCancelled);
+            }
+        }
+    }, {
+        key: 'setSelectedState',
+        value: function setSelectedState(categories, selected) {
+            var _this3 = this;
+
+            return categories.map(function (el) {
+                if (el.children instanceof Array && el.children.length) {
+                    return _extends({}, el, {
+                        state: _extends({}, el.state, {
+                            selected: selected.indexOf(el.id) > -1
+                        }),
+                        children: _this3.setSelectedState(el.children, selected)
+                    });
+                } else {
+                    return _extends({}, el, {
+                        state: _extends({}, el.state, {
+                            selected: selected.indexOf(el.id) > -1
+                        })
+                    });
+                }
+            });
+        }
+    }, {
+        key: 'extendWithSelected',
+        value: function extendWithSelected(data, selected) {
+            return _extends({}, data, {
+                core: _extends({}, data.core, {
+                    data: this.setSelectedState(data.core.data, selected)
+                })
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement('div', { ref: 'container' });
+        }
+    }]);
+
+    return JsTree;
+}(_react.Component);
+
+JsTree.propTypes = {
     canCreate: _react.PropTypes.bool,
     canDelete: _react.PropTypes.bool,
     canRename: _react.PropTypes.bool,
     //TODO elaborate a bit on correct array type description
     data: _react.PropTypes.shape({
-      core: _react.PropTypes.shape({
-        data: _react.PropTypes.array.isRequired
-      }).isRequired
+        core: _react.PropTypes.shape({
+            data: _react.PropTypes.array.isRequired
+        }).isRequired
     }).isRequired,
     onSelectionChange: _react.PropTypes.func.isRequired,
     selected: _react.PropTypes.array
-  };
-
-  return {
-    props: props,
-    $container: void 0,
-
-    shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
-      // we cannot compare directly this.props and nextProps because
-      // onChange.bind() !== onChange.bind()
-      return (0, _deepDiff.diff)(this.props.data, nextProps.data) || this.props.edited !== nextProps.edited || (0, _deepDiff.diff)(this.props.selected, nextProps.selected) || false;
-    },
-    componentDidMount: function componentDidMount() {
-      var _props = this.props,
-          rawData = _props.data,
-          selected = _props.selected;
-      //TODO install deepmerge when things get more complicated
-
-      var data = _extends({}, rawData, {
-        core: _extends({}, rawData.core, {
-          check_callback: this.checkCb.bind(this)
-        })
-      });
-      var container = (0, _reactDom.findDOMNode)(this.refs.container);
-
-      if (!(container instanceof HTMLElement)) {
-        return;
-      } else {
-        this.$container = $(container);
-      }
-
-      this.$container.jstree(selected ? this.extendWithSelected(data, selected) : data);
-      this.$container.on('changed.jstree', this.onChange.bind(this));
-    },
-    componentDidUpdate: function componentDidUpdate(prevProps) {
-      var _props2 = this.props,
-          data = _props2.data,
-          selected = _props2.selected,
-          edited = _props2.edited,
-          onNodeRename = _props2.onNodeRename;
-
-
-      if ((0, _deepDiff.diff)(this.props.data, prevProps.data)) {
-        this.$container.jstree(true).settings.core = data.core;
-        this.$container.jstree(true).refresh();
-      }
-
-      if (selected) {
-        this.$container.jstree(true).deselect_all(true);
-        if (selected.length) {
-          this.$container.jstree(true).select_node(selected, { suppress_event: true });
-        }
-      }
-
-      if (edited && edited !== prevProps.edited) {
-        this.$container.jstree(true).edit(edited, null, this.onNodeEdit.bind(this));
-      }
-    },
-    componentWillUnmount: function componentWillUnmount() {
-      this.$container.off();
-    },
-    checkCb: function checkCb(operation, node) {
-      var _props3 = this.props,
-          canCreate = _props3.canCreate,
-          canDelete = _props3.canDelete,
-          canRename = _props3.canRename;
-
-
-      return canCreate && operation === 'create_node' || canDelete && operation === 'delete_node' || canRename && operation === 'rename_node';
-    },
-    onChange: function onChange(ev, data) {
-      if (data.action === 'select_node' || data.action === 'deselect_node') {
-        this.props.onSelectionChange(data.selected.map(function (el) {
-          return parseInt(el, 10);
-        }));
-      }
-    },
-    onNodeCreate: function onNodeCreate() {
-      var _this = this;
-
-      var _props4 = this.props,
-          data = _props4.data,
-          newNodeText = _props4.newNodeText;
-
-      var selected = this.$container.jstree(true).get_top_selected();
-
-      if (!selected.length) {
-        window.alert('Выберите родительскую категорию');
-      } else {
-        var parentID = selected[0];
-        this.$container.jstree(true).create_node(parentID, { text: newNodeText }, 'first', function (node) {
-          var onNodeCreate = _this.props.onNodeCreate;
-
-          if (onNodeCreate) {
-            onNodeCreate(node);
-          }
-        });
-      }
-    },
-    onNodeRename: function onNodeRename() {
-      var selected = this.$container.jstree(true).get_top_selected();
-
-      if (!selected.length) {
-        window.alert('Выберите категорию, которую хотите переименовать');
-      } else {
-        var node = selected[selected.length - 1];
-
-        this.$container.jstree(true).edit(node, null, this.onNodeEdit.bind(this));
-      }
-    },
-    onNodeEdit: function onNodeEdit(node, nv, isCancelled) {
-      var onNodeRename = this.props.onNodeRename;
-
-
-      if (onNodeRename) {
-        onNodeRename(node, isCancelled);
-      }
-    },
-    setSelectedState: function setSelectedState(categories, selected) {
-      var _this2 = this;
-
-      return categories.map(function (el) {
-        if (el.children instanceof Array && el.children.length) {
-          return _extends({}, el, {
-            state: _extends({}, el.state, {
-              selected: selected.indexOf(el.id) > -1
-            }),
-            children: _this2.setSelectedState(el.children, selected)
-          });
-        } else {
-          return _extends({}, el, {
-            state: _extends({}, el.state, {
-              selected: selected.indexOf(el.id) > -1
-            })
-          });
-        }
-      });
-    },
-    extendWithSelected: function extendWithSelected(data, selected) {
-      return _extends({}, data, {
-        core: _extends({}, data.core, {
-          data: this.setSelectedState(data.core.data, selected)
-        })
-      });
-    },
-    render: function render() {
-      return _react2.default.createElement('div', { ref: 'container' });
-    }
-  };
-}
+};
+exports.default = JsTree;
 
 },{"deep-diff":"deep-diff","react":"react","react-dom":351}],56:[function(require,module,exports){
 'use strict';
