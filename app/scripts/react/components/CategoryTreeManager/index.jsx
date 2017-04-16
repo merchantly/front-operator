@@ -202,7 +202,7 @@ class CategoryTreeManager extends Component {
           </Modal>
         );
       default:
-        return null;
+          return (<noscript></noscript>);
     }
   }
 }

@@ -852,6 +852,7 @@ require('./globals');
 require('./resources/libs');
 require('./libs/sortable');
 require('./resources/legacy');
+global.AppVersion = '1.0.0';
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
 
@@ -2455,7 +2456,7 @@ var CategoryTreeManager = function (_Component) {
             })
           );
         default:
-          return null;
+          return _react2.default.createElement('noscript', null);
       }
     }
   }]);
