@@ -13,7 +13,7 @@ var vendorStyles = [
   src + '/bower_components/iCheck/skins/square/green.css',
   src + '/bower_components/iCheck/skins/flat/blue.css',
   src + '/bower_components/jstree/dist/themes/default/style.css',
-  './node_modules/react-select/dist/default.css'
+  './node_modules/react-select/dist/react-select.min.css'
 ];
 
 var vendorImages = [
