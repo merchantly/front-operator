@@ -3,7 +3,7 @@ import './globals';
 require('./resources/libs');
 require('./libs/sortable');
 require('./resources/legacy');
-global.AppVersion = '1.0.1';
+global.AppVersion = '1.0.2';
 global.Routes = require('./routes/routes');
 global.ApiRoutes = require('./routes/api');
 
@@ -70,7 +70,9 @@ global.SmartSelect = require('./react/components/SmartSelect').default;
 global.SmartSelectColored = require('./react/components/SmartSelectColored').default;
 global.SmartCheckbox = require('./react/components/SmartCheckbox');
 global.CategoryTreeSelector = require('./react/components/CategoryTreeSelector').CategoryTreeSelectorContainer;
-global.CartAutocomplete = require('./react/components/CartAutocomplete').default;
+
+// Сейчас используется компонент в рельсах. Его нужно бы перенести сюда
+// global.CartAutocomplete = require('./react/components/CartAutocomplete').default;
 
 require('./react/components/product/thumb');
 require('./react/components/product/state');

@@ -25,8 +25,6 @@ class CartAutocomplete extends Component {
       },
     } = this;
 
-    console.log('findDOMNode', findDOMNode);
-
     $(findDOMNode(this.refs.input)).select2({
       placeholder: 'Найти товар',
       minimumInputLength: 1,
