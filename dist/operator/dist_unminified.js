@@ -1874,6 +1874,8 @@ var CartAutocomplete = function (_Component) {
           queryOptions = this.props.queryOptions;
 
 
+      console.log('findDOMNode', _reactDom.findDOMNode);
+
       $((0, _reactDom.findDOMNode)(this.refs.input)).select2({
         placeholder: 'Найти товар',
         minimumInputLength: 1,
