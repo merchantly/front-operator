@@ -1833,6 +1833,8 @@ var _CartAutocompleteRows2 = _interopRequireDefault(_CartAutocompleteRows);
 
 var _lodash = require('lodash');
 
+var _reactDom = require('react-dom');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -1872,7 +1874,7 @@ var CartAutocomplete = function (_Component) {
           queryOptions = this.props.queryOptions;
 
 
-      $(this.refs.input.getDOMNode()).select2({
+      $((0, _reactDom.findDOMNode)(this.refs.input)).select2({
         placeholder: 'Найти товар',
         minimumInputLength: 1,
         ajax: {
@@ -1956,7 +1958,7 @@ CartAutocomplete.defaultProps = {
 
 exports.default = CartAutocomplete;
 
-},{"./CartAutocompleteRows":20,"lodash":"lodash","react":"react"}],22:[function(require,module,exports){
+},{"./CartAutocompleteRows":20,"lodash":"lodash","react":"react","react-dom":351}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

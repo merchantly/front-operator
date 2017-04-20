@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import CartAutocompleteRows from './CartAutocompleteRows';
 import { merge } from 'lodash';
+import { findDOMNode } from 'react-dom';
 
 class CartAutocomplete extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class CartAutocomplete extends Component {
       },
     } = this;
 
-    $(this.refs.input.getDOMNode()).select2({
+    $(findDOMNode(this.refs.input)).select2({
       placeholder: 'Найти товар',
       minimumInputLength: 1,
       ajax: {
