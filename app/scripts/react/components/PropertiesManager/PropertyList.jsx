@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import PropertyListItem from './PropertyListItem';
 import PropertyCreateButton from './PropertyCreateButton';
 
-//TODO: i18n
-const EMPTY_PROPERTY_LIST = 'Вы не создали характеристики';
-
 class PropertyList extends Component {
   componentDidUpdate() {
     $(document).trigger('attributes:update');
@@ -16,7 +13,7 @@ class PropertyList extends Component {
     const {
       availableProperties, canCreateListItem, listItems, properties,
       onPropertyCreate, onPropertyDelete, onPropertySwitch, onPropertyUpdate,
-      onPropertyValueCreate, onListItemAdd, onListItemDelete,
+      onPropertyValueCreate, onListItemAdd, onListItemDelete, t
     } = this.props;
     const createButton = (
       <PropertyCreateButton
@@ -42,6 +39,7 @@ class PropertyList extends Component {
                 onPropertyUpdate={onPropertyUpdate.bind(this, item.id)}
                 onListItemDelete={onListItemDelete.bind(this, item.id)}
                 property={this.getPropertyByID(properties, item.propertyID)}
+                t={t}
               />
           )}
           <Row>
@@ -55,7 +53,7 @@ class PropertyList extends Component {
 
     return (
       <div className="p-lg text-center">
-        <p>{EMPTY_PROPERTY_LIST}</p>
+        <p>t('properties_manager.empty_property_list')</p>
         {createButton}
       </div>
     );
@@ -74,6 +72,7 @@ PropertyList.propTypes = {
   onListItemAdd: PropTypes.func.isRequired,
   onListItemDelete: PropTypes.func.isRequired,
   properties: PropTypes.array.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default PropertyList;

@@ -82,7 +82,7 @@ class PropertyListItem extends Component {
     );
   }
   renderName(property, availableProperties, fixed) {
-    const { onPropertyCreate, onPropertySwitch, onPropertyDelete } = this.props;
+    const { onPropertyCreate, onPropertySwitch, onPropertyDelete, t } = this.props;
 
     if (property && fixed) {
       const { name, tooltip } = property;
@@ -104,6 +104,7 @@ class PropertyListItem extends Component {
           onNameCreate={onPropertyCreate}
           onNameChange={onPropertySwitch}
           onNameReset={onPropertyDelete}
+          t={t}
         />
         {this.renderHiddenNameInputs(this.getCurrentProperty())}
       </Col>
@@ -116,6 +117,7 @@ class PropertyListItem extends Component {
           current={this.getCurrentProperty()}
           onChange={this.changeValue}
           onCreate={this.createValue}
+          t={this.props.t}
         />
         {this.renderHiddenValueInputs(this.getCurrentProperty())}
       </Col>
@@ -160,6 +162,7 @@ PropertyListItem.propTypes = {
   onPropertyValueCreate: PropTypes.func.isRequired,
   onListItemDelete: PropTypes.func.isRequired,
   property: PropTypes.object,
+  t: PropTypes.func.isRequired
 };
 
 export default PropertyListItem;

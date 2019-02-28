@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { isMagical, setIfBigger } from '../../services/MagicSequencer';
 import { PROPERTY_DICTIONARY_TYPE, PROPERTY_FILE_TYPE } from '../../constants/propertyTypes';
 import PropertiesManager from './PropertiesManager';
+import provideTranslations from '../common/provideTranslations'
 
 class PropertiesManagerContainer extends Component {
   constructor(props) {
@@ -353,6 +354,21 @@ class PropertiesManagerContainer extends Component {
       });
     }
   }
+  getT() {
+    i18next.createInstance({
+      lng: this.props.locale,
+      fallbackLng: 'ru',
+      interpolation: {
+        prefix: '%{',
+        suffix: '}',
+      },
+      resources: {
+        [locale]: {
+          translation: translations,
+        },
+      },
+    }, () => {});
+  }
   render() {
     const { properties: initialProperties } = this.props;
     const { listItems, properties } = this.state;
@@ -373,6 +389,7 @@ class PropertiesManagerContainer extends Component {
         availableProperties={this.getAvailableProperties(properties, listItems)}
         canCreateListItem={!this.hasEmptyListItem(listItems)}
         removedProperties={this.getRemovedFileProperties(properties, initialProperties)}
+        t={this.props.t}
       />
     );
   }
@@ -387,4 +404,4 @@ PropertiesManagerContainer.defaultProps = {
   properties: [],
 };
 
-export default PropertiesManagerContainer;
+export default provideTranslations(PropertiesManagerContainer);

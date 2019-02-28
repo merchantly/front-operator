@@ -27,7 +27,8 @@
     "react-mixin-manager": "~0.7.0",
     "react-select": ">= 0.6.12",
     "sortablejs": "BrandyMint/Sortable",
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "i18next": "^2.0.10"
   },
   "devDependencies": {
     "babel": "^6.5.2",

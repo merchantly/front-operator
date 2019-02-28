@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import CartAutocompleteRows from './CartAutocompleteRows';
 import { merge } from 'lodash';
 import { findDOMNode } from 'react-dom';
+import provideTranslations from '../common/provideTranslations'
 
 class CartAutocomplete extends Component {
   constructor(props) {
@@ -22,11 +23,12 @@ class CartAutocomplete extends Component {
       goodAutocompleteFormatResult,
       props: {
         queryOptions,
+        t
       },
     } = this;
 
     $(findDOMNode(this.refs.input)).select2({
-      placeholder: 'Найти товар',
+      placeholder: t('cart_autocomplete.placeholder'),
       minimumInputLength: 1,
       ajax: {
         url: gon.operator_api_url + '/v1/goods/autocomplete.json',
@@ -101,4 +103,4 @@ CartAutocomplete.defaultProps = {
   queryOptions: {},
 };
 
-export default CartAutocomplete;
+export default provideTranslations(CartAutocomplete);

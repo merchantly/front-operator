@@ -47,6 +47,7 @@ PropertiesManager.propTypes = {
   onListItemDelete: PropTypes.func,
   properties: PropTypes.array.isRequired,
   removedProperties: PropTypes.array.isRequired,
+  t: PropTypes.func.isRequired
 };
 PropertiesManager.defaultProps = {
   availableProperties: [],

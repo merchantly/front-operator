@@ -3,11 +3,6 @@ import Select from 'react-select';
 import { PROPERTY_STRING_TYPE } from '../../constants/propertyTypes';
 import { next } from '../../services/MagicSequencer';
 
-//TODO: i18n
-const CHOOSE_PROPERTY_NAME_PLACEHOLDER = 'Введите название';
-const ADD_PROPERTY_NAME_PLACEHOLDER = 'Добавить {label} ?';
-const PROPERTY_NAME_NOT_FOUND = 'Результаты не найдены';
-
 class PropertyName extends Component {
   constructor(props) {
     super(props);
@@ -57,17 +52,17 @@ class PropertyName extends Component {
     onNameReset();
   }
   render() {
-    const { current, disabled, properties } = this.props;
+    const { current, disabled, properties, t } = this.props;
 
     return (
       <Select
-        addLabelText={ADD_PROPERTY_NAME_PLACEHOLDER}
+        addLabelText={t('properties_manager.add_property_name_placeholder')}
         allowCreate={true}
         disabled={disabled}
-        noResultsText={PROPERTY_NAME_NOT_FOUND}
+        noResultsText={t('properties_manager.property_name_not_found')}
         onChange={this.handleSelectChange}
         options={this.getSelectOptions(current, properties)}
-        placeholder={CHOOSE_PROPERTY_NAME_PLACEHOLDER}
+        placeholder={t('properties_manager.choose_property_name_placeholder')}
         value={current.id != null ? current.id : null}
       />
     );
@@ -80,6 +75,7 @@ PropertyName.propTypes = {
   onNameChange: PropTypes.func.isRequired,
   onNameReset: PropTypes.func.isRequired,
   properties: PropTypes.array,
+  t: PropTypes.func.isRequired,
 };
 
 export default PropertyName;

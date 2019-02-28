@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 
-//TODO: i18n
-const PROPERTY_VALUE_TIME_PLACEHOLDER = 'Укажите дату и время';
-
 export default class PropertyValueTime {
   static propTypes = {
     name: PropTypes.string.isRequired,
     property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
   }
   componentDidMount() {
     const node = findDOMNode(this);
@@ -19,13 +17,15 @@ export default class PropertyValueTime {
     $(node).off('dp.change', this.handleDateChange.bind(this));
   }
   render() {
+    const { t } = this.props;
+
     return (
       <div className="input-group date">
         <input
           type="text"
           name={this.props.name}
           defaultValue={this.props.property.value}
-          placeholder={PROPERTY_VALUE_TIME_PLACEHOLDER}
+          placeholder={t('properties_manager.property_value_time_placeholder')}
           className="form-control"
         />
         <span className="input-group-addon">
