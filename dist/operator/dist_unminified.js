@@ -3673,8 +3673,6 @@ var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4096,21 +4094,6 @@ var PropertiesManagerContainer = function (_Component) {
           })
         });
       }
-    }
-  }, {
-    key: 'getT',
-    value: function getT() {
-      i18next.createInstance({
-        lng: this.props.locale,
-        fallbackLng: 'ru',
-        interpolation: {
-          prefix: '%{',
-          suffix: '}'
-        },
-        resources: _defineProperty({}, locale, {
-          translation: translations
-        })
-      }, function () {});
     }
   }, {
     key: 'render',

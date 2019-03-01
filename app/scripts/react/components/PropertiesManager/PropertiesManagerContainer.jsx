@@ -354,21 +354,6 @@ class PropertiesManagerContainer extends Component {
       });
     }
   }
-  getT() {
-    i18next.createInstance({
-      lng: this.props.locale,
-      fallbackLng: 'ru',
-      interpolation: {
-        prefix: '%{',
-        suffix: '}',
-      },
-      resources: {
-        [locale]: {
-          translation: translations,
-        },
-      },
-    }, () => {});
-  }
   render() {
     const { properties: initialProperties } = this.props;
     const { listItems, properties } = this.state;
