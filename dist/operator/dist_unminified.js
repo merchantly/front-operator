@@ -4268,7 +4268,8 @@ var PropertyList = function (_Component) {
       var createButton = _react2.default.createElement(_PropertyCreateButton2.default, {
         hasItems: !!listItems.length,
         disabled: !canCreateListItem,
-        onClick: onListItemAdd
+        onClick: onListItemAdd,
+        t: t
       });
 
       if (listItems.length) {

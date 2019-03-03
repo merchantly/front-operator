@@ -20,6 +20,7 @@ class PropertyList extends Component {
         hasItems={!!listItems.length}
         disabled={!canCreateListItem}
         onClick={onListItemAdd}
+        t={t}
       />
     );
 
