@@ -1,16 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 
-//TODO: i18n
-const PROPERTY_VALUE_STRING_PLACEHOLDER = 'Значение свойства';
-
 class PropertyValueString extends Component {
   render() {
+    const { name, property, t } = this.props
+
     return (
       <input
         type="text"
-        name={this.props.name}
-        value={this.props.property.value}
-        placeholder={PROPERTY_VALUE_STRING_PLACEHOLDER}
+        name={name}
+        value={property.value}
+        placeholder={t('properties_manager.property_value_string_placeholder')}
         className="form-control"
         onChange={this.handleChange.bind(this)}
       />
@@ -25,6 +24,7 @@ PropertyValueString.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   property: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default PropertyValueString;

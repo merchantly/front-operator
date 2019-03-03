@@ -13,9 +13,6 @@ import PropertyValueNumber from './PropertyValueNumber';
 import PropertyValueBoolean from './PropertyValueBoolean';
 import PropertyValueDictionary from './PropertyValueDictionary';
 
-//TODO: i18n
-const UNKNOWN_TYPE_OF_PROPERTY = 'Неизвестный тип характеристики';
-
 class PropertyValue extends Component {
   getInputName({ id, type }) {
     if (id) {
@@ -50,12 +47,12 @@ class PropertyValue extends Component {
     })[type];
   }
   render() {
-    const { current, onChange, onCreate } = this.props;
+    const { current, onChange, onCreate, t } = this.props;
     const Component = this.getComponentByType(current.type);
 
     if (typeof Component !== 'function') {
       return (
-        <span>{UNKNOWN_TYPE_OF_PROPERTY} "{current.type}"</span>
+        <span>{t('properties_manager.unknown_type_of_property')} "{current.type}"</span>
       );
     } else {
       return (
@@ -66,6 +63,7 @@ class PropertyValue extends Component {
           onChange={onChange}
           onCreate={onCreate}
           property={current}
+          t={t}
         />
       );
     }
@@ -76,6 +74,7 @@ PropertyValue.propTypes = {
   current: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onCreate: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default PropertyValue;

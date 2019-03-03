@@ -2,11 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 import { next } from '../../services/MagicSequencer';
 
-//TODO: i18n
-const CHOOSE_PROPERTY_VALUE_PLACEHOLDER = 'Введите значение';
-const PROPERTY_VALUE_NOT_FOUND = 'Нет подходящего значения характеристики';
-const ADD_PROPERTY_VALUE_PLACEHOLDER = 'Добавить {label} ?';
-
 class PropertyValueDictionary extends Component {
   constructor(props) {
     super(props);
@@ -35,17 +30,17 @@ class PropertyValueDictionary extends Component {
     }
   }
   render() {
-    const { name, property } = this.props;
+    const { name, property, t} = this.props;
 
     return (
       <Select
-        addLabelText={ADD_PROPERTY_VALUE_PLACEHOLDER}
+        addLabelText={t('properties_manager.add_property_value_placeholder')}
         allowCreate={true}
         name={name}
-        noResultsText={PROPERTY_VALUE_NOT_FOUND}
+        noResultsText={t('properties_manager.property_value_not_found')}
         onChange={this.handleSelectChange}
         options={this.getSelectOptions(property)}
-        placeholder={CHOOSE_PROPERTY_VALUE_PLACEHOLDER}
+        placeholder={t('properties_manager.choose_property_value_placeholder')}
         value={property.value != null ? property.value : null}
       />
     );
@@ -57,6 +52,7 @@ PropertyValueDictionary.propTypes = {
   onChange: PropTypes.func.isRequired,
   onCreate: PropTypes.func.isRequired,
   property: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default PropertyValueDictionary;

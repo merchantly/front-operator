@@ -7,15 +7,18 @@ export default class PropertyValueLink {
   static propTypes = {
     name: PropTypes.string.isRequired,
     property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
   }
   render() {
+    const { t } = this.props;
+
     return (
       <input
         type="url"
         name={this.props.name}
         value={this.props.property.value}
-        placeholder={PROPERTY_VALUE_LINK_PLACEHOLDER}
+        placeholder={t('properties_manager.property_value_link_placeholder')}
         className="form-control"
         onChange={this.handleChange.bind(this)}
       />

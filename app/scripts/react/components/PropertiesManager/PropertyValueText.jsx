@@ -1,19 +1,20 @@
 import React, { PropTypes } from 'react';
 
-//TODO: i18n
-const PROPERTY_VALUE_TEXT_PLACEHOLDER = 'Значение свойства';
 
 export default class PropertyValueText {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    property: PropTypes.object.isRequired
+    property: PropTypes.object.isRequired,
+    t: PropTypes.func.isRequired,
   }
   render() {
+    const { t } = this.props;
+
     return (
       <textarea
         name={this.props.name}
         value={this.props.property.value}
-        placeholder={PROPERTY_VALUE_TEXT_PLACEHOLDER}
+        placeholder={t('properties_manager.property_value_text_placeholder')}
         className="form-control"
         onChange={this.handleChange.bind(this)}
       />
