@@ -54,7 +54,7 @@ class PropertyList extends Component {
 
     return (
       <div className="p-lg text-center">
-        <p>t('properties_manager.empty_property_list')</p>
+        <p>{t('properties_manager.empty_property_list')}</p>
         {createButton}
       </div>
     );

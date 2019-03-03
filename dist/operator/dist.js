@@ -4309,7 +4309,7 @@ var PropertyList = function (_Component) {
         _react2.default.createElement(
           'p',
           null,
-          't(\'properties_manager.empty_property_list\')'
+          t('properties_manager.empty_property_list')
         ),
         createButton
       );
