@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
-export default class PropertyCreateButton {
+export default class PropertyCreateButton extends Component {
   static propTypes = {
     hasItems: PropTypes.bool.isRequired,
     disabled: PropTypes.bool.isRequired,
