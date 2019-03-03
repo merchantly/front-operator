@@ -25,7 +25,7 @@
     "react-bootstrap": "^0.28.5",
     "react-dom": "^0.14.9",
     "react-mixin-manager": "~0.7.0",
-    "react-select": "~1.0.0",
+    "react-select": "~0.9.1",
     "sortablejs": "BrandyMint/Sortable",
     "uuid": "^2.0.1",
     "i18next": "^2.0.10"
