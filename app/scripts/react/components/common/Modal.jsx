@@ -41,7 +41,7 @@ export default class Modal extends Component {
           {textButtonOk
            && <Button
                 bsStyle="primary"
-                data-dismiss={okClosesModal ? "modal" : void 0}
+                data-dismiss={okClosesModal ? 'modal' : void 0}
                 disabled={buttonOkDisabled}
                 onClick={this.onOk.bind(this)}
               >
@@ -63,7 +63,7 @@ export default class Modal extends Component {
               <div className="modal-header">
                 <button
                   className="close"
-                  data-dismiss={cancelClosesModal ? "modal" : void 0}
+                  data-dismiss={cancelClosesModal ? 'modal' : void 0}
                   onClick={this.onClose.bind(this)}
                   type="button"
                 >

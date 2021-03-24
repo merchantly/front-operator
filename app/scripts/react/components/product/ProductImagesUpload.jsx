@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import DropZone from '../common/DropZone';
 import NoticeService from '../../services/Notice';
+import provideTranslations from '../common/provideTranslations';
 
 let ProductImagesUpload = React.createClass({
   propTypes: {
@@ -47,7 +48,7 @@ let ProductImagesUpload = React.createClass({
                 <i className="fa fa-plus" />
               </div>
             </div>
-            <label title="Добавить изображение"
+            <label title={this.props.t('product_images_upload.add')}
                    htmlFor="image"
                    className="thumbnails-item-input">
               <input
@@ -68,4 +69,4 @@ let ProductImagesUpload = React.createClass({
   }
 });
 
-export default ProductImagesUpload;
+export default provideTranslations(ProductImagesUpload);
