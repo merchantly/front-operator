@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import DropZone from '../common/DropZone';
 import NoticeService from '../../services/Notice';
-import provideTranslations from '../common/provideTranslations';
 
 let ProductImagesUpload = React.createClass({
   propTypes: {
-    onImagesUpload: React.PropTypes.func.isRequired
+    onImagesUpload: React.PropTypes.func.isRequired,
+    t: React.PropTypes.func.isRequired
   },
   handleClick(ev) {
     ev.target.value = null;
@@ -69,4 +69,4 @@ let ProductImagesUpload = React.createClass({
   }
 });
 
-export default provideTranslations(ProductImagesUpload);
+export default ProductImagesUpload;

@@ -7495,7 +7495,8 @@ var ProductImages = React.createClass({
     onImageRotate: React.PropTypes.func.isRequired,
     onImageDelete: React.PropTypes.func.isRequired,
     onImagesUpload: React.PropTypes.func.isRequired,
-    onImagesReorder: React.PropTypes.func.isRequired
+    onImagesReorder: React.PropTypes.func.isRequired,
+    t: React.PropTypes.func.isRequired
   },
 
   render: function render() {
@@ -7505,7 +7506,7 @@ var ProductImages = React.createClass({
       React.createElement(
         'div',
         { className: 'row' },
-        React.createElement(_ProductImagesUpload2.default, { onImagesUpload: this.props.onImagesUpload }),
+        React.createElement(_ProductImagesUpload2.default, { onImagesUpload: this.props.onImagesUpload, t: this.props.t }),
         React.createElement(_ProductImagesImageList2.default, {
           images: this.props.images,
           fieldName: this.props.fieldName,
@@ -7541,6 +7542,10 @@ var _ProductImages = require('./ProductImages');
 
 var _ProductImages2 = _interopRequireDefault(_ProductImages);
 
+var _provideTranslations = require('../common/provideTranslations');
+
+var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var LOADING_IMAGES_MESSAGE = 'Идёт загрузка изображений..',
@@ -7559,7 +7564,8 @@ var ProductImagesContainer = React.createClass({
 
   propTypes: {
     images: React.PropTypes.array.isRequired,
-    fieldName: React.PropTypes.string
+    fieldName: React.PropTypes.string,
+    t: React.PropTypes.func.isRequired
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -7583,7 +7589,7 @@ var ProductImagesContainer = React.createClass({
       onImagesReorder: this.reorderImages
     };
 
-    return React.createElement(_ProductImages2.default, _extends({}, this.state, actions, { fieldName: this.props.fieldName }));
+    return React.createElement(_ProductImages2.default, _extends({}, this.state, actions, { fieldName: this.props.fieldName, t: this.props.t }));
   },
   hasLoadingImages: function hasLoadingImages() {
     var loadingImages = this.state.images.filter(function (image) {
@@ -7721,9 +7727,9 @@ var ProductImagesContainer = React.createClass({
   }
 });
 
-exports.default = ProductImagesContainer;
+exports.default = (0, _provideTranslations2.default)(ProductImagesContainer);
 
-},{"../../services/Notice":115,"./ProductImages":84,"lodash":"lodash"}],86:[function(require,module,exports){
+},{"../../services/Notice":115,"../common/provideTranslations":57,"./ProductImages":84,"lodash":"lodash"}],86:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7877,17 +7883,14 @@ var _Notice = require('../../services/Notice');
 
 var _Notice2 = _interopRequireDefault(_Notice);
 
-var _provideTranslations = require('../common/provideTranslations');
-
-var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProductImagesUpload = React.createClass({
   displayName: 'ProductImagesUpload',
 
   propTypes: {
-    onImagesUpload: React.PropTypes.func.isRequired
+    onImagesUpload: React.PropTypes.func.isRequired,
+    t: React.PropTypes.func.isRequired
   },
   handleClick: function handleClick(ev) {
     ev.target.value = null;
@@ -7963,9 +7966,9 @@ var ProductImagesUpload = React.createClass({
   }
 });
 
-exports.default = (0, _provideTranslations2.default)(ProductImagesUpload);
+exports.default = ProductImagesUpload;
 
-},{"../../services/Notice":115,"../common/DropZone":48,"../common/provideTranslations":57,"lodash":"lodash"}],89:[function(require,module,exports){
+},{"../../services/Notice":115,"../common/DropZone":48,"lodash":"lodash"}],89:[function(require,module,exports){
 var DRAG_DELAY, DRAG_REVERT, ProductImageSortableMixin, _getNewPositions;
 
 DRAG_DELAY = 100;

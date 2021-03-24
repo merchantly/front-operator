@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import NoticeService from '../../services/Notice';
 import ProductImages from './ProductImages';
+import provideTranslations from '../common/provideTranslations';
 
 const LOADING_IMAGES_MESSAGE = 'Идёт загрузка изображений..',
       SAVE_BUTTON_TEXT = 'Сохранить';
@@ -16,7 +17,8 @@ function createBlobImage(image, uuid) {
 let ProductImagesContainer = React.createClass({
   propTypes: {
     images: React.PropTypes.array.isRequired,
-    fieldName: React.PropTypes.string
+    fieldName: React.PropTypes.string,
+    t: React.PropTypes.func.isRequired
   },
 
   getDefaultProps() {
@@ -43,7 +45,7 @@ let ProductImagesContainer = React.createClass({
       onImagesReorder: this.reorderImages
     };
 
-    return <ProductImages {...this.state} {...actions} fieldName={this.props.fieldName} />;
+    return <ProductImages {...this.state} {...actions} fieldName={this.props.fieldName} t={this.props.t}/>;
   },
 
   hasLoadingImages() {
@@ -184,4 +186,4 @@ let ProductImagesContainer = React.createClass({
   }
 });
 
-export default ProductImagesContainer;
+export default provideTranslations(ProductImagesContainer);

@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { isMagical, setIfBigger } from '../../services/MagicSequencer';
 import { PROPERTY_DICTIONARY_TYPE, PROPERTY_FILE_TYPE } from '../../constants/propertyTypes';
 import PropertiesManager from './PropertiesManager';
-import provideTranslations from '../common/provideTranslations'
+import provideTranslations from '../common/provideTranslations';
 
 class PropertiesManagerContainer extends Component {
   constructor(props) {

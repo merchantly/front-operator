@@ -8,14 +8,15 @@ let ProductImages = React.createClass({
     onImageRotate: React.PropTypes.func.isRequired,
     onImageDelete: React.PropTypes.func.isRequired,
     onImagesUpload: React.PropTypes.func.isRequired,
-    onImagesReorder: React.PropTypes.func.isRequired
+    onImagesReorder: React.PropTypes.func.isRequired,
+    t: React.PropTypes.func.isRequired
   },
 
   render() {
     return (
       <div className="thumbnails">
         <div className="row">
-          <ProductImagesUpload onImagesUpload={this.props.onImagesUpload} />
+          <ProductImagesUpload onImagesUpload={this.props.onImagesUpload} t={this.props.t}/>
           <ProductImagesImageList
               images={this.props.images}
               fieldName={this.props.fieldName}
