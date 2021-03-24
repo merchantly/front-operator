@@ -4,7 +4,8 @@ import NoticeService from '../../services/Notice';
 
 let ProductImagesUpload = React.createClass({
   propTypes: {
-    onImagesUpload: React.PropTypes.func.isRequired
+    onImagesUpload: React.PropTypes.func.isRequired,
+    t: React.PropTypes.func.isRequired
   },
   handleClick(ev) {
     ev.target.value = null;
@@ -47,7 +48,7 @@ let ProductImagesUpload = React.createClass({
                 <i className="fa fa-plus" />
               </div>
             </div>
-            <label title="Добавить изображение"
+            <label title={this.props.t('product_images_upload.add')}
                    htmlFor="image"
                    className="thumbnails-item-input">
               <input

@@ -38,12 +38,12 @@ function onUpdate({ item, newIndex, oldIndex }) {
 }
 
 $.fn.sortableJS = function(options) {
-  var retVal;
-  var args = arguments;
+  let retVal;
+  let args = arguments;
 
   this.each(function () {
-    var $el = $(this);
-    var sortable = $el.data('sortable');
+    let $el = $(this);
+    let sortable = $el.data('sortable');
 
     if (!sortable && (options instanceof Object || !options)) {
       sortable = new Sortable(this, options);
