@@ -3,7 +3,7 @@
 # Фронтенд операторской
 ## Установка
 ```bash
-   yarn install -g bower
+   yarn global add bower
    yarn install
    bower install
    yarn start
