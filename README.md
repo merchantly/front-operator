@@ -2,7 +2,9 @@
 
 # Фронтенд операторской
 ## Установка
+```bash
    yarn install -g bower
    yarn install
    bower install
    yarn start
+```
