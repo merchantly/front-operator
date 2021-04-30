@@ -21,6 +21,6 @@ window.OperatorCategoriesService =
         data:
           name:      i.name
           position:  i.position
-          parent_id: i.parent_id
+          parent_id: i.parentId
         success: done
       }

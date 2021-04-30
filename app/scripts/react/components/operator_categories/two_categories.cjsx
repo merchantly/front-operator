@@ -15,7 +15,7 @@ window.OperatorCategories_TwoCategories = React.createClass
 
     secondCategory = switch
       when currentCategoryLevel == 1 then currentCategory
-      else OperatorCategoriesStore.getCategoryById currentCategory.parent_id
+      else OperatorCategoriesStore.getCategoryById currentCategory.parentId
 
     return <span>
               <div className="adm-categories-grid-col">

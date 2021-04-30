@@ -1380,7 +1380,7 @@ window.OperatorCategoriesViewActions = {
       data: {
         name: category.name,
         position: category.position,
-        parent_id: category.parent_id
+        parent_id: category.parentId
       },
       success: function(category) {
         OperatorCategoriesServerActions.updateCategory(category);
@@ -6216,7 +6216,7 @@ window.OperatorCategories_ListItem = React.createClass({
   },
   render: function() {
     var totalCount;
-    totalCount = this.props.category.has_children ? this.props.category.current_deep_products_count : this.props.category.current_products_count;
+    totalCount = this.props.category.hasChildren ? this.props.category.currentDeepProductsCount : this.props.category.currentProductsCount;
     return React.createElement("span", null, React.createElement("span", null, React.createElement("span", {
       "className": "adm-categories-item-name"
     }, this.props.category.name), React.createElement("span", {
@@ -6391,8 +6391,8 @@ window.OperatorCategories_ListItemManager = React.createClass({
   },
   handleItemClick: function() {
     var totalCount, withoutCategoryCount;
-    totalCount = this.props.category.current_deep_products_count;
-    withoutCategoryCount = this.props.category.current_products_count;
+    totalCount = this.props.category.currentDeepProductsCount;
+    withoutCategoryCount = this.props.category.currentProductsCount;
     return this.props.onCategorySelect({
       category: this.props.category,
       includeSubcategories: true
@@ -6453,8 +6453,8 @@ window.OperatorCategories_ListItemWithSubcategories = React.createClass({
   },
   render: function() {
     var itemClasses, totalCount, withoutCategoryCount;
-    totalCount = this.props.category.current_deep_products_count;
-    withoutCategoryCount = this.props.category.current_products_count;
+    totalCount = this.props.category.currentDeepProductsCount;
+    withoutCategoryCount = this.props.category.currentProductsCount;
     itemClasses = classnames('adm-categories-item', {
       'selected': this.props.isActive,
       '__droptarget-active': this.isDropTarget()
@@ -6522,8 +6522,8 @@ window.OperatorCategories_ListItemWithoutCategory = React.createClass({
   },
   render: function() {
     var itemClasses, totalCount, withoutCategoryCount;
-    totalCount = this.props.category.current_deep_products_count;
-    withoutCategoryCount = this.props.category.current_products_count;
+    totalCount = this.props.category.currentDeepProductsCount;
+    withoutCategoryCount = this.props.category.currentProductsCount;
     itemClasses = classnames('adm-categories-item', {
       '__muted': true,
       'selected': this.props.isActive
@@ -6626,7 +6626,7 @@ window.OperatorCategories_List = React.createClass({
     var currentCategory;
     currentCategory = this.props.currentCategory;
     if (currentCategory && !(this.state.parentCategory && this.state.parentCategory.id === currentCategory.id)) {
-      return (category.id === currentCategory.id) || (category.id === currentCategory.parent_id);
+      return (category.id === currentCategory.id) || (category.id === currentCategory.parentId);
     } else {
       return false;
     }
@@ -6899,8 +6899,8 @@ window.OperatorCategories = React.createClass({
     } else {
       if (OperatorCategoriesStore.isCategoryExists(this.state.currentCategory)) {
         currentCategory = this.state.currentCategory;
-      } else if (this.state.currentCategory && this.state.currentCategory.parent_id) {
-        currentCategory = OperatorCategoriesStore.getCategoryById(this.state.currentCategory.parent_id);
+      } else if (this.state.currentCategory && this.state.currentCategory.parentId) {
+        currentCategory = OperatorCategoriesStore.getCategoryById(this.state.currentCategory.parentId);
       } else {
         currentCategory = rootCategory;
       }
@@ -6933,7 +6933,7 @@ window.OperatorCategories_TwoCategories = React.createClass({
         case currentCategoryLevel !== 1:
           return currentCategory;
         default:
-          return OperatorCategoriesStore.getCategoryById(currentCategory.parent_id);
+          return OperatorCategoriesStore.getCategoryById(currentCategory.parentId);
       }
     })();
     return React.createElement("span", null, React.createElement("div", {
@@ -8971,7 +8971,7 @@ window.OperatorCategoriesService = {
         data: {
           name: i.name,
           position: i.position,
-          parent_id: i.parent_id
+          parent_id: i.parentId
         },
         success: done
       });
@@ -9268,7 +9268,7 @@ _categories = [];
 
 _getNewPositions = function(category, insertIndex) {
   var catToShift, currentPosition, j, len, minPosition, newPositions, nextSibling, oldCategoriesParent, oldCategoriesPositions, oldTail, originalIndex, positionDiff, previousSibling, slicePosition;
-  oldCategoriesParent = OperatorCategoriesStore.getCategoryById(category.parent_id);
+  oldCategoriesParent = OperatorCategoriesStore.getCategoryById(category.parentId);
   oldCategoriesPositions = OperatorCategoriesStore.getSortedCategoriesByParent(oldCategoriesParent);
   originalIndex = _.findIndex(oldCategoriesPositions, function(i) {
     return i.id === category.id;
@@ -9406,14 +9406,14 @@ window.OperatorCategoriesStore = _.extend(new BaseStore(), {
     var _category, j, len;
     for (j = 0, len = _categories.length; j < len; j++) {
       _category = _categories[j];
-      if (_category.parent_id === null) {
+      if (_category.parentId === null) {
         return _category;
       }
     }
   },
   getCategoryLevel: function(category) {
-    if (category.parent_id) {
-      return 1 + this.getCategoryLevel(this.getCategoryById(category.parent_id));
+    if (category.parentId) {
+      return 1 + this.getCategoryLevel(this.getCategoryById(category.parentId));
     } else {
       return 0;
     }
@@ -9421,7 +9421,7 @@ window.OperatorCategoriesStore = _.extend(new BaseStore(), {
   getCategoryPosition: function(category) {
     var lastPosition, lastSibling, siblings;
     siblings = _.filter(_categories, function(i) {
-      return i.parent_id === category.parent_id;
+      return i.parentId === category.parentId;
     });
     if (siblings.length) {
       lastSibling = _.max(siblings, function(i) {
@@ -9451,7 +9451,7 @@ window.OperatorCategoriesStore = _.extend(new BaseStore(), {
     var parentId;
     parentId = parentCategory ? parentCategory.id : null;
     return _.filter(_categories, function(i) {
-      return i.parent_id === parentId;
+      return i.parentId === parentId;
     }).sort(function(a, b) {
       return a.position - b.position;
     });

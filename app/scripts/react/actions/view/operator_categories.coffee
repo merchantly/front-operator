@@ -33,7 +33,7 @@ window.OperatorCategoriesViewActions =
       data:
         name:      category.name
         position:  category.position
-        parent_id: category.parent_id
+        parent_id: category.parentId
       success: (category) ->
         OperatorCategoriesServerActions.updateCategory category
         success?(category)

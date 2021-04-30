@@ -5,7 +5,7 @@ window.OperatorCategories_ListItem = React.createClass
     onEditStart: React.PropTypes.func.isRequired
 
   render: ->
-    totalCount = if @props.category.has_children then @props.category.current_deep_products_count else @props.category.current_products_count
+    totalCount = if @props.category.hasChildren then @props.category.currentDeepProductsCount else @props.category.currentProductsCount
     <span>
       <span>
         <span className="adm-categories-item-name">

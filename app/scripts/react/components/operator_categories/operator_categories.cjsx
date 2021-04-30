@@ -85,8 +85,8 @@ window.OperatorCategories = React.createClass
     else
       if OperatorCategoriesStore.isCategoryExists @state.currentCategory
         currentCategory = @state.currentCategory
-      else if @state.currentCategory && @state.currentCategory.parent_id
-        currentCategory = OperatorCategoriesStore.getCategoryById @state.currentCategory.parent_id
+      else if @state.currentCategory && @state.currentCategory.parentId
+        currentCategory = OperatorCategoriesStore.getCategoryById @state.currentCategory.parentId
       else
         currentCategory = rootCategory
 

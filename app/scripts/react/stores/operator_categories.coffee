@@ -6,7 +6,7 @@ _getNewPositions = (category, insertIndex) ->
   # Хитрые разборки с целью несколько минимизировать объём обновлений
   # Оптимальный алгоритм уж делать не стал - только минимальная оптимизация
   # в частных случаях
-  oldCategoriesParent    = OperatorCategoriesStore.getCategoryById category.parent_id
+  oldCategoriesParent    = OperatorCategoriesStore.getCategoryById category.parentId
   oldCategoriesPositions = OperatorCategoriesStore.getSortedCategoriesByParent oldCategoriesParent
 
   originalIndex = _.findIndex oldCategoriesPositions, (i) -> i.id == category.id
@@ -108,17 +108,17 @@ window.OperatorCategoriesStore = _.extend new BaseStore(), {
   getCategories: -> _categories
 
   getRootCategory: ->
-    for _category in _categories when _category.parent_id is null
+    for _category in _categories when _category.parentId is null
       return _category
 
   getCategoryLevel: (category) ->
-    if category.parent_id
-      1 + @getCategoryLevel( @getCategoryById(category.parent_id) )
+    if category.parentId
+      1 + @getCategoryLevel( @getCategoryById(category.parentId) )
     else
       0
 
   getCategoryPosition: (category) ->
-    siblings = _.filter _categories, (i) -> i.parent_id == category.parent_id
+    siblings = _.filter _categories, (i) -> i.parentId == category.parentId
 
     if siblings.length
       lastSibling = _.max siblings, (i) -> i.position
@@ -140,7 +140,7 @@ window.OperatorCategoriesStore = _.extend new BaseStore(), {
   getSortedCategoriesByParent: (parentCategory) ->
     parentId = if parentCategory then parentCategory.id else null
 
-    _.filter(_categories, (i) -> i.parent_id == parentId)
+    _.filter(_categories, (i) -> i.parentId == parentId)
       .sort((a, b) -> a.position - b.position)
 
 }

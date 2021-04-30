@@ -48,8 +48,8 @@ window.OperatorCategories_ListItemManager = React.createClass
     window.location = Routes.operator_categories_edit_url @props.category.id
 
   handleItemClick: ->
-    totalCount           = @props.category.current_deep_products_count
-    withoutCategoryCount = @props.category.current_products_count
+    totalCount           = @props.category.currentDeepProductsCount
+    withoutCategoryCount = @props.category.currentProductsCount
 
     @props.onCategorySelect
       category: @props.category

@@ -69,7 +69,7 @@ window.OperatorCategories_List = React.createClass
     currentCategory = @props.currentCategory
 
     if currentCategory and not (@state.parentCategory and @state.parentCategory.id == currentCategory.id)
-      (category.id == currentCategory.id) or (category.id == currentCategory.parent_id)
+      (category.id == currentCategory.id) or (category.id == currentCategory.parentId)
     else
       false
 
