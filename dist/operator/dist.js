@@ -2689,7 +2689,7 @@ var PropertiesManagerContainer = function (_Component) {
     key: 'isPropertySelected',
     value: function isPropertySelected(property, customAttributes) {
       return customAttributes.some(function (attr) {
-        return property.id === attr.property_id;
+        return property.id === attr.propertyId;
       });
     }
   }, {
@@ -2746,7 +2746,7 @@ var PropertiesManagerContainer = function (_Component) {
     key: 'getBiggestID',
     value: function getBiggestID(customAttributes) {
       return customAttributes.reduce(function (biggestID, attr) {
-        var id = typeof attr.value === 'number' ? attr.value : attr.property_id;
+        var id = typeof attr.value === 'number' ? attr.value : attr.propertyId;
         return id > biggestID ? id : biggestID;
       }, 0);
     }
@@ -2755,7 +2755,7 @@ var PropertiesManagerContainer = function (_Component) {
     value: function getPropertyAttributes(property, customAttributes) {
       for (var i = 0; i < customAttributes.length; i++) {
         var attr = customAttributes[i];
-        if (attr.property_id === property.id) return attr;
+        if (attr.propertyId === property.id) return attr;
       }
 
       return null;

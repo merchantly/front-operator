@@ -27,7 +27,7 @@ class PropertiesManagerContainer extends Component {
     setIfBigger(biggestID);
   }
   isPropertySelected(property, customAttributes) {
-    return customAttributes.some((attr) => property.id === attr.property_id);
+    return customAttributes.some((attr) => property.id === attr.propertyId);
   }
   isPropertyAvailable(property, listItems) {
     return !listItems.some((item) => property.id === item.propertyID);
@@ -71,14 +71,14 @@ class PropertiesManagerContainer extends Component {
   }
   getBiggestID(customAttributes) {
     return customAttributes.reduce((biggestID, attr) => {
-      const id = typeof attr.value === 'number' ? attr.value : attr.property_id;
+      const id = typeof attr.value === 'number' ? attr.value : attr.propertyId;
       return id > biggestID ? id : biggestID;
     }, 0);
   }
   getPropertyAttributes(property, customAttributes) {
     for (let i = 0; i < customAttributes.length; i++) {
       const attr = customAttributes[i];
-      if (attr.property_id === property.id) return attr;
+      if (attr.propertyId === property.id) return attr;
     }
 
     return null;
