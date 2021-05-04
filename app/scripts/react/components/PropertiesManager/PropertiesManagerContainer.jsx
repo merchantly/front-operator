@@ -8,11 +8,11 @@ import provideTranslations from '../common/provideTranslations';
 class PropertiesManagerContainer extends Component {
   constructor(props) {
     super(props);
-    const { custom_attributes, properties } = props;
+    const { customAttributes, properties } = props;
 
     this.state = {
-      listItems: this.makeListItems(properties, custom_attributes),
-      properties: this.normalizeProperties(properties, custom_attributes),
+      listItems: this.makeListItems(properties, customAttributes),
+      properties: this.normalizeProperties(properties, customAttributes),
     };
     this.addListItem = this.addListItem.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
@@ -23,7 +23,7 @@ class PropertiesManagerContainer extends Component {
     this.updateProperty = this.updateProperty.bind(this);
   }
   componentDidMount() {
-    const biggestID = this.getBiggestID(this.props.custom_attributes);
+    const biggestID = this.getBiggestID(this.props.customAttributes);
     setIfBigger(biggestID);
   }
   isPropertySelected(property, customAttributes) {
@@ -381,11 +381,11 @@ class PropertiesManagerContainer extends Component {
 }
 
 PropertiesManagerContainer.propTypes = {
-  custom_attributes: PropTypes.array,
+  customAttributes: PropTypes.array,
   properties: PropTypes.array,
 };
 PropertiesManagerContainer.defaultProps = {
-  custom_attributes: [],
+  customAttributes: [],
   properties: [],
 };
 

@@ -2661,13 +2661,13 @@ var PropertiesManagerContainer = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (PropertiesManagerContainer.__proto__ || Object.getPrototypeOf(PropertiesManagerContainer)).call(this, props));
 
-    var custom_attributes = props.custom_attributes,
+    var customAttributes = props.customAttributes,
         properties = props.properties;
 
 
     _this.state = {
-      listItems: _this.makeListItems(properties, custom_attributes),
-      properties: _this.normalizeProperties(properties, custom_attributes)
+      listItems: _this.makeListItems(properties, customAttributes),
+      properties: _this.normalizeProperties(properties, customAttributes)
     };
     _this.addListItem = _this.addListItem.bind(_this);
     _this.deleteListItem = _this.deleteListItem.bind(_this);
@@ -2682,7 +2682,7 @@ var PropertiesManagerContainer = function (_Component) {
   _createClass(PropertiesManagerContainer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var biggestID = this.getBiggestID(this.props.custom_attributes);
+      var biggestID = this.getBiggestID(this.props.customAttributes);
       (0, _MagicSequencer.setIfBigger)(biggestID);
     }
   }, {
@@ -3098,11 +3098,11 @@ var PropertiesManagerContainer = function (_Component) {
 }(_react.Component);
 
 PropertiesManagerContainer.propTypes = {
-  custom_attributes: _react.PropTypes.array,
+  customAttributes: _react.PropTypes.array,
   properties: _react.PropTypes.array
 };
 PropertiesManagerContainer.defaultProps = {
-  custom_attributes: [],
+  customAttributes: [],
   properties: []
 };
 
