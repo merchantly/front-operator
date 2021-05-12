@@ -16,7 +16,7 @@
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "flux": "^2.0.1",
     "jquery": "^2.1.4",
-    "lodash": "^3.8.0",
+    "lodash": "^4.17.21",
     "node-sass": "^3.4.2",
     "numeral": "^1.5.3",
     "react": "^0.14.9",
