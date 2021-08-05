@@ -1719,7 +1719,7 @@ var CategoryCreateForm = function () {
           _react2.default.createElement(
             'label',
             { className: 'col-sm-5 control-label' },
-            '\u0420\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u0441\u043A\u0430\u044F \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F'
+            parentCategoryText
           ),
           _react2.default.createElement(
             'div',
@@ -1739,7 +1739,7 @@ var CategoryCreateForm = function () {
           _react2.default.createElement(
             'label',
             { className: 'col-sm-5 control-label', htmlFor: 'category_name' },
-            '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435'
+            nameText
           ),
           _react2.default.createElement(
             'div',

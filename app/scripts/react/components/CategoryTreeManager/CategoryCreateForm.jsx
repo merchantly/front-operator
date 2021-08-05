@@ -21,7 +21,7 @@ export default class CategoryCreateForm {
       <form className="form-horizontal" onSubmit={this.onSubmit.bind(this)}>
         <div className="form-group">
           <label className="col-sm-5 control-label">
-            Родительская категория
+            {parentCategoryText}
           </label>
           <div className="col-lg-7">
             <input
@@ -35,7 +35,7 @@ export default class CategoryCreateForm {
         <div className="hr-line-dashed" />
         <div className="form-group">
           <label className="col-sm-5 control-label" htmlFor="category_name">
-            Название
+            {nameText}
           </label>
           <div className="col-lg-7">
             <input
