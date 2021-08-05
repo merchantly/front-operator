@@ -15,7 +15,7 @@
     "deep-diff": "^0.3.2",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "flux": "^2.0.1",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "lodash": "^3.8.0",
     "node-sass": "^3.4.2",
     "numeral": "^1.5.3",
