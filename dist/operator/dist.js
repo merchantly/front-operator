@@ -1705,7 +1705,9 @@ var CategoryCreateForm = function () {
     value: function render() {
       var _props = this.props,
           category = _props.category,
-          parentCategory = _props.parentCategory;
+          parentCategory = _props.parentCategory,
+          parentCategoryText = _props.parentCategoryText,
+          nameText = _props.nameText;
 
 
       return _react2.default.createElement(
@@ -1770,7 +1772,9 @@ CategoryCreateForm.propTypes = {
   category: _react.PropTypes.object.isRequired,
   parentCategory: _react.PropTypes.object.isRequired,
   onFieldChange: _react.PropTypes.func.isRequired,
-  onSubmit: _react.PropTypes.func.isRequired
+  onSubmit: _react.PropTypes.func.isRequired,
+  parentCategoryText: _react.PropTypes.string.isRequired,
+  nameText: _react.PropTypes.string.isRequired
 };
 exports.default = CategoryCreateForm;
 
@@ -2026,11 +2030,14 @@ var CategoryTreeManager = function (_Component) {
       var _props3 = this.props,
           categories = _props3.categories,
           createButtonTitle = _props3.createButtonTitle,
+          cancelButtonTitle = _props3.cancelButtonTitle,
           modalCreateTitle = _props3.modalCreateTitle,
           modalShowTitle = _props3.modalShowTitle,
           modalUuid = _props3.modalUuid,
           onSelectionChange = _props3.onSelectionChange,
-          selectedCategories = _props3.selectedCategories;
+          selectedCategories = _props3.selectedCategories,
+          parentCategoryText = _props3.parentCategoryText,
+          nameText = _props3.nameText;
       var _state = this.state,
           category = _state.category,
           currentState = _state.currentState;
@@ -2050,14 +2057,16 @@ var CategoryTreeManager = function (_Component) {
               onClose: this.activateShow.bind(this),
               onOk: this.createCategory.bind(this),
               textButtonOk: createButtonTitle,
-              textButtonCancel: '\u041D\u0430\u0437\u0430\u0434',
+              textButtonCancel: cancelButtonTitle,
               title: modalCreateTitle
             }),
             _react2.default.createElement(_CategoryCreateForm2.default, {
               category: category,
               parentCategory: parentCategory,
               onFieldChange: this.onFieldChange.bind(this),
-              onSubmit: this.onFormSubmit.bind(this)
+              onSubmit: this.onFormSubmit.bind(this),
+              parentCategoryText: parentCategoryText,
+              nameText: nameText
             })
           );
         case MANAGER_CREATING:
@@ -2101,6 +2110,7 @@ CategoryTreeManager.propTypes = {
   canCreate: _react.PropTypes.bool.isRequired,
   categories: _react.PropTypes.array.isRequired,
   createButtonTitle: _react.PropTypes.string.isRequired,
+  cancelButtonTitle: _react.PropTypes.string.isRequired,
   modalCreateTitle: _react.PropTypes.string.isRequired,
   modalShowTitle: _react.PropTypes.string.isRequired,
   modalUuid: _react.PropTypes.string.isRequired,
@@ -2108,7 +2118,9 @@ CategoryTreeManager.propTypes = {
   onCategoriesChange: _react.PropTypes.func.isRequired,
   onSelectionAccept: _react.PropTypes.func.isRequired,
   onSelectionChange: _react.PropTypes.func.isRequired,
-  onSelectionDiscard: _react.PropTypes.func.isRequired
+  onSelectionDiscard: _react.PropTypes.func.isRequired,
+  parentCategoryText: _react.PropTypes.string,
+  nameText: _react.PropTypes.string
 };
 
 exports.default = CategoryTreeManager;
@@ -2209,7 +2221,9 @@ CategoryTreeSelector.propTypes = {
   onCategoryRemove: _react.PropTypes.func.isRequired,
   onSelectionAccept: _react.PropTypes.func.isRequired,
   onSelectionChange: _react.PropTypes.func.isRequired,
-  onSelectionDiscard: _react.PropTypes.func.isRequired
+  onSelectionDiscard: _react.PropTypes.func.isRequired,
+  parentCategoryText: _react.PropTypes.string,
+  nameText: _react.PropTypes.string
 };
 
 exports.default = CategoryTreeSelector;
@@ -2323,7 +2337,9 @@ CategoryTreeSelectorContainer.propTypes = {
   data: _react.PropTypes.array.isRequired,
   fieldName: _react.PropTypes.string.isRequired,
   modalCreateTitle: _react.PropTypes.string,
-  modalShowTitle: _react.PropTypes.string
+  modalShowTitle: _react.PropTypes.string,
+  parentCategoryText: _react.PropTypes.string,
+  nameText: _react.PropTypes.string
 };
 CategoryTreeSelectorContainer.defaultProps = {
   'fieldName': 'product[category_ids][]',
@@ -2337,8 +2353,11 @@ CategoryTreeSelectorContainer.defaultProps = {
   'canDelete': true,
   'category_ids': [3466],
   'createButtonTitle': 'Создать',
+  'cancelButtonTitle': 'Назад',
   'modalCreateTitle': 'Создание категории',
-  'modalShowTitle': 'Выбор категорий'
+  'modalShowTitle': 'Выбор категорий',
+  'parentCategoryText': 'Родительская категория',
+  'nameText': 'Название'
 };
 
 exports.default = CategoryTreeSelectorContainer;
@@ -2669,6 +2688,7 @@ var PropertiesManagerContainer = function (_Component) {
       listItems: _this.makeListItems(properties, customAttributes),
       properties: _this.normalizeProperties(properties, customAttributes)
     };
+
     _this.addListItem = _this.addListItem.bind(_this);
     _this.deleteListItem = _this.deleteListItem.bind(_this);
     _this.createProperty = _this.createProperty.bind(_this);

@@ -14,6 +14,7 @@ class PropertiesManagerContainer extends Component {
       listItems: this.makeListItems(properties, customAttributes),
       properties: this.normalizeProperties(properties, customAttributes),
     };
+
     this.addListItem = this.addListItem.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
     this.createProperty = this.createProperty.bind(this);

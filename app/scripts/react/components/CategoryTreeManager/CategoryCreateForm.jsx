@@ -7,13 +7,15 @@ export default class CategoryCreateForm {
     parentCategory: PropTypes.object.isRequired,
     onFieldChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    parentCategoryText: PropTypes.string.isRequired,
+    nameText: PropTypes.string.isRequired
   }
   onSubmit(ev) {
     ev.preventDefault();
     this.props.onSubmit();
   }
   render() {
-    const { category, parentCategory } = this.props;
+    const { category, parentCategory, parentCategoryText, nameText } = this.props;
 
     return (
       <form className="form-horizontal" onSubmit={this.onSubmit.bind(this)}>

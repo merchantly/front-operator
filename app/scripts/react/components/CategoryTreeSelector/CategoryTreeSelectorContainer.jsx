@@ -62,6 +62,8 @@ CategoryTreeSelectorContainer.propTypes = {
   fieldName: PropTypes.string.isRequired,
   modalCreateTitle: PropTypes.string,
   modalShowTitle: PropTypes.string,
+  parentCategoryText: PropTypes.string,
+  nameText: PropTypes.string
 };
 CategoryTreeSelectorContainer.defaultProps = {
   'fieldName': 'product[category_ids][]',
@@ -79,8 +81,11 @@ CategoryTreeSelectorContainer.defaultProps = {
     3466
   ],
   'createButtonTitle': 'Создать',
+  'cancelButtonTitle': 'Назад',
   'modalCreateTitle': 'Создание категории',
-  'modalShowTitle': 'Выбор категорий'
+  'modalShowTitle': 'Выбор категорий',
+  'parentCategoryText': 'Родительская категория',
+  'nameText': 'Название',
 };
 
 export default CategoryTreeSelectorContainer;

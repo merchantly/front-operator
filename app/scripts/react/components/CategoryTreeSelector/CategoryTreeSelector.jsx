@@ -48,6 +48,8 @@ CategoryTreeSelector.propTypes = {
   onSelectionAccept: PropTypes.func.isRequired,
   onSelectionChange: PropTypes.func.isRequired,
   onSelectionDiscard: PropTypes.func.isRequired,
+  parentCategoryText: PropTypes.string,
+  nameText: PropTypes.string,
 };
 
 export default CategoryTreeSelector;

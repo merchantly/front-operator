@@ -141,8 +141,9 @@ class CategoryTreeManager extends Component {
   }
   render() {
     const {
-      categories, createButtonTitle, modalCreateTitle, modalShowTitle,
-      modalUuid, onSelectionChange, selectedCategories
+      categories, createButtonTitle, cancelButtonTitle, modalCreateTitle, modalShowTitle,
+      modalUuid, onSelectionChange, selectedCategories,
+      parentCategoryText, nameText
     } = this.props;
     const { category, currentState } = this.state;
     const parentCategory = this.getParent(categories, selectedCategories);
@@ -160,7 +161,7 @@ class CategoryTreeManager extends Component {
             onClose={this.activateShow.bind(this)}
             onOk={this.createCategory.bind(this)}
             textButtonOk={createButtonTitle}
-            textButtonCancel="Назад"
+            textButtonCancel={cancelButtonTitle}
             title={modalCreateTitle}
           >
             <CategoryCreateForm
@@ -168,6 +169,8 @@ class CategoryTreeManager extends Component {
               parentCategory={parentCategory}
               onFieldChange={this.onFieldChange.bind(this)}
               onSubmit={this.onFormSubmit.bind(this)}
+              parentCategoryText={parentCategoryText}
+              nameText={nameText}
             />
           </Modal>
         );
@@ -211,6 +214,7 @@ CategoryTreeManager.propTypes = {
   canCreate: PropTypes.bool.isRequired,
   categories: PropTypes.array.isRequired,
   createButtonTitle: PropTypes.string.isRequired,
+  cancelButtonTitle: PropTypes.string.isRequired,
   modalCreateTitle: PropTypes.string.isRequired,
   modalShowTitle: PropTypes.string.isRequired,
   modalUuid: PropTypes.string.isRequired,
@@ -219,6 +223,8 @@ CategoryTreeManager.propTypes = {
   onSelectionAccept: PropTypes.func.isRequired,
   onSelectionChange: PropTypes.func.isRequired,
   onSelectionDiscard: PropTypes.func.isRequired,
+  parentCategoryText: PropTypes.string,
+  nameText: PropTypes.string
 };
 
 export default CategoryTreeManager;
